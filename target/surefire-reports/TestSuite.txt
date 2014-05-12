@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.382 sec <<< FAILURE!
+aFastTest(com.prototest.app.SimpleTest)  Time elapsed: 0.008 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: FUCK
+	at junit.framework.Assert.fail(Assert.java:47)
+	at com.prototest.app.SimpleTest.aFastTest(SimpleTest.java:18)
+

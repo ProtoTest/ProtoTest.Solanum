@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="BrianK-Zenbook" name="com.prototest.app.SimpleTest" tests="2" failures="1" timestamp="7 May 2014 22:05:12 GMT" time="0.022" errors="0">
+  <testcase name="aFastTest" time="0.002" classname="com.prototest.app.SimpleTest">
+    <failure type="junit.framework.AssertionFailedError" message="FUCK">
+      <![CDATA[junit.framework.AssertionFailedError: FUCK
+	at junit.framework.Assert.fail(Assert.java:47)
+	at com.prototest.app.SimpleTest.aFastTest(SimpleTest.java:18)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:62)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:141)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:180)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:350)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1021)
+... Removed 26 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="aSlowTest" time="0.001" classname="com.prototest.app.SimpleTest"/>
+</testsuite>
