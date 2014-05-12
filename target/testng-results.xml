@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+    <line>
+      <![CDATA[Ending Session]]>
+    </line>
+    <line>
+      <![CDATA[Got a result]]>
+    </line>
+    <line>
+      <![CDATA[Starting Session : C:\Users\Brian\Documents\GitHub\Nightshade.MotorolaTests\Suites\MotorolaMaster.suite]]>
+    </line>
+    <line>
+      <![CDATA[Got a result]]>
+    </line>
+    <line>
+      <![CDATA[Suite is : C:\Users\Brian\Documents\GitHub\Nightshade.MotorolaTests\Suites\MotorolaMaster.suite]]>
+    </line>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="11119" started-at="2014-05-12T17:33:39Z" finished-at="2014-05-12T17:33:50Z">
+    <groups>
+      <group name="fast">
+        <method signature="com.prototest.solanum.SimpleTest.aFastTest()" name="aFastTest" class="com.prototest.solanum.SimpleTest"/>
+      </group>
+      <group name="slow">
+        <method signature="com.prototest.solanum.SimpleTest.aSlowTest()" name="aSlowTest" class="com.prototest.solanum.SimpleTest"/>
+      </group>
+    </groups>
+    <test name="Command line test" duration-ms="11119" started-at="2014-05-12T17:33:39Z" finished-at="2014-05-12T17:33:50Z">
+      <class name="com.prototest.solanum.SimpleTest">
+        <test-method status="PASS" signature="FixtureSetUp()" name="FixtureSetUp" is-config="true" duration-ms="10756" started-at="2014-05-12T17:33:39Z" finished-at="2014-05-12T17:33:50Z">
+        </test-method>
+        <test-method status="PASS" signature="setUp()" name="setUp" is-config="true" duration-ms="1" started-at="2014-05-12T17:33:50Z" finished-at="2014-05-12T17:33:50Z">
+        </test-method>
+        <test-method status="PASS" signature="aFastTest()" name="aFastTest" duration-ms="329" started-at="2014-05-12T17:33:50Z" finished-at="2014-05-12T17:33:50Z">
+        </test-method>
+        <test-method status="PASS" signature="aSlowTest()" name="aSlowTest" duration-ms="1" started-at="2014-05-12T17:33:50Z" finished-at="2014-05-12T17:33:50Z">
+        </test-method>
+        <test-method status="PASS" signature="TearDown()" name="TearDown" is-config="true" duration-ms="7" started-at="2014-05-12T17:33:50Z" finished-at="2014-05-12T17:33:50Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>
