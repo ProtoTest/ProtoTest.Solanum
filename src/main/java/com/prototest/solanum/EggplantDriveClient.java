@@ -43,7 +43,7 @@ public class EggplantDriveClient {
     public void EndSuite() {
         Object[] params = new Object[]{};
         try {
-            Logger.Message(String.format("Ending Session"));
+            Logger.Message(String.format("Ending Suite"));
             Object result = client.execute("EndSession",params);
             Logger.Message("Got a result");
         } catch (XmlRpcException e) {
@@ -52,10 +52,9 @@ public class EggplantDriveClient {
     }
 
     public void StartSuite(){
-        Config.suitePath = "C:\\Users\\Brian\\Documents\\GitHub\\Nightshade.MotorolaTests\\Suites\\MotorolaMaster.suite";
         Object[] params = new Object[]{Config.suitePath};
         try {
-            Logger.Message(String.format("Starting Session : %s",Config.suitePath));
+            Logger.Message(String.format("Starting Suite : %s",Config.suitePath));
             Object result = client.execute("StartSession",params);
             Logger.Message("Got a result");
         } catch (XmlRpcException e) {
