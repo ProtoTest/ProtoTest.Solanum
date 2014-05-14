@@ -1,8 +1,5 @@
 package com.prototest.solanum;
 
-import org.testng.ITestContext;
-import org.testng.Reporter;
-import org.testng.TestNG;
 import org.testng.annotations.*;
 
 /**
@@ -13,12 +10,12 @@ public class EggplantTestBase {
 
     @AfterClass
     public void TearDown(){
-       EggplantProcess.Stop();
+       EggplantProcess.stop();
     }
 
     @BeforeClass
     public void FixtureSetUp(){
-        EggplantProcess.Start();
+        EggplantProcess.start();
 
     }
 
