@@ -21,7 +21,7 @@ public class EggplantProcess {
                 eggplantDrive = null;
             }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Logger.error("Exception caught stopping eggplant : " + e.getMessage());
             kill();
         }
     }
@@ -36,7 +36,7 @@ public class EggplantProcess {
                 rt.exec("pkill -9 -i eggplant");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.error("Exception caught killing eggplant : " + e.getMessage());
         }
         eggplantDrive = null;
 
@@ -48,13 +48,13 @@ public class EggplantProcess {
         }
         String line = "";
         try {
-            System.out.println("Executing command : " + command);
+            Logger.message("Executing command : " + command);
             eggplantDrive = Runtime.getRuntime().exec(command);
 
             BufferedReader input = new BufferedReader
                     (new InputStreamReader(eggplantDrive.getInputStream()));
             while ((line = input.readLine()) != null) {
-                System.out.println(line);
+                Logger.message(line);
                 if (line.contains("No valid License")) {
                     Assert.fail("No valid eggplant license was found.  Please launch the eggplant GUI, add a license, and try again.");
                 }
@@ -64,7 +64,7 @@ public class EggplantProcess {
             }
             input.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.error("Exception caught starting eggplant : " + e.getMessage());
         }
     }
 

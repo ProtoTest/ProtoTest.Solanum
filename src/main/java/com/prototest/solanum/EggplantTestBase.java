@@ -7,15 +7,26 @@ import org.testng.annotations.*;
  */
 @Listeners({ org.uncommons.reportng.HTMLReporter.class, org.uncommons.reportng.JUnitXMLReporter.class })
 public class EggplantTestBase {
+    public static EggplantDriver driver;
+
+    @BeforeTest
+    public void setUp(){
+
+
+    }
 
     @AfterClass
-    public void tearDown(){
-       EggplantProcess.stop();
+    public void fixtureTearDown(){
+
+        EggplantProcess.stop();
     }
 
     @BeforeClass
     public void fixtureSetUp(){
         EggplantProcess.start();
+        driver = new EggplantDriver();
+        driver.endSuite();
+        driver.startSuite(Config.suitePath);
 
     }
 
