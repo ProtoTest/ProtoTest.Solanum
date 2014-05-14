@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.prototest.app</groupId>
@@ -10,59 +10,56 @@
   <name>solanum</name>
   <url>http://maven.apache.org</url>
 
-    <repositories>
-        <repository>
-            <id>java-net</id>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-    </repositories>
+  <repositories>
+    <repository>
+      <id>java-net</id>
+      <url>http://download.java.net/maven/2</url>
+    </repository>
+  </repositories>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
- </properties>
-
+  </properties>
 
 
   <dependencies>
-      <dependency>
-          <groupId>org.uncommons</groupId>
-          <artifactId>reportng</artifactId>
-          <version>1.1.2</version>
-          <scope>test</scope>
-          <exclusions>
-              <exclusion>
-                  <groupId>org.testng</groupId>
-                  <artifactId>testng</artifactId>
-              </exclusion>
-          </exclusions>
-      </dependency>
-
-      <dependency>
+    <dependency>
+      <groupId>org.uncommons</groupId>
+      <artifactId>reportng</artifactId>
+      <version>1.1.2</version>
+      <exclusions>
+        <exclusion>
           <groupId>org.testng</groupId>
           <artifactId>testng</artifactId>
-          <version>6.1.1</version>
-          <scope>test</scope>
-      </dependency>
+        </exclusion>
+      </exclusions>
+    </dependency>
 
-      <dependency>
-          <groupId>org.apache.xmlrpc</groupId>
-          <artifactId>xmlrpc-client</artifactId>
-          <version>3.0</version>
-      </dependency>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>6.1.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.xmlrpc</groupId>
+      <artifactId>xmlrpc-client</artifactId>
+      <version>3.0</version>
+    </dependency>
 
   </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <reportsDirectory>${project.basedir}/target/</reportsDirectory>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <reportsDirectory>${project.basedir}/target/</reportsDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
