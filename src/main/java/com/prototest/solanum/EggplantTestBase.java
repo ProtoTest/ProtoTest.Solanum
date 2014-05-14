@@ -9,12 +9,12 @@ import org.testng.annotations.*;
 public class EggplantTestBase {
 
     @AfterClass
-    public void TearDown(){
+    public void tearDown(){
        EggplantProcess.stop();
     }
 
     @BeforeClass
-    public void FixtureSetUp(){
+    public void fixtureSetUp(){
         EggplantProcess.start();
 
     }

@@ -3,12 +3,8 @@
 
 package com.prototest.solanum;
 import org.apache.xmlrpc.XmlRpcException;
-import org.apache.xmlrpc.XmlRpcRequest;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
-import org.apache.xmlrpc.client.XmlRpcClientRequestImpl;
-import org.apache.xmlrpc.client.XmlRpcCommonsTransportFactory;
-import org.apache.xmlrpc.parser.XmlRpcResponseParser;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -31,32 +27,32 @@ public class EggplantDriveClient {
         client.setConfig(config);
     }
 
-    public void Execute(String command){
+    public void execute(String command){
         Object[] params = new Object[]{command};
         try {
-            Logger.Message(String.format("Executing : %s",command));
-            Object result = client.execute("Execute",params);
+            Logger.message(String.format("Executing : %s", command));
+            Object result = client.execute("execute",params);
         } catch (XmlRpcException e) {
             Logger.Warning(e.getMessage());
         }
     }
-    public void EndSuite() {
+    public void endSuite() {
         Object[] params = new Object[]{};
         try {
-            Logger.Message(String.format("Ending Suite"));
+            Logger.message(String.format("Ending Suite"));
             Object result = client.execute("EndSession",params);
-            Logger.Message("Got a result");
+            Logger.message("Got a result");
         } catch (XmlRpcException e) {
             Logger.Warning(e.getMessage());
         }
     }
 
-    public void StartSuite(){
+    public void startSuite(){
         Object[] params = new Object[]{Config.suitePath};
         try {
-            Logger.Message(String.format("Starting Suite : %s",Config.suitePath));
+            Logger.message(String.format("Starting Suite : %s", Config.suitePath));
             Object result = client.execute("StartSession",params);
-            Logger.Message("Got a result");
+            Logger.message("Got a result");
         } catch (XmlRpcException e) {
             Logger.Warning(e.getMessage());
         }

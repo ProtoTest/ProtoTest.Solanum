@@ -8,7 +8,7 @@ import org.testng.Reporter;
 public class Logger {
 
 
-    public static void Message(String text){
+    public static void message(String text){
         System.out.println(text);
         Reporter.log(text);
 
@@ -21,7 +21,7 @@ public class Logger {
         //System.setProperty("org.uncommons.reportng.escape-output", "true");
     }
 
-    public static void Error(String text){
+    public static void error(String text){
         System.out.println(String.format("ERROR : %s",text));
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:red\">%s</div>",text));
