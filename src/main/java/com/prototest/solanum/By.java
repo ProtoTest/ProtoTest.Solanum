@@ -38,4 +38,7 @@ public class By {
         return new By(locatorString);
     }
 
+    public String getLocator() {
+        return locator;
+    }
 }

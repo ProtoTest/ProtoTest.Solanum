@@ -7,6 +7,10 @@ import org.testng.annotations.*;
  */
 @Listeners({ org.uncommons.reportng.HTMLReporter.class, org.uncommons.reportng.JUnitXMLReporter.class })
 public class EggplantTestBase {
+    public final static EggplantDriver DRIVER;
+    static {
+        DRIVER = new EggplantDriver(new EggplantDriveClient());
+    }
 
     @AfterClass
     public void tearDown(){
