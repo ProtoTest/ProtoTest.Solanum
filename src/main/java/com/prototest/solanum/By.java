@@ -10,7 +10,6 @@ public class By {
     }
 
 
-
     public static By Image(String path)
     {
         String locatorString = String.format("(image: \"%s\")", path);
@@ -20,7 +19,7 @@ public class By {
     public static By Image(String path, SearchOptions options)
     {
         String locatorString = String.format("(image: \"%s\"", path);
-        locatorString += options.getString();
+        locatorString += options.getImageString();
         locatorString += ")";
         return new By(locatorString);
     }
@@ -34,7 +33,7 @@ public class By {
     public static By Text(String text, SearchOptions options)
     {
         String locatorString = String.format("(text: \"%s\"", text);
-        locatorString += options.getString();
+        locatorString += options.getTextString();
         locatorString += ")";
         return new By(locatorString);
     }
