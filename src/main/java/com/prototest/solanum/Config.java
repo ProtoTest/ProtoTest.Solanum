@@ -1,8 +1,5 @@
 package com.prototest.solanum;
 
-import org.testng.Assert;
-import org.testng.Reporter;
-
 import java.io.*;
 import java.util.Properties;
 
@@ -21,6 +18,9 @@ public class Config {
     public static String suitePath = getPropertyValue("suitePath","");
     public static int drivePort = getPropertyValue("drivePort",5400);
     public static int driveLoggingLevel = getPropertyValue("driveLoggingLevel",2);
+    public static boolean logDriveCommands = getPropertyValue("logDriveCommands",true);
+    public static int commandDelayMs = getPropertyValue("commandDelayMs",1000);
+    public static int elementWaitTimeMs = getPropertyValue("elementWaitTimeMs",5000);
 
     private static int getPropertyValue(String key,int defaultValue){
         String result = (properties.getProperty(key));
@@ -64,7 +64,7 @@ public class Config {
             properties.store(output, null);
             output.close();
         } catch (Exception e) {
-            Logger.Warning(String.format("Warning, could not save property '%s=%s' to file", key, value));
+            Logger.warning(String.format("warning, could not save property '%s=%s' to file", key, value));
         }
     }
 

@@ -5,6 +5,7 @@ package com.prototest.solanum;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
+import org.testng.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -26,35 +27,41 @@ public class EggplantDriveClient {
         client  = new XmlRpcClient();
         client.setConfig(config);
     }
-
-    public void execute(String command){
+    public EggplantDriveClient(String url){
+        config = new XmlRpcClientConfigImpl();
+        try {
+            config.setServerURL(new URL(url));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        client  = new XmlRpcClient();
+        client.setConfig(config);
+    }
+    public Object execute(String command) {
         Object[] params = new Object[]{command};
         try {
-            Logger.message(String.format("Executing : %s", command));
-            Object result = client.execute("execute",params);
+           Object result = client.execute("execute",params);
+            return result;
         } catch (XmlRpcException e) {
-            Logger.Warning(e.getMessage());
+           Assert.fail(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
         }
+        return null;
     }
-    public void endSuite() {
+    public void endSession() {
         Object[] params = new Object[]{};
         try {
-            Logger.message(String.format("Ending Suite"));
             Object result = client.execute("EndSession",params);
-            Logger.message("Got a result");
         } catch (XmlRpcException e) {
-            Logger.Warning(e.getMessage());
+            Assert.fail("Error Ending Session : " + e.getMessage());
         }
     }
 
-    public void startSuite(){
-        Object[] params = new Object[]{Config.suitePath};
+    public void startSession(String suite){
+        Object[] params = new Object[]{suite};
         try {
-            Logger.message(String.format("Starting Suite : %s", Config.suitePath));
-            Object result = client.execute("StartSession",params);
-            Logger.message("Got a result");
+           Object result = client.execute("StartSession",params);
         } catch (XmlRpcException e) {
-            Logger.Warning(e.getMessage());
+            Assert.fail("ERROR starting session : " + suite + " " + e.getMessage());
         }
     }
 }

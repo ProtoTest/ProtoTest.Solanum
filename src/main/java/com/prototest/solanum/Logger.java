@@ -14,7 +14,7 @@ public class Logger {
 
     }
 
-    public static void Warning(String text){
+    public static void warning(String text){
         System.out.println(String.format("WARNING : %s",text));
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:yellow\">%s</div>",text));
@@ -26,6 +26,12 @@ public class Logger {
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:red\">%s</div>",text));
         //System.setProperty("org.uncommons.reportng.escape-output", "true");
+    }
+
+    public static void screenshot(){
+        String newScreenshot = EggplantTestBase.driver.getScreenshot();
+        System.setProperty("org.uncommons.reportng.escape-output", "false");
+        Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot));
     }
 
 
