@@ -7,11 +7,13 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
  */
 public class EggplantElement {
     private By locater;
+    private String name;
     private EggplantDriver driver = EggplantTestBase.DRIVER;
 
 
     public EggplantElement(By by) {
         locater = by;
+        name = by.toString();
     }
 
     public boolean isPresent()
@@ -213,5 +215,8 @@ public class EggplantElement {
 //        return this;
     }
 
+    public String getName() {
+        return name;
+    }
 }
 
