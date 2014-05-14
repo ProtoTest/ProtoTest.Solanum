@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="bkitchener" name="com.prototest.solanum.SimpleTest" tests="2" failures="0" timestamp="12 May 2014 23:33:50 GMT" time="11.119" errors="0">
-  <testcase name="aFastTest" time="0.329" classname="com.prototest.solanum.SimpleTest"/>
-  <testcase name="aSlowTest" time="0.001" classname="com.prototest.solanum.SimpleTest"/>
-</testsuite>
