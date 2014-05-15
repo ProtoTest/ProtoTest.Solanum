@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Brian on 5/12/2014.
  */
 public class Verifications {
-    class Verification{
+    static class Verification{
         Verification(String errorMesage,String imagePath,boolean passed)   {
             this.errorMessage = errorMesage;
             this.imagePath = imagePath;
@@ -32,7 +32,7 @@ public class Verifications {
     }
 
 
-    public void assertVerifications(){
+    public static void assertVerifications(){
         int numFailed = 0;
         for(int i=0;i<verifications.size();i++){
             if(!verifications.get(i).passed)    {
@@ -43,7 +43,7 @@ public class Verifications {
             Assert.fail("The test failed due to Verification Errors");
         }
     }
-    public void addVerification(String message,boolean passed){
+    public static void addVerification(String message,boolean passed){
         if(passed){
             Logger.message(String.format("Verification Passed : %S", message));
             verifications.add(new Verification(message,true));
@@ -55,7 +55,7 @@ public class Verifications {
         }
     }
 
-    public void addVerification(String message, String filePath, boolean passed){
+    public static void addVerification(String message, String filePath, boolean passed){
         if(passed){
             Logger.message(String.format("Verification Passed : %S", message));
         }
