@@ -34,9 +34,9 @@ public class Verifications {
 
     public static void assertVerifications(){
         int numFailed = 0;
-        for(int i=0;i<verifications.size();i++){
-            if(!verifications.get(i).passed)    {
-                numFailed ++;
+        for (Verification verification : verifications) {
+            if (!verification.passed) {
+                numFailed++;
             }
         }
         if(numFailed>0){
