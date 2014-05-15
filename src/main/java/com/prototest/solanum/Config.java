@@ -71,7 +71,7 @@ public class Config {
     }
 
     private static boolean isTruthy(String value){
-        if(value=="True"||value=="true"){
+        if(value.equals("True") || value.equals("true")){
             return true;
         }
         else{
