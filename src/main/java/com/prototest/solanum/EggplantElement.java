@@ -1,25 +1,25 @@
 package com.prototest.solanum;
 
+import org.joda.time.LocalTime;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-/**
- * Created by Brian on 5/12/2014.
- */
+import java.util.Date;
+
+
 public class EggplantElement {
-    private By locater;
+    private By by;
     private String name;
     private EggplantDriver driver = EggplantTestBase.DRIVER;
 
 
     public EggplantElement(By by) {
-        locater = by;
+        this.by = by;
         name = by.toString();
     }
 
     public boolean isPresent()
     {
-        throw new NotImplementedException();
-//        return driver.IsPresent(locator);
+        return driver.isPresent(by.getLocator());
     }
 
     public String getText()
@@ -92,30 +92,33 @@ public class EggplantElement {
 
     public EggplantElement waitForPresent(int secs)
     {
-        throw new NotImplementedException();
 
 //        Log.Message(string.Format("Waiting for element {0} to be present within (" + secs + ") seconds.",locator));
-//        var now = DateTime.Now;
-//        var endTime = DateTime.Now.AddSeconds(secs);
-//        while(now<endTime)
-//        {
-//            if (Driver.IsPresent(locator))
-//            {
-//                Log.Message(string.Format("Verification Passed : Element {0} is present.", locator));
-//                return this;
-//            }
-//            else
-//            {
-//                Thread.Sleep(500);
-//                now = DateTime.Now;
-//            }
-//        }
-//        TestLog.BeginSection("ERROR FOUND");
-//        Log.Message(string.Format("!----ERROR : Element not found: " + locator + "."));
-//        LogSourceImage();
-//        //LogFailureImage(string.Format("!----ERROR : Element not found: " + locator + "."));
-//        TestLog.End();
-//        throw new Exception(string.Format("Element was not present after {0} seconds", secs));
+        LocalTime now = new LocalTime();
+        LocalTime endTime = now.plusSeconds(secs);
+        while(now.isBefore(endTime))
+        {
+            if (driver.isPresent(by.getLocator()))
+            {
+                Logger.message(String.format("Verification Passed : Element %s is present.", by.getLocator()));
+                return this;
+            }
+            else
+            {
+                try {
+                    Thread.sleep(500);
+                } catch(InterruptedException ex) {
+                    Thread.currentThread().interrupt();
+                }
+                now = new LocalTime();
+            }
+        }
+        //TestLog.BeginSection("ERROR FOUND");
+        Logger.message(String.format("!----ERROR : Element not found: " + by.getLocator() + "."));
+        //LogSourceImage();
+        //LogFailureImage(string.Format("!----ERROR : Element not found: " + locator + "."));
+        //TestLog.End();
+        throw new RuntimeException(String.format("Element was not present after %s seconds", secs));
     }
 
     private void logSourceImage()
