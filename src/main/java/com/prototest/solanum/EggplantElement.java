@@ -98,7 +98,7 @@ public class EggplantElement {
         LocalTime endTime = now.plusSeconds(secs);
         while(now.isBefore(endTime))
         {
-            if (driver.isPresent(by.getLocator()))
+            if (isPresent())
             {
                 Logger.message(String.format("Verification Passed : Element %s is present.", by.getLocator()));
                 return this;
