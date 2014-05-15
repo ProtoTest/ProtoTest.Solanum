@@ -17,117 +17,98 @@ public class EggplantElement {
         name = by.toString();
     }
 
-    public boolean isPresent()
-    {
+    private void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException ex) {
+            // TODO should we actually interrupt execution? What cases will interrupt be called?
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    public boolean isPresent() {
         return driver.isPresent(by.getLocator());
     }
 
-    public String getText()
-    {
-        throw new NotImplementedException();
-
-//        WaitForPresent();
-//        Log.Message(string.Format("Reading text on element {0}.", locator));
-//        var text = Driver.ReadText(locator);
-//        return text;
+    public String getText() {
+        waitForPresent();
+        Logger.message(String.format("Reading text on element %s.", by.getLocator()));
+        return driver.readText(by.getLocator());
     }
 
 
+    public EggplantElement click() {
 
-    public EggplantElement click()
-    {
-        throw new NotImplementedException();
+        waitForPresent();
+        Logger.message(String.format("Clicking on element %s.", by));
+        sleep(Config.clickExecuteDelay);
+        driver.click(by.getLocator());
+        sleep(500);
 
-//        WaitForPresent();
-//        Log.Message(string.Format("Clicking on element {0}.",locator));
-//        Thread.Sleep(Config.ClickExecuteDelay);
-//        Driver.Click(locator);
-//        Thread.Sleep(2000);
-//        return this;
+        return this;
     }
 
-    public EggplantElement doubleClick()
-    {
-        throw new NotImplementedException();
-
-//        WaitForPresent();
-//        Log.Message(string.Format("Double-clicking on element {0}.", locator));
-//        Thread.Sleep(Config.ClickExecuteDelay);
-//        Driver.DoubleTap(locator);
-//        Thread.Sleep(2000);
-//        return this;
+    public EggplantElement doubleClick() {
+        waitForPresent();
+        Logger.message(String.format("Double-clicking on element %s.", by));
+        sleep(Config.clickExecuteDelay);
+        driver.doubleTap(by.getLocator());
+        sleep(1000);
+        return this;
     }
 
-    public EggplantElement press()
-    {
-        throw new NotImplementedException();
-
-//        WaitForPresent();
-//        Log.Message(string.Format("Performing click+hold on element {0}.", locator));
-//        Driver.Press(locator);
-//        Thread.Sleep(2000);
-//        return this;
+    public EggplantElement press() {
+        waitForPresent();
+        Logger.message(String.format("Performing click+hold on element %s.", by));
+        driver.press(by.getLocator());
+        sleep(1000);
+        return this;
     }
 
-    public EggplantElement type(String text)
-    {
-        throw new NotImplementedException();
 
-//        Log.Message(string.Format("Clicking on text field..."));
-//        Click();
-//        Log.Message(string.Format("Typing text:({0}).", text));
-//        Thread.Sleep(2000);
-//        Driver.Type(text);
-//        Thread.Sleep(2000);
-//        return this;
+    public EggplantElement type(String text) {
+        Logger.message(String.format("Clicking on text field..."));
+        click();
+        Logger.message(String.format("Typing text:(%s).", text));
+        sleep(2000);
+        driver.typeText(text);
+        sleep(2000);
+        return this;
     }
 
     // Hard verification failures - Test will halt
-    public EggplantElement waitForPresent()
-    {
-        throw new NotImplementedException();
-
-//        return WaitForPresent(Config.ElementWaitSec);
+    public EggplantElement waitForPresent() {
+        return waitForPresent(Config.elementWaitTimeMs);
     }
 
-    public EggplantElement waitForPresent(int secs)
-    {
+    public EggplantElement waitForPresent(int secs) {
 
         Logger.message(String.format("Waiting for element %s to be present within %d seconds.", by.getLocator(), secs));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
-        while(now.isBefore(endTime))
-        {
-            if (isPresent())
-            {
+        while (now.isBefore(endTime) && !Thread.interrupted()) {
+            if (isPresent()) {
                 Logger.message(String.format("Verification Passed : Element %s is present.", by.getLocator()));
                 return this;
-            }
-            else
-            {
-                try {
-                    Thread.sleep(500);
-                } catch(InterruptedException ex) {
-                    Thread.currentThread().interrupt();
-                }
+            } else {
+                sleep(500);
                 now = new LocalTime();
             }
         }
         //TestLog.BeginSection("ERROR FOUND");
         Logger.message(String.format("!----ERROR : Element not found: %s.", by.getLocator()));
         //LogSourceImage();
-        //LogFailureImage(string.Format("!----ERROR : Element not found: " + locator + "."));
+        //LogFailureImage(string.Format("!----ERROR : Element not found: " + by + "."));
         //TestLog.End();
         throw new RuntimeException(String.format("Element was not present after %d seconds", secs));
     }
 
-    private void logSourceImage()
-    {
+    private void logSourceImage() {
         throw new NotImplementedException();
 
-//        if (locator.Contains("image"))
+//        if (by.Contains("image"))
 //        {
-//            string nameOfImage = locator.Split(':')[1].Trim(' ').Trim(')').Trim('"').Replace("/", "\\");
+//            string nameOfImage = by.Split(':')[1].Trim(' ').Trim(')').Trim('"').Replace("/", "\\");
 //            string pathToImage = Config.SuitePath + "\\Images\\" + nameOfImage;
 //            if (Directory.Exists(pathToImage))
 //            {
@@ -151,71 +132,40 @@ public class EggplantElement {
 //        }
     }
 
-    public EggplantElement waitForNotPresent()
-    {
-        throw new NotImplementedException();
-
-//        return WaitForNotPresent(Config.ElementWaitSec);
+    public EggplantElement waitForNotPresent() {
+        return waitForNotPresent(Config.elementWaitTimeMs);
     }
 
-    public EggplantElement waitForNotPresent(int secs)
-    {
-        throw new NotImplementedException();
+    public EggplantElement waitForNotPresent(int millis) {
+        Logger.message(String.format("Waiting for element %s to not be present for " + millis + " seconds.", by));
+        LocalTime now = new LocalTime();
+        LocalTime endTime = now.plusSeconds(millis);
+        while (now.isBefore(endTime) && !Thread.interrupted()) {
+            if (!driver.isPresent(by.getLocator())) {
+                Logger.message("Element no longer present.");
+                return this;
+            } else {
+                sleep(500);
+                now = new LocalTime();
+            }
+        }
 
-//        Log.Message(string.Format("Waiting for element {0} to not be present for " +secs+ " seconds.", locator));
-//        var now = DateTime.Now;
-//        var endTime = DateTime.Now.AddSeconds(secs);
-//        while (now < endTime)
-//        {
-//            if (!Driver.IsPresent(locator))
-//            {
-//                Log.Message("Element no longer present.");
-//                return this;
-//            }
-//            else
-//            {
-//                Thread.Sleep(500);
-//                now = DateTime.Now;
-//            }
-//        }
-//
-//        Log.Message(string.Format("Element still present: " + locator));
-//        LogSourceImage();
-//        throw new Exception(string.Format("WaitForNotPresent Failed : Element was still present after {0} seconds", secs));
+        Logger.message(String.format("Element still present: " + by));
+        //logSourceImage();
+        throw new RuntimeException(String.format("WaitForNotPresent Failed : Element was still present after %d seconds", millis));
     }
 
     // Soft verification failures - Test will keep progressing
-    public EggplantElement verifyPresent()
-    {
-        throw new NotImplementedException();
-
-//        Log.Message(string.Format("Verifying element {0} should be present.",locator));
-//        if (!Driver.IsPresent(locator))
-//        {
-//            VerificationErrors.AddVerificationError(string.Format("Verification Error : Element {0} should be present.", locator));
-//        }
-//        else
-//        {
-//            Log.Message(string.Format("Verification Passed : Element {0} is present.", locator));
-//        }
-//        return this;
+    public EggplantElement verifyPresent() {
+        Logger.message(String.format("Verifying element %s should be present.", by.getLocator()));
+        Verifications.addVerification(String.format("Element %s should be present.", by.getLocator()), driver.isPresent(by.getLocator()));
+        return this;
     }
 
-    public EggplantElement verifyNotPresent()
-    {
-        throw new NotImplementedException();
-
-//        Log.Message(string.Format("Verifying element {0} is not be present.",locator));
-//
-//        if (Driver.IsPresent(locator))
-//        {
-//            VerificationErrors.AddVerificationError(string.Format("Verification Error : Element {0} should not be present.",locator));
-//        }
-//        else
-//        {
-//            Log.Message(string.Format("Verification Passed : Element {0} is not be present",locator));
-//        }
-//        return this;
+    public EggplantElement verifyNotPresent() {
+        Logger.message(String.format("Verifying element %s is not be present.",by));
+        Verifications.addVerification(String.format("Element %s should be present.", by.getLocator()), ! driver.isPresent(by.getLocator()));
+        return this;
     }
 
     public String getName() {
