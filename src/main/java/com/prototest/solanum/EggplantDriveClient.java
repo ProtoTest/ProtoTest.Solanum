@@ -14,10 +14,10 @@ import java.net.URL;
 /**
  * Created by Brian on 5/12/2014.
  */
-public class EggplantDriveClient {
+class EggplantDriveClient {
     private XmlRpcClientConfigImpl config;
     private XmlRpcClient client;
-    public EggplantDriveClient(){
+    EggplantDriveClient(){
         config = new XmlRpcClientConfigImpl();
         try {
             config.setServerURL(new URL("http://127.0.0.1:5400"));
@@ -27,7 +27,7 @@ public class EggplantDriveClient {
         client  = new XmlRpcClient();
         client.setConfig(config);
     }
-    public EggplantDriveClient(String url){
+    EggplantDriveClient(String url){
         config = new XmlRpcClientConfigImpl();
         try {
             config.setServerURL(new URL(url));
@@ -37,7 +37,7 @@ public class EggplantDriveClient {
         client  = new XmlRpcClient();
         client.setConfig(config);
     }
-    public Object execute(String command) {
+    Object execute(String command) {
         Object[] params = new Object[]{command};
         try {
            Object result = client.execute("execute",params);
@@ -47,7 +47,7 @@ public class EggplantDriveClient {
         }
         return null;
     }
-    public void endSession() {
+    void endSession() {
         Object[] params = new Object[]{};
         try {
             Object result = client.execute("EndSession",params);
@@ -56,7 +56,7 @@ public class EggplantDriveClient {
         }
     }
 
-    public void startSession(String suite){
+    void startSession(String suite){
         Object[] params = new Object[]{suite};
         try {
            Object result = client.execute("StartSession",params);
