@@ -8,17 +8,16 @@ import org.testng.annotations.*;
 @Listeners({ org.uncommons.reportng.HTMLReporter.class, org.uncommons.reportng.JUnitXMLReporter.class })
 public class EggplantTestBase {
     public final static EggplantDriver DRIVER = new EggplantDriver();
-
+    private EggplantProcess eggplantProcess = new EggplantProcess();
 
     @AfterClass
     public void tearDown(){
-       EggplantProcess.stop();
+       eggplantProcess.stop();
     }
 
     @BeforeClass
     public void fixtureSetUp(){
-        EggplantProcess.start();
-
+        eggplantProcess.start();
     }
 
 

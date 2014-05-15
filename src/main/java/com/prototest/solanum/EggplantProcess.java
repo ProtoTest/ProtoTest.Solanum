@@ -9,11 +9,23 @@ import java.io.InputStreamReader;
 /**
  * Created by Brian on 5/12/2014.
  */
-public class EggplantProcess {
-    private static Process eggplantDrive = null;
-    private static String command = String.format("\"%s\" -driveport %s -drivelogging %s", Config.runScriptPath, Config.drivePort, Config.driveLoggingLevel);
+class EggplantProcess {
+    private Process eggplantDrive;
+    private String command;
 
-    public static void stop() {
+    EggplantProcess() {
+        String runScriptPath = Config.runScriptPath;
+
+        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+            runScriptPath = "\"" + runScriptPath + "\"";
+        } else {
+            runScriptPath = runScriptPath.replace(" ", "\\ ");
+        }
+        this.command =
+                String.format("%s -driveport %s -drivelogging %s", runScriptPath, Config.drivePort, Config.driveLoggingLevel);
+    }
+
+    void stop() {
         try {
             if (eggplantDrive != null) {
                 eggplantDrive.destroy();
@@ -26,11 +38,11 @@ public class EggplantProcess {
         }
     }
 
-    public static void kill() {
+    void kill() {
 
         Runtime rt = Runtime.getRuntime();
         try {
-            if (System.getProperty("os.name").toLowerCase().indexOf("windows") > -1) {
+            if (System.getProperty("os.name").toLowerCase().contains("windows")) {
                 rt.exec("taskkill  /F /IM eggPlant.exe");
             } else {
                 rt.exec("pkill -9 -i eggplant");
@@ -42,11 +54,11 @@ public class EggplantProcess {
 
     }
 
-    public static void start() {
+    void start() {
         if (eggplantDrive != null) {
             return;
         }
-        String line = "";
+        String line;
         try {
             Logger.message("Executing command : " + command);
             eggplantDrive = Runtime.getRuntime().exec(command);

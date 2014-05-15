@@ -1,6 +1,3 @@
-
-
-
 package com.prototest.solanum;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.XmlRpcClient;
@@ -12,7 +9,7 @@ import java.net.URL;
 
 
 /**
- * Created by Brian on 5/12/2014.
+ *
  */
 class EggplantDriveClient {
     private XmlRpcClientConfigImpl config;
