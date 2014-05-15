@@ -93,7 +93,7 @@ public class EggplantElement {
     public EggplantElement waitForPresent(int secs)
     {
 
-//        Log.Message(string.Format("Waiting for element {0} to be present within (" + secs + ") seconds.",locator));
+        Logger.message(String.format("Waiting for element %s to be present within %d seconds.", by.getLocator(), secs));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while(now.isBefore(endTime))
@@ -114,11 +114,11 @@ public class EggplantElement {
             }
         }
         //TestLog.BeginSection("ERROR FOUND");
-        Logger.message(String.format("!----ERROR : Element not found: " + by.getLocator() + "."));
+        Logger.message(String.format("!----ERROR : Element not found: %s.", by.getLocator()));
         //LogSourceImage();
         //LogFailureImage(string.Format("!----ERROR : Element not found: " + locator + "."));
         //TestLog.End();
-        throw new RuntimeException(String.format("Element was not present after %s seconds", secs));
+        throw new RuntimeException(String.format("Element was not present after %d seconds", secs));
     }
 
     private void logSourceImage()
