@@ -1,6 +1,8 @@
 package com.prototest.solanum;
 import org.testng.annotations.*;
 
+import java.awt.*;
+
 public class SimpleTest extends EggplantTestBase {
 
     @BeforeClass
@@ -8,11 +10,14 @@ public class SimpleTest extends EggplantTestBase {
         // code that will be invoked when this test is instantiated
     }
 
-    EggplantElement emailButton = new EggplantElement("emailButton",By.Text("Email",new SearchOptions(SearchRectangle.bottomQuarter())));
     @Test(groups = { "DeviceNeeded" })
     public void aFastTest() {
-            driver.connect(Config.hostName, Config.hostPort);
-            emailButton.click();
+        SearchOptions options = new SearchOptions();
+        //options.searchRectangle = SearchRectangle.bottomQuarter();
+        options.contrast=true;
+        EggplantElement element = new EggplantElement("EmailIcon",By.Text("Email",options));
+        element.click();
+
     }
 
 

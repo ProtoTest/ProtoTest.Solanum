@@ -5,6 +5,8 @@ import org.apache.xmlrpc.XmlRpcException;
 import java.awt.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.regex.Pattern;
 
 /**
  * Created by Brian on 5/12/2014.
@@ -13,44 +15,51 @@ public class EggplantDriver {
 
     private EggplantDriveClient client;
 
-    public EggplantDriver(){
+    public EggplantDriver() {
         this.client = new EggplantDriveClient();
     }
+
+    public void connect() {
+        connect(Config.hostName,Config.hostPort);
+    }
+
     public void connect(String host) {
-        execute(String.format("Connect (ServerID:\"%s\")",host));
-    }
-    public void connect(String host,int portNum){
-        execute(String.format("Connect (ServerID:\"%s\", portNum: \"%s\")",host,portNum));
+        execute(String.format("Connect (ServerID:\"%s\")", host));
     }
 
-     public void disconnect(){
-         execute(String.format("Disconnect"));
+    public void connect(String host, int portNum) {
+        execute(String.format("Connect (ServerID:\"%s\", portNum: \"%s\")", host, portNum));
+    }
 
-     }
+    public void disconnect() {
+        execute(String.format("Disconnect"));
 
-    public Object execute(String command)
-    {
-        if(Config.logDriveCommands){
+    }
+
+    public HashMap<String, String> execute(String command) {
+        if (Config.logDriveCommands) {
             Logger.message(String.format("Executing : %s", command));
         }
-        delay(Config.commandDelayMs);
-            return client.execute(command);
+        //delay(Config.commandDelayMs);
+        HashMap result = client.execute(command);
+        return result;
 
     }
 
-    public void delay(int ms){
+    public void delay(int ms) {
         try {
             Thread.sleep(Config.commandDelayMs);
         } catch (InterruptedException e) {
         }
     }
 
-    public void startSuite(String path){
-        if(Config.logDriveCommands){
+    public void startSuite(String path) {
+        if (Config.logDriveCommands) {
             Logger.message(String.format("Starting Suite : %s", path));
         }
         client.startSession(path);
     }
+
 
     public void endSuite(){
         if(Config.logDriveCommands){
@@ -117,8 +126,9 @@ public class EggplantDriver {
 
     public boolean isPresent(String locator)
     {
-        boolean output = (Boolean) execute(String.format("put ImageFound %s", locator));
-        return output;
+        HashMap<String,String> output = (HashMap<String,String>)execute(String.format("put ImageFound %s", locator));
+        String result = (String) output.get("Output");
+        return result.contains("True");
     }
 
     public void typeText(String text)
@@ -183,30 +193,33 @@ public class EggplantDriver {
 
     public String readText(String locator)
     {
-        String result = (String) execute(String.format("put ReadText %s" + locator));
+        String result = execute(String.format("put ReadText %s" + locator)).get("Result");
        return result;
     }
 
-    public SearchRectangle getScreenRectangle()
+    public Rectangle getScreenRectangle()
     {
-        Rectangle output = (Rectangle) execute("put RemoteScreenRectangle()");
-        return new SearchRectangle(output);
+        String output = execute("put RemoteScreenRectangle()").get("Output").trim();
+        output = output.substring(1,output.length()-1);
+        String[] rect = output.split(",");
+
+        return new Rectangle(Integer.parseInt(rect[0]),Integer.parseInt(rect[1]),Integer.parseInt(rect[2]),Integer.parseInt(rect[3]));
     }
 
     public String getConnectionInfo()
     {
-        return (String) execute("put ConnectionInfo()");
+        return (String) execute("put ConnectionInfo()").get("Output");
     }
 
     public String getOptions()
     {
-        String output = (String) execute("put getOptions()");
+        String output = (String) execute("put getOptions()").get("Output");
         return output;
     }
 
     public String getOption(String option)
     {
-        String output = (String) execute(String.format("put getOption(%s)",option));
+        String output = (String) execute(String.format("put getOption(%s)",option)).get("Output");
         return output;
     }
 

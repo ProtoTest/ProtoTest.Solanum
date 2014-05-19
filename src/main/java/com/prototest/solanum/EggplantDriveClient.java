@@ -6,6 +6,7 @@ import org.testng.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
 
 /**
@@ -17,7 +18,9 @@ class EggplantDriveClient {
     EggplantDriveClient(){
         config = new XmlRpcClientConfigImpl();
         try {
-            config.setServerURL(new URL("http://127.0.0.1:5400"));
+            config.setServerURL(new URL(Config.driveUrl));
+            config.setConnectionTimeout(10000);
+            config.setReplyTimeout(30000);
         } catch (MalformedURLException e) {
             throw new RuntimeException("Failed to start XmlRpc client", e);
         }
@@ -34,10 +37,10 @@ class EggplantDriveClient {
         client  = new XmlRpcClient();
         client.setConfig(config);
     }
-    Object execute(String command) {
+    HashMap<String, String> execute(String command) {
         Object[] params = new Object[]{command};
         try {
-           Object result = client.execute("execute",params);
+           HashMap result = (HashMap) client.execute("execute",params);
             return result;
         } catch (XmlRpcException e) {
             throw new RuntimeException(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));

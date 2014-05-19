@@ -41,14 +41,14 @@ public class EggplantElement {
     public EggplantElement click() {
 
         waitForPresent();
-        Logger.message(String.format("Clicking on %s %s.", name, by));
+        Logger.message(String.format("Clicking on %s %s.", name, by.getLocator()));
         driver.click(by.getLocator());
         return this;
     }
 
     public EggplantElement doubleClick() {
         waitForPresent();
-        Logger.message(String.format("Double-clicking on %s %s.",name,  by));
+        Logger.message(String.format("Double-clicking on %s %s.",name,  by.getLocator()));
         sleep(Config.clickExecuteDelay);
         driver.doubleTap(by.getLocator());
         sleep(1000);
@@ -57,7 +57,7 @@ public class EggplantElement {
 
     public EggplantElement press() {
         waitForPresent();
-        Logger.message(String.format("Performing click+hold on %s %s.", name, by));
+        Logger.message(String.format("Performing click+hold on %s %s.", name, by.getLocator()));
         driver.press(by.getLocator());
         sleep(1000);
         return this;
@@ -76,12 +76,12 @@ public class EggplantElement {
 
     // Hard verification failures - Test will halt
     public EggplantElement waitForPresent() {
-        return waitForPresent(Config.elementWaitTimeMs);
+        return waitForPresent(Config.elementWaitTimeSec);
     }
 
     public EggplantElement waitForPresent(int secs) {
 
-        Logger.message(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
+        Logger.message(String.format("Waiting for %s to be present within %d ms.", by.getLocator(), secs));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
@@ -131,11 +131,11 @@ public class EggplantElement {
     }
 
     public EggplantElement waitForNotPresent() {
-        return waitForNotPresent(Config.elementWaitTimeMs);
+        return waitForNotPresent(Config.elementWaitTimeSec);
     }
 
     public EggplantElement waitForNotPresent(int millis) {
-        Logger.message(String.format("Waiting for %s %s to not be present for %s seconds.", name, by,millis));
+        Logger.message(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(),millis));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(millis);
         while (now.isBefore(endTime) && !Thread.interrupted()) {

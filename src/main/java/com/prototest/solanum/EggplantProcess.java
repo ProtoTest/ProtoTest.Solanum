@@ -29,11 +29,8 @@ class EggplantProcess {
 
     void stop() {
         try {
-            if (eggplantDrive != null) {
                 eggplantDrive.destroy();
                 eggplantDrive.waitFor();
-                eggplantDrive = null;
-            }
         } catch (InterruptedException e) {
             Logger.error("Exception caught stopping eggplant : " + e.getMessage());
             kill();
@@ -52,14 +49,15 @@ class EggplantProcess {
         } catch (IOException e) {
             Logger.error("Exception caught killing eggplant : " + e.getMessage());
         }
-        eggplantDrive = null;
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+
+        }
 
     }
 
     void start() {
-        if (eggplantDrive != null) {
-            return;
-        }
         String line;
         try {
 
@@ -69,7 +67,10 @@ class EggplantProcess {
             BufferedReader input = new BufferedReader
                     (new InputStreamReader(eggplantDrive.getInputStream()));
             while ((line = input.readLine()) != null) {
-                //Logger.message(line);
+                Logger.message(line);
+                if(line.contains("Maximum Users")){
+                    Assert.fail("The maximum number of simultaneous users has been exceeded for your eggPlant license.");
+                }
                 if (line.contains("No valid License")) {
                     Assert.fail("No valid eggplant license was found.  Please launch the eggplant GUI, add a license, and try again.");
                 }

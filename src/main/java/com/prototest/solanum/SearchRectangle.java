@@ -8,15 +8,11 @@ import java.awt.*;
  * Created by Brian on 5/12/2014.
  */
 public class SearchRectangle {
-    public Rectangle searchRectangle = null;
+    public Rectangle searchRectangle;
     public Point upperLeft;
     public Point lowerRight;
     public int width;
     public int height;
-    public static String xPoint;
-    public static String yPoint;
-    public static SearchRectangle fullScreen;
-
 
     public SearchRectangle(Rectangle rectangle)
     {
@@ -25,7 +21,6 @@ public class SearchRectangle {
         this.width = upperLeft.x - lowerRight.y;
         this.height = upperLeft.x - lowerRight.y;
         this.lowerRight = new Point(upperLeft.x+width,upperLeft.y+height);
-        //this.fullScreen = EggplantTestBase.driver.getScreenRectangle();
     }
 
     public SearchRectangle(Point upperLeft, Point lowerRight)
@@ -35,32 +30,37 @@ public class SearchRectangle {
         this.width = Math.abs(upperLeft.x - lowerRight.x);
         this.height = Math.abs(upperLeft.y - lowerRight.y);
         this.searchRectangle = new Rectangle(upperLeft.x,upperLeft.y,this.width,this.height);
-        //this.fullScreen = EggplantTestBase.driver.getScreenRectangle();
+
     }
 
     public static SearchRectangle topHalf()
     {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
         return new SearchRectangle(new Point(0,0),new Point(fullScreen.width,fullScreen.height/2));
     }
 
     public static SearchRectangle bottomHalf()
     {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
         return new SearchRectangle(new Point(0, fullScreen.height/2), new Point(fullScreen.width, fullScreen.height));
     }
 
     public static SearchRectangle middleHalf()
     {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
             int value = (int) Math.floor(fullScreen.height*.25);
             return new SearchRectangle(new Point(0, value), new Point(fullScreen.width, (int)Math.floor(fullScreen.height * .75)));
     }
 
     public static SearchRectangle topQuarter()
     {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
        return new SearchRectangle(new Point(0, 0), new Point(fullScreen.width, fullScreen.height / 4));
     }
 
     public static SearchRectangle bottomQuarter()
     {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
         int value = (int) Math.floor(fullScreen.height*.75);
         return new SearchRectangle(new Point(0, value), new Point(fullScreen.width, fullScreen.height));
 

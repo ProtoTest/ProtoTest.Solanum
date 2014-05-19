@@ -14,6 +14,7 @@ public class SearchOptions {
     public String collectionFilter;
     public Rectangle clipRectangle;
     public SearchRectangle searchRectangle;
+    public Integer waitFor;
 
     public String textStyle;
     public Boolean caseSensitive;
@@ -47,11 +48,15 @@ public class SearchOptions {
             result+= String.format(", CollectionFilter: (Name: \"%s\")",collectionFilter);
         }
 
-        if(clipRectangle==null){
+        if(clipRectangle!=null){
             result+= String.format(", ClipRectangle: (%s,%s,%s,%s)",clipRectangle.getX(),clipRectangle.getY(),clipRectangle.getX()+clipRectangle.getWidth(),clipRectangle.getY()+clipRectangle.getHeight());
         }
-        if(collectionFilter==null){
+        if(searchRectangle!=null){
             result+= String.format(",SearchRectangle: (%s,%s,%s,%s)",searchRectangle.upperLeft.x,searchRectangle.upperLeft.y,searchRectangle.lowerRight.x,searchRectangle.lowerRight.y);
+        }
+
+        if(waitFor!=null){
+            result+= String.format(",WaitFor: %s", waitFor);
         }
         return result;
     }
@@ -65,8 +70,8 @@ public class SearchOptions {
         if(caseSensitive!=null){
             result+= String.format(", CaseSensitive: %s",caseSensitive);
         }
-        if(contrast!=null){
-            result+= String.format(", Contrast: %s",contrast);
+        if(contrast==true){
+            result+= String.format(", Contrast: \"%s\"","On");
         }
         if(contrastColor!=null){
             result+= String.format(", ContrastColor: \"%s\"",contrastColor);
@@ -89,11 +94,14 @@ public class SearchOptions {
         if(validCharacters!=null){
             result+= String.format(", ValidCharacters: \"%s\"",ignoreSpaces);
         }
+        if(searchRectangle!=null){
+            result+= String.format(",SearchRectangle: (%s,%s,%s,%s)",searchRectangle.upperLeft.x,searchRectangle.upperLeft.y,searchRectangle.lowerRight.x,searchRectangle.lowerRight.y);
+        }
         return result;
     }
     public SearchOptions(SearchRectangle searchRectangle){
         this.searchRectangle = searchRectangle;
     }
-
+    public SearchOptions(){}
 
 }

@@ -11,13 +11,15 @@ import org.testng.annotations.*;
 public class EggplantTestBase {
     public final static EggplantDriver driver = new EggplantDriver();
     private EggplantProcess eggplantProcess = new EggplantProcess();
+
     @BeforeTest
     public void testSetup(){
 
     }
     @AfterTest
     public void testTeardown(ITestResult result){
-//        if(!result.isSuccess()){
+
+        if(!result.isSuccess())
             Logger.screenshot();
 
 
@@ -25,15 +27,14 @@ public class EggplantTestBase {
     @AfterClass
     public void fixtureTearDown(){
         driver.endSuite();
-        eggplantProcess.stop();
-
     }
 
     @BeforeClass
     public void fixtureSetUp(){
-        eggplantProcess.start();
-        driver.startSuite(Config.suitePath);
+
+        startEggplant();
         setEggplantDefaultSettings();
+        driver.connect();
     }
 
     public void setEggplantDefaultSettings()
@@ -42,5 +43,15 @@ public class EggplantTestBase {
         driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
     }
 
+    private void startEggplant(){
+        try {
+            driver.startSuite(Config.suitePath);
+        } catch (Exception e) {
+            Logger.message(e.getMessage());
+            eggplantProcess.start();
+            driver.startSuite(Config.suitePath);
+            Logger.message("Eggplant drive started with options : " + driver.getOptions());
+        }
 
+    }
 }

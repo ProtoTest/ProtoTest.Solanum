@@ -5,6 +5,8 @@ package com.prototest.solanum;
  */
 public class By {
     private String locator;
+    private ImageOption imageOption;
+    private TextOption textOption;
     public By(String locator){
       this.locator = locator;
     }

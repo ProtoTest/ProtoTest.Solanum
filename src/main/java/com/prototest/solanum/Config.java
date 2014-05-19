@@ -20,7 +20,7 @@ public class Config {
     public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "2");
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands",true);
     public static int commandDelayMs = getPropertyValue("commandDelayMs",1000);
-    public static int elementWaitTimeMs = getPropertyValue("elementWaitTimeMs",5000);
+    public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec",5);
     // TODO does clickExecuteDelay duplicate the intention of any of these other settings?
     // TODO Yes it does it duplicates commandDelayMs
     public static int clickExecuteDelay = getPropertyValue("clickExecuteDelay", 1000);
@@ -28,6 +28,7 @@ public class Config {
     public static int hostPort = getPropertyValue("hostPort", 5900);
     public static int imageSearchTime = getPropertyValue("imageSearchTime",1);
     public static int imageSearchCount = getPropertyValue("imageSearchCount",1);
+    public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
 
     private static int getPropertyValue(String key,int defaultValue){
         String result = (properties.getProperty(key));
