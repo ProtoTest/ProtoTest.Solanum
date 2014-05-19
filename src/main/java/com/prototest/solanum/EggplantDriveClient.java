@@ -19,7 +19,7 @@ class EggplantDriveClient {
         try {
             config.setServerURL(new URL("http://127.0.0.1:5400"));
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to start XmlRpc client", e);
         }
         client  = new XmlRpcClient();
         client.setConfig(config);

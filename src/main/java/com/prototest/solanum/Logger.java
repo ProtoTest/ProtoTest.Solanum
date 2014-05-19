@@ -3,7 +3,7 @@ package com.prototest.solanum;
 import org.testng.Reporter;
 
 /**
- * Created by Brian on 5/12/2014.
+ * Actual documentation, seriously.
  */
 public class Logger {
 
@@ -29,7 +29,7 @@ public class Logger {
     }
 
     public static void screenshot(){
-        String newScreenshot = EggplantTestBase.driver.getScreenshot();
+        String newScreenshot = EggplantTestBase.DRIVER.getScreenshot();
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot));
     }
