@@ -1,0 +1,20 @@
+﻿//DishAnywhere menus
+
+WaitFor 8.0, (Text:"Guide", SearchRectangle:((1,1750),(1079,1925)))
+WaitFor 8.0, (Text:"My DVR", SearchRectangle:((1,1750),(1079,1925)))
+WaitFor 8.0, (Text:"On Demand", SearchRectangle:((1,1750),(1079,1925)))
+WaitFor 8.0, (Text:"My Transfers", SearchRectangle:((1,1750),(1079,1925)))
+WaitFor 8.0, (Text:"Settings", SearchRectangle:((1,1750),(1079,1925)))
+
+//DishAnywhere Settings Options
+
+WaitFor 8.0, (Text:"Parental Controls")
+
+Click "AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/EnterPasscode/PasscodeButton1"
+wait 1
+Click "AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/EnterPasscode/PasscodeButton1"
+wait 1
+Click "AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/EnterPasscode/PasscodeButton1"
+wait 1
+Click "AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/EnterPasscode/PasscodeButton1"
+

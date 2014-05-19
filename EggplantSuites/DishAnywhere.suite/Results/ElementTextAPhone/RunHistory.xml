@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="ElementTextAPhone">
+ <run>
+  <RunDate>2014-05-19 12:35:06.093 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>7.575000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140519_123506.093/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>

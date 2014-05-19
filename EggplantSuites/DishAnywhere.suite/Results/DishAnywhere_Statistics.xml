@@ -1,3 +1,11 @@
 ﻿<?xml version="1.0"?>
 <statistics>
+ <script name="ElementTextAPhone">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2014-05-19 12:35:06 -0600</FirstRun>
+  <LastRun>2014-05-19 12:35:06 -0600</LastRun>
+  <TotalTimeOnSuccess>7.575000</TotalTimeOnSuccess>
+ </script>
 </statistics>
