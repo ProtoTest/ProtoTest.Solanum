@@ -1,0 +1,50 @@
+﻿Click (Text:"TASK1")
+Click (Text:"TASK1", SearchRectangle:((10,25),(470,225)))
+
+
+WaitFor 8.0, (Text:"Showcase")
+WaitFor 8.0, (Text:"Musica Campesina")
+
+//Find MenuBar Options
+WaitFor 8.0, (Text:"Showcase", Text:"Parental Controls", SearchRectangle:((10,100),(250,600))))
+WaitFor 8.0, (Text:"Guide", SearchRectangle:((200,650),(1100,775)))
+WaitFor 8.0, (Text:"My DVR", SearchRectangle:((200,650),(1100,775)))
+WaitFor 8.0, (Text:"On Demand", SearchRectangle:((200,650),(1100,775)))
+WaitFor 8.0, (Text:"My Transfers", SearchRectangle:((200,650),(1100,775)))
+WaitFor 8.0, (Text:"BlockBuster", SearchRectangle:((200,650),(1100,775)))
+WaitFor 8.0, (Text:"Settings", SearchRectangle:((200,650),(1100,775)))
+
+//Click MenuBar Options
+Click (Text:"Showcase", SearchRectangle:((200,650),(1100,775)))
+Click (Text:"Guide", SearchRectangle:((200,650),(1100,775)))
+Click (Text:"My DVR", SearchRectangle:((200,650),(1100,775)))
+Click (Text:"On Demand", SearchRectangle:((200,650),(1100,775)))
+Click (Text:"My Transfers", SearchRectangle:((200,650),(1100,775)))
+Click (Text:"BlockBuster", SearchRectangle:((200,650),(1100,775)))
+Click (Text:"Settings", SearchRectangle:((200,650),(1100,775)))
+
+
+//Featured OnDemand Movies
+WaitFor 8.0, (Text:"Musica Campesina", SearchRectangle:((10,450),(1260,635)))
+Click (Text:"Musica Campesina", SearchRectangle:((10,450),(1260,635)))
+
+//Settings_Parental Controls
+WaitFor 8.0, (Text:"Parental Controls", SearchRectangle:((10,100),(250,600)))
+Click (Text:"Parental Controls", SearchRectangle:((10,100),(250,600)))
+
+Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/SearchField/SearchShowcaseBox")
+
+WaitFor 8.0, (Text:"1")
+WaitFor 8.0, (Text:"1", SearchRectangle:((480,150),(800,600)))
+
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
+
+WaitFor 8.0, (Text:"Watch on Mobile", SearchRectangle:((250,200),(1030,550)))
+
+
+
+
+
