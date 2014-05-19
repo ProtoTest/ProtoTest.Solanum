@@ -16,8 +16,8 @@ public class Config {
     public static String runScriptPath = getPropertyValue("runScriptPath","C:\\Program Files (x86)\\eggPlant\\runscript.bat");
     public static String currentPath = System.getProperty("user.dir");
     public static String suitePath = getPropertyValue("suitePath", "");
-    public static int drivePort = getPropertyValue("drivePort",5400);
-    public static int driveLoggingLevel = getPropertyValue("driveLoggingLevel", 2);
+    public static String drivePort = getPropertyValue("drivePort","5400");
+    public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "2");
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands",true);
     public static int commandDelayMs = getPropertyValue("commandDelayMs",1000);
     public static int elementWaitTimeMs = getPropertyValue("elementWaitTimeMs",5000);

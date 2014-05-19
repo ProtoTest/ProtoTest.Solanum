@@ -10,7 +10,8 @@ public class SimpleTest extends EggplantTestBase {
 
     @Test(groups = { "fast" })
     public void aFastTest() {
-            driver.connect("10.10.1.13");
+        EggplantDriver driver = new EggplantDriver();
+        driver.connect("10.10.1.13");
     }
 
     @Test(groups = { "slow" })

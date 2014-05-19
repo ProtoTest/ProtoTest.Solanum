@@ -11,7 +11,8 @@ import java.io.InputStreamReader;
  */
 class EggplantProcess {
     private Process eggplantDrive;
-    private String command;
+    private ProcessBuilder command;
+    private Thread processLogger;
 
     EggplantProcess() {
         String runScriptPath = Config.runScriptPath;
@@ -21,8 +22,8 @@ class EggplantProcess {
         } else {
             runScriptPath = runScriptPath.replace(" ", "\\ ");
         }
-        this.command =
-                String.format("%s -driveport %s -drivelogging %s", runScriptPath, Config.drivePort, Config.driveLoggingLevel);
+        this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
+        this.command.redirectErrorStream(true);
     }
 
     void stop() {
@@ -60,8 +61,9 @@ class EggplantProcess {
         }
         String line;
         try {
-            Logger.message("Executing command : " + command);
-            eggplantDrive = Runtime.getRuntime().exec(command);
+
+            Logger.message("Executing command : " + String.join(" ", command.command()));
+            eggplantDrive = command.start();
 
             BufferedReader input = new BufferedReader
                     (new InputStreamReader(eggplantDrive.getInputStream()));
@@ -71,12 +73,44 @@ class EggplantProcess {
                     Assert.fail("No valid eggplant license was found.  Please launch the eggplant GUI, add a license, and try again.");
                 }
                 if (line.contains("Starting eggPlant Drive")) {
-                    break;
+                    input.close();
+                    Logger.message("eggPlant Drive started on port " + Config.drivePort);
+                    processLogger = new Thread(new ProcessLogger(eggplantDrive));
+                    processLogger.start();
+                    return;
                 }
             }
+            Logger.error("eggPlant Drive did not start.");
             input.close();
         } catch (IOException e) {
             Logger.error("Exception caught starting eggplant : " + e.getMessage());
+        }
+        throw new RuntimeException("Failed to start eggPlant Drive.");
+    }
+
+    private class ProcessLogger implements Runnable {
+
+        private final BufferedReader input;
+
+        public ProcessLogger(Process process) {
+            this.input = new BufferedReader
+                    (new InputStreamReader(eggplantDrive.getInputStream()));
+        }
+
+        @Override
+        public void run() {
+            String line;
+            try {
+                while ((line = input.readLine()) != null) {
+                    Logger.message(line);
+                }
+            } catch (IOException e) {
+            } finally {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                }
+            }
         }
     }
 
