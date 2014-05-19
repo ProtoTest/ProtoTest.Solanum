@@ -41,4 +41,5 @@ public class By {
     public String getLocator() {
         return locator;
     }
+
 }

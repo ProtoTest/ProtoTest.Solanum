@@ -40,7 +40,9 @@ class EggplantDriveClient {
            Object result = client.execute("execute",params);
             return result;
         } catch (XmlRpcException e) {
-           Assert.fail(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
+            throw new RuntimeException(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
+        }catch (Exception f) {
+            Logger.error(String.format("ERROR Executing '%s' : %s", command, f.getMessage()));
         }
         return null;
     }
@@ -49,7 +51,8 @@ class EggplantDriveClient {
         try {
             Object result = client.execute("EndSession",params);
         } catch (XmlRpcException e) {
-            Assert.fail("Error Ending Session : " + e.getMessage());
+            Logger.error("Error Ending Session : " + e.getMessage());
+           throw new RuntimeException("Error Ending Session : " + e.getMessage());
         }
     }
 
@@ -58,7 +61,9 @@ class EggplantDriveClient {
         try {
            Object result = client.execute("StartSession",params);
         } catch (XmlRpcException e) {
-            Assert.fail("ERROR starting session : " + suite + " " + e.getMessage());
+            Logger.error("ERROR starting session : " + suite + " " + e.getMessage());
+            throw new RuntimeException("ERROR starting session : " + suite + " " + e.getMessage());
+
         }
     }
 }

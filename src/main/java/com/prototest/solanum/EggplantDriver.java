@@ -65,37 +65,37 @@ public class EggplantDriver {
 
     public void click(String locator)
     {
-        execute(String.format("Click ", locator));
+        execute(String.format("Click %s", locator));
     }
 
     public void tap(String locator)
     {
-        execute(String.format("Tap ", locator));
+        execute(String.format("Tap %s", locator));
     }
 
     public void doubleTap(String locator)
     {
-        execute(String.format("DoubleTap", locator));
+        execute(String.format("DoubleTap %s", locator));
     }
 
     public void press(String locator)
     {
-        execute(String.format("Press", locator));
+        execute(String.format("Press %s", locator));
     }
 
     public void release(String locator)
     {
-        execute(String.format("Release", locator));
+        execute(String.format("Release %s", locator));
     }
 
     public void drag(String locator)
     {
-        execute(String.format("Drag", locator));
+        execute(String.format("Drag %s", locator));
     }
 
     public void drop(String locator)
     {
-        execute(String.format("Drop", locator));
+        execute(String.format("Drop %s", locator));
     }
 
     public void dragAndDrop(String fromlocator, String tolocator)

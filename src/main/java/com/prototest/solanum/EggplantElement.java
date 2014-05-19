@@ -3,13 +3,11 @@ package com.prototest.solanum;
 import org.joda.time.LocalTime;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.Date;
-
 
 public class EggplantElement {
     private By by;
     private String name;
-    private EggplantDriver driver = EggplantTestBase.DRIVER;
+    private EggplantDriver driver = EggplantTestBase.driver;
 
 
     public EggplantElement(By by) {

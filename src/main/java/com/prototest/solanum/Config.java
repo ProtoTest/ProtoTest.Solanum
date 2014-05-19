@@ -22,7 +22,11 @@ public class Config {
     public static int commandDelayMs = getPropertyValue("commandDelayMs",1000);
     public static int elementWaitTimeMs = getPropertyValue("elementWaitTimeMs",5000);
     // TODO does clickExecuteDelay duplicate the intention of any of these other settings?
+    // TODO Yes it does it duplicates commandDelayMs
     public static int clickExecuteDelay = getPropertyValue("clickExecuteDelay", 1000);
+    public static String hostName = getPropertyValue("hostName", "localhost");
+    public static int hostPort = getPropertyValue("hostPort", 5900);
+
 
     private static int getPropertyValue(String key,int defaultValue){
         String result = (properties.getProperty(key));

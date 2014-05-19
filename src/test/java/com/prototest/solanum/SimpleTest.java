@@ -8,13 +8,12 @@ public class SimpleTest extends EggplantTestBase {
         // code that will be invoked when this test is instantiated
     }
 
-    @Test(groups = { "fast" })
+    @Test(groups = { "DeviceNeeded" })
     public void aFastTest() {
-            driver.connect("10.10.1.13");
+            driver.connect(Config.hostName, Config.hostPort);
+            driver.click(By.Text("Email").getLocator());
+            driver.click(By.Text("Test").getLocator());
     }
 
-    @Test(groups = { "slow" })
-    public void aSlowTest() { Logger.message("Suite is : " + Config.suitePath);
-    }
 
 }
