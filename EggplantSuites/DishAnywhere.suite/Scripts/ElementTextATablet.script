@@ -1,10 +1,4 @@
-﻿Click (Text:"TASK1")
-Click (Text:"TASK1", SearchRectangle:((10,25),(470,225)))
-
-
-WaitFor 8.0, (Text:"Showcase")
-WaitFor 8.0, (Text:"Musica Campesina")
-
+﻿
 //Find MenuBar Options
 WaitFor 8.0, (Text:"Showcase", Text:"Parental Controls", SearchRectangle:((10,100),(250,600))))
 WaitFor 8.0, (Text:"Guide", SearchRectangle:((200,650),(1100,775)))
@@ -23,26 +17,127 @@ Click (Text:"My Transfers", SearchRectangle:((200,650),(1100,775)))
 Click (Text:"BlockBuster", SearchRectangle:((200,650),(1100,775)))
 Click (Text:"Settings", SearchRectangle:((200,650),(1100,775)))
 
-
 //Featured OnDemand Movies
-WaitFor 8.0, (Text:"Musica Campesina", SearchRectangle:((10,450),(1260,635)))
-Click (Text:"Musica Campesina", SearchRectangle:((10,450),(1260,635)))
+WaitFor 8.0, (Text:"2 Guns", SearchRectangle:((10,450),(1260,635)))
+Click (Text:"2 Guns", SearchRectangle:((10,450),(1260,635)))
+
+WaitFor 8.0, (Text:"View All", SearchRectangle:((10,450),(1260,635)))
+Click (Text:"View All", SearchRectangle:((10,450),(1260,635)))
+
+//OnDemand Details Page
+WaitFor 8.0, (Text:"Featured", SearchRectangle:((380,50),(900,100)))
+Click (Text:"Featured", SearchRectangle:((380,50),(900,100)))
+
+WaitFor 8.0, (Text:"Movies", SearchRectangle:((380,50),(900,100)))
+Click (Text:"Movies", SearchRectangle:((380,50),(900,100)))
+
+WaitFor 8.0, (Text:"TV Shows", SearchRectangle:((380,50),(900,100)))
+Click (Text:"TV Shows", SearchRectangle:((380,50),(900,100)))
+
+WaitFor 8.0, (Text:"Family", SearchRectangle:((380,50),(900,100)))
+Click (Text:"Family", SearchRectangle:((380,50),(900,100)))
+
+WaitFor 8.0, (Text:"Latino", SearchRectangle:((380,50),(900,100)))
+Click (Text:"Latino", SearchRectangle:((380,50),(900,100)))
+
+WaitFor 8.0, (Text:"Networks", SearchRectangle:((380,50),(900,100)))
+Click (Text:"Networks", SearchRectangle:((380,50),(900,100)))
+
+Click(Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/Featured_OnDemand")
+Click(Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/Movies_OnDemand")
+Click(Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/TVShows_OnDemand")
+Click(Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/Family_OnDemand")
+Click(Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/Latino_OnDemand")
+Click(Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/Networks_OnDemand")
+
+Click(Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/RefreshButton")
+
+
 
 //Settings_Parental Controls
 WaitFor 8.0, (Text:"Parental Controls", SearchRectangle:((10,100),(250,600)))
 Click (Text:"Parental Controls", SearchRectangle:((10,100),(250,600)))
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ParentalControlsTab")
 
-Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/SearchField/SearchShowcaseBox")
+WaitFor 8.0, (Text:"Save", SearchRectangle:((700,500),(1000,700)))
+Click (Text:"Save", SearchRectangle:((700,500),(1000,700)))
 
+WaitFor 8.0, (Text:"Change Passcode", SearchRectangle:((700,500),(1000,700)))
+Click (Text:"Change Passcode", SearchRectangle:((700,500),(1000,700)))
+
+WaitFor 8.0, (Text:"Choose Security Question", SearchRectangle:((700,500),(1000,700)))
+Click (Text:"Choose Security Question", SearchRectangle:((700,500),(1000,700)))
+
+WaitFor 8.0, (Text:"TV-Y", SearchRectangle:((450,150),(840,500)))
+Click (Text:"TV-Y", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"TV-Y7", SearchRectangle:((450,150),(840,500)))
+Click (Text:"TV-Y7", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"TV-Y7FV", SearchRectangle:((450,150),(840,500)))
+Click (Text:"TV-Y7FV", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"TV-G", SearchRectangle:((450,150),(840,500)))
+Click (Text:"TV-G", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"TV-PG", SearchRectangle:((450,150),(840,500)))
+Click (Text:"TV-PG", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"TV-14", SearchRectangle:((450,150),(840,500)))
+Click (Text:"TV-14", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"TV-MA", SearchRectangle:((450,150),(840,500)))
+Click (Text:"TV-MA", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"Unrated", SearchRectangle:((450,150),(840,500)))
+Click (Text:"Unrated", SearchRectangle:((450,150),(840,500)))
+
+WaitFor 8.0, (Text:"G", SearchRectangle:((865,150),(1260,500)))
+Click (Text:"G", SearchRectangle:((865,150),(1260,500)))
+
+WaitFor 8.0, (Text:"PG", SearchRectangle:((865,150),(1260,500)))
+Click (Text:"PG", SearchRectangle:((865,150),(1260,500)))
+
+WaitFor 8.0, (Text:"PG-13", SearchRectangle:((865,150),(1260,500)))
+Click (Text:"PG-13", SearchRectangle:((865,150),(1260,500)))
+
+WaitFor 8.0, (Text:"R", SearchRectangle:((865,150),(1260,500)))
+Click (Text:"R", SearchRectangle:((865,150),(1260,500)))
+
+WaitFor 8.0, (Text:"NC-17", SearchRectangle:((865,150),(1260,500)))
+Click (Text:"NC-17", SearchRectangle:((865,150),(1260,500)))
+
+WaitFor 8.0, (Text:"NR/AO", SearchRectangle:((865,150),(1260,500)))
+Click (Text:"NR/AO", SearchRectangle:((865,150),(1260,500)))
+
+WaitFor 8.0, (Text:"Unrated", SearchRectangle:((865,150),(1260,500)))
+Click (Text:"Unrated", SearchRectangle:((865,150),(1260,500)))
+
+
+//OnDemand Passcode
 WaitFor 8.0, (Text:"1")
 WaitFor 8.0, (Text:"1", SearchRectangle:((480,150),(800,600)))
 
-Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
-Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
-Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
-Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Passcode/Passcode_1")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Passcode/Passcode_1")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Passcode/Passcode_1")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Passcode/Passcode_1")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Passcode/Passcode_1")
 
+//Movie Details Dialog
 WaitFor 8.0, (Text:"Watch on Mobile", SearchRectangle:((250,200),(1030,550)))
+Click (Text:"Watch on Mobile", SearchRectangle:((250,200),(1030,550)))
+
+WaitFor 8.0, (Text:"Resume on Mobile", SearchRectangle:((250,200),(1030,550)))
+Click (Text:"Resume on Mobile", SearchRectangle:((250,200),(1030,550)))
+
+Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/CloseButton")
+Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/SocialMediaButton")
+
+WaitFor 8.0, (Text:"CHANNEL", SearchRectangle:((250,200),(1030,550)))
+WaitFor 8.0, (Text:"AIR DATE", SearchRectangle:((250,200),(1030,550)))
+WaitFor 8.0, (Text:"RATING", SearchRectangle:((250,200),(1030,550)))
+
+
 
 
 
