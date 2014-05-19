@@ -12,10 +12,7 @@ public class SimpleTest extends EggplantTestBase {
 
     @Test(groups = { "DeviceNeeded" })
     public void aFastTest() {
-        SearchOptions options = new SearchOptions();
-        //options.searchRectangle = SearchRectangle.bottomQuarter();
-        options.contrast=true;
-        EggplantElement element = new EggplantElement("EmailIcon",By.Text("Email",options));
+        EggplantElement element = new EggplantElement("EmailIcon",By.Text("Email",TextOption.contrast(true),TextOption.contrastColor("AutoDetect"),TextOption.searchRectangle(SearchRectangle.bottomQuarter())));
         element.click();
 
     }

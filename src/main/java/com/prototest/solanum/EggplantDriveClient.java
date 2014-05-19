@@ -64,8 +64,16 @@ class EggplantDriveClient {
         try {
            Object result = client.execute("StartSession",params);
         } catch (XmlRpcException e) {
-            Logger.error("ERROR starting session : " + suite + " " + e.getMessage());
-            throw new RuntimeException("ERROR starting session : " + suite + " " + e.getMessage());
+            if(e.getMessage().contains("Session in progress")){
+                endSession();
+                try {
+                    Object result = client.execute("StartSession",params);
+                } catch (XmlRpcException e1) {
+                    Logger.error("ERROR starting session : " + suite + " " + e.getMessage());
+                    throw new RuntimeException("ERROR starting session : " + suite + " " + e.getMessage());
+                }
+            }
+
 
         }
     }

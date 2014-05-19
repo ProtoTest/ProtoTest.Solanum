@@ -5,12 +5,14 @@ package com.prototest.solanum;
  */
 public class By {
     private String locator;
-    private ImageOption imageOption;
-    private TextOption textOption;
+
+    public String getLocator() {
+        return locator;
+    }
+
     public By(String locator){
       this.locator = locator;
     }
-
 
     public static By Image(String path)
     {
@@ -18,10 +20,24 @@ public class By {
         return new By(locatorString);
     }
 
-    public static By Image(String path, SearchOptions options)
+    public static By Image(String path, ImageOption... options)
     {
         String locatorString = String.format("(image: \"%s\"", path);
-        locatorString += options.getImageString();
+        for(ImageOption option : options){
+            locatorString += ", " + option.getText();
+        }
+        locatorString += ")";
+        return new By(locatorString);
+    }
+
+    public static By Image(String path, SearchRectangle searchRectangle, ImageOption... options)
+    {
+        String locatorString = String.format("(image: \"%s\"", path);
+        ImageOption rectangleOption = ImageOption.searchRectangle(searchRectangle);
+        locatorString += ", " + rectangleOption.getText();
+        for(ImageOption option : options){
+            locatorString += ", " + option.getText();
+        }
         locatorString += ")";
         return new By(locatorString);
     }
@@ -32,16 +48,26 @@ public class By {
         return new By(locatorString);
     }
 
-    public static By Text(String text, SearchOptions options)
-    {
+    public static By Text(String text, TextOption... options)
+        {
         String locatorString = String.format("(text: \"%s\"", text);
-        locatorString += options.getTextString();
+            for(TextOption option : options){
+                locatorString += ", " + option.getText();
+            }
         locatorString += ")";
         return new By(locatorString);
     }
 
-    public String getLocator() {
-        return locator;
+    public static By Text(String text, SearchRectangle searchRectangle, TextOption... options)
+    {
+        String locatorString = String.format("(text: \"%s\"", text);
+        TextOption rectangleOption = TextOption.searchRectangle(searchRectangle);
+        locatorString += ", " + rectangleOption.getText();
+        for(TextOption option : options){
+            locatorString += ", " + option.getText();
+        }
+        locatorString += ")";
+        return new By(locatorString);
     }
 
 }
