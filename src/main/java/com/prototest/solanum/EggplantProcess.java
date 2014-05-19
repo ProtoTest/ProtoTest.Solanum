@@ -1,5 +1,6 @@
 package com.prototest.solanum;
 
+import com.google.common.base.Joiner;
 import junit.framework.Assert;
 
 import java.io.BufferedReader;
@@ -62,7 +63,7 @@ class EggplantProcess {
         String line;
         try {
 
-            Logger.message("Executing command : " + String.join(" ", command.command()));
+            Logger.message("Executing command : " + Joiner.on(' ').join(command.command()));
             eggplantDrive = command.start();
 
             BufferedReader input = new BufferedReader
