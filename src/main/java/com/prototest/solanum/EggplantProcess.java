@@ -23,7 +23,7 @@ class EggplantProcess {
         } else {
             runScriptPath = runScriptPath.replace(" ", "\\ ");
         }
-        this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
+        this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-driveLogging", Config.driveLoggingLevel);
         this.command.redirectErrorStream(true);
     }
 
@@ -69,7 +69,7 @@ class EggplantProcess {
             BufferedReader input = new BufferedReader
                     (new InputStreamReader(eggplantDrive.getInputStream()));
             while ((line = input.readLine()) != null) {
-                Logger.message(line);
+                //Logger.message(line);
                 if (line.contains("No valid License")) {
                     Assert.fail("No valid eggplant license was found.  Please launch the eggplant GUI, add a license, and try again.");
                 }
@@ -103,7 +103,7 @@ class EggplantProcess {
             String line;
             try {
                 while ((line = input.readLine()) != null) {
-                    Logger.message(line);
+                    //Logger.message(line);
                 }
             } catch (IOException e) {
             } finally {

@@ -8,11 +8,11 @@ public class SimpleTest extends EggplantTestBase {
         // code that will be invoked when this test is instantiated
     }
 
+    EggplantElement emailButton = new EggplantElement("emailButton",By.Text("Email",new SearchOptions(SearchRectangle.bottomQuarter())));
     @Test(groups = { "DeviceNeeded" })
     public void aFastTest() {
             driver.connect(Config.hostName, Config.hostPort);
-            driver.click(By.Text("Email").getLocator());
-            driver.click(By.Text("Test").getLocator());
+            emailButton.click();
     }
 
 

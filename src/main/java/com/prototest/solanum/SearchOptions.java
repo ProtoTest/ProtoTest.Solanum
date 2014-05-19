@@ -6,8 +6,6 @@ import java.awt.*;
  * Created by Brian on 5/12/2014.
  */
 public class SearchOptions {
-
-    public String imageName;
     public Point hotSpot;
     public String searchType;
     public Integer tolerance;
@@ -15,9 +13,8 @@ public class SearchOptions {
     public Boolean pulsing;
     public String collectionFilter;
     public Rectangle clipRectangle;
-    public Rectangle searchRectangle;
+    public SearchRectangle searchRectangle;
 
-    public String text;
     public String textStyle;
     public Boolean caseSensitive;
     public Boolean contrast;
@@ -54,7 +51,7 @@ public class SearchOptions {
             result+= String.format(", ClipRectangle: (%s,%s,%s,%s)",clipRectangle.getX(),clipRectangle.getY(),clipRectangle.getX()+clipRectangle.getWidth(),clipRectangle.getY()+clipRectangle.getHeight());
         }
         if(collectionFilter==null){
-            result+= String.format(",SearchRectangle: (%s,%s,%s,%s)",searchRectangle.getX(),searchRectangle.getY(),searchRectangle.getX()+searchRectangle.getWidth(),searchRectangle.getY()+searchRectangle.getHeight());
+            result+= String.format(",SearchRectangle: (%s,%s,%s,%s)",searchRectangle.upperLeft.x,searchRectangle.upperLeft.y,searchRectangle.lowerRight.x,searchRectangle.lowerRight.y);
         }
         return result;
     }
@@ -94,12 +91,7 @@ public class SearchOptions {
         }
         return result;
     }
-
-    public SearchOptions(String imageName){
-        this.imageName = imageName;
-    }
-    public SearchOptions(String imageName, Rectangle searchRectangle){
-        this.imageName = imageName;
+    public SearchOptions(SearchRectangle searchRectangle){
         this.searchRectangle = searchRectangle;
     }
 

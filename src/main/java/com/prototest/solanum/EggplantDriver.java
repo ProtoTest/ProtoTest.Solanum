@@ -3,6 +3,7 @@ package com.prototest.solanum;
 import org.apache.xmlrpc.XmlRpcException;
 
 import java.awt.*;
+import java.io.File;
 import java.text.SimpleDateFormat;
 
 /**
@@ -161,9 +162,11 @@ public class EggplantDriver {
         try
         {
             java.util.Date date = new java.util.Date();
-            SimpleDateFormat sdf = new SimpleDateFormat("MMddyyyyhhmmssffff");
+            SimpleDateFormat sdf = new SimpleDateFormat("MMddyyyyhhmmss");
             String timestamp = sdf.format(date);
-            String path = Config.currentPath + "\\Screenshots\\timestamp.png";
+
+            new File(Config.currentPath +"\\Screenshots\\").mkdirs();
+            String path = Config.currentPath + "\\Screenshots\\"+timestamp+".png";
             captureScreenshot(path);
             return path;
         }
