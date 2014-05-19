@@ -29,7 +29,7 @@ public class Logger {
     }
 
     public static void screenshot(){
-        String newScreenshot = EggplantTestBase.DRIVER.getScreenshot();
+        String newScreenshot = EggplantTestBase.driver.getScreenshot();
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot));
     }
