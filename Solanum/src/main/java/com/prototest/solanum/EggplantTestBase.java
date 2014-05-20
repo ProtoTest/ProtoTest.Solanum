@@ -1,10 +1,12 @@
 package com.prototest.solanum;
 
 import org.testng.ITestContext;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.io.InputStream;
+import java.lang.reflect.Method;
 
 /**
  * Created by Brian on 5/12/2014.
@@ -15,7 +17,9 @@ public class EggplantTestBase {
     private static EggplantProcess eggplantProcess = new EggplantProcess();
 
     @BeforeMethod
-    public void testSetup(){
+    public void testSetup(Method method){
+        Config.currentTestName = method.getName();
+        Logger.message("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
     }
     @AfterMethod

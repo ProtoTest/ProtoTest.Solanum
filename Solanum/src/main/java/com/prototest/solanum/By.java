@@ -1,5 +1,7 @@
 package com.prototest.solanum;
 
+import java.awt.*;
+
 /**
  * Created by Brian on 5/12/2014.
  */
@@ -67,6 +69,11 @@ public class By {
             locatorString += ", " + option.getText();
         }
         locatorString += ")";
+        return new By(locatorString);
+    }
+
+    public static By Point(Point point){
+        String locatorString = String.format("(%s,%s)",point.getX(),point.getY());
         return new By(locatorString);
     }
 

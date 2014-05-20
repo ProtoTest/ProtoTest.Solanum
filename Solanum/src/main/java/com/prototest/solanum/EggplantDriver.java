@@ -63,7 +63,7 @@ public class EggplantDriver {
 
     public void endSuite(){
         if(Config.logDriveCommands){
-            Logger.message("Ending Curernt Suite");
+            Logger.message("Ending Current Suite");
         }
         client.endSession();
     }

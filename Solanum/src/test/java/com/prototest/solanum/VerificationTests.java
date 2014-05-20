@@ -14,7 +14,14 @@ public class VerificationTests extends EggplantTestBase{
     public void setupClass(){
         this.driver = new MockDriver();
     }
+    @Override
+    @BeforeTest
+    public void fixtureSetUp(){
 
+        startEggplant();
+        setEggplantDefaultSettings();
+        //driver.connect();
+    }
     @Test
     public void VerifyErrorsAreZero(){
         Assert.assertEquals(0, Verifications.getNumFailures());

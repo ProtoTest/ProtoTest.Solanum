@@ -49,9 +49,7 @@ public class EggplantElement {
     public EggplantElement doubleClick() {
         waitForPresent();
         Logger.message(String.format("Double-clicking on %s %s.",name,  by.getLocator()));
-        sleep(Config.clickExecuteDelay);
         driver.doubleTap(by.getLocator());
-        sleep(1000);
         return this;
     }
 
@@ -59,7 +57,6 @@ public class EggplantElement {
         waitForPresent();
         Logger.message(String.format("Performing click+hold on %s %s.", name, by.getLocator()));
         driver.press(by.getLocator());
-        sleep(1000);
         return this;
     }
 
@@ -68,9 +65,15 @@ public class EggplantElement {
         Logger.message(String.format("Clicking on %s",name));
         click();
         Logger.message(String.format("Typing text:(%s).", text));
-        sleep(2000);
         driver.typeText(text);
-        sleep(2000);
+        return this;
+    }
+
+    public EggplantElement dragTo(EggplantElement element){
+        waitForPresent();
+        Logger.message(String.format("Dragging %s to %s.", name, by.getLocator()));
+        driver.drag(by.getLocator());
+        driver.drop(element.getBy().getLocator());
         return this;
     }
 
@@ -93,41 +96,12 @@ public class EggplantElement {
                 now = new LocalTime();
             }
         }
-        //TestLog.BeginSection("ERROR FOUND");
         Logger.message(String.format("!----ERROR : %s not found: %s.", name, by.getLocator()));
-        //LogSourceImage();
-        //LogFailureImage(string.Format("!----ERROR : Element not found: " + by + "."));
-        //TestLog.End();
         throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
     }
 
     private void logSourceImage() {
         throw new NotImplementedException();
-
-//        if (by.Contains("image"))
-//        {
-//            string nameOfImage = by.Split(':')[1].Trim(' ').Trim(')').Trim('"').Replace("/", "\\");
-//            string pathToImage = Config.SuitePath + "\\Images\\" + nameOfImage;
-//            if (Directory.Exists(pathToImage))
-//            {
-//                TestLog.Failures.WriteLine("Below element collection was not found on device screen - refer to attached screenshot.");
-//                TestLog.Failures.WriteLine("Note: screenshot will not appear if error was within Teardown.");
-//                foreach (var file in Directory.GetFiles(pathToImage, "*.png"))
-//                {
-//                    TestLog.Failures.EmbedImage(null, Image.FromFile(file));
-//                    TestLog.EmbedImage(null, Image.FromFile(file));
-//                }
-//            }
-//            else
-//            {
-//                pathToImage += ".png";
-//                TestLog.Failures.WriteLine("Below element was not found on device screen - refer to attached screenshot.");
-//                TestLog.Failures.WriteLine("Note: screenshot will not appear if error was within Teardown.");
-//                TestLog.Failures.EmbedImage(null, Image.FromFile(pathToImage));
-//                TestLog.EmbedImage(null, Image.FromFile(pathToImage));
-//            }
-//
-//        }
     }
 
     public EggplantElement waitForNotPresent() {
@@ -143,7 +117,6 @@ public class EggplantElement {
                 Logger.message("Element no longer present.");
                 return this;
             } else {
-                sleep(500);
                 now = new LocalTime();
             }
         }
@@ -163,6 +136,13 @@ public class EggplantElement {
     public EggplantElement verifyNotPresent() {
         Logger.message(String.format("Verifying %s %s is not be present.",name, by));
         Verifications.addVerification(String.format("%s %s should be present.",name, by.getLocator()), ! driver.isPresent(by.getLocator()));
+        return this;
+    }
+
+    public EggplantElement verifyText(String value){
+        waitForPresent();
+        Logger.message(String.format("Verifying %s %s text is %s.", name, by.getLocator(),value));
+        Verifications.addVerification(String.format("%s %s should have text %s", name, by.getLocator(),value), getText()==value);
         return this;
     }
 
