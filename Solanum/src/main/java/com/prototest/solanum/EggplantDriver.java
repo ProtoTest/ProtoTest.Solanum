@@ -227,4 +227,13 @@ public class EggplantDriver {
     {
         execute(String.format("set the %s to %s",option,value));
     }
+
+    public boolean isDriveRunning(){
+        try {
+            getOptions();
+            return true;
+        } catch (RuntimeException e) {
+            return false;
+        }
+    }
 }

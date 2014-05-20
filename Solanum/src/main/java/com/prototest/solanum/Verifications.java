@@ -31,14 +31,12 @@ public class Verifications {
          return verifications;
     }
 
+    public static void clearVerifications(){
+        verifications = new LinkedList<Verification>();
+    }
 
     public static void assertVerifications(){
-        int numFailed = 0;
-        for (Verification verification : verifications) {
-            if (!verification.passed) {
-                numFailed++;
-            }
-        }
+        int numFailed = getNumFailures();
         if(numFailed>0){
             Assert.fail("The test failed due to Verification Errors");
         }
@@ -66,6 +64,15 @@ public class Verifications {
         verifications.add(new Verification(message,filePath,false));
     }
 
+    public static int getNumFailures() {
+        int numFailed = 0;
+        for (Verification verification : verifications) {
+            if (!verification.passed) {
+                numFailed++;
+            }
 
+        }
+        return numFailed;
+    }
 }
 

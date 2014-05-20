@@ -169,5 +169,9 @@ public class EggplantElement {
     public String getName() {
         return name;
     }
+
+    public By getBy() {
+        return by;
+    }
 }
 

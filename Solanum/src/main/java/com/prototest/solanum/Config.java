@@ -26,12 +26,12 @@ public class Config {
     public static int clickExecuteDelay = getPropertyValue("clickExecuteDelay", 1000);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
-    public static int imageSearchTime = getPropertyValue("imageSearchTime",1);
-    public static int imageSearchCount = getPropertyValue("imageSearchCount",1);
+    public static String imageSearchTime = getPropertyValue("imageSearchTime","1");
+    public static String imageSearchCount = getPropertyValue("imageSearchCount","1");
     public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
 
     private static int getPropertyValue(String key,int defaultValue){
-        String result = (properties.getProperty(key));
+        String result = getPropertyValue(key,null);
         if(result==null) return defaultValue;
         return Integer.parseInt(result);
     }
@@ -39,6 +39,9 @@ public class Config {
 
     public static String getPropertyValue(String key, String defaultValue) {
         try {
+            File file = new File("config.properties");
+            if(!file.exists())
+                return defaultValue;
             input = new FileInputStream("config.properties");
             properties.load(input);
             String result = properties.getProperty(key, defaultValue);
@@ -52,9 +55,7 @@ public class Config {
     public static boolean getPropertyValue(String key, boolean defaultValue) {
 
         try {
-            input = new FileInputStream("config.properties");
-            properties.load(input);
-            String result = (properties.getProperty(key));
+            String result = getPropertyValue(key,null);
             if(result==null) return defaultValue;
             return isTruthy(result);
         } catch (Exception e) {

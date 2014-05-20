@@ -17,8 +17,8 @@ public class SearchRectangle {
     {
         this.searchRectangle = rectangle;
         this.upperLeft = rectangle.getLocation();
-        this.width = upperLeft.x - lowerRight.y;
-        this.height = upperLeft.x - lowerRight.y;
+        this.width = rectangle.width;
+        this.height = rectangle.height;
         this.lowerRight = new Point(upperLeft.x+width,upperLeft.y+height);
     }
 
