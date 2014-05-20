@@ -60,6 +60,9 @@ class EggplantDriveClient {
     }
 
     void startSession(String suite){
+        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+            suite = suite.replace('/', '\\');
+        }
         Object[] params = new Object[]{suite};
         try {
            Object result = client.execute("StartSession",params);

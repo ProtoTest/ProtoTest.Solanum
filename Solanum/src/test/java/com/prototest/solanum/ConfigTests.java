@@ -10,6 +10,6 @@ public class ConfigTests {
     @Test
     public void TestConfigValue()
     {
-        Assert.assertEquals(Config.suitePath,"C:\\Users\\Brian\\Documents\\GitHub\\ProtoTest.Solanum\\EggplantSuites\\DishAnywhere.suite");
+        Assert.assertEquals(Config.suitePath,"EggplantSuites/DishAnywhere.suite");
     }
 }
