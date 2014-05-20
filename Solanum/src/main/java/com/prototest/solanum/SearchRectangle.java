@@ -1,6 +1,5 @@
 package com.prototest.solanum;
 
-import com.sun.javafx.css.Size;
 
 import java.awt.*;
 
