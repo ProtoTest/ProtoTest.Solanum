@@ -4,6 +4,8 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import java.io.InputStream;
+
 /**
  * Created by Brian on 5/12/2014.
  */
@@ -29,9 +31,8 @@ public class EggplantTestBase {
     }
 
     @BeforeTest
-    public void fixtureSetUp(ITestContext ctx){
-          String outputDir = ctx.getOutputDirectory();
-        Logger.message("Current path : "+ outputDir);
+    public void fixtureSetUp(){
+
         startEggplant();
         setEggplantDefaultSettings();
         driver.connect();
@@ -45,6 +46,7 @@ public class EggplantTestBase {
     }
 
     protected void startEggplant(){
+
        if(driver.isDriveRunning()){
             return;
        }   else {

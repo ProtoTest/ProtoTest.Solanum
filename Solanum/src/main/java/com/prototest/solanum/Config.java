@@ -39,10 +39,7 @@ public class Config {
 
     public static String getPropertyValue(String key, String defaultValue) {
         try {
-            File file = new File("config.properties");
-            if(!file.exists())
-                return defaultValue;
-            input = new FileInputStream("config.properties");
+            InputStream input = ClassLoader.getSystemClassLoader().getResourceAsStream("config.properties");
             properties.load(input);
             String result = properties.getProperty(key, defaultValue);
             return result;

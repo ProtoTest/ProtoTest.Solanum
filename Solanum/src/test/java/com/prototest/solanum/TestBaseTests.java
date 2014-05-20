@@ -17,10 +17,7 @@ import java.net.URL;
 public class TestBaseTests extends EggplantTestBase{
     @Override
     @BeforeTest
-    public void fixtureSetUp(ITestContext ctx){
-
-        File file = new File(".");
-        String output = file.getAbsolutePath();
+    public void fixtureSetUp(){
         startEggplant();
         setEggplantDefaultSettings();
         //driver.connect();
