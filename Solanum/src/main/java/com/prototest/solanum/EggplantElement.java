@@ -8,14 +8,30 @@ public class EggplantElement {
     private By by;
     private String name;
     private EggplantDriver driver = EggplantTestBase.driver;
+    private int waitSec;
 
     public EggplantElement(String name, By by) {
         this.by = by;
         this.name = name;
+        this.waitSec = Config.elementWaitTimeSec;
     }
+
+    public EggplantElement(String name, By by, int waitSec) {
+        this.by = by;
+        this.name = name;
+        this.waitSec = waitSec;
+    }
+
     public EggplantElement(By by) {
         this.by = by;
         this.name = "element";
+        this.waitSec = Config.elementWaitTimeSec;
+    }
+
+    public EggplantElement(By by, int waitSec) {
+        this.by = by;
+        this.name = "element";
+        this.waitSec = waitSec;
     }
 
     private void sleep(int millis) {
@@ -32,6 +48,7 @@ public class EggplantElement {
     }
 
     public String getText() {
+
         waitForPresent();
         Logger.message(String.format("Reading text on %s %s.", name, by.getLocator()));
         return driver.readText(by.getLocator());
@@ -39,7 +56,6 @@ public class EggplantElement {
 
 
     public EggplantElement click() {
-
         waitForPresent();
         Logger.message(String.format("Clicking on %s %s.", name, by.getLocator()));
         driver.click(by.getLocator());
@@ -60,9 +76,29 @@ public class EggplantElement {
         return this;
     }
 
+    public EggplantElement release() {
+        waitForPresent();
+        Logger.message(String.format("Performing release on %s %s.", name, by.getLocator()));
+        driver.release(by.getLocator());
+        return this;
+    }
+
+
+    public EggplantElement tap() {
+        waitForPresent();
+        Logger.message(String.format("Tap on %s %s.", name, by.getLocator()));
+        driver.tap(by.getLocator());
+        return this;
+    }
+
+    public EggplantElement doubleTap() {
+        waitForPresent();
+        Logger.message(String.format("DoubleTap on %s %s.", name, by.getLocator()));
+        driver.doubleTap(by.getLocator());
+        return this;
+    }
 
     public EggplantElement type(String text) {
-        Logger.message(String.format("Clicking on %s",name));
         click();
         Logger.message(String.format("Typing text:(%s).", text));
         driver.typeText(text);
@@ -77,9 +113,34 @@ public class EggplantElement {
         return this;
     }
 
+    public EggplantElement swipeUp(){
+        waitForPresent();
+        Logger.message(String.format("SwipingUp %s %s.", name, by.getLocator()));
+        driver.swipeUp(by.getLocator());
+        return this;
+    }
+
+    public EggplantElement swipeDown(){
+        waitForPresent();
+        Logger.message(String.format("SwipingDown %s %s.", name, by.getLocator()));
+        driver.swipeDown(by.getLocator());
+        return this;
+    }
+    public EggplantElement swipeLeft(){
+        waitForPresent();
+        Logger.message(String.format("SwipingLeft %s %s.", name, by.getLocator()));
+        driver.swipeLeft(by.getLocator());
+        return this;
+    }
+    public EggplantElement swipeRight(){
+        waitForPresent();
+        Logger.message(String.format("SwipingRight %s %s.", name, by.getLocator()));
+        driver.swipeRight(by.getLocator());
+        return this;
+    }
     // Hard verification failures - Test will halt
     public EggplantElement waitForPresent() {
-        return waitForPresent(Config.elementWaitTimeSec);
+        return waitForPresent(this.waitSec);
     }
 
     public EggplantElement waitForPresent(int secs) {
@@ -96,7 +157,7 @@ public class EggplantElement {
                 now = new LocalTime();
             }
         }
-        Logger.message(String.format("!----ERROR : %s not found: %s.", name, by.getLocator()));
+        Logger.error(String.format("%s not found: %s.", name, by.getLocator()));
         throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
     }
 
@@ -105,13 +166,13 @@ public class EggplantElement {
     }
 
     public EggplantElement waitForNotPresent() {
-        return waitForNotPresent(Config.elementWaitTimeSec);
+        return waitForNotPresent(this.waitSec);
     }
 
-    public EggplantElement waitForNotPresent(int millis) {
-        Logger.message(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(),millis));
+    public EggplantElement waitForNotPresent(int secs) {
+        Logger.message(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(),secs));
         LocalTime now = new LocalTime();
-        LocalTime endTime = now.plusSeconds(millis);
+        LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
             if (!driver.isPresent(by.getLocator())) {
                 Logger.message("Element no longer present.");
@@ -121,9 +182,9 @@ public class EggplantElement {
             }
         }
 
-        Logger.message(String.format("%s is still present",name, by));
+        Logger.error(String.format("%s is still present",name, by));
         //logSourceImage();
-        throw new RuntimeException(String.format("WaitForNotPresent Failed : %s was still present after %d seconds", name, millis));
+        throw new RuntimeException(String.format("WaitForNotPresent Failed : %s was still present after %d seconds", name, secs));
     }
 
     // Soft verification failures - Test will keep progressing

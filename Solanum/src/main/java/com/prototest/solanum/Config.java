@@ -17,12 +17,9 @@ public class Config {
     public static String suitePath = getPropertyValue("suitePath", "");
     public static String drivePort = getPropertyValue("drivePort", "5400");
     public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "2");
-    public static boolean logDriveCommands = getPropertyValue("logDriveCommands", true);
+    public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
     public static int commandDelayMs = getPropertyValue("commandDelayMs", 1000);
     public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 5);
-    // TODO does clickExecuteDelay duplicate the intention of any of these other settings?
-    // TODO Yes it does it duplicates commandDelayMs
-    public static int clickExecuteDelay = getPropertyValue("clickExecuteDelay", 1000);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
     public static String imageSearchTime = getPropertyValue("imageSearchTime","1");

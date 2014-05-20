@@ -40,7 +40,7 @@ public class EggplantDriver {
         if (Config.logDriveCommands) {
             Logger.message(String.format("Executing : %s", command));
         }
-        //delay(Config.commandDelayMs);
+        delay(Config.commandDelayMs);
         HashMap result = client.execute(command);
         return result;
 
@@ -70,9 +70,16 @@ public class EggplantDriver {
 
     public EggplantElement findElement(By by)
     {
-        return new EggplantElement(by);
+       return findElement(by.getLocator());
     }
-
+    public EggplantElement findElement(String locator)
+    {
+        String output = execute(String.format("Put ImageLocation %s", locator)).get("Output").trim();
+        output = output.substring(1,output.length()-1);
+        String[] rect = output.split(",");
+        Point point = new Point(Integer.parseInt(rect[0]),Integer.parseInt(rect[1]));
+        return new EggplantElement(By.Point(point));
+    }
     public void click(String locator)
     {
         execute(String.format("Click %s", locator));
@@ -151,6 +158,26 @@ public class EggplantDriver {
         execute(String.format("SwipeDown (%s,%s)",origin.x,origin.y));
     }
 
+    public void swipeDown(String locator)
+    {
+        execute(String.format("SwipeDown %s", locator));
+    }
+
+    public void swipeUp(String locator)
+    {
+        execute(String.format("SwipeUp %s", locator));
+    }
+
+
+    public void swipeRight(String locator)
+    {
+        execute(String.format("SwipeRight %s", locator));
+    }
+
+    public void swipeLeft(String locator)
+    {
+        execute(String.format("SwipeLeft %s", locator));
+    }
     public void swipeUp(Point origin)
     {
         execute(String.format("SwipeUp (%s,%s)",origin.x,origin.y));
@@ -193,7 +220,8 @@ public class EggplantDriver {
 
     public String readText(String locator)
     {
-        String result = execute(String.format("put ReadText %s" + locator)).get("Result");
+        //TODO this needs to be tested, does the data return in the Result or Output key?
+        String result = execute(String.format("put ReadText %s" + locator)).get("Output").trim();
        return result;
     }
 
@@ -237,4 +265,14 @@ public class EggplantDriver {
             return false;
         }
     }
+
+    public Rectangle getImageRectangle(String locator){
+        String output = execute(String.format("Put ImageRectangle %s",locator)).get("Output").trim();
+        output = output.substring(1,output.length()-1);
+        String[] rect = output.split(",");
+        return new Rectangle(Integer.parseInt(rect[0]),Integer.parseInt(rect[1]),Integer.parseInt(rect[2]),Integer.parseInt(rect[3]));
+
+    }
+
+
 }
