@@ -11,59 +11,63 @@ import java.lang.reflect.Method;
 /**
  * Created by Brian on 5/12/2014.
  */
-@Listeners({ org.uncommons.reportng.HTMLReporter.class, org.uncommons.reportng.JUnitXMLReporter.class })
+@Listeners({org.uncommons.reportng.HTMLReporter.class, org.uncommons.reportng.JUnitXMLReporter.class})
 public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
     private static EggplantProcess eggplantProcess = new EggplantProcess();
 
     @BeforeMethod
-    public void testSetup(Method method){
+    public void testSetup(Method method) {
         Config.currentTestName = method.getName();
         Logger.message("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
     }
-    @AfterMethod
-    public void testTeardown(ITestResult result){
 
-        if(!result.isSuccess())
+    @AfterMethod
+    public void testTeardown(ITestResult result) {
+
+        if (!result.isSuccess())
             Logger.screenshot();
     }
 
     @AfterTest
-    public void fixtureTearDown(){
+    public void fixtureTearDown() {
         driver.endSuite();
     }
 
     @BeforeTest
-    public void fixtureSetUp(){
+    public void fixtureSetUp() {
 
         startEggplant();
         setEggplantDefaultSettings();
         driver.connect();
     }
 
-    public void setEggplantDefaultSettings()
-    {
+    public void setEggplantDefaultSettings() {
 
         driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
         driver.setOption("ImageSearchTime", String.valueOf(Config.imageSearchTime));
     }
 
-    protected void startEggplant(){
+    protected void startEggplant() {
 
-       if(driver.isDriveRunning()){
+        if (driver.isDriveRunning()) {
             return;
-       }   else {
-           eggplantProcess.start();
-           driver.startSuite(Config.suitePath);
-           Logger.message("Eggplant drive started with options : " + driver.getOptions());
-       }
+        } else {
+            if (Config.manageEggdriveProcess) {
+                eggplantProcess.start();
+            }
+            driver.startSuite(Config.suitePath);
+            Logger.message("Eggplant drive started with options : " + driver.getOptions());
+        }
 
 
     }
 
-    protected void stopEggplant(){
+    protected void stopEggplant() {
+        if (Config.manageEggdriveProcess) {
             eggplantProcess.stop();
             eggplantProcess.kill();
+        }
     }
 }

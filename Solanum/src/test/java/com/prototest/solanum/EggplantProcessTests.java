@@ -12,8 +12,11 @@ public class EggplantProcessTests {
     @Test
     public void TestDriveStarts(){
         EggplantProcess process = new EggplantProcess();
-        process.kill();
-        process.start();
+
+        if (Config.manageEggdriveProcess) {
+            process.kill();
+            process.start();
+        }
         EggplantDriver driver = new EggplantDriver();
         driver.startSuite(Config.suitePath);
         Assert.assertEquals(driver.isDriveRunning(), true, "Drive is not running");
@@ -23,11 +26,15 @@ public class EggplantProcessTests {
     @Test
     public void TestDriveKills(){
         EggplantProcess process = new EggplantProcess();
-        process.start();
+        if (Config.manageEggdriveProcess) {
+            process.start();
+        }
         EggplantDriver driver = new EggplantDriver();
         driver.startSuite(Config.suitePath);
-        process.kill();
-        Assert.assertEquals(driver.isDriveRunning(), false, "Drive was not killed");
+        if (Config.manageEggdriveProcess) {
+            process.kill();
+            Assert.assertEquals(driver.isDriveRunning(), false, "Drive was not killed");
+        }
 
     }
 

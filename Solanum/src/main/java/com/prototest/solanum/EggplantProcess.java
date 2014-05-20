@@ -46,7 +46,7 @@ class EggplantProcess {
                 rt.exec("taskkill  /F /IM eggPlant.exe");
             } else {
                 Logger.message("Executing : pkill -9 -i eggplant");
-                rt.exec("pkill -9 -i eggplant");
+                rt.exec("pkill -9 -fi eggplant");
             }
         } catch (IOException e) {
             Logger.error("Exception caught killing eggplant : " + e.getMessage());

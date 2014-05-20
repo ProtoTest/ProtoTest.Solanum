@@ -4,6 +4,7 @@ import org.apache.xmlrpc.client.XmlRpcClient;
 import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.testng.Assert;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -60,6 +61,10 @@ class EggplantDriveClient {
     }
 
     void startSession(String suite){
+        File suiteFile = new File(suite);
+        if (! suiteFile.isAbsolute()) {
+            suite = new File(System.getProperty("user.dir"), suite).toString();
+        }
         if (System.getProperty("os.name").toLowerCase().contains("windows")) {
             suite = suite.replace('/', '\\');
         }

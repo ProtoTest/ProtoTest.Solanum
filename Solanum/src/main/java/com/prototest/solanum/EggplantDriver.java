@@ -233,6 +233,7 @@ public class EggplantDriver {
             getOptions();
             return true;
         } catch (RuntimeException e) {
+            e.printStackTrace();
             return false;
         }
     }
