@@ -30,8 +30,9 @@ public class EggplantTestBase {
             Logger.screenshot();
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void fixtureTearDown() {
+        driver.disconnect();
         driver.endSuite();
     }
 

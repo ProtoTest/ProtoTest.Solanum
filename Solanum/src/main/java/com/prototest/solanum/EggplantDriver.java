@@ -32,8 +32,16 @@ public class EggplantDriver {
     }
 
     public void disconnect() {
-        execute(String.format("Disconnect"));
+        disconnect(Config.hostName,Config.hostPort);
 
+    }
+
+    public void disconnect(String host) {
+        execute(String.format("Disconnect (ServerID:\"%s\")", host));
+    }
+
+    public void disconnect(String host, int portNum) {
+        execute(String.format("Disconnect (ServerID:\"%s\", portNum: \"%s\")", host, portNum));
     }
 
     public HashMap<String, String> execute(String command) {

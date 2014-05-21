@@ -26,6 +26,7 @@ public class Config {
     public static String imageSearchCount = getPropertyValue("imageSearchCount","1");
     public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
     public static String currentTestName = "Test";
+    public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
 
     private static int getPropertyValue(String key, int defaultValue) {
         String result = getPropertyValue(key, null);
