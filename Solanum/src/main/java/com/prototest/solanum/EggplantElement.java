@@ -5,9 +5,9 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 
 public class EggplantElement {
-    private By by;
-    private String name;
-    private EggplantDriver driver = EggplantTestBase.driver;
+    private final By by;
+    private final String name;
+    private final EggplantDriver driver = EggplantTestBase.driver;
     private int waitSec;
 
     public EggplantElement(String name, By by) {
