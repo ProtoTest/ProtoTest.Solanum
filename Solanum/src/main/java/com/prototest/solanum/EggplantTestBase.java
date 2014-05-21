@@ -34,6 +34,7 @@ public class EggplantTestBase {
     public void fixtureTearDown() {
         driver.disconnect();
         driver.endSuite();
+        stopEggplant();
     }
 
     @BeforeTest

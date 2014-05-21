@@ -23,14 +23,15 @@ class EggplantProcess {
         } else {
             runScriptPath = runScriptPath.replace(" ", "\\ ");
         }
-        this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-driveLogging", Config.driveLoggingLevel);
+        this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
         this.command.redirectErrorStream(true);
+
     }
 
     void stop() {
         try {
-                eggplantDrive.destroy();
-                eggplantDrive.waitFor();
+            eggplantDrive.destroy();
+            eggplantDrive.waitFor();
         } catch (InterruptedException e) {
             Logger.error("Exception caught stopping eggplant : " + e.getMessage());
             kill();
@@ -45,7 +46,7 @@ class EggplantProcess {
                 Logger.message("Executing : taskkill  /F /IM eggPlant.exe");
                 rt.exec("taskkill  /F /IM eggPlant.exe");
             } else {
-                Logger.message("Executing : pkill -9 -i eggplant");
+                Logger.message("Executing : pkill -9 -fi eggplant");
                 rt.exec("pkill -9 -fi eggplant");
             }
         } catch (IOException e) {
@@ -69,17 +70,18 @@ class EggplantProcess {
             BufferedReader input = new BufferedReader
                     (new InputStreamReader(eggplantDrive.getInputStream()));
             while ((line = input.readLine()) != null) {
-                Logger.message(line);
-                if(line.contains("Maximum Users")){
+                if (Config.logDriveCommands) {
+                    Logger.message(line);
+                }
+                if (line.contains("Maximum Users")) {
                     Assert.fail("The maximum number of simultaneous users has been exceeded for your eggPlant license.");
                 }
                 if (line.contains("No valid License")) {
                     Assert.fail("No valid eggplant license was found.  Please launch the eggplant GUI, add a license, and try again.");
                 }
                 if (line.contains("Starting eggPlant Drive")) {
-                    input.close();
                     Logger.message("eggPlant Drive started on port " + Config.drivePort);
-                    processLogger = new Thread(new ProcessLogger(eggplantDrive));
+                    processLogger = new ProcessLogger(input);
                     processLogger.start();
                     return;
                 }
@@ -92,29 +94,36 @@ class EggplantProcess {
         throw new RuntimeException("Failed to start eggPlant Drive.");
     }
 
-    private class ProcessLogger implements Runnable {
+    private class ProcessLogger extends Thread {
 
         private final BufferedReader input;
 
-        public ProcessLogger(Process process) {
-            this.input = new BufferedReader
-                    (new InputStreamReader(eggplantDrive.getInputStream()));
+        public ProcessLogger(BufferedReader input) {
+            this.input = input;
         }
 
         @Override
         public void run() {
             String line;
-            try {
-                while ((line = input.readLine()) != null) {
-                    //Logger.message(line);
-                }
-            } catch (IOException e) {
-            } finally {
                 try {
-                    input.close();
+                    while ((line = input.readLine()) != null) {
+                        yield();
+
+                        if (Config.logDriveCommands) {
+                            Logger.message(line);
+                        }
+                    }
                 } catch (IOException e) {
+                    e.printStackTrace();
                 }
+
+
+            try {
+                input.close();
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
+
         }
     }
 
