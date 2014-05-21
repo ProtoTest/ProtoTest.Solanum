@@ -70,7 +70,7 @@ public class TextOption {
         return new TextOption(String.format("ValidCharacters: \"%s\"",value));
     }
 
-    public TextOption hotSpot(Point hotSpot){
+    public static TextOption hotSpot(Point hotSpot){
         return new TextOption(String.format("HotSpot: (%s,%s)",hotSpot.getX(),hotSpot.getY()));
     }
 }
