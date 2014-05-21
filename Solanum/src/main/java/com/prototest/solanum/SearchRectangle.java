@@ -65,7 +65,6 @@ public class SearchRectangle {
 
     }
 
-
     public static SearchRectangle rightHalf()
     {
         Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
@@ -84,11 +83,21 @@ public class SearchRectangle {
         return new SearchRectangle(new Point(0, 0), new Point(fullScreen.width/4, fullScreen.height));
     }
 
-    public static SearchRectangle rightQuarter()
-    {
+    public static SearchRectangle rightQuarter() {
         Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
-        int value = (int) Math.floor(fullScreen.width*.75);
+        int value = (int) Math.floor(fullScreen.width * .75);
         return new SearchRectangle(new Point(value, 0), new Point(fullScreen.width, fullScreen.height));
+    }
+
+    public SearchRectangle trimTop(int amount) {
+        upperLeft.setLocation(upperLeft.getX(), upperLeft.getY() + amount);
+        return this;
+    }
+
+    public SearchRectangle trimBottom(int amount) {
+        lowerRight.setLocation(lowerRight.getX(), lowerRight.getY() - amount);
+
+        return this;
 
     }
 }

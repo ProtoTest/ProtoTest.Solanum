@@ -9,7 +9,11 @@ import java.lang.reflect.InvocationTargetException;
 /**
  */
 public class HomeScreen extends AndroidScreen {
-    public AndroidScreen openApp(String name, Class<AndroidScreen> screenType, TextOption... options) {
+    public HomeScreen() {
+        super();
+    }
+
+    public <C> C openApp(String name, Class<C> screenType, TextOption... options) {
         EggplantElement element = new EggplantElement(By.Text(name, options));
         element.click();
         try {
