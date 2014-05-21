@@ -148,7 +148,7 @@ public class EggplantDriver {
 
     public void typeText(String text)
     {
-        execute(String.format("TypeText \"%s\""));
+        execute(String.format("TypeText \"%s\"", text));
     }
 
     public void scrollWheelUp(String num)
