@@ -64,4 +64,31 @@ public class SearchRectangle {
         return new SearchRectangle(new Point(0, value), new Point(fullScreen.width, fullScreen.height));
 
     }
+
+
+    public static SearchRectangle rightHalf()
+    {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        return new SearchRectangle(new Point(fullScreen.width/2,0),new Point(fullScreen.width,fullScreen.height));
+    }
+
+    public static SearchRectangle leftHalf()
+    {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        return new SearchRectangle(new Point(0, 0), new Point(fullScreen.width/2, fullScreen.height));
+    }
+
+    public static SearchRectangle leftQuarter()
+    {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        return new SearchRectangle(new Point(0, 0), new Point(fullScreen.width/4, fullScreen.height));
+    }
+
+    public static SearchRectangle rightQuarter()
+    {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        int value = (int) Math.floor(fullScreen.width*.75);
+        return new SearchRectangle(new Point(value, 0), new Point(fullScreen.width, fullScreen.height));
+
+    }
 }
