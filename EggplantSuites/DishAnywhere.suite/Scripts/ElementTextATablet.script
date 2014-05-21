@@ -114,7 +114,7 @@ WaitFor 8.0, (Text:"Unrated", SearchRectangle:((865,150),(1260,500)))
 Click (Text:"Unrated", SearchRectangle:((865,150),(1260,500)))
 
 
-//OnDemand Passcode
+//Enter Passcode
 WaitFor 8.0, (Text:"1")
 WaitFor 8.0, (Text:"1", SearchRectangle:((480,150),(800,600)))
 
@@ -133,11 +133,69 @@ Click (Text:"Resume on Mobile", SearchRectangle:((250,200),(1030,550)))
 Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/CloseButton")
 Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/SocialMediaButton")
 
+
 WaitFor 8.0, (Text:"CHANNEL", SearchRectangle:((250,200),(1030,550)))
 WaitFor 8.0, (Text:"AIR DATE", SearchRectangle:((250,200),(1030,550)))
 WaitFor 8.0, (Text:"RATING", SearchRectangle:((250,200),(1030,550)))
 
 
+//OnDemand SortFilter Options
+WaitFor 8.0, (Text:"Done", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Done", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Date", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Date", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Title", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Title", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Rotten Tomatoes", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Rotten Tomatoes", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Most Popular", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Most Popular", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"All", SearchRectangle:((10,100),(335,520)))
+Click (Text:"All", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Action & Adventure", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Action & Adventure", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Animation", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Animation", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Comedy", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Comedy", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Documentary", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Documentary", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Drama", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Drama", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Horror", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Horror", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Kids & Family", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Kids & Family", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Mature Content", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Mature Content", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Music", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Music", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Sci-Fi & Fantasy", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Sci-Fi & Fantasy", SearchRectangle:((10,100),(335,520)))
+
+WaitFor 8.0, (Text:"Thriller", SearchRectangle:((10,100),(335,520)))
+Click (Text:"Thriller", SearchRectangle:((10,100),(335,520)))
+
+//BlockBuster Details Page
+Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/Movies_BlockBuster")
+Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/TVShows_BlockBuster")
+Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/KidsMovies_BlockBuster")
+Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/KidsTVShows")
 
 
 
