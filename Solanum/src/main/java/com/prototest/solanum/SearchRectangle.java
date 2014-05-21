@@ -64,4 +64,15 @@ public class SearchRectangle {
         return new SearchRectangle(new Point(0, value), new Point(fullScreen.width, fullScreen.height));
 
     }
+
+    public SearchRectangle trimTop(int amount) {
+        upperLeft.setLocation(upperLeft.getX(), upperLeft.getY() + amount);
+        return this;
+    }
+
+    public SearchRectangle trimBottom(int amount) {
+        lowerRight.setLocation(lowerRight.getX(), lowerRight.getY() - amount);
+
+        return this;
+    }
 }
