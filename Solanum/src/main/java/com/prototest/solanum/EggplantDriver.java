@@ -253,18 +253,18 @@ public class EggplantDriver {
 
     public String getConnectionInfo()
     {
-        return (String) execute("put ConnectionInfo()").get("Output");
+        return (String) execute("put ConnectionInfo()").get("Output").trim();
     }
 
     public String getOptions()
     {
-        String output = (String) execute("put getOptions()").get("Output");
+        String output = (String) execute("put getOptions()").get("Output").trim();
         return output;
     }
 
     public String getOption(String option)
     {
-        String output = (String) execute(String.format("put getOption(%s)",option)).get("Output");
+        String output = (String) execute(String.format("put getOption(%s)",option)).get("Output").trim();
         return output;
     }
 
