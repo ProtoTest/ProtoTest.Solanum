@@ -2,6 +2,7 @@ package com.prototest.solanum;
 
 import org.testng.Reporter;
 
+import java.awt.*;
 import java.text.SimpleDateFormat;
 
 /**
@@ -41,10 +42,11 @@ public class Logger {
         Reporter.log(String.format("<div style=\"background-color:red\">%s</div>",text));
     }
 
-    public static void screenshot(){
+    public static void screenshot(Rectangle drawRectangle){
+
         String newScreenshot = EggplantTestBase.driver.getScreenshot();
         System.setProperty("org.uncommons.reportng.escape-output", "false");
-        Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot));
+        Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot + ".tiff"));
     }
 
 

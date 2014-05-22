@@ -208,8 +208,9 @@ public class EggplantDriver {
             SimpleDateFormat sdf = new SimpleDateFormat("MMddyyyyhhmmss");
             String timestamp = sdf.format(date);
 
-            new File(Config.currentPath +"\\Screenshots\\").mkdirs();
-            String path = Config.currentPath + "\\Screenshots\\"+timestamp+".png";
+            String separator = System.getProperty("file.separator");
+            new File(Config.currentPath + separator + "Screenshots" + separator).mkdirs();
+            String path = Config.currentPath + separator + "Screenshots" + separator + timestamp + ".tiff";
             captureScreenshot(path);
             return path;
         }

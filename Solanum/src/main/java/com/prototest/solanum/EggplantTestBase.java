@@ -27,7 +27,7 @@ public class EggplantTestBase {
     public void testTeardown(ITestResult result) {
 
         if (!result.isSuccess())
-            Logger.screenshot();
+            Logger.screenshot(null);
     }
 
     @BeforeTest
