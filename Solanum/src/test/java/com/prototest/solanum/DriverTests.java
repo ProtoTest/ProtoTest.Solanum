@@ -15,20 +15,20 @@ public class DriverTests {
     public void ClickFormat() {
         MockDriver driver = new MockDriver();
        driver.click("(text: \"Email\", Contrast: \"On\", ContrastColor: \"AutoDetect\", SearchRectangle: (0,0,100,200))");
-        Assert.assertEquals("Click (text: \"Email\", Contrast: \"On\", ContrastColor: \"AutoDetect\", SearchRectangle: (0,0,100,200))",driver.getLastResponse().get("Output"));
+        Assert.assertEquals("Click (text: \"Email\", Contrast: \"On\", ContrastColor: \"AutoDetect\", SearchRectangle: (0,0,100,200))",driver.getLastResponse().Output);
     }
 
     @Test
     public void SetOptionFormat() {
         MockDriver driver = new MockDriver();
         driver.setOption("TestOption","TestValue");
-        Assert.assertEquals("set the TestOption to TestValue", driver.getLastResponse().get("Output"));
+        Assert.assertEquals("set the TestOption to TestValue", driver.getLastResponse().Output);
     }
 
     @Test
     public void SwipeDownFormat() {
         MockDriver driver = new MockDriver();
         driver.swipeDown(new Point(20,30));
-        Assert.assertEquals("SwipeDown (20,30)",driver.getLastResponse().get("Output"));
+        Assert.assertEquals("SwipeDown (20,30)",driver.getLastResponse().Output);
     }
 }

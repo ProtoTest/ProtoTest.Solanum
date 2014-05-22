@@ -38,11 +38,12 @@ class EggplantDriveClient {
         client  = new XmlRpcClient();
         client.setConfig(config);
     }
-    HashMap<String, String> execute(String command) {
+    EggplantResponse execute(String command) {
         Object[] params = new Object[]{command};
         try {
-           HashMap result = (HashMap) client.execute("execute",params);
-            return result;
+           Object result = client.execute("execute",params);
+            EggplantResponse response = new EggplantResponse((HashMap<String,String>)result);
+            return response;
         } catch (XmlRpcException e) {
             throw new RuntimeException(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
         }catch (Exception f) {

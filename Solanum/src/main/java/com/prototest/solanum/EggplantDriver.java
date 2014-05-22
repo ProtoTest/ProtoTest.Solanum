@@ -44,12 +44,12 @@ public class EggplantDriver {
         execute(String.format("Disconnect (ServerID:\"%s\", portNum: \"%s\")", host, portNum));
     }
 
-    public HashMap<String, String> execute(String command) {
+    public EggplantResponse execute(String command) {
         if (Config.logDriveCommands) {
             Logger.message(String.format("Executing : %s", command));
         }
         delay(Config.commandDelayMs);
-        HashMap result = client.execute(command);
+        EggplantResponse result = client.execute(command);
         return result;
 
     }
@@ -82,7 +82,7 @@ public class EggplantDriver {
     }
     public EggplantElement findElement(String locator)
     {
-        String output = execute(String.format("Put ImageLocation %s", locator)).get("Output").trim();
+        String output = execute(String.format("Put ImageLocation %s", locator)).Output;
         output = output.substring(1,output.length()-1);
         String[] rect = output.split(",");
         Point point = new Point(Integer.parseInt(rect[0]),Integer.parseInt(rect[1]));
@@ -141,9 +141,7 @@ public class EggplantDriver {
 
     public boolean isPresent(String locator)
     {
-        HashMap<String,String> output = (HashMap<String,String>)execute(String.format("put ImageFound %s", locator));
-        String result = (String) output.get("Output");
-        return result.contains("True");
+       return execute(String.format("put ImageFound %s", locator)).Output.contains("True");
     }
 
     public void typeText(String text)
@@ -229,13 +227,13 @@ public class EggplantDriver {
     public String readText(String locator)
     {
         //TODO this needs to be tested, does the data return in the Result or Output key?
-        String result = execute(String.format("put ReadText %s" + locator)).get("Output").trim();
+        String result = execute(String.format("put ReadText %s" + locator)).Output;
        return result;
     }
 
     public Rectangle getScreenRectangle()
     {
-        String output = execute("put RemoteScreenRectangle()").get("Output").trim();
+        String output = execute("put RemoteScreenRectangle()").Output;
         output = output.substring(1,output.length()-1);
         String[] rect = output.split(",");
 
@@ -244,7 +242,7 @@ public class EggplantDriver {
 
     public Point getScreenSize()
     {
-        String output = execute("put RemoteScreenSize()").get("Output").trim();
+        String output = execute("put RemoteScreenSize()").Output;
         output = output.substring(1,output.length()-1);
         String[] rect = output.split(",");
 
@@ -253,18 +251,18 @@ public class EggplantDriver {
 
     public String getConnectionInfo()
     {
-        return (String) execute("put ConnectionInfo()").get("Output").trim();
+        return (String) execute("put ConnectionInfo()").Output;
     }
 
     public String getOptions()
     {
-        String output = (String) execute("put getOptions()").get("Output").trim();
+        String output = execute("put getOptions()").Output;
         return output;
     }
 
     public String getOption(String option)
     {
-        String output = (String) execute(String.format("put getOption(%s)",option)).get("Output").trim();
+        String output = (String) execute(String.format("put getOption(%s)",option)).Output;
         return output;
     }
 
@@ -283,7 +281,7 @@ public class EggplantDriver {
     }
 
     public Rectangle getImageRectangle(String locator){
-        String output = execute(String.format("Put ImageRectangle %s",locator)).get("Output").trim();
+        String output = execute(String.format("Put ImageRectangle %s",locator)).Output;
         output = output.substring(1,output.length()-1);
         String[] rect = output.split(",");
         return new Rectangle(Integer.parseInt(rect[0]),Integer.parseInt(rect[1]),Integer.parseInt(rect[2]),Integer.parseInt(rect[3]));

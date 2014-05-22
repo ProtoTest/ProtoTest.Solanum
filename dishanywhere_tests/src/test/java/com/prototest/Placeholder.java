@@ -13,7 +13,7 @@ public class Placeholder extends EggplantTestBase {
     @Test
     public void test()
     {
-       TextOption option = TextOption.hotSpot(17,30);
-        Logger.message(option.getText());
+        LockScreen lockScreen = new LockScreen();
+        lockScreen.unlock();
     }
 }
