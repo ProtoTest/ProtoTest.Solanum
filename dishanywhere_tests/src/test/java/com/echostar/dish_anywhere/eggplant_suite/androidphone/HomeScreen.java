@@ -4,8 +4,6 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.TextOption;
 
-import java.lang.reflect.InvocationTargetException;
-
 /**
  */
 public class HomeScreen extends AndroidScreen {

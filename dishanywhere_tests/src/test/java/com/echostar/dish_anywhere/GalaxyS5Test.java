@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 /**
  *
  */
-public class TestTest extends EggplantTestBase {
+public class GalaxyS5Test extends EggplantTestBase {
     @Test
     public void test1() {
         HomeScreen homeScreen = new HomeScreen();
