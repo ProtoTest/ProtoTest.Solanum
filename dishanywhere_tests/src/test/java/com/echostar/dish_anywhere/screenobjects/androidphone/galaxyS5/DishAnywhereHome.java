@@ -1,4 +1,4 @@
-package com.echostar.dish_anywhere.eggplant_suite.androidphone;
+package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
@@ -12,7 +12,7 @@ public class DishAnywhereHome extends AndroidScreen {
 
     public DishAnywhereHome() {
         super();
-        new EggplantElement(By.Text("Guide", TextOption.searchRectangle(SearchRectangle.bottomHalf().trimTop(75)))).click();
+        new EggplantElement(By.Text("Guide", TextOption.searchRectangle(SearchRectangle.bottomHalf()))).click();
     }
 
     public DishAnywhereSettings openSettings() {

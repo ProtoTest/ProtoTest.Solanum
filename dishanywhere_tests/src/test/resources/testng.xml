@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="DishAnywhere" verbose="1">
+    <test name="GalaxyS5">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.galaxyS5.GalaxyS5UiTest"/>
+            <class name="com.echostar.dish_anywhere.tests.galaxyS5.GalaxyS5PlaybackTest"/>
+        </classes>
+    </test>
+    <test name="Kindle">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.kindle.KindleTest"/>
+        </classes>
+    </test>
+</suite>

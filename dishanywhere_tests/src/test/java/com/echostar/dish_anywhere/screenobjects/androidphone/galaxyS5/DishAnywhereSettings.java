@@ -1,4 +1,4 @@
-package com.echostar.dish_anywhere.eggplant_suite.androidphone;
+package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
 
 import com.prototest.solanum.*;
 
