@@ -12,6 +12,7 @@ public class DishAnywhereHome extends AndroidScreen {
 
     public DishAnywhereHome() {
         super();
+        new EggplantElement(By.Text("Guide", TextOption.searchRectangle(SearchRectangle.bottomHalf().trimTop(75)))).click();
     }
 
     public DishAnywhereSettings openSettings() {
