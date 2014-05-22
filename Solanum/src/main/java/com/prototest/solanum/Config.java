@@ -12,7 +12,8 @@ public class Config {
     public static boolean captureScreenshots = getPropertyValue("captureScreenshotsOnError", true);
     public static boolean startDrive = getPropertyValue("startDrive", true);
     public static String eggplantPath = getPropertyValue("eggplantPath", "");
-    public static String runScriptPath = getPropertyValue("runScriptPath", "C:\\Program Files (x86)\\eggPlant\\runscript.bat");
+    public static String windowsScriptPath = getPropertyValue("windowsScriptPath", "C:\\Program Files (x86)\\eggPlant\\runscript.bat");
+    public static String macScriptPath = getPropertyValue("macScriptPath", "/Applications/Eggplant.app/runscript");
     public static String currentPath = System.getProperty("user.dir");
     public static String suitePath = getPropertyValue("suitePath", "");
     public static String drivePort = getPropertyValue("drivePort", "5400");

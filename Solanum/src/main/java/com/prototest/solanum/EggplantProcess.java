@@ -16,12 +16,12 @@ class EggplantProcess {
     private Thread processLogger;
 
     EggplantProcess() {
-        String runScriptPath = Config.runScriptPath;
+        String runScriptPath = null;
 
         if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-            runScriptPath = "\"" + runScriptPath + "\"";
+            runScriptPath = "\"" + Config.windowsScriptPath + "\"";
         } else {
-            runScriptPath = runScriptPath.replace(" ", "\\ ");
+            runScriptPath = Config.macScriptPath;
         }
         this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
         this.command.redirectErrorStream(true);
