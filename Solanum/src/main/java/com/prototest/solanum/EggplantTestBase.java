@@ -57,6 +57,7 @@ public class EggplantTestBase {
             return;
         } else {
             if (Config.manageEggdriveProcess) {
+                eggplantProcess.kill();
                 eggplantProcess.start();
             }
             driver.startSuite(Config.suitePath);

@@ -17,7 +17,7 @@ public class Config {
     public static String currentPath = System.getProperty("user.dir");
     public static String suitePath = getPropertyValue("suitePath", "");
     public static String drivePort = getPropertyValue("drivePort", "5400");
-    public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "2");
+    public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "0");
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
     public static int commandDelayMs = getPropertyValue("commandDelayMs", 1000);
     public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 5);

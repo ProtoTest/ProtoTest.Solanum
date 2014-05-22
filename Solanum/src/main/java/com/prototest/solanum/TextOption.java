@@ -73,4 +73,12 @@ public class TextOption {
     public static TextOption hotSpot(Point hotSpot){
         return new TextOption(String.format("HotSpot: (%s,%s)",hotSpot.getX(),hotSpot.getY()));
     }
+
+    public static TextOption hotSpot(int percentX, int percentY){
+        Point maxSize = EggplantTestBase.driver.getScreenSize();
+
+        int pixelsX = (int)(maxSize.x*(percentX/100.0f));
+        int pixelsY = (int)(maxSize.y*(percentY/100.0f));
+        return new TextOption(String.format("HotSpot: (%s,%s)",pixelsX,pixelsY));
+    }
 }

@@ -45,6 +45,8 @@ class EggplantProcess {
             if (System.getProperty("os.name").toLowerCase().contains("windows")) {
                 Logger.message("Executing : taskkill  /F /IM eggPlant.exe");
                 rt.exec("taskkill  /F /IM eggPlant.exe");
+                Logger.message("Executing : taskkill  /F /IM adb.exe");
+                rt.exec("taskkill  /F /IM adb.exe");
             } else {
                 Logger.message("Executing : pkill -9 -fi eggplant");
                 rt.exec("pkill -9 -fi eggplant");
