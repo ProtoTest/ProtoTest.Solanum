@@ -1,9 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="GalaxyS5" verbose="1">
-    <test name="GalaxyS5">
-        <parameter name="hostName" value="10.10.1.77"/>
-        <parameter name="hostPort" value="5900"/>
+    <test name="Kindle">
         <classes>
             <class name="com.echostar.dish_anywhere.tests.kindle.KindleTest"/>
         </classes>

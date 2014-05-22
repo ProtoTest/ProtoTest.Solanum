@@ -5,10 +5,4 @@
         <suite-file path="galaxy-s5.xml"/>
         <suite-file path="kindle.xml"/>
     </suite-files>
-
-    <test name="Kindle">
-        <classes>
-            <class name="com.echostar.dish_anywhere.tests.kindle.KindleTest"/>
-        </classes>
-    </test>
 </suite>
