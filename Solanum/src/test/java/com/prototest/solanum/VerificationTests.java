@@ -16,7 +16,7 @@ public class VerificationTests extends EggplantTestBase{
     }
     @Override
     @BeforeTest
-    public void fixtureSetUp(){
+    public void fixtureSetUp(String hostname, Integer hostport){
 
         startEggplant();
         setEggplantDefaultSettings();

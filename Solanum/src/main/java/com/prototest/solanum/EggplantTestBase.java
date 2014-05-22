@@ -30,19 +30,32 @@ public class EggplantTestBase {
             Logger.screenshot();
     }
 
-    @AfterTest(alwaysRun = true)
-    public void fixtureTearDown() {
-        driver.disconnect();
-        driver.endSuite();
-        stopEggplant();
-    }
-
     @BeforeTest
-    public void fixtureSetUp() {
-
+    @Parameters({"hostName", "hostPort"})
+    public void fixtureSetUp(@Optional String hostName,
+                             @Optional Integer hostPort) {
+        if (hostName == null || hostPort == null) {
+            Logger.message("Host name not configured in testng.xml; falling back to Solanum config.");
+            hostName = Config.hostName;
+            hostPort = Config.hostPort;
+        }
         startEggplant();
         setEggplantDefaultSettings();
-        driver.connect();
+        driver.connect(hostName, hostPort);
+    }
+
+    @AfterTest(alwaysRun = true)
+    @Parameters({"hostName", "hostPort"})
+    public void fixtureTearDown(@Optional("hostName") String hostName,
+                                @Optional("hostPort") Integer hostPort) {
+        if (hostName == null || hostPort == null) {
+            Logger.message("Host name not configured in testng.xml; falling back to Solanum config.");
+            hostName = Config.hostName;
+            hostPort = Config.hostPort;
+        }
+        driver.disconnect(hostName, hostPort);
+        driver.endSuite();
+        stopEggplant();
     }
 
     public void setEggplantDefaultSettings() {
@@ -65,8 +78,6 @@ public class EggplantTestBase {
             driver.startSuite(Config.suitePath);
             Logger.message("Eggplant drive started");
         }
-
-
     }
 
     protected void stopEggplant() {

@@ -17,7 +17,7 @@ import java.net.URL;
 public class TestBaseTests extends EggplantTestBase{
     @Override
     @BeforeTest
-    public void fixtureSetUp(){
+    public void fixtureSetUp(String hostname, Integer hostport){
         startEggplant();
         setEggplantDefaultSettings();
         //driver.connect();

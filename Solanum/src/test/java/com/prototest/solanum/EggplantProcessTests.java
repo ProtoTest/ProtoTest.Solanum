@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
  */
 public class EggplantProcessTests {
 
-
     @Test
     public void TestDriveStarts(){
         EggplantProcess process = new EggplantProcess();
@@ -21,7 +20,6 @@ public class EggplantProcessTests {
         driver.startSuite(Config.suitePath);
         Assert.assertEquals(driver.isDriveRunning(), true, "Drive is not running");
     }
-
 
     @Test
     public void TestDriveKills(){
