@@ -2,6 +2,8 @@ package com.prototest.solanum;
 
 import org.testng.Reporter;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Actual documentation, seriously.
  */
@@ -9,8 +11,11 @@ public class Logger {
 
 
     public static void message(String text){
-        System.out.println(text);
-        Reporter.log(text);
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        String timestamp = sdf.format(date);
+        System.out.println(String.format("(%s) %s",timestamp,text));
+        Reporter.log(String.format("(%s) %s",timestamp,text));
 
     }
 

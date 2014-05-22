@@ -65,6 +65,32 @@ public class SearchRectangle {
 
     }
 
+    public static SearchRectangle rightHalf()
+    {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        return new SearchRectangle(new Point(fullScreen.width/2,0),new Point(fullScreen.width,fullScreen.height));
+    }
+
+    public static SearchRectangle leftHalf()
+    {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        return new SearchRectangle(new Point(0, 0), new Point(fullScreen.width/2, fullScreen.height));
+    }
+
+    public static SearchRectangle leftQuarter()
+    {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        return new SearchRectangle(new Point(0, 0), new Point(fullScreen.width/4, fullScreen.height));
+    }
+
+    public static SearchRectangle rightQuarter() {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        int value = (int) Math.floor(fullScreen.width * .75);
+        return new SearchRectangle(new Point(value, 0), new Point(fullScreen.width, fullScreen.height));
+    }
+
+    public SearchRectangle trimTop(int amount) {
+        upperLeft.setLocation(upperLeft.getX(), upperLeft.getY() + amount);
     public SearchRectangle trimTop(int screenPercentage) {
         Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
         upperLeft.setLocation(upperLeft.getX(), upperLeft.getY() + fullScreen.getHeight()*screenPercentage/100.0);
@@ -87,5 +113,6 @@ public class SearchRectangle {
         Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
         lowerRight.setLocation(upperLeft.getX() + fullScreen.getHeight()*screenPercentage/100.0, lowerRight.getY());
         return this;
+
     }
 }
