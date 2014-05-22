@@ -89,8 +89,6 @@ public class SearchRectangle {
         return new SearchRectangle(new Point(value, 0), new Point(fullScreen.width, fullScreen.height));
     }
 
-    public SearchRectangle trimTop(int amount) {
-        upperLeft.setLocation(upperLeft.getX(), upperLeft.getY() + amount);
     public SearchRectangle trimTop(int screenPercentage) {
         Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
         upperLeft.setLocation(upperLeft.getX(), upperLeft.getY() + fullScreen.getHeight()*screenPercentage/100.0);
