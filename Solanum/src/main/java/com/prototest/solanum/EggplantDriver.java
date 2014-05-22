@@ -242,6 +242,15 @@ public class EggplantDriver {
         return new Rectangle(Integer.parseInt(rect[0]),Integer.parseInt(rect[1]),Integer.parseInt(rect[2]),Integer.parseInt(rect[3]));
     }
 
+    public Point getScreenSize()
+    {
+        String output = execute("put RemoteScreenSize()").get("Output").trim();
+        output = output.substring(1,output.length()-1);
+        String[] rect = output.split(",");
+
+        return new Point(Integer.parseInt(rect[0]),Integer.parseInt(rect[1]));
+    }
+
     public String getConnectionInfo()
     {
         return (String) execute("put ConnectionInfo()").get("Output");
