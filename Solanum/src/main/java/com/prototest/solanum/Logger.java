@@ -14,23 +14,31 @@ public class Logger {
         java.util.Date date = new java.util.Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
         String timestamp = sdf.format(date);
-        System.out.println(String.format("(%s) %s",timestamp,text));
-        Reporter.log(String.format("(%s) %s",timestamp,text));
+        text = String.format("(%s) %s",timestamp,text);
+        System.out.println(text);
+        Reporter.log(text);
 
     }
 
     public static void warning(String text){
-        System.out.println(String.format("WARNING : %s",text));
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        String timestamp = sdf.format(date);
+        text = String.format("(%s) ----! WARNING: %s",timestamp,text);
+
+        System.out.println(text);
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:yellow\">%s</div>",text));
-        //System.setProperty("org.uncommons.reportng.escape-output", "true");
     }
 
     public static void error(String text){
-        System.out.println(String.format("ERROR : %s",text));
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        String timestamp = sdf.format(date);
+        text = String.format("(%s) !---- ERROR: %s",timestamp,text);
+        System.out.println(text);
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:red\">%s</div>",text));
-        //System.setProperty("org.uncommons.reportng.escape-output", "true");
     }
 
     public static void screenshot(){

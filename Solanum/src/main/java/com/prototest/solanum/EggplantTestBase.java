@@ -47,8 +47,10 @@ public class EggplantTestBase {
 
     public void setEggplantDefaultSettings() {
 
+        driver.setOption("ImageSearchDelay", String.valueOf(Config.imageSearchDelay));
         driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
-        driver.setOption("ImageSearchTime", String.valueOf(Config.imageSearchTime));
+        driver.setOption("MouseClickDelay", String.valueOf(Config.mouseClickDelay));
+        Logger.message("Eggplant drive set with options : " + driver.getOptions());
     }
 
     protected void startEggplant() {
@@ -61,7 +63,7 @@ public class EggplantTestBase {
                 eggplantProcess.start();
             }
             driver.startSuite(Config.suitePath);
-            Logger.message("Eggplant drive started with options : " + driver.getOptions());
+            Logger.message("Eggplant drive started");
         }
 
 

@@ -28,13 +28,13 @@ public class TestBaseTests extends EggplantTestBase{
      }
 
     @Test
-    public void TestDefaultSearchTime(){
+    public void TestDefaultSearchDelay(){
 
-        Assert.assertEquals(driver.getOption("ImageSearchTime").trim(), Config.imageSearchTime);
+        Assert.assertEquals(driver.getOption("ImageSearchDelay").trim(), Config.imageSearchDelay);
     }
     @Test
     public void TestDefaultSearchCount(){
-        Assert.assertEquals(driver.getOption("ImageSearchTime").trim(),Config.imageSearchTime);
+        Assert.assertEquals(driver.getOption("ImageSearchCount").trim(),Config.imageSearchCount);
     }
 
     @Test
