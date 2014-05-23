@@ -43,12 +43,12 @@ class EggplantProcess {
         Runtime rt = Runtime.getRuntime();
         try {
             if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-                Logger.message("Executing : taskkill  /F /IM eggPlant.exe");
+                Logger.debug("Executing : taskkill  /F /IM eggPlant.exe");
                 rt.exec("taskkill  /F /IM eggPlant.exe");
-                Logger.message("Executing : taskkill  /F /IM adb.exe");
+                Logger.debug("Executing : taskkill  /F /IM adb.exe");
                 rt.exec("taskkill  /F /IM adb.exe");
             } else {
-                Logger.message("Executing : pkill -9 -fi eggplant");
+                Logger.debug("Executing : pkill -9 -fi eggplant");
                 rt.exec("pkill -9 -fi eggplant");
             }
         } catch (IOException e) {
@@ -66,14 +66,14 @@ class EggplantProcess {
         String line;
         try {
 
-            Logger.message("Executing command : " + Joiner.on(' ').join(command.command()));
+            Logger.debug("Executing command : " + Joiner.on(' ').join(command.command()));
             eggplantDrive = command.start();
 
             BufferedReader input = new BufferedReader
                     (new InputStreamReader(eggplantDrive.getInputStream()));
             while ((line = input.readLine()) != null) {
                 if (Config.logDriveCommands) {
-                    Logger.message(line);
+                    Logger.debug(line);
                 }
                 if (line.contains("Maximum Users")) {
                     Assert.fail("The maximum number of simultaneous users has been exceeded for your eggPlant license.");
@@ -82,7 +82,7 @@ class EggplantProcess {
                     Assert.fail("No valid eggplant license was found.  Please launch the eggplant GUI, add a license, and try again.");
                 }
                 if (line.contains("Starting eggPlant Drive")) {
-                    Logger.message("eggPlant Drive started on port " + Config.drivePort);
+                    Logger.debug("eggPlant Drive started on port " + Config.drivePort);
                     processLogger = new ProcessLogger(input);
                     processLogger.start();
                     return;
@@ -112,7 +112,7 @@ class EggplantProcess {
                         yield();
 
                         if (Config.logDriveCommands) {
-                            Logger.message(line);
+                            Logger.debug(line);
                         }
                     }
                 } catch (IOException e) {

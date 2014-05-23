@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.SearchRectangle;
-import com.prototest.solanum.TextOption;
+import com.prototest.solanum.*;
 import org.testng.Assert;
 
 import java.awt.*;
@@ -19,6 +16,7 @@ public class DishAnywhereLogin extends AndroidScreen {
     }
 
     public DishAnywhereHome login(String onlineId, String password) {
+        Logger.message("Logging in...");
         this.onlineId.type(onlineId);
         this.password.type(password);
         loginButton.click();
@@ -26,6 +24,7 @@ public class DishAnywhereLogin extends AndroidScreen {
         if (errorField.isPresent()) {
             Assert.fail("Didn't login");
         }
+        Logger.message("Logged in.");
         return new DishAnywhereHome();
     }
 

@@ -50,35 +50,35 @@ public class EggplantElement {
     public String getText() {
 
         waitForPresent();
-        Logger.message(String.format("Reading text on %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("Reading text on %s %s.", name, by.getLocator()));
         return driver.readText(by.getLocator());
     }
 
 
     public EggplantElement click() {
         waitForPresent();
-        Logger.message(String.format("Clicking on %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("Clicking on %s %s.", name, by.getLocator()));
         driver.click(by.getLocator());
         return this;
     }
 
     public EggplantElement doubleClick() {
         waitForPresent();
-        Logger.message(String.format("Double-clicking on %s %s.",name,  by.getLocator()));
+        Logger.debug(String.format("Double-clicking on %s %s.", name, by.getLocator()));
         driver.doubleTap(by.getLocator());
         return this;
     }
 
     public EggplantElement press() {
         waitForPresent();
-        Logger.message(String.format("Performing click+hold on %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("Performing click+hold on %s %s.", name, by.getLocator()));
         driver.press(by.getLocator());
         return this;
     }
 
     public EggplantElement release() {
         waitForPresent();
-        Logger.message(String.format("Performing release on %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("Performing release on %s %s.", name, by.getLocator()));
         driver.release(by.getLocator());
         return this;
     }
@@ -86,28 +86,28 @@ public class EggplantElement {
 
     public EggplantElement tap() {
         waitForPresent();
-        Logger.message(String.format("Tap on %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("Tap on %s %s.", name, by.getLocator()));
         driver.tap(by.getLocator());
         return this;
     }
 
     public EggplantElement doubleTap() {
         waitForPresent();
-        Logger.message(String.format("DoubleTap on %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("DoubleTap on %s %s.", name, by.getLocator()));
         driver.doubleTap(by.getLocator());
         return this;
     }
 
     public EggplantElement type(String text) {
         click();
-        Logger.message(String.format("Typing text:(%s).", text));
+        Logger.debug(String.format("Typing text:(%s).", text));
         driver.typeText(text);
         return this;
     }
 
     public EggplantElement dragTo(EggplantElement element){
         waitForPresent();
-        Logger.message(String.format("Dragging %s to %s.", name, by.getLocator()));
+        Logger.debug(String.format("Dragging %s to %s.", name, by.getLocator()));
         driver.drag(by.getLocator());
         driver.drop(element.getBy().getLocator());
         return this;
@@ -115,26 +115,26 @@ public class EggplantElement {
 
     public EggplantElement swipeUp(){
         waitForPresent();
-        Logger.message(String.format("SwipingUp %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("SwipingUp %s %s.", name, by.getLocator()));
         driver.swipeUp(by.getLocator());
         return this;
     }
 
     public EggplantElement swipeDown(){
         waitForPresent();
-        Logger.message(String.format("SwipingDown %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("SwipingDown %s %s.", name, by.getLocator()));
         driver.swipeDown(by.getLocator());
         return this;
     }
     public EggplantElement swipeLeft(){
         waitForPresent();
-        Logger.message(String.format("SwipingLeft %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("SwipingLeft %s %s.", name, by.getLocator()));
         driver.swipeLeft(by.getLocator());
         return this;
     }
     public EggplantElement swipeRight(){
         waitForPresent();
-        Logger.message(String.format("SwipingRight %s %s.", name, by.getLocator()));
+        Logger.debug(String.format("SwipingRight %s %s.", name, by.getLocator()));
         driver.swipeRight(by.getLocator());
         return this;
     }
@@ -145,12 +145,12 @@ public class EggplantElement {
 
     public EggplantElement waitForPresent(int secs) {
 
-        Logger.message(String.format("Waiting for %s to be present within %d ms.", by.getLocator(), secs));
+        Logger.debug(String.format("Waiting for %s to be present within %d ms.", by.getLocator(), secs));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
             if (isPresent()) {
-                Logger.message(String.format("Verification Passed : %s %s is present.", name, by.getLocator()));
+                Logger.debug(String.format("Verification Passed : %s %s is present.", name, by.getLocator()));
                 return this;
             } else {
                 sleep(500);
@@ -170,12 +170,12 @@ public class EggplantElement {
     }
 
     public EggplantElement waitForNotPresent(int secs) {
-        Logger.message(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(),secs));
+        Logger.debug(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(), secs));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
             if (!driver.isPresent(by.getLocator())) {
-                Logger.message("Element no longer present.");
+                Logger.debug("Element no longer present.");
                 return this;
             } else {
                 now = new LocalTime();
@@ -189,20 +189,20 @@ public class EggplantElement {
 
     // Soft verification failures - Test will keep progressing
     public EggplantElement verifyPresent() {
-        Logger.message(String.format("Verifying %s %s should be present.", name, by.getLocator()));
+        Logger.debug(String.format("Verifying %s %s should be present.", name, by.getLocator()));
         Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), driver.isPresent(by.getLocator()));
         return this;
     }
 
     public EggplantElement verifyNotPresent() {
-        Logger.message(String.format("Verifying %s %s is not be present.",name, by));
+        Logger.debug(String.format("Verifying %s %s is not be present.", name, by));
         Verifications.addVerification(String.format("%s %s should be present.",name, by.getLocator()), ! driver.isPresent(by.getLocator()));
         return this;
     }
 
     public EggplantElement verifyText(String value){
         waitForPresent();
-        Logger.message(String.format("Verifying %s %s text is %s.", name, by.getLocator(),value));
+        Logger.debug(String.format("Verifying %s %s text is %s.", name, by.getLocator(), value));
         Verifications.addVerification(String.format("%s %s should have text %s", name, by.getLocator(),value), getText()==value);
         return this;
     }

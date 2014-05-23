@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.SearchRectangle;
-import com.prototest.solanum.TextOption;
+import com.prototest.solanum.*;
 
 /**
  */
@@ -16,6 +13,7 @@ public class DishAnywhereHome extends AndroidScreen {
     }
 
     public DishAnywhereSettings openSettings() {
+        Logger.message("Opening Settings panel.");
         settingsButton.click();
         return new DishAnywhereSettings();
     }

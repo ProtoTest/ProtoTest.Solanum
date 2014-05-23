@@ -1,11 +1,8 @@
 package com.prototest.solanum;
 
-import org.testng.ITestContext;
-import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import java.io.InputStream;
 import java.lang.reflect.Method;
 
 /**
@@ -19,7 +16,7 @@ public class EggplantTestBase {
     @BeforeMethod
     public void testSetup(Method method) {
         Config.currentTestName = method.getName();
-        Logger.message("Starting test " + Config.currentTestName);
+        Logger.debug("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
     }
 
@@ -63,7 +60,7 @@ public class EggplantTestBase {
         driver.setOption("ImageSearchDelay", String.valueOf(Config.imageSearchDelay));
         driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
         driver.setOption("MouseClickDelay", String.valueOf(Config.mouseClickDelay));
-        Logger.message("Eggplant drive set with options : " + driver.getOptions());
+        Logger.debug("Eggplant drive set with options : " + driver.getOptions());
     }
 
     protected void startEggplant() {
@@ -76,7 +73,7 @@ public class EggplantTestBase {
                 eggplantProcess.start();
             }
             driver.startSuite(Config.suitePath);
-            Logger.message("Eggplant drive started");
+            Logger.debug("Eggplant drive started");
         }
     }
 

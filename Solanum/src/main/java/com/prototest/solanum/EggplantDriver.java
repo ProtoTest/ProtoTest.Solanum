@@ -1,12 +1,8 @@
 package com.prototest.solanum;
 
-import org.apache.xmlrpc.XmlRpcException;
-
 import java.awt.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.regex.Pattern;
 
 /**
  * Created by Brian on 5/12/2014.
@@ -65,7 +61,7 @@ public class EggplantDriver {
 
     public EggplantResponse execute(String command) {
         if (Config.logDriveCommands) {
-            Logger.message(String.format("Executing : %s", command));
+            Logger.debug(String.format("Executing : %s", command));
         }
         delay(Config.commandDelayMs);
         EggplantResponse result = client.execute(command);
@@ -82,15 +78,15 @@ public class EggplantDriver {
 
     public void startSuite(String path) {
         if (Config.logDriveCommands) {
-            Logger.message(String.format("Starting Suite : %s", path));
+            Logger.debug(String.format("Starting Suite : %s", path));
         }
         client.startSession(path);
     }
 
 
-    public void endSuite() {
-        if (Config.logDriveCommands) {
-            Logger.message("Ending Current Suite");
+    public void endSuite(){
+        if(Config.logDriveCommands){
+            Logger.debug("Ending Current Suite");
         }
         client.endSession();
     }
