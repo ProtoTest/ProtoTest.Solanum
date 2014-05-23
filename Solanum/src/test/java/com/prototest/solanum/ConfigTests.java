@@ -8,8 +8,7 @@ import org.testng.annotations.Test;
  */
 public class ConfigTests {
     @Test
-    public void TestConfigValue()
-    {
-        Assert.assertEquals(Config.suitePath,"EggplantSuites/DishAnywhere.suite");
+    public void TestConfigValue() {
+        Assert.assertEquals(Config.suitePath, "EggplantSuites/DishAnywhere.suite");
     }
 }

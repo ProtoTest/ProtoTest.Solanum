@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class EggplantProcessTests {
 
     @Test
-    public void TestDriveStarts(){
+    public void TestDriveStarts() {
         EggplantProcess process = new EggplantProcess();
 
         if (Config.manageEggdriveProcess) {
@@ -22,7 +22,7 @@ public class EggplantProcessTests {
     }
 
     @Test
-    public void TestDriveKills(){
+    public void TestDriveKills() {
         EggplantProcess process = new EggplantProcess();
         if (Config.manageEggdriveProcess) {
             process.start();
@@ -36,9 +36,9 @@ public class EggplantProcessTests {
 
     }
 
-      ///this test is failing as process.destroy() doesn't seem to work.
+    ///this test is failing as process.destroy() doesn't seem to work.
     @Test
-    public void TestDriveStops(){
+    public void TestDriveStops() {
         EggplantProcess process = new EggplantProcess();
         process.kill();
         process.start();

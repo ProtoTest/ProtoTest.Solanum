@@ -14,27 +14,29 @@ import java.net.URL;
 /**
  * Created by Brian on 5/20/2014.
  */
-public class TestBaseTests extends EggplantTestBase{
+public class TestBaseTests extends EggplantTestBase {
     @Override
     @BeforeTest
-    public void fixtureSetUp(String hostname, Integer hostport){
+    public void fixtureSetUp(String hostname, Integer hostport) {
         startEggplant();
         setEggplantDefaultSettings();
         //driver.connect();
     }
-    @Test
-    public void TestDriveLaunches(){
-        Assert.assertEquals(driver.isDriveRunning(),true);
-     }
 
     @Test
-    public void TestDefaultSearchDelay(){
+    public void TestDriveLaunches() {
+        Assert.assertEquals(driver.isDriveRunning(), true);
+    }
+
+    @Test
+    public void TestDefaultSearchDelay() {
 
         Assert.assertEquals(driver.getOption("ImageSearchDelay").trim(), Config.imageSearchDelay);
     }
+
     @Test
-    public void TestDefaultSearchCount(){
-        Assert.assertEquals(driver.getOption("ImageSearchCount").trim(),Config.imageSearchCount);
+    public void TestDefaultSearchCount() {
+        Assert.assertEquals(driver.getOption("ImageSearchCount").trim(), Config.imageSearchCount);
     }
 
     @Test
