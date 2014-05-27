@@ -10,7 +10,7 @@ public class HomeScreen extends AndroidScreen {
     }
 
     public <C> C openApp(String name, Class<C> screenType, SearchRectangle rect, TextOption... options) {
-        Logger.message(String.format("Opening app: (%s).", name));
+        Logger.info(String.format("Opening app: (%s).", name));
         EggplantElement element = new EggplantElement(By.Text(name, rect, options));
         element.click();
         try {
@@ -22,12 +22,12 @@ public class HomeScreen extends AndroidScreen {
     }
 
     public AndroidScreen openApp(String name, SearchRectangle rect, TextOption... options) {
-        Logger.message(String.format("Opening app: (%s).", name));
+        Logger.info(String.format("Opening app: (%s).", name));
         return openApp(name, AndroidScreen.class, rect, options);
     }
 
     public AndroidScreen openApp(String name, TextOption... options) {
-        Logger.message(String.format("Opening app: (%s).", name));
+        Logger.info(String.format("Opening app: (%s).", name));
         return openApp(name, AndroidScreen.class, null, options);
     }
 }

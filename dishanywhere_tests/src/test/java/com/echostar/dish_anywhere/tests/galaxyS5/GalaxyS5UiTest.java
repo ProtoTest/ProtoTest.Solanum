@@ -6,7 +6,6 @@ import com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5.DishAnywhe
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.SearchRectangle;
-import com.prototest.solanum.TextOption;
 import org.testng.annotations.Test;
 
 /**
@@ -18,7 +17,7 @@ public class GalaxyS5UiTest extends EggplantTestBase {
 
     @Test
     public void testLogoutAndLogin() {
-        Logger.message("Beginning Test: Logout and Login.");
+        Logger.info("Beginning Test: Logout and Login.");
         DishAnywhereHome home = new AndroidScreen()
                 .goHome().openApp("Anywhere", DishAnywhereHome.class, SearchRectangle.bottomHalf());
         DishAnywhereLogin login = home.openSettings().logout();

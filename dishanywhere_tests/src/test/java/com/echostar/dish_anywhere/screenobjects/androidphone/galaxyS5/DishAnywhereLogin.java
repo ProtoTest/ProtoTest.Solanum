@@ -16,7 +16,7 @@ public class DishAnywhereLogin extends AndroidScreen {
     }
 
     public DishAnywhereHome login(String onlineId, String password) {
-        Logger.message("Logging in...");
+        Logger.info("Logging in...");
         this.onlineId.type(onlineId);
         this.password.type(password);
         loginButton.click();
@@ -24,7 +24,7 @@ public class DishAnywhereLogin extends AndroidScreen {
         if (errorField.isPresent()) {
             Assert.fail("Didn't login");
         }
-        Logger.message("Logged in.");
+        Logger.info("Logged in.");
         return new DishAnywhereHome();
     }
 

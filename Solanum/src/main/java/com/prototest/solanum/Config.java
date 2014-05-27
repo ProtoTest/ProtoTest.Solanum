@@ -18,6 +18,10 @@ public class Config {
     public static String suitePath = getPropertyValue("suitePath", "");
     public static String drivePort = getPropertyValue("drivePort", "5400");
     public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "0");
+    /**
+     * logLevel can be debug, info, warning, or error.
+     */
+    public static int logLevel = getLogLevel(getPropertyValue("logLevel", "debug"));
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
     public static int commandDelayMs = getPropertyValue("commandDelayMs", 1000);
     public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 5);
@@ -51,7 +55,7 @@ public class Config {
             input = ClassLoader.getSystemClassLoader().getResourceAsStream("config.properties");
         }
         if (input == null) {
-            Logger.message("Config file not found, using defaults.");
+            Logger.info("Config file not found, using defaults.");
         } else {
             try {
                 properties.load(input);
@@ -89,5 +93,20 @@ public class Config {
 
     private static boolean isTruthy(String value) {
         return value.equals("True") || value.equals("true");
+    }
+
+
+    private static int getLogLevel(String propertyValue) {
+        if (propertyValue.toLowerCase().equals("debug")) {
+            return 0;
+        } else if (propertyValue.toLowerCase().equals("info")) {
+            return 1;
+        } else if (propertyValue.toLowerCase().equals("warning")) {
+            return 2;
+        } else if (propertyValue.toLowerCase().equals("error")) {
+            return 3;
+        } else {
+            return Integer.parseInt(propertyValue);
+        }
     }
 }

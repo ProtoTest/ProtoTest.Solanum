@@ -32,7 +32,7 @@ public class EggplantTestBase {
     public void fixtureSetUp(@Optional String hostName,
                              @Optional Integer hostPort) {
         if (hostName == null || hostPort == null) {
-            Logger.message("Host name not configured by testng.xml; falling back to Solanum config.");
+            Logger.info("Host name not configured by testng.xml; falling back to Solanum config.");
             hostName = Config.hostName;
             hostPort = Config.hostPort;
         }
@@ -46,7 +46,7 @@ public class EggplantTestBase {
     public void fixtureTearDown(@Optional() String hostName,
                                 @Optional() Integer hostPort) {
         if (hostName == null || hostPort == null) {
-            Logger.message("Host name not configured in testng.xml; falling back to Solanum config.");
+            Logger.info("Host name not configured in testng.xml; falling back to Solanum config.");
             hostName = Config.hostName;
             hostPort = Config.hostPort;
         }

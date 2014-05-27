@@ -10,7 +10,8 @@ import java.text.SimpleDateFormat;
  */
 public class Logger {
 
-    public static void message(String text){
+    public static void info(String text){
+        if (Config.logLevel > 1) return;
         java.util.Date date = new java.util.Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
         String timestamp = sdf.format(date);
@@ -20,6 +21,7 @@ public class Logger {
     }
 
     public static void debug(String text){
+        if (Config.logLevel > 0) return;
         java.util.Date date = new java.util.Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
         String timestamp = sdf.format(date);
@@ -29,6 +31,7 @@ public class Logger {
     }
 
     public static void warning(String text){
+        if (Config.logLevel > 2) return;
         java.util.Date date = new java.util.Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
         String timestamp = sdf.format(date);
@@ -40,6 +43,7 @@ public class Logger {
     }
 
     public static void error(String text){
+        if (Config.logLevel > 3) return;
         java.util.Date date = new java.util.Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
         String timestamp = sdf.format(date);
@@ -54,6 +58,7 @@ public class Logger {
         String newScreenshot = EggplantTestBase.driver.getScreenshot();
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot + ".tiff"));
+
     }
 
 

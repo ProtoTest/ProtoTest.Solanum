@@ -11,7 +11,7 @@ public class AndroidScreen {
     public final Navigation nav = new Navigation();
 
     public AndroidScreen() {
-        Logger.message("Loading main device screen.");
+        Logger.info("Loading main device screen.");
 //        EggplantElement lockSlider = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/System/Device/LockButton"));
 //        if (lockSlider.isPresent()) {
 //            EggplantElement unlockSlider = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/System/Device/unlockButton"));
@@ -20,7 +20,7 @@ public class AndroidScreen {
     }
 
     public HomeScreen goHome() {
-        Logger.message("Returning to device home screen.");
+        Logger.info("Returning to device home screen.");
         nav.homeButton.click();
         return new HomeScreen();
     }

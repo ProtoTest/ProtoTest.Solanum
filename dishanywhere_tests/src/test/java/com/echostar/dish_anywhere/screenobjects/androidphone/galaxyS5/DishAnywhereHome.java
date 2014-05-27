@@ -5,7 +5,7 @@ import com.prototest.solanum.*;
 /**
  */
 public class DishAnywhereHome extends AndroidScreen {
-    private EggplantElement settingsButton = new EggplantElement(By.Text("Settings", SearchRectangle.bottomHalf().trimTop(30)));
+    private EggplantElement settingsButton = new EggplantElement(By.Text("Settings", SearchRectangle.bottomHalf()));
 
     public DishAnywhereHome() {
         super();
@@ -13,7 +13,7 @@ public class DishAnywhereHome extends AndroidScreen {
     }
 
     public DishAnywhereSettings openSettings() {
-        Logger.message("Opening Settings panel.");
+        Logger.info("Opening Settings panel.");
         settingsButton.click();
         return new DishAnywhereSettings();
     }

@@ -14,7 +14,7 @@ public class DishAnywhereSettings extends AndroidScreen {
     }
 
     public DishAnywhereLogin logout() {
-        Logger.message("Logging out...");
+        Logger.info("Logging out...");
         if (! logout.isPresent()) {
             new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter(),
                         TextOption.hotSpot(new Point(0,-400))))
@@ -22,7 +22,7 @@ public class DishAnywhereSettings extends AndroidScreen {
         }
         logout.click();
         new EggplantElement(By.Text("OK", SearchRectangle.middleHalf().trimTop(25))).click();
-        Logger.message("Logout complete.");
+        Logger.info("Logout complete.");
         return new DishAnywhereLogin();
     }
 }
