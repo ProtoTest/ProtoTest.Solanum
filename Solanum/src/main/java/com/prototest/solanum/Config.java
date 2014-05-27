@@ -34,6 +34,9 @@ public class Config {
     public static String currentTestName = "Test";
     public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
 
+    public static String dishAnywhereLoginName = getPropertyValue("dishAnywhereLoginName", "APP CONFIG ERROR");
+    public static String dishAnywhereLoginPass = getPropertyValue("dishAnywhereLoginPass", "");
+
     private static int getPropertyValue(String key, int defaultValue) {
         String result = getPropertyValue(key, null);
         if (result == null) return defaultValue;

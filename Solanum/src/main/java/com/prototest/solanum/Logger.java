@@ -5,9 +5,8 @@ import org.testng.Reporter;
 import java.awt.*;
 import java.text.SimpleDateFormat;
 
-/**
- * Actual documentation, seriously.
- */
+// Solanum's logging options
+
 public class Logger {
 
     public static void info(String text){
@@ -54,7 +53,7 @@ public class Logger {
     }
 
     public static void screenshot(Rectangle drawRectangle){
-
+        Logger.info("Capturing device screenshot...");
         String newScreenshot = EggplantTestBase.driver.getScreenshot();
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot + ".tiff"));

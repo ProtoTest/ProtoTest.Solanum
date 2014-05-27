@@ -2,10 +2,10 @@ package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
 
 import com.prototest.solanum.*;
 
-/**
- */
-public class HomeScreen extends AndroidScreen {
-    public HomeScreen() {
+// Screen Object for Device's primary View object (Home) on the MainScreen ViewGroup
+
+public class DeviceHomeScreen extends DeviceMain {
+    public DeviceHomeScreen() {
         super();
     }
 
@@ -21,13 +21,13 @@ public class HomeScreen extends AndroidScreen {
 
     }
 
-    public AndroidScreen openApp(String name, SearchRectangle rect, TextOption... options) {
+    public DeviceMain openApp(String name, SearchRectangle rect, TextOption... options) {
         Logger.info(String.format("Opening app: (%s).", name));
-        return openApp(name, AndroidScreen.class, rect, options);
+        return openApp(name, DeviceMain.class, rect, options);
     }
 
-    public AndroidScreen openApp(String name, TextOption... options) {
+    public DeviceMain openApp(String name, TextOption... options) {
         Logger.info(String.format("Opening app: (%s).", name));
-        return openApp(name, AndroidScreen.class, null, options);
+        return openApp(name, DeviceMain.class, null, options);
     }
 }

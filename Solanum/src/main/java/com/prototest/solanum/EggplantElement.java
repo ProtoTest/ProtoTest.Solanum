@@ -145,7 +145,7 @@ public class EggplantElement {
 
     public EggplantElement waitForPresent(int secs) {
 
-        Logger.debug(String.format("Waiting for %s to be present within %d ms.", by.getLocator(), secs));
+        Logger.debug(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {

@@ -83,4 +83,12 @@ public class EggplantTestBase {
             eggplantProcess.kill();
         }
     }
+
+    public static void sleep(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
