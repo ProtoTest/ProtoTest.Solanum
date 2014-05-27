@@ -1,6 +1,9 @@
 package com.prototest.solanum;
 
 import java.io.*;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -33,9 +36,27 @@ public class Config {
     public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
     public static String currentTestName = "Test";
     public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
+    private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
 
-    public static String dishAnywhereLoginName = getPropertyValue("dishAnywhereLoginName", "APP CONFIG ERROR");
-    public static String dishAnywhereLoginPass = getPropertyValue("dishAnywhereLoginPass", "");
+    public static String getTestProp(String key) {
+        return testProperties.get(key);
+    }
+
+    private static Map<String, String> getTestProperties(String modulePrefix) {
+        if (properties == null) init();
+
+        HashMap<String, String> props = new HashMap<String, String>();
+        String[] prefixes = modulePrefix.split(",");
+        for (String prefix : prefixes) {
+            for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+                if (((String) entry.getKey()).contains(prefix)) {
+                    props.put((String) entry.getKey(), (String) entry.getValue());
+                }
+            }
+        }
+        return props;
+    }
+
 
     private static int getPropertyValue(String key, int defaultValue) {
         String result = getPropertyValue(key, null);
@@ -44,7 +65,7 @@ public class Config {
     }
 
     private static void init() {
-        properties = new Properties(System.getProperties());
+        properties = new Properties();
 
         String configLocation = System.getProperty("configFile");
         InputStream input = null;
@@ -71,13 +92,13 @@ public class Config {
     public static String getPropertyValue(String key, String defaultValue) {
         if (properties == null) init();
 
-        return properties.getProperty(key, defaultValue);
+        return properties.getProperty(key, System.getProperty(key, defaultValue));
     }
 
     public static boolean getPropertyValue(String key, boolean defaultValue) {
         if (properties == null) init();
 
-        String result = getPropertyValue(key, null);
+        String result = getPropertyValue(key, System.getProperty(key, null));
         if (result == null) return defaultValue;
         return isTruthy(result);
     }

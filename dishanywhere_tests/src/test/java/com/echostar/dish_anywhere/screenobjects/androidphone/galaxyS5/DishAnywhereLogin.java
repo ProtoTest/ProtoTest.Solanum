@@ -33,7 +33,7 @@ public class DishAnywhereLogin extends DeviceMain {
         EggplantTestBase.sleep(3000);
         if(loginButton.isPresent()){
             Logger.info("Logged state is required.");
-            login(Config.dishAnywhereLoginName, Config.dishAnywhereLoginPass);
+            login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"));
         }
         else {
             Logger.info("App is already logged in.");

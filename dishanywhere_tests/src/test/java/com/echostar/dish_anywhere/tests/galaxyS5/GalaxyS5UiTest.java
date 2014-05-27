@@ -20,7 +20,7 @@ public class GalaxyS5UiTest extends EggplantTestBase {
                 .openDishAnywhereHome()
                 .openSettings()
                 .logout()
-                .login(Config.dishAnywhereLoginName, Config.dishAnywhereLoginPass)
+                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .verifyLoggedIn();
     }
 }
