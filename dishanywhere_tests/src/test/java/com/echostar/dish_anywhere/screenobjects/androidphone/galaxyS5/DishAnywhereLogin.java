@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class DishAnywhereLogin extends AndroidScreen {
     private EggplantElement onlineId = new EggplantElement(By.Text("Online ID", TextOption.hotSpot(new Point(75,109))));
-    private EggplantElement password = new EggplantElement(By.Text("Password", TextOption.hotSpot(new Point(75,109)), TextOption.searchRectangle(SearchRectangle.middleHalf())));
+    private EggplantElement password = new EggplantElement(By.Text("Password",SearchRectangle.middleHalf(), TextOption.hotSpot(new Point(75,109))));
     private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton"));
     public DishAnywhereLogin() {
         super();

@@ -4,7 +4,7 @@ package com.prototest.solanum;
 import java.awt.*;
 
 /**
- * Created by Brian on 5/12/2014.
+ *
  */
 public class SearchRectangle {
     public Rectangle searchRectangle;

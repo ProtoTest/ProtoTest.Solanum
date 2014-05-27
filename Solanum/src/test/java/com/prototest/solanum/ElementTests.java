@@ -34,8 +34,10 @@ public class ElementTests {
 
     @Test(groups = {"ElementLocator"})
     public void ElementByTextWithPoints() {
-        EggplantElement element = new EggplantElement("EmailIcon", By.Text("Email", TextOption.contrast(true), TextOption.contrastColor("AutoDetect"), TextOption.searchRectangle(new SearchRectangle(new Point(0, 0), new Point(100, 200)))));
-        Assert.assertEquals("(text: \"Email\", Contrast: \"On\", ContrastColor: \"AutoDetect\", SearchRectangle: (0,0,100,200))", element.getBy().getLocator());
+        EggplantElement element = new EggplantElement("EmailIcon", By.Text("Email",
+                new SearchRectangle(new Point(0, 0), new Point(100, 200)),
+                TextOption.contrast(true), TextOption.contrastColor("AutoDetect")));
+        Assert.assertEquals("(text: \"Email\", SearchRectangle: (0,0,100,200), Contrast: \"On\", ContrastColor: \"AutoDetect\")", element.getBy().getLocator());
 
     }
 

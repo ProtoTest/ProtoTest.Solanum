@@ -16,12 +16,12 @@ public class DishAnywhereSettings extends AndroidScreen {
     public DishAnywhereLogin logout() {
         Logger.message("Logging out...");
         if (! logout.isPresent()) {
-            new EggplantElement(By.Text("On Demand", TextOption.searchRectangle(SearchRectangle.bottomQuarter()),
+            new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter(),
                         TextOption.hotSpot(new Point(0,-400))))
                 .swipeUp();
         }
         logout.click();
-        new EggplantElement(By.Text("OK", TextOption.searchRectangle(SearchRectangle.middleHalf().trimTop(25)))).click();
+        new EggplantElement(By.Text("OK", SearchRectangle.middleHalf().trimTop(25))).click();
         Logger.message("Logout complete.");
         return new DishAnywhereLogin();
     }

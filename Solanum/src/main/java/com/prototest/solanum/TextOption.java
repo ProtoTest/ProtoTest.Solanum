@@ -5,15 +5,10 @@ import java.awt.*;
 /**
  * Created by Brian on 5/19/2014.
  */
-public class TextOption {
+public class TextOption extends Option {
 
-    private String text;
-
-    public String getText(){
-        return text;
-    }
-    private TextOption(String text){
-        this.text = text;
+    public TextOption(String text) {
+        super(text);
     }
 
     public static  TextOption contrast(boolean contrastOn){
@@ -23,9 +18,9 @@ public class TextOption {
         return new TextOption("Contrast: \"Off\"");
     }
 
-    public static TextOption searchRectangle(SearchRectangle searchRectangle){
-        return new TextOption(String.format("SearchRectangle: (%s,%s,%s,%s)",searchRectangle.upperLeft.x,searchRectangle.upperLeft.y,searchRectangle.lowerRight.x,searchRectangle.lowerRight.y));
-    }
+//    public static TextOption searchRectangle(SearchRectangle searchRectangle){
+//        return new TextOption(String.format("SearchRectangle: (%s,%s,%s,%s)",searchRectangle.upperLeft.x,searchRectangle.upperLeft.y,searchRectangle.lowerRight.x,searchRectangle.lowerRight.y));
+//    }
 
     public static TextOption waitFor(int value){
         return new TextOption(String.format("WaitFor: %s", value));

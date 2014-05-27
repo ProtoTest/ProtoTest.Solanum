@@ -15,7 +15,7 @@ public class GalaxyS5PlaybackTest extends EggplantTestBase {
     public void test1() {
         HomeScreen homeScreen = new HomeScreen();
         homeScreen.nav.homeButton.click();
-        AndroidScreen screen = homeScreen.openApp("eggOn", TextOption.searchRectangle(SearchRectangle.bottomHalf()));
+        AndroidScreen screen = homeScreen.openApp("eggOn", SearchRectangle.bottomHalf());
         //screen.clickOn("Stop eggOn", TextOption.searchRectangle(SearchRectangle.bottomHalf()));
     }
 }

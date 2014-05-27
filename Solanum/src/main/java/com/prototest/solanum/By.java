@@ -7,73 +7,57 @@ import java.awt.*;
  */
 public class By {
     private String locator;
+    private SearchRectangle searchRectangle;
+
 
     public String getLocator() {
         return locator;
     }
 
-    public By(String locator){
-      this.locator = locator;
+    public By(String locator) {
+        this.locator = locator;
+        this.searchRectangle = new SearchRectangle(EggplantTestBase.driver.getScreenRectangle());
     }
 
-    public static By Image(String path)
-    {
-        String locatorString = String.format("(image: \"%s\")", path);
-        return new By(locatorString);
+    private By(String locator, SearchRectangle searchRectangle) {
+        this.locator = locator;
+        this.searchRectangle = searchRectangle;
     }
 
-    public static By Image(String path, ImageOption... options)
-    {
+    public static By Image(String path, ImageOption... options) {
+        return Image(path, null, options);
+    }
+
+    public static By Image(String path, SearchRectangle searchRectangle, ImageOption... options) {
         String locatorString = String.format("(image: \"%s\"", path);
-        for(ImageOption option : options){
+        if (searchRectangle != null) {
+            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
+        }
+        for (ImageOption option : options) {
             locatorString += ", " + option.getText();
         }
         locatorString += ")";
-        return new By(locatorString);
+        return new By(locatorString, searchRectangle);
     }
 
-    public static By Image(String path, SearchRectangle searchRectangle, ImageOption... options)
-    {
-        String locatorString = String.format("(image: \"%s\"", path);
-        ImageOption rectangleOption = ImageOption.searchRectangle(searchRectangle);
-        locatorString += ", " + rectangleOption.getText();
-        for(ImageOption option : options){
-            locatorString += ", " + option.getText();
-        }
-        locatorString += ")";
-        return new By(locatorString);
+    public static By Text(String text, TextOption... options) {
+        return Text(text, null, options);
     }
 
-    public static By Text(String text)
-    {
-        String locatorString = String.format("(text: \"%s\")", text);
-        return new By(locatorString);
-    }
-
-    public static By Text(String text, TextOption... options)
-        {
+    public static By Text(String text, SearchRectangle searchRectangle, TextOption... options) {
         String locatorString = String.format("(text: \"%s\"", text);
-            for(TextOption option : options){
-                locatorString += ", " + option.getText();
-            }
-        locatorString += ")";
-        return new By(locatorString);
-    }
-
-    public static By Text(String text, SearchRectangle searchRectangle, TextOption... options)
-    {
-        String locatorString = String.format("(text: \"%s\"", text);
-        TextOption rectangleOption = TextOption.searchRectangle(searchRectangle);
-        locatorString += ", " + rectangleOption.getText();
-        for(TextOption option : options){
+        if (searchRectangle != null) {
+            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
+        }
+        for (TextOption option : options) {
             locatorString += ", " + option.getText();
         }
         locatorString += ")";
-        return new By(locatorString);
+        return new By(locatorString, searchRectangle);
     }
 
-    public static By Point(Point point){
-        String locatorString = String.format("(%s,%s)",point.getX(),point.getY());
+    public static By Point(Point point) {
+        String locatorString = String.format("(%s,%s)", point.getX(), point.getY());
         return new By(locatorString);
     }
 

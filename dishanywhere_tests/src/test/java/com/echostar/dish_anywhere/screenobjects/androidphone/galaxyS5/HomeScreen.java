@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.Logger;
-import com.prototest.solanum.TextOption;
+import com.prototest.solanum.*;
 
 /**
  */
@@ -12,9 +9,9 @@ public class HomeScreen extends AndroidScreen {
         super();
     }
 
-    public <C> C openApp(String name, Class<C> screenType, TextOption... options) {
-        Logger.message(String.format("Opening app: (%s).",name));
-        EggplantElement element = new EggplantElement(By.Text(name, options));
+    public <C> C openApp(String name, Class<C> screenType, SearchRectangle rect, TextOption... options) {
+        Logger.message(String.format("Opening app: (%s).", name));
+        EggplantElement element = new EggplantElement(By.Text(name, rect, options));
         element.click();
         try {
             return screenType.getConstructor().newInstance();
@@ -23,8 +20,14 @@ public class HomeScreen extends AndroidScreen {
         }
 
     }
+
+    public AndroidScreen openApp(String name, SearchRectangle rect, TextOption... options) {
+        Logger.message(String.format("Opening app: (%s).", name));
+        return openApp(name, AndroidScreen.class, rect, options);
+    }
+
     public AndroidScreen openApp(String name, TextOption... options) {
-        Logger.message(String.format("Opening app: (%s).",name));
-        return openApp(name, AndroidScreen.class, options);
+        Logger.message(String.format("Opening app: (%s).", name));
+        return openApp(name, AndroidScreen.class, null, options);
     }
 }

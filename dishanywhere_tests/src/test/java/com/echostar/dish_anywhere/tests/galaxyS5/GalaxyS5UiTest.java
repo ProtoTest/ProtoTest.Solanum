@@ -20,7 +20,7 @@ public class GalaxyS5UiTest extends EggplantTestBase {
     public void testLogoutAndLogin() {
         Logger.message("Beginning Test: Logout and Login.");
         DishAnywhereHome home = new AndroidScreen()
-                .goHome().openApp("Anywhere", DishAnywhereHome.class, TextOption.searchRectangle(SearchRectangle.bottomHalf()));
+                .goHome().openApp("Anywhere", DishAnywhereHome.class, SearchRectangle.bottomHalf());
         DishAnywhereLogin login = home.openSettings().logout();
         login.login("guest1full", "guest4321");
     }

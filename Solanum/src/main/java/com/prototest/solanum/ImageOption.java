@@ -5,19 +5,13 @@ import java.awt.*;
 /**
  * Created by Brian on 5/19/2014.
  */
-public class ImageOption {
-    private String text;
+public class ImageOption extends Option {
 
-    public String getText(){
-        return text;
-    }
-    private ImageOption(String text){
-        this.text = text;
+    private ImageOption(String text) {
+        super(text);
     }
 
-    public static ImageOption searchRectangle(SearchRectangle searchRectangle){
-        return new ImageOption(String.format("SearchRectangle: (%s,%s,%s,%s)",searchRectangle.upperLeft.x,searchRectangle.upperLeft.y,searchRectangle.lowerRight.x,searchRectangle.lowerRight.y));
-    }
+
 
     public static ImageOption searchType(String value){
         return new ImageOption(String.format("SearchType: \"%s\"\"",value));
