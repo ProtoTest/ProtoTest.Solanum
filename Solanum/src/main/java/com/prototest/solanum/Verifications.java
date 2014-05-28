@@ -43,7 +43,7 @@ public class Verifications {
     }
     public static void addVerification(String message,boolean passed){
         if(passed){
-            Logger.debug(String.format("Verification Passed : %S", message));
+            Logger.debug(String.format("Verification Passed : %s", message));
             verifications.add(new Verification(message,true));
         }
         else{

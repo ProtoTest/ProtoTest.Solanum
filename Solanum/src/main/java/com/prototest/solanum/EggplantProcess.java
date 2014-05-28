@@ -43,9 +43,9 @@ class EggplantProcess {
         Runtime rt = Runtime.getRuntime();
         try {
             if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-                Logger.debug("Executing : taskkill  /F /IM eggPlant.exe");
+                Logger.info("Executing : taskkill  /F /IM eggPlant.exe");
                 rt.exec("taskkill  /F /IM eggPlant.exe");
-                Logger.debug("Executing : taskkill  /F /IM adb.exe");
+                Logger.info("Executing : taskkill  /F /IM adb.exe");
                 rt.exec("taskkill  /F /IM adb.exe");
             } else {
                 Logger.debug("Executing : pkill -9 -fi eggplant");

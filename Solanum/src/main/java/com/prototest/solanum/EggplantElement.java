@@ -100,7 +100,7 @@ public class EggplantElement {
 
     public EggplantElement type(String text) {
         click();
-        Logger.debug(String.format("Typing text:(%s).", text));
+        Logger.info(String.format("Typing text:(%s).", text));
         driver.typeText(text);
         return this;
     }

@@ -22,9 +22,13 @@ public class EggplantTestBase {
 
     @AfterMethod
     public void testTeardown(ITestResult result) {
-
-        if (!result.isSuccess())
+        if (result.isSuccess()) {
+            Logger.info("TEST COMPLETE (PASSED).");
+        }
+        if (!result.isSuccess()) {
+            Logger.info("TEST INCOMPLETE (FAILED).");
             Logger.screenshot(null);
+        }
     }
 
     @BeforeTest
@@ -73,7 +77,7 @@ public class EggplantTestBase {
                 eggplantProcess.start();
             }
             driver.startSuite(Config.suitePath);
-            Logger.debug("Eggplant drive started");
+            Logger.info("Eggplant Drive started.");
         }
     }
 
