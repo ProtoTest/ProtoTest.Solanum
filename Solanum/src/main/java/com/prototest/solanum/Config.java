@@ -12,7 +12,7 @@ import java.util.Properties;
 public class Config {
     private static Properties properties;
     private static OutputStream output = null;
-    public static boolean captureScreenshots = getPropertyValue("captureScreenshotsOnError", true);
+    public static boolean screenshotOnError = getPropertyValue("screenshotOnError", true);
     public static boolean startDrive = getPropertyValue("startDrive", true);
     public static String eggplantPath = getPropertyValue("eggplantPath", "");
     public static String windowsScriptPath = getPropertyValue("windowsScriptPath", "C:\\Program Files (x86)\\eggPlant\\runscript.bat");
@@ -37,6 +37,7 @@ public class Config {
     public static String currentTestName = "Test";
     public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
     private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
+    public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
 
     public static String getTestProp(String key) {
         return testProperties.get(key);

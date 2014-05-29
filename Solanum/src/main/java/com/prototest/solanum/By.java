@@ -61,4 +61,7 @@ public class By {
         return new By(locatorString);
     }
 
+    public SearchRectangle getSearchRectangle() {
+        return searchRectangle;
+    }
 }

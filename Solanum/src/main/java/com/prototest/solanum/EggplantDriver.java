@@ -193,16 +193,20 @@ public class EggplantDriver {
         execute(String.format("SwipeDown (%s,%s)", origin.x, origin.y));
     }
 
-
     public String getScreenshot() {
+        return getScreenshot("");
+    }
+
+    public String getScreenshot(String name) {
         try {
+            if (name == null) name = "";
             java.util.Date date = new java.util.Date();
             SimpleDateFormat sdf = new SimpleDateFormat("MMddyyyyhhmmss");
             String timestamp = sdf.format(date);
-
+            name += "_" + timestamp;
             String separator = System.getProperty("file.separator");
             new File(Config.currentPath + separator + "Screenshots" + separator).mkdirs();
-            String path = Config.currentPath + separator + "Screenshots" + separator + timestamp + ".tiff";
+            String path = Config.currentPath + separator + "Screenshots" + separator + name + ".tiff";
             captureScreenshot(path);
             return path;
         } catch (Exception e) {

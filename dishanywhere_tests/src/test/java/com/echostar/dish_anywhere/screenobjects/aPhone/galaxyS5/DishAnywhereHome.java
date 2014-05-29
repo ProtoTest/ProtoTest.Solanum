@@ -9,8 +9,8 @@ import com.prototest.solanum.SearchRectangle;
  *
  */
 public class DishAnywhereHome extends DeviceMain {
-    private EggplantElement settingsButton = new EggplantElement(By.Text("Settings", SearchRectangle.bottomHalf().trimTop(30)));
-    private EggplantElement guideButton = new EggplantElement(By.Text("Guide", SearchRectangle.bottomHalf()));
+    private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(30)));
+    private EggplantElement guideButton = new EggplantElement("Guide", By.Text("Guide", SearchRectangle.bottomHalf().trimTop(60).trimRight(50)));
 
     public DishAnywhereHome() {
     }

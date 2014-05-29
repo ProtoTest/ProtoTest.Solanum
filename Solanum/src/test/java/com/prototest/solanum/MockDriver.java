@@ -1,5 +1,8 @@
 package com.prototest.solanum;
 
+import org.apache.commons.io.IOUtils;
+
+import java.io.*;
 import java.util.HashMap;
 
 /**
@@ -9,6 +12,11 @@ import java.util.HashMap;
 /// This is used to validate the format and structure of the eggplant commands
 public class MockDriver extends EggplantDriver {
     public EggplantResponse lastResponse;
+    private String imagePath;
+
+    public MockDriver(String imagePath) {
+        this.imagePath = imagePath;
+    }
 
     public EggplantResponse getLastResponse() {
         return lastResponse;
@@ -45,4 +53,10 @@ public class MockDriver extends EggplantDriver {
         lastResponse = new EggplantResponse(response);
     }
 
+    @Override
+    public String getScreenshot() {
+        return imagePath;
+
+
+    }
 }

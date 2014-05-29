@@ -2,26 +2,29 @@ package com.prototest.solanum;
 
 import junit.framework.AssertionFailedError;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.List;
 
 public class VerificationTests extends EggplantTestBase {
-    @BeforeTest
-    public void setupClass() {
-        this.driver = new MockDriver();
-    }
+
 
     @Override
     @BeforeTest
-    public void fixtureSetUp(String hostname, Integer hostport) {
+    @Parameters({"hostName", "hostPort"})
+    public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort) {
+        EggplantTestBase.driver = new MockDriver(null);
 
         startEggplant();
         setEggplantDefaultSettings();
         //driver.connect();
+    }
+
+    @AfterTest
+    @Override
+    @Parameters({"hostName", "hostPort"})
+    public void fixtureTearDown(@Optional() String hostName, @Optional() Integer hostPort) {
+        stopEggplant();
     }
 
     @Test

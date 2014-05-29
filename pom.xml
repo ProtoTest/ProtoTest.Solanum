@@ -13,10 +13,13 @@
     </modules>
     <packaging>pom</packaging>
 
+
     <name>Echostar Tests Parent Pom</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.basedir>${project.basedir}</main.basedir>
     </properties>
+
 
 </project>
