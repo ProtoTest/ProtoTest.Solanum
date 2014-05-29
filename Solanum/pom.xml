@@ -16,12 +16,6 @@
 
     </properties>
 
-    <repositories>
-        <repository>
-            <id>jai-repo</id>
-            <url>file://${project.parent.basedir}/jai-repo</url>
-        </repository>
-    </repositories>
 
     <parent>
         <groupId>com.prototest.app</groupId>
