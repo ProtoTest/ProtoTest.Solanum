@@ -1,0 +1,67 @@
+﻿
+//Find MenuBar Options
+WaitFor 8.0, (Text:"Showcase", SearchRectangle:((300,1050),(1500,1200)))
+WaitFor 8.0, (Text:"Guide", SearchRectangle:((300,1050),(1500,1200)))
+WaitFor 8.0, (Text:"My DVR", SearchRectangle:((300,1050),(1500,1200)))
+WaitFor 8.0, (Text:"On Demand", SearchRectangle:((300,1050),(1500,1200)))
+WaitFor 8.0, (Text:"My Transfers", SearchRectangle:((300,1050),(1500,1200)))
+WaitFor 8.0, (Text:"BlockBuster", SearchRectangle:((300,1050),(1500,1200)))
+WaitFor 8.0, (Text:"Settings", SearchRectangle:((300,1050),(1500,1200)))
+
+//Click MenuBar Options
+Click (Text:"Showcase", SearchRectangle:((300,1050),(1500,1200)))
+Click (Text:"Guide", SearchRectangle:((300,1050),(1500,1200)))
+Click (Text:"My DVR", SearchRectangle:((300,1050),(1500,1200)))
+Click (Text:"On Demand", SearchRectangle:((300,1050),(1500,1200)))
+Click (Text:"My Transfers", SearchRectangle:((300,1050),(1500,1200)))
+Click (Text:"BlockBuster", SearchRectangle:((300,1050),(1500,1200)))
+Click (Text:"Settings", SearchRectangle:((300,1050),(1500,1200)))
+
+
+//Featured OnDemand Movies
+Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/OnDemand/ExpandArrowIcon")
+Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/OnDemand/CloseArrowIcon")
+
+WaitFor 8.0, (Text:"Blue Jasmine", SearchRectangle:((20,300),(1770,550)))
+Click (Text:"Blue Jasmine", SearchRectangle:((20,300),(1770,550)))
+
+
+WaitFor 8.0, (Text:"View All", SearchRectangle:((20,300),(1770,550)))
+Click (Text:"View All", SearchRectangle:((20,300),(1770,550)))
+
+//OnDemand Details Page
+WaitFor 8.0, (Text:"Featured", SearchRectangle:((350,150),(1450,250)))
+Click (Text:"Featured", SearchRectangle:((350,150),(1450,250)))
+
+WaitFor 8.0, (Text:"Movies", SearchRectangle:((350,150),(1450,250)))
+Click (Text:"Movies", SearchRectangle:((350,150),(1450,250)))
+
+WaitFor 8.0, (Text:"TV Shows", SearchRectangle:((350,150),(1450,250)))
+Click (Text:"TV Shows", SearchRectangle:((350,150),(1450,250)))
+
+WaitFor 8.0, (Text:"Family", SearchRectangle:((350,150),(1450,250)))
+Click (Text:"Family", SearchRectangle:((350,150),(1450,250)))
+
+WaitFor 8.0, (Text:"Latino", SearchRectangle:((350,150),(1450,250)))
+MoveTo (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/UnratedOption", WaitFor:218)
+Click (Text:"Latino", SearchRectangle:((350,150),(1450,250)))
+
+WaitFor 8.0, (Text:"Networks", SearchRectangle:((350,150),(1450,250)))
+Click (Text:"Networks", SearchRectangle:((350,150),(1450,250)))
+
+//Enter Passcode
+Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/OnDemand/Passcode_1")
+Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/OnDemand/Passcode_1")
+Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/OnDemand/Passcode_1")
+Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/OnDemand/Passcode_1")
+
+Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/Settings/ParentalControls/ParentalControlsTab")
+
+
+
+
+
+
+
+
+

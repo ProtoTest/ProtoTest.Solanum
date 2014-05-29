@@ -1,6 +1,6 @@
 ﻿
 //Find MenuBar Options
-WaitFor 8.0, (Text:"Showcase", Text:"Parental Controls", SearchRectangle:((10,100),(250,600))))
+WaitFor 8.0, (Text:"Showcase", SearchRectangle:((10,100),(250,600)))
 WaitFor 8.0, (Text:"Guide", SearchRectangle:((200,650),(1100,775)))
 WaitFor 8.0, (Text:"My DVR", SearchRectangle:((200,650),(1100,775)))
 WaitFor 8.0, (Text:"On Demand", SearchRectangle:((200,650),(1100,775)))
