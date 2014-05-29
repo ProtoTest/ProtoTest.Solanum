@@ -1,9 +1,8 @@
-package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
+package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
-import com.prototest.solanum.SearchRectangle;
 
 // Screen object for DishAnywhere app - Popups
 

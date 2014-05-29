@@ -1,7 +1,7 @@
-package com.echostar.dish_anywhere.tests.galaxyS5;
+package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
-import com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5.DeviceMain;
-import com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5.DeviceHomeScreen;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceHomeScreen;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.SearchRectangle;
 import org.testng.annotations.Test;

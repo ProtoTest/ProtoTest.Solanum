@@ -1,4 +1,4 @@
-package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
+package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
@@ -31,7 +31,7 @@ public class DishAnywhereHome extends DeviceMain {
     }
 
     public DishAnywhereHome verifyLoggedIn() {
-        guideButton.verifyPresent();
+        guideButton.waitForPresent(10);
         return this;
     }
 

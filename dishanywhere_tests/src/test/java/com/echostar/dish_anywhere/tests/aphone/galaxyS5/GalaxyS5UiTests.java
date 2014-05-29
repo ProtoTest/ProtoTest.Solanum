@@ -1,8 +1,6 @@
-package com.echostar.dish_anywhere.tests.galaxyS5;
+package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
-import com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5.DeviceMain;
-import com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5.DishAnywhereHome;
-import com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5.DishAnywhereLogin;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
@@ -11,7 +9,7 @@ import org.testng.annotations.Test;
 // DishAnywhere UI Tests - GalaxyS5 (Android Phone)
 
 @Test()
-public class GalaxyS5UiTest extends EggplantTestBase {
+public class GalaxyS5UiTests extends EggplantTestBase {
 
     @Test
     public void testLogoutAndLogin() {

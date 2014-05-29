@@ -1,4 +1,4 @@
-package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
+package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.*;
 import org.testng.Assert;
@@ -8,9 +8,9 @@ import java.awt.*;
 // Screen object for DishAnywhere app - Login screen
 
 public class DishAnywhereLogin extends DeviceMain {
-    private EggplantElement onlineId = new EggplantElement(By.Text("Online ID", TextOption.hotSpot(new Point(75,109))));
-    private EggplantElement passwordField = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/PasswordField"));
-    private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton"));
+    private EggplantElement onlineId = new EggplantElement(By.Text("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField"));
+    private EggplantElement passwordField = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField"));
+    private EggplantElement loginButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton"));
 
     public final DishAnywherePopups popups = new DishAnywherePopups();
 

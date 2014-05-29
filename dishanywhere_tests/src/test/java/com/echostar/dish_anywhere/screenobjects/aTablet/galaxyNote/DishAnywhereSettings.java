@@ -1,4 +1,4 @@
-package com.echostar.dish_anywhere.screenobjects.androidphone.galaxyS5;
+package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.*;
 
