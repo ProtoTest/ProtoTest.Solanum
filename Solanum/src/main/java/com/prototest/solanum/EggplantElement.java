@@ -244,5 +244,11 @@ public class EggplantElement {
     public By getBy() {
         return by;
     }
+
+    public void allInstances() {
+        waitForPresent();
+        driver.findElement(by.getLocator());
+        driver.EveryImageLocation(by.getLocator());
+    }
 }
 
