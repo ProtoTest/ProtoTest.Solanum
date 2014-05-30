@@ -33,8 +33,7 @@ public class EggplantDriver {
 
     private void initProperties() {
         String screenRectString = execute("put RemoteScreenRectangle()").Output;
-        screenRectString = screenRectString.substring(1, screenRectString.length() - 1);
-        String[] rect = screenRectString.split(",");
+        String[] rect = parseCoordinates(screenRectString);
         this.screenRectangle = new Rectangle(Integer.parseInt(rect[0]),
                 Integer.parseInt(rect[1]),
                 Integer.parseInt(rect[2]),
@@ -84,8 +83,8 @@ public class EggplantDriver {
     }
 
 
-    public void endSuite(){
-        if(Config.logDriveCommands){
+    public void endSuite() {
+        if (Config.logDriveCommands) {
             Logger.debug("Ending Current Suite");
         }
         client.endSession();
@@ -97,11 +96,11 @@ public class EggplantDriver {
 
     public EggplantElement findElement(String locator) {
         String output = execute(String.format("Put ImageLocation %s", locator)).Output;
-        output = output.substring(1, output.length() - 1);
-        String[] rect = output.split(",");
+        String[] rect = parseCoordinates(output);
         Point point = new Point(Integer.parseInt(rect[0]), Integer.parseInt(rect[1]));
         return new EggplantElement(By.Point(point));
     }
+
 
     public void click(String locator) {
         execute(String.format("Click %s", locator));
@@ -226,7 +225,6 @@ public class EggplantDriver {
     }
 
 
-
     public Point getScreenSize() {
         return screenSize;
     }
@@ -260,8 +258,8 @@ public class EggplantDriver {
 
     public Rectangle getImageRectangle(String locator) {
         String output = execute(String.format("Put ImageRectangle %s", locator)).Output;
-        output = output.substring(1, output.length() - 1);
-        String[] rect = output.split(",");
+
+        String[] rect = parseCoordinates(output);
         return new Rectangle(Integer.parseInt(rect[0]), Integer.parseInt(rect[1]), Integer.parseInt(rect[2]), Integer.parseInt(rect[3]));
 
     }
@@ -269,5 +267,20 @@ public class EggplantDriver {
 
     public Rectangle getScreenRectangle() {
         return screenRectangle;
+    }
+
+    public void EveryImageLocation(String locator) {
+        EggplantResponse response = execute(String.format("Put EveryImageLocation %s", locator));
+        Object asdf = response.Result;
+    }
+
+    private String[] parseCoordinates(String output) {
+        String complexOutputDelim = "\tat ";
+        if (output.contains(complexOutputDelim)) {
+            output = output.split("\n")[1];
+        }
+        output = output.substring(1, output.length() - 1);
+
+        return output.split(",");
     }
 }
