@@ -6,7 +6,7 @@ import java.awt.*;
 
 /**
  */
-public class DishAnywhereSettings extends DeviceMain {
+public class DishAnywhereSettings extends DishAnywhereMain {
     private EggplantElement logout = new EggplantElement(By.Text("Logout"));
 
     public DishAnywhereSettings() {

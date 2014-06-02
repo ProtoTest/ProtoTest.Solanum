@@ -8,7 +8,7 @@ import com.prototest.solanum.SearchRectangle;
  */
 
 
-public class DishAnywhereOnDemand extends DeviceMain {
+public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement featuredButton
             = new EggplantElement(By.Text("Featured", SearchRectangle.middleHalf()));
     private EggplantElement moviesButton

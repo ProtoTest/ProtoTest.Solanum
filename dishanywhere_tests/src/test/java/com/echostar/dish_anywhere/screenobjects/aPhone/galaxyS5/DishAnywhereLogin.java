@@ -7,7 +7,7 @@ import java.awt.*;
 
 // Screen object for DishAnywhere app - Login screen
 
-public class DishAnywhereLogin extends DeviceMain {
+public class DishAnywhereLogin extends DishAnywhereMain {
     private EggplantElement onlineId = new EggplantElement(By.Text("Online ID", TextOption.hotSpot(new Point(75,109))));
     private EggplantElement passwordField = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/PasswordField"));
     private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton"));
