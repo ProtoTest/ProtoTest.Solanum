@@ -3,6 +3,8 @@ package com.prototest.solanum;
 import org.joda.time.LocalTime;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.List;
+
 
 public class EggplantElement {
     private final By by;
@@ -44,6 +46,8 @@ public class EggplantElement {
     }
 
     public boolean isPresent() {
+        if (by.type.equals(By.ByType.point)) return true;
+
         return driver.isPresent(by.getLocator());
     }
 
@@ -100,7 +104,7 @@ public class EggplantElement {
 
     public EggplantElement type(String text) {
         click();
-        Logger.info(String.format("Typing text:(%s).", text));
+        Logger.info(String.format("Typing text: (%s).", text));
         driver.typeText(text);
         return this;
     }
@@ -147,7 +151,7 @@ public class EggplantElement {
     }
 
     public EggplantElement waitForPresent(int secs) {
-
+        if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
         if (Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
@@ -187,6 +191,7 @@ public class EggplantElement {
     }
 
     public EggplantElement waitForNotPresent(int secs) {
+        if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(), secs));
         if (Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
@@ -221,12 +226,14 @@ public class EggplantElement {
     public EggplantElement verifyPresent() {
         Logger.debug(String.format("Verifying %s %s should be present.", name, by.getLocator()));
         Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), driver.isPresent(by.getLocator()));
+        Logger.screenshot();
         return this;
     }
 
     public EggplantElement verifyNotPresent() {
         Logger.debug(String.format("Verifying %s %s is not be present.", name, by));
         Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), !driver.isPresent(by.getLocator()));
+        Logger.screenshot(by.getSearchRectangle().searchRectangle);
         return this;
     }
 
@@ -245,10 +252,10 @@ public class EggplantElement {
         return by;
     }
 
-    public void allInstances() {
+    public List<EggplantElement> allInstances() {
         waitForPresent();
         driver.findElement(by.getLocator());
-        driver.EveryImageLocation(by.getLocator());
+        return driver.EveryImageLocation(by.getLocator());
     }
 }
 

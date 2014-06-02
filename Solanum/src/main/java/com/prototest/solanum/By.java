@@ -6,6 +6,11 @@ import java.awt.*;
  * Created by Brian on 5/12/2014.
  */
 public class By {
+    public final ByType type;
+
+    public enum ByType {
+        point,image,text
+    }
     private String locator;
     private SearchRectangle searchRectangle;
 
@@ -14,14 +19,16 @@ public class By {
         return locator;
     }
 
-    public By(String locator) {
+    public By(String locator, ByType type) {
         this.locator = locator;
         this.searchRectangle = new SearchRectangle(EggplantTestBase.driver.getScreenRectangle());
+        this.type = type;
     }
 
-    private By(String locator, SearchRectangle searchRectangle) {
+    private By(String locator, SearchRectangle searchRectangle, ByType type) {
         this.locator = locator;
         this.searchRectangle = searchRectangle;
+        this.type = type;
     }
 
     public static By Image(String path, ImageOption... options) {
@@ -37,7 +44,7 @@ public class By {
             locatorString += ", " + option.getText();
         }
         locatorString += ")";
-        return new By(locatorString, searchRectangle);
+        return new By(locatorString, searchRectangle, ByType.image);
     }
 
     public static By Text(String text, TextOption... options) {
@@ -53,12 +60,12 @@ public class By {
             locatorString += ", " + option.getText();
         }
         locatorString += ")";
-        return new By(locatorString, searchRectangle);
+        return new By(locatorString, searchRectangle, ByType.text);
     }
 
     public static By Point(Point point) {
         String locatorString = String.format("(%s,%s)", point.getX(), point.getY());
-        return new By(locatorString);
+        return new By(locatorString, ByType.point);
     }
 
     public SearchRectangle getSearchRectangle() {

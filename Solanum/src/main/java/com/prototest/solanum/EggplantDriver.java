@@ -3,6 +3,10 @@ package com.prototest.solanum;
 import java.awt.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Brian on 5/12/2014.
@@ -205,7 +209,13 @@ public class EggplantDriver {
             name += "_" + timestamp;
             String separator = System.getProperty("file.separator");
             new File(Config.currentPath + separator + "Screenshots" + separator).mkdirs();
-            String path = Config.currentPath + separator + "Screenshots" + separator + name + ".tiff";
+            String extension = "";
+            if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+                extension = ".png";
+            } else {
+                extension = ".tiff";
+            }
+            String path = Config.currentPath + separator + "Screenshots" + separator + name + extension;
             captureScreenshot(path);
             return path;
         } catch (Exception e) {
@@ -269,9 +279,18 @@ public class EggplantDriver {
         return screenRectangle;
     }
 
-    public void EveryImageLocation(String locator) {
+    public List<EggplantElement> EveryImageLocation(String locator) {
         EggplantResponse response = execute(String.format("Put EveryImageLocation %s", locator));
-        Object asdf = response.Result;
+        Matcher matcher = Pattern.compile("(\\(\\d+,\\d+\\))").matcher(response.Output);
+        List<EggplantElement> elements = new ArrayList<EggplantElement>();
+        while (matcher.find()) {
+            String[] point = parseCoordinates(matcher.group());
+            elements.add(new EggplantElement(
+                    By.Point(new Point
+                            (Integer.parseInt(point[0]), Integer.parseInt(point[1])))));
+        }
+        return elements;
+
     }
 
     private String[] parseCoordinates(String output) {

@@ -83,11 +83,11 @@ public class Logger {
         if (drawRectangle != null) {
             try {
                 BufferedImage image = JAI.create("fileload", newScreenshot).getAsBufferedImage();
-                Graphics g = image.getGraphics();
-                g.setColor(new Color(255,0,0,50));
+                Graphics2D g = (Graphics2D) image.getGraphics();
+                g.setColor(new Color(255,165,0,50));
                 g.fillRect(drawRectangle.x, drawRectangle.y, drawRectangle.width, drawRectangle.height);
-                g.setColor(Color.RED);
-
+                g.setColor(Color.orange);
+                g.setStroke(new BasicStroke(5));
                 g.drawRect(drawRectangle.x, drawRectangle.y, drawRectangle.width, drawRectangle.height);
                 newScreenshot = newScreenshot + "rect.png";
                 FileOutputStream fos = new FileOutputStream(newScreenshot);
