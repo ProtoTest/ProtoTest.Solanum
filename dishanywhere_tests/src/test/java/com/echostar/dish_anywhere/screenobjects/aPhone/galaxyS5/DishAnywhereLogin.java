@@ -20,6 +20,7 @@ public class DishAnywhereLogin extends DishAnywhereMain {
         this.onlineId.type(onlineId);
         this.passwordField.type(password);
         loginButton.click();
+        EggplantTestBase.sleep(5000);
         EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
         if (errorField.isPresent()) {
             Assert.fail("Could not login.");

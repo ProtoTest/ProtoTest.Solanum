@@ -6,6 +6,8 @@ import com.prototest.solanum.*;
 
 public class DeviceMain {
     private EggplantElement homeScreenIcon = new EggplantElement("homeScreenIcon", By.Image("/AndroidPhone/GalaxyS5/System/Screens/homeScreenIcon"));
+    private EggplantElement CloseKeyboardButton = new EggplantElement("closeKeyboardButton", By.Image("/AndroidPhone/GalaxyS5/System/Device/closeKeyboardButton"));
+    private EggplantElement KeyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("/AndroidPhone/GalaxyS5/System/Keyboard/DeleteKey"));
     private EggplantElement usbConnectedIcon = new EggplantElement("usbConnectedIcon", By.Image("/AndroidPhone/GalaxyS5/System/Device/usbConnectedIcon"));
     private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Text("Anywhere", SearchRectangle.bottomHalf()));
 
