@@ -100,7 +100,7 @@ public class EggplantElement {
 
     public EggplantElement type(String text) {
         click();
-        Logger.info(String.format("Typing text:(%s).", text));
+        Logger.info(String.format("Typing text: (%s).", text));
         driver.typeText(text);
         return this;
     }
@@ -221,12 +221,14 @@ public class EggplantElement {
     public EggplantElement verifyPresent() {
         Logger.debug(String.format("Verifying %s %s should be present.", name, by.getLocator()));
         Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), driver.isPresent(by.getLocator()));
+        Logger.screenshot();
         return this;
     }
 
     public EggplantElement verifyNotPresent() {
         Logger.debug(String.format("Verifying %s %s is not be present.", name, by));
         Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), !driver.isPresent(by.getLocator()));
+        Logger.screenshot(by.getSearchRectangle().searchRectangle);
         return this;
     }
 

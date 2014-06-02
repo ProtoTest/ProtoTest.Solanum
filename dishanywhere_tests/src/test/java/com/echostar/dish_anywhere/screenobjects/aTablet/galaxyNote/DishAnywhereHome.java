@@ -31,7 +31,7 @@ public class DishAnywhereHome extends DeviceMain {
     }
 
     public DishAnywhereHome verifyLoggedIn() {
-        guideButton.verifyPresent();
+        guideButton.waitForPresent();
         return this;
     }
 

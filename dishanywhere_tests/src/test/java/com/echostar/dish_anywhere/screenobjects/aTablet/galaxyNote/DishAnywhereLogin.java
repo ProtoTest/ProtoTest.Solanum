@@ -8,7 +8,7 @@ import java.awt.*;
 // Screen object for DishAnywhere app - Login screen
 
 public class DishAnywhereLogin extends DeviceMain {
-    private EggplantElement onlineId = new EggplantElement(By.Text("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField"));
+    private EggplantElement onlineId = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField"));
     private EggplantElement passwordField = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField"));
     private EggplantElement loginButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton"));
 
@@ -30,7 +30,7 @@ public class DishAnywhereLogin extends DeviceMain {
 
     public DishAnywhereLogin loginIfLoggedOut() {
         Logger.info("Scanning for app login state...");
-        EggplantTestBase.sleep(3000);
+        EggplantTestBase.sleep(10000);
         if(loginButton.isPresent()){
             Logger.info("Logged state is required.");
             login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"));

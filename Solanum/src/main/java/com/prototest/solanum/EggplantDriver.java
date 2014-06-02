@@ -205,7 +205,13 @@ public class EggplantDriver {
             name += "_" + timestamp;
             String separator = System.getProperty("file.separator");
             new File(Config.currentPath + separator + "Screenshots" + separator).mkdirs();
-            String path = Config.currentPath + separator + "Screenshots" + separator + name + ".tiff";
+            String extension = "";
+            if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+                extension = ".png";
+            } else {
+                extension = ".tiff";
+            }
+            String path = Config.currentPath + separator + "Screenshots" + separator + name + extension;
             captureScreenshot(path);
             return path;
         } catch (Exception e) {
