@@ -23,7 +23,7 @@ public class DishAnywhereOnDemand extends DeviceMain {
             = new EggplantElement(By.Text("Networks", SearchRectangle.middleHalf()));
 
     public DishAnywhereOnDemand() {
-        if (! featuredButton.isPresent()) {
+        while (! featuredButton.isPresent()) {
             nav.backButton.click();
         }
         featuredButton.verifyPresent();

@@ -151,7 +151,7 @@ public class EggplantElement {
     }
 
     public EggplantElement waitForPresent(int secs) {
-        if (! by.type.equals(By.ByType.point)) return this;
+        if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
         if (Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
@@ -191,7 +191,7 @@ public class EggplantElement {
     }
 
     public EggplantElement waitForNotPresent(int secs) {
-        if (! by.type.equals(By.ByType.point)) return this;
+        if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(), secs));
         if (Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
