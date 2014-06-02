@@ -3,6 +3,7 @@ package com.prototest.solanum;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
+import java.io.File;
 import java.lang.reflect.Method;
 
 /**
@@ -40,11 +41,30 @@ public class EggplantTestBase {
             hostName = Config.hostName;
             hostPort = Config.hostPort;
         }
+        createReportDirectory();
         startEggplant();
         setEggplantDefaultSettings();
         driver.connect(hostName, hostPort);
     }
 
+    private void createReportDirectory() {
+        File report = new File("test-output");
+        deleteDir(report);
+        report.mkdir();
+    }
+
+    public static boolean deleteDir(File dir) {
+        if (dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i=0; i<children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+        }
+        return dir.delete();
+    }
     @AfterTest(alwaysRun = true)
     @Parameters({"hostName", "hostPort"})
     public void fixtureTearDown(@Optional() String hostName,
