@@ -9,8 +9,9 @@ import com.prototest.solanum.SearchRectangle;
  *
  */
 public class DishAnywhereHome extends DeviceMain {
-    private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(30)));
-    private EggplantElement guideButton = new EggplantElement("Guide", By.Text("Guide", SearchRectangle.bottomHalf().trimTop(60).trimRight(50)));
+    private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
+    private EggplantElement guideButton = new EggplantElement("Guide", By.Text("Guide"));
+    private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Text("On Demand", SearchRectangle.bottomHalf()));
 
     public DishAnywhereHome() {
     }
@@ -38,5 +39,10 @@ public class DishAnywhereHome extends DeviceMain {
     public DeviceMain returnToDeviceMain(){
         goHome();
         return this;
+    }
+
+    public DishAnywhereOnDemand openOnDemand() {
+        onDemandButton.click();
+        return new DishAnywhereOnDemand();
     }
 }
