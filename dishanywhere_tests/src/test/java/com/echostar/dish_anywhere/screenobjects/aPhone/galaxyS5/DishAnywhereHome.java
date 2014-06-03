@@ -14,6 +14,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Text("On Demand", SearchRectangle.bottomHalf()));
 
     public DishAnywhereHome() {
+
     }
 
     public void loginIfLoggedOut() {
@@ -44,5 +45,12 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public DishAnywhereOnDemand openOnDemand() {
         onDemandButton.click();
         return new DishAnywhereOnDemand();
+    }
+
+    public DishAnywhereHome exitPlayerIfOpen() {
+        while (! settingsButton.isPresent()) {
+            nav.backButton.click();
+        }
+        return this;
     }
 }
