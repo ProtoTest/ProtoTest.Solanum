@@ -30,6 +30,10 @@ public class SearchRectangle {
         this.searchRectangle = new Rectangle(upperLeft.x, upperLeft.y, this.width, this.height);
 
     }
+    public static SearchRectangle wholeScreen() {
+        Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();
+        return new SearchRectangle(fullScreen);
+    }
 
     public static SearchRectangle topHalf() {
         Rectangle fullScreen = EggplantTestBase.driver.getScreenRectangle();

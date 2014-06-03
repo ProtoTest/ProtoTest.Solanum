@@ -33,7 +33,7 @@ public class ImageOption extends Option {
         return new ImageOption(String.format("WaitFor: %s", value));
     }
 
-    public ImageOption hotSpot(Point hotSpot){
+    public static ImageOption hotSpot(Point hotSpot){
         return new ImageOption(String.format("HotSpot: (%s,%s)",hotSpot.getX(),hotSpot.getY()));
     }
 

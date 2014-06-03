@@ -14,7 +14,9 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
     @Test
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
-        new DeviceMain().goHome()
+        new DeviceMain()
+                .goHome()
+                .killApp()
                 .openDishAnywhereHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -23,12 +25,4 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
                 .verifyLoggedOut();
     }
 
-    public void testMoviePlayback(){
-
-        new DeviceMain().goHome()
-                .openDishAnywhereHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
-                        .openDishAnywhereHome();
-    }
 }

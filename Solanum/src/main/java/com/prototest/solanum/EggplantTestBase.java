@@ -28,7 +28,10 @@ public class EggplantTestBase {
         }
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
+            Logger.debug("PAGE TEXT : " + driver.getAllText());
             Logger.screenshot();
+
+
         }
     }
 

@@ -27,11 +27,13 @@ public class EggplantDriver {
 
     public void connect(String host) {
         execute(String.format("Connect (ServerID:\"%s\")", host));
+        Logger.debug("Connected to device : " + getConnectionInfo());
         initProperties();
     }
 
     public void connect(String host, int portNum) {
         execute(String.format("Connect (ServerID:\"%s\", portNum: \"%s\")", host, portNum));
+        Logger.debug("Connected to device : " + getConnectionInfo());
         initProperties();
     }
 
@@ -70,6 +72,10 @@ public class EggplantDriver {
         EggplantResponse result = client.execute(command);
         return result;
 
+    }
+
+    public void refreshScreen(){
+        execute("RefreshScreen");
     }
 
     public void delay(int ms) {
@@ -229,11 +235,17 @@ public class EggplantDriver {
     }
 
     public String readText(String locator) {
-        //TODO this needs to be tested, does the data return in the Result or Output key?
-        String result = execute(String.format("put ReadText %s" + locator)).Output;
-        return result;
+        EggplantResponse result = execute(String.format("put ReadText %s" , locator));
+        return result.Output;
     }
 
+    public String getAllText(){
+
+        SearchRectangle rectangle = SearchRectangle.wholeScreen();
+
+      String locatorString = String.format("(%s,%s,%s,%s)", rectangle.upperLeft.x,rectangle.upperLeft.y,rectangle.lowerRight.x,rectangle.lowerRight.y);
+      return readText(locatorString);
+    }
 
     public Point getScreenSize() {
         return screenSize;

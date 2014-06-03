@@ -39,7 +39,7 @@ public class Logger {
         String timestamp = sdf.format(date);
         text = String.format("[%s] %s",timestamp,text);
         System.out.println(text);
-        Reporter.log(text);
+        Reporter.log(String.format("<div>%s</div>",text));
     }
 
     public static void warning(String text){
@@ -89,16 +89,21 @@ public class Logger {
                 g.setColor(Color.orange);
                 g.setStroke(new BasicStroke(5));
                 g.drawRect(drawRectangle.x, drawRectangle.y, drawRectangle.width, drawRectangle.height);
-                newScreenshot = newScreenshot + "rect.png";
                 FileOutputStream fos = new FileOutputStream(newScreenshot);
                 ImageIO.write(image, "png", fos);
+                System.setProperty("org.uncommons.reportng.escape-output", "false");
+                Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot + ".tiff"));
+                return;
 
             } catch (Exception e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
+        }else{
+            System.setProperty("org.uncommons.reportng.escape-output", "false");
+            Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot));
         }
-        System.setProperty("org.uncommons.reportng.escape-output", "false");
-        Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot + ".tiff"));
+
+
 
     }
 

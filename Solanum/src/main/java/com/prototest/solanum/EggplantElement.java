@@ -184,7 +184,7 @@ public class EggplantElement {
                 Logger.debug(String.format("Verification Passed : %s %s is present.", name, by.getLocator()));
                 return this;
             } else {
-                sleep(500);
+                driver.refreshScreen();
                 now = new LocalTime();
             }
         }
@@ -224,6 +224,7 @@ public class EggplantElement {
                 Logger.debug("Element no longer present.");
                 return this;
             } else {
+                driver.refreshScreen();
                 now = new LocalTime();
             }
         }

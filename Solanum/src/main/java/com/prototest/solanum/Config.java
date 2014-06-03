@@ -27,12 +27,12 @@ public class Config {
     public static int logLevel = getLogLevel(getPropertyValue("logLevel", "debug"));
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
     public static int commandDelayMs = getPropertyValue("commandDelayMs", 1000);
-    public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 5);
+    public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 10);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
-    public static String imageSearchCount = getPropertyValue("imageSearchCount","2");
+    public static String imageSearchCount = getPropertyValue("imageSearchCount","3");
     public static String imageSearchDelay = getPropertyValue("imageSearchDelay","0");
-    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".1");
+    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".2");
     public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
     public static String currentTestName = "Test";
     public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);

@@ -12,7 +12,6 @@ public class DishAnywhereLogin extends DishAnywhereMain {
     private EggplantElement passwordField = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/PasswordField"));
     private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton"));
 
-    public final DishAnywherePopups popups = new DishAnywherePopups();
 
     public DishAnywhereHome login(String onlineId, String password) {
         Logger.info("Logging in...");
@@ -20,6 +19,7 @@ public class DishAnywhereLogin extends DishAnywhereMain {
         this.onlineId.type(onlineId);
         this.passwordField.type(password);
         loginButton.click();
+        EggplantTestBase.sleep(5000);
         EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
         if (errorField.isPresent()) {
             Assert.fail("Could not login.");
