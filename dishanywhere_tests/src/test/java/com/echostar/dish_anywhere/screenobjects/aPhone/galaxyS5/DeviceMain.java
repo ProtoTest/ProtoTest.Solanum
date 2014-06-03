@@ -1,5 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
+import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.*;
 import com.prototest.solanum.*;
 
 // Screen Object for Device's MainScreen ViewGroup
@@ -28,8 +29,9 @@ public class DeviceMain {
 
     public DishAnywhereHome openDishAnywhereHome() {
         dishAnywhereApp.click();
+        DishAnywherePopups popups = new DishAnywherePopups();
+        popups.waitForScreenToLoad();
         DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
-
         dishAnywhereHome.loginIfLoggedOut();
         dishAnywhereHome.openGuide();
         return dishAnywhereHome;

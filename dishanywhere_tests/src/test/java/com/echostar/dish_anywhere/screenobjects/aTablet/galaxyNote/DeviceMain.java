@@ -28,10 +28,10 @@ public class DeviceMain {
 
     public DishAnywhereHome openDishAnywhereHome() {
         dishAnywhereApp.click();
-        DishAnywherePopups dishAnywherePopups = new DishAnywherePopups();
-        dishAnywherePopups.waitForScreenToLoad();
+        DishAnywherePopups popups = new DishAnywherePopups();
+        popups.waitForScreenToLoad();
         DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
-                dishAnywhereHome.loginIfLoggedOut();
+        dishAnywhereHome.loginIfLoggedOut();
         dishAnywhereHome.openGuide();
         return dishAnywhereHome;
     }
