@@ -51,6 +51,23 @@ public class EggplantElement {
         return driver.isPresent(by.getLocator());
     }
 
+
+    public boolean isPresent(int secs) {
+        LocalTime now = new LocalTime();
+        LocalTime endTime = now.plusSeconds(secs);
+        while (now.isBefore(endTime) && !Thread.interrupted()) {
+            if (isPresent()) {
+                return true;
+            } else {
+                sleep(500);
+                now = new LocalTime();
+            }
+        }
+        return false;
+    }
+
+
+
     public String getText() {
 
         waitForPresent();
