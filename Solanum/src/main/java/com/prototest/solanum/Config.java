@@ -30,7 +30,7 @@ public class Config {
     public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 10);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
-    public static String imageSearchCount = getPropertyValue("imageSearchCount","3");
+    public static String imageSearchCount = getPropertyValue("imageSearchCount","1");
     public static String imageSearchDelay = getPropertyValue("imageSearchDelay","0");
     public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".2");
     public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");

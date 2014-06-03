@@ -1,6 +1,5 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
@@ -10,7 +9,7 @@ import com.prototest.solanum.EggplantElement;
 public class EnterPasscodePopup {
     private EggplantElement LoadingMessage = new EggplantElement(By.Text("Loading"));
 
-    private EggplantElement enterPasscodeHeader = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader"));
+    private EggplantElement enterPasscodeHeader = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader"));
     private EggplantElement button1 = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1"));
     private EggplantElement button2 = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton2"));
     private EggplantElement button3 = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton3"));

@@ -23,7 +23,9 @@ public class GalaxyNoteOnDemand extends EggplantTestBase {
                 .openOnDemand()
                 .openMovies()
                 .openProtectedMovie("Captain Phillips")
-                .enterPasscode("1111");
+                .enterPasscode("1111")
+                .watchMovie()
+                .waitForControls();
 
     }
 
