@@ -14,7 +14,7 @@ public class ImageOption extends Option {
 
 
     public static ImageOption searchType(String value){
-        return new ImageOption(String.format("SearchType: \"%s\"\"",value));
+        return new ImageOption(String.format("SearchType: \"%s\"",value));
     }
 
     public static ImageOption tolerance(String value){
