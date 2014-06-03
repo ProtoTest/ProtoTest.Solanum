@@ -11,6 +11,7 @@ public class DishAnywhereLogin extends DeviceMain {
     private EggplantElement onlineId = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField"));
     private EggplantElement passwordField = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField"));
     private EggplantElement loginButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton"));
+    private EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
 
     public final DishAnywherePopups popups = new DishAnywherePopups();
 
@@ -20,7 +21,7 @@ public class DishAnywhereLogin extends DeviceMain {
         this.onlineId.type(onlineId);
         this.passwordField.type(password);
         loginButton.click();
-        EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
+
         if (errorField.isPresent()) {
             Assert.fail("Could not login.");
         }
@@ -28,17 +29,9 @@ public class DishAnywhereLogin extends DeviceMain {
         return new DishAnywhereHome();
     }
 
-    public DishAnywhereLogin loginIfLoggedOut() {
-        Logger.info("Scanning for app login state...");
-        EggplantTestBase.sleep(10000);
-        if(loginButton.isPresent()){
-            Logger.info("Logged state is required.");
-            login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"));
-        }
-        else {
-            Logger.info("App is already logged in.");
-        }
-        return null;
+    public DishAnywhereLogin verifyLoggedOut(){
+        loginButton.waitForPresent(10);
+        return this;
     }
 
 }

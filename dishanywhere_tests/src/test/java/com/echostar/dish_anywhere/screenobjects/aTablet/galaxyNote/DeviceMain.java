@@ -27,12 +27,14 @@ public class DeviceMain {
         return new DeviceMain();
     }
 
+    public DeviceMain killApp(){
+        
+    }
+
     public DishAnywhereHome openDishAnywhereHome() {
         dishAnywhereApp.click();
-        DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
-
-        dishAnywhereHome.loginIfLoggedOut();
-        dishAnywhereHome.openGuide();
-        return dishAnywhereHome;
+        //DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
+        //dishAnywhereHome.openGuide();
+        return new DishAnywhereHome();
     }
 }

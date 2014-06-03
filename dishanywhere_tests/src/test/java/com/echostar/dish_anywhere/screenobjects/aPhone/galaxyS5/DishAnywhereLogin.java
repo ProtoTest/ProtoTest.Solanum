@@ -30,8 +30,7 @@ public class DishAnywhereLogin extends DishAnywhereMain {
 
     public DishAnywhereLogin loginIfLoggedOut() {
         Logger.info("Scanning for app login state...");
-        EggplantTestBase.sleep(10000);
-        if(loginButton.isPresent()){
+        if(loginButton.isPresent(10)){
             Logger.info("Logged state is required.");
             login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"));
         }
