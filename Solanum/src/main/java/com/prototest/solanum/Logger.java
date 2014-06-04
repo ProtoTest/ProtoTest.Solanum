@@ -92,7 +92,7 @@ public class Logger {
                 FileOutputStream fos = new FileOutputStream(newScreenshot);
                 ImageIO.write(image, "png", fos);
                 System.setProperty("org.uncommons.reportng.escape-output", "false");
-                Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot + ".tiff"));
+                Reporter.log(String.format("<img src=\"%s\"/>",newScreenshot));
                 return;
 
             } catch (Exception e) {
