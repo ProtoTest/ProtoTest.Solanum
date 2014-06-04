@@ -6,8 +6,11 @@ import java.awt.*;
 
 /**
  */
-public class DishAnywhereSettings extends DeviceMain {
-    private EggplantElement logout = new EggplantElement(By.Text("Logout"));
+public class DishAnywhereSettings extends DishAnywhereHome {
+    private EggplantElement logoutButton = new EggplantElement(By.Text("Logout"));
+    private EggplantElement parentalControlsButton = new EggplantElement(By.Text("Parental Controls"));
+    private EggplantElement authorizedDevicesButton = new EggplantElement(By.Text("Authorized Devices"));
+
 
     public DishAnywhereSettings() {
         super();
@@ -15,14 +18,26 @@ public class DishAnywhereSettings extends DeviceMain {
 
     public DishAnywhereLogin logout() {
         Logger.info("Logging out...");
-        if (! logout.isPresent()) {
+        if (! logoutButton.isPresent()) {
             new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter(),
                         TextOption.hotSpot(new Point(0,-400))))
                 .swipeUp();
         }
-        logout.click();
+        logoutButton.click();
         new EggplantElement(By.Text("OK", SearchRectangle.middleHalf().trimTop(25))).click();
         Logger.info("Logout complete.");
         return new DishAnywhereLogin();
+    }
+
+    public DishAnywhereParentalControls openParentalControls(String passcode){
+        parentalControlsButton.click();
+        EnterPasscodePopup popup = new EnterPasscodePopup();
+        popup.enterPasscode(passcode);
+        return new DishAnywhereParentalControls();
+    }
+
+    public DishAnywhereParentalControls openAuthorizedDevices(){
+        authorizedDevicesButton.click();
+        return new DishAnywhereParentalControls();
     }
 }

@@ -15,7 +15,17 @@ public class ElementTests {
     @Test(groups = {"ElementName"})
     public void ElementNameDefault() {
         EggplantElement element = new EggplantElement(By.Image("/path/to/image"));
-        Assert.assertEquals("element", element.getName());
+        Assert.assertEquals(element.getName(),"image--path-to-image");
+    }
+    @Test(groups = {"ElementName"})
+    public void ElementNameWithRectangle() {
+        EggplantElement element = new EggplantElement(By.Image("/path/to/image", new SearchRectangle(new Point(0,0),new Point(100,100))));
+        Assert.assertEquals(element.getName(),"image--path-to-image");
+    }
+    @Test(groups = {"ElementName"})
+    public void ElementTextNameDefault() {
+        EggplantElement element = new EggplantElement(By.Text("Text Value"));
+        Assert.assertEquals(element.getName(),"text-Text-Value");
     }
 
     @Test(groups = {"ElementLocator"})

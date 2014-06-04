@@ -1,6 +1,7 @@
 package com.prototest.solanum;
 
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.*;
 
 import java.io.File;
@@ -24,13 +25,13 @@ public class EggplantTestBase {
     @AfterMethod
     public void testTeardown(ITestResult result) {
 
-        Verifications.assertVerifications();
+        Verifications.assertVerifications(result);
         if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
-            Logger.debug("PAGE TEXT : " + driver.getAllText());
+            Reporter.log(String.format("<div>%s</div>",driver.getAllText()));
             Logger.screenshot();
 
 

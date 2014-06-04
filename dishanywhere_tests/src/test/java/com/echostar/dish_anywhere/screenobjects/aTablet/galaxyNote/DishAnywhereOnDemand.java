@@ -20,24 +20,29 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
 
     public DishAnywhereScrollView openMovies() {
         moviesButton.waitForPresent(30).click();
+        popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openFeatured() {
         featuredButton.waitForPresent(30).click();
+        popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openTVShows() {
         showsButton.waitForPresent(30).click();
+        popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
     public DishAnywhereScrollView openFamily() {
         familyButton.waitForPresent(30).click();
+        popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
     public DishAnywhereScrollView openNetworks() {
         networksButton.waitForPresent(30).click();
+        popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 

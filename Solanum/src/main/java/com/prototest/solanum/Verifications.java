@@ -1,6 +1,7 @@
 package com.prototest.solanum;
 
 import junit.framework.Assert;
+import org.testng.ITestResult;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -35,9 +36,10 @@ public class Verifications {
         verifications = new LinkedList<Verification>();
     }
 
-    public static void assertVerifications(){
+    public static void assertVerifications(ITestResult result){
         int numFailed = getNumFailures();
         if(numFailed>0){
+            result.setStatus(2);
             Assert.fail("The test failed due to Verification Errors");
         }
     }

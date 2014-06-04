@@ -109,6 +109,20 @@ public class EggplantDriver {
         Point point = new Point(Integer.parseInt(rect[0]), Integer.parseInt(rect[1]));
         return new EggplantElement(By.Point(point));
     }
+    public Point findLocation(By by) {
+        return findLocation(by.getLocator());
+    }
+    public Point findLocation(String locator) {
+        try{
+            String output = execute(String.format("Put ImageLocation %s", locator)).Output;
+            String[] rect = parseCoordinates(output);
+            Point point = new Point(Integer.parseInt(rect[0]), Integer.parseInt(rect[1]));
+            return point;
+        }catch(Exception e){
+           return null;
+        }
+
+    }
 
     public List<EggplantElement> findElements(String locator) {
         return EveryImageLocation(locator);

@@ -3,14 +3,16 @@ package com.prototest.solanum;
 import org.joda.time.LocalTime;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.awt.*;
 import java.util.List;
 
 
 public class EggplantElement {
-    private final By by;
-    private final String name;
-    private final EggplantDriver driver = EggplantTestBase.driver;
+    private By by;
+    private String name;
+    private EggplantDriver driver = EggplantTestBase.driver;
     private int waitSec;
+    private Point location;
 
     public EggplantElement(String name, By by) {
         this.by = by;
@@ -26,13 +28,14 @@ public class EggplantElement {
 
     public EggplantElement(By by) {
         this.by = by;
-        this.name = "element";
+        this.name = by.getLocator();
         this.waitSec = Config.elementWaitTimeSec;
     }
 
+
     public EggplantElement(By by, int waitSec) {
         this.by = by;
-        this.name = "element";
+        this.name = by.getLocator().replaceAll("[()]","").replaceAll("[:]]","_").replaceAll("[\"/:]", "-");
         this.waitSec = waitSec;
     }
 
@@ -40,17 +43,21 @@ public class EggplantElement {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException ex) {
-            // TODO should we actually interrupt execution? What cases will interrupt be called?
-            Thread.currentThread().interrupt();
         }
+    }
+
+    private void findLocation(){
+        location = driver.findLocation(by);
     }
 
     public boolean isPresent() {
         if (by.type.equals(By.ByType.point)) return true;
-
-        return driver.isPresent(by.getLocator());
+        findLocation();
+        if(location==null)
+            return false;
+        this.by = By.Point(location);
+        return true;
     }
-
 
     public boolean isPresent(int secs) {
         LocalTime now = new LocalTime();
@@ -172,9 +179,9 @@ public class EggplantElement {
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
         if (Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
-                Logger.screenshot(name);
+                Logger.screenshot(getSafeName());
             } else {
-                Logger.screenshot(name, by.getSearchRectangle().searchRectangle);
+                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
             }
         }
         LocalTime now = new LocalTime();
@@ -191,9 +198,9 @@ public class EggplantElement {
         Logger.error(String.format("%s not found: %s.", name, by.getLocator()));
         if (Config.screenshotOnError && !Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
-                Logger.screenshot(name);
+                Logger.screenshot(getSafeName());
             } else {
-                Logger.screenshot(name, by.getSearchRectangle().searchRectangle);
+                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
             }
         }
         throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
@@ -212,14 +219,15 @@ public class EggplantElement {
         Logger.debug(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(), secs));
         if (Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
-                Logger.screenshot(name);
+                Logger.screenshot(getSafeName());
             } else {
-                Logger.screenshot(name, by.getSearchRectangle().searchRectangle);
+                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
             }
         }
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
+            Logger.debug("Waiting...");
             if (!driver.isPresent(by.getLocator())) {
                 Logger.debug("Element no longer present.");
                 return this;
@@ -232,9 +240,9 @@ public class EggplantElement {
         Logger.error(String.format("%s is still present", name, by));
         if (Config.screenshotOnError && !Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
-                Logger.screenshot(name);
+                Logger.screenshot(getSafeName());
             } else {
-                Logger.screenshot(name, by.getSearchRectangle().searchRectangle);
+                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
             }
         }
         throw new RuntimeException(String.format("WaitForNotPresent Failed : %s was still present after %d seconds", name, secs));
@@ -244,14 +252,12 @@ public class EggplantElement {
     public EggplantElement verifyPresent() {
         Logger.debug(String.format("Verifying %s %s should be present.", name, by.getLocator()));
         Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), driver.isPresent(by.getLocator()));
-        Logger.screenshot();
         return this;
     }
 
     public EggplantElement verifyNotPresent() {
         Logger.debug(String.format("Verifying %s %s is not be present.", name, by));
         Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), !driver.isPresent(by.getLocator()));
-        Logger.screenshot(by.getSearchRectangle().searchRectangle);
         return this;
     }
 
@@ -260,6 +266,11 @@ public class EggplantElement {
         Logger.debug(String.format("Verifying %s %s text is %s.", name, by.getLocator(), value));
         Verifications.addVerification(String.format("%s %s should have text %s", name, by.getLocator(), value), getText() == value);
         return this;
+    }
+
+    public String getSafeName(){
+        String newName = this.name.split(",")[0].replaceAll("[:()\"]","").replaceAll("[ ,\"/:]", "-");
+        return newName;
     }
 
     public String getName() {
