@@ -227,7 +227,7 @@ public class EggplantElement {
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
-            Logger.debug("Waiting...");
+
             if (!driver.isPresent(by.getLocator())) {
                 Logger.debug("Element no longer present.");
                 return this;
@@ -269,7 +269,7 @@ public class EggplantElement {
     }
 
     public String getSafeName(){
-        String newName = this.name.split(",")[0].replaceAll("[:()\"]","").replaceAll("[ ,\"/:]", "-");
+        String newName = this.name.split(",")[0].replaceAll("[:()\"]","").replaceAll("[ ,\"/\\:]", "-");
         return newName;
     }
 

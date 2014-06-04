@@ -10,7 +10,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     private EggplantElement logoutButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\LogoutButton"));
     private EggplantElement parentalControlsButton = new EggplantElement(By.Text("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\ParentalControlsButton"));
     private EggplantElement authorizedDevicesButton = new EggplantElement(By.Text("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\LogoutButton\\Authorized\\DevicesButton"));
-
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\OkButton", SearchRectangle.middleHalf().trimTop(25)));
 
     public DishAnywhereSettings() {
         super();
@@ -24,7 +24,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
                 .swipeUp();
         }
         logoutButton.click();
-        new EggplantElement(By.Text("OK", SearchRectangle.middleHalf().trimTop(25))).click();
+        okButton.click();
         Logger.info("Logout complete.");
         return new DishAnywhereLogin();
     }

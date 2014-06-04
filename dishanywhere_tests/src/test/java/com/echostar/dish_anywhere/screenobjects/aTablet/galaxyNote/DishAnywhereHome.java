@@ -46,9 +46,9 @@ public class DishAnywhereHome extends DishAnywhereMain {
         viewAllButton.click();
         return new DishAnywhereOnDemand();
     }
-    public DishAnywhereHome openBlockbuster(){
+    public Blockbuster openBlockbuster(){
         blockbusterButton.click();
-        return this;
+        return new Blockbuster();
     }
     public DishAnywhereHome verifyLoggedIn() {
         settingsButton.waitForPresent(20);

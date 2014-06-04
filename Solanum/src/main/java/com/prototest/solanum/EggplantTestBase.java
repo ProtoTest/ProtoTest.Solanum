@@ -24,17 +24,14 @@ public class EggplantTestBase {
 
     @AfterMethod
     public void testTeardown(ITestResult result) {
-
-        Verifications.assertVerifications(result);
-        if (result.isSuccess()) {
-            Logger.info("TEST COMPLETE (PASSED).");
-        }
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
             Reporter.log(String.format("<div>%s</div>",driver.getAllText()));
             Logger.screenshot();
-
-
+        }
+        Verifications.assertVerifications();
+        if (result.isSuccess()) {
+            Logger.info("TEST COMPLETE (PASSED).");
         }
     }
 

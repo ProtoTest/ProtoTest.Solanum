@@ -36,12 +36,12 @@ public class Verifications {
         verifications = new LinkedList<Verification>();
     }
 
-    public static void assertVerifications(ITestResult result){
+    public static boolean assertVerifications(){
         int numFailed = getNumFailures();
         if(numFailed>0){
-            result.setStatus(2);
             Assert.fail("The test failed due to Verification Errors");
         }
+        return true;
     }
     public static void addVerification(String message,boolean passed){
         if(passed){
@@ -49,9 +49,10 @@ public class Verifications {
             verifications.add(new Verification(message,true));
         }
         else{
-            String filePath = "";//EggplantTestBase.driver.getScreenshot();
+            //String filePath = EggplantTestBase.driver.getScreenshot();
             Logger.error(String.format("Verification Failed : %S", message));
-            verifications.add(new Verification(message,filePath,false));
+            verifications.add(new Verification(message,"",false));
+            Logger.screenshot();
         }
     }
 
@@ -61,9 +62,10 @@ public class Verifications {
         }
         else{
             Logger.error(String.format("Verification Failed : %S", message));
-
+            Logger.screenshot();
         }
         verifications.add(new Verification(message,filePath,false));
+
     }
 
     public static int getNumFailures() {

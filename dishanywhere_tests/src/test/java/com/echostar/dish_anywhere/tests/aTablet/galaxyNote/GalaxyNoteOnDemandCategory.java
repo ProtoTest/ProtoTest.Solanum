@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyNoteCategoryContent extends EggplantTestBase{
+public class GalaxyNoteOnDemandCategory extends EggplantTestBase{
     @Test
     public void movieCategory(){
 
