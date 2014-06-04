@@ -8,19 +8,10 @@ import com.prototest.solanum.EggplantElement;
 import java.util.List;
 
 public class DishAnywhereScrollView extends DishAnywhereMain {
-    EggplantElement movieArrow  = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/MovieArrow"));
-    EggplantElement contentLock = new EggplantElement(By.Text("Enter Passcode"));
-    public void scroll() {
-        List<EggplantElement> arrows = movieArrow.allInstances();
-        arrows.get(arrows.size()-1).dragTo(arrows.get(0));
-    }
 
-    public DishAnywhereMovie openMovie(int i) {
-        List<EggplantElement> arrows = movieArrow.allInstances();
-        arrows.get(0).click();
-        popups.enterPasscodeIfNeeded();
-        return new DishAnywhereMovie();
-    }
+    EggplantElement filterDropdownArrow = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/CloseArrowIcon"));
+
+
     public DishAnywhereMovie openMovie(String name){
         EggplantElement movie  = new EggplantElement(By.Text(name));
         movie.click();
@@ -30,6 +21,14 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         EggplantElement movie  = new EggplantElement(By.Text(name));
         movie.click();
         return new EnterPasscodePopup();
+    }
+
+    public DishAnywhereScrollView verifyTitlesPresent(List<String> titles){
+        for(String title : titles){
+            EggplantElement movie = new EggplantElement(By.Text(title));
+            movie.verifyPresent();
+        }
+        return this;
     }
 
 
