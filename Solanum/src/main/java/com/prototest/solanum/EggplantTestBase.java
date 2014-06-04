@@ -23,6 +23,8 @@ public class EggplantTestBase {
 
     @AfterMethod
     public void testTeardown(ITestResult result) {
+
+        Verifications.assertVerifications();
         if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
