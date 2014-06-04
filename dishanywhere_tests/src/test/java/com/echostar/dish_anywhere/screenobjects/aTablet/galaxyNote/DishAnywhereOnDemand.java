@@ -1,7 +1,5 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMain;
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereScrollView;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.SearchRectangle;
@@ -25,5 +23,22 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
         return new DishAnywhereScrollView();
     }
 
+    public DishAnywhereScrollView openFeatured() {
+        featuredButton.waitForPresent(30).click();
+        return new DishAnywhereScrollView();
+    }
+
+    public DishAnywhereScrollView openTVShows() {
+        showsButton.waitForPresent(30).click();
+        return new DishAnywhereScrollView();
+    }
+    public DishAnywhereScrollView openFamily() {
+        familyButton.waitForPresent(30).click();
+        return new DishAnywhereScrollView();
+    }
+    public DishAnywhereScrollView openNetworks() {
+        networksButton.waitForPresent(30).click();
+        return new DishAnywhereScrollView();
+    }
 
 }
