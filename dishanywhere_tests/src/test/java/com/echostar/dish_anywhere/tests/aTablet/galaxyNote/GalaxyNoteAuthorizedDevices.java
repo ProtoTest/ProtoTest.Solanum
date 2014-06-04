@@ -8,9 +8,10 @@ import org.testng.annotations.Test;
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyNoteParentalControls extends EggplantTestBase{
+public class GalaxyNoteAuthorizedDevices extends EggplantTestBase {
     @Test
-    public void clearAllBlockedContentAndPlayMovie(){
+    public void movieCategory(){
+
         new DeviceMain()
                 .goHome()
                 .killApp()
@@ -18,32 +19,19 @@ public class GalaxyNoteParentalControls extends EggplantTestBase{
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()
-                .openParentalControls("1111")
-                .clearMovieBlocks()
-                .clearTVBlocks()
+                .openAuthorizedDevices()
+                .deAuthorizeThisDevice()
                 .openOnDemand()
                 .openMovies()
                 .openMovie("Parkland")
                 .watchMovie()
-                .verifyMoviePlays();
-    }
-
-    @Test
-    public void setAllContentBlockedAndPlayMovie(){
-        new DeviceMain()
-                .goHome()
-                .killApp()
-                .openDishAnywhereHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+                .verifyDeauthorizationMessageDisplays()
                 .openSettings()
-                .openParentalControls("1111")
-                .setMovieGBlocked()
-                .setTVYBlocked()
+                .openAuthorizedDevices()
+                .authorizeThisDevice()
                 .openOnDemand()
                 .openMovies()
-                .openProtectedMovie("Parkland")
-                .enterPasscode("1111")
+                .openMovie("Parkland")
                 .watchMovie()
                 .verifyMoviePlays();
     }

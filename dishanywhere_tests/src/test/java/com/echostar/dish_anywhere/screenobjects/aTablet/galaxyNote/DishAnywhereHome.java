@@ -5,7 +5,7 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.SearchRectangle;
 
-public class DishAnywhereHome extends DeviceMain {
+public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement(By.Text("Settings", SearchRectangle.bottomQuarter()));
     private EggplantElement guideButton = new EggplantElement(By.Text("Guide", SearchRectangle.bottomQuarter()));
     private EggplantElement onDemandButton = new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter()));

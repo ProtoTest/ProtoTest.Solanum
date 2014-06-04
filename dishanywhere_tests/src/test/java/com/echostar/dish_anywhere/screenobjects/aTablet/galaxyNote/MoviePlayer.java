@@ -6,11 +6,14 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.ImageOption;
 
 import java.awt.*;
-public class MoviePlayer extends DishAnywhereMain {
+public class MoviePlayer extends DishAnywhereHome {
     EggplantElement screenElement = new EggplantElement(By.Point(new Point(200, 200)));
     private EggplantElement skipBackButton = new EggplantElement("Player skip back button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton"));
     EggplantElement pauseButton = new EggplantElement("Player pause button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/PauseButton"));
     EggplantElement currentCursor = new EggplantElement("Current playback cursor", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/CurrentCursor"));
+    EggplantElement deauthorizationMessage = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/UnauthorizedMessage"));
+    EggplantElement okButton = new EggplantElement(By.Text("OK"));
+
 
     public MoviePlayer openControls() {
         while (! skipBackButton.isPresent()) {
@@ -20,7 +23,7 @@ public class MoviePlayer extends DishAnywhereMain {
         return this;
     }
 
-    public MoviePlayer waitForControls() {
+    public MoviePlayer verifyMoviePlays() {
 
         screenElement.click();
         currentCursor.waitForPresent(60);
@@ -34,6 +37,12 @@ public class MoviePlayer extends DishAnywhereMain {
             return true;
         }
         return false;
+    }
+
+    public MoviePlayer verifyDeauthorizationMessageDisplays(){
+        deauthorizationMessage.waitForPresent();
+        okButton.click();
+        return this;
     }
 
 
