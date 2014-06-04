@@ -20,39 +20,39 @@ public class RestClient {
     String domain;
     String output;
 
-    public RestClient(String domain){
+    public RestClient(String domain) {
         this.domain = domain;
     }
 
-    public String getOutput(){
+    public String getOutput() {
         return output;
     }
 
-    public String Get(String resource){
-    client = Client.create();
+    public String Get(String resource) {
+        client = Client.create();
 
-    webResource = client.resource(domain += resource);
-    response = webResource.accept("application/json")
-            .get(ClientResponse.class);
+        webResource = client.resource(domain += resource);
+        response = webResource.accept("application/json")
+                .get(ClientResponse.class);
 
-    if (response.getStatus() != 200) {
-        throw new RuntimeException("Failed : HTTP error code : "
-                + response.getStatus());
-    }
+        if (response.getStatus() != 200) {
+            throw new RuntimeException("Failed : HTTP error code : "
+                    + response.getStatus());
+        }
 
-    output = response.getEntity(String.class);
+        output = response.getEntity(String.class);
         return output;
     }
 
-    public String parse(String jpath){
+    public String parse(String jpath) {
         return JsonPath.read(output, jpath);
     }
 
-    public List<String> parseAll(String jpath){
+    public List<String> parseAll(String jpath) {
         return JsonPath.read(output, jpath);
     }
 
-    public List<String> parseAll(String jpath,Filter filter){
-        return JsonPath.read(output, jpath,filter);
+    public List<String> parseAll(String jpath, Filter filter) {
+        return JsonPath.read(output, jpath, filter);
     }
 }
