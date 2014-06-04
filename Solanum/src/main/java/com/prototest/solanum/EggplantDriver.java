@@ -74,10 +74,6 @@ public class EggplantDriver {
 
     }
 
-    public void refreshScreen(){
-        execute("RefreshScreen");
-    }
-
     public void delay(int ms) {
         try {
             Thread.sleep(Config.commandDelayMs);
@@ -100,10 +96,13 @@ public class EggplantDriver {
         client.endSession();
     }
 
+
     public EggplantElement findElement(By by) {
         return findElement(by.getLocator());
     }
-
+    public List<EggplantElement> findElements(By by) {
+        return findElements(by.getLocator());
+    }
     public EggplantElement findElement(String locator) {
         String output = execute(String.format("Put ImageLocation %s", locator)).Output;
         String[] rect = parseCoordinates(output);
@@ -111,6 +110,9 @@ public class EggplantDriver {
         return new EggplantElement(By.Point(point));
     }
 
+    public List<EggplantElement> findElements(String locator) {
+        return EveryImageLocation(locator);
+    }
 
     public void click(String locator) {
         execute(String.format("Click %s", locator));
@@ -144,6 +146,11 @@ public class EggplantDriver {
         drag(fromlocator);
         drop(tolocator);
     }
+
+    public void refreshScreen(){
+        execute("RefreshScreen");
+    }
+
 
     public void waitFor(String locator, String timeoutSec) {
         execute(String.format("WaitFor %s, %s", locator, timeoutSec));
