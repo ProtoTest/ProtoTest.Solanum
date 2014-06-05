@@ -13,7 +13,7 @@ public class DeviceMain {
     protected EggplantElement usbConnectedIcon = new EggplantElement("usbConnectedIcon", By.Image("AndroidTablet/GalaxyNote/System/Device/usbConnectedIcon"));
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"));
     protected EggplantElement dishAnywhereTaskIcon = new EggplantElement("Anywhere Task Icon", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/TaskIcon",SearchRectangle.leftQuarter()));
-    protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("AndroidTablet\\GalaxyNote\\System\\Device\\RemoveFromList", SearchRectangle.leftQuarter()));
+    protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("AndroidTablet/GalaxyNote/System/Device/RemoveFromList", SearchRectangle.leftQuarter()));
 
     public final DeviceNavigation nav = new DeviceNavigation();
 

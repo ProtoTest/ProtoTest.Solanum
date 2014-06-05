@@ -2,7 +2,6 @@ package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.MoviePlayer;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
@@ -41,9 +40,9 @@ public class GalaxyS5OnDemand extends EggplantTestBase {
                 .searchFor(movie)
                 .openOnDemandResults()
                 .openMovie()
-                .watch()
+                .watchMovie()
                 .openControls()
-                .assertControls()
+                .verifyMoviePlays()
                 .nav.homeButton.click();
         Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");

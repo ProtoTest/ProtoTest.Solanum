@@ -17,8 +17,17 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     }
 
-    public void loginIfLoggedOut() {
-        new DishAnywhereLogin().loginIfLoggedOut();
+    public DishAnywhereLogin logOutIfLoggedIn(){
+        if(loggedIn()){
+            return openSettings().openSettingsRoot().logout();
+        }
+        return new DishAnywhereLogin();
+    }
+
+    private boolean loggedIn() {
+        if(settingsButton.isPresent())
+            return true;
+        return settingsButton.isPresent(10);
     }
 
     public DishAnywhereSettings openSettings() {
@@ -32,8 +41,12 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return this;
     }
 
+//    public Blockbuster openBlockbuster(){
+//        blockbusterButton.click();
+//        return new Blockbuster();
+//    }
     public DishAnywhereHome verifyLoggedIn() {
-        guideButton.waitForPresent(10);
+        settingsButton.waitForPresent(20);
         return this;
     }
 
@@ -48,7 +61,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     public DishAnywhereHome exitPlayerIfOpen() {
-        while (! settingsButton.isPresent()) {
+        for (int i = 0; i < 10 && ! settingsButton.isPresent(); i++) {
             nav.backButton.click();
         }
         return this;

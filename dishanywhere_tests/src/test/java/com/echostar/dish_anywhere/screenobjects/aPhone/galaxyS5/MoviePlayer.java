@@ -2,15 +2,19 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.SearchRectangle;
 
 import java.awt.*;
 
 /**
  */
-public class MoviePlayer extends DishAnywhereMain {
+public class MoviePlayer extends DishAnywhereHome {
     EggplantElement screenElement = new EggplantElement(By.Point(new Point(200, 200)));
     private EggplantElement skipBackButton = new EggplantElement("Player skip back button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/SkipBackButton"));
     EggplantElement pauseButton = new EggplantElement("Player pause button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/PauseButton"));
+    EggplantElement deauthorizationMessage = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/UnauthorizedMessage"));
+    EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
+
     public MoviePlayer openControls() {
         while (! skipBackButton.isPresent()) {
             screenElement.doubleClick();
@@ -19,7 +23,7 @@ public class MoviePlayer extends DishAnywhereMain {
         return this;
     }
 
-    public MoviePlayer assertControls() {
+    public MoviePlayer verifyMoviePlays() {
         skipBackButton.verifyPresent();
         pauseButton.verifyPresent();
         return this;
@@ -31,6 +35,10 @@ public class MoviePlayer extends DishAnywhereMain {
         }
         return false;
     }
-
+    public MoviePlayer verifyDeauthorizationMessageDisplays(){
+        deauthorizationMessage.waitForPresent();
+        okButton.click();
+        return this;
+    }
 
 }

@@ -8,11 +8,11 @@ import jdk.nashorn.internal.ir.Block;
  * Created by Brian on 6/4/2014.
  */
 public class Blockbuster extends DishAnywhereHome{
-    EggplantElement sortFilterButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\BlockBuster\\SortFilterOptions\\SortFilterButton"));
-    EggplantElement moviesButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\BlockBuster\\BlockBusterPage\\Movies_DeSelected"));
-    EggplantElement tvShowsButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\BlockBuster\\BlockBusterPage\\TVShows_DeSelected"));
-    EggplantElement kidsMoviesButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\BlockBuster\\BlockBusterPage\\KidsMovies_DeSelected"));
-    EggplantElement kidsTvShowsButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\BlockBuster\\BlockBusterPage\\KidsTVShows_DeSelected"));
+    EggplantElement sortFilterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
+    EggplantElement moviesButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
+    EggplantElement tvShowsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows_DeSelected"));
+    EggplantElement kidsMoviesButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies_DeSelected"));
+    EggplantElement kidsTvShowsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows_DeSelected"));
 
 
 

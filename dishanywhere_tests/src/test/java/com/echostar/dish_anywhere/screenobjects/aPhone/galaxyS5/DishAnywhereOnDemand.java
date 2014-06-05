@@ -7,6 +7,8 @@ import com.prototest.solanum.*;
 
 
 public class DishAnywhereOnDemand extends DishAnywhereMain {
+    private EggplantElement allTitles
+            = new EggplantElement(By.Text("All Titles", SearchRectangle.middleHalf()));
     private EggplantElement featuredButton
             = new EggplantElement(By.Text("Featured", SearchRectangle.middleHalf()));
     private EggplantElement moviesButton
@@ -30,10 +32,15 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
 
 
     public DishAnywhereOnDemand() {
-        while (! featuredButton.isPresent()) {
+
+    }
+
+    public DishAnywhereOnDemand goToOnDemandRoot() {
+        for (int i = 0; i < 10 && ! searchButton.isPresent(); i++) {
             nav.backButton.click();
         }
         featuredButton.verifyPresent();
+        return this;
     }
 
     public DishAnywhereScrollView openMovies() {

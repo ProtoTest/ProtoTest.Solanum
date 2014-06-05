@@ -29,6 +29,7 @@ public class DishAnywherePopups extends DeviceMain {
     public DishAnywherePopups waitForScreenToLoad() {
         Logger.info("Waiting for screen to load...");
         LoadingMessage.waitForNotPresent(15);
+        Logger.error("Movie did not load after 15 seconds");
         return null;
     }
 

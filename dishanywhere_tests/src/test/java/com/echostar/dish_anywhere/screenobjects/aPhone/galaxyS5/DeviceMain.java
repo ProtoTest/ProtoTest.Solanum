@@ -44,7 +44,7 @@ public class DeviceMain {
         popups.waitForScreenToLoad();
         DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
 
-        dishAnywhereHome.loginIfLoggedOut();
+        //dishAnywhereHome.loginIfLoggedOut();
         dishAnywhereHome.exitPlayerIfOpen();
         dishAnywhereHome.openGuide();
         return dishAnywhereHome;

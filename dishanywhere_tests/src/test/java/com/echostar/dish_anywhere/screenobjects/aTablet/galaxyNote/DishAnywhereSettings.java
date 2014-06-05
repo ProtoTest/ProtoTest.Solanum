@@ -7,10 +7,10 @@ import java.awt.*;
 /**
  */
 public class DishAnywhereSettings extends DishAnywhereHome {
-    private EggplantElement logoutButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\LogoutButton"));
-    private EggplantElement parentalControlsButton = new EggplantElement(By.Text("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\ParentalControlsButton"));
-    private EggplantElement authorizedDevicesButton = new EggplantElement(By.Text("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\LogoutButton\\Authorized\\DevicesButton"));
-    private EggplantElement okButton = new EggplantElement(By.Image("AndroidTablet\\GalaxyNote\\Apps\\DishAnywhere\\Settings\\OkButton", SearchRectangle.middleHalf().trimTop(25)));
+    private EggplantElement logoutButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton"));
+    private EggplantElement parentalControlsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControlsButton"));
+    private EggplantElement authorizedDevicesButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevicesButton"));
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton"));
 
     public DishAnywhereSettings() {
         super();
