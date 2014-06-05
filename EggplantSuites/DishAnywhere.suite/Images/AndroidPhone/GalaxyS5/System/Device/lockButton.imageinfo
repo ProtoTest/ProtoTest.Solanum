@@ -1,0 +1,18 @@
+﻿{
+    CaptureDate = "2014-05-21 19:20:37 +0000";
+    CaptureHost = "Nexus 4";
+    CaptureScreenSize =     (
+        768,
+        1328
+    );
+    HasAlpha = 1;
+    HonorAlpha = 1;
+    HotSpotX = 76;
+    HotSpotY = 76;
+    LastKnownLocationX = 0;
+    LastKnownLocationY = 0;
+    OriginalLocationX = 308;
+    OriginalLocationY = 824;
+    Pulsing = 0;
+    Scale = 1;
+}
