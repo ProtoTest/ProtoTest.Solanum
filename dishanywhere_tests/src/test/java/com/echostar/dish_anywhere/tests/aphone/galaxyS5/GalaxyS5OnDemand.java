@@ -1,5 +1,6 @@
 package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
+import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.MoviePlayer;
 import com.prototest.solanum.EggplantTestBase;
@@ -9,25 +10,42 @@ import org.testng.annotations.Test;
 
 // DishAnywhere API Tests - GalaxyS5 (Android Phone)
 
-@Test()
 public class GalaxyS5OnDemand extends EggplantTestBase {
 
 
+    @Test
+    public void watchNagraMovie() {
+        RadishScraper radishScraper = new RadishScraper();
+        radishScraper.getMovies();
+        String movie = radishScraper.findMovieWithDrm("nagra");
+        watchMovie(movie);
+
+        Verifications.addVerification("Watched onDemand nagra movie.", true);
+    }
 
     @Test
-    public void onDemandTest() {
-        MoviePlayer movies =
-                new DeviceMain().goHome()
-                        .openDishAnywhereHome()
-                        .openOnDemand()
-                        .openMovies()
-                        .openMovie(0)
-                        .watch()
-                        .openControls()
-                        .assertControls();
+    public void watchWidevineMovie() {
+        RadishScraper radishScraper = new RadishScraper();
+        radishScraper.getMovies();
+        String movie = radishScraper.findMovieWithDrm("widevine");
+        watchMovie(movie);
+
+        Verifications.addVerification("Watched onDemand widevine movie.", true);
+    }
+
+    private void watchMovie(String movie) {
+        new DeviceMain().goHome()
+                .openDishAnywhereHome()
+                .openOnDemand()
+                .clickSearchButton()
+                .searchFor(movie)
+                .openOnDemandResults()
+                .openMovie()
+                .watch()
+                .openControls()
+                .assertControls()
+                .nav.homeButton.click();
         Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");
-
-
     }
 }

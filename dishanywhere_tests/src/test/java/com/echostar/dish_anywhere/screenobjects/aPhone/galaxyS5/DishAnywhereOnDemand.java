@@ -1,8 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 /**
  */
@@ -21,6 +19,15 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
             = new EggplantElement(By.Text("Latino", SearchRectangle.middleHalf()));
     private EggplantElement networksButton
             = new EggplantElement(By.Text("Networks", SearchRectangle.middleHalf()));
+    private EggplantElement searchButton
+            = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/SearchButton"));
+    private EggplantElement searchInput
+            = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SearchInput"));
+    private EggplantElement searchInputClearButton
+            = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput"));
+    private EggplantElement submitSearchButton
+            = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
+
 
     public DishAnywhereOnDemand() {
         while (! featuredButton.isPresent()) {
@@ -32,5 +39,19 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereScrollView openMovies() {
         moviesButton.tap();
         return new DishAnywhereScrollView();
+    }
+
+    public DishAnywhereSearchResult searchFor(String movie) {
+
+        searchInputClearButton.click();
+        searchInput.type(movie);
+        submitSearchButton.click();
+
+        return new DishAnywhereSearchResult();
+    }
+
+    public DishAnywhereOnDemand clickSearchButton() {
+        searchButton.click();
+        return this;
     }
 }

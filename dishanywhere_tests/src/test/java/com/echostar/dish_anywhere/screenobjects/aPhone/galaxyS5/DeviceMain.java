@@ -26,6 +26,8 @@ public class DeviceMain {
         if (nav.backButton.isPresent()) {
             nav.backButton.click();
         }
+        // Wait for the movie to close and screen to rotate.
+        EggplantTestBase.sleep(1500);
         // If the movie player was open, switching from horizontal to vertical screen causes detection errors.
         if (!nav.homeButton.isPresent()) {
             EggplantTestBase.driver.disconnect();
