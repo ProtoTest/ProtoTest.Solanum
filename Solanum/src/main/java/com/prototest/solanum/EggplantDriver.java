@@ -182,6 +182,10 @@ public class EggplantDriver {
         execute(String.format("TypeText \"%s\"", text));
     }
 
+    public void sendKeys(String keyText) {
+        execute(String.format("TypeText %s", keyText));
+    }
+
     public void scrollWheelUp(String num) {
         execute(String.format("ScrollWheelUp %s", num));
     }
