@@ -37,16 +37,16 @@ public class DeviceMain {
         return new DeviceMain();
     }
 
-    public DishAnywhereHome openDishAnywhereHome() {
+
+
+    public DishAnywhereHome openDishAnywhereApp() {
         dishAnywhereApp.waitForPresent(10);
         dishAnywhereApp.click();
         DishAnywherePopups popups = new DishAnywherePopups();
         popups.waitForScreenToLoad();
         DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
 
-        //dishAnywhereHome.loginIfLoggedOut();
-        dishAnywhereHome.exitPlayerIfOpen();
-        dishAnywhereHome.openGuide();
+
         return dishAnywhereHome;
     }
 }

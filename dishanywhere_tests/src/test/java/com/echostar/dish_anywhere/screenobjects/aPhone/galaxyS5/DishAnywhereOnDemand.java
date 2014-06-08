@@ -8,7 +8,9 @@ import com.prototest.solanum.*;
 
 public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement allTitles
-            = new EggplantElement(By.Text("All Titles", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("All Titles", SearchRectangle.topHalf()));
+    private EggplantElement blockbusterButton
+            = new EggplantElement(By.Text("Blockbuster", SearchRectangle.topHalf()));
     private EggplantElement featuredButton
             = new EggplantElement(By.Text("Featured", SearchRectangle.middleHalf()));
     private EggplantElement moviesButton
@@ -36,15 +38,40 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     }
 
     public DishAnywhereOnDemand goToOnDemandRoot() {
-        for (int i = 0; i < 10 && ! searchButton.isPresent(); i++) {
+        for (int i = 0; i < 10 && !searchButton.isPresent(); i++) {
             nav.backButton.click();
         }
-        featuredButton.verifyPresent();
+        searchButton.verifyPresent();
         return this;
     }
 
     public DishAnywhereScrollView openMovies() {
         moviesButton.tap();
+        return new DishAnywhereScrollView();
+    }
+
+    public DishAnywhereScrollView openFeatured() {
+        featuredButton.tap();
+        return new DishAnywhereScrollView();
+    }
+
+    public DishAnywhereScrollView openTvShows() {
+        showsButton.tap();
+        return new DishAnywhereScrollView();
+    }
+
+    public DishAnywhereScrollView openFamily() {
+        familyButton.tap();
+        return new DishAnywhereScrollView();
+    }
+
+    public DishAnywhereScrollView openLatino() {
+        latinoButton.tap();
+        return new DishAnywhereScrollView();
+    }
+
+    public DishAnywhereScrollView openNetworks() {
+        networksButton.tap();
         return new DishAnywhereScrollView();
     }
 
@@ -60,5 +87,10 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereOnDemand clickSearchButton() {
         searchButton.click();
         return this;
+    }
+
+    public Blockbuster openBlockbuster() {
+        blockbusterButton.click();
+        return new Blockbuster();
     }
 }

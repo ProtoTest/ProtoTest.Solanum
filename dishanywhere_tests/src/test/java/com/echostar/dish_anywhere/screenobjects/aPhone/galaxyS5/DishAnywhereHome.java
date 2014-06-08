@@ -12,9 +12,14 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Text("Guide"));
     private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Text("On Demand", SearchRectangle.bottomHalf()));
-
     public DishAnywhereHome() {
+    }
 
+    public DishAnywhereHome openDishAnywhereHome() {
+        //dishAnywhereHome.loginIfLoggedOut();
+        exitPlayerIfOpen();
+        openGuide();
+        return this;
     }
 
     public DishAnywhereLogin logOutIfLoggedIn(){

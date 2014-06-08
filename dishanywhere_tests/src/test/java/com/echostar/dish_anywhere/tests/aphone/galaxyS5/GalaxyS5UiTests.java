@@ -16,7 +16,7 @@ public class GalaxyS5UiTests extends EggplantTestBase {
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
         new DeviceMain().goHome()
-                .openDishAnywhereHome()
+                .openDishAnywhereApp()
                 .openSettings()
                 .logout()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -28,7 +28,7 @@ public class GalaxyS5UiTests extends EggplantTestBase {
     public void testScrollMovies() {
         DishAnywhereScrollView movies =
                 new DeviceMain().goHome()
-                .openDishAnywhereHome()
+                .openDishAnywhereApp()
                 .openOnDemand()
                 .openMovies();
         movies.scroll();

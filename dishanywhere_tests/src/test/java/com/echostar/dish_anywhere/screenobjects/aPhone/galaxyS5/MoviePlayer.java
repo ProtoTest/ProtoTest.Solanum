@@ -24,6 +24,7 @@ public class MoviePlayer extends DishAnywhereHome {
     }
 
     public MoviePlayer verifyMoviePlays() {
+        openControls();
         skipBackButton.verifyPresent();
         pauseButton.verifyPresent();
         return this;

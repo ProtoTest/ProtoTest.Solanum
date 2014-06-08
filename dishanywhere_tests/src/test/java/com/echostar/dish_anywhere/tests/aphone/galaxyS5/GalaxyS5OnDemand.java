@@ -34,7 +34,7 @@ public class GalaxyS5OnDemand extends EggplantTestBase {
 
     private void watchMovie(String movie) {
         new DeviceMain().goHome()
-                .openDishAnywhereHome()
+                .openDishAnywhereApp()
                 .openOnDemand()
                 .clickSearchButton()
                 .searchFor(movie)
