@@ -28,9 +28,8 @@ public class EggplantTestBase {
             Logger.info("TEST INCOMPLETE (FAILED).");
             Reporter.log(String.format("<div>%s</div>",driver.getAllText()));
             Logger.screenshot();
-        }
-        Verifications.assertVerifications();
-        if (result.isSuccess()) {
+
+        } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
     }

@@ -39,7 +39,8 @@ public class Verifications {
     public static boolean assertVerifications(){
         int numFailed = getNumFailures();
         if(numFailed>0){
-            Assert.fail("The test failed due to Verification Errors");
+            Assert.fail("There were verification failures.");
+            return false;
         }
         return true;
     }
