@@ -1,6 +1,8 @@
 package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
+import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereScrollView;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
@@ -11,7 +13,7 @@ import org.testng.annotations.Test;
 // DishAnywhere UI Tests - GalaxyS5 (Android Phone)
 
 @Test
-public class GalaxyS5UiTests extends EggplantTestBase {
+public class GalaxyS5UiTests extends GalaxyS5TestBase {
 
     @Test
     public void testLogoutAndLogin() {
@@ -27,5 +29,20 @@ public class GalaxyS5UiTests extends EggplantTestBase {
 
     }
 
+    @Test
+    public void testPredictiveSearch() {
+        RadishScraper radishScraper = new RadishScraper();
+        radishScraper.getMovies();
+        String movie = radishScraper.findMovieWithDrm("nagra");
+
+        new DishAnywhereHome()
+                .openOnDemand()
+                .clickSearchButton()
+                .verifyPredictiveSearch(movie)
+                .openOnDemandResults()
+                .openMovie()
+                .watchMovie()
+                .verifyMoviePlays();
+    }
 
 }

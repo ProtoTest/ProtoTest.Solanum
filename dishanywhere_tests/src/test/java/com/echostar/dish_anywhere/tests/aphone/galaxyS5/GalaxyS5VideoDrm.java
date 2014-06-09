@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 
 // DishAnywhere API Tests - GalaxyS5 (Android Phone)
 
-public class GalaxyS5VideoDrm extends EggplantTestBase {
+public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
 
 
     @Test
@@ -34,12 +35,7 @@ public class GalaxyS5VideoDrm extends EggplantTestBase {
     }
 
     private void watchMovie(String movie) {
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openOnDemand()
                 .clickSearchButton()
                 .searchFor(movie)

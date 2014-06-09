@@ -1,23 +1,16 @@
 package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
-import com.prototest.solanum.Config;
-import com.prototest.solanum.EggplantTestBase;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyS5ParentalControls extends EggplantTestBase{
+public class GalaxyS5ParentalControls extends GalaxyS5TestBase{
     @Test
     public void clearAllBlockedContentAndPlayMovie(){
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls("1111")
                 .clearMovieBlocks()
@@ -33,12 +26,7 @@ public class GalaxyS5ParentalControls extends EggplantTestBase{
 
     @Test
     public void setAllContentBlockedAndPlayMovie(){
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls("1111")
                 .setMovieGBlocked()
