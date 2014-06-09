@@ -22,7 +22,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement latinoButton
             = new EggplantElement(By.Text("Latino", SearchRectangle.middleHalf()));
     private EggplantElement networksButton
-            = new EggplantElement(By.Text("Networks", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("Networks"));
     private EggplantElement searchButton
             = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/SearchButton"));
     private EggplantElement searchInput
@@ -92,5 +92,19 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public Blockbuster openBlockbuster() {
         blockbusterButton.click();
         return new Blockbuster();
+    }
+
+    public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
+        String searchTerm = movie.substring(0, movie.length()-1);
+        searchInputClearButton.click();
+        searchInput.type(searchTerm);
+
+        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.topHalf()));
+        movieResultElement.verifyPresent();
+
+        movieResultElement.click();
+
+        return new DishAnywhereSearchResult();
+
     }
 }

@@ -62,7 +62,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     public DishAnywhereOnDemand openOnDemand() {
         onDemandButton.click();
-        return new DishAnywhereOnDemand();
+        return new DishAnywhereOnDemand().goToOnDemandRoot();
     }
 
     public DishAnywhereHome exitPlayerIfOpen() {

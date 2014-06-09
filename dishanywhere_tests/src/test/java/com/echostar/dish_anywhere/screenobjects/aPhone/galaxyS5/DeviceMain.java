@@ -11,6 +11,10 @@ public class DeviceMain {
 
     public final DeviceNavigation nav = new DeviceNavigation();
 
+    public boolean isOnHome() {
+        return dishAnywhereApp.isPresent();
+    }
+
     public DeviceMain VerifyElements() {
         Logger.info("Verifying main device screen elements...");
         homeScreenIcon.waitForPresent();
