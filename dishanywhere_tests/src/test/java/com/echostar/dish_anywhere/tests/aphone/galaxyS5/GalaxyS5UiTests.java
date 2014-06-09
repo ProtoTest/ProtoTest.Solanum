@@ -5,6 +5,7 @@ import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereScro
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 // DishAnywhere UI Tests - GalaxyS5 (Android Phone)
@@ -22,15 +23,9 @@ public class GalaxyS5UiTests extends EggplantTestBase {
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .verifyLoggedIn()
                 .returnToDeviceMain();
+        Verifications.assertVerifications();
+
     }
 
-    @Test
-    public void testScrollMovies() {
-        DishAnywhereScrollView movies =
-                new DeviceMain().goHome()
-                .openDishAnywhereApp()
-                .openOnDemand()
-                .openMovies();
-        movies.scroll();
-    }
+
 }

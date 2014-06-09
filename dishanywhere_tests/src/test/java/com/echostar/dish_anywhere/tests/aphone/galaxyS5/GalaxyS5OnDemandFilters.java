@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -15,7 +16,7 @@ public class GalaxyS5OnDemandFilters extends EggplantTestBase {
 
     @Test
     public void onDemandTest() {
-        List<String> movieTitles = Arrays.asList("Lewis Black","Patton Oswalt","Amen","Ben Stiller","Jim Norton");
+        List<String> movieTitles = Arrays.asList("10 Years", "100 Girls", "24 Hour Party People", "3 Times a Charm", "30 Years to Life", "50 First Dates");
 
         new DeviceMain()
                 .goHome()
@@ -31,6 +32,7 @@ public class GalaxyS5OnDemandFilters extends EggplantTestBase {
                 .selectFilter("Comedy")
                 .done()
                 .verifyTitlesPresent(movieTitles);
+        Verifications.assertVerifications();
 
 
 

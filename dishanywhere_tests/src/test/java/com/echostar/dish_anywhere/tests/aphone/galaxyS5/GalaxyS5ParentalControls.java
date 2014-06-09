@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 /**
@@ -23,9 +24,11 @@ public class GalaxyS5ParentalControls extends EggplantTestBase{
                 .clearTVBlocks()
                 .openOnDemand()
                 .openMovies()
-                .openMovie("Parkland")
+                .openMovie("10 Years")
                 .watchMovie()
                 .verifyMoviePlays();
+        Verifications.assertVerifications();
+
     }
 
     @Test
@@ -42,9 +45,11 @@ public class GalaxyS5ParentalControls extends EggplantTestBase{
                 .setTVYBlocked()
                 .openOnDemand()
                 .openMovies()
-                .openProtectedMovie("Parkland")
+                .openProtectedMovie("10 Years")
                 .enterPasscode("1111")
                 .watchMovie()
                 .verifyMoviePlays();
+        Verifications.assertVerifications();
+
     }
 }

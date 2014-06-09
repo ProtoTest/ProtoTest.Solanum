@@ -3,6 +3,7 @@ import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.FilterPopup;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -29,6 +30,7 @@ public class GalaxyNoteOnDemandFilters extends EggplantTestBase {
                 .selectFilter("Comedy")
                 .done()
                 .verifyTitlesPresent(movieTitles);
+        Verifications.assertVerifications();
 
 
 

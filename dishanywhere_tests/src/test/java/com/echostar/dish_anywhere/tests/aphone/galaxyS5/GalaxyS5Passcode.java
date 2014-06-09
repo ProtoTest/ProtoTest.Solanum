@@ -1,8 +1,9 @@
 package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
-import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 /**
@@ -14,17 +15,21 @@ public class GalaxyS5Passcode extends EggplantTestBase{
 
         new DeviceMain()
                 .goHome()
-                .killApp()
-                .openDishAnywhereHome()
+                .openDishAnywhereApp()
+                .exitPlayerIfOpen()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+
                 .openSettings()
                 .openParentalControls("1111")
                 .changePasscode("0000")
+                .openSettingsRoot()
                 .openAuthorizedDevices()
+                .openSettingsRoot()
                 .openParentalControls("0000")
                 .changePasscode("1111");
 
+        Verifications.assertVerifications();
 
 
 
