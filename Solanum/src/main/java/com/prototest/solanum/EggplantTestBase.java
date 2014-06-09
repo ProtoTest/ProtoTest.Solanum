@@ -20,10 +20,13 @@ public class EggplantTestBase {
         Config.currentTestName = method.getName();
         Logger.debug("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
+        initializeApp();
+
     }
 
     @AfterMethod
     public void testTeardown(ITestResult result) {
+        uninitializeApp();
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
             Reporter.log(String.format("<div>%s</div>",driver.getAllText()));
@@ -119,4 +122,8 @@ public class EggplantTestBase {
             e.printStackTrace();
         }
     }
+
+    public void initializeApp() {}
+
+    public void uninitializeApp() {}
 }
