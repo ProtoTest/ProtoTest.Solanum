@@ -30,8 +30,13 @@ class EggplantProcess {
 
     void stop() {
         try {
-            eggplantDrive.destroy();
-            eggplantDrive.waitFor();
+            if(eggplantDrive==null){
+                kill();
+            }else{
+                eggplantDrive.destroy();
+                eggplantDrive.waitFor();
+            }
+
         } catch (InterruptedException e) {
             Logger.error("Exception caught stopping eggplant : " + e.getMessage());
             kill();

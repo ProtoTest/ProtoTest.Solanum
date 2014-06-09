@@ -98,6 +98,7 @@ public class EggplantTestBase {
 
         if (driver.isDriveRunning()) {
             Logger.info("Drive is already running.");
+            eggplantProcess = new EggplantProcess();
             return;
         } else {
             if (Config.manageEggdriveProcess) {
