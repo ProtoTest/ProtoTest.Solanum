@@ -31,7 +31,6 @@ public class GalaxyS5Blockbuster {
                 .openBlockbuster()
                 .openMovies()
                 .verifyTitlesPresent(movieTitles);
-        Verifications.assertVerifications();
     }
 
     @Test

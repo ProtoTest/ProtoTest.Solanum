@@ -24,10 +24,12 @@ public class EggplantTestBase {
 
     @AfterMethod
     public void testTeardown(ITestResult result) {
+        Verifications.assertVerifications();
+        result = Reporter.getCurrentTestResult();
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
-            Reporter.log(String.format("<div>%s</div>",driver.getAllText()));
             Logger.screenshot();
+
 
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
@@ -49,7 +51,7 @@ public class EggplantTestBase {
         driver.connect(hostName, hostPort);
     }
 
-    private void createReportDirectory() {
+    void createReportDirectory() {
         File report = new File("test-output");
         deleteDir(report);
         report.mkdir();
@@ -92,9 +94,11 @@ public class EggplantTestBase {
     protected void startEggplant() {
 
         if (driver.isDriveRunning()) {
+            Logger.info("Drive is already running.");
             return;
         } else {
             if (Config.manageEggdriveProcess) {
+                Logger.info("Launching Eggplant Drive");
                 eggplantProcess.kill();
                 eggplantProcess.start();
             }
