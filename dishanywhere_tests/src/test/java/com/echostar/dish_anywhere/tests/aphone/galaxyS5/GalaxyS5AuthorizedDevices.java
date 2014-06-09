@@ -2,23 +2,20 @@ package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
 
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyS5AuthorizedDevices extends EggplantTestBase {
+public class GalaxyS5AuthorizedDevices extends GalaxyS5TestBase {
     @Test
     public void movieCategory(){
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openSettings()
                 .openSettingsRoot()
@@ -41,5 +38,7 @@ public class GalaxyS5AuthorizedDevices extends EggplantTestBase {
                 .openMovie("10 Years")
                 .watchMovie()
                 .verifyMoviePlays();
+        Verifications.assertVerifications();
+
     }
 }

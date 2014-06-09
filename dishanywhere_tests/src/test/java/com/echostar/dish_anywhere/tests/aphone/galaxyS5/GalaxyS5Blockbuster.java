@@ -2,30 +2,36 @@ package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyS5Blockbuster {
+public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
+
+    private final int MOVIES_TO_TEST = 6;
 
     @Test
     public void movieCategory(){
 
-        List<String> movieTitles = Arrays.asList("10 Years", "100 Girls", "12 Biggest Lies");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory();
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
@@ -36,14 +42,15 @@ public class GalaxyS5Blockbuster {
     @Test
     public void tvShowsCategory(){
 
-        List<String> movieTitles = Arrays.asList("A Nation Adrift", "Amen", "America's Godly Heritage");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory();
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
@@ -55,14 +62,15 @@ public class GalaxyS5Blockbuster {
     @Test
     public void kidsMovieCategory(){
 
-        List<String> movieTitles = Arrays.asList("Adam Sandler", "Adventures of Bailey", "Alice Through the Looking", "An Ant's Life");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory();
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
@@ -74,14 +82,15 @@ public class GalaxyS5Blockbuster {
     @Test
     public void kidsTvShowsCategory(){
 
-        List<String> movieTitles = Arrays.asList("Angelina Ballerina", "Animal Crackers", "Art & Music", "Baby Class");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory();
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()

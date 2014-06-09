@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.SearchRectangle;
 
 /**
@@ -31,11 +32,14 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement gChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked"));
     public EggplantElement nraoChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked"));
 
+    public EggplantElement tvRatingsButton = new EggplantElement(By.Text("TV Ratings"));
+    public EggplantElement movieRatingsButton = new EggplantElement(By.Text("Movie Ratings"));
+
     public EggplantElement saveButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/SaveButton"));
     public EggplantElement changePasscodeButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ChangePasscode"));
     public EggplantElement chooseSecurityQuestionButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ChooseSecurityQuestionButton"));
 
-    public EggplantElement okButton = new EggplantElement(By.Text("OK"));
+    EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
     public DishAnywhereParentalControls clickRating(String value){
         EggplantElement rating = new EggplantElement(By.Text(value));
         rating.click();
@@ -43,28 +47,44 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearTVBlocks(){
+        tvRatingsButton.click();
         if(tvmaChecked.isPresent())
             tvmaCheckbox.click();
+        nav.backButton.click();
+        if (okButton.isPresent())
+            okButton.click();
         return this;
     }
 
 
     public DishAnywhereParentalControls setTVYBlocked(){
+        tvRatingsButton.click();
         if(!tvyChecked.isPresent())
             tvyCheckbox.click();
+        nav.backButton.click();
+        if (okButton.isPresent())
+            okButton.click();
         return this;
     }
 
     public DishAnywhereParentalControls clearMovieBlocks(){
+        movieRatingsButton.click();
         if(nraoChecked.isPresent())
             nraoCheckbox.click();
+        nav.backButton.click();
+        if (okButton.isPresent())
+            okButton.click();
         return this;
     }
 
 
     public DishAnywhereParentalControls setMovieGBlocked(){
+        movieRatingsButton.click();
         if(!gChecked.isPresent())
             gCheckbox.click();
+        nav.backButton.click();
+        if (okButton.isPresent())
+            okButton.click();
         return this;
     }
 
@@ -79,6 +99,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         EnterPasscodePopup popup = new EnterPasscodePopup();
         popup.enterPasscode(passcode);
         popup.enterPasscode(passcode);
+        EggplantTestBase.sleep(2000);
         okButton.click();
         return this;
     }

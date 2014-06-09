@@ -1,29 +1,37 @@
 package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
 
+import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceNavigation;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyS5OnDemandCategory extends EggplantTestBase{
+public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
+
+    private final int MOVIES_TO_TEST = 6;
     @Test
     public void movieCategory(){
 
-        List<String> movieTitles = Arrays.asList("10 Years", "100 Girls", "12 Biggest Lies", "12th & Delaware", "180 Segundos", "2 Guns");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openMovies()
@@ -34,14 +42,16 @@ public class GalaxyS5OnDemandCategory extends EggplantTestBase{
     @Test
     public void featuredCategory(){
 
-        List<String> movieTitles = Arrays.asList("Getaway", "The Normal Heart", "To Rome With Love", "Game of Thrones", "Da Vinci's Demons");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getOnDemandFeatured();
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openFeatured()
@@ -52,15 +62,16 @@ public class GalaxyS5OnDemandCategory extends EggplantTestBase{
 
     @Test
     public void familyCategory(){
-        List<String> movieTitles = Arrays.asList("12 Biggest Lies", "2012: Prophecy or Panic", "A Christmas Without Snow", "A Letter to Dad", "A Little Curious");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getFamilyCategory();
 
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openFamily()
@@ -72,14 +83,16 @@ public class GalaxyS5OnDemandCategory extends EggplantTestBase{
     @Test
     public void tvShowsCategory(){
 
-        List<String> movieTitles = Arrays.asList("2 Days", "2 Days: Gennady Golovkin", "2 Days: Nonito Donaire");
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getShowsCategory();
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
+        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+            movieTitles.add(movies.get(0).get("franchiseName"));
+        }
+
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openTvShows()
@@ -93,12 +106,7 @@ public class GalaxyS5OnDemandCategory extends EggplantTestBase{
 
         List<String> movieTitles = Arrays.asList("MGM", "Starz", "Hallmark Channel", "Encore", "HBO");
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openNetworks()
@@ -106,4 +114,5 @@ public class GalaxyS5OnDemandCategory extends EggplantTestBase{
         Verifications.assertVerifications();
 
     }
+
 }

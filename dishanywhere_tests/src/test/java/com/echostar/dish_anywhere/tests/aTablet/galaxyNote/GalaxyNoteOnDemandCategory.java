@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 import java.util.*;
@@ -25,6 +26,7 @@ public class GalaxyNoteOnDemandCategory extends EggplantTestBase{
                 .openOnDemand()
                 .openMovies()
                 .verifyTitlesPresent(movieTitles);
+        Verifications.assertVerifications();
 
     }
 
@@ -42,6 +44,7 @@ public class GalaxyNoteOnDemandCategory extends EggplantTestBase{
                 .openOnDemand()
                 .openFeatured()
                 .verifyTitlesPresent(movieTitles);
+        Verifications.assertVerifications();
 
     }
 
@@ -59,6 +62,7 @@ public class GalaxyNoteOnDemandCategory extends EggplantTestBase{
                 .openOnDemand()
                 .openFamily()
                 .verifyTitlesPresent(movieTitles);
+        Verifications.assertVerifications();
 
     }
 
@@ -76,6 +80,7 @@ public class GalaxyNoteOnDemandCategory extends EggplantTestBase{
                 .openOnDemand()
                 .openTVShows()
                 .verifyTitlesPresent(movieTitles);
+        Verifications.assertVerifications();
 
     }
 
@@ -93,6 +98,7 @@ public class GalaxyNoteOnDemandCategory extends EggplantTestBase{
                 .openOnDemand()
                 .openNetworks()
                 .verifyTitlesPresent(movieTitles);
+        Verifications.assertVerifications();
 
     }
 }

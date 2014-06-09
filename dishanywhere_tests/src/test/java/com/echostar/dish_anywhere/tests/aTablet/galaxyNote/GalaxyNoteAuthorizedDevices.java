@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 /**
@@ -34,5 +35,7 @@ public class GalaxyNoteAuthorizedDevices extends EggplantTestBase {
                 .openMovie("Parkland")
                 .watchMovie()
                 .verifyMoviePlays();
+        Verifications.assertVerifications();
+
     }
 }

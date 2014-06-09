@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 /**
  *
  */
-public class GalaxyS5PlaybackTest extends EggplantTestBase {
+public class GalaxyS5PlaybackTest extends GalaxyS5TestBase {
     @Test
     public void test1() {
         DeviceHomeScreen homeScreen = new DeviceHomeScreen();

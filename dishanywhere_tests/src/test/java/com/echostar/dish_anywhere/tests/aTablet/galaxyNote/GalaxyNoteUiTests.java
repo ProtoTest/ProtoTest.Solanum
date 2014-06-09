@@ -4,6 +4,7 @@ import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 // DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
@@ -23,6 +24,8 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
                 .verifyLoggedIn()
                 .logOutIfLoggedIn()
                 .verifyLoggedOut();
+        Verifications.assertVerifications();
+
     }
 
 }

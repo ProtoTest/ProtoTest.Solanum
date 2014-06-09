@@ -4,6 +4,7 @@ import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereSettings;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -30,6 +31,7 @@ public class GalaxyNotePasscode extends EggplantTestBase{
                 .changePasscode("1111");
 
 
+        Verifications.assertVerifications();
 
 
     }
