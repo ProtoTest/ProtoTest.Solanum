@@ -16,6 +16,11 @@ public class FilterPopup extends DeviceMain{
     public EggplantElement actionAdventureOption = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement filterByGenreLabel = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
 
+    public FilterPopup sortByTitle() {
+        titleOption.click();
+        return this;
+    }
+
     public FilterPopup selectFilter(String value){
         EggplantElement element = new EggplantElement(By.Text(value));
         element.click();

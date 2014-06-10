@@ -8,9 +8,9 @@ import java.util.List;
 public class DishAnywhereScrollView extends DishAnywhereMain {
 
     EggplantElement filterDropdownArrow = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/CloseArrowIcon"));
-
+    EggplantElement sortFilterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton"));
     public FilterPopup openFilter(){
-        filterDropdownArrow.click();
+        sortFilterButton.click();
         return new FilterPopup();
     }
     public DishAnywhereMovie openMovie(String name){
