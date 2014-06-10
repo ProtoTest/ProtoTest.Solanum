@@ -32,7 +32,6 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement submitSearchButton
             = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
 
-
     public DishAnywhereOnDemand() {
 
     }

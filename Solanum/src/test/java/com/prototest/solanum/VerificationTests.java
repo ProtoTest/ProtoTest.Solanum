@@ -14,7 +14,7 @@ public class VerificationTests extends EggplantTestBase {
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort) {
         EggplantTestBase.driver = new MockDriver(null);
-
+        createReportDirectory();
         startEggplant();
         setEggplantDefaultSettings();
         //driver.connect();
@@ -35,24 +35,13 @@ public class VerificationTests extends EggplantTestBase {
     @Test
     public void AddPassedVerification() {
         Verifications.addVerification("This is the success message", true);
-        Verifications.assertVerifications();
     }
 
     @Test(expectedExceptions = AssertionFailedError.class)
     public void AddFailedVerification() {
         Verifications.addVerification("This is the failure message", false);
         Verifications.assertVerifications();
-    }
-
-    @Test
-    public void CheckMultipleVerification() {
-        Verifications.addVerification("This is the failure message", false);
-        Verifications.addVerification("This is the success message", true);
-        Verifications.addVerification("This is the failure message", false);
-        Verifications.addVerification("This is the success message", true);
-        List<Verifications.Verification> verifications;
-        verifications = Verifications.getVerifications();
-        Assert.assertEquals(4, verifications.size());
+        Verifications.clearVerifications();
     }
 
     @Test
@@ -64,5 +53,7 @@ public class VerificationTests extends EggplantTestBase {
         List<Verifications.Verification> verifications;
         verifications = Verifications.getVerifications();
         Assert.assertEquals(2, Verifications.getNumFailures());
+        Assert.assertEquals(4, verifications.size());
+        Verifications.clearVerifications();
     }
 }

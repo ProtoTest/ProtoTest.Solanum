@@ -37,7 +37,6 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
                 .openBlockbuster()
                 .openMovies()
                 .verifyTitlesPresent(movieTitles);
-        Verifications.assertVerifications();
     }
 
     @Test

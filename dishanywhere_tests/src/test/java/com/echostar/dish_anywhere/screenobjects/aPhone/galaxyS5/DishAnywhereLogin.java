@@ -8,7 +8,10 @@ import java.awt.*;
 // Screen object for DishAnywhere app - Login screen
 
 public class DishAnywhereLogin extends DishAnywhereMain {
+
     private EggplantElement onlineId = new EggplantElement(By.Text("Online ID", TextOption.hotSpot(new Point(75,109))));
+
+
     private EggplantElement passwordField = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/PasswordField"));
     private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton"));
 
@@ -19,7 +22,9 @@ public class DishAnywhereLogin extends DishAnywhereMain {
         this.passwordField.type(password);
         loginButton.click();
         EggplantTestBase.sleep(5000);
+
         EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
+
         if (errorField.isPresent()) {
             Assert.fail("Could not login.");
         }

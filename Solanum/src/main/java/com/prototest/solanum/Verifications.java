@@ -1,7 +1,10 @@
 package com.prototest.solanum;
 
 import junit.framework.Assert;
+import junit.framework.AssertionFailedError;
 import org.testng.ITestResult;
+import org.testng.Reporter;
+import org.testng.internal.TestResult;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -39,11 +42,13 @@ public class Verifications {
     public static boolean assertVerifications(){
         int numFailed = getNumFailures();
         if(numFailed>0){
-            Assert.fail("There were verification failures.");
+            Reporter.getCurrentTestResult().setStatus(ITestResult.FAILURE);
+            Reporter.getCurrentTestResult().setThrowable(new AssertionFailedError(String.format("The test failed due to %s verification errors",numFailed)));
             return false;
         }
         return true;
     }
+
     public static void addVerification(String message,boolean passed){
         if(passed){
             Logger.debug(String.format("Verification Passed : %s", message));
@@ -52,7 +57,7 @@ public class Verifications {
         else{
             //String filePath = EggplantTestBase.driver.getScreenshot();
             Logger.error(String.format("Verification Failed : %S", message));
-            verifications.add(new Verification(message,"",false));
+            verifications.add(new Verification(message, "", false));
             Logger.screenshot();
         }
     }
@@ -64,6 +69,7 @@ public class Verifications {
         else{
             Logger.error(String.format("Verification Failed : %S", message));
             Logger.screenshot();
+
         }
         verifications.add(new Verification(message,filePath,false));
 

@@ -2,9 +2,7 @@ package com.prototest.solanum;
 
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.awt.*;
 import java.io.File;
@@ -15,12 +13,19 @@ import java.net.URL;
  * Created by Brian on 5/20/2014.
  */
 public class TestBaseTests extends EggplantTestBase {
-    @Override
     @BeforeTest
-    public void fixtureSetUp(String hostname, Integer hostport) {
+    @Parameters({"hostName", "hostPort"})
+    public void fixtureSetUp(@Optional String hostName,
+                             @Optional Integer hostPort) {
+        if (hostName == null || hostPort == null) {
+            Logger.info("Host name not configured by testng.xml; falling back to Solanum config.");
+            hostName = Config.hostName;
+            hostPort = Config.hostPort;
+        }
+        createReportDirectory();
         startEggplant();
-        setEggplantDefaultSettings();
-        //driver.connect();
+       setEggplantDefaultSettings();
+       // driver.connect(hostName, hostPort);
     }
 
     @Test
