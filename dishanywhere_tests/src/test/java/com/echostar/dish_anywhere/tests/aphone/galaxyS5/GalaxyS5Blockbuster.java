@@ -29,7 +29,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(0).get("franchiseName"));
+            movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()
@@ -48,7 +48,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(0).get("franchiseName"));
+            movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()
@@ -68,7 +68,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(0).get("franchiseName"));
+            movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()
@@ -88,7 +88,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(0).get("franchiseName"));
+            movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()
