@@ -1,6 +1,8 @@
 package com.prototest.solanum;
 
 import java.awt.*;
+import java.io.File;
+import java.nio.file.DirectoryIteratorException;
 
 /**
  * Created by Brian on 5/12/2014.
@@ -13,7 +15,7 @@ public class By {
     }
     private String locator;
     private SearchRectangle searchRectangle;
-
+    private File image;
 
     public String getLocator() {
         return locator;
@@ -31,6 +33,17 @@ public class By {
         this.type = type;
     }
 
+    private By(String locator, SearchRectangle searchRectangle, ByType type, File image) {
+        this.locator = locator;
+        this.searchRectangle = searchRectangle;
+        this.type = type;
+        this.image = image;
+    }
+
+    public File getImageFile(){
+        return image;
+    }
+
     public static By Image(String path, ImageOption... options) {
         return Image(path, null, options);
     }
@@ -44,7 +57,17 @@ public class By {
             locatorString += ", " + option.getText();
         }
         locatorString += ")";
-        return new By(locatorString, searchRectangle, ByType.image);
+        String relativePath = Config.suitePath + "\\images\\" + path;
+        File file = new File(relativePath);
+        if(!file.isDirectory()){
+            if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+                relativePath += ".png";
+            } else {
+                relativePath += ".tiff";
+            }
+        }
+        File imageFile = new File(Config.currentPath, relativePath);
+        return new By(locatorString, searchRectangle, ByType.image,imageFile);
     }
 
     public static By Text(String text, TextOption... options) {

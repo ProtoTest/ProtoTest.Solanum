@@ -78,7 +78,7 @@ class EggplantProcess {
                     (new InputStreamReader(eggplantDrive.getInputStream()));
             while ((line = input.readLine()) != null) {
                 if (Config.logDriveCommands) {
-                    Logger.debug(line);
+                    Logger.debug(String.format("== %s",line));
                 }
                 if (line.contains("Maximum Users")) {
                     Assert.fail("The maximum number of simultaneous users has been exceeded for your eggPlant license.");

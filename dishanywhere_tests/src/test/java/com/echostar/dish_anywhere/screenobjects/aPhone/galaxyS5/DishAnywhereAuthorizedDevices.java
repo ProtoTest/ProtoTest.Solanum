@@ -10,8 +10,8 @@ import com.prototest.solanum.SearchRectangle;
 public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
     private EggplantElement authorizeDeviceButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton"));
     private EggplantElement deAuthorizeDeviceButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton"));
-    private EggplantElement okButton = new EggplantElement(By.Text("OK"));
-    private EggplantElement cancelButton = new EggplantElement(By.Text("Cancel"));
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
+    private EggplantElement cancelButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/CancelButton"));
 
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice() {

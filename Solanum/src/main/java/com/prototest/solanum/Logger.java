@@ -24,11 +24,11 @@ public class Logger {
 
     public static void info(String text){
         if (Config.logLevel > 1) return;
-        //java.util.Date date = new java.util.Date();
-        //SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
-        //String timestamp = sdf.format(date);
-        text = String.format("|    %s",text);
-        System.out.println(text);
+        java.util.Date date = new java.util.Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        String timestamp = sdf.format(date);
+        text = String.format("[%s] |    %s",timestamp, text);
+        System.out.println(text.toUpperCase());
         Reporter.log(String.format("<div style=\"color:DarkBlue\">%s</div>",text));
     }
 
@@ -76,6 +76,7 @@ public class Logger {
     public static void screenshot(String name) {
         screenshot(name, null);
     }
+
     public static void screenshot(String name, Rectangle drawRectangle){
         Logger.info("Capturing device screenshot...");
         String newScreenshot = EggplantTestBase.driver.getScreenshot(name);
@@ -107,5 +108,25 @@ public class Logger {
 
     }
 
+    public static void image(File image){
+        if(image.exists())
+            Reporter.log(String.format("<img src=\"%s\"/>",image.getAbsolutePath()));
+        else
+            warning("Could not log image, as the path was incorrect : " + image.getAbsolutePath());
+    }
+    public static void images(File[] images){
+        String outputHtml = "<div>";
+
+        for(File image : images){
+            if(image.exists()){
+                outputHtml += String.format("<img src=\"%s\"/>",image.getAbsolutePath());
+            }
+            else
+                warning("Could not log image, as the path was incorrect : " + image.getAbsolutePath());
+        }
+        outputHtml +="</div>";
+            Reporter.log(outputHtml);
+
+    }
 
 }

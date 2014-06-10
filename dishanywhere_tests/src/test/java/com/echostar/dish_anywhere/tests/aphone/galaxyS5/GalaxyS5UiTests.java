@@ -25,7 +25,6 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .verifyLoggedIn()
                 .returnToDeviceMain();
-        Verifications.assertVerifications();
 
     }
 

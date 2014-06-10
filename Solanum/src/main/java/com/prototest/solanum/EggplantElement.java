@@ -4,6 +4,7 @@ import org.joda.time.LocalTime;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.awt.*;
+import java.io.File;
 import java.util.List;
 
 
@@ -139,7 +140,7 @@ public class EggplantElement {
         driver.typeText(text);
         // Eggplant returns immediately from the TypeText command instead of waiting for the text to type.
         // Compensate by sleeping about 1 second per 3 keys typed.
-        EggplantTestBase.sleep(text.length()/3 * 1000);
+        EggplantTestBase.sleep(text.length() / 3 * 1000);
         return this;
     }
 
@@ -206,6 +207,7 @@ public class EggplantElement {
             }
         }
         Logger.error(String.format("%s not found: %s.", name, originalBy.getLocator()));
+        LogSourceImages();
         if (Config.screenshotOnError && !Config.debugElementLocators) {
             if (originalBy.getSearchRectangle() == null) {
                 Logger.screenshot(getSafeName());
@@ -214,6 +216,19 @@ public class EggplantElement {
             }
         }
         throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
+    }
+
+    private void LogSourceImages() {
+        if(originalBy.type== By.ByType.image){
+            File image = getBy().getImageFile();
+            if(image.isDirectory()){
+                File[] files = image.listFiles();
+                Logger.images(files);
+            }else{
+                Logger.image(image);
+            }
+
+        }
     }
 
     private void logSourceImage() {
@@ -248,6 +263,7 @@ public class EggplantElement {
         }
 
         Logger.error(String.format("%s is still present", name, originalBy));
+        LogSourceImages();
         if (Config.screenshotOnError && !Config.debugElementLocators) {
             if (originalBy.getSearchRectangle() == null) {
                 Logger.screenshot(getSafeName());

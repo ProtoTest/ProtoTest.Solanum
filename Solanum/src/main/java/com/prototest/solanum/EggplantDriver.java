@@ -66,7 +66,7 @@ public class EggplantDriver {
 
     public EggplantResponse execute(String command) {
         if (Config.logDriveCommands) {
-            Logger.debug(String.format("Executing : %s", command));
+            Logger.debug(String.format(":: Execute : '%s'", command));
         }
         delay(Config.commandDelayMs);
         EggplantResponse result = client.execute(command);
