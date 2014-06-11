@@ -8,8 +8,8 @@ import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
-    private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone\\GalaxyS5\\Apps\\DishAnywhere\\AppNav\\Guide"));
-    private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone\\GalaxyS5\\Apps\\DishAnywhere\\AppNav\\OnDemand", SearchRectangle.bottomHalf()));
+    private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
+    private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
 
 
     public DishAnywhereHome() {

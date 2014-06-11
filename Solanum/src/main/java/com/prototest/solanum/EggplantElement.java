@@ -56,7 +56,11 @@ public class EggplantElement {
         location = driver.findLocation(originalBy);
     }
 
-
+    public EggplantElement resetLocation(){
+        location = null;
+        this.by = originalBy;
+        return this;
+    }
 
     public boolean isPresent() {
         if (originalBy.type.equals(By.ByType.point)) return true;
@@ -190,9 +194,9 @@ public class EggplantElement {
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", originalBy.getLocator(), secs));
         if (Config.debugElementLocators) {
             if (by.getSearchRectangle() == null) {
-                Logger.screenshot(getSafeName());
+                Logger.screenshot();
             } else {
-                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
+                Logger.screenshot(by.getSearchRectangle().searchRectangle);
             }
         }
         LocalTime now = new LocalTime();
@@ -207,18 +211,18 @@ public class EggplantElement {
             }
         }
         Logger.error(String.format("%s not found: %s.", name, originalBy.getLocator()));
-        LogSourceImages();
+        LogElementDiagnosticInfo();
         if (Config.screenshotOnError && !Config.debugElementLocators) {
             if (originalBy.getSearchRectangle() == null) {
-                Logger.screenshot(getSafeName());
+                Logger.screenshot();
             } else {
-                Logger.screenshot(getSafeName(), originalBy.getSearchRectangle().searchRectangle);
+                Logger.screenshot(originalBy.getSearchRectangle().searchRectangle);
             }
         }
         throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
     }
 
-    private void LogSourceImages() {
+    private void LogElementDiagnosticInfo() {
         if(originalBy.type== By.ByType.image){
             File image = getBy().getImageFile();
             if(image.isDirectory()){
@@ -228,6 +232,9 @@ public class EggplantElement {
                 Logger.image(image);
             }
 
+        }
+        else if(originalBy.type== By.ByType.text){
+            Logger.error(driver.getAllText());
         }
     }
 
@@ -263,7 +270,7 @@ public class EggplantElement {
         }
 
         Logger.error(String.format("%s is still present", name, originalBy));
-        LogSourceImages();
+        LogElementDiagnosticInfo();
         if (Config.screenshotOnError && !Config.debugElementLocators) {
             if (originalBy.getSearchRectangle() == null) {
                 Logger.screenshot(getSafeName());
@@ -314,6 +321,7 @@ public class EggplantElement {
     }
 
     public void sendKeys(EggplantKeys... keys) {
+        click();
         String keysPart = "";
         for (EggplantKeys key : keys) {
             keysPart += key.keyword + ",";

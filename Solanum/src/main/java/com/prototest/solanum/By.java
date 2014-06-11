@@ -57,17 +57,18 @@ public class By {
             locatorString += ", " + option.getText();
         }
         locatorString += ")";
-        String relativePath = Config.suitePath + "\\images\\" + path;
+        String relativePath = Config.suitePath + "/images/" + path;
         File file = new File(relativePath);
         if(!file.isDirectory()){
-            if (System.getProperty("os.name").toLowerCase().contains("windows")) {
-                relativePath += ".png";
-            } else {
-                relativePath += ".tiff";
+            file = new File(Config.currentPath, relativePath + ".png");
+            if(!file.exists()){
+                file = new File(Config.currentPath, relativePath + ".tiff");
+                if(!file.exists()){
+                    Logger.warning("Could not find image file at : " + relativePath );
+                }
             }
         }
-        File imageFile = new File(Config.currentPath, relativePath);
-        return new By(locatorString, searchRectangle, ByType.image,imageFile);
+        return new By(locatorString, searchRectangle, ByType.image,file);
     }
 
     public static By Text(String text, TextOption... options) {

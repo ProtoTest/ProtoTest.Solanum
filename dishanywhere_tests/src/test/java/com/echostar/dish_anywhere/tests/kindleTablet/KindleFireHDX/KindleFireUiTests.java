@@ -1,15 +1,15 @@
 package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
-
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
-// DishAnywhere UI Tests - Kindle Fire HDX (Kindle Tablet)
+// DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
 
 @Test()
-public class KindleFireHdxUiTests extends EggplantTestBase {
+public class KindleFireUiTests extends EggplantTestBase {
 
     @Test
     public void testLogoutAndLogin() {
@@ -19,10 +19,13 @@ public class KindleFireHdxUiTests extends EggplantTestBase {
                 .openDishAnywhereHome()
                 .goBackToDeviceScreen()
                 .openDishAnywhereHome()
-                .openSettings()
-                .logout()
+                .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .verifyLoggedIn()
-                .returnToDeviceMain();
+                .logOutIfLoggedIn()
+                .verifyLoggedOut();
+        Verifications.assertVerifications();
+
     }
+
 }
