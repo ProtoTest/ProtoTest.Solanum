@@ -12,4 +12,16 @@
   <ReturnValue></ReturnValue>
   <ErrorMessage></ErrorMessage>
  </run>
+ <run>
+  <RunDate>2014-06-10 16:22:07.258 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.232000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140610_162207.258/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Error Computing Rectangle: ((1,1750),(1079,1925))</ErrorMessage>
+ </run>
 </runHistory>

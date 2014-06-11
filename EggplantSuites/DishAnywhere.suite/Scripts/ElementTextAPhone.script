@@ -18,3 +18,4 @@ Click "AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/EnterPasscode/PasscodeButt
 wait 1
 Click "AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/EnterPasscode/PasscodeButton1"
 
+TypeText(HomeButton)
