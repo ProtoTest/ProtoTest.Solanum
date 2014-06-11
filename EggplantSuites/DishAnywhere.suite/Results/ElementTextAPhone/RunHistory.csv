@@ -1,2 +1,3 @@
 ﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
 2014-05-19 12:35:06.093 -0600,"Success",0:00:07,0,0,0,"20140519_123506.093/LogFile.txt","","",1
+2014-06-10 16:22:07.258 -0600,"Failure",0:00:00,1,0,0,"20140610_162207.258/LogFile.txt","","Image Not Found -- waitfor Error - Error Computing Rectangle: ((1,1750),(1079,1925))",0
