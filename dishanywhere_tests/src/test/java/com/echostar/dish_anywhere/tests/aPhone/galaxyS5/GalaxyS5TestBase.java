@@ -1,4 +1,4 @@
-package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
+package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.prototest.solanum.Config;

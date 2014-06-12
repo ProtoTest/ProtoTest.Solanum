@@ -1,6 +1,7 @@
-package com.echostar.dish_anywhere.tests.aphone.galaxyS5;
+package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
+import com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5TestBase;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Verifications;
