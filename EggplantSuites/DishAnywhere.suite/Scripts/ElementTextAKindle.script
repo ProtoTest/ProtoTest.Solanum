@@ -59,9 +59,18 @@ Click (Image:"AndroidTablet/Kindle/Apps/DishAnywhere/Settings/ParentalControls/P
 
 
 
+Click (Image: "AndroidPhone/GalaxyS5/System/Device/BackButton")
+wait 5
+WaitFor 5.0, (Image: "AndroidPhone/GalaxyS5/System/Device/HomeButton")
+
+Click (Image: "AndroidPhone/GalaxyS5/System/Device/TaskManagerButton")
+Click (Image: "AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SearchInput")
+
+TypeText escape
 
 
-
-
+KeyDown HomeButton
+wait 3
+KeyUp HomeButton
 
 

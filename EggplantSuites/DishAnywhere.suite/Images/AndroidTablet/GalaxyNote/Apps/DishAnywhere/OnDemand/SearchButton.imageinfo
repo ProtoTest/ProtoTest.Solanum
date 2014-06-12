@@ -1,0 +1,18 @@
+﻿{
+    CaptureDate = "2014-06-11 23:14:00 +0000";
+    CaptureHost = "GT-N8013";
+    CaptureScreenSize =     (
+        1280,
+        848
+    );
+    HasAlpha = 1;
+    HonorAlpha = 1;
+    HotSpotX = 11;
+    HotSpotY = 10;
+    LastKnownLocationX = 0;
+    LastKnownLocationY = 0;
+    OriginalLocationX = 1060;
+    OriginalLocationY = 12;
+    Pulsing = 0;
+    Scale = 1;
+}

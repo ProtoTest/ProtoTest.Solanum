@@ -196,8 +196,8 @@ Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/Movies_Bloc
 Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/TVShows_BlockBuster")
 Click (Image:"AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/KidsMovies_BlockBuster")
 Click (Image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/KidsTVShows")
+Put ImageLocation ("image0001")
 
 
-
-
+Click (110,290)
 
