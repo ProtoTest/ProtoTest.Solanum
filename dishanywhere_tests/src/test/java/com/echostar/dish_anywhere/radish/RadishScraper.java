@@ -73,6 +73,13 @@ public class RadishScraper {
         return movies;
     }
 
+    public List<Map<String, String>> getComedyMovies() {
+        client = new RestClient("http://radish.dishanywhere.com");
+        String json = client.Get("/v20/movies.json?&genre=comedy&totalItems=19&device=android_phone&itemStart=1&sort=name&uid=Q0U0QjZFQjNGOERGNUQ3NUUwNDREOEQzODVGNkMwMDY%3D--31f0f7155946fec2c9c52955302180b5b52d3110&sid=--e9ad919d527732c4bbf385ee3f5092f79d79a3cc&player_types=widevine,nagra");
+        List<Map<String, String>> movies = JsonPath.read(json, "$.onlinenow.content[*]");
+        return movies;
+    }
+
 
     public String findMovieWithDrm(String type) {
         List<String> types = client.parseAll("$.[*].player_type");
