@@ -1,6 +1,8 @@
 package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
+import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereScrollView;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
@@ -27,5 +29,17 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
         Verifications.assertVerifications();
 
     }
+    @Test
+    public void testPredictiveSearch() {
+        RadishScraper radishScraper = new RadishScraper();
+        radishScraper.getMovies();
+        String movie = radishScraper.findMovieWithDrm("nagra");
 
+        new DishAnywhereHome()
+                .openOnDemand()
+                .verifyPredictiveSearch(movie)
+                .openMovie(movie)
+                .watchMovie()
+                .verifyMoviePlays();
+    }
 }

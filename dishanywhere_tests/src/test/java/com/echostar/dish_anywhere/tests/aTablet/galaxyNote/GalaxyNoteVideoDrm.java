@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 
 // DishAnywhere API Tests - GalaxyS5 (Android Phone)
 
-public class GalaxyNoteVideoDrm extends EggplantTestBase {
+public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
 
 
     @Test
@@ -38,22 +39,15 @@ public class GalaxyNoteVideoDrm extends EggplantTestBase {
     }
 
     private void watchMovie(String movie) {
-        new DeviceMain()
-                .goHome()
-                .killApp()
-                .openDishAnywhereHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openOnDemand()
-                //.clickSearchButton()
-                //.searchFor(movie)
-                //.openOnDemandResults()
-                //.openMovie()
-                //.watchMovie()
-                //.openControls()
-                //.verifyMoviePlays()
+                .searchFor(movie)
+                .openOnDemandResults()
+                .openMovie(movie)
+                .watchMovie()
+                .openControls()
+                .verifyMoviePlays()
                 .nav.homeButton.click();
-        Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");
 
     }

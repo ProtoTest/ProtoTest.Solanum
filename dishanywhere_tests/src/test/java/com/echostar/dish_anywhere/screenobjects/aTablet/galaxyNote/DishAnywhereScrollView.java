@@ -15,12 +15,12 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
     }
     public DishAnywhereMovie openMovie(String name){
         EggplantElement movie  = new EggplantElement(By.Text(name));
-        movie.waitForPresent().click();
+        movie.waitForPresent(30).click();
         return new DishAnywhereMovie();
     }
     public EnterPasscodePopup openProtectedMovie(String name){
         EggplantElement movie  = new EggplantElement(By.Text(name));
-        movie.waitForPresent().click();
+        movie.waitForPresent(30).click();
         return new EnterPasscodePopup();
     }
 

@@ -9,7 +9,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement onDemandButton = new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter()));
 
     private EggplantElement blockbusterButton = new EggplantElement(By.Text("BlockBuster", SearchRectangle.bottomQuarter()));
-    private EggplantElement viewAllButton = new EggplantElement(By.Text("View All"));
+    private EggplantElement viewAllButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.bottomHalf()));
 
 
     public DishAnywhereHome() {
@@ -26,7 +26,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private boolean loggedIn() {
         if(settingsButton.isPresent())
             return true;
-        return settingsButton.isPresent(10);
+        return settingsButton.isPresent(15);
     }
 
     public DishAnywhereSettings openSettings() {
@@ -42,6 +42,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     public DishAnywhereOnDemand openOnDemand(){
         onDemandButton.click();
+        viewAllButton.waitForPresent(20);
         viewAllButton.click();
         return new DishAnywhereOnDemand();
     }

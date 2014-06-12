@@ -17,15 +17,14 @@ public class MoviePlayer extends DishAnywhereHome {
 
     public MoviePlayer openControls() {
         while (! skipBackButton.isPresent()) {
-            screenElement.doubleClick();
+            screenElement.tap();
         }
         popups.waitForScreenToLoad();
         return this;
     }
 
     public MoviePlayer verifyMoviePlays() {
-
-        screenElement.click();
+        openControls();
         currentCursor.waitForPresent(60);
         skipBackButton.waitForPresent(60);
         pauseButton.waitForPresent(60);

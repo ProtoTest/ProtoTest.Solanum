@@ -26,7 +26,13 @@ public class DeviceMain {
 
     public DeviceMain goHome() {
         Logger.info("Returning to main device screen...");
-        nav.homeButton.waitForPresent(20).click();
+        if (closeKeyboardButton.isPresent()) {
+            closeKeyboardButton.tap();
+        }
+        while (!dishAnywhereApp.isPresent()) {
+            nav.backButton.tap();
+        }
+        //nav.homeButton.waitForPresent(20).click();
         return new DeviceMain();
     }
 

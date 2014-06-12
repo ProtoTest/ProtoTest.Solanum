@@ -1,10 +1,15 @@
 package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
+import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Brian on 6/4/2014.
@@ -12,6 +17,11 @@ import org.testng.annotations.Test;
 public class GalaxyNoteAuthorizedDevices extends EggplantTestBase {
     @Test
     public void movieCategory(){
+
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+
+        String movieName = movies.get(0).get("franchiseName");
 
         new DeviceMain()
                 .goHome()
@@ -22,20 +32,24 @@ public class GalaxyNoteAuthorizedDevices extends EggplantTestBase {
                 .openSettings()
                 .openAuthorizedDevices()
                 .deAuthorizeThisDevice()
+
                 .openOnDemand()
-                .openMovies()
-                .openMovie("Parkland")
+                .searchFor(movieName)
+                .openOnDemandResults()
+                .openMovie(movieName)
                 .watchMovie()
                 .verifyDeauthorizationMessageDisplays()
+
                 .openSettings()
                 .openAuthorizedDevices()
                 .authorizeThisDevice()
+
                 .openOnDemand()
-                .openMovies()
-                .openMovie("Parkland")
+                .searchFor(movieName)
+                .openOnDemandResults()
+                .openMovie(movieName)
                 .watchMovie()
                 .verifyMoviePlays();
-        Verifications.assertVerifications();
 
     }
 }

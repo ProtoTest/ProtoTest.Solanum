@@ -17,6 +17,12 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
             = new EggplantElement(By.Text("Latino", SearchRectangle.topQuarter()));
     private EggplantElement networksButton
             = new EggplantElement(By.Text("Networks", SearchRectangle.topQuarter()));
+    private EggplantElement searchInput
+            = new EggplantElement("Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton"));
+    private EggplantElement searchInputClearButton
+            = new EggplantElement("Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput"));
+    private EggplantElement submitSearchButton
+            = new EggplantElement("Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
 
     public DishAnywhereScrollView openMovies() {
         moviesButton.waitForPresent(30).click();
@@ -46,4 +52,28 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
         return new DishAnywhereScrollView();
     }
 
+
+
+    public DishAnywhereSearchResult searchFor(String movie) {
+
+        searchInputClearButton.click();
+        searchInput.type(movie);
+        submitSearchButton.click();
+
+        return new DishAnywhereSearchResult();
+    }
+
+    public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
+        String searchTerm = movie.substring(0, movie.length()-1);
+        searchInputClearButton.click();
+        searchInput.type(searchTerm);
+
+        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.topHalf().trimLeft(50)));
+        movieResultElement.verifyPresent();
+
+        movieResultElement.click();
+
+        return new DishAnywhereSearchResult();
+
+    }
 }
