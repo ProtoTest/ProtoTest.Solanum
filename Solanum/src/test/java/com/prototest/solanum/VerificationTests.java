@@ -29,7 +29,7 @@ public class VerificationTests extends EggplantTestBase {
 
     @Test
     public void VerifyErrorsAreZero() {
-        Assert.assertEquals(0, Verifications.getNumFailures());
+        Assert.assertEquals(0, Verifications.getFailures());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class VerificationTests extends EggplantTestBase {
         Verifications.addVerification("This is the success message", true);
         List<Verifications.Verification> verifications;
         verifications = Verifications.getVerifications();
-        Assert.assertEquals(2, Verifications.getNumFailures());
+        Assert.assertEquals(2, Verifications.getFailures());
         Assert.assertEquals(4, verifications.size());
         Verifications.clearVerifications();
     }
