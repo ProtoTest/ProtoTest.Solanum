@@ -23,7 +23,8 @@ public enum EggplantKeys {
     pageDown,
     pageUp,
     ShiftKey,
-    tab;
+    tab,
+    BackButton;
 
     public final String keyword;
 
