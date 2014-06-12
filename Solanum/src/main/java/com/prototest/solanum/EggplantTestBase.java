@@ -10,7 +10,9 @@ import java.lang.reflect.Method;
 /**
  * Created by Brian on 5/12/2014.
  */
-@Listeners({org.uncommons.reportng.HTMLReporter.class, org.uncommons.reportng.JUnitXMLReporter.class})
+@Listeners({org.uncommons.reportng.HTMLReporter.class,
+        org.uncommons.reportng.JUnitXMLReporter.class,
+        VerificationsListener.class})
 public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
     private static EggplantProcess eggplantProcess = new EggplantProcess();
@@ -26,17 +28,17 @@ public class EggplantTestBase {
 
     @AfterMethod
     public void testTeardown(ITestResult result) {
-        Verifications.assertVerifications();
-        result = Reporter.getCurrentTestResult();
-        uninitializeApp();
+        //Verifications.assertVerifications();
+        //result = Reporter.getCurrentTestResult();
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
             Logger.screenshot();
-
-
+            Logger.info(EggplantTestBase.driver.getAllText());
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
+        uninitializeApp();
+
     }
 
     @BeforeTest
@@ -63,7 +65,7 @@ public class EggplantTestBase {
     public static boolean deleteDir(File dir) {
         if (dir.isDirectory()) {
             String[] children = dir.list();
-            for (int i=0; i<children.length; i++) {
+            for (int i = 0; i < children.length; i++) {
                 boolean success = deleteDir(new File(dir, children[i]));
                 if (!success) {
                     return false;
@@ -72,6 +74,7 @@ public class EggplantTestBase {
         }
         return dir.delete();
     }
+
     @AfterTest(alwaysRun = true)
     @Parameters({"hostName", "hostPort"})
     public void fixtureTearDown(@Optional() String hostName,
@@ -128,7 +131,9 @@ public class EggplantTestBase {
         }
     }
 
-    public void initializeApp() {}
+    public void initializeApp() {
+    }
 
-    public void uninitializeApp() {}
+    public void uninitializeApp() {
+    }
 }

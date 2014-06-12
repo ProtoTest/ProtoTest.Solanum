@@ -1,10 +1,6 @@
 package com.prototest.solanum;
 
 import junit.framework.Assert;
-import junit.framework.AssertionFailedError;
-import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.internal.TestResult;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -40,10 +36,11 @@ public class Verifications {
     }
 
     public static boolean assertVerifications(){
-        int numFailed = getNumFailures();
-        if(numFailed>0){
-            Reporter.getCurrentTestResult().setStatus(ITestResult.FAILURE);
-            Reporter.getCurrentTestResult().setThrowable(new AssertionFailedError(String.format("The test failed due to %s verification errors",numFailed)));
+        String failed = getFailures();
+        if(failed.length()>0){
+            //Reporter.getCurrentTestResult().setStatus(ITestResult.FAILURE);
+            //Reporter.getCurrentTestResult().setThrowable(new AssertionFailedError(String.format("The test failed due to %s verification errors",numFailed)));
+            Assert.fail(String.format("The test failed due to verification errors:\n%s",failed)    );
             return false;
         }
         return true;
@@ -75,15 +72,15 @@ public class Verifications {
 
     }
 
-    public static int getNumFailures() {
-        int numFailed = 0;
+    public static String getFailures() {
+        StringBuilder errors = new StringBuilder();
         for (Verification verification : verifications) {
             if (!verification.passed) {
-                numFailed++;
+                errors.append("\t"+verification.errorMessage);
             }
 
         }
-        return numFailed;
+        return errors.toString();
     }
 }
 
