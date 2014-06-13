@@ -22,7 +22,11 @@ import java.text.SimpleDateFormat;
 
 public class Logger {
 
-    public static void info(String text){
+    static {
+        System.setProperty("org.uncommons.reportng.escape-output", "false");
+    }
+
+    public static void info(String text) {
         if (Config.logLevel > 1) return;
         java.util.Date date = new java.util.Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
