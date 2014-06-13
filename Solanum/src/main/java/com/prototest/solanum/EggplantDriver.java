@@ -1,5 +1,7 @@
 package com.prototest.solanum;
 
+import org.apache.xmlrpc.XmlRpcException;
+
 import java.awt.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -113,15 +115,19 @@ public class EggplantDriver {
         return findLocation(by.getLocator());
     }
     public Point findLocation(String locator) {
-        try{
-            String output = execute(String.format("Put ImageLocation %s", locator)).Output;
-            String[] rect = parseCoordinates(output);
-            Point point = new Point(Integer.parseInt(rect[0]), Integer.parseInt(rect[1]));
-            return point;
-        }catch(Exception e){
-           return null;
+    try{
+        String output = execute(String.format("Put ImageLocation %s", locator)).Output;
+        String[] rect = parseCoordinates(output);
+        Point point = new Point(Integer.parseInt(rect[0]), Integer.parseInt(rect[1]));
+        return point;
+    }
+    catch(Exception e){
+        Logger.debug(e.getMessage());
+        if(!e.getMessage().contains("Image Not Found")){
+            throw new RuntimeException(e.getMessage());
         }
-
+    }
+        return null;
     }
 
     public List<EggplantElement> findElements(String locator) {
