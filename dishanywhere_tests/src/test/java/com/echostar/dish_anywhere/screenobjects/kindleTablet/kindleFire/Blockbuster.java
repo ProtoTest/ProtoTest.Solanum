@@ -5,8 +5,7 @@ import com.prototest.solanum.EggplantElement;
 
 public class Blockbuster extends DishAnywhereHome{
     EggplantElement sortFilterButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
-    EggplantElement moviesButton_des = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
-    EggplantElement moviesButton_sel = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_Selected"));
+    EggplantElement moviesButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
     EggplantElement tvShowsButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows_DeSelected"));
     EggplantElement kidsMoviesButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies_DeSelected"));
     EggplantElement kidsTvShowsButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows_DeSelected"));
@@ -19,8 +18,7 @@ public class Blockbuster extends DishAnywhereHome{
     }
 
     public DishAnywhereScrollView openMovies(){
-        if(!moviesButton_sel.isPresent())
-            moviesButton_des.click();
+        moviesButton.click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }

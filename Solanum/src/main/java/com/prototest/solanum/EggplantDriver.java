@@ -122,6 +122,7 @@ public class EggplantDriver {
         return point;
     }
     catch(Exception e){
+        Logger.debug(e.getMessage());
         if(!e.getMessage().contains("Image Not Found")){
             throw new RuntimeException(e.getMessage());
         }
