@@ -7,7 +7,6 @@ import java.util.List;
 
 public class DishAnywhereScrollView extends DishAnywhereMain {
 
-    EggplantElement filterDropdownArrow = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/CloseArrowIcon"));
     EggplantElement sortFilterButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterOptions/SortFilterButton"));
     public FilterPopup openFilter(){
         sortFilterButton.click();
