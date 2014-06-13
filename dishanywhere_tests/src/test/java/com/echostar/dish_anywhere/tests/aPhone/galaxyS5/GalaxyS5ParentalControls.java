@@ -1,8 +1,12 @@
 package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
+import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Brian on 6/4/2014.
@@ -10,6 +14,11 @@ import org.testng.annotations.Test;
 public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
     @Test
     public void clearAllBlockedContentAndPlayMovie(){
+
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+
+        String movieName = movies.get(0).get("franchiseName");
         new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls("1111")
@@ -17,15 +26,21 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
                 .clearTVBlocks()
                 .openOnDemand()
                 .openMovies()
-                .openMovie("10 Years")
+                .openMovie(movieName)
                 .watchMovie()
                 .verifyMoviePlays();
-        Verifications.assertVerifications();
 
     }
 
     @Test
     public void setAllContentBlockedAndPlayMovie(){
+
+
+        RadishScraper radishScraper = new RadishScraper();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+
+        String movieName = movies.get(0).get("franchiseName");
+
         new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls("1111")
@@ -33,7 +48,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
                 .setTVYBlocked()
                 .openOnDemand()
                 .openMovies()
-                .openProtectedMovie("10 Years")
+                .openProtectedMovie(movieName)
                 .enterPasscode("1111")
                 .watchMovie()
                 .verifyMoviePlays();

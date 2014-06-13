@@ -21,7 +21,6 @@ public class GalaxyS5Passcode extends GalaxyS5TestBase {
                 .openParentalControls("0000")
                 .changePasscode("1111");
 
-        Verifications.assertVerifications();
 
 
 
