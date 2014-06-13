@@ -7,22 +7,11 @@ import java.awt.*;
 // Screen Object for Device's MainScreen ViewGroup
 
 public class DeviceMain {
-    protected EggplantElement homeScreenIcon = new EggplantElement("homeScreenIcon", By.Image("KindleTablet/KindleFireHDX/System/Screens/homeScreenIcon"));
     protected EggplantElement closeKeyboardButton = new EggplantElement("closeKeyboardButton", By.Image("KindleTablet/KindleFireHDX/System/Device/closeKeyboardButton"));
     protected EggplantElement keyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("KindleTablet/KindleFireHDX/System/Keyboard/DeleteKey"));
-    protected EggplantElement usbConnectedIcon = new EggplantElement("usbConnectedIcon", By.Image("KindleTablet/KindleFireHDX/System/Device/usbConnectedIcon"));
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/DishAnywhereAppIcon"));
-    protected EggplantElement dishAnywhereTaskIcon = new EggplantElement("Anywhere Task Icon", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/TaskIcon",SearchRectangle.leftQuarter()));
-    protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("KindleTablet/KindleFireHDX/System/Device/RemoveFromList", SearchRectangle.leftQuarter()));
 
     public final DeviceNavigation nav = new DeviceNavigation();
-
-    public DeviceMain VerifyElements() {
-        Logger.info("Verifying main device screen elements...");
-        homeScreenIcon.waitForPresent();
-        usbConnectedIcon.waitForPresent();
-        return this;
-    }
 
     public DeviceMain goHome() {
         Logger.info("Returning to main device screen...");
