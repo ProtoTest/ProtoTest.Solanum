@@ -25,11 +25,11 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .verifyLoggedIn()
                 .returnToDeviceMain();
-
     }
 
     @Test
     public void testPredictiveSearch() {
+        Logger.info("Beginning Test: Predictive Search.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
