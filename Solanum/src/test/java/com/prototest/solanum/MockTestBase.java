@@ -15,14 +15,20 @@ public class MockTestBase extends EggplantTestBase {
     private static String testImagePath;
 
     static {
-        InputStream
-                streamin = MockTestBase.class.getClassLoader().getResourceAsStream("05292014104132.tiff");
+        InputStream streamin = MockTestBase.class.getClassLoader().getResourceAsStream("testimagesource.tiff");
         try {
-            String imagePath = "testimage.tiff";
+            String separator = System.getProperty("file.separator");
+
+            String pathPrefix = Config.currentPath + separator + "Screenshots" + separator;
+            new File(pathPrefix).mkdirs();
+
+            String imagePath = pathPrefix + "testImageOutput.tiff";
             File file = new File(imagePath);
             FileOutputStream os = new FileOutputStream(file);
             IOUtils.copy(streamin, os);
             testImagePath = file.getAbsolutePath();
+            os.close();
+
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -35,7 +41,7 @@ public class MockTestBase extends EggplantTestBase {
     @BeforeTest
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort) {
-        EggplantTestBase.driver = new MockDriver(null);
+        EggplantTestBase.driver = new MockDriver(testImagePath);
 
         startEggplant();
         setEggplantDefaultSettings();
@@ -63,6 +69,6 @@ public class MockTestBase extends EggplantTestBase {
     @Override
     public void testTeardown(ITestResult result) {
         super.testTeardown(result);
-        new File(testImagePath).delete();
+        //new File(testImagePath).delete();
     }
 }

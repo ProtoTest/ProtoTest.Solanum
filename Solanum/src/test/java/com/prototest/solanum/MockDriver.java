@@ -3,7 +3,9 @@ package com.prototest.solanum;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Brian on 5/20/2014.
@@ -54,8 +56,20 @@ public class MockDriver extends EggplantDriver {
     }
 
     @Override
-    public String getScreenshot() {
-        return imagePath;
+    public String getScreenshot(String name) {
+        String separator = System.getProperty("file.separator");
+
+        List<String> parts = Arrays.asList(imagePath.split("[\\\\/]"));
+        parts.set(parts.size()-1, name+parts.get(parts.size()-1));
+        String newPath = String.join(separator, parts);
+        try {
+            if (! name.equals("")) {
+                IOUtils.copy(new FileInputStream(imagePath), new FileOutputStream(newPath));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return newPath;
 
 
     }

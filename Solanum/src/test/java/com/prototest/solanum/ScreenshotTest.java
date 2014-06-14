@@ -9,8 +9,14 @@ import java.awt.*;
 public class ScreenshotTest extends MockTestBase {
 
     @Test
-    public void testScreenshot() {
-        Logger.screenshot(new Rectangle(1,1, 20, 20));
+    public void testScreenshotAndLog() {
+        Logger.screenshot("Original");
+        Logger.screenshot(new Rectangle(100, 100, 300, 300));
+
+        Logger.info("Info statement");
+        Logger.debug("Debug statement");
+        Logger.warning("Warning statement");
+        Logger.error("Error statement");
     }
 
 }
