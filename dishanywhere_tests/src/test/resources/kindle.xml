@@ -1,8 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="GalaxyS5" verbose="1">
+<suite name="KindleTablet" verbose="1">
     <test name="Kindle">
+        <parameter name="hostName" value="10.10.1.77"/>
+        <parameter name="hostPort" value="5901"/>
         <classes>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireAuthorizedDevices"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireBlockbuster"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireHdxUiTests"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireOnDemandCategory"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireOnDemandFilters"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireParentalControls"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFirePasscode"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireUiTests"/>
+            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireVideoDrm"/>
         </classes>
     </test>
 </suite>
