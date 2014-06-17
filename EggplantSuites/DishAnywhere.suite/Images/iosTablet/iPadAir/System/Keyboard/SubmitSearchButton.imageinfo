@@ -1,0 +1,19 @@
+﻿{
+    CaptureDate = "2014-06-16 19:47:01 +0000";
+    CaptureHost = iosGateway;
+    CaptureScreenSize =     (
+        2048,
+        1536
+    );
+    HasAlpha = 1;
+    HonorAlpha = 1;
+    HotSpotX = 87;
+    HotSpotY = 34;
+    LastKnownLocationX = 0;
+    LastKnownLocationY = 0;
+    OriginalLocationX = 1801;
+    OriginalLocationY = 1064;
+    Pulsing = 0;
+    Scale = 1;
+    SearchAlgorithm = TextSmoothSquare;
+}

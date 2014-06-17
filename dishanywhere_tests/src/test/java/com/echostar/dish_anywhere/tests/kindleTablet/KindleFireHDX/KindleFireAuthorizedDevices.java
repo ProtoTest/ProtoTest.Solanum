@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
  * Created by Brian on 6/4/2014.
  */
 public class KindleFireAuthorizedDevices extends EggplantTestBase {
-    @Test
+    @Test()
     public void movieCategory(){
 
         new DeviceMain()
