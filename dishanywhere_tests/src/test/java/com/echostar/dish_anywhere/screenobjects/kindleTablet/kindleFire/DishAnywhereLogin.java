@@ -6,12 +6,12 @@ import org.testng.Assert;
 // Screen object for DishAnywhere app - Login screen
 
 public class DishAnywhereLogin extends DeviceMain {
-    private EggplantElement onlineId = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/OnlineIDField"));
-    private EggplantElement passwordField = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/PasswordField"));
-    private EggplantElement onlineIdEnd = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/OnlineIDFieldEnd"));
-    private EggplantElement passwordFieldEnd = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/PasswordFieldEnd"));
-    private EggplantElement loginButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"));
-    private EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
+    private EggplantElement onlineId = new EggplantElement("onlineId", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/OnlineIDField"));
+    private EggplantElement passwordField = new EggplantElement("passwordField", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/PasswordField"));
+    private EggplantElement onlineIdEnd = new EggplantElement("onlineIdEnd", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/OnlineIDFieldEnd"));
+    private EggplantElement passwordFieldEnd = new EggplantElement("passwordFieldEnd", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/PasswordFieldEnd"));
+    private EggplantElement loginButton = new EggplantElement("loginButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"));
+    private EggplantElement errorField = new EggplantElement("errorField", By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
 
     public final DishAnywherePopups popups = new DishAnywherePopups();
 

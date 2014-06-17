@@ -6,8 +6,8 @@ import com.prototest.solanum.EggplantElement;
 /**
  */
 public class DishAnywhereMovie extends DishAnywhereMain {
-    EggplantElement watchButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton"));
-    EggplantElement closeButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/CloseButton"));
+    EggplantElement watchButton = new EggplantElement("watchButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton"));
+    EggplantElement closeButton = new EggplantElement("closeButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/CloseButton"));
 
     public MoviePlayer watchMovie() {
         watchButton.click();

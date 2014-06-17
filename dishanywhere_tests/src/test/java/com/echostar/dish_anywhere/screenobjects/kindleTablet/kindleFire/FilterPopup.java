@@ -7,13 +7,13 @@ import com.prototest.solanum.EggplantElement;
  * Created by Brian on 6/4/2014.
  */
 public class FilterPopup extends DeviceMain {
-    public EggplantElement doneButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
-    public EggplantElement dateOption = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
-    public EggplantElement titleOption = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption"));
-    public EggplantElement mostPopularOption = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/MostPopularOption"));
-    public EggplantElement allOption = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
-    public EggplantElement actionAdventureOption = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
-    public EggplantElement filterByGenreLabel = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
+    public EggplantElement doneButton = new EggplantElement("doneButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
+    public EggplantElement dateOption = new EggplantElement("dateOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
+    public EggplantElement titleOption = new EggplantElement("titleOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption"));
+    public EggplantElement mostPopularOption = new EggplantElement("mostPopularOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/MostPopularOption"));
+    public EggplantElement allOption = new EggplantElement("allOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
+    public EggplantElement actionAdventureOption = new EggplantElement("actionAdventureOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
+    public EggplantElement filterByGenreLabel = new EggplantElement("filterByGenreLabel", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
 
     public FilterPopup sortByTitle() {
         titleOption.click();
@@ -21,7 +21,7 @@ public class FilterPopup extends DeviceMain {
     }
 
     public FilterPopup selectFilter(String value){
-        EggplantElement element = new EggplantElement(By.Text(value));
+        EggplantElement element = new EggplantElement("element", By.Text(value));
         element.click();
         return this;
     }

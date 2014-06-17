@@ -4,12 +4,12 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
 public class Blockbuster extends DishAnywhereHome{
-    EggplantElement sortFilterButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
-    EggplantElement moviesButton_des = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
-    EggplantElement moviesButton_sel = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_Selected"));
-    EggplantElement tvShowsButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows_DeSelected"));
-    EggplantElement kidsMoviesButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies_DeSelected"));
-    EggplantElement kidsTvShowsButton = new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows_DeSelected"));
+    EggplantElement sortFilterButton = new EggplantElement("sortFilterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
+    EggplantElement moviesButton_des = new EggplantElement("moviesButton_des", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
+    EggplantElement moviesButton_sel = new EggplantElement("moviesButton_sel", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_Selected"));
+    EggplantElement tvShowsButton = new EggplantElement("tvShowsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows_DeSelected"));
+    EggplantElement kidsMoviesButton = new EggplantElement("kidsMoviesButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies_DeSelected"));
+    EggplantElement kidsTvShowsButton = new EggplantElement("kidsTvShowsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows_DeSelected"));
 
 
 

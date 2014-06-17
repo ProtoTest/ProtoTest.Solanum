@@ -13,7 +13,7 @@ public class DeviceLockScreen {
     public DeviceHomeScreen unlock(){
         Logger.info("Unlocking device, if required.");
         if (lockIcon.isPresent()) {
-            EggplantElement unlockSlider = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/System/Device/unlockButton"));
+            EggplantElement unlockSlider = new EggplantElement("unlockSlider", By.Image("AndroidPhone/GalaxyS5/System/Device/unlockButton"));
             //lockIcon.dragTo(unlockSlider);
             lockIcon.swipeLeft();
             Logger.info("Device unlocked.");

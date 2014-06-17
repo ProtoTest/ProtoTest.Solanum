@@ -11,7 +11,7 @@ public class DeviceHomeScreen extends DeviceMain {
 
     public <C> C openApp(String name, Class<C> screenType, SearchRectangle rect, TextOption... options) {
         Logger.info(String.format("Opening app: (%s).", name));
-        EggplantElement element = new EggplantElement(By.Text(name, rect, options));
+        EggplantElement element = new EggplantElement("element", By.Text(name, rect, options));
         element.click();
         try {
             return screenType.getConstructor().newInstance();
