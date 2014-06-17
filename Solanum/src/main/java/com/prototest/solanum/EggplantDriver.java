@@ -168,6 +168,7 @@ public class EggplantDriver {
 
     public void refreshScreen(){
         execute("RefreshScreen");
+        initProperties();
     }
 
 
