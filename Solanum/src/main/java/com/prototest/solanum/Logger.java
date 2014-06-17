@@ -1,21 +1,14 @@
 package com.prototest.solanum;
 
-import com.sun.media.jai.codec.ImageEncodeParam;
-import com.sun.media.jai.codec.TIFFEncodeParam;
-import com.sun.media.jai.codecimpl.TIFFCodec;
-import com.sun.media.jai.codecimpl.TIFFImageDecoder;
-import org.apache.commons.io.IOUtils;
 import org.testng.Reporter;
 
 import javax.imageio.ImageIO;
 import javax.media.jai.JAI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 
 // Solanum's logging options
