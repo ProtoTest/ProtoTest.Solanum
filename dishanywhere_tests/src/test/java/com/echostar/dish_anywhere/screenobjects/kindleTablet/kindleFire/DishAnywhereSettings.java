@@ -20,6 +20,8 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         Logger.info("Logging out...");
         if (! logoutButton.isPresent()) {
             authorizedDevicesButton.swipeUp();
+            // Wait for the swipe animation to complete.
+            EggplantTestBase.sleep(1500);
         }
         logoutButton.click();
         okButton.click();

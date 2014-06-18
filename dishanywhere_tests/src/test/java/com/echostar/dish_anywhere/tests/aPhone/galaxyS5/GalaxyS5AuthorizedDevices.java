@@ -18,7 +18,7 @@ public class GalaxyS5AuthorizedDevices extends GalaxyS5TestBase {
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
 
         String movieName = movies.get(0).get("franchiseName");
         new DishAnywhereHome()

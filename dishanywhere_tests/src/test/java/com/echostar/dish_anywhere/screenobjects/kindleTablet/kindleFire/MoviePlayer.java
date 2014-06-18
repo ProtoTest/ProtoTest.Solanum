@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 
 import java.awt.*;
 
@@ -15,16 +16,17 @@ public class MoviePlayer extends DishAnywhereHome {
 
 
     public MoviePlayer openControls() {
-        while (! skipBackButton.isPresent()) {
-            screenElement.doubleClick();
+
+        for (int i = 0; i < 30 && ! skipBackButton.isPresent(); i++) {
+            screenElement.click();
+            EggplantTestBase.sleep(500);
         }
         popups.waitForScreenToLoad();
         return this;
     }
 
     public MoviePlayer verifyMoviePlays() {
-
-        screenElement.click();
+        openControls();
         currentCursor.waitForPresent(60);
         skipBackButton.waitForPresent(60);
         pauseButton.waitForPresent(60);

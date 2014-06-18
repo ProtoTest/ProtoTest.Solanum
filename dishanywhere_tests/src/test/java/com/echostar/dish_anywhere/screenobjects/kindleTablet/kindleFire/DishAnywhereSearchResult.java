@@ -1,20 +1,21 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceNavigation;
-import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereMovie;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.SearchRectangle;
 
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 /**
  */
 public class DishAnywhereSearchResult {
-    com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceNavigation nav = new DeviceNavigation();
-    EggplantElement onDemandButton = new EggplantElement(By.Text("On Demand"));
+    DeviceNavigation nav = new DeviceNavigation();
+    EggplantElement onDemandButton = new EggplantElement("On Demand Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/OnDemandButton"));
     private EggplantElement submitSearchButton
-            = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
+            = new EggplantElement("Search Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
+    EggplantElement leftMovieBorder = new EggplantElement("leftMovieBorder", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder"));
 
     public DishAnywhereSearchResult openOnDemandResults() {
         onDemandButton.click();
@@ -26,13 +27,16 @@ public class DishAnywhereSearchResult {
         if (submitSearchButton.isPresent()) {
             nav.backButton.click();
         }
-        // TODO: workaround for bug: anywhere app cuts off characters below the baseline (e.g. y, g, etc.)
-        // Therefore, click by point rather than movie name.
-        // Click first result.
-        new EggplantElement(By.Point(new Point(103, 192))).click();
-        // Verify the movie info popup contains the movie name.
-        new EggplantElement(By.Text(movieName, SearchRectangle.middleHalf())).verifyPresent();
-
-        return new DishAnywhereMovie();
+        List<EggplantElement> movies = leftMovieBorder.allInstances();
+        for (EggplantElement movie : movies) {
+            movie.click();
+            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
+            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+                return dishAnywhereMovie;
+            } else {
+                dishAnywhereMovie.closeMovie();
+            }
+        }
+        throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
 }

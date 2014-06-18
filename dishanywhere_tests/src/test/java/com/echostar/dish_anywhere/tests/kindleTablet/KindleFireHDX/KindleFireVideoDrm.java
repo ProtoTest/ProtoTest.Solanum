@@ -1,16 +1,14 @@
 package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
-import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMain;
-import com.prototest.solanum.Config;
-import com.prototest.solanum.EggplantTestBase;
+import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 // DishAnywhere API Tests - GalaxyS5 (Android Phone)
 
-public class KindleFireVideoDrm extends EggplantTestBase {
+public class KindleFireVideoDrm extends KindleTestBase {
 
 
     @Test
@@ -38,21 +36,14 @@ public class KindleFireVideoDrm extends EggplantTestBase {
     }
 
     private void watchMovie(String movie) {
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openOnDemand()
-                //.clickSearchButton()
-                //.searchFor(movie)
-                //.openOnDemandResults()
-                //.openMovie()
-                //.watchMovie()
-                //.openControls()
-                //.verifyMoviePlays()
+                .searchFor(movie)
+                .openOnDemandResults()
+                .openMovie(movie)
+                .watchMovie()
+                .openControls()
+                .verifyMoviePlays()
                 .nav.homeButton.click();
         Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");

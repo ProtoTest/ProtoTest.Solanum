@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyNoteBlockbuster {
+public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
 
     private final int MOVIES_TO_TEST = 6;
 
@@ -20,7 +20,7 @@ public class GalaxyNoteBlockbuster {
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -38,7 +38,7 @@ public class GalaxyNoteBlockbuster {
     public void tvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -57,7 +57,7 @@ public class GalaxyNoteBlockbuster {
     public void kidsMovieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -76,7 +76,7 @@ public class GalaxyNoteBlockbuster {
     public void kidsTvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 

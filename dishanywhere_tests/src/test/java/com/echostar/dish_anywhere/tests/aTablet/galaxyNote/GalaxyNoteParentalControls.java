@@ -19,7 +19,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
     public void clearAllBlockedContentAndPlayMovie(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         String movieName = movies.get(1).get("franchiseName");
         new DishAnywhereHome()
@@ -43,7 +43,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
     public void setAllContentBlockedAndPlayMovie(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         String movieName = movies.get(1).get("franchiseName");
         new DeviceMain()

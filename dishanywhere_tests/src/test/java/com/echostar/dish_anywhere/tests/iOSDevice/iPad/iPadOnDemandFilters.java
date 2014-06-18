@@ -20,7 +20,7 @@ public class iPadOnDemandFilters extends EggplantTestBase {
     @Test
     public void onDemandTest() {
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getComedyMovies();
+        List<Map<String, String>> movies = radishScraper.getComedyMovies(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 

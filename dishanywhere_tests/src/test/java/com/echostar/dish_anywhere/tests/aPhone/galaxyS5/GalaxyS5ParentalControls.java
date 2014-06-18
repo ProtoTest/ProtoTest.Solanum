@@ -16,7 +16,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
     public void clearAllBlockedContentAndPlayMovie(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
 
         String movieName = movies.get(0).get("franchiseName");
         new DishAnywhereHome()
@@ -37,7 +37,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
 
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
 
         String movieName = movies.get(0).get("franchiseName");
 

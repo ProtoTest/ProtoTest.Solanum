@@ -20,7 +20,7 @@ public class iPadBlockbuster {
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_phone, 19);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -38,7 +38,7 @@ public class iPadBlockbuster {
     public void tvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -57,7 +57,7 @@ public class iPadBlockbuster {
     public void kidsMovieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -76,7 +76,7 @@ public class iPadBlockbuster {
     public void kidsTvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 

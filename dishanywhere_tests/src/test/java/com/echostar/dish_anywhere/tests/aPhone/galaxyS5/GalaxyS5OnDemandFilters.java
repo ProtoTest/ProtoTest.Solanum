@@ -23,7 +23,7 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
     @Test
     public void onDemandTest() {
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 

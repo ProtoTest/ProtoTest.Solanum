@@ -20,7 +20,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -42,7 +42,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getOnDemandFeatured();
+        List<Map<String, String>> movies = radishScraper.getOnDemandFeatured(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -65,7 +65,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getFamilyCategory();
+        List<Map<String, String>> movies = radishScraper.getFamilyCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -88,7 +88,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getShowsCategory();
+        List<Map<String, String>> movies = radishScraper.getShowsCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 

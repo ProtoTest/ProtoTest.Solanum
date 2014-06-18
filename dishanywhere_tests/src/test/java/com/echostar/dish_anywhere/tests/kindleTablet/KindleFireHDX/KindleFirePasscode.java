@@ -1,25 +1,17 @@
 package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
-import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMain;
-import com.prototest.solanum.Config;
-import com.prototest.solanum.EggplantTestBase;
+import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 /**
  * Created by Brian on 6/4/2014.
  */
-public class KindleFirePasscode extends EggplantTestBase{
+public class KindleFirePasscode extends KindleTestBase {
     @Test
     public void movieCategory(){
 
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls("1111")
                 .changePasscode("0000")

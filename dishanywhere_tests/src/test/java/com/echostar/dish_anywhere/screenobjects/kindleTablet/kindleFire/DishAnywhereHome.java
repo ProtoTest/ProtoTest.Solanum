@@ -12,17 +12,18 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement onDemandButton = new EggplantElement("onDemandButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/OnDemandOption_DeSelected", SearchRectangle.bottomQuarter()));
 
     private EggplantElement blockbusterButton = new EggplantElement("blockbusterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/BlockBusterOption_DeSelected", SearchRectangle.bottomQuarter()));
-    private EggplantElement viewAllButton = new EggplantElement("viewAllButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/ViewAllButton",SearchRectangle.rightQuarter()));
+    private EggplantElement viewAllButton = new EggplantElement("viewAllButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.rightQuarter()));
 
-    public DishAnywhereLogin logOutIfLoggedIn(){
-        if(loggedIn()){
-           return openSettings().logout();
+    public DishAnywhereLogin logOutIfLoggedIn() {
+        Logger.info("Logging out if logged in.");
+        if (loggedIn()) {
+            return openSettings().logout();
         }
         return new DishAnywhereLogin();
     }
 
     private boolean loggedIn() {
-        if(settingsButton.isPresent())
+        if (settingsButton.isPresent())
             return true;
         return settingsButton.isPresent(30);
     }
@@ -38,28 +39,35 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return this;
     }
 
-    public DishAnywhereOnDemand openOnDemand(){
+    public DishAnywhereOnDemand openOnDemand() {
+        Logger.info("Opening on demand.");
         onDemandButton.click();
         viewAllButton.click();
         return new DishAnywhereOnDemand();
     }
-    public Blockbuster openBlockbuster(){
+
+    public Blockbuster openBlockbuster() {
+        Logger.info("Opening Blockbuster.");
         blockbusterButton.click();
         return new Blockbuster();
     }
+
     public DishAnywhereHome verifyLoggedIn() {
+        Logger.info("Verifying app is logged in.");
         settingsButton.waitForPresent(20);
         return this;
     }
 
-    public DeviceMain returnToDeviceMain(){
+    public DeviceMain returnToDeviceMain() {
+        Logger.info("Return to device home screen.");
         goHome();
         return this;
     }
 
     public DeviceMain goBackToDeviceScreen() {
+        Logger.info("Pressing back button until device is on home.");
         DeviceMain main = new DeviceMain();
-        while(!dishAnywhereApp.isPresent()){
+        while (!dishAnywhereApp.isPresent()) {
             nav.backButton.click();
         }
         return new DeviceMain();

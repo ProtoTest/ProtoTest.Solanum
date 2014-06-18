@@ -19,7 +19,7 @@ public class GalaxyNoteAuthorizedDevices extends EggplantTestBase {
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         String movieName = movies.get(0).get("franchiseName");
 

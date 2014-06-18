@@ -1,41 +1,42 @@
 package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
-import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
-import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 /**
  * Created by Brian on 6/4/2014.
  */
-public class KindleFireBlockbuster extends EggplantTestBase{
+public class KindleFireBlockbuster extends KindleTestBase {
 
-    private final int MOVIES_TO_TEST = 6;
+    private final int MOVIES_TO_TEST = 10;
 
     @Test
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+        String[] movieTitlesArray = new String[movies.size()];
 
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+        for (int i = 0; i < movies.size(); i++) {
+            movieTitlesArray[i] = movies.get(i).get("franchiseName");
         }
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
+        //Arrays.sort(movieTitlesArray);
+        List<String> movieTitles = Arrays.asList(movieTitlesArray).subList(0, MOVIES_TO_TEST);
+
+        new DishAnywhereHome()
                 .openBlockbuster()
                 .openMovies()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
     }
 
@@ -43,20 +44,19 @@ public class KindleFireBlockbuster extends EggplantTestBase{
     public void tvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
+        new DishAnywhereHome()
                 .openBlockbuster()
-                .openMovies()
+                .openTVShows()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();
     }
@@ -65,20 +65,19 @@ public class KindleFireBlockbuster extends EggplantTestBase{
     public void kidsMovieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
+        new DishAnywhereHome()
                 .openBlockbuster()
-                .openTVShows()
+                .openKidsMovies()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();
     }
@@ -87,20 +86,19 @@ public class KindleFireBlockbuster extends EggplantTestBase{
     public void kidsTvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory();
+        List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
-        new DeviceMain()
-                .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
+        new DishAnywhereHome()
                 .openBlockbuster()
-                .openMovies()
+                .openKidsTVShows()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();
     }

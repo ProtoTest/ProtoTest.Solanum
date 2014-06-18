@@ -3,6 +3,8 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
+import java.awt.*;
+
 public class Blockbuster extends DishAnywhereHome{
     EggplantElement sortFilterButton = new EggplantElement("sortFilterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
     EggplantElement moviesButton_des = new EggplantElement("moviesButton_des", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
@@ -26,18 +28,24 @@ public class Blockbuster extends DishAnywhereHome{
     }
 
     public DishAnywhereScrollView openTVShows(){
+        if(moviesButton_des.isPresent())
+            moviesButton_des.click();
         tvShowsButton.click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openKidsMovies(){
+        if(moviesButton_des.isPresent())
+            moviesButton_des.click();
         kidsMoviesButton.click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openKidsTVShows(){
+        if(moviesButton_des.isPresent())
+            moviesButton_des.click();
         kidsTvShowsButton.click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
