@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -267,7 +268,8 @@ public class EggplantDriver {
 
     public String readText(String locator) {
         EggplantResponse result = execute(String.format("put ReadText %s" , locator));
-        return result.Output;
+        List<String> resultLines = Arrays.asList(result.Output.split("\n"));
+        return String.join("\n",resultLines.subList(1, resultLines.size()));
     }
 
     public String getAllText(){
