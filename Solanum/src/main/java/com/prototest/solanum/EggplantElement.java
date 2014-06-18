@@ -65,8 +65,9 @@ public class EggplantElement {
     public boolean isPresent() {
         if (originalBy.type.equals(By.ByType.point)) return true;
         findLocation();
-        if(location==null)
+        if(location==null) {
             return false;
+        }
         this.by = By.Point(location);
         return true;
     }
