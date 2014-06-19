@@ -1,9 +1,7 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMain;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.ImageOption;
 
 import java.awt.*;
 public class MoviePlayer extends DishAnywhereHome {

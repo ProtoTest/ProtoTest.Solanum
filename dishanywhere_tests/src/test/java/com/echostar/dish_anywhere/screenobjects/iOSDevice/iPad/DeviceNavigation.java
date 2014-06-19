@@ -1,7 +1,5 @@
 package com.echostar.dish_anywhere.screenobjects.iOSDevice.iPad;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantKeys;
 import com.prototest.solanum.EggplantTestBase;
 

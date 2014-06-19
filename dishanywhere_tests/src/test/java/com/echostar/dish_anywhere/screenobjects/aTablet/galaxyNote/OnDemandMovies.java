@@ -5,8 +5,6 @@ import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovi
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
-import java.util.List;
-
 /**
  */
 public class OnDemandMovies extends DishAnywhereMain {

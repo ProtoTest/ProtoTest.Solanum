@@ -4,8 +4,6 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.SearchRectangle;
 
-import java.awt.*;
-import java.util.*;
 import java.util.List;
 
 /**

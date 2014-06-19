@@ -4,7 +4,6 @@ import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
 import com.prototest.solanum.Config;
-import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 

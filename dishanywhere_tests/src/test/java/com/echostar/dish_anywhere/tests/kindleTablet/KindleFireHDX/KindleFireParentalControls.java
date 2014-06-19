@@ -2,7 +2,6 @@ package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
-import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 import java.util.List;

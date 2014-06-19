@@ -1,6 +1,9 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.prototest.solanum.*;
+import com.prototest.solanum.By;
+import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.Logger;
 
 import java.awt.*;
 

@@ -1,7 +1,5 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
-import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.*;
-import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereScrollView;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 

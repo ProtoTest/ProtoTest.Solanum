@@ -1,14 +1,12 @@
 package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
+
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
-import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.FilterPopup;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 

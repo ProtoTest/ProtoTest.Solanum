@@ -2,8 +2,6 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.*;
 
-import java.awt.*;
-
 // Screen Object for Device's MainScreen ViewGroup
 
 public class DeviceMain {

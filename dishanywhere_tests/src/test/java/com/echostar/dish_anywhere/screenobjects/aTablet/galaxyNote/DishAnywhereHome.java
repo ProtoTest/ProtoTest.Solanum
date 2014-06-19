@@ -1,6 +1,9 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
-import com.prototest.solanum.*;
+import com.prototest.solanum.By;
+import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
+import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement(By.Text("Settings", SearchRectangle.bottomQuarter()));

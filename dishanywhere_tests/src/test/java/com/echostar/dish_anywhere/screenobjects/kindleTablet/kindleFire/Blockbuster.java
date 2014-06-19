@@ -3,8 +3,6 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
-import java.awt.*;
-
 public class Blockbuster extends DishAnywhereHome{
     EggplantElement sortFilterButton = new EggplantElement("sortFilterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
     EggplantElement moviesButton_des = new EggplantElement("moviesButton_des", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));

@@ -3,11 +3,8 @@ package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereScrollView;
 import com.prototest.solanum.Config;
-import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
-import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 // DishAnywhere UI Tests - GalaxyS5 (Android Phone)
