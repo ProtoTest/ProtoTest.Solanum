@@ -21,7 +21,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         if (! logoutButton.isPresent()) {
             authorizedDevicesButton.swipeUp();
             // Wait for the swipe animation to complete.
-            EggplantTestBase.sleep(1500);
+            EggplantTestBase.sleep(2000);
         }
         logoutButton.click();
         okButton.click();

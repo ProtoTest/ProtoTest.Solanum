@@ -39,4 +39,14 @@ public class DishAnywhereSearchResult {
         }
         throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
+    public EnterPasscodePopup openProtectedMovie(String movieName){
+        // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
+        if (submitSearchButton.isPresent()) {
+            nav.backButton.click();
+        }
+        List<EggplantElement> movies = leftMovieBorder.allInstances();
+
+        movies.get(0).click();
+        return new EnterPasscodePopup();
+    }
 }
