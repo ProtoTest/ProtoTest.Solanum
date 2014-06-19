@@ -2,7 +2,6 @@ package com.prototest.solanum;
 
 import java.awt.*;
 import java.io.File;
-import java.nio.file.DirectoryIteratorException;
 
 /**
  * Created by Brian on 5/12/2014.
