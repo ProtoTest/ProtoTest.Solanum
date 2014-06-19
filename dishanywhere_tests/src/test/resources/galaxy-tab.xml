@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="KindleTablet" verbose="1">
+        <test name="Kindle">
+        <parameter name="hostName" value="10.10.1.128"/>
+        <parameter name="hostPort" value="5901"/>
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteAuthorizedDevices"/>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteBlockbuster"/>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteOnDemandCategory"/>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteOnDemandFilters"/>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteParentalControls"/>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNotePasscode"/>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteUiTests"/>
+            <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteVideoDrm"/>
+        </classes>
+    </test>
+</suite>
