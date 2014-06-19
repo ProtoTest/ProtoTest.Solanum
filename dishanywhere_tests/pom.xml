@@ -48,6 +48,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.5</version>
                 <configuration>
+                    <!-- Use the parent dir as our working directory during test execution. -->
+                    <workingDirectory>..</workingDirectory>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/${testname}.xml</suiteXmlFile>
                     </suiteXmlFiles>

@@ -2,8 +2,8 @@
 
 <suite name="KindleTablet" verbose="1">
         <test name="Kindle">
-        <parameter name="hostName" value="10.10.1.128"/>
-        <parameter name="hostPort" value="5901"/>
+        <!--<parameter name="hostName" value="10.10.1.128"/>-->
+        <!--<parameter name="hostPort" value="5901"/>-->
         <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteAuthorizedDevices"/>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteBlockbuster"/>
