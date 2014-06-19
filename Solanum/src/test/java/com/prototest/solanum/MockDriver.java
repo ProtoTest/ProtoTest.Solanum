@@ -1,5 +1,6 @@
 package com.prototest.solanum;
 
+import com.google.common.base.Joiner;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
@@ -61,7 +62,8 @@ public class MockDriver extends EggplantDriver {
 
         List<String> parts = Arrays.asList(imagePath.split("[\\\\/]"));
         parts.set(parts.size()-1, name+parts.get(parts.size()-1));
-        String newPath = String.join(separator, parts);
+
+        String newPath = Joiner.on(separator).join(parts);
         try {
             if (! name.equals("")) {
                 IOUtils.copy(new FileInputStream(imagePath), new FileOutputStream(newPath));
