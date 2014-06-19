@@ -34,7 +34,6 @@ public class KindleFireAuthorizedDevices extends EggplantTestBase {
                 .deAuthorizeThisDevice()
 
                 .openOnDemand()
-
                 .searchFor(movieName)
                 .openOnDemandResults()
                 .openMovie(movieName)

@@ -24,13 +24,13 @@ public class KindleFireParentalControls extends KindleTestBase{
                 .openParentalControls("1111")
                 .clearMovieBlocks()
                 .clearTVBlocks()
+                .save()
                 .openOnDemand()
-                .openMovies()
+                .searchFor(movieName)
+                .openOnDemandResults()
                 .openMovie(movieName)
                 .watchMovie()
                 .verifyMoviePlays();
-        Verifications.assertVerifications();
-
     }
 
     @Test
@@ -45,13 +45,14 @@ public class KindleFireParentalControls extends KindleTestBase{
                 .openParentalControls("1111")
                 .setMovieGBlocked()
                 .setTVYBlocked()
+                .save()
                 .openOnDemand()
-                .openMovies()
+                .searchFor(movieName)
+
                 .openProtectedMovie(movieName)
                 .enterPasscode("1111")
                 .watchMovie()
                 .verifyMoviePlays();
-        Verifications.assertVerifications();
 
     }
 }
