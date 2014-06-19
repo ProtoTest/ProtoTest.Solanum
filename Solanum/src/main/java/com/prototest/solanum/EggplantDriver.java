@@ -1,5 +1,6 @@
 package com.prototest.solanum;
 
+import com.google.common.base.Joiner;
 import org.apache.xmlrpc.XmlRpcException;
 
 import java.awt.*;
@@ -269,7 +270,7 @@ public class EggplantDriver {
     public String readText(String locator) {
         EggplantResponse result = execute(String.format("put ReadText %s" , locator));
         List<String> resultLines = Arrays.asList(result.Output.split("\n"));
-        return String.join("\n",resultLines.subList(1, resultLines.size()));
+        return Joiner.on("\n").join(resultLines.subList(1, resultLines.size()));
     }
 
     public String getAllText(){
