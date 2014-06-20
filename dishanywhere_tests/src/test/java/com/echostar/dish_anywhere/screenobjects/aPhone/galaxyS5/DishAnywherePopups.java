@@ -33,8 +33,6 @@ public class DishAnywherePopups extends DeviceMain {
         return this;
     }
 
-
-
     public DishAnywherePopups enterPasscodeIfNeeded() {
         if (enterPasscodeHeader.isPresent()) {
             String unlockCode = Config.getTestProp("dishAnywhereParentalCode");

@@ -5,8 +5,6 @@ import org.testng.Assert;
 
 import java.awt.*;
 
-// Screen object for DishAnywhere app - Login screen
-
 public class DishAnywhereLogin extends DishAnywhereMain {
 
     private EggplantElement onlineId = new EggplantElement(By.Text("Online ID", TextOption.hotSpot(new Point(75,109))));

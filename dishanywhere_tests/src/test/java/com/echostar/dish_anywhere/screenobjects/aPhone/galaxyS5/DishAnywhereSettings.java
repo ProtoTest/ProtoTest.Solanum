@@ -4,8 +4,6 @@ import com.prototest.solanum.*;
 
 import java.awt.*;
 
-/**
- */
 public class DishAnywhereSettings extends DishAnywhereHome {
     private EggplantElement logout = new EggplantElement(By.Text("Logout"));
     private EggplantElement parentalControlsButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControlsButton"));
@@ -52,4 +50,5 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         authorizedDevicesButton.click();
         return new DishAnywhereAuthorizedDevices();
     }
+
 }

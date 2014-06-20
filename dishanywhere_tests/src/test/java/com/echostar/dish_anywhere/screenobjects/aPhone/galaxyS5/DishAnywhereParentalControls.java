@@ -2,9 +2,6 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.*;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement tvyCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYOption"));
     public EggplantElement tvy7Checkbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVY7FVOption"));
@@ -16,7 +13,6 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement unratedTvCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/UnratedOption",SearchRectangle.leftHalf()));
     public EggplantElement tvyChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYChecked"));
     public EggplantElement tvmaChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAChecked"));
-
 
     public EggplantElement gCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GOption"));
     public EggplantElement pgCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/PGOption"));
@@ -37,6 +33,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement chooseSecurityQuestionButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ChooseSecurityQuestionButton"));
 
     EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
+
     public DishAnywhereParentalControls clickRating(String value){
         EggplantElement rating = new EggplantElement(By.Text(value));
         rating.click();
@@ -44,6 +41,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearTVBlocks(){
+        Logger.info("Clearing TV Blocks...");
         tvRatingsButton.click();
         if(tvmaChecked.isPresent())
             tvmaCheckbox.click();
@@ -53,8 +51,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         return this;
     }
 
-
     public DishAnywhereParentalControls setTVYBlocked(){
+        Logger.info("Setting TV-Y Blocks...");
         tvRatingsButton.click();
         if(!tvyChecked.isPresent())
             tvyCheckbox.click();
@@ -65,6 +63,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearMovieBlocks(){
+        Logger.info("Clearing Movie Blocks...");
         movieRatingsButton.click();
         if(nraoChecked.isPresent())
             nraoCheckbox.click();
@@ -74,8 +73,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         return this;
     }
 
-
     public DishAnywhereParentalControls setMovieGBlocked(){
+        Logger.info("Setting Movie 'G' Blocks...");
         movieRatingsButton.click();
         if(!gChecked.isPresent())
             gCheckbox.click();

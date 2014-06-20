@@ -4,8 +4,6 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
-// Screen Object for Device's locked state screen
-
 public class DeviceLockScreen extends DeviceMain {
     EggplantElement lockIcon = new EggplantElement("LockIcon", By.Image("/AndroidTablet/Kindle/System/Device/LockButton"));
 

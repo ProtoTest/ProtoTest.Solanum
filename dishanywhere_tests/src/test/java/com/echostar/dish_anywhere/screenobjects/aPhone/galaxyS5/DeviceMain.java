@@ -5,8 +5,6 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
-// Screen Object for Device's MainScreen ViewGroup
-
 public class DeviceMain {
     private EggplantElement homeScreenIcon = new EggplantElement("homeScreenIcon", By.Image("AndroidPhone/GalaxyS5/System/Screens/homeScreenIcon"));
     private EggplantElement usbConnectedIcon = new EggplantElement("usbConnectedIcon", By.Image("AndroidPhone/GalaxyS5/System/Device/usbConnectedIcon"));
@@ -44,9 +42,8 @@ public class DeviceMain {
         return new DeviceMain();
     }
 
-
-
     public DishAnywhereHome openDishAnywhereApp() {
+        Logger.info("Opening Dish Anywhere app...");
         dishAnywhereApp.waitForPresent(10);
         dishAnywhereApp.click();
         DishAnywherePopups popups = new DishAnywherePopups();

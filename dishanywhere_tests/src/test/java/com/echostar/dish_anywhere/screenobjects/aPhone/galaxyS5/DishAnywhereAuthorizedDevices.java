@@ -2,10 +2,8 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
     private EggplantElement authorizeDeviceButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton"));
     private EggplantElement deAuthorizeDeviceButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton"));
@@ -15,6 +13,7 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice() {
         authorizeDeviceButton.click();
+        Logger.info("Device authorized.");
         return this;
     }
 
@@ -23,6 +22,7 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
             deAuthorizeDeviceButton.click();
             okButton.click();
         }
+        Logger.info("Device deauthorized.");
         return this;
     }
 

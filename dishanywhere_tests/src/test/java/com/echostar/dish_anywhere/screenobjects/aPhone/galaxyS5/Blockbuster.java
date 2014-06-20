@@ -2,11 +2,9 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 import com.prototest.solanum.SearchRectangle;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class Blockbuster extends DishAnywhereHome {
     EggplantElement sortFilterButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
     private EggplantElement moviesButton
@@ -22,12 +20,14 @@ public class Blockbuster extends DishAnywhereHome {
 
 
     public DishAnywhereScrollView openMovies(){
+        Logger.info("Opening Movies category...");
         moviesButton.click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openTVShows(){
+        Logger.info("Opening TV Shows category...");
         showsButton.click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();

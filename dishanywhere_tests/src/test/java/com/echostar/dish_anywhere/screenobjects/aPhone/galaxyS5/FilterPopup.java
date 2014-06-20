@@ -5,9 +5,6 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 import org.testng.Assert;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class FilterPopup extends DeviceMain {
     private EggplantElement okButton = new EggplantElement(By.Text("OK"));
     public EggplantElement dateOption = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
@@ -18,6 +15,7 @@ public class FilterPopup extends DeviceMain {
     public EggplantElement filterByGenreLabel = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
 
     public FilterPopup selectFilter(String value){
+        Logger.info("Selecting filter: (" + value + ") ...");
         EggplantElement element = new EggplantElement(By.Text(value));
         for (int i = 0; i < 4; i++) {
             if (!element.isPresent()) {
@@ -35,7 +33,6 @@ public class FilterPopup extends DeviceMain {
     public DishAnywhereScrollView done(){
         okButton.click();
         return new DishAnywhereScrollView();
-
     }
 
     public FilterPopup scrollDown(){
@@ -43,9 +40,9 @@ public class FilterPopup extends DeviceMain {
         return this;
     }
 
-
     public FilterPopup scrollUp(){
         filterByGenreLabel.swipeDown();
         return this;
     }
+
 }

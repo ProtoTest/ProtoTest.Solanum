@@ -2,7 +2,6 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.*;
 
-
 public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
@@ -10,6 +9,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
 
     public DishAnywhereHome closePopups() {
+        Logger.info("Closing popups...");
         if (okButton.isPresent()) {
             okButton.click();
         }
@@ -18,7 +18,6 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     public DishAnywhereHome() {
     }
-
 
     public DishAnywhereHome openDishAnywhereHome() {
         //dishAnywhereHome.loginIfLoggedOut();
@@ -48,6 +47,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     public DishAnywhereHome openGuide() {
+        Logger.info("Opening Guide...");
         guideButton.click();
         return this;
     }
@@ -57,24 +57,29 @@ public class DishAnywhereHome extends DishAnywhereMain {
 //        return new Blockbuster();
 //    }
     public DishAnywhereHome verifyLoggedIn() {
+        Logger.info("Verifying 'logged in' status...");
         settingsButton.waitForPresent(20);
         return this;
     }
 
     public DeviceMain returnToDeviceMain(){
+        Logger.info("Returning to device main...");
         goHome();
         return this;
     }
 
     public DishAnywhereOnDemand openOnDemand() {
+        Logger.info("Opening 'On Demand' panel...");
         onDemandButton.click();
         return new DishAnywhereOnDemand().goToOnDemandRoot();
     }
 
     public DishAnywhereHome exitPlayerIfOpen() {
+        Logger.info("Exiting player, if open...");
         for (int i = 0; i < 10 && ! settingsButton.isPresent(); i++) {
             nav.backButton.click();
         }
         return this;
     }
+
 }

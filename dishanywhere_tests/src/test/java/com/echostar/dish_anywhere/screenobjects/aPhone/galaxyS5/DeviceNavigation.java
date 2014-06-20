@@ -3,8 +3,6 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
-// Screen Object for Device's navigation options
-
 public class DeviceNavigation {
     public final EggplantElement homeButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/System/Device/HomeButton"));
     public final EggplantElement backButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/System/Device/BackButton"));

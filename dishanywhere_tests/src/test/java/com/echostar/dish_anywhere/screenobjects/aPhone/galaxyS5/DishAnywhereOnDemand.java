@@ -4,10 +4,6 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.SearchRectangle;
 
-/**
- */
-
-
 public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement allTitles
             = new EggplantElement(By.Text("All Titles", SearchRectangle.topHalf()));

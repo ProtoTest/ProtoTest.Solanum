@@ -2,8 +2,6 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.*;
 
-// Screen Object for Device's primary View object (Home) on the MainScreen ViewGroup
-
 public class DeviceHomeScreen extends DeviceMain {
     public DeviceHomeScreen() {
         super();
