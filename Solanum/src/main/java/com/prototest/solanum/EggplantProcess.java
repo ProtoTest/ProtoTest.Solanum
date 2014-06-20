@@ -23,16 +23,16 @@ class EggplantProcess {
         } else {
             runScriptPath = Config.macScriptPath;
         }
-        this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
+        this.command = new ProcessBuilder("echo", "Proto123!", "|", "su", "ProtoTest", "-c", runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
         this.command.redirectErrorStream(true);
 
     }
 
     void stop() {
         try {
-            if(eggplantDrive==null){
+            if(eggplantDrive==null) {
                 kill();
-            }else{
+            } else {
                 eggplantDrive.destroy();
                 eggplantDrive.waitFor();
             }
