@@ -26,6 +26,7 @@ public class DishAnywherePopups extends DeviceMain {
         super();
     }
 
+
     public DishAnywherePopups waitForScreenToLoad() {
         Logger.info("Waiting for screen to load...");
         LoadingMessage.waitForNotPresent(30);

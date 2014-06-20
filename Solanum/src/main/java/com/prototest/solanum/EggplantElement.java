@@ -236,7 +236,7 @@ public class EggplantElement {
             }
 
         } else if (originalBy.type == By.ByType.text) {
-            Logger.error(driver.getAllText());
+            Logger.warning(driver.getAllText());
         }
     }
 

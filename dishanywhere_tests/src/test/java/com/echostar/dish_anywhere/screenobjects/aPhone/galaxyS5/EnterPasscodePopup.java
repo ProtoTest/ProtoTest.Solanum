@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereMovie;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 
 /**
  * Created by Brian on 6/3/2014.
@@ -22,14 +23,15 @@ public class EnterPasscodePopup {
     private EggplantElement button9 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton9"));
     private EggplantElement button0 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton0"));
 
-    public com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereMovie enterPasscodeIfPresent(String passcode){
+    public com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie enterPasscodeIfPresent(String passcode){
         if(enterPasscodeHeader.isPresent()){
             return enterPasscode(passcode);
         }
-        return new com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereMovie();
+        return new com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie();
     }
 
-    public com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereMovie enterPasscode(String passcode) {
+    public com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie enterPasscode(String passcode) {
+        Logger.info("Entering passcode:(" + passcode + ").");
         for (char c : passcode.toCharArray()) {
             switch (c) {
                 case '1':
@@ -66,6 +68,6 @@ public class EnterPasscodePopup {
 
         }
 
-    return new DishAnywhereMovie();
+    return new com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie();
     }
 }

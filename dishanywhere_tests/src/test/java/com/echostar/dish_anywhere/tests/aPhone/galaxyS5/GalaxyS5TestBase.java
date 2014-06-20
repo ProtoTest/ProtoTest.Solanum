@@ -1,6 +1,7 @@
 package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywherePopups;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 
@@ -17,7 +18,8 @@ public class GalaxyS5TestBase extends EggplantTestBase
                 .goHome()
                 .openDishAnywhereApp()
                 .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"));
+                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+                .closePopups();
     }
 
     @Override

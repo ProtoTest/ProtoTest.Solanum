@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 /**
  * Created by Brian on 6/4/2014.
@@ -95,6 +92,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls changePasscode(String passcode){
+        Logger.info("Changing passcode to:(" + passcode + ").");
         changePasscodeButton.click();
         EnterPasscodePopup popup = new EnterPasscodePopup();
         popup.enterPasscode(passcode);

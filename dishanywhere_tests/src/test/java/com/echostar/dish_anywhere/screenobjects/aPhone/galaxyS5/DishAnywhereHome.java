@@ -1,23 +1,29 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.Logger;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 
 public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
     private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
 
+    public DishAnywhereHome closePopups() {
+        if (okButton.isPresent()) {
+            okButton.click();
+        }
+        return this;
+    }
 
     public DishAnywhereHome() {
     }
 
+
     public DishAnywhereHome openDishAnywhereHome() {
         //dishAnywhereHome.loginIfLoggedOut();
         exitPlayerIfOpen();
+        //EggplantTestBase.sleep(5000);
         openGuide();
         return this;
     }
@@ -36,7 +42,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     public DishAnywhereSettings openSettings() {
-        Logger.info("Opening Settings panel.");
+        Logger.info("Opening Settings panel...");
         settingsButton.click();
         return new DishAnywhereSettings();
     }
