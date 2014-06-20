@@ -24,7 +24,7 @@ public class TestBaseTests extends EggplantTestBase {
         }
         createReportDirectory();
         startEggplant();
-       setEggplantDefaultSettings();
+        setEggplantDefaultSettings();
        // driver.connect(hostName, hostPort);
     }
 

@@ -1,27 +1,29 @@
 package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
+import com.prototest.solanum.Config;
+import com.prototest.solanum.Logger;
 import org.testng.annotations.Test;
 
-/**
- * Created by Brian on 6/4/2014.
- */
+//
+//Tests for proper functionality of app "Passcode" popup
+//
+
 public class GalaxyS5Passcode extends GalaxyS5TestBase {
+
     @Test
-    public void movieCategory(){
+    public void changePasscode(){
+        Logger.info("Beginning Test: Change Passcode.");
 
         new DishAnywhereHome()
                 .openSettings()
-                .openParentalControls("1111")
-                .changePasscode("0000")
+                .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
+                .changePasscode(Config.getTestProp("dishAnywherePassCodeNew"))
                 .openSettingsRoot()
                 .openAuthorizedDevices()
                 .openSettingsRoot()
-                .openParentalControls("0000")
-                .changePasscode("1111");
-
-
-
-
+                .openParentalControls(Config.getTestProp("dishAnywherePassCodeNew"))
+                .changePasscode(Config.getTestProp("dishAnywherePassCode"));
     }
+
 }

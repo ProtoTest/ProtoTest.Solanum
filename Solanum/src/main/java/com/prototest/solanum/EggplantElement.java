@@ -3,8 +3,11 @@ package com.prototest.solanum;
 import org.joda.time.LocalTime;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -41,7 +44,7 @@ public class EggplantElement {
     public EggplantElement(By by, int waitSec) {
         this.by = by;
         this.originalBy = by;
-        this.name = by.getLocator().replaceAll("[()]","").replaceAll("[:]]","_").replaceAll("[\"/:]", "-");
+        this.name = by.getLocator().replaceAll("[()]", "").replaceAll("[:]]", "_").replaceAll("[\"/:]", "-");
         this.waitSec = waitSec;
     }
 
@@ -52,11 +55,11 @@ public class EggplantElement {
         }
     }
 
-    private void findLocation(){
+    private void findLocation() {
         location = driver.findLocation(originalBy);
     }
 
-    public EggplantElement resetLocation(){
+    public EggplantElement resetLocation() {
         location = null;
         this.by = originalBy;
         return this;
@@ -65,7 +68,7 @@ public class EggplantElement {
     public boolean isPresent() {
         if (originalBy.type.equals(By.ByType.point)) return true;
         findLocation();
-        if(location==null) {
+        if (location == null) {
             return false;
         }
         this.by = By.Point(location);
@@ -85,7 +88,6 @@ public class EggplantElement {
         }
         return false;
     }
-
 
 
     public String getText() {
@@ -224,17 +226,16 @@ public class EggplantElement {
     }
 
     private void LogElementDiagnosticInfo() {
-        if(originalBy.type== By.ByType.image){
+        if (originalBy.type == By.ByType.image) {
             File image = getBy().getImageFile();
-            if(image.isDirectory()){
+            if (image.isDirectory()) {
                 File[] files = image.listFiles();
                 Logger.images(files);
-            }else{
+            } else {
                 Logger.image(image);
             }
 
-        }
-        else if(originalBy.type== By.ByType.text){
+        } else if (originalBy.type == By.ByType.text) {
             Logger.error(driver.getAllText());
         }
     }
@@ -302,8 +303,8 @@ public class EggplantElement {
         return this;
     }
 
-    public String getSafeName(){
-        String newName = this.name.split(",")[0].replaceAll("[:()\"]","").replaceAll("[ ,\"/\\:]", "-");
+    public String getSafeName() {
+        String newName = this.name.split(",")[0].replaceAll("[:()\"]", "").replaceAll("[ ,\"/\\:]", "-");
         return newName;
     }
 
@@ -330,5 +331,6 @@ public class EggplantElement {
         keysPart = keysPart.substring(0, keysPart.length() - 1);
         driver.sendKeys(keysPart);
     }
+
 }
 

@@ -7,9 +7,10 @@ import com.prototest.solanum.Config;
 import com.prototest.solanum.Logger;
 import org.testng.annotations.Test;
 
-// DishAnywhere UI Tests - GalaxyS5 (Android Phone)
+//
+//Tests for proper functionality of basic app functionality
+//
 
-@Test
 public class GalaxyS5UiTests extends GalaxyS5TestBase {
 
     @Test
@@ -30,7 +31,6 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
-
         new DishAnywhereHome()
                 .openOnDemand()
                 .clickSearchButton()
@@ -40,5 +40,4 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
                 .watchMovie()
                 .verifyMoviePlays();
     }
-
 }

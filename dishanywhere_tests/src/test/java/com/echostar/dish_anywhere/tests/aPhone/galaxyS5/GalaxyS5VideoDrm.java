@@ -6,31 +6,35 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
-// DishAnywhere API Tests - GalaxyS5 (Android Phone)
+//
+//Tests for proper functionality of Video content's Digital Rights Management
+//
 
 public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
 
-
     @Test
     public void watchNagraMovie() {
+        Logger.info("Beginning Test: Watch Nagra Movie.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
-        watchMovie(movie);
 
+        watchMovie(movie);
         Verifications.addVerification("Watched onDemand nagra movie.", true);
     }
 
     @Test
     public void watchWidevineMovie() {
+        Logger.info("Beginning Test: Watch Widevine Movie.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("widevine");
-        watchMovie(movie);
 
+        watchMovie(movie);
         Verifications.addVerification("Watched onDemand widevine movie.", true);
     }
 
+    //Not a standalone test - method used by above tests
     private void watchMovie(String movie) {
         new DishAnywhereHome()
                 .openOnDemand()

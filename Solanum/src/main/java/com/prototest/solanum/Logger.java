@@ -24,7 +24,7 @@ public class Logger {
         java.util.Date date = new java.util.Date();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
         String timestamp = sdf.format(date);
-        text = String.format("[%s]   %s", timestamp, text);
+        text = String.format("[%s]    %s", timestamp, text);
         System.out.println(text.toUpperCase());
         Reporter.log(String.format("<div style=\"color:Blue\">%s</div>", text));
     }

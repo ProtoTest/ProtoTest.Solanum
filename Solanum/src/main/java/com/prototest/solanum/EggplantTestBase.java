@@ -6,13 +6,14 @@ import org.testng.annotations.*;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 
-/**
- * Created by Brian on 5/12/2014.
- */
+//
+
 @Listeners({org.uncommons.reportng.HTMLReporter.class,
         org.uncommons.reportng.JUnitXMLReporter.class,
         VerificationsListener.class})
+
 public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
     private static EggplantProcess eggplantProcess = new EggplantProcess();
@@ -33,7 +34,6 @@ public class EggplantTestBase {
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
             Logger.screenshot();
-            Logger.info(EggplantTestBase.driver.getAllText());
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
@@ -57,7 +57,11 @@ public class EggplantTestBase {
     }
 
     void createReportDirectory() {
-        File report = new File("test-output");
+        //java.util.Date date = new java.util.Date();
+        //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh.mm");
+        //String timestamp = sdf.format(date);
+        String testDir = "test-output"; //Results " + timestamp;
+        File report = new File(testDir);
         deleteDir(report);
         report.mkdir();
     }
