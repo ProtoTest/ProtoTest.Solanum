@@ -23,7 +23,7 @@ class EggplantProcess {
         } else {
             runScriptPath = Config.macScriptPath;
         }
-        this.command = new ProcessBuilder("echo", "Proto123!", "|", "su", "ProtoTest", "-c", runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
+        this.command = new ProcessBuilder("/bin/sh", "-c", "echo Proto123! | su ProtoTest -c \"" + runScriptPath + " -driveport " + Config.drivePort + " -drivelogging " + Config.driveLoggingLevel + "\"");
         this.command.redirectErrorStream(true);
 
     }
