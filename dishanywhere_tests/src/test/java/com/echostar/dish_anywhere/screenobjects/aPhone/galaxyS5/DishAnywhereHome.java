@@ -6,15 +6,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
     private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
-    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
-
-    public DishAnywhereHome closePopups() {
-        Logger.info("Closing popups...");
-        if (okButton.isPresent()) {
-            okButton.click();
-        }
-        return this;
-    }
+    private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/DishAnywhereAppIcon"));
 
     public DishAnywhereHome() {
     }
@@ -82,4 +74,12 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return this;
     }
 
+    public DeviceMain goBackToDeviceScreen() {
+        Logger.info("Pressing back button until device is on home.");
+        DeviceMain main = new DeviceMain();
+        while (!dishAnywhereApp.isPresent()) {
+            nav.backButton.click();
+        }
+        return new DeviceMain();
+    }
 }

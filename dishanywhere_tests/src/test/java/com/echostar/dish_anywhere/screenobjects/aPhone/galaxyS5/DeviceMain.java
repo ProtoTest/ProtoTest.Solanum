@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Logger;
+import com.prototest.solanum.*;
 
 public class DeviceMain {
     private EggplantElement homeScreenIcon = new EggplantElement("homeScreenIcon", By.Image("AndroidPhone/GalaxyS5/System/Screens/homeScreenIcon"));
@@ -11,6 +8,7 @@ public class DeviceMain {
     private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/DishAnywhereAppIcon"));
 
     public final DeviceNavigation nav = new DeviceNavigation();
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton", SearchRectangle.bottomHalf()));
 
     public boolean isOnHome() {
         return dishAnywhereApp.isPresent();
@@ -50,7 +48,15 @@ public class DeviceMain {
         popups.waitForScreenToLoad();
         DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
 
-
         return dishAnywhereHome;
+    }
+
+    public DeviceMain closePopups() {
+        Logger.info("Closing popups...");
+        if (okButton.isPresent(5)) {
+            if (Config.logLevel == 0)
+            okButton.click();
+        }
+        return this;
     }
 }

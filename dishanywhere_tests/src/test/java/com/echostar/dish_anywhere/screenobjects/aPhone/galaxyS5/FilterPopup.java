@@ -18,7 +18,7 @@ public class FilterPopup extends DeviceMain {
         Logger.info("Selecting filter: (" + value + ") ...");
         EggplantElement element = new EggplantElement(By.Text(value));
         for (int i = 0; i < 4; i++) {
-            if (!element.isPresent()) {
+            if (!element.isPresent(5)) {
                 scrollDown();
             }
         }
@@ -36,13 +36,7 @@ public class FilterPopup extends DeviceMain {
     }
 
     public FilterPopup scrollDown(){
-        filterByGenreLabel.swipeUp();
+        filterByGenreLabel.dragTo(dateOption);
         return this;
     }
-
-    public FilterPopup scrollUp(){
-        filterByGenreLabel.swipeDown();
-        return this;
-    }
-
 }

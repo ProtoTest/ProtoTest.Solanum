@@ -45,7 +45,6 @@ public class Logger {
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
         String timestamp = sdf.format(date);
         text = String.format("(%s) ----! WARNING: %s", timestamp, text);
-
         System.out.println(text);
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:yellow\">%s</div>", text));
