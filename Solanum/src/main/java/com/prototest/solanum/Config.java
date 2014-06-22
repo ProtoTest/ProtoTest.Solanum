@@ -66,7 +66,7 @@ public class Config {
     }
 
     private static void init() {
-        properties = new Properties();
+        properties = new Properties(System.getProperties());
 
         String configLocation = System.getProperty("configFile");
         InputStream input = null;
