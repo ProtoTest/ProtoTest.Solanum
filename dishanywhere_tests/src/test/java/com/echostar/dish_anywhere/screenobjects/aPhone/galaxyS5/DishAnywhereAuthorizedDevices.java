@@ -12,8 +12,14 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
 
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice() {
-        authorizeDeviceButton.click();
+        if (authorizeDeviceButton.isPresent()) {
+            authorizeDeviceButton.click();
+            if (okButton.isPresent()) {
+                okButton.click();
+            }
+        }
         Logger.info("Device authorized.");
+        nav.backButton.click();
         return this;
     }
 

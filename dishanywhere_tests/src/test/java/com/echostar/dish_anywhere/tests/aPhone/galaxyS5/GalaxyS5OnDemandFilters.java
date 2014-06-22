@@ -21,12 +21,13 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
     public void onDemandFilters() {
         Logger.info("Beginning Test: On Demand Filters.");
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
+        List<Map<String, String>> movies = radishScraper.getComedyMovies(RadishScraper.Device.android_phone, 19);
+
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
+
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
-
         new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openOnDemand()

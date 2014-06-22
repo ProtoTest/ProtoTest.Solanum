@@ -97,11 +97,10 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
         searchInput.type(searchTerm);
 
         EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.topHalf()));
-        movieResultElement.verifyPresent();
+        movieResultElement.waitForPresent(60);
 
         movieResultElement.click();
 
         return new DishAnywhereSearchResult();
-
     }
 }

@@ -15,7 +15,11 @@ public class KindleTestBase extends EggplantTestBase {
                 .goBackToDeviceScreen()
                 .openDishAnywhereHome()
                 .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"));
+                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+                .openSettings()
+                .openParentalControls("1111")
+                .clearMovieBlocks()
+                .clearTVBlocks();
     }
 
     @Override

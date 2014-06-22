@@ -86,6 +86,7 @@ public class EggplantElement {
                 now = new LocalTime();
             }
         }
+        Logger.info("Element ("+name+") not present after " + secs + " seconds.");
         return false;
     }
 
