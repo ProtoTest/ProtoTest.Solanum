@@ -1,22 +1,33 @@
 package com.prototest.solanum;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.lang.reflect.Method;
-import java.text.SimpleDateFormat;
 
+/**
+ * Created by Brian on 5/12/2014.
+ */
 @Listeners({org.uncommons.reportng.HTMLReporter.class,
         org.uncommons.reportng.JUnitXMLReporter.class,
         VerificationsListener.class})
-
 public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
     private static EggplantProcess eggplantProcess = new EggplantProcess();
 
     @BeforeMethod
+    @Before
     public void testSetup(Method method) {
         Config.currentTestName = method.getName();
         Logger.debug("Starting test " + Config.currentTestName);
@@ -26,17 +37,25 @@ public class EggplantTestBase {
     }
 
     @AfterMethod
+    @After
     public void testTeardown(ITestResult result) {
         //Verifications.assertVerifications();
         //result = Reporter.getCurrentTestResult();
         if (!result.isSuccess()) {
             Logger.info("TEST INCOMPLETE (FAILED).");
             Logger.screenshot();
+            Logger.info(EggplantTestBase.driver.getAllText());
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
         uninitializeApp();
 
+    }
+
+    @BeforeClass
+    public static void junitFixtureSetUp() {
+        EggplantTestBase etb = new EggplantTestBase();
+        etb.fixtureSetUp(null, null);
     }
 
     @BeforeTest
@@ -75,6 +94,12 @@ public class EggplantTestBase {
             }
         }
         return dir.delete();
+    }
+
+    @AfterClass
+    public static void junitFixtureTeardown() {
+        EggplantTestBase etb = new EggplantTestBase();
+        etb.fixtureTearDown(null, null);
     }
 
     @AfterTest(alwaysRun = true)
