@@ -1,6 +1,7 @@
 package com.prototest.solanum;
 
 /**
+ * Base Search option class used by TextOption and ImageOption
  */
 class Option {
     protected String text;
@@ -17,6 +18,9 @@ class Option {
         return text;
     }
 
+    /**
+     * Specify a search rectangle where the image should be located.
+     */
     public static Option searchRectangle(SearchRectangle searchRectangle) {
         return new Option(String.format("SearchRectangle: (%s,%s,%s,%s)",
                 searchRectangle.upperLeft.x, searchRectangle.upperLeft.y,

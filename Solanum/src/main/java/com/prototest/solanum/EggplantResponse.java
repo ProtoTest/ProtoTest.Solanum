@@ -3,7 +3,7 @@ package com.prototest.solanum;
 import java.util.HashMap;
 
 /**
- * Created by Brian on 5/21/2014.
+ * Data class used to store the XMLRPC response data.
  */
 public class EggplantResponse {
     public EggplantResponse(HashMap value) {

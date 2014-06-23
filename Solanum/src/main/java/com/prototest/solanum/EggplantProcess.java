@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * Created by Brian on 5/12/2014.
+ * Starts/stops/kills the eggplant drive process.
+ * reads the location of the runscript from the config file.
+ * Should work for both windows and mac.
  */
 class EggplantProcess {
     private Process eggplantDrive;

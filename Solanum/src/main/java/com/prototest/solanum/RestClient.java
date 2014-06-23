@@ -11,7 +11,8 @@ import java.util.List;
 import static com.jayway.jsonpath.Filter.filter;
 
 /**
- * Created by Brian on 6/2/2014.
+ * RestClient used to execute HTTP requests and parse the results using jsonpath.
+ * http://goessner.net/articles/JsonPath/
  */
 public class RestClient {
     Client client;
@@ -20,14 +21,23 @@ public class RestClient {
     String domain;
     String output;
 
+    /**
+     * Create a new RestClient for a specified domain.  All further requests will append on this domain.
+     */
     public RestClient(String domain) {
         this.domain = domain;
     }
 
+    /**
+     * Gets the output of the last response.
+     */
     public String getOutput() {
         return output;
     }
 
+    /**
+     * Execute a GET request against a specified endpoint, and return the response body as a string.
+     */
     public String Get(String resource) {
         client = Client.create();
 
@@ -44,13 +54,23 @@ public class RestClient {
         return output;
     }
 
+    /**
+     * Parse the last response using the specified JSONPath.
+     */
     public String parse(String jpath) {
         return JsonPath.read(output, jpath);
     }
 
+    /**
+     * Returns all nodes that match the given jsonpath
+     * */
     public List<String> parseAll(String jpath) {
         return JsonPath.read(output, jpath);
     }
+
+    /**
+     * Returns all nodes that match the given jsonpath, using the specified filter.
+     * */
 
     public List<String> parseAll(String jpath, Filter filter) {
         return JsonPath.read(output, jpath, filter);

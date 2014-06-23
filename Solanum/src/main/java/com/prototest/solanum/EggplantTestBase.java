@@ -8,23 +8,24 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 
+/** Hook up the ReportNG listeners, so that the HTML and XML reports will always be generated, even without a pom.  */
 @Listeners({org.uncommons.reportng.HTMLReporter.class,
         org.uncommons.reportng.JUnitXMLReporter.class,
         VerificationsListener.class})
 
+/** EggplantTestBase is extended by all tests, and contains hooks to automatically start/stop/configure framework features */
 public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
     private static EggplantProcess eggplantProcess = new EggplantProcess();
 
+    /** This method is automatically called by TestNG before each test method.  It will store the name of the test, clear verifications, and get ready to run the test. */
     @BeforeMethod
     public void testSetup(Method method) {
         Config.currentTestName = method.getName();
         Logger.debug("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
-        initializeApp();
-
     }
-
+    /** This method is run automatically by TestNG after each test method.  It should log a screenshot if the test fails, and log the status.   */
     @AfterMethod
     public void testTeardown(ITestResult result) {
         //Verifications.assertVerifications();
@@ -35,10 +36,8 @@ public class EggplantTestBase {
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
-        uninitializeApp();
-
     }
-
+    /**  This method will run once before the entire suite of tests.  It should configure everything needed by eggplant Drive, launch eggplant drive, and connect to the default host*/
     @BeforeTest
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName,
@@ -54,6 +53,7 @@ public class EggplantTestBase {
         driver.connect(hostName, hostPort);
     }
 
+    /** Creates the directory used by ReportNG to store the report.  This is needed to fix a bug when running under windows from intelliJ.   */
     void createReportDirectory() {
         //java.util.Date date = new java.util.Date();
         //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh.mm");
@@ -64,6 +64,7 @@ public class EggplantTestBase {
         report.mkdir();
     }
 
+    /** Recursively delete a directory and all subdirecotries and files.   */
     public static boolean deleteDir(File dir) {
         if (dir.isDirectory()) {
             String[] children = dir.list();
@@ -77,6 +78,7 @@ public class EggplantTestBase {
         return dir.delete();
     }
 
+    /**  AFter all tests are run, should clean up all test data and stop eggplant drive*/
     @AfterTest(alwaysRun = true)
     @Parameters({"hostName", "hostPort"})
     public void fixtureTearDown(@Optional() String hostName,
@@ -91,6 +93,7 @@ public class EggplantTestBase {
         stopEggplant();
     }
 
+    /** Default eggplant drive settings.  Configurable by the config file. */
     public void setEggplantDefaultSettings() {
 
         driver.setOption("ImageSearchDelay", String.valueOf(Config.imageSearchDelay));
@@ -99,6 +102,7 @@ public class EggplantTestBase {
         Logger.debug("Eggplant drive set with options : " + driver.getOptions());
     }
 
+    /** Start the eggplant drive process */
     protected void startEggplant() {
 
         if (driver.isDriveRunning()) {
@@ -115,7 +119,7 @@ public class EggplantTestBase {
             Logger.info("Eggplant Drive started.");
         }
     }
-
+    /**  Stop eggplant drive process. */
     protected void stopEggplant() {
         if (Config.manageEggdriveProcess) {
             eggplantProcess.stop();
@@ -123,6 +127,7 @@ public class EggplantTestBase {
         }
     }
 
+    /** Stop execution for the given milliseconds */
     public static void sleep(int millis) {
         double secs = millis / 1000.0;
         Logger.info("Waiting for (" + secs + ") seconds.");
@@ -133,9 +138,4 @@ public class EggplantTestBase {
         }
     }
 
-    public void initializeApp() {
-    }
-
-    public void uninitializeApp() {
-    }
 }

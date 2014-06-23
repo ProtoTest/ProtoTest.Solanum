@@ -11,14 +11,21 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-// Solanum's logging options
-
+/**
+ * This class contains global logging methods, using the config file to configure level and format.
+ */
 public class Logger {
 
+    /**
+     * Turning off escape-output means that we can write HTML to the report.
+     */
     static {
         System.setProperty("org.uncommons.reportng.escape-output", "false");
     }
 
+    /**
+     * Log Info, this is the highest level of logging. Should be used for logging test intent, and actions.
+     */
     public static void info(String text) {
         if (Config.logLevel > 1) return;
         java.util.Date date = new java.util.Date();
@@ -29,6 +36,9 @@ public class Logger {
         Reporter.log(String.format("<div style=\"color:Blue\">%s</div>", text));
     }
 
+    /**
+     * Log Debug, this is designed for debug information, used to determine why a test is failing.
+     */
     public static void debug(String text) {
         if (Config.logLevel > 0) return;
         java.util.Date date = new java.util.Date();
@@ -39,6 +49,9 @@ public class Logger {
         Reporter.log(String.format("<div>%s</div>", text));
     }
 
+    /**
+     * Log A Warning.  Use this when something went wrong, but may not be critical for test success.  Will show up yellow in the report.
+     */
     public static void warning(String text) {
         if (Config.logLevel > 2) return;
         java.util.Date date = new java.util.Date();
@@ -49,7 +62,9 @@ public class Logger {
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:yellow\">%s</div>", text));
     }
-
+    /**
+     * Log an Error.  Used when something went terminally wrong, but test execution doesn't need to be stopped.  Will show up red in the HTML log.
+     */
     public static void error(String text) {
         if (Config.logLevel > 3) return;
         java.util.Date date = new java.util.Date();
@@ -61,18 +76,34 @@ public class Logger {
         Reporter.log(String.format("<div style=\"background-color:red; color:white\">%s</div>", text));
     }
 
+    /**
+     * Capture a screenshot and include it in the log, using a random file name.
+     */
     public static void screenshot() {
         screenshot("", null);
     }
 
+
+    /**
+     * Capture a screenshot and include it in the log, using a random file name.
+     * Highlight the given search rectangle, to show where the search was looking.
+     */
     public static void screenshot(Rectangle drawRectangle) {
         screenshot("", drawRectangle);
     }
 
+
+    /**
+     * Capture a screenshot and include it in the log, using the specified file path.
+     */
     public static void screenshot(String name) {
         screenshot(name, null);
     }
 
+    /**
+     * Capture a screenshot and include it in the log, using the specified file path.
+     * Highlight the given search rectangle, to show where the search was looking.
+     */
     public static void screenshot(String name, Rectangle drawRectangle) {
         Logger.info("Capturing device screenshot...");
         String newScreenshot = EggplantTestBase.driver.getScreenshot(name);
@@ -116,6 +147,9 @@ public class Logger {
         }
     }
 
+    /**
+     * Log an image to the report that already exists, using a specific file name.
+     */
     public static void image(File image) {
         if (image.exists())
             Reporter.log(String.format("<img src=\"%s\"/>", image.getAbsolutePath()));
@@ -123,6 +157,9 @@ public class Logger {
             warning("Could not log image, as the path was incorrect : " + image.getAbsolutePath());
     }
 
+    /**
+     * Log a list of images paths to the HTML report.  They should already exist.
+     */
     public static void images(File[] images) {
         String outputHtml = "<div>";
 

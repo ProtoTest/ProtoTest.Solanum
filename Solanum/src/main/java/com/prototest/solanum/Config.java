@@ -7,14 +7,38 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * Created by Brian on 5/12/2014.
+ * The Config class contains variables for all global framework settings.
+ * It also contains methods to get and set key value pairs from the config.properties file.
+ * The following global settings are avaialable :
+ * boolean screenshotOnError : automatically include a screenshot of the device under test when the test fails.
+ * string windowsScriptPath ; the default path to eggplant runscript on a windows machine
+ * string macScriptPath : the default path to eggplant runscript on a mac machine
+ * string currentPath : the current default directory for the user.  Maps to the system property "user.dir"
+ * string suitePath : the path to the default suite.  This suite will automatically be started
+ * string drivePort : the port eggPlant drive's XMLRPC service will run on.
+ * string driveLogginLevel : Eggplant drive's native logging level.  This logs to the console.  Values can be 0,1,2.
+ * string logLevel : "The level of logging solanum should use.  Values can be "debug", "info", "warning", or "error"
+ * boolean logDriveCommands : Whether to log the runScript commands passed into the eggPlant driver.
+ *    Use this to see what commands are actually being passed to eggplant drive.
+ * int commandDelayMs : the amount of time to delay between each command.  Use this to slow down the test.
+ * int elementWaitTimeSec : the number of seconds to automatically wait when looking for an element.
+ * string hostName : the host name or IP address of the device under test.
+ * int hostPort : The port that eggOn is running on the device.  Used in combination with hostName to connect to a host.
+ * string imageSearchCount : The number of times eggPlant searches for an element before failing.
+ * string imageSearchDelay : The number of milliseconds to wait between each eggplant Search.
+ * string mouseClickDelay : The number of milliseconds a click should be held before releasing.
+ * string driveUrl : The url which to use to connect to the drive XMLRPC service.
+ * string currentTestName : The current test's name.
+ * boolean manageEggdriveProcess : Automatically start and stop eggplant drive before/after each test suite.
+ * boolean debugElementLocators : Take a screenshot before each step to aid in debugging.
+ *
  */
 public class Config {
     private static Properties properties;
     private static OutputStream output = null;
     public static boolean screenshotOnError = getPropertyValue("screenshotOnError", true);
-    public static boolean startDrive = getPropertyValue("startDrive", true);
-    public static String eggplantPath = getPropertyValue("eggplantPath", "");
+   // public static boolean startDrive = getPropertyValue("startDrive", true);
+   // public static String eggplantPath = getPropertyValue("eggplantPath", "");
     public static String windowsScriptPath = getPropertyValue("windowsScriptPath", "C:\\Program Files (x86)\\eggPlant\\runscript.bat");
     public static String macScriptPath = getPropertyValue("macScriptPath", "/Applications/Eggplant.app/runscript");
     public static String currentPath = System.getProperty("user.dir");
@@ -39,6 +63,7 @@ public class Config {
     private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
     public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
 
+    //get the test properties.
     public static String getTestProp(String key) {
         return testProperties.get(key);
     }
@@ -58,7 +83,7 @@ public class Config {
         return props;
     }
 
-
+    /** Reads the config.properties file and returns an integer for a specific value.  Default value used if key not found   */
     private static int getPropertyValue(String key, int defaultValue) {
         String result = getPropertyValue(key, null);
         if (result == null) return defaultValue;
@@ -90,12 +115,13 @@ public class Config {
         }
     }
 
+    /** Reads the config.properties file and returns an String for a specific value.  Default value used if key not found   */
     public static String getPropertyValue(String key, String defaultValue) {
         if (properties == null) init();
 
         return properties.getProperty(key, System.getProperty(key, defaultValue));
     }
-
+    /** Reads the config.properties file and returns an boolean for a specific value.  Default value used if key not found   */
     public static boolean getPropertyValue(String key, boolean defaultValue) {
         if (properties == null) init();
 
@@ -103,7 +129,7 @@ public class Config {
         if (result == null) return defaultValue;
         return isTruthy(result);
     }
-
+    /** Reads the config.properties file and sets a key to a specific value.  Use this to write to the config.properties file.   */
     public static void setPropertyValue(String key, String value) {
 
         try {
@@ -116,11 +142,12 @@ public class Config {
         }
     }
 
+    /** Converts from a string true/false expression to a boolean.  */
     private static boolean isTruthy(String value) {
         return value.equals("True") || value.equals("true");
     }
 
-
+    /** Gets the current log level. */
     private static int getLogLevel(String propertyValue) {
         if (propertyValue.toLowerCase().equals("debug")) {
             return 0;

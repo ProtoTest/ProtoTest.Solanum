@@ -1,6 +1,8 @@
 package com.prototest.solanum;
 
 /**
+ * List of all device keys that can be entered using driver.sendKeys()
+ * These keys typically will perform some specific type of action.
  */
 public enum EggplantKeys {
     enter("return"),

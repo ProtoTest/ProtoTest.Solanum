@@ -4,7 +4,10 @@ import java.awt.*;
 import java.io.File;
 
 /**
- * Created by Brian on 5/12/2014.
+ *
+ * The By class creates an eggplant locator string in the correct format.  It accepts an optional list of search options.
+ * Three ways to define an element.  Using an image (image: "/path/to/image"), a text value (text: "value") or a point (12,14).
+ * It is designed to be passed into the EggplantElement class to allow easy object instantiation.
  */
 public class By {
     public final ByType type;

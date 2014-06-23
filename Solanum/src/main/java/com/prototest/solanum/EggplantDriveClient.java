@@ -11,11 +11,13 @@ import java.util.HashMap;
 
 
 /**
- *
+ *  EggplantDriveClient communicates with the XMLRPC service launched by EggplantDrive (normally at 127.0.0.1:5400).
  */
 class EggplantDriveClient {
     private XmlRpcClientConfigImpl config;
     private XmlRpcClient client;
+
+    /** Instantiates a new client to communicate with the xmlrpc service at the location specified in the config file.   */
     EggplantDriveClient(){
         config = new XmlRpcClientConfigImpl();
         try {
@@ -28,6 +30,8 @@ class EggplantDriveClient {
         client  = new XmlRpcClient();
         client.setConfig(config);
     }
+
+    /** Instantiates a new client to communicate with the xmlrpc service at the url passed in.     */
     EggplantDriveClient(String url){
         config = new XmlRpcClientConfigImpl();
         try {
@@ -38,6 +42,8 @@ class EggplantDriveClient {
         client  = new XmlRpcClient();
         client.setConfig(config);
     }
+
+    /** Executes a SenseTalk commmand, and returns the response */
     EggplantResponse execute(String command) {
         Object[] params = new Object[]{command};
         try {
@@ -51,6 +57,8 @@ class EggplantDriveClient {
         }
         return null;
     }
+
+    /** Ends the current session (suite) */
     void endSession() {
         Object[] params = new Object[]{};
         try {
@@ -61,6 +69,7 @@ class EggplantDriveClient {
         }
     }
 
+    /** Starts a new session (eggplant suite).  Pass in the location of the .suite file on the local hard drive. */
     void startSession(String suite){
         File suiteFile = new File(suite);
         if (! suiteFile.isAbsolute()) {

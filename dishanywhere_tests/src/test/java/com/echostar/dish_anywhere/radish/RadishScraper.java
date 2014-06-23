@@ -7,9 +7,7 @@ import com.prototest.solanum.RestClient;
 import java.util.List;
 import java.util.Map;
 
-
-/**
- */
+/** The RadishScraper contains methods to easily get data out of the radish api */
 public class RadishScraper {
     private RestClient client;
 
