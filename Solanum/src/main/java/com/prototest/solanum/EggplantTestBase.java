@@ -24,6 +24,8 @@ public class EggplantTestBase {
         Config.currentTestName = method.getName();
         Logger.debug("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
+        initializeApp();
+
     }
     /** This method is run automatically by TestNG after each test method.  It should log a screenshot if the test fails, and log the status.   */
     @AfterMethod
@@ -36,6 +38,8 @@ public class EggplantTestBase {
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
+        uninitializeApp();
+
     }
     /**  This method will run once before the entire suite of tests.  It should configure everything needed by eggplant Drive, launch eggplant drive, and connect to the default host*/
     @BeforeTest
@@ -138,4 +142,9 @@ public class EggplantTestBase {
         }
     }
 
+    public void initializeApp() {
+    }
+
+    public void uninitializeApp() {
+    }
 }
