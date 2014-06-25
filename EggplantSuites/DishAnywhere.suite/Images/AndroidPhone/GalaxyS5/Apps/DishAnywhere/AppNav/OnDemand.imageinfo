@@ -1,18 +1,1 @@
-﻿{
-    CaptureDate = "2014-05-30 16:56:47 +0000";
-    CaptureHost = "SM-G900H";
-    CaptureScreenSize =     (
-        1080,
-        1968
-    );
-    HasAlpha = 1;
-    HonorAlpha = 1;
-    HotSpotX = 110;
-    HotSpotY = 66;
-    LastKnownLocationX = 0;
-    LastKnownLocationY = 0;
-    OriginalLocationX = 381;
-    OriginalLocationY = 1775;
-    Pulsing = 0;
-    Scale = 1;
-}
+﻿{CaptureDate = "2014-06-25 09:46:50 -0600"; CaptureHost = "Galaxy S5"; CaptureScreenSize = (1080, 1968); HasAlpha = 1; HonorAlpha = 1; HotSpotX = 111; HotSpotY = 70; LastKnownLocationX = 0; LastKnownLocationY = 0; OriginalLocationX = 380; OriginalLocationY = 1770; Pulsing = 0; Scale = 1; }
