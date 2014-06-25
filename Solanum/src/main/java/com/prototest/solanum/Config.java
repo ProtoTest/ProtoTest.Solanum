@@ -15,27 +15,28 @@ import java.util.Properties;
  * It also contains methods to get and set key value pairs from the config.properties file.
  * The following global settings are avaialable :
  * boolean screenshotOnError : automatically include a screenshot of the device under test when the test fails.
- * string windowsScriptPath ; the default path to eggplant runscript on a windows machine
- * string macScriptPath : the default path to eggplant runscript on a mac machine
- * string currentPath : the current default directory for the user.  Maps to the system property "user.dir"
- * string suitePath : the path to the default suite.  This suite will automatically be started
- * string drivePort : the port eggPlant drive's XMLRPC service will run on.
- * string driveLogginLevel : Eggplant drive's native logging level.  This logs to the console.  Values can be 0,1,2.
- * string logLevel : "The level of logging solanum should use.  Values can be "debug", "info", "warning", or "error"
- * boolean logDriveCommands : Whether to log the runScript commands passed into the eggPlant driver.
- *    Use this to see what commands are actually being passed to eggplant drive.
- * int commandDelayMs : the amount of time to delay between each command.  Use this to slow down the test.
- * int elementWaitTimeSec : the number of seconds to automatically wait when looking for an element.
- * string hostName : the host name or IP address of the device under test.
- * int hostPort : The port that eggOn is running on the device.  Used in combination with hostName to connect to a host.
- * string imageSearchCount : The number of times eggPlant searches for an element before failing.
- * string imageSearchDelay : The number of milliseconds to wait between each eggplant Search.
- * string mouseClickDelay : The number of milliseconds a click should be held before releasing.
- * string driveUrl : The url which to use to connect to the drive XMLRPC service.
- * string currentTestName : The current test's name.
- * boolean manageEggdriveProcess : Automatically start and stop eggplant drive before/after each test suite.
- * boolean debugElementLocators : Take a screenshot before each step to aid in debugging.
- *
+ * <ul>
+ * <li><em>windowsScriptPath</em> : the default path to eggplant runscript on a windows machine</li>
+ * <li>string macScriptPath : the default path to eggplant runscript on a mac machine</li>
+ * <li>string currentPath : the current default directory for the user.  Maps to the system property "user.dir"</li>
+ * <li>string suitePath : the path to the default suite.  This suite will automatically be started</li>
+ * <li>string drivePort : the port eggPlant drive's XMLRPC service will run on.</li>
+ * <li>string driveLogginLevel : Eggplant drive's native logging level.  This logs to the console.  Values can be 0,1,2.</li>
+ * <li>string logLevel : "The level of logging solanum should use.  Values can be "debug", "info", "warning", or "error"</li>
+ * <li>boolean logDriveCommands : Whether to log the runScript commands passed into the eggPlant driver.<br>
+ *  Use this to see what commands are actually being passed to eggplant drive.</li>
+ * <li>int commandDelayMs : the amount of time to delay between each command.  Use this to slow down the test.</li>
+ * <li>int elementWaitTimeSec : the number of seconds to automatically wait when looking for an element.</li>
+ * <li>string hostName : the host name or IP address of the device under test.</li>
+ * <li>int hostPort : The port that eggOn is running on the device.  Used in combination with hostName to connect to a host.</li>
+ * <li>string imageSearchCount : The number of times eggPlant searches for an element before failing.</li>
+ * <li>string imageSearchDelay : The number of milliseconds to wait between each eggplant Search.</li>
+ * <li>string mouseClickDelay : The number of milliseconds a click should be held before releasing.</li>
+ * <li>string driveUrl : The url which to use to connect to the drive XMLRPC service.</li>
+ * <li>string currentTestName : The current test's name.</li>
+ * <li>boolean manageEggdriveProcess : Automatically start and stop eggplant drive before/after each test suite.</li>
+ * <li>boolean debugElementLocators : Take a screenshot before each step to aid in debugging.</li>
+ * </ul>
  */
 public class Config {
     /**

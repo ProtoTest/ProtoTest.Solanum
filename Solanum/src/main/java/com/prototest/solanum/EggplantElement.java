@@ -40,7 +40,6 @@ public class EggplantElement {
         this.waitSec = Config.elementWaitTimeSec;
     }
 
-
     public EggplantElement(By by, int waitSec) {
         this.by = by;
         this.originalBy = by;
@@ -65,6 +64,10 @@ public class EggplantElement {
         return this;
     }
 
+    /**
+     * <b>Determines</b> whether the element is present on the device screen.
+     * @return True if the element is present, otherwise false.
+     */
     public boolean isPresent() {
         if (originalBy.type.equals(By.ByType.point)) return true;
         findLocation();
@@ -90,14 +93,12 @@ public class EggplantElement {
         return false;
     }
 
-
     public String getText() {
 
         waitForPresent();
         Logger.debug(String.format("Reading text on %s %s.", name, by.getLocator()));
         return driver.readText(by.getLocator());
     }
-
 
     public EggplantElement click() {
         waitForPresent();
@@ -126,7 +127,6 @@ public class EggplantElement {
         driver.release(by.getLocator());
         return this;
     }
-
 
     public EggplantElement tap() {
         waitForPresent();
@@ -193,6 +193,13 @@ public class EggplantElement {
         return waitForPresent(this.waitSec);
     }
 
+    /**
+     * Waits for the element to be present.
+     * If {@link com.prototest.solanum.Config}.debugElementLocators is true, logs a screenshot.
+     * @param secs Number of seconds to wait.
+     * @return This EggplantElement.
+     * @throws java.lang.RuntimeException if element is not present after the wait time.
+     */
     public EggplantElement waitForPresent(int secs) {
         if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", originalBy.getLocator(), secs));
