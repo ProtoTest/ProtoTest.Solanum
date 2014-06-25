@@ -1,18 +1,1 @@
-﻿{
-    CaptureDate = "2014-06-18 18:39:18 +0000";
-    CaptureHost = kindle;
-    CaptureScreenSize =     (
-        1920,
-        1248
-    );
-    HasAlpha = 1;
-    HonorAlpha = 1;
-    HotSpotX = 80;
-    HotSpotY = 24;
-    LastKnownLocationX = 0;
-    LastKnownLocationY = 0;
-    OriginalLocationX = 1327;
-    OriginalLocationY = 79;
-    Pulsing = 0;
-    Scale = 1;
-}
+﻿{CaptureDate = "2014-06-25 12:36:55 -0600"; CaptureHost = "Kindle Fire HDX"; CaptureScreenSize = (1920, 1248); HasAlpha = 1; HonorAlpha = 1; HotSpotX = 23; HotSpotY = 25; LastKnownLocationX = 0; LastKnownLocationY = 0; OriginalLocationX = 1329; OriginalLocationY = 78; Pulsing = 0; Scale = 1; }
