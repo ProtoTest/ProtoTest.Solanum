@@ -11,7 +11,7 @@ public class DishAnywhereLogin extends DishAnywhereMain {
 
 
     private EggplantElement passwordField = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/PasswordField"));
-    private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton"));
+    private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton", ImageOption.tolerance("45")));
 
     public DishAnywhereHome login(String onlineId, String password) {
         Logger.info("Logging in...");
