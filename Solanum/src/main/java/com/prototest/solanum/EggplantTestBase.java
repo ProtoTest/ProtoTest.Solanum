@@ -1,15 +1,20 @@
 package com.prototest.solanum;
 
 import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.lang.reflect.Method;
-import java.text.SimpleDateFormat;
 
 /** Hook up the ReportNG listeners, so that the HTML and XML reports will always be generated, even without a pom.  */
 @Listeners({TimestampedHTMLReporter.class,
+        TimestamppedXMLReporter.class,
         org.uncommons.reportng.JUnitXMLReporter.class,
         VerificationsListener.class})
 
@@ -64,7 +69,7 @@ public class EggplantTestBase {
         //String timestamp = sdf.format(date);
         String testDir = "test-output"; //Results " + timestamp;
         File report = new File(testDir);
-        deleteDir(report);
+        //deleteDir(report);
         report.mkdir();
     }
 
