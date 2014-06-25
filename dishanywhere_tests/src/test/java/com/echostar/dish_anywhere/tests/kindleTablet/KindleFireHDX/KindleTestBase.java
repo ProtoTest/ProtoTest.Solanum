@@ -7,19 +7,21 @@ import com.prototest.solanum.EggplantTestBase;
 /**
  */
 public class KindleTestBase extends EggplantTestBase {
+
     @Override
     public void initializeApp() {
         new DeviceMain()
                 .goHome()
                 .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()
-                .openParentalControls("1111")
+                .openAuthorizedDevices()
+                .authorizeThisDevice()
+                .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
-                .clearTVBlocks();
+                .clearTVBlocks()
+                .openGuide();
     }
 
     @Override

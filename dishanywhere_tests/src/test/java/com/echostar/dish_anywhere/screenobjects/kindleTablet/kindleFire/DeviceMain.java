@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Logger;
+import com.prototest.solanum.*;
 
 import java.awt.*;
 
@@ -13,6 +10,7 @@ public class DeviceMain {
     protected EggplantElement closeKeyboardButton = new EggplantElement("closeKeyboardButton", By.Image("KindleTablet/KindleFireHDX/System/Device/closeKeyboardButton"));
     protected EggplantElement keyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("KindleTablet/KindleFireHDX/System/Keyboard/DeleteKey"));
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/DishAnywhereAppIcon"));
+    protected EggplantElement appsTab = new EggplantElement("Kindle Apps Tab", By.Text("Apps", SearchRectangle.topHalf()));
 
     public final DeviceNavigation nav = new DeviceNavigation();
 
@@ -32,6 +30,7 @@ public class DeviceMain {
     }
 
     public DishAnywhereHome openDishAnywhereHome() {
+        appsTab.click();
         dishAnywhereApp.click();
         return new DishAnywhereHome();
     }

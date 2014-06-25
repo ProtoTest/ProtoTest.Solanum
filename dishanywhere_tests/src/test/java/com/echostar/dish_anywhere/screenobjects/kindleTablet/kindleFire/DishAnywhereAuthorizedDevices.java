@@ -14,13 +14,17 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
 
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice(){
-        authorizeDeviceButton.click();
+        if(authorizeDeviceButton.isPresent()){
+            authorizeDeviceButton.click();
+        }
         return this;
     }
 
     public DishAnywhereAuthorizedDevices deAuthorizeThisDevice(){
-        deAuthorizeDeviceButton.waitForPresent().click();
-        okButton.click();
+        if(deAuthorizeDeviceButton.isPresent()){
+            deAuthorizeDeviceButton.waitForPresent().click();
+            okButton.click();
+        }
         return this;
     }
 

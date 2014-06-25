@@ -23,6 +23,7 @@ public class KindleFireUiTests extends KindleTestBase {
     }
     @Test
     public void testPredictiveSearch() {
+        Logger.info("Beginning Test: Predictive Search.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
