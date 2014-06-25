@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 
 /** Hook up the ReportNG listeners, so that the HTML and XML reports will always be generated, even without a pom.  */
-@Listeners({org.uncommons.reportng.HTMLReporter.class,
+@Listeners({TimestampedHTMLReporter.class,
         org.uncommons.reportng.JUnitXMLReporter.class,
         VerificationsListener.class})
 

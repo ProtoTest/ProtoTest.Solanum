@@ -1,6 +1,10 @@
 package com.prototest.solanum;
 
+import org.testng.internal.Constants;
+
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +38,12 @@ import java.util.Properties;
  *
  */
 public class Config {
+    /**
+     * Turning off escape-output means that we can write HTML to the report.
+     */
+    static {
+        System.setProperty("org.uncommons.reportng.escape-output", "false");
+    }
     private static Properties properties;
     private static OutputStream output = null;
     public static boolean screenshotOnError = getPropertyValue("screenshotOnError", true);

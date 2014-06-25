@@ -16,12 +16,7 @@ import java.text.SimpleDateFormat;
  */
 public class Logger {
 
-    /**
-     * Turning off escape-output means that we can write HTML to the report.
-     */
-    static {
-        System.setProperty("org.uncommons.reportng.escape-output", "false");
-    }
+
 
     /**
      * Log Info, this is the highest level of logging. Should be used for logging test intent, and actions.
