@@ -12,6 +12,8 @@ import java.util.HashMap;
 
 /**
  *  EggplantDriveClient communicates with the XMLRPC service launched by EggplantDrive (normally at 127.0.0.1:5400).
+ *
+ *  <b>For internal Solanum use only. Use {@link EggplantElement} to interact with EggPlant.</b>
  */
 class EggplantDriveClient {
     private XmlRpcClientConfigImpl config;
