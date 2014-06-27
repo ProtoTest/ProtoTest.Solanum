@@ -8,7 +8,7 @@ import com.prototest.solanum.SearchRectangle;
 public class Blockbuster extends DishAnywhereHome {
     EggplantElement sortFilterButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
     private EggplantElement moviesButton
-            = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
+            = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies"));
     private EggplantElement showsButton
             = new EggplantElement(By.Text("TV Shows", SearchRectangle.middleHalf()));
     EggplantElement kidsMoviesButton
