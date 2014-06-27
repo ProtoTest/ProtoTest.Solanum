@@ -31,6 +31,9 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
                 .openDishAnywhereHome()
                 .openBlockbuster()
                 .openMovies()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
     }
 
@@ -48,7 +51,10 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
         new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openBlockbuster()
-                .openMovies()
+                .openTVShows()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();
     }
@@ -67,7 +73,10 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
         new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openBlockbuster()
-                .openTVShows()
+                .openKidsMovies()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();
     }
@@ -86,7 +95,10 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
         new DishAnywhereHome()
                 .openDishAnywhereHome()
                 .openBlockbuster()
-                .openMovies()
+                .openKidsTVShows()
+                .openFilter()
+                .sortByTitle()
+                .done()
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();
     }
