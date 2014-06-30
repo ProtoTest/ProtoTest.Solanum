@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
  *
  * <b>For internal Solanum use only. Use {@link EggplantElement} to interact with EggPlant.</b>
  */
-class EggplantDriver {
+public class EggplantDriver {
 
     private EggplantDriveClient client;
     private Rectangle screenRectangle;

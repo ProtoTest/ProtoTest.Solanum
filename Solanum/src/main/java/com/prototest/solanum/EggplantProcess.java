@@ -23,7 +23,7 @@ class EggplantProcess {
         if (System.getProperty("os.name").toLowerCase().contains("windows")) {
             runScriptPath = "\"" + Config.windowsScriptPath + "\"";
         } else {
-            runScriptPath = Config.macScriptPath;
+            runScriptPath = Config.unixScriptPath;
         }
         this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
         this.command.redirectErrorStream(true);

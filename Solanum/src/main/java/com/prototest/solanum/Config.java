@@ -17,7 +17,7 @@ import java.util.Properties;
  * boolean screenshotOnError : automatically include a screenshot of the device under test when the test fails.
  * <ul>
  * <li><em>windowsScriptPath</em> : the default path to eggplant runscript on a windows machine</li>
- * <li>string macScriptPath : the default path to eggplant runscript on a mac machine</li>
+ * <li>string unixScriptPath : the default path to eggplant runscript on a mac machine</li>
  * <li>string currentPath : the current default directory for the user.  Maps to the system property "user.dir"</li>
  * <li>string suitePath : the path to the default suite.  This suite will automatically be started</li>
  * <li>string drivePort : the port eggPlant drive's XMLRPC service will run on.</li>
@@ -51,7 +51,7 @@ public class Config {
    // public static boolean startDrive = getPropertyValue("startDrive", true);
    // public static String eggplantPath = getPropertyValue("eggplantPath", "");
     public static String windowsScriptPath = getPropertyValue("windowsScriptPath", "C:\\Program Files (x86)\\eggPlant\\runscript.bat");
-    public static String macScriptPath = getPropertyValue("macScriptPath", "/Applications/Eggplant.app/runscript");
+    public static String unixScriptPath = getPropertyValue("unixScriptPath", "/Applications/Eggplant.app/runscript");
     public static String currentPath = System.getProperty("user.dir");
     public static String suitePath = getPropertyValue("suitePath", "");
     public static String drivePort = getPropertyValue("drivePort", "5400");
@@ -127,7 +127,7 @@ public class Config {
     }
 
     /** Reads the config.properties file and returns an String for a specific value.  Default value used if key not found   */
-    public static String getPropertyValue(String key, String defaultValue) {
+     public static String getPropertyValue(String key, String defaultValue) {
         if (properties == null) init();
 
         return properties.getProperty(key, System.getProperty(key, defaultValue));
