@@ -73,6 +73,7 @@ public class Config {
     public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
     private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
     public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
+    public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
 
     //get the test properties.
     public static String getTestProp(String key) {
