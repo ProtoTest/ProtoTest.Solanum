@@ -7,7 +7,7 @@ import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement(By.Text("Settings", SearchRectangle.bottomQuarter()));
-    private EggplantElement guideButton = new EggplantElement(By.Text("Guide", SearchRectangle.bottomQuarter()));
+    private EggplantElement guideButton = new EggplantElement(By.Text("Guide", SearchRectangle.bottomHalf()));
 
     private EggplantElement onDemandButton = new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter()));
 
@@ -17,6 +17,11 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     public DishAnywhereHome() {
 
+    }
+
+    public DishAnywhereHome openDishAnywhereHome() {
+        openGuide();
+        return this;
     }
 
     public DishAnywhereLogin logOutIfLoggedIn(){

@@ -2,10 +2,13 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 
 import java.util.List;
 
 public class DishAnywhereScrollView extends DishAnywhereMain {
+
+    EggplantElement leftMovieBorder = new EggplantElement("leftMovieBorder", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder"));
 
     EggplantElement filterDropdownArrow = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/CloseArrowIcon"));
     EggplantElement sortFilterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton"));
@@ -25,13 +28,27 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
     }
 
     public DishAnywhereScrollView verifyTitlesPresent(List<String> titles){
+        String logMessage = "Verifying movies from radish are present: " + titles.get(0);
+        for (String title : titles) {
+            logMessage += ", " + title;
+        }
+        Logger.info(logMessage);
         popups.waitForScreenToLoad();
-        for(String title : titles){
-            EggplantElement movie = new EggplantElement(By.Text(title));
-            movie.verifyPresent();
+
+
+        List<EggplantElement> movieElements = leftMovieBorder.allInstances();
+
+        for (int i = 0; i < titles.size() && i < movieElements.size(); i++) {
+            movieElements.get(i).click();
+            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
+            String title = titles.get(i);
+            new EggplantElement(title, By.Text(title)).verifyPresent();
+            dishAnywhereMovie.closeMovie();
         }
         return this;
     }
+
+
 
 
 }

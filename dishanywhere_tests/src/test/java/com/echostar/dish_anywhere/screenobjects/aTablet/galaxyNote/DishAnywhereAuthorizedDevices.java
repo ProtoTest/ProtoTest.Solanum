@@ -13,13 +13,17 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
     private EggplantElement cancelButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/CancelButton"));
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice(){
-        authorizeDeviceButton.click();
+        if(authorizeDeviceButton.isPresent()){
+            authorizeDeviceButton.click();
+        }
         return this;
     }
 
     public DishAnywhereAuthorizedDevices deAuthorizeThisDevice(){
-        if(authorizeDeviceButton.isPresent())
-            deAuthorizeDeviceButton.click();
+        if(deAuthorizeDeviceButton.isPresent()){
+            deAuthorizeDeviceButton.waitForPresent().click();
+            okButton.click();
+        }
         return this;
     }
 

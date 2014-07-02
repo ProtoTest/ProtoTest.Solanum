@@ -27,7 +27,7 @@ public class DeviceMain {
         if (closeKeyboardButton.isPresent()) {
             closeKeyboardButton.tap();
         }
-        while (!dishAnywhereApp.isPresent()) {
+        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
             nav.backButton.tap();
         }
         //nav.homeButton.waitForPresent(20).click();

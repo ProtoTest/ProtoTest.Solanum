@@ -8,10 +8,10 @@ import com.prototest.solanum.EggplantElement;
  */
 public class Blockbuster extends DishAnywhereHome{
     EggplantElement sortFilterButton = new EggplantElement("Sort Filter Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
-    EggplantElement moviesButton = new EggplantElement("Movies Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies_DeSelected"));
-    EggplantElement tvShowsButton = new EggplantElement("Shows Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows_DeSelected"));
-    EggplantElement kidsMoviesButton = new EggplantElement("Kids Movies Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies_DeSelected"));
-    EggplantElement kidsTvShowsButton = new EggplantElement("Kids Shows Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows_DeSelected"));
+    EggplantElement moviesButton = new EggplantElement("Movies Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies"));
+    EggplantElement tvShowsButton = new EggplantElement("Shows Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows"));
+    EggplantElement kidsMoviesButton = new EggplantElement("Kids Movies Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies"));
+    EggplantElement kidsTvShowsButton = new EggplantElement("Kids Shows Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows"));
 
 
 

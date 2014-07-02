@@ -62,7 +62,7 @@ public class Config {
     public static int logLevel = getLogLevel(getPropertyValue("logLevel", "debug"));
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
     public static int commandDelayMs = getPropertyValue("commandDelayMs", 1000);
-    public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 10);
+    public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 30);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
     public static String imageSearchCount = getPropertyValue("imageSearchCount","1");
@@ -74,6 +74,7 @@ public class Config {
     private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
     public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
     public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
+    public static int retryCount = getPropertyValue("retryCount", 5);
 
     //get the test properties.
     public static String getTestProp(String key) {

@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.SearchRectangle;
 
 import java.awt.*;
 public class MoviePlayer extends DishAnywhereHome {
@@ -10,7 +11,7 @@ public class MoviePlayer extends DishAnywhereHome {
     EggplantElement pauseButton = new EggplantElement("Player pause button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/PauseButton"));
     EggplantElement currentCursor = new EggplantElement("Current playback cursor", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/CurrentCursor"));
     EggplantElement deauthorizationMessage = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/UnauthorizedMessage"));
-    EggplantElement okButton = new EggplantElement(By.Text("OK"));
+    EggplantElement okButton = new EggplantElement(By.Text("OK", SearchRectangle.bottomHalf()));
 
 
     public MoviePlayer openControls() {
@@ -39,6 +40,10 @@ public class MoviePlayer extends DishAnywhereHome {
     public MoviePlayer verifyDeauthorizationMessageDisplays(){
         deauthorizationMessage.waitForPresent();
         okButton.click();
+        // close the movie
+        nav.backButton.click();
+        // close search results
+        nav.backButton.click();
         return this;
     }
 

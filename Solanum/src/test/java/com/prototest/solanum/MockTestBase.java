@@ -1,6 +1,7 @@
 package com.prototest.solanum;
 
 import org.apache.commons.io.IOUtils;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -40,7 +41,8 @@ public class MockTestBase extends EggplantTestBase {
     @Override
     @BeforeTest
     @Parameters({"hostName", "hostPort"})
-    public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort) {
+    public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort,
+                             ITestContext testContext) {
         EggplantTestBase.driver = new MockDriver(testImagePath);
 
         startEggplant();

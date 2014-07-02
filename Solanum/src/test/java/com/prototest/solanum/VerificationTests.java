@@ -2,6 +2,7 @@ package com.prototest.solanum;
 
 import junit.framework.AssertionFailedError;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
 
 import java.util.List;
@@ -12,7 +13,8 @@ public class VerificationTests extends EggplantTestBase {
     @Override
     @BeforeTest
     @Parameters({"hostName", "hostPort"})
-    public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort) {
+    public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort,
+                             ITestContext testContext) {
         EggplantTestBase.driver = new MockDriver(null);
         createReportDirectory();
         startEggplant();
