@@ -35,7 +35,9 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
                 .authorizeThisDevice()
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
-                .clearTVBlocks();
+                .clearTVBlocks()
+                .save()
+                .openGuide();
         home.verifyLoggedIn();
 
     }
