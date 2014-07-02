@@ -48,7 +48,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
-                .openMovies()
+                .openTVShows()
                 .verifyTitlesPresent(movieTitles);
     }
 
@@ -66,7 +66,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
-                .openTVShows()
+                .openKidsMovies()
                 .verifyTitlesPresent(movieTitles);
     }
 
@@ -84,7 +84,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
                 .openDishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
-                .openMovies()
+                .openKidsTVShows()
                 .verifyTitlesPresent(movieTitles);
     }
 
