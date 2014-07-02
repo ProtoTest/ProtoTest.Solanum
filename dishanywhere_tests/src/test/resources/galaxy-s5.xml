@@ -5,12 +5,14 @@
         <parameter name="hostName" value="4d00a6404fd62197"/>
         <parameter name="hostPort" value="5901"/>
         <classes>
-            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5UiTests"/>
             <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5AuthorizedDevices"/>
             <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5Blockbuster"/>
             <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5OnDemandCategory"/>
             <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5OnDemandFilters"/>
             <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5ParentalControls"/>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5Passcode"/>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5UiTests"/>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5VideoDrm"/>
 
         </classes>
     </test>
