@@ -2,8 +2,8 @@
 
 <suite name="GalaxyS5" verbose="1">
     <test name="GalaxyS5">
-        <parameter name="hostName" value="10.10.1.77"/>
-        <parameter name="hostPort" value="5900"/>
+        <parameter name="hostName" value="4d00a6404fd62197"/>
+        <parameter name="hostPort" value="5901"/>
         <classes>
             <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5UiTests"/>
         </classes>
