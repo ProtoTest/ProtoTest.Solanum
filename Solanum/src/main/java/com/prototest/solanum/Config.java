@@ -74,7 +74,7 @@ public class Config {
     private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
     public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
     public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
-    public static int retryCount = getPropertyValue("retryCount", 5);
+    public static int retryCount = getPropertyValue("retryCount", 1);
 
     //get the test properties.
     public static String getTestProp(String key) {
