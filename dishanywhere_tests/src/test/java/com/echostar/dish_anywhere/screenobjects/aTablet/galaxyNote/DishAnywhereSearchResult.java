@@ -29,7 +29,7 @@ public class DishAnywhereSearchResult {
         // Click first result.
         new EggplantElement(By.Point(new Point(103, 192))).click();
         // Verify the movie info popup contains the movie name.
-        new EggplantElement(By.Text(movieName, SearchRectangle.middleHalf())).verifyPresent();
+        new EggplantElement(By.Text(movieName)).verifyPresent();
 
         return new DishAnywhereMovie();
     }

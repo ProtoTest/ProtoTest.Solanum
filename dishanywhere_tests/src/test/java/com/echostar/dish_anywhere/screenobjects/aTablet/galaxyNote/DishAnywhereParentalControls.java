@@ -33,7 +33,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement changePasscodeButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ChangePasscode"));
     public EggplantElement chooseSecurityQuestionButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ChooseSecurityQuestionButton"));
 
-    public EggplantElement okButton = new EggplantElement(By.Text("OK"));
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton"));
     public DishAnywhereParentalControls clickRating(String value){
         EggplantElement rating = new EggplantElement(By.Text(value));
         rating.click();
