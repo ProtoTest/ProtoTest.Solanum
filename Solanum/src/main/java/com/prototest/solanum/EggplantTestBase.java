@@ -143,10 +143,13 @@ public class EggplantTestBase {
      * Default eggplant drive settings.  Configurable by the config file.
      */
     public void setEggplantDefaultSettings() {
-
+        Logger.debug("Eggplant drive started with options : " + driver.getOptions());
         driver.setOption("ImageSearchDelay", String.valueOf(Config.imageSearchDelay));
         driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
+        driver.setOption("PreciseImageTolerance", String.valueOf(Config.preciseImageTolerance));
+        driver.setOption("StandardImageTolerance", String.valueOf(Config.standardImageTolerance));
         driver.setOption("MouseClickDelay", String.valueOf(Config.mouseClickDelay));
+        driver.setOption("RemoteWorkInterval",String.valueOf(Config.remoteWorkInterval));
         Logger.debug("Eggplant drive set with options : " + driver.getOptions());
     }
 

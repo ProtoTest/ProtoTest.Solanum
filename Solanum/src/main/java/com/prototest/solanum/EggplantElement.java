@@ -38,9 +38,9 @@ import java.util.List;
  *
  * <ul>
  *     <li>{@link #waitForPresent()}</li>
- *     <li>{@link #waitForPresent(int)}</li>
+ *     <li>{@link #waitForPresent(Integer)}</li>
  *     <li>{@link #waitForNotPresent()}</li>
- *     <li>{@link #waitForNotPresent(int)}</li>
+ *     <li>{@link #waitForNotPresent(Integer)}</li>
  * </ul>
  *
  *
@@ -113,6 +113,8 @@ public class EggplantElement {
     private void findLocation() {
         location = driver.findLocation(originalBy);
     }
+
+
 
     /**
      * Clear the cached location of this element.
@@ -342,37 +344,24 @@ public class EggplantElement {
      * @return This EggplantElement.
      * @throws RuntimeException if the element is not present after the wait time.
      */
-    public EggplantElement waitForPresent(int secs) {
+    public EggplantElement waitForPresent(Integer secs) {
         if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", originalBy.getLocator(), secs));
-        if (Config.debugElementLocators) {
-            if (by.getSearchRectangle() == null) {
-                Logger.screenshot();
-            } else {
-                Logger.screenshot(by.getSearchRectangle().searchRectangle);
+        try{
+            driver.waitFor(by.getLocator(),secs.toString());
+        }catch(Exception e){
+            Logger.error(String.format("%s not found: %s.", name, originalBy.getLocator()));
+            LogElementDiagnosticInfo();
+            if (Config.screenshotOnError && !Config.debugElementLocators) {
+                if (originalBy.getSearchRectangle() == null) {
+                    Logger.screenshot();
+                } else {
+                    Logger.screenshot(originalBy.getSearchRectangle().searchRectangle);
+                }
             }
+            throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
         }
-        LocalTime now = new LocalTime();
-        LocalTime endTime = now.plusSeconds(secs);
-        while (now.isBefore(endTime) && !Thread.interrupted()) {
-            if (isPresent()) {
-                Logger.debug(String.format("Verification Passed : %s %s is present.", name, originalBy.getLocator()));
-                return this;
-            } else {
-                driver.refreshScreen();
-                now = new LocalTime();
-            }
-        }
-        Logger.error(String.format("%s not found: %s.", name, originalBy.getLocator()));
-        LogElementDiagnosticInfo();
-        if (Config.screenshotOnError && !Config.debugElementLocators) {
-            if (originalBy.getSearchRectangle() == null) {
-                Logger.screenshot();
-            } else {
-                Logger.screenshot(originalBy.getSearchRectangle().searchRectangle);
-            }
-        }
-        throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
+        return this;
     }
 
 
@@ -395,7 +384,7 @@ public class EggplantElement {
      * @return This EggplantElement.
      * @throws RuntimeException if the element is present after the wait time.
      */
-    public EggplantElement waitForNotPresent(int secs) {
+    public EggplantElement waitForNotPresent(Integer secs) {
         if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s %s to not be present for %s seconds.", name, originalBy.getLocator(), secs));
         if (Config.debugElementLocators) {
@@ -405,6 +394,7 @@ public class EggplantElement {
                 Logger.screenshot(getSafeName(), originalBy.getSearchRectangle().searchRectangle);
             }
         }
+        driver.setOption("ImageSearchCount", "1");
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
@@ -417,7 +407,7 @@ public class EggplantElement {
                 now = new LocalTime();
             }
         }
-
+        driver.setOption("ImageSearchCount", Config.imageSearchCount);
         Logger.error(String.format("%s is still present", name, originalBy));
         LogElementDiagnosticInfo();
         if (Config.screenshotOnError && !Config.debugElementLocators) {

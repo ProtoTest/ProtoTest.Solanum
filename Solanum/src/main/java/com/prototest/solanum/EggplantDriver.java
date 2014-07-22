@@ -1,6 +1,7 @@
 package com.prototest.solanum;
 
 import com.google.common.base.Joiner;
+import org.joda.time.LocalTime;
 
 import java.awt.*;
 import java.io.File;
@@ -257,6 +258,34 @@ public class EggplantDriver {
      */
     public void waitFor(String locator, String timeoutSec) {
         execute(String.format("WaitFor %s, %s", locator, timeoutSec));
+    }
+
+
+    /**
+     * Waits for an Element to be preseent for up the to the time specified
+     */
+    public void waitForPresent(String locator, Integer waitTimeSec) {
+        waitFor(locator,waitTimeSec.toString());
+    }
+
+    /**
+     * Waits for an Element to not be preseent for up the to the time specified
+     */
+    public void waitForNotPresent(String locator, Integer waitTimeSec) {
+        setOption("ImageSearchCount", "1");
+        LocalTime now = new LocalTime();
+        LocalTime endTime = now.plusSeconds(waitTimeSec);
+        while (now.isBefore(endTime) && !Thread.interrupted()) {
+
+            if (!isPresent(locator)){
+                setOption("ImageSearchCount", Config.imageSearchCount);
+                return;
+            } else {
+                refreshScreen();
+                now = new LocalTime();
+            }
+        }
+        throw new RuntimeException(String.format("Element %s is still present after %s seconds",locator,waitTimeSec));
     }
 
     /**
