@@ -2,6 +2,8 @@ package com.prototest.solanum;
 
 import java.awt.*;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  *
@@ -21,9 +23,10 @@ public class By {
     private String locator;
     private SearchRectangle searchRectangle;
     private File image;
+    protected ArrayList<Option> options;
 
     public String getLocator() {
-        return locator;
+        return buildLocatorString();
     }
 
     private By(String locator, ByType type) {
@@ -43,6 +46,15 @@ public class By {
         this.searchRectangle = searchRectangle;
         this.type = type;
         this.image = image;
+    }
+
+    private By(String locator, SearchRectangle searchRectangle, ByType type, File image, Option... options) {
+        this.locator = locator;
+        this.searchRectangle = searchRectangle;
+        this.type = type;
+        this.image = image;
+        this.options = new ArrayList<Option>(Arrays.asList(options));
+
     }
 
     public File getImageFile(){
@@ -68,13 +80,14 @@ public class By {
      */
     public static By Image(String path, SearchRectangle searchRectangle, ImageOption... options) {
         String locatorString = String.format("(image: \"%s\"", path);
-        if (searchRectangle != null) {
-            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
-        }
-        for (ImageOption option : options) {
-            locatorString += ", " + option.getText();
-        }
-        locatorString += ")";
+
+//        if (searchRectangle != null) {
+//            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
+//        }
+//        for (ImageOption option : options) {
+//            locatorString += ", " + option.getText();
+//        }
+//        locatorString += ")";
         String relativePath = Config.suitePath + "/images/" + path;
         File file = new File(relativePath);
         if(!file.isDirectory()){
@@ -86,7 +99,7 @@ public class By {
                 }
             }
         }
-        return new By(locatorString, searchRectangle, ByType.image,file);
+        return new By(locatorString, searchRectangle, ByType.image,file,options);
     }
 
     /**
@@ -107,14 +120,14 @@ public class By {
      */
     public static By Text(String text, SearchRectangle searchRectangle, TextOption... options) {
         String locatorString = String.format("(text: \"%s\"", text);
-        if (searchRectangle != null) {
-            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
-        }
-        for (TextOption option : options) {
-            locatorString += ", " + option.getText();
-        }
-        locatorString += ")";
-        return new By(locatorString, searchRectangle, ByType.text);
+//        if (searchRectangle != null) {
+//            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
+//        }
+//        for (TextOption option : options) {
+//            locatorString += ", " + option.getText();
+//        }
+//        locatorString += ")";
+        return new By(locatorString, searchRectangle, ByType.text,null, options);
     }
 
     /**
@@ -129,5 +142,38 @@ public class By {
 
     public SearchRectangle getSearchRectangle() {
         return searchRectangle;
+    }
+
+    public void updateOptions(Option... newOptions){
+        ArrayList<Option> finalOptions = new ArrayList<>();
+        for(Option newOption : newOptions){
+           String[] toks =  newOption.getText().split(":");
+            if(options.size()==0){
+              finalOptions = new ArrayList<Option>(Arrays.asList(newOptions));
+            }
+            for(Option currentOption : this.options){
+                if(currentOption.getText().contains(toks[0]))
+                {
+                    finalOptions.add(newOption);
+                }
+                else {
+                    finalOptions.add(currentOption);
+                }
+            }
+
+        }
+        this.options = finalOptions;
+    }
+
+    private String buildLocatorString(){
+        String fullLocatorString = locator;
+        if (searchRectangle != null) {
+            fullLocatorString += ", " + Option.searchRectangle(searchRectangle).getText();
+        }
+        for (Option option : options) {
+            fullLocatorString += ", " + option.getText();
+        }
+        fullLocatorString += ")";
+        return fullLocatorString;
     }
 }

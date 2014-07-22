@@ -16,7 +16,8 @@ public class TestBaseTests extends EggplantTestBase {
     @BeforeTest
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName,
-                             @Optional Integer hostPort) {
+                             @Optional Integer hostPort,
+                             ITestContext testContext) {
         if (hostName == null || hostPort == null) {
             Logger.info("Host name not configured by testng.xml; falling back to Solanum config.");
             hostName = Config.hostName;
