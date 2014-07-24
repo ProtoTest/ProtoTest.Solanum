@@ -20,7 +20,7 @@ public class GalaxyNoteOnDemandFilters extends EggplantTestBase {
     @Test
     public void onDemandTest() {
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getComedyMovies(RadishScraper.Device.android_tablet, 30);
+        List<Map<String, String>> movies = radishScraper.getFilteredMovies("comedy", RadishScraper.Device.android_tablet, 30);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -36,7 +36,7 @@ public class GalaxyNoteOnDemandFilters extends EggplantTestBase {
                 .openOnDemand()
                 .openMovies()
                 .openFilter()
-                .selectFilter("Comedy")
+                .selectFilter("comedy")
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
