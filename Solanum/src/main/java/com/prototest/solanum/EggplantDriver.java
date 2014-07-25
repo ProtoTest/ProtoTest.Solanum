@@ -74,18 +74,23 @@ public class EggplantDriver {
     }
 
     private void initProperties() {
-        String screenRectString = execute("put RemoteScreenRectangle()").Output;
-        String[] rect = parseCoordinates(screenRectString);
-        this.screenRectangle = new Rectangle(Integer.parseInt(rect[0]),
-                Integer.parseInt(rect[1]),
-                Integer.parseInt(rect[2]),
-                Integer.parseInt(rect[3]));
+      //  if(this.screenRectangle == null){
+            String screenRectString = execute("put RemoteScreenRectangle()").Output;
+            String[] rect = parseCoordinates(screenRectString);
+            this.screenRectangle = new Rectangle(Integer.parseInt(rect[0]),
+                    Integer.parseInt(rect[1]),
+                    Integer.parseInt(rect[2]),
+                    Integer.parseInt(rect[3]));
 
-        String screenSizeString = execute("put RemoteScreenSize()").Output;
-        screenSizeString = screenSizeString.substring(1, screenSizeString.length() - 1);
-        String[] screenSizeRect = screenSizeString.split(",");
-        screenSize = new Point(Integer.parseInt(screenSizeRect[0]), Integer.parseInt(screenSizeRect[1]));
-    }
+    //    }
+    //    if(this.screenSize==null){
+            String screenSizeString = execute("put RemoteScreenSize()").Output;
+            screenSizeString = screenSizeString.substring(1, screenSizeString.length() - 1);
+            String[] screenSizeRect = screenSizeString.split(",");
+            screenSize = new Point(Integer.parseInt(screenSizeRect[0]), Integer.parseInt(screenSizeRect[1]));
+        }
+
+   // }
 
     /**
      * Disconnect from the current host (device under test).

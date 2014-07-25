@@ -1,0 +1,5 @@
+﻿2014-07-25 15:04:14.276 -0600	START		Running test.script
+2014-07-25 15:04:15.140 -0600	connect		10.10.1.129:5901	1	on_test	test.script
+2014-07-25 15:07:08.917 -0600	Exception	AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand	Unable To Find Any Image On Screen "AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand" within 10.00 seconds	2	on_test	test.script
+2014-07-25 15:07:08.949 -0600	EndTestCase		(Duration:"174.651", Errors:"1", Exceptions:"1", StartTime:"2014-07-25 15:04:14 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-25 15:07:09.279 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand" within 10.00 seconds  Restricted Search Rectangle ((0,984),(1080,1968))\n\nExecution Time 0:02:54 test.script

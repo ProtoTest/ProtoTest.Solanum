@@ -8,6 +8,22 @@
   <LastRun>2014-07-24 15:44:37 -0600</LastRun>
   <TotalTimeOnSuccess>16.579000</TotalTimeOnSuccess>
  </script>
+ <script name="test">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>24</NumberOfRuns>
+  <NumberOfFails>15</NumberOfFails>
+  <FirstRun>2014-07-25 14:32:25 -0600</FirstRun>
+  <LastRun>2014-07-25 16:07:27 -0600</LastRun>
+  <TotalTimeOnSuccess>29.618000</TotalTimeOnSuccess>
+ </script>
+ <script name="temp">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>7</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2014-07-25 13:32:59 -0600</FirstRun>
+  <LastRun>2014-07-25 13:55:51 -0600</LastRun>
+  <TotalTimeOnSuccess>8.083000</TotalTimeOnSuccess>
+ </script>
  <script name="ElementTextAPhone">
   <LastStatus>Failure</LastStatus>
   <NumberOfRuns>2</NumberOfRuns>

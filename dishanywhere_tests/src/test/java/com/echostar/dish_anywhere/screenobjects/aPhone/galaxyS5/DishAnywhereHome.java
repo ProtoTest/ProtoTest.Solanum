@@ -5,19 +5,10 @@ import com.prototest.solanum.*;
 public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
-    private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
+    public EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
     private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/DishAnywhereAppIcon"));
 
     public DishAnywhereHome() {
-    }
-
-    public DishAnywhereHome openDishAnywhereHome() {
-        //dishAnywhereHome.loginIfLoggedOut();
-        exitPlayerIfOpen();
-        if(dishAnywhereApp.isPresent())
-            dishAnywhereApp.click();
-        openGuide();
-        return this;
     }
 
     public DishAnywhereLogin logOutIfLoggedIn(){
@@ -66,15 +57,6 @@ public class DishAnywhereHome extends DishAnywhereMain {
         onDemandButton.click();
         return new DishAnywhereOnDemand().goToOnDemandRoot();
     }
-
-    public DishAnywhereHome exitPlayerIfOpen() {
-        Logger.info("Exiting player, if open...");
-        for (int i = 0; i < 10 && !settingsButton.isPresent(); i++) {
-            nav.backButton.click();
-        }
-        return this;
-    }
-
     public DeviceMain goBackToDeviceScreen() {
         Logger.info("Pressing back button until device is on home.");
         DeviceMain main = new DeviceMain();

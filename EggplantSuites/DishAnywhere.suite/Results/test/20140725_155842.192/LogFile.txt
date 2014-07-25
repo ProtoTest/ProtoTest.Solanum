@@ -1,0 +1,4 @@
+﻿2014-07-25 15:58:42.195 -0600	START		Running test.script
+2014-07-25 15:58:42.228 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-25 15:58:42.253 -0600	EndTestCase		(Duration:"0.054", Errors:"0", Exceptions:"0", StartTime:"2014-07-25 15:58:42 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-07-25 15:58:42.275 -0600	SUCCESS		Execution Time 0:00:00 test.script

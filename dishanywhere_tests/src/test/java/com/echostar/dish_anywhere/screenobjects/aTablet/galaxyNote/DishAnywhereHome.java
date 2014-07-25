@@ -19,11 +19,6 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     }
 
-    public DishAnywhereHome openDishAnywhereHome() {
-        openGuide();
-        return this;
-    }
-
     public DishAnywhereLogin logOutIfLoggedIn(){
         if(loggedIn()){
            return openSettings().logout();

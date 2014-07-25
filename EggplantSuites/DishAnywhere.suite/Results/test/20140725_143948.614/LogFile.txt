@@ -1,0 +1,5 @@
+﻿2014-07-25 14:39:48.644 -0600	START		Running test.script
+2014-07-25 14:39:49.590 -0600	connect		10.10.1.129:5901	1	on_test	test.script
+2014-07-25 14:40:01.398 -0600	imagefound	AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand	Unable to Find Image AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand	2	on_test	test.script
+2014-07-25 14:40:01.420 -0600	EndTestCase		(Duration:"12.771", Errors:"0", Exceptions:"0", StartTime:"2014-07-25 14:39:48 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-07-25 14:40:01.440 -0600	SUCCESS		Execution Time 0:00:13 test.script

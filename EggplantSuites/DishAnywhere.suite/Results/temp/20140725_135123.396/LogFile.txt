@@ -1,0 +1,5 @@
+﻿2014-07-25 13:51:23.399 -0600	START		Running temp.script
+2014-07-25 13:51:23.426 -0600	connect		10.10.1.129:(null)	1	on_temp	temp.script
+2014-07-25 13:51:23.770 -0600	imagefound	AndroidPhone/GalaxyS5/System/Device/BackButton	found at (41, 1946)	2	on_temp	temp.script
+2014-07-25 13:51:23.791 -0600	EndTestCase		(Duration:"0.387", Errors:"0", Exceptions:"0", StartTime:"2014-07-25 13:51:23 -0600", Successes:"1", TestCase:"temp.script", Warnings:"0")
+2014-07-25 13:51:23.811 -0600	SUCCESS		Execution Time 0:00:00 temp.script

@@ -14,10 +14,31 @@ public class DeviceMain {
 
     public final DeviceNavigation nav = new DeviceNavigation();
 
-    public DeviceMain goHome() {
-        Logger.info("Returning to main device screen...");
-        nav.homeButton.waitForPresent(20).click();
-        return new DeviceMain();
+    public DishAnywhereHome goHome() {
+        for (int i=0;i<5&&!appsTab.isPresent();i++) {
+            if (!nav.backButton.isPresent()) {
+                EggplantTestBase.driver.disconnect();
+                EggplantTestBase.driver.connect();
+            }
+            else {
+                nav.backButton.click();
+
+            }
+        }
+        appsTab.click();
+        dishAnywhereApp.click();
+        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
+            if (!nav.backButton.isPresent()) {
+                EggplantTestBase.driver.disconnect();
+                EggplantTestBase.driver.connect();
+            }
+            else {
+                nav.backButton.click();
+
+            }
+        }
+        dishAnywhereApp.click();
+        return new DishAnywhereHome();
     }
 
     public DeviceMain killApp(){
@@ -29,13 +50,7 @@ public class DeviceMain {
         return new DeviceMain();
     }
 
-    public DishAnywhereHome openDishAnywhereHome() {
-        appsTab.click();
-        dishAnywhereApp.click();
-        return new DishAnywhereHome();
-    }
-
-     public DeviceMain clearField(){
+      public DeviceMain clearField(){
         Logger.info("Clearing form field...");
         keyboardDeleteKey.press();
         EggplantTestBase.sleep(2500);

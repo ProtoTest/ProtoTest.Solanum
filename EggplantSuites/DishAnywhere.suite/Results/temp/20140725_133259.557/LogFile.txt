@@ -1,0 +1,6 @@
+﻿2014-07-25 13:32:59.582 -0600	START		Running temp.script
+2014-07-25 13:32:59.673 -0600	opensuite		C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\EggplantSuites\DishAnywhere.suite	1	on_temp	temp.script
+2014-07-25 13:33:00.600 -0600	connect		10.10.1.129:(null)	2	on_temp	temp.script
+2014-07-25 13:33:01.014 -0600	click	AndroidPhone/GalaxyS5/System/Device/BackButton	at (41, 1946)	3	on_temp	temp.script
+2014-07-25 13:33:01.037 -0600	EndTestCase		(Duration:"1.432", Errors:"0", Exceptions:"0", StartTime:"2014-07-25 13:32:59 -0600", Successes:"1", TestCase:"temp.script", Warnings:"0")
+2014-07-25 13:33:01.056 -0600	SUCCESS		Execution Time 0:00:02 temp.script

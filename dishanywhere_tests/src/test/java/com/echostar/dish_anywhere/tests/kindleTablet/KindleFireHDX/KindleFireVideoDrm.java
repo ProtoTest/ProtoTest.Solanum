@@ -17,10 +17,6 @@ public class KindleFireVideoDrm extends KindleTestBase {
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
         watchMovie(movie);
-
-        Verifications.addVerification("Watched onDemand nagra movie.", true);
-        Verifications.assertVerifications();
-
     }
 
     @Test
@@ -29,14 +25,11 @@ public class KindleFireVideoDrm extends KindleTestBase {
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("widevine");
         watchMovie(movie);
-
-        Verifications.addVerification("Watched onDemand widevine movie.", true);
-        Verifications.assertVerifications();
-
     }
 
     private void watchMovie(String movie) {
         new DishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .searchFor(movie)
                 .openOnDemandResults()

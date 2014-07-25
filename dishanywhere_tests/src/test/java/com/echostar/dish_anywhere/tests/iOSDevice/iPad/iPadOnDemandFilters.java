@@ -30,7 +30,7 @@ public class iPadOnDemandFilters extends EggplantTestBase {
         new DeviceMain()
                 .goHome()
                 .killApp()
-                .openDishAnywhereHome()
+                .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openOnDemand()

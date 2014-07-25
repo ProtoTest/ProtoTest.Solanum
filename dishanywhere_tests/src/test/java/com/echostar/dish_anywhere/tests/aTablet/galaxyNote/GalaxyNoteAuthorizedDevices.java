@@ -22,7 +22,7 @@ public class GalaxyNoteAuthorizedDevices extends GalaxyNoteTestBase {
 
         String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);
 
-        new DishAnywhereHome().openDishAnywhereHome()
+        new DishAnywhereHome().goHome()
                 .openSettings()
                 .openAuthorizedDevices()
                 .deAuthorizeThisDevice()

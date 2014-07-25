@@ -1,0 +1,5 @@
+﻿2014-07-25 15:10:12.634 -0600	START		Running test.script
+2014-07-25 15:10:12.655 -0600	connect		10.10.1.129:5901	1	on_test	test.script
+2014-07-25 15:10:12.944 -0600	waitfor	AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand	found at (491, 1840)	2	on_test	test.script
+2014-07-25 15:10:12.965 -0600	EndTestCase		(Duration:"0.327", Errors:"0", Exceptions:"0", StartTime:"2014-07-25 15:10:12 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-07-25 15:10:12.990 -0600	SUCCESS		Execution Time 0:00:00 test.script

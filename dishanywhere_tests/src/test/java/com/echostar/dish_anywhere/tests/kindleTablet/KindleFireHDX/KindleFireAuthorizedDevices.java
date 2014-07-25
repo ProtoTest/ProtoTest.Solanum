@@ -24,9 +24,6 @@ public class KindleFireAuthorizedDevices extends EggplantTestBase {
 
         DishAnywhereOnDemand dishAnywhereOnDemand = new DeviceMain()
                 .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()
@@ -52,7 +49,7 @@ public class KindleFireAuthorizedDevices extends EggplantTestBase {
                 .openMovie(movieName)
                 .watchMovie()
                 .verifyMoviePlays()
-                .goBackToDeviceScreen();
+                .goHome();
 
 
     }

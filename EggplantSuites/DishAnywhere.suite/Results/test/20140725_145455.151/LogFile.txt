@@ -1,0 +1,5 @@
+﻿2014-07-25 14:54:55.180 -0600	START		Running test.script
+2014-07-25 14:54:55.865 -0600	connect		10.10.1.129:5901	1	on_test	test.script
+2014-07-25 14:54:55.870 -0600	Exception	30	Could Not Open Image: 30	2	on_test	test.script
+2014-07-25 14:54:55.890 -0600	EndTestCase		(Duration:"0.703", Errors:"1", Exceptions:"1", StartTime:"2014-07-25 14:54:55 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-25 14:54:57.948 -0600	FAILURE	Screen_Error.png	File Not Found waitfor Error - Could Not Open Image: 30\nExecution Time 0:00:00 test.script

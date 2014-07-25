@@ -30,7 +30,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         }
 
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .openMovies()
                 .verifyTitlesPresent(movieTitles);
@@ -48,7 +48,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         }
 
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .openFeatured()
                 .verifyTitlesPresent(movieTitles);
@@ -66,7 +66,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         }
 
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .openFamily()
                 .verifyTitlesPresent(movieTitles);
@@ -84,7 +84,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         }
 
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .openTvShows()
                 .verifyTitlesPresent(movieTitles);
@@ -97,7 +97,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         List<String> movieTitles = Arrays.asList("MGM", "Starz", "Hallmark Channel", "Encore", "HBO");
 
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .openNetworks()
                 .verifyTitlesPresent(movieTitles);

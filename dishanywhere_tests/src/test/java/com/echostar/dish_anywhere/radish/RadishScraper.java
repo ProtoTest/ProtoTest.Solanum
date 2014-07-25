@@ -93,7 +93,9 @@ public class RadishScraper {
         List<String> types = client.parseAll("$.[*].player_type");
         for (int i = 0; i < types.size(); i++) {
             if (types.get(i).equals(type)) {
-                return client.parse("$.[" + i + "].name");
+                String name =client.parse("$.[" + i + "].name");
+                if(!name.contains("Frozen"))
+                    return name;
             }
         }
 

@@ -28,7 +28,7 @@ public class iPadBlockbuster {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openBlockbuster()
                 .openMovies()
                 .verifyTitlesPresent(movieTitles);
@@ -46,7 +46,7 @@ public class iPadBlockbuster {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openBlockbuster()
                 .openMovies()
                 .verifyTitlesPresent(movieTitles);
@@ -65,7 +65,7 @@ public class iPadBlockbuster {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openBlockbuster()
                 .openTVShows()
                 .verifyTitlesPresent(movieTitles);
@@ -84,7 +84,7 @@ public class iPadBlockbuster {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openBlockbuster()
                 .openMovies()
                 .verifyTitlesPresent(movieTitles);

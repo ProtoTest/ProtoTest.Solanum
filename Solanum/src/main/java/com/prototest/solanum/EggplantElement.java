@@ -4,7 +4,7 @@ import org.joda.time.LocalTime;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.awt.*;
-import java.io.File;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -353,7 +353,7 @@ public class EggplantElement {
             if (isPresent()) {
                 return this;
             } else {
-                driver.refreshScreen();
+                //driver.refreshScreen();
                 now = new LocalTime();
             }
         }
@@ -362,18 +362,19 @@ public class EggplantElement {
 
 
         if(Config.diagnoseFailedImages){
-            Logger.warning(String.format("%s not found.  Performing diagnostic search.", name));
+            Logger.warning(String.format("%s not found.  Opening EggPlant GUI to diagnose failure", name));
+
+            EggplantGUIHook hook = new EggplantGUIHook(this.originalBy);
+            hook.runBatch();
+            Logger.warning(String.format("Eggplant GUI has been launched", name));
+
             now = new LocalTime();
             endTime = now.plusSeconds(secs);
             while (now.isBefore(endTime) && !Thread.interrupted()) {
-                Integer tolerance = Integer.parseInt(Config.standardImageTolerance);
-                tolerance += 10;
-                Option[] options = new Option[1];
-                options[0] = new Option("Tolerance : " + tolerance);
-                originalBy.updateOptions(options);
                 if (isPresent()) {
                     return this;
                 } else {
+                    //driver.refreshScreen();
                     now = new LocalTime();
                 }
             }

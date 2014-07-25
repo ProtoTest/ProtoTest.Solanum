@@ -58,18 +58,6 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return this;
     }
 
-    public DeviceMain returnToDeviceMain() {
-        Logger.info("Return to device home screen.");
-        goHome();
-        return this;
-    }
 
-    public DeviceMain goBackToDeviceScreen() {
-        Logger.info("Pressing back button until device is on home.");
-        DeviceMain main = new DeviceMain();
-        while (!dishAnywhereApp.isPresent()) {
-            nav.backButton.click();
-        }
-        return new DeviceMain();
-    }
+
 }

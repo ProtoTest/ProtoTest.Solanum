@@ -28,8 +28,6 @@ public class GalaxyS5TestBase extends EggplantTestBase {
         // Runs at startup for any test
         new DeviceMain()
                 .goHome()
-                .openDishAnywhereApp()
-                .exitPlayerIfOpen()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()

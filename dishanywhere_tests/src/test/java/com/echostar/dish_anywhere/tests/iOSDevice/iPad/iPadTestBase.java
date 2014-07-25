@@ -10,9 +10,9 @@ public class iPadTestBase extends EggplantTestBase {
     @Override
     public void initializeApp() {
         new DeviceMain()
-                .goHome()
+                .goHomeScreen()
                 .killApp()
-                .openDishAnywhereHome()
+                .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"));
     }

@@ -22,7 +22,7 @@ public class DeviceMain {
 //        return this;
 //    }
 
-    public DeviceMain goHome() {
+    public DeviceMain goHomeScreen() {
         Logger.info("Returning to main device screen...");
 //        if (closeKeyboardButton.isPresent()) {
 //            closeKeyboardButton.tap();
@@ -40,7 +40,8 @@ public class DeviceMain {
         return goHome();
     }
 
-    public DishAnywhereHome openDishAnywhereHome() {
+    public DishAnywhereHome goHome() {
+        goHomeScreen();
         dishAnywhereApp.waitForPresent(30).click();
         EggplantTestBase.driver.refreshScreen();
 

@@ -1,6 +1,7 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.*;
+import sun.swing.SwingUtilities2;
 
 public class DeviceMain {
     private EggplantElement homeScreenIcon = new EggplantElement("homeScreenIcon", By.Image("AndroidPhone/GalaxyS5/System/Screens/homeScreenIcon"));
@@ -21,32 +22,32 @@ public class DeviceMain {
         return this;
     }
 
-    public DeviceMain goHome() {
-        Logger.info("Returning to main device screen...");
-        if (nav.homeButton.isPresent()) {
-            nav.homeButton.click();
-            if(dishAnywhereApp.isPresent()){
-                return this;
+
+
+    public DishAnywhereHome goHome() {
+        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
+            if (!nav.backButton.isPresent()) {
+                EggplantTestBase.driver.disconnect();
+                EggplantTestBase.driver.connect();
+            }
+            else {
+                nav.backButton.click();
+
             }
         }
-        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            nav.backButton.click();
-        }
-        if (!nav.homeButton.isPresent()) {
-            EggplantTestBase.driver.disconnect();
-            EggplantTestBase.driver.connect();
-        }
-        nav.homeButton.click();
-        return new DeviceMain();
-    }
-
-    public DishAnywhereHome openDishAnywhereApp() {
-        Logger.info("Opening Dish Anywhere app...");
         dishAnywhereApp.click();
-        DishAnywherePopups popups = new DishAnywherePopups();
-        popups.waitForScreenToLoad();
-        DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
-        return dishAnywhereHome;
+        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
+            if (!nav.backButton.isPresent()) {
+                EggplantTestBase.driver.disconnect();
+                EggplantTestBase.driver.connect();
+            }
+            else {
+                nav.backButton.click();
+
+            }
+        }
+        dishAnywhereApp.click();
+        return new DishAnywhereHome();
     }
 
     public DeviceMain closePopups() {

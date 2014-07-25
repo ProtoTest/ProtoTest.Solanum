@@ -1,7 +1,7 @@
 package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.*;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
@@ -35,7 +35,8 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
 
     //Not a standalone test - method used by above tests
     private void watchMovie(String movie) {
-        new DishAnywhereHome()
+        new DeviceMain()
+                .goHome()
                 .openOnDemand()
                 .clickSearchButton()
                 .searchFor(movie)
@@ -44,7 +45,7 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
                 .watchMovie()
                 .openControls()
                 .verifyMoviePlays()
-                .nav.homeButton.click();
+                .goHome();
         Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");
     }

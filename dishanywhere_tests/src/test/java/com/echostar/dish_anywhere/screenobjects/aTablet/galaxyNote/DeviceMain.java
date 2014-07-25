@@ -41,15 +41,31 @@ public class DeviceMain {
        return goToHomeScreen();
     }
 
-    public DishAnywhereHome openDishAnywhereHome() {
+    public DishAnywhereHome goHome() {
+        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
+            if (!nav.backButton.isPresent()) {
+                EggplantTestBase.driver.disconnect();
+                EggplantTestBase.driver.connect();
+            }
+            else {
+                nav.backButton.click();
+
+            }
+        }
         dishAnywhereApp.click();
-        while(!dishAnywhereApp.isPresent()){
-            nav.backButton.click();
+        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
+            if (!nav.backButton.isPresent()) {
+                EggplantTestBase.driver.disconnect();
+                EggplantTestBase.driver.connect();
+            }
+            else {
+                nav.backButton.click();
+
+            }
         }
         dishAnywhereApp.click();
         return new DishAnywhereHome();
     }
-
     public DeviceMain clearField(){
         Logger.info("Clearing form field...");
         keyboardDeleteKey.press();

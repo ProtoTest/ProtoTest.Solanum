@@ -29,7 +29,7 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
             movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
-                .openDishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .openBlockbuster()
                 .openMovies()

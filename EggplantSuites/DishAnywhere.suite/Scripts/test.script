@@ -1,0 +1,3 @@
+﻿OpenSuite "DishAnywhere"
+Connect (ServerID:"10.10.1.129", portNum: "5901")
+WaitFor 10, (image: "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton") 

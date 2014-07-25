@@ -16,13 +16,9 @@ public class KindleFireHdxUiTests extends EggplantTestBase {
         Logger.info("Beginning Test: Logout and Login.");
         new DeviceMain()
                 .goHome()
-                .openDishAnywhereHome()
-                .goBackToDeviceScreen()
-                .openDishAnywhereHome()
                 .openSettings()
                 .logout()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
-                .verifyLoggedIn()
-                .returnToDeviceMain();
+                .verifyLoggedIn();
     }
 }

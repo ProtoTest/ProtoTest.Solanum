@@ -49,7 +49,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
         new DeviceMain()
                 .goToHomeScreen()
                 .killApp()
-                .openDishAnywhereHome()
+                .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()

@@ -1,0 +1,5 @@
+﻿2014-07-25 14:59:25.217 -0600	START		Running test.script
+2014-07-25 14:59:25.880 -0600	connect		10.10.1.129:5901	1	on_test	test.script
+2014-07-25 14:59:25.882 -0600	Exception		Too Few Parameters, please use waitfor time, image1[, imageX]	2	on_test	test.script
+2014-07-25 14:59:25.902 -0600	EndTestCase		(Duration:"0.68", Errors:"1", Exceptions:"1", StartTime:"2014-07-25 14:59:25 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-25 14:59:27.585 -0600	FAILURE	Screen_Error.png	Error Running Script Command waitfor Error - Too Few Parameters, please use waitfor time, image1[, imageX]\nExecution Time 0:00:00 test.script

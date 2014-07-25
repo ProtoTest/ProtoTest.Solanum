@@ -1,0 +1,25 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2014-07-25 14:32:25.675 -0600,"Failure",0:00:00,1,0,0,"20140725_143225.675/LogFile.txt","","SenseTalk Compiler Exception -- in test:\nSyntax Error at line 1: Syntax Error - can't understand ""put"" at or near character 50",0
+2014-07-25 14:39:48.614 -0600,"Success",0:00:12,0,0,0,"20140725_143948.614/LogFile.txt","","",1
+2014-07-25 14:42:44.078 -0600,"Success",0:00:09,0,0,0,"20140725_144244.078/LogFile.txt","","",1
+2014-07-25 14:43:11.708 -0600,"Failure",0:00:00,1,0,1,"20140725_144311.708/LogFile.txt","","File Not Found -- waitfor Error - Could Not Open Image: 10",0
+2014-07-25 14:43:22.095 -0600,"Failure",0:00:00,1,0,1,"20140725_144322.095/LogFile.txt","","File Not Found -- waitfor Error - Could Not Open Image: 10",0
+2014-07-25 14:54:55.151 -0600,"Failure",0:00:00,1,0,1,"20140725_145455.151/LogFile.txt","","File Not Found -- waitfor Error - Could Not Open Image: 30",0
+2014-07-25 14:59:25.189 -0600,"Failure",0:00:00,1,0,1,"20140725_145925.189/LogFile.txt","","Error Running Script Command -- waitfor Error - Too Few Parameters, please use waitfor time, image1[, imageX]",0
+2014-07-25 15:02:07.677 -0600,"Failure",0:00:00,1,0,0,"20140725_150207.677/LogFile.txt","","SenseTalk Compiler Exception -- in test:\nSyntax Error at line 2: Syntax Error - can't understand ""image"" at or near character 63",0
+2014-07-25 15:04:14.246 -0600,"Failure",0:02:54,1,0,1,"20140725_150414.246/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand"" within 10.00 seconds  Restricted Search Rectangle ((0,984),(1080,1968))\n",0
+2014-07-25 15:07:19.978 -0600,"Success",0:00:01,0,0,0,"20140725_150719.978/LogFile.txt","","",1
+2014-07-25 15:07:46.290 -0600,"Success",0:00:00,0,0,0,"20140725_150746.290/LogFile.txt","","",1
+2014-07-25 15:09:05.361 -0600,"Success",0:00:00,0,0,0,"20140725_150905.361/LogFile.txt","","",1
+2014-07-25 15:10:12.632 -0600,"Success",0:00:00,0,0,0,"20140725_151012.632/LogFile.txt","","",1
+2014-07-25 15:10:14.255 -0600,"Success",0:00:01,0,0,0,"20140725_151014.255/LogFile.txt","","",1
+2014-07-25 15:47:59.668 -0600,"Failure",0:02:54,1,0,1,"20140725_154759.668/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"" within 10.00 seconds",0
+2014-07-25 15:56:27.506 -0600,"Failure",0:00:00,1,0,1,"20140725_155627.506/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
+2014-07-25 15:56:53.237 -0600,"Failure",0:00:00,1,0,1,"20140725_155653.237/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
+2014-07-25 15:58:19.455 -0600,"Failure",0:00:00,1,0,1,"20140725_155819.455/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
+2014-07-25 15:58:31.829 -0600,"Failure",0:00:00,1,0,1,"20140725_155831.829/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
+2014-07-25 15:58:42.192 -0600,"Success",0:00:00,0,0,0,"20140725_155842.192/LogFile.txt","","",1
+2014-07-25 16:00:03.570 -0600,"Failure",0:00:34,1,0,1,"20140725_160003.570/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"" within 10.00 seconds",0
+2014-07-25 16:00:55.047 -0600,"Failure",0:00:45,1,0,1,"20140725_160055.047/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"" within 10.00 seconds",0
+2014-07-25 16:02:08.847 -0600,"Failure",0:05:09,1,0,1,"20140725_160208.847/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"" within 10.00 seconds",0
+2014-07-25 16:07:27.323 -0600,"Success",0:00:03,0,0,0,"20140725_160727.323/LogFile.txt","","",1

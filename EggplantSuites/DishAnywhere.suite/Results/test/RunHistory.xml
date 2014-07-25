@@ -1,0 +1,294 @@
+﻿<?xml version="1.0"?>
+<runHistory script="test">
+ <run>
+  <RunDate>2014-07-25 14:32:25.675 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.035000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_143225.675/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>SenseTalk Compiler Exception -- in test:
+Syntax Error at line 1: Syntax Error - can't understand "put" at or near character 50</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 14:39:48.614 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>12.804000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_143948.614/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 14:42:44.078 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>9.375000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_144244.078/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 14:43:11.708 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.859000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_144311.708/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>File Not Found -- waitfor Error - Could Not Open Image: 10</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 14:43:22.095 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.046000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_144322.095/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>File Not Found -- waitfor Error - Could Not Open Image: 10</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 14:54:55.151 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.736000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_145455.151/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>File Not Found -- waitfor Error - Could Not Open Image: 30</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 14:59:25.189 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.711000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_145925.189/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- waitfor Error - Too Few Parameters, please use waitfor time, image1[, imageX]</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:02:07.677 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.032000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_150207.677/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>SenseTalk Compiler Exception -- in test:
+Syntax Error at line 2: Syntax Error - can't understand "image" at or near character 63</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:04:14.246 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>174.701000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_150414.246/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen "AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand" within 10.00 seconds  Restricted Search Rectangle ((0,984),(1080,1968))
+</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:07:19.978 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>1.433000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_150719.978/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:07:46.290 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>0.339000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_150746.290/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:09:05.361 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>0.487000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_150905.361/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:10:12.632 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>0.331000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_151012.632/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:10:14.255 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>1.192000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_151014.255/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:47:59.668 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>174.396000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_154759.668/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton" within 10.00 seconds</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:56:27.506 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.090000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_155627.506/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:56:53.237 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.056000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_155653.237/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:58:19.455 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.166000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_155819.455/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:58:31.829 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.052000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_155831.829/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 15:58:42.192 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>0.059000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_155842.192/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 16:00:03.570 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>34.431000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_160003.570/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton" within 10.00 seconds</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 16:00:55.047 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>45.506000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_160055.047/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton" within 10.00 seconds</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 16:02:08.847 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>309.136000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140725_160208.847/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton" within 10.00 seconds</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-07-25 16:07:27.323 -0600</RunDate>
+  <Status>Success</Status>
+  <Duration>3.598000</Duration>
+  <Errors>0</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>0</Exceptions>
+  <Successes>1</Successes>
+  <LogFile>20140725_160727.323/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage></ErrorMessage>
+ </run>
+</runHistory>
