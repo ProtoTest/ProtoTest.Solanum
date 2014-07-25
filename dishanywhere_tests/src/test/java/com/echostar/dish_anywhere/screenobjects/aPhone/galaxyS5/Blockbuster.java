@@ -10,11 +10,11 @@ public class Blockbuster extends DishAnywhereHome {
     private EggplantElement moviesButton
             = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies"));
     private EggplantElement showsButton
-            = new EggplantElement(By.Text("TV Shows", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("TV Shows", SearchRectangle.leftHalf()));
     EggplantElement kidsMoviesButton
-            = new EggplantElement(By.Text("TV Shows", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("Kids Movies", SearchRectangle.leftHalf()));
     EggplantElement kidsTvShowsButton
-            = new EggplantElement(By.Text("TV Shows", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("Kids TV Shows", SearchRectangle.middleHalf()));
 
 
 

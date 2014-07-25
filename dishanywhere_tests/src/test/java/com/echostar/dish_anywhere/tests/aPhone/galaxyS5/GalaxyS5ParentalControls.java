@@ -20,7 +20,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
         Logger.info("Beginning Test: Clear All Parental Controls Blocks and Play Movie.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
-        String movieName = movies.get(0).get("franchiseName");
+        String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);
 
         new DishAnywhereHome()
                 .openSettings()
@@ -39,8 +39,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
         Logger.info("Beginning Test: Set All Parental Controls Blocks and Play Movie");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
-        String movieName = movies.get(0).get("franchiseName");
-
+        String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);
         new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))

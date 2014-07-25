@@ -7,6 +7,7 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
+import org.testng.annotations.BeforeTest;
 
 //
 // Enhanced TestBase class for any Galaxy S5 specific functionality
@@ -21,13 +22,14 @@ public class GalaxyS5TestBase extends EggplantTestBase {
         }
     }
 
-    @Override
+    @BeforeTest
     public void initializeApp() {
         handleAppCrash();
         // Runs at startup for any test
         new DeviceMain()
                 .goHome()
                 .openDishAnywhereApp()
+                .exitPlayerIfOpen()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()

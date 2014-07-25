@@ -18,7 +18,7 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
         new DeviceMain()
-                .goHome()
+                .goToHomeScreen()
                 .killApp()
                 .openDishAnywhereHome()
                 .logOutIfLoggedIn()

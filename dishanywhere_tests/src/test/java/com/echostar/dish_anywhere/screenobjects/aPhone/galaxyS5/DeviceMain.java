@@ -23,15 +23,15 @@ public class DeviceMain {
 
     public DeviceMain goHome() {
         Logger.info("Returning to main device screen...");
-
-        nav.backButton.click();
-        EggplantTestBase.sleep(500);
-        if (nav.backButton.isPresent()) {
+        if (nav.homeButton.isPresent()) {
+            nav.homeButton.click();
+            if(dishAnywhereApp.isPresent()){
+                return this;
+            }
+        }
+        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
             nav.backButton.click();
         }
-        // Wait for the movie to close and screen to rotate.
-        EggplantTestBase.sleep(1500);
-        // If the movie player was open, switching from horizontal to vertical screen causes detection errors.
         if (!nav.homeButton.isPresent()) {
             EggplantTestBase.driver.disconnect();
             EggplantTestBase.driver.connect();
@@ -42,12 +42,10 @@ public class DeviceMain {
 
     public DishAnywhereHome openDishAnywhereApp() {
         Logger.info("Opening Dish Anywhere app...");
-        dishAnywhereApp.waitForPresent(10);
         dishAnywhereApp.click();
         DishAnywherePopups popups = new DishAnywherePopups();
         popups.waitForScreenToLoad();
         DishAnywhereHome dishAnywhereHome = new DishAnywhereHome();
-
         return dishAnywhereHome;
     }
 

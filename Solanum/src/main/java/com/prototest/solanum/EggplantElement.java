@@ -99,7 +99,7 @@ public class EggplantElement {
     public EggplantElement(By by, int waitSec) {
         this.by = by;
         this.originalBy = by;
-        this.name = by.getLocator().replaceAll("[()]", "").replaceAll("[:]]", "_").replaceAll("[\"/:]", "-");
+        this.name = by.getLocator();
         this.waitSec = waitSec;
     }
 
@@ -133,7 +133,7 @@ public class EggplantElement {
      * @return True if the element is present, otherwise false.
      */
     public boolean isPresent() {
-        if (originalBy.type.equals(By.ByType.point)) return true;
+        //if (originalBy.type.equals(By.ByType.point)) return true;
         findLocation();
         if (location == null) {
             return false;
@@ -347,21 +347,49 @@ public class EggplantElement {
     public EggplantElement waitForPresent(Integer secs) {
         if (by.type.equals(By.ByType.point)) return this;
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", originalBy.getLocator(), secs));
-        try{
-            driver.waitFor(by.getLocator(),secs.toString());
-        }catch(Exception e){
-            Logger.error(String.format("%s not found: %s.", name, originalBy.getLocator()));
-            LogElementDiagnosticInfo();
-            if (Config.screenshotOnError && !Config.debugElementLocators) {
-                if (originalBy.getSearchRectangle() == null) {
-                    Logger.screenshot();
+        LocalTime now = new LocalTime();
+        LocalTime endTime = now.plusSeconds(secs);
+        while (now.isBefore(endTime) && !Thread.interrupted()) {
+            if (isPresent()) {
+                return this;
+            } else {
+                driver.refreshScreen();
+                now = new LocalTime();
+            }
+        }
+
+
+
+
+        if(Config.diagnoseFailedImages){
+            Logger.warning(String.format("%s not found.  Performing diagnostic search.", name));
+            now = new LocalTime();
+            endTime = now.plusSeconds(secs);
+            while (now.isBefore(endTime) && !Thread.interrupted()) {
+                Integer tolerance = Integer.parseInt(Config.standardImageTolerance);
+                tolerance += 10;
+                Option[] options = new Option[1];
+                options[0] = new Option("Tolerance : " + tolerance);
+                originalBy.updateOptions(options);
+                if (isPresent()) {
+                    return this;
                 } else {
-                    Logger.screenshot(originalBy.getSearchRectangle().searchRectangle);
+                    now = new LocalTime();
                 }
             }
-            throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
         }
-        return this;
+
+        Logger.error(String.format("%s not found: %s.", name, originalBy.getLocator()));
+
+        LogElementDiagnosticInfo();
+        if (Config.screenshotOnError && !Config.debugElementLocators) {
+            if (originalBy.getSearchRectangle() == null) {
+                Logger.screenshot();
+            } else {
+                Logger.screenshot(originalBy.getSearchRectangle().searchRectangle);
+            }
+        }
+            throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
     }
 
 
@@ -399,8 +427,9 @@ public class EggplantElement {
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
 
-            if (!driver.isPresent(originalBy.getLocator())) {
+            if (!isPresent()) {
                 Logger.debug("Element no longer present.");
+                driver.setOption("ImageSearchCount", Config.imageSearchCount);
                 return this;
             } else {
                 driver.refreshScreen();

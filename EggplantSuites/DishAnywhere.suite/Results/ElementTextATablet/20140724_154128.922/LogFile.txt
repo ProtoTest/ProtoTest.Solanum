@@ -1,0 +1,4 @@
+﻿2014-07-24 15:41:28.925 -0600	START		Running ElementTextATablet.script
+2014-07-24 15:41:31.853 -0600	click	KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/MyDVROption/MyDVROption_Selected	at (730, 1112)	1	on_elementtextatablet	ElementTextATablet.script
+2014-07-24 15:41:31.896 -0600	EndTestCase		(Duration:"2.967", Errors:"0", Exceptions:"0", StartTime:"2014-07-24 15:41:28 -0600", Successes:"1", TestCase:"ElementTextATablet.script", Warnings:"0")
+2014-07-24 15:41:31.920 -0600	SUCCESS		Execution Time 0:00:03 ElementTextATablet.script

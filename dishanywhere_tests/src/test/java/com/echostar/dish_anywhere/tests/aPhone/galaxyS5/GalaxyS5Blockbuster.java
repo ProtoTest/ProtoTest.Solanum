@@ -15,6 +15,7 @@ import java.util.Map;
 public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
 
     private final int MOVIES_TO_TEST = 6;
+    private final int MAX_NAME_LENGTH = 25;
 
     @Test
     public void movieCategory(){
@@ -23,7 +24,8 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            String name =movies.get(i).get("franchiseName");
+            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
         }
 
         new DishAnywhereHome()
@@ -41,7 +43,8 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            String name =movies.get(i).get("franchiseName");
+            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
         }
 
         new DishAnywhereHome()
@@ -59,7 +62,8 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            String name =movies.get(i).get("franchiseName");
+            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
         }
 
         new DishAnywhereHome()
@@ -77,7 +81,8 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            String name =movies.get(i).get("franchiseName");
+            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
         }
 
         new DishAnywhereHome()

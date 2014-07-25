@@ -25,7 +25,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()
@@ -46,7 +46,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()
@@ -68,7 +68,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()
@@ -90,7 +90,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
                 .openDishAnywhereHome()

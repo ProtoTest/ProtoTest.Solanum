@@ -6,13 +6,13 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereHome extends DishAnywhereMain {
-    private EggplantElement settingsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings"));
-    private EggplantElement guideButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide"));
+    public EggplantElement settingsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings"));
+    public EggplantElement guideButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide"));
 
-    private EggplantElement onDemandButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand"));
+    public EggplantElement onDemandButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand"));
 
-    private EggplantElement blockbusterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster"));
-    private EggplantElement viewAllButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.bottomHalf()));
+    public EggplantElement blockbusterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster"));
+    public EggplantElement viewAllButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.bottomHalf()));
 
 
     public DishAnywhereHome() {
@@ -64,7 +64,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     public DeviceMain returnToDeviceMain(){
-        goHome();
+        goToHomeScreen();
         return this;
     }
 }

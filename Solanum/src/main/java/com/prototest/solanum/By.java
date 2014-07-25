@@ -23,7 +23,7 @@ public class By {
     private String locator;
     private SearchRectangle searchRectangle;
     private File image;
-    protected ArrayList<Option> options;
+    protected ArrayList<Option> options = new ArrayList<Option>();
 
     public String getLocator() {
         return buildLocatorString();
@@ -31,7 +31,7 @@ public class By {
 
     private By(String locator, ByType type) {
         this.locator = locator;
-        this.searchRectangle = new SearchRectangle(EggplantTestBase.driver.getScreenRectangle());
+        this.searchRectangle = null;
         this.type = type;
     }
 
@@ -136,7 +136,7 @@ public class By {
      * @return The constructed {@link By}.
      */
     public static By Point(Point point) {
-        String locatorString = String.format("(%s,%s)", point.getX(), point.getY());
+        String locatorString = String.format("(%s,%s", point.getX(), point.getY());
         return new By(locatorString, ByType.point);
     }
 
@@ -145,7 +145,7 @@ public class By {
     }
 
     public void updateOptions(Option... newOptions){
-        ArrayList<Option> finalOptions = new ArrayList<>();
+        ArrayList<Option> finalOptions = new ArrayList<Option>();
         for(Option newOption : newOptions){
            String[] toks =  newOption.getText().split(":");
             if(options.size()==0){

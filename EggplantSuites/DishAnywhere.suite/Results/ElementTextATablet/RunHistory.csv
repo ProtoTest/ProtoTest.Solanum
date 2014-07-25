@@ -1,0 +1,10 @@
+﻿Date Run,Status,Time,# of Errors,# of Warnings,# of Exceptions,Log File,Return Value,Error Message,# of Successes
+2014-07-24 15:35:04.604 -0600,"Success",0:00:02,0,0,0,"20140724_153504.604/LogFile.txt","","",1
+2014-07-24 15:35:14.501 -0600,"Success",0:00:01,0,0,0,"20140724_153514.501/LogFile.txt","","",1
+2014-07-24 15:35:47.619 -0600,"Success",0:00:02,0,0,0,"20140724_153547.619/LogFile.txt","","",1
+2014-07-24 15:36:51.333 -0600,"Failure",0:00:51,1,0,1,"20140724_153651.333/LogFile.txt","","Image Not Found -- click Error - No Image Found On Screen: ""KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/MyDVROption/MyDVROption_DeSelected""",0
+2014-07-24 15:37:52.147 -0600,"Running",-2147483648:-2147483648:-8,0,0,0,"20140724_153752.147/LogFile.txt","","",0
+2014-07-24 15:39:56.249 -0600,"Success",0:00:03,0,0,0,"20140724_153956.249/LogFile.txt","","",1
+2014-07-24 15:40:35.857 -0600,"Running",-2147483648:-2147483648:-8,0,0,0,"20140724_154035.857/LogFile.txt","","",0
+2014-07-24 15:41:28.922 -0600,"Success",0:00:02,0,0,0,"20140724_154128.922/LogFile.txt","","",1
+2014-07-24 15:44:37.954 -0600,"Success",0:00:04,0,0,0,"20140724_154437.954/LogFile.txt","","",1

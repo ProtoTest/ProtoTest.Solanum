@@ -22,7 +22,7 @@ public class DeviceMain {
         return this;
     }
 
-    public DeviceMain goHome() {
+    public DeviceMain goToHomeScreen() {
         Logger.info("Returning to main device screen...");
         if (closeKeyboardButton.isPresent()) {
             closeKeyboardButton.tap();
@@ -38,10 +38,14 @@ public class DeviceMain {
         nav.taskManagerButton.click();
         if(dishAnywhereTaskIcon.isPresent())
             dishAnywhereTaskIcon.swipeRight();
-       return goHome();
+       return goToHomeScreen();
     }
 
     public DishAnywhereHome openDishAnywhereHome() {
+        dishAnywhereApp.click();
+        while(!dishAnywhereApp.isPresent()){
+            nav.backButton.click();
+        }
         dishAnywhereApp.click();
         return new DishAnywhereHome();
     }

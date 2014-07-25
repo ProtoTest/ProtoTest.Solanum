@@ -4,7 +4,7 @@ import com.google.common.base.Joiner;
 import org.joda.time.LocalTime;
 
 import java.awt.*;
-import java.io.File;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,9 +24,28 @@ public class EggplantDriver {
     private EggplantDriveClient client;
     private Rectangle screenRectangle;
     private Point screenSize;
+    PrintWriter writer;
+
 
     public EggplantDriver() {
         this.client = new EggplantDriveClient();
+        createLogFile();
+    }
+
+    private void createLogFile(){
+        try {
+            this.writer = new PrintWriter("output.txt", "UTF-8");
+        } catch (FileNotFoundException e) {
+            File file = new File("output.txt");
+            try {
+                file.createNewFile();
+                createLogFile();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -94,9 +113,6 @@ public class EggplantDriver {
      * Executes a given RunScript command by passing it into the EggplantClient
      */
     public EggplantResponse execute(String command) {
-        if (Config.logDriveCommands) {
-            Logger.debug(String.format(":: Execute : '%s'", command));
-        }
         delay(Config.commandDelayMs);
         EggplantResponse result = client.execute(command);
         return result;
@@ -257,7 +273,7 @@ public class EggplantDriver {
      * Internal Eggplant WaitFor command.  Waits for an element using a string locator to appear in the time specified
      */
     public void waitFor(String locator, String timeoutSec) {
-        execute(String.format("WaitFor %s, %s", locator, timeoutSec));
+        execute(String.format("WaitFor %s, %s", timeoutSec,locator));
     }
 
 

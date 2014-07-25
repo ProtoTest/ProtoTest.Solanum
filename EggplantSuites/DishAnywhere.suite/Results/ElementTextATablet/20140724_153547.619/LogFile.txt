@@ -1,0 +1,4 @@
+﻿2014-07-24 15:35:47.622 -0600	START		Running ElementTextATablet.script
+2014-07-24 15:35:49.780 -0600	click	KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/GuideOption/GuideOption_DeSelected	at (558, 1129)	1	on_elementtextatablet	ElementTextATablet.script
+2014-07-24 15:35:49.818 -0600	EndTestCase		(Duration:"2.191", Errors:"0", Exceptions:"0", StartTime:"2014-07-24 15:35:47 -0600", Successes:"1", TestCase:"ElementTextATablet.script", Warnings:"0")
+2014-07-24 15:35:49.840 -0600	SUCCESS		Execution Time 0:00:02 ElementTextATablet.script

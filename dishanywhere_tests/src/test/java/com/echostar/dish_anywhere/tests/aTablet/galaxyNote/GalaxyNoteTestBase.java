@@ -6,7 +6,7 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Logger;
+import org.testng.annotations.BeforeTest;
 
 /**
  */
@@ -20,12 +20,12 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
         }
     }
 
-    @Override
+    @BeforeTest
     public void initializeApp() {
 
         handleAppCrash();
         DishAnywhereHome home = new DeviceMain()
-                .goHome()
+                .goToHomeScreen()
                 .killApp()
                 .openDishAnywhereHome()
                 .logOutIfLoggedIn()

@@ -17,8 +17,7 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
         Logger.info("Beginning Test: Watch Nagra Movie.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
-        String movie = radishScraper.findMovieWithDrm("nagra");
-
+        String movie = RadishScraper.getShortName(radishScraper.findMovieWithDrm("nagra"),25);
         watchMovie(movie);
         Verifications.addVerification("Watched onDemand nagra movie.", true);
     }
@@ -28,7 +27,7 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
         Logger.info("Beginning Test: Watch Widevine Movie.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
-        String movie = radishScraper.findMovieWithDrm("widevine");
+        String movie = RadishScraper.getShortName(radishScraper.findMovieWithDrm("widevine"),25);
 
         watchMovie(movie);
         Verifications.addVerification("Watched onDemand widevine movie.", true);

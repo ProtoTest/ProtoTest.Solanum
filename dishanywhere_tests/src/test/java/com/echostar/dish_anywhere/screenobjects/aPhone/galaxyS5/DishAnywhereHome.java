@@ -14,7 +14,8 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public DishAnywhereHome openDishAnywhereHome() {
         //dishAnywhereHome.loginIfLoggedOut();
         exitPlayerIfOpen();
-        //EggplantTestBase.sleep(5000);
+        if(dishAnywhereApp.isPresent())
+            dishAnywhereApp.click();
         openGuide();
         return this;
     }
@@ -68,7 +69,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     public DishAnywhereHome exitPlayerIfOpen() {
         Logger.info("Exiting player, if open...");
-        for (int i = 0; i < 10 && ! settingsButton.isPresent(); i++) {
+        for (int i = 0; i < 10 && !settingsButton.isPresent(); i++) {
             nav.backButton.click();
         }
         return this;

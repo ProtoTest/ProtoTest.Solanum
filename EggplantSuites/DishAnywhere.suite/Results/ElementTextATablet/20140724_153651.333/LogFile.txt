@@ -1,0 +1,4 @@
+﻿2014-07-24 15:36:51.336 -0600	START		Running ElementTextATablet.script
+2014-07-24 15:37:43.014 -0600	Exception	KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/MyDVROption/MyDVROption_DeSelected	No Image Found On Screen: "KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/MyDVROption/MyDVROption_DeSelected"	1	on_elementtextatablet	ElementTextATablet.script
+2014-07-24 15:37:43.058 -0600	EndTestCase		(Duration:"51.718", Errors:"1", Exceptions:"1", StartTime:"2014-07-24 15:36:51 -0600", Successes:"0", TestCase:"ElementTextATablet.script", Warnings:"0")
+2014-07-24 15:37:43.299 -0600	FAILURE	Screen_Error.png	Image Not Found click Error - No Image Found On Screen: "KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/MyDVROption/MyDVROption_DeSelected"\nExecution Time 0:00:52 ElementTextATablet.script

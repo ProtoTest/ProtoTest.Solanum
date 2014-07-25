@@ -23,9 +23,15 @@ public class ElementTests {
         Assert.assertEquals(element.getName(),"(image: \"/path/to/image\", SearchRectangle: (0,0,100,100))");
     }
     @Test(groups = {"ElementName"})
-    public void ElementTextNameDefault() {
+         public void ElementTextNameDefault() {
         EggplantElement element = new EggplantElement(By.Text("Text Value"));
         Assert.assertEquals(element.getName(),"(text: \"Text Value\")");
+    }
+
+    @Test(groups = {"ElementName"})
+    public void ElementByPointName() {
+        EggplantElement element = new EggplantElement(By.Point(new Point(10,20)));
+        Assert.assertEquals(element.getName(),"(10.0,20.0)");
     }
 
     @Test(groups = {"ElementLocator"})

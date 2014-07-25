@@ -14,7 +14,7 @@ public class GalaxyNotePasscode extends EggplantTestBase{
     public void movieCategory(){
 
         new DeviceMain()
-                .goHome()
+                .goToHomeScreen()
                 .killApp()
                 .openDishAnywhereHome()
                 .logOutIfLoggedIn()

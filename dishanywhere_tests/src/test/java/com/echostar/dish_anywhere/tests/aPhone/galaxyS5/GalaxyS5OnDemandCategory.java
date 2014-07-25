@@ -26,7 +26,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
 
         new DishAnywhereHome()
@@ -44,7 +44,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getOnDemandFeatured(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
 
         new DishAnywhereHome()
@@ -62,7 +62,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getFamilyCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
 
         new DishAnywhereHome()
@@ -80,7 +80,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getShowsCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
+            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
 
         new DishAnywhereHome()

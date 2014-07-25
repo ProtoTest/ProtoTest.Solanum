@@ -15,6 +15,12 @@ public class RadishScraper {
         android_phone,android_tablet
     }
 
+    public static String getShortName(String name, int max){
+        if(name.length()>max)
+            name = name.substring(0,max);
+        return name;
+    }
+
     public List<String> getMovies() {
         client = new RestClient("http://www.dishanywhere.com");
         String json = client.Get("/radish/v20/dol/movies/carousels/most_popular.json?totalItems=100");

@@ -5,6 +5,9 @@ import org.apache.xmlrpc.client.XmlRpcClientConfigImpl;
 import org.testng.Assert;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
@@ -18,9 +21,26 @@ import java.util.HashMap;
 class EggplantDriveClient {
     private XmlRpcClientConfigImpl config;
     private XmlRpcClient client;
+    PrintWriter writer;
 
+    private void createLogFile(){
+        try {
+            this.writer = new PrintWriter("output.script", "UTF-8");
+        } catch (FileNotFoundException e) {
+            File file = new File("output.script");
+            try {
+                file.createNewFile();
+                createLogFile();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     /** Instantiates a new client to communicate with the xmlrpc service at the location specified in the config file.   */
     EggplantDriveClient(){
+        createLogFile();
         config = new XmlRpcClientConfigImpl();
         try {
             config.setServerURL(new URL(Config.driveUrl));
@@ -47,6 +67,10 @@ class EggplantDriveClient {
 
     /** Executes a SenseTalk commmand, and returns the response */
     EggplantResponse execute(String command) {
+        if (Config.logDriveCommands) {
+            Logger.debug(String.format(":: Execute : '%s'", command));
+            writer.println(command);
+        }
         Object[] params = new Object[]{command};
         try {
            Object result = client.execute("execute",params);

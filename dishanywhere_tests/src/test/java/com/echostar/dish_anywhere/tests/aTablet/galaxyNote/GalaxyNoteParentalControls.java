@@ -47,7 +47,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
 
         String movieName = movies.get(1).get("franchiseName");
         new DeviceMain()
-                .goHome()
+                .goToHomeScreen()
                 .killApp()
                 .openDishAnywhereHome()
                 .logOutIfLoggedIn()

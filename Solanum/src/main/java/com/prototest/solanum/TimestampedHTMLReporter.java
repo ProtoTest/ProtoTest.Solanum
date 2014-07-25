@@ -23,7 +23,7 @@ public class TimestampedHTMLReporter extends HTMLReporter {
             outputDirectoryName = outputDirectory.toString();
         }
 
-
+        System.out.println("HTMLReport : " + new File(outputDirectoryName).getAbsolutePath() + "\\html\\index.html");
         super.generateReport(xmlSuites, suites, outputDirectoryName);    //To change body of overridden methods use File | Settings | File Templates.
     }
 }

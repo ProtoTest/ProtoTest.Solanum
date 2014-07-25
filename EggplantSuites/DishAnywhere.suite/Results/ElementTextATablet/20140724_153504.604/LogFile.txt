@@ -1,0 +1,4 @@
+﻿2014-07-24 15:35:04.608 -0600	START		Running ElementTextATablet.script
+2014-07-24 15:35:06.592 -0600	click	KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/BlockBusterOption/BlockBusterOption_DeSelected	at (1243, 1129)	1	on_elementtextatablet	ElementTextATablet.script
+2014-07-24 15:35:06.626 -0600	EndTestCase		(Duration:"2.014", Errors:"0", Exceptions:"0", StartTime:"2014-07-24 15:35:04 -0600", Successes:"1", TestCase:"ElementTextATablet.script", Warnings:"0")
+2014-07-24 15:35:06.646 -0600	SUCCESS		Execution Time 0:00:02 ElementTextATablet.script

@@ -68,7 +68,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
     public DishAnywhereParentalControls save(){
         saveButton.click();
-        okButton.click();
+        okButton.waitForPresent().click();
         return this;
     }
 

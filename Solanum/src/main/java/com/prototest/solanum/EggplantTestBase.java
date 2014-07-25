@@ -37,17 +37,17 @@ public class EggplantTestBase {
         Config.currentTestName = method.getName();
         Logger.debug("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
-        for (int i = 0; i < 5; i++) {
-            try {
-                Logger.info("Attempt " + (i + 1) + " of 5 to initialize application.");
-                initializeApp();
-                break;
-            } catch (Throwable e) {
-                e.printStackTrace();
-                Logger.error("App initialization failed.");
-                continue;
-            }
-        }
+//        for (int i = 0; i < 5; i++) {
+//            try {
+//                Logger.info("Attempt " + (i + 1) + " of 5 to initialize application.");
+//                initializeApp();
+//                break;
+//            } catch (Throwable e) {
+//                e.printStackTrace();
+//                Logger.error("App initialization failed.");
+//                continue;
+//            }
+//        }
     }
 
     /**

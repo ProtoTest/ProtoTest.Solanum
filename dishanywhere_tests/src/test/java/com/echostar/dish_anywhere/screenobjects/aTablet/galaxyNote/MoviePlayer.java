@@ -5,7 +5,7 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.SearchRectangle;
 
 import java.awt.*;
-public class MoviePlayer extends DishAnywhereHome {
+public class MoviePlayer extends DishAnywhereMain {
     EggplantElement screenElement = new EggplantElement(By.Point(new Point(200, 200)));
     private EggplantElement skipBackButton = new EggplantElement("Player skip back button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton"));
     EggplantElement pauseButton = new EggplantElement("Player pause button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/PauseButton"));
@@ -18,7 +18,7 @@ public class MoviePlayer extends DishAnywhereHome {
         while (! skipBackButton.isPresent()) {
             screenElement.tap();
         }
-        popups.waitForScreenToLoad();
+
         return this;
     }
 
@@ -40,11 +40,16 @@ public class MoviePlayer extends DishAnywhereHome {
     public MoviePlayer verifyDeauthorizationMessageDisplays(){
         deauthorizationMessage.waitForPresent();
         okButton.click();
-        // close the movie
-        nav.backButton.click();
-        // close search results
-        nav.backButton.click();
+
         return this;
+    }
+
+    public DishAnywhereHome goBackHome(){
+        DishAnywhereHome home = new DishAnywhereHome();
+        while(!home.guideButton.isPresent()){
+            nav.backButton.click();
+        }
+        return home;
     }
 
 

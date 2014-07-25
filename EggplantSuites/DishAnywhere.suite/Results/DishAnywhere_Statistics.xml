@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0"?>
 <statistics>
+ <script name="ElementTextATablet">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>7</NumberOfRuns>
+  <NumberOfFails>1</NumberOfFails>
+  <FirstRun>2014-07-24 15:35:04 -0600</FirstRun>
+  <LastRun>2014-07-24 15:44:37 -0600</LastRun>
+  <TotalTimeOnSuccess>16.579000</TotalTimeOnSuccess>
+ </script>
  <script name="ElementTextAPhone">
   <LastStatus>Failure</LastStatus>
   <NumberOfRuns>2</NumberOfRuns>

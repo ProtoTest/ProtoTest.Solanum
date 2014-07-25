@@ -28,7 +28,7 @@ public class GalaxyNoteOnDemandFilters extends EggplantTestBase {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DeviceMain()
-                .goHome()
+                .goToHomeScreen()
                 .killApp()
                 .openDishAnywhereHome()
                 .logOutIfLoggedIn()
