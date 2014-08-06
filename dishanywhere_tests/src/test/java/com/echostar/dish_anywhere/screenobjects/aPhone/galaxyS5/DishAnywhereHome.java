@@ -5,7 +5,7 @@ import com.prototest.solanum.*;
 public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
-    public EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
+    private EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
     private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/DishAnywhereAppIcon"));
 
     public DishAnywhereHome() {
@@ -65,4 +65,13 @@ public class DishAnywhereHome extends DishAnywhereMain {
         }
         return new DeviceMain();
     }
+
+    public DishAnywhereHome exitPlayerIfOpen() {
+        Logger.info("Exiting player, if open...");
+        for (int i = 0; i < 10 && ! settingsButton.isPresent(); i++) {
+            nav.backButton.click();
+        }
+        return this;
+    }
+
 }

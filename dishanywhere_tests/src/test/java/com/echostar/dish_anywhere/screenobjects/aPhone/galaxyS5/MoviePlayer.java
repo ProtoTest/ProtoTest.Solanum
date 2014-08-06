@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
 import java.awt.*;
@@ -15,8 +16,9 @@ public class MoviePlayer extends DishAnywhereHome {
 
     public MoviePlayer openControls() {
         Logger.info("Opening controls...");
-        while (! skipBackButton.isPresent()) {
-            screenElement.doubleClick();
+        for (int i = 0; i < 30 && ! skipBackButton.isPresent(); i++) {
+            screenElement.click();
+            EggplantTestBase.sleep(500);
         }
         popups.waitForScreenToLoad();
         return this;
