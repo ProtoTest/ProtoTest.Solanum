@@ -14,7 +14,6 @@ public class KindleTestBase extends EggplantTestBase {
     public void initializeApp() {
         new DeviceMain()
                 .goHome()
-                .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()
