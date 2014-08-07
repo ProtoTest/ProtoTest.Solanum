@@ -25,17 +25,21 @@ public class DishAnywhereSearchResult {
         if (submitSearchButton.isPresent()) {
             nav.backButton.click();
         }
-        List<EggplantElement> movies = leftMovieBorder.allInstances();
-        for (EggplantElement movie : movies) {
-            movie.click();
-            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
-                return dishAnywhereMovie;
-            } else {
-                dishAnywhereMovie.closeMovie();
-            }
-        }
-        throw new RuntimeException("Movie " + movieName + " was not found in search results!");
+        EggplantElement movie = new EggplantElement("Movie " + movieName, By.Text(movieName));
+        movie.waitForPresent();
+        movie.click();
+        return new DishAnywhereMovie();
+//        List<EggplantElement> movies = leftMovieBorder.allInstances();
+//        for (EggplantElement movie : movies) {
+//            movie.click();
+//            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
+//            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+//                return dishAnywhereMovie;
+//            } else {
+//                dishAnywhereMovie.closeMovie();
+//            }
+//        }
+        //throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
     public EnterPasscodePopup openProtectedMovie(String movieName){
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.

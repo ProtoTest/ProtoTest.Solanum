@@ -49,14 +49,14 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
             tvyCheckbox.swipeUp();
         }
         if (tvmaChecked.isPresent())
-            tv14Checkbox.click();
+            tvmaCheckbox.click();
         return this;
     }
 
 
     public DishAnywhereParentalControls setTVYBlocked() {
         if (!tvyCheckbox.isPresent()) {
-            pgCheckbox.swipeDown();
+            tvmaCheckbox.swipeDown();
         }
         if (!tvyChecked.isPresent())
             tvyCheckbox.click();

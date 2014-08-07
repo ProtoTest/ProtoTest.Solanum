@@ -16,12 +16,12 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         return new FilterPopup();
     }
     public DishAnywhereMovie openMovie(String name){
-        EggplantElement movie  = new EggplantElement("movie", By.Text(name));
+        EggplantElement movie  = new EggplantElement("movie", By.Text(truncateTitle(name,15)));
         movie.waitForPresent(30).click();
         return new DishAnywhereMovie();
     }
     public EnterPasscodePopup openProtectedMovie(String name){
-        EggplantElement movie  = new EggplantElement("movie", By.Text(name));
+        EggplantElement movie  = new EggplantElement("movie", By.Text(truncateTitle(name,15)));
         movie.waitForPresent().click();
         return new EnterPasscodePopup();
     }
@@ -37,12 +37,10 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 
         List<EggplantElement> movieElements = leftMovieBorder.allInstances();
 
-        for (int i = 0; i < movieElements.size(); ++i) {
-            movieElements.get(i).click();
-            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            String title = titles.get(i);
-            new EggplantElement(title, By.Text(title)).verifyPresent();
-            dishAnywhereMovie.closeMovie();
+        for (String title : titles) {
+            EggplantElement movie  = new EggplantElement("movie", By.Text(truncateTitle(title,15)));
+            movie.verifyPresent();
+            return this;
         }
         return this;
     }
@@ -61,9 +59,4 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
     }
 
 
-    public DishAnywhereMovie openMovie(int i) {
-        List<EggplantElement> movieElements = leftMovieBorder.allInstances();
-        movieElements.get(0).click();
-        return new DishAnywhereMovie();
-    }
 }

@@ -9,7 +9,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     private EggplantElement settingsButton = new EggplantElement("settingsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption", SearchRectangle.bottomQuarter()));
     private EggplantElement guideButton = new EggplantElement("guideButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/GuideOption", SearchRectangle.bottomQuarter()));
 
-    private EggplantElement onDemandButton = new EggplantElement("onDemandButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/OnDemandOption", SearchRectangle.bottomQuarter()));
+    protected EggplantElement onDemandButton = new EggplantElement("onDemandButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/OnDemandOption", SearchRectangle.bottomQuarter()));
 
     private EggplantElement blockbusterButton = new EggplantElement("blockbusterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/BlockBusterOption", SearchRectangle.bottomQuarter()));
     private EggplantElement viewAllButton = new EggplantElement("viewAllButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.rightQuarter()));

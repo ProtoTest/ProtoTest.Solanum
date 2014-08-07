@@ -6,7 +6,7 @@ import com.prototest.solanum.EggplantElement;
 /**
  * Created by Brian on 6/4/2014.
  */
-public class FilterPopup extends DeviceMain {
+public class FilterPopup extends DishAnywhereHome {
     public EggplantElement doneButton = new EggplantElement("doneButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement dateOption = new EggplantElement("dateOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
     public EggplantElement titleOption = new EggplantElement("titleOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption"));
@@ -28,6 +28,13 @@ public class FilterPopup extends DeviceMain {
 
     public DishAnywhereScrollView done(){
         doneButton.click();
+        return new DishAnywhereScrollView();
+
+    }
+
+
+    public DishAnywhereScrollView doneNewSkin(){
+        onDemandButton.click();
         return new DishAnywhereScrollView();
 
     }
