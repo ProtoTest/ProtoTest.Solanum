@@ -4,6 +4,7 @@ import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMa
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 /**
@@ -11,9 +12,8 @@ import org.testng.annotations.BeforeTest;
 public class KindleTestBase extends EggplantTestBase {
 
     @BeforeTest
-    public void initializeApp() {
+    public void clearAppState() {
         new DeviceMain()
-                .goHome()
                 .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -26,8 +26,8 @@ public class KindleTestBase extends EggplantTestBase {
                 .openGuide();
     }
 
-    @AfterMethod
-    public void uninitializeApp() {
-        new DeviceMain().goHome().goHome();
+    @BeforeMethod
+    public void goBackHome() {
+        new DeviceMain().goHome();
     }
 }

@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.*;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 
 /**
  */
@@ -17,7 +18,7 @@ public class DishAnywhereMovie extends DishAnywhereMain {
     }
 
     public DishAnywhereOnDemand closeMovie(){
-        nav.backButton.click();
+        EggplantTestBase.driver.PressBackButton();
         return new DishAnywhereOnDemand();
     }
 

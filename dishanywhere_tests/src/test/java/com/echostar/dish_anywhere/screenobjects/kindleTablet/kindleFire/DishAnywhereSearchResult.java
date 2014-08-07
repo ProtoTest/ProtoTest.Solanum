@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.SearchRectangle;
 
 import java.util.List;
@@ -23,13 +24,13 @@ public class DishAnywhereSearchResult {
     public DishAnywhereMovie openMovie(String movieName) {
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
         if (submitSearchButton.isPresent()) {
-            nav.backButton.click();
+            EggplantTestBase.driver.PressBackButton();
         }
         List<EggplantElement> movies = leftMovieBorder.allInstances();
         for (EggplantElement movie : movies) {
             movie.click();
             DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) {
                 return dishAnywhereMovie;
             } else {
                 dishAnywhereMovie.closeMovie();
@@ -40,7 +41,7 @@ public class DishAnywhereSearchResult {
     public EnterPasscodePopup openProtectedMovie(String movieName){
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
         if (submitSearchButton.isPresent()) {
-            nav.backButton.click();
+            EggplantTestBase.driver.PressBackButton();
         }
         List<EggplantElement> movies = leftMovieBorder.allInstances();
 

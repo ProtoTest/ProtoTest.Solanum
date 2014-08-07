@@ -1,25 +1,22 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.EggplantKeys;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement allTitles
-            = new EggplantElement(By.Text("All Titles", SearchRectangle.topHalf()));
+            = new EggplantElement(By.Text("All Titles", SearchRectangle.Quadrants.TOP_HALF));
     private EggplantElement blockbusterButton
-            = new EggplantElement(By.Text("Blockbuster", SearchRectangle.topHalf()));
+            = new EggplantElement(By.Text("Blockbuster", SearchRectangle.Quadrants.TOP_HALF));
     private EggplantElement featuredButton
-            = new EggplantElement(By.Text("Featured", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("Featured", SearchRectangle.Quadrants.MIDDLE_HALF));
     private EggplantElement moviesButton
-            = new EggplantElement(By.Text("Movies", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("Movies", SearchRectangle.Quadrants.MIDDLE_HALF));
     private EggplantElement showsButton
-            = new EggplantElement(By.Text("TV Shows", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("TV Shows", SearchRectangle.Quadrants.MIDDLE_HALF));
     private EggplantElement familyButton
-            = new EggplantElement(By.Text("Family", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("Family", SearchRectangle.Quadrants.MIDDLE_HALF));
     private EggplantElement latinoButton
-            = new EggplantElement(By.Text("Latino", SearchRectangle.middleHalf()));
+            = new EggplantElement(By.Text("Latino", SearchRectangle.Quadrants.MIDDLE_HALF));
     private EggplantElement networksButton
             = new EggplantElement(By.Text("Networks"));
     private EggplantElement searchButton
@@ -37,7 +34,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
 
     public DishAnywhereOnDemand goToOnDemandRoot() {
         for (int i = 0; i < 10 && !searchButton.isPresent(); i++) {
-            nav.backButton.click();
+            EggplantTestBase.driver.PressBackButton();
         }
         searchButton.verifyPresent();
         return this;
@@ -76,7 +73,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereSearchResult searchFor(String movie) {
 
         searchInputClearButton.click();
-        searchInput.type(movie);
+        searchInput.setText(movie);
         searchInput.sendKeys(EggplantKeys.enter);
 
         return new DishAnywhereSearchResult();
@@ -95,9 +92,9 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
         String searchTerm = movie.substring(0, movie.length()-1);
         searchInputClearButton.click();
-        searchInput.type(searchTerm);
+        searchInput.setText(searchTerm);
 
-        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.topHalf()));
+        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.Quadrants.TOP_HALF));
         movieResultElement.waitForPresent(60);
 
         movieResultElement.click();

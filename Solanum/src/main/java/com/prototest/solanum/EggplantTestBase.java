@@ -27,27 +27,11 @@ public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
     static EggplantProcess eggplantProcess = new EggplantProcess();
 
-    /**
-     * This method is automatically called by TestNG before each test method.  It will store the name of the test,
-     * clear
-     * verifications, and get ready to run the test.
-     */
     @BeforeMethod
     public void testSetup(Method method) {
         Config.currentTestName = method.getName();
         Logger.debug("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
-//        for (int i = 0; i < 5; i++) {
-//            try {
-//                Logger.info("Attempt " + (i + 1) + " of 5 to initialize application.");
-//                initializeApp();
-//                break;
-//            } catch (Throwable e) {
-//                e.printStackTrace();
-//                Logger.error("App initialization failed.");
-//                continue;
-//            }
-//        }
     }
 
     /**
@@ -146,32 +130,25 @@ public class EggplantTestBase {
         Logger.debug("Eggplant drive started with options : " + driver.getOptions());
         driver.setOption("ImageSearchDelay", String.valueOf(Config.imageSearchDelay));
         driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
-        driver.setOption("PreciseImageTolerance", String.valueOf(Config.preciseImageTolerance));
+       // driver.setOption("PreciseImageTolerance", String.valueOf(Config.preciseImageTolerance));
         driver.setOption("StandardImageTolerance", String.valueOf(Config.standardImageTolerance));
-        driver.setOption("MouseClickDelay", String.valueOf(Config.mouseClickDelay));
-        driver.setOption("RemoteWorkInterval",String.valueOf(Config.remoteWorkInterval));
-        Logger.debug("Eggplant drive set with options : " + driver.getOptions());
+       // driver.setOption("MouseClickDelay", String.valueOf(Config.mouseClickDelay));
+       // driver.setOption("RemoteWorkInterval",String.valueOf(Config.remoteWorkInterval));
+       // Logger.debug("Eggplant drive set with options : " + driver.getOptions());
     }
 
     /**
      * Start the eggplant drive process
      */
     protected void startEggplant() {
-
-        if (driver.isDriveRunning()) {
-            Logger.info("Drive is already running.");
-            eggplantProcess = new EggplantProcess();
-            return;
-        } else {
-            if (Config.manageEggdriveProcess) {
-                Logger.info("Launching Eggplant Drive");
-                eggplantProcess.kill();
-                eggplantProcess.start();
-            }
-            driver.startSuite(Config.suitePath);
-            Logger.info("Eggplant Drive started.");
+        if (Config.manageEggdriveProcess) {
+            Logger.info("Launching Eggplant Drive");
+            eggplantProcess.kill();
+            eggplantProcess.start();
         }
-    }
+        driver.startSuite(Config.suitePath);
+        Logger.info("Eggplant Drive started.");
+        }
 
     /**
      * Stop eggplant drive process.

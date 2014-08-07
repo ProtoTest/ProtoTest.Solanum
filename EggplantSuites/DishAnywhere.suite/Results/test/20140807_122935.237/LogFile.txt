@@ -1,0 +1,6 @@
+﻿2014-08-07 12:29:35.240 -0600	START		Running test.script
+2014-08-07 12:29:35.389 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-07 12:29:36.867 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-07 12:29:46.858 -0600	Exception	(CaseSensitive:"No", Contrast:"Off", ImageLocation:"", ImageRectangle:"", Language:"English", SearchRectangle:(0,0,1280,212), text:"Movies", TextPlatform:"Generic OCR")	Unable To Find Any Image On Screen "(TEXT:"Movies")" within 2.00 seconds	3	on_test	test.script
+2014-08-07 12:29:46.890 -0600	EndTestCase		(Duration:"11.645", Errors:"1", Exceptions:"1", StartTime:"2014-08-07 12:29:35 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-07 12:29:47.178 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "(TEXT:"Movies")" within 2.00 seconds  Restricted Search Rectangle ((0,0),(1280,212))\n\nExecution Time 0:00:11 test.script

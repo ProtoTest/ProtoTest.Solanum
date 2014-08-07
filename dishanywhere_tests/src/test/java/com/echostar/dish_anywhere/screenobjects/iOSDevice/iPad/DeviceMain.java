@@ -10,8 +10,8 @@ public class DeviceMain {
     protected EggplantElement keyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("iosTablet/iPadAir/System/Keyboard/DeleteKey"));
     protected EggplantElement usbConnectedIcon = new EggplantElement("usbConnectedIcon", By.Image("iosTablet/iPadAir/System/Device/usbConnectedIcon"));
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("iosTablet/iPadAir/System/Apps/DishAnywhereIcon"));
-    protected EggplantElement dishAnywhereTaskIcon = new EggplantElement("Anywhere Task Icon", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/TaskIcon",SearchRectangle.leftQuarter()));
-    protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("iosTablet/iPadAir/System/Device/RemoveFromList", SearchRectangle.leftQuarter()));
+    protected EggplantElement dishAnywhereTaskIcon = new EggplantElement("Anywhere Task Icon", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/TaskIcon",SearchRectangle.Quadrants.LEFT_QUARTER));
+    protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("iosTablet/iPadAir/System/Device/RemoveFromList", SearchRectangle.Quadrants.LEFT_QUARTER));
 
     public final DeviceNavigation nav = new DeviceNavigation();
 

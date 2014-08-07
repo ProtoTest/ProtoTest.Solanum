@@ -10,8 +10,8 @@ public class DeviceMain {
     protected EggplantElement keyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("AndroidTablet/GalaxyNote/System/Keyboard/DeleteKey"));
     protected EggplantElement usbConnectedIcon = new EggplantElement("usbConnectedIcon", By.Image("AndroidTablet/GalaxyNote/System/Device/usbConnectedIcon"));
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"));
-    protected EggplantElement dishAnywhereTaskIcon = new EggplantElement("Anywhere Task Icon", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/TaskIcon",SearchRectangle.leftQuarter()));
-    protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("AndroidTablet/GalaxyNote/System/Device/RemoveFromList", SearchRectangle.leftQuarter()));
+    protected EggplantElement dishAnywhereTaskIcon = new EggplantElement("Anywhere Task Icon", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/TaskIcon",SearchRectangle.Quadrants.LEFT_QUARTER));
+    protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("AndroidTablet/GalaxyNote/System/Device/RemoveFromList", SearchRectangle.Quadrants.LEFT_QUARTER));
 
     public final DeviceNavigation nav = new DeviceNavigation();
 
@@ -23,47 +23,26 @@ public class DeviceMain {
     }
 
     public DeviceMain goToHomeScreen() {
-        Logger.info("Returning to main device screen...");
-        if (closeKeyboardButton.isPresent()) {
-            closeKeyboardButton.tap();
-        }
-        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
-            nav.backButton.tap();
-        }
-        //nav.homeButton.waitForPresent(20).click();
-        return new DeviceMain();
+        EggplantTestBase.driver.PressHomeButton();
+        return this;
     }
 
     public DeviceMain killApp(){
+        EggplantTestBase.driver.PressHomeButton();
         nav.taskManagerButton.click();
-        if(dishAnywhereTaskIcon.isPresent())
-            dishAnywhereTaskIcon.swipeRight();
-       return goToHomeScreen();
+        dishAnywhereTaskIcon.swipeRight();
+       return this;
     }
 
     public DishAnywhereHome goHome() {
-        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            if (!nav.backButton.isPresent()) {
-                EggplantTestBase.driver.disconnect();
-                EggplantTestBase.driver.connect();
-            }
-            else {
-                nav.backButton.click();
-
-            }
-        }
+        EggplantTestBase.driver.PressHomeButton();
         dishAnywhereApp.click();
-        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            if (!nav.backButton.isPresent()) {
-                EggplantTestBase.driver.disconnect();
-                EggplantTestBase.driver.connect();
-            }
-            else {
-                nav.backButton.click();
-
-            }
+        for (int i=0;i<10&&!dishAnywhereApp.isPresent();i++) {
+            EggplantTestBase.driver.PressBackButton();
         }
-        dishAnywhereApp.click();
+        for (int i=0;i<5&&dishAnywhereApp.isPresent();i++) {
+            dishAnywhereApp.click();
+        }
         return new DishAnywhereHome();
     }
     public DeviceMain clearField(){

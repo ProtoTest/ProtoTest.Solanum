@@ -1,0 +1,4 @@
+﻿2014-08-05 14:09:25.968 -0600	START		Running test.script
+2014-08-05 14:09:27.889 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYChecked	at (644, 181)	1	on_test	test.script
+2014-08-05 14:09:27.921 -0600	EndTestCase		(Duration:"1.948", Errors:"0", Exceptions:"0", StartTime:"2014-08-05 14:09:25 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-05 14:09:27.958 -0600	SUCCESS		Execution Time 0:00:02 test.script

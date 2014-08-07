@@ -69,7 +69,7 @@ public class Config {
     public static String imageSearchDelay = getPropertyValue("imageSearchDelay","0.1");
     public static String preciseImageTolerance = getPropertyValue("preciseImageTolerance","1");
     public static String standardImageTolerance = getPropertyValue("standardImageTolerance","70");
-    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".2");
+    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".5");
     public static String remoteWorkInterval = getPropertyValue("remoteWorkInterval","0.1");
     public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
     public static String currentTestName = "Test";
@@ -78,7 +78,7 @@ public class Config {
     public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
     public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
     public static int retryCount = getPropertyValue("retryCount", 1);
-    public static boolean diagnoseFailedImages = getPropertyValue("diagnoseFailedImages",true);
+    public static boolean diagnoseFailedImages = getPropertyValue("diagnoseFailedImages",false);
 
     //get the test properties.
     public static String getTestProp(String key) {

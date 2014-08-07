@@ -17,7 +17,7 @@ public class TimestampedHTMLReporter extends HTMLReporter {
     public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectoryName) {
         if (Config.timestampHtmlLog) {
             Date now = new Date();
-            SimpleDateFormat dateFormat = new SimpleDateFormat("MM_dd_yyyy__HH_mm");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MM_dd_yyyy__HH_mm_ss");
             File outputDirectory = new File(outputDirectoryName, dateFormat.format(now).toString());
             outputDirectory.mkdir();
             outputDirectoryName = outputDirectory.toString();

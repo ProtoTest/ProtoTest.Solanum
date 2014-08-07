@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.Logger;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 public class DishAnywhereHome extends DishAnywhereMain {
     public EggplantElement settingsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings"));
@@ -12,7 +9,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public EggplantElement onDemandButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand"));
 
     public EggplantElement blockbusterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster"));
-    public EggplantElement viewAllButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.bottomHalf()));
+    public EggplantElement viewAllButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.Quadrants.BOTTOM_HALF));
 
 
     public DishAnywhereHome() {
@@ -23,7 +20,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
         if(loggedIn()){
            return openSettings().logout();
         }
-        return new DishAnywhereLogin();
+         return new DishAnywhereLogin();
     }
 
     private boolean loggedIn() {

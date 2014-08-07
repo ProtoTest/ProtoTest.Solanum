@@ -1,0 +1,4 @@
+﻿2014-07-31 10:28:07.681 -0600	START		Running test.script
+2014-07-31 10:28:12.127 -0600	click	KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption	at (1403, 1123)	1	on_test	test.script
+2014-07-31 10:28:12.155 -0600	EndTestCase		(Duration:"4.47", Errors:"0", Exceptions:"0", StartTime:"2014-07-31 10:28:07 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-07-31 10:28:12.183 -0600	SUCCESS		Execution Time 0:00:05 test.script

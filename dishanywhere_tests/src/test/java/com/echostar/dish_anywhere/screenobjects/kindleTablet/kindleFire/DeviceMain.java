@@ -10,43 +10,32 @@ public class DeviceMain {
     protected EggplantElement closeKeyboardButton = new EggplantElement("closeKeyboardButton", By.Image("KindleTablet/KindleFireHDX/System/Device/closeKeyboardButton"));
     protected EggplantElement keyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("KindleTablet/KindleFireHDX/System/Keyboard/DeleteKey"));
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/DishAnywhereAppIcon"));
-    protected EggplantElement appsTab = new EggplantElement("Kindle Apps Tab", By.Text("Apps", SearchRectangle.topHalf()));
+    protected EggplantElement appsTab = new EggplantElement("Kindle Apps Tab", By.Text("Apps", SearchRectangle.Quadrants.TOP_HALF));
 
     public final DeviceNavigation nav = new DeviceNavigation();
 
     public DishAnywhereHome goHome() {
-        for (int i=0;i<5&&!appsTab.isPresent();i++) {
-            if (!nav.backButton.isPresent()) {
-                EggplantTestBase.driver.disconnect();
-                EggplantTestBase.driver.connect();
-            }
-            else {
-                nav.backButton.click();
-
-            }
+        EggplantTestBase.driver.PressHomeButton();
+        if(dishAnywhereApp.isPresent()){
+            dishAnywhereApp.click();
         }
-        appsTab.click();
-        dishAnywhereApp.click();
+        else{
+            appsTab.click();
+            dishAnywhereApp.click();
+        }
         for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            if (!nav.backButton.isPresent()) {
-                EggplantTestBase.driver.disconnect();
-                EggplantTestBase.driver.connect();
-            }
-            else {
-                nav.backButton.click();
-
-            }
+            EggplantTestBase.driver.PressBackButton();
         }
         dishAnywhereApp.click();
         return new DishAnywhereHome();
     }
 
     public DeviceMain killApp(){
-        nav.homeButton.click();
+        EggplantTestBase.driver.PressHomeButton();
         EggplantTestBase.driver.swipeDown(new Point(EggplantTestBase.driver.getScreenSize().x/2,0));
         nav.settingsButton.waitForPresent(30).click();
         new KindleSettings().stopApplication("Anywhere");
-        nav.homeButton.click();
+        EggplantTestBase.driver.PressHomeButton();
         return new DeviceMain();
     }
 

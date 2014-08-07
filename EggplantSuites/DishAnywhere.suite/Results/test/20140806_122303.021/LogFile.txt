@@ -1,0 +1,6 @@
+﻿2014-08-06 12:23:03.024 -0600	START		Running test.script
+2014-08-06 12:23:03.120 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-06 12:23:03.123 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-06 12:23:03.847 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (831, 381)	3	on_test	test.script
+2014-08-06 12:23:03.876 -0600	EndTestCase		(Duration:"0.848", Errors:"0", Exceptions:"0", StartTime:"2014-08-06 12:23:03 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-06 12:23:03.908 -0600	SUCCESS		Execution Time 0:00:00 test.script

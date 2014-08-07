@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<runHistory script="ElementTextAKindle">
+ <run>
+  <RunDate>2014-07-30 16:39:35.985 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.056000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140730_163935.985/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>No Remote Connection -- waitfor Error - Remote Connection Unavailable</ErrorMessage>
+ </run>
+</runHistory>

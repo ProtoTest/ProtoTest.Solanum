@@ -15,7 +15,7 @@ public class MoviePlayer extends DishAnywhereHome {
 
     public MoviePlayer openControls() {
         Logger.info("Opening controls...");
-        while (! skipBackButton.isPresent()) {
+        for (int i=0;i<10&&! skipBackButton.isPresent();i++) {
             screenElement.doubleClick();
         }
         popups.waitForScreenToLoad();

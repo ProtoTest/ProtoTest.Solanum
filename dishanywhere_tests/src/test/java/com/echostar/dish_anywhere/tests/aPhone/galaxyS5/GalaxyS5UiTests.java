@@ -17,8 +17,7 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
     @Test
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
-        new DeviceMain().goHome()
-                .goHome()
+        new DishAnywhereHome()
                 .openSettings()
                 .logout()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))

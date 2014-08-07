@@ -1,18 +1,15 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.Logger;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 public class DishAnywhereHome extends DishAnywhereMain {
-    private EggplantElement settingsButton = new EggplantElement("settingsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption", SearchRectangle.bottomQuarter()));
-    private EggplantElement guideButton = new EggplantElement("guideButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/GuideOption", SearchRectangle.bottomQuarter()));
+    public EggplantElement settingsButton = new EggplantElement("settingsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption", SearchRectangle.Quadrants.BOTTOM_QUARTER));
+    public EggplantElement guideButton = new EggplantElement("guideButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/GuideOption", SearchRectangle.Quadrants.BOTTOM_QUARTER));
 
-    private EggplantElement onDemandButton = new EggplantElement("onDemandButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/OnDemandOption", SearchRectangle.bottomQuarter()));
+    public EggplantElement onDemandButton = new EggplantElement("onDemandButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/OnDemandOption", SearchRectangle.Quadrants.BOTTOM_QUARTER));
 
-    private EggplantElement blockbusterButton = new EggplantElement("blockbusterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/BlockBusterOption", SearchRectangle.bottomQuarter()));
-    private EggplantElement viewAllButton = new EggplantElement("viewAllButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.rightQuarter()));
+    public EggplantElement blockbusterButton = new EggplantElement("blockbusterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/BlockBusterOption", SearchRectangle.Quadrants.BOTTOM_QUARTER));
+    public EggplantElement viewAllButton = new EggplantElement("viewAllButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.Quadrants.RIGHT_QUARTER));
 
     public DishAnywhereLogin logOutIfLoggedIn() {
         Logger.info("Logging out if logged in.");
@@ -31,7 +28,12 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public DishAnywhereSettings openSettings() {
         Logger.info("Opening Settings panel.");
         settingsButton.click();
-        return new DishAnywhereSettings();
+        DishAnywhereSettings settings = new DishAnywhereSettings();
+        if(!settings.authorizedDevicesButton.isPresent(5)){
+            Logger.info("Clicking settings again");
+            new EggplantElement(By.Text("Settings", SearchRectangle.Quadrants.BOTTOM_QUARTER)).click();
+        }
+        return settings ;
     }
 
     public DishAnywhereHome openGuide() {

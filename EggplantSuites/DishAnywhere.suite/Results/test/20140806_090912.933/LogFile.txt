@@ -1,0 +1,2 @@
+﻿2014-08-06 09:09:12.936 -0600	START		Running test.script
+2014-08-06 09:09:13.083 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script

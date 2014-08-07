@@ -1,0 +1,4 @@
+﻿2014-08-05 14:05:06.426 -0600	START		Running test.script
+2014-08-05 14:06:47.359 -0600	Exception	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked	No Image Found On Screen: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked"	1	on_test	test.script
+2014-08-05 14:06:47.402 -0600	EndTestCase		(Duration:"100.972", Errors:"1", Exceptions:"1", StartTime:"2014-08-05 14:05:06 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-05 14:06:47.525 -0600	FAILURE	Screen_Error.png	Image Not Found click Error - No Image Found On Screen: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked"\nExecution Time 0:01:41 test.script

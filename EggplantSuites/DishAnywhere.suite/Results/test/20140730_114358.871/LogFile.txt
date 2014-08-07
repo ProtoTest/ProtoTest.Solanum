@@ -1,0 +1,4 @@
+﻿2014-07-30 11:43:58.895 -0600	START		Running test.script
+2014-07-30 11:43:59.018 -0600	Exception		Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-30 11:43:59.050 -0600	EndTestCase		(Duration:"0.148", Errors:"1", Exceptions:"1", StartTime:"2014-07-30 11:43:58 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-30 11:43:59.075 -0600	FAILURE		Error Running Script Command opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite\nExecution Time 0:00:01 test.script

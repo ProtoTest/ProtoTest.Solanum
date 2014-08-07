@@ -1,0 +1,2 @@
+﻿2014-07-30 12:01:56.798 -0600	START		Running test.script
+2014-07-30 12:02:21.311 -0600	connect		7706e2a1:5901	1	on_test	test.script

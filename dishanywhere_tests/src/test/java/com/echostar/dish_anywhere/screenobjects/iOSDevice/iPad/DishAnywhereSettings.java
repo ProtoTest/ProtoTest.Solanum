@@ -19,7 +19,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     public DishAnywhereLogin logout() {
         Logger.info("Logging out...");
         if (! logoutButton.isPresent()) {
-            new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter(),
+            new EggplantElement(By.Text("On Demand", SearchRectangle.Quadrants.BOTTOM_QUARTER,
                         TextOption.hotSpot(new Point(0,-400))))
                 .swipeUp();
         }

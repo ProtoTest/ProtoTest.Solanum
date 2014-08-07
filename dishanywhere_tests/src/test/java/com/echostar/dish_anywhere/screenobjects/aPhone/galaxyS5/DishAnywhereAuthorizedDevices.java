@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
 public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
@@ -19,7 +20,7 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
             }
         }
         Logger.info("Device authorized.");
-        nav.backButton.click();
+        EggplantTestBase.driver.PressBackButton();
         return this;
     }
 

@@ -1,0 +1,5 @@
+﻿2014-07-30 12:51:44.049 -0600	START		Running test.script
+2014-07-30 12:51:44.509 -0600	connect		192.168.1.6:5901	1	on_test	test.script
+2014-07-30 12:58:38.862 -0600	Exception	KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton	Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton" within 2.00 seconds	2	on_test	test.script
+2014-07-30 12:58:38.888 -0600	EndTestCase		(Duration:"414.834", Errors:"1", Exceptions:"1", StartTime:"2014-07-30 12:51:44 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-30 12:58:39.091 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton" within 2.00 seconds\nExecution Time 0:06:54 test.script

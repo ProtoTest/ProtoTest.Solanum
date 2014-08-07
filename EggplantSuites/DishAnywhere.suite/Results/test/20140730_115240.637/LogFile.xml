@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<testsuites>
+ <testsuite name="test.script" package="DishAnywhere.suite" timestamp="2014-07-30 11:52:40.637 -0600"
+ tests="1" successes="0" errors="1" time="0.008000">
+  <properties>
+   <property name="RunDate" value="2014-07-30 11:52:40.637 -0600"/>
+   <property name="Status" value="Failure"/>
+  </properties>
+  <testcase name="test.script" assertions="1" successes="0" errors="1" time="0.002">
+  </testcase>
+ </testsuite>
+</testsuites>

@@ -11,7 +11,7 @@ public class DishAnywhereLogin extends DeviceMain {
     private EggplantElement onlineIdEnd = new EggplantElement("onlineIdEnd", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/OnlineIDFieldEnd"));
     private EggplantElement passwordFieldEnd = new EggplantElement("passwordFieldEnd", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/PasswordFieldEnd"));
     private EggplantElement loginButton = new EggplantElement("loginButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"));
-    private EggplantElement errorField = new EggplantElement("errorField", By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
+    private EggplantElement errorField = new EggplantElement("errorField", By.Text("The Online ID / Password combination", SearchRectangle.Quadrants.TOP_HALF));
 
     public final DishAnywherePopups popups = new DishAnywherePopups();
 
@@ -21,22 +21,19 @@ public class DishAnywhereLogin extends DeviceMain {
         if(!onlineId.isPresent()){
             loginButton.click();
         }
-        onlineId.press();
-        onlineId.sendKeys(EggplantKeys.backspace);
-
-        onlineId.type(username);
-        passwordField.type(password);
+        onlineId.setText(username);
+        passwordField.setText(password);
         if (closeKeyboardButton.isPresent()){
             closeKeyboardButton.click();
         }
-        loginButton.resetLocation().click();
+        loginButton.click();
         popups.waitForScreenToLoad();
-        //EggplantTestBase.sleep(10000);
-        if (errorField.isPresent()) {
-            Assert.fail("Could not login.");
+        DishAnywhereHome home = new DishAnywhereHome();
+        if(!home.guideButton.isPresent(10)){
+            Assert.fail("Could not log in successfully");
         }
         Logger.info("Logged in.");
-        return new DishAnywhereHome();
+        return home;
     }
 
 

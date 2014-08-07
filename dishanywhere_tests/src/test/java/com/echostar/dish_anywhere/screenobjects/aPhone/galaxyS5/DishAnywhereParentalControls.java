@@ -10,7 +10,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement tvpgCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVGOption"));
     public EggplantElement tv14Checkbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TV14Option"));
     public EggplantElement tvmaCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAOption"));
-    //public EggplantElement unratedTvCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/UnratedOption",SearchRectangle.leftHalf()));
+    //public EggplantElement unratedTvCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/UnratedOption",SearchRectangle.Quadrants.LEFT_QUARTER));
     public EggplantElement tvyChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYChecked"));
     public EggplantElement tvmaChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAChecked"));
 
@@ -20,7 +20,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement rCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/ROption"));
     public EggplantElement nc17Checkbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NC17Option"));
     public EggplantElement nraoCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOOption"));
-    //public EggplantElement unratedMovieCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.rightHalf()));
+    //public EggplantElement unratedMovieCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.Quadrants.RIGHT_HALF));
 
     public EggplantElement gChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked"));
     public EggplantElement nraoChecked = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked"));
@@ -45,7 +45,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         tvRatingsButton.click();
         if(tvmaChecked.isPresent())
             tvmaCheckbox.click();
-        nav.backButton.click();
+        EggplantTestBase.driver.PressBackButton();
         closePopups();
         return this;
     }
@@ -55,7 +55,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         tvRatingsButton.click();
         if(!tvyChecked.isPresent())
             tvyCheckbox.click();
-        nav.backButton.click();
+        EggplantTestBase.driver.PressBackButton();
         if (okButton.isPresent())
             okButton.click();
         return this;
@@ -66,7 +66,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         movieRatingsButton.click();
         if(nraoChecked.isPresent())
             nraoCheckbox.click();
-        nav.backButton.click();
+        EggplantTestBase.driver.PressBackButton();
         if (okButton.isPresent())
             okButton.click();
         return this;
@@ -77,7 +77,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         movieRatingsButton.click();
         if(!gChecked.isPresent())
             gCheckbox.click();
-        nav.backButton.click();
+        EggplantTestBase.driver.PressBackButton();
         if (okButton.isPresent())
             okButton.click();
         return this;

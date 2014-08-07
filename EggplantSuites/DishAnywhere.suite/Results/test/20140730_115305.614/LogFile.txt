@@ -1,0 +1,5 @@
+﻿2014-07-30 11:53:05.616 -0600	START		Running test.script
+2014-07-30 11:53:12.778 -0600	connect		7706e2a1:5901	1	on_test	test.script
+2014-07-30 11:58:19.118 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 380)	2	on_test	test.script
+2014-07-30 11:58:19.146 -0600	EndTestCase		(Duration:"313.526", Errors:"0", Exceptions:"0", StartTime:"2014-07-30 11:53:05 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-07-30 11:58:19.164 -0600	SUCCESS		Execution Time 0:05:14 test.script

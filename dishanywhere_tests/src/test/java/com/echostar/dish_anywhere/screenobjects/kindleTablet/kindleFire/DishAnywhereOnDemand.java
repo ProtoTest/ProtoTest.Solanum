@@ -6,17 +6,17 @@ import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereOnDemand extends DishAnywhereHome {
     private EggplantElement featuredButton
-            = new EggplantElement("featuredButton", By.Text("Featured", SearchRectangle.topQuarter()));
+            = new EggplantElement("featuredButton", By.Text("Featured", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement moviesButton
-            = new EggplantElement("moviesButton", By.Text("Movies", SearchRectangle.topQuarter()));
+            = new EggplantElement("moviesButton", By.Text("Movies", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement showsButton
-            = new EggplantElement("showsButton", By.Text("TV Shows", SearchRectangle.topQuarter()));
+            = new EggplantElement("showsButton", By.Text("TV Shows", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement familyButton
-            = new EggplantElement("familyButton", By.Text("Family", SearchRectangle.topQuarter()));
+            = new EggplantElement("familyButton", By.Text("Family", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement latinoButton
-            = new EggplantElement("latinoButton", By.Text("Latino", SearchRectangle.topQuarter()));
+            = new EggplantElement("latinoButton", By.Text("Latino", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement networksButton
-            = new EggplantElement("networksButton", By.Text("Networks", SearchRectangle.topQuarter()));
+            = new EggplantElement("networksButton", By.Text("Networks", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement searchInput
             = new EggplantElement("Search Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SearchInput"));
     private EggplantElement searchInputClearButton
@@ -64,9 +64,9 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
         String searchTerm = movie.substring(0, movie.length()-1);
         searchInputClearButton.click();
-        searchInput.type(searchTerm);
+        searchInput.setText(searchTerm);
 
-        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.topHalf().trimLeft(50)));
+        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.Quadrants.TOP_HALF));
         movieResultElement.verifyPresent();
 
         movieResultElement.click();

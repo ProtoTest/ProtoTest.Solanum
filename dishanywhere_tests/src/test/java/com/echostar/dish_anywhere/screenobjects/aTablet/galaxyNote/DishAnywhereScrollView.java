@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
+import junit.framework.Assert;
 
 import java.util.List;
 
@@ -40,6 +41,10 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 
         for (int i = 0; i < titles.size() && i < movieElements.size(); i++) {
             movieElements.get(i).click();
+            EnterPasscodePopup popup = new EnterPasscodePopup();
+            if(popup.isPresent()){
+                Assert.fail("THe passcode popup was present for '" + titles.get(i) + "' and it should not be.  This is a known defect with te DishAnywhere app.");
+            }
             DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
             String title = titles.get(i);
             new EggplantElement(title, By.Text(title)).verifyPresent();

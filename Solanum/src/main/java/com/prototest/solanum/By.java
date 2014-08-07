@@ -21,7 +21,7 @@ public class By {
         point,image,text
     }
     private String locator;
-    private SearchRectangle searchRectangle;
+    private SearchRectangle.Quadrants searchRectangle;
     private File image;
     protected ArrayList<Option> options = new ArrayList<Option>();
 
@@ -35,20 +35,22 @@ public class By {
         this.type = type;
     }
 
-    private By(String locator, SearchRectangle searchRectangle, ByType type) {
+
+
+    private By(String locator, SearchRectangle.Quadrants searchRectangle, ByType type) {
         this.locator = locator;
         this.searchRectangle = searchRectangle;
         this.type = type;
     }
 
-    private By(String locator, SearchRectangle searchRectangle, ByType type, File image) {
+    private By(String locator, SearchRectangle.Quadrants searchRectangle, ByType type, File image) {
         this.locator = locator;
         this.searchRectangle = searchRectangle;
         this.type = type;
         this.image = image;
     }
 
-    private By(String locator, SearchRectangle searchRectangle, ByType type, File image, Option... options) {
+    private By(String locator, SearchRectangle.Quadrants searchRectangle, ByType type, File image, Option... options) {
         this.locator = locator;
         this.searchRectangle = searchRectangle;
         this.type = type;
@@ -78,7 +80,7 @@ public class By {
      * @param options Optional parameters to control search and discovery of the element.
      * @return The constructed {@link By}.
      */
-    public static By Image(String path, SearchRectangle searchRectangle, ImageOption... options) {
+    public static By Image(String path, SearchRectangle.Quadrants searchRectangle, ImageOption... options) {
         String locatorString = String.format("(image: \"%s\"", path);
 
 //        if (searchRectangle != null) {
@@ -118,7 +120,7 @@ public class By {
      * @param options Optional parameters to control search and discovery of the element.
      * @return The constructed {@link By}.
      */
-    public static By Text(String text, SearchRectangle searchRectangle, TextOption... options) {
+    public static By Text(String text, SearchRectangle.Quadrants searchRectangle, TextOption... options) {
         String locatorString = String.format("(text: \"%s\"", text);
 //        if (searchRectangle != null) {
 //            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
@@ -141,7 +143,7 @@ public class By {
     }
 
     public SearchRectangle getSearchRectangle() {
-        return searchRectangle;
+        return SearchRectangle.getRectangleFromQuadrant(searchRectangle);
     }
 
     public void updateOptions(Option... newOptions){
@@ -168,7 +170,7 @@ public class By {
     private String buildLocatorString(){
         String fullLocatorString = locator;
         if (searchRectangle != null) {
-            fullLocatorString += ", " + Option.searchRectangle(searchRectangle).getText();
+            fullLocatorString += ", " + Option.searchRectangle(getSearchRectangle()).getText();
         }
         for (Option option : options) {
             fullLocatorString += ", " + option.getText();

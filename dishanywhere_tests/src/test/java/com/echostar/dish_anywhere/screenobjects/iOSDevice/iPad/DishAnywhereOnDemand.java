@@ -6,17 +6,17 @@ import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement featuredButton
-            = new EggplantElement("Featured", By.Text("Featured", SearchRectangle.topQuarter()));
+            = new EggplantElement("Featured", By.Text("Featured", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement moviesButton
-            = new EggplantElement("Movies", By.Text("Movies", SearchRectangle.topQuarter()));
+            = new EggplantElement("Movies", By.Text("Movies", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement showsButton
-            = new EggplantElement("Shows", By.Text("TV Shows", SearchRectangle.topQuarter()));
+            = new EggplantElement("Shows", By.Text("TV Shows", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement familyButton
-            = new EggplantElement("Family", By.Text("Family", SearchRectangle.topQuarter()));
+            = new EggplantElement("Family", By.Text("Family", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement latinoButton
-            = new EggplantElement("Latino", By.Text("Latino", SearchRectangle.topQuarter()));
+            = new EggplantElement("Latino", By.Text("Latino", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement networksButton
-            = new EggplantElement("Networks", By.Text("Networks", SearchRectangle.topQuarter()));
+            = new EggplantElement("Networks", By.Text("Networks", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement searchInput
             = new EggplantElement("Search Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/OnDemand/Search/SearchButton"));
     private EggplantElement searchInputClearButton
@@ -57,7 +57,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereSearchResult searchFor(String movie) {
 
         searchInputClearButton.click();
-        searchInput.type(movie);
+        searchInput.setText(movie);
         submitSearchButton.click();
 
         return new DishAnywhereSearchResult();
@@ -66,9 +66,9 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
         String searchTerm = movie.substring(0, movie.length()-1);
         searchInputClearButton.click();
-        searchInput.type(searchTerm);
+        searchInput.setText(searchTerm);
 
-        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.topHalf().trimLeft(50)));
+        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.Quadrants.TOP_HALF));
         movieResultElement.verifyPresent();
 
         movieResultElement.click();

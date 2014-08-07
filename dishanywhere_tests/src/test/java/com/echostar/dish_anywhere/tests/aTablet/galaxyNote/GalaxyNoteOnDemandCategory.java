@@ -29,6 +29,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
         }
         new DishAnywhereHome()
                 .openOnDemand()
+                .clearSearch()
                 .openMovies()
                 .openFilter()
                 .sortByTitle()
@@ -52,6 +53,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
         new DishAnywhereHome()
                 .openOnDemand()
+                .clearSearch()
                 .openFeatured()
                 .openFilter()
                 .sortByTitle()
@@ -75,6 +77,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
         new DishAnywhereHome()
                 .openOnDemand()
+                .clearSearch()
                 .openFamily()
                 .openFilter()
                 .sortByTitle()
@@ -98,6 +101,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
         new DishAnywhereHome()
                 .openOnDemand()
+                .clearSearch()
                 .openTVShows()
                 .openFilter()
                 .sortByTitle()
@@ -114,6 +118,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
         new DishAnywhereHome()
                 .openOnDemand()
+                .clearSearch()
                 .openNetworks()
                 .verifyTitlesPresent(movieTitles);
 

@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 
 /**
  */
@@ -20,7 +21,7 @@ public class DishAnywhereSearchResult {
     public DishAnywhereMovie openMovie() {
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
         if (submitSearchButton.isPresent()) {
-            nav.backButton.click();
+            EggplantTestBase.driver.PressBackButton();
         }
         movieArrow.click();
         return new DishAnywhereMovie();

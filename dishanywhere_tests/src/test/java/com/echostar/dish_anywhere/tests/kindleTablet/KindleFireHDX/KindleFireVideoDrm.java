@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
@@ -36,8 +37,8 @@ public class KindleFireVideoDrm extends KindleTestBase {
                 .openMovie(movie)
                 .watchMovie()
                 .openControls()
-                .verifyMoviePlays()
-                .nav.homeButton.click();
+                .verifyMoviePlays();
+                EggplantTestBase.driver.PressHomeButton();
         Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");
 

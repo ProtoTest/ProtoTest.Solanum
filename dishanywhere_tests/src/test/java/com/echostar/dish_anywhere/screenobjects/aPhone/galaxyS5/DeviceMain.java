@@ -9,7 +9,7 @@ public class DeviceMain {
     private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/DishAnywhereAppIcon"));
 
     public final DeviceNavigation nav = new DeviceNavigation();
-    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton", SearchRectangle.bottomHalf()));
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton", SearchRectangle.Quadrants.BOTTOM_HALF));
 
     public boolean isOnHome() {
         return dishAnywhereApp.isPresent();
@@ -25,13 +25,15 @@ public class DeviceMain {
 
 
     public DishAnywhereHome goHome() {
+        EggplantTestBase.driver.PressHomeButton();
         for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
             if (!nav.backButton.isPresent()) {
                 EggplantTestBase.driver.disconnect();
                 EggplantTestBase.driver.connect();
             }
             else {
-                nav.backButton.click();
+                EggplantTestBase.driver.PressBackButton();
+
 
             }
         }
@@ -42,7 +44,7 @@ public class DeviceMain {
                 EggplantTestBase.driver.connect();
             }
             else {
-                nav.backButton.click();
+                EggplantTestBase.driver.PressBackButton();
 
             }
         }

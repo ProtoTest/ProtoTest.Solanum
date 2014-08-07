@@ -14,8 +14,6 @@ public class GalaxyNotePasscode extends EggplantTestBase{
     public void movieCategory(){
 
         new DeviceMain()
-                .goToHomeScreen()
-                .killApp()
                 .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -25,10 +23,6 @@ public class GalaxyNotePasscode extends EggplantTestBase{
                 .openAuthorizedDevices()
                 .openParentalControls("0000")
                 .changePasscode("1111");
-
-
-        Verifications.assertVerifications();
-
 
     }
 }

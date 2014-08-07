@@ -1,0 +1,6 @@
+﻿2014-07-31 11:13:15.297 -0600	START		Running test.script
+2014-07-31 11:13:15.340 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-31 11:13:17.002 -0600	connect		10.10.1.128:5901	2	on_test	test.script
+2014-07-31 11:13:38.331 -0600	Exception	KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton	Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton" within 2.00 seconds	3	on_test	test.script
+2014-07-31 11:13:38.361 -0600	EndTestCase		(Duration:"23.058", Errors:"1", Exceptions:"1", StartTime:"2014-07-31 11:13:15 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-31 11:13:38.938 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton" within 2.00 seconds\nExecution Time 0:00:23 test.script

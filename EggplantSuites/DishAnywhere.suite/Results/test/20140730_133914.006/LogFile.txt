@@ -1,0 +1,6 @@
+﻿2014-07-30 13:39:14.028 -0600	START		Running test.script
+2014-07-30 13:39:14.102 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-30 13:39:14.816 -0600	connect		192.168.1.6:5901	2	on_test	test.script
+2014-07-30 13:39:37.939 -0600	Exception	KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption	Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption" within 2.00 seconds	3	on_test	test.script
+2014-07-30 13:39:37.963 -0600	EndTestCase		(Duration:"23.931", Errors:"1", Exceptions:"1", StartTime:"2014-07-30 13:39:14 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-30 13:39:38.159 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption" within 2.00 seconds  Restricted Search Rectangle ((0,936),(1920,1248))\n\nExecution Time 0:00:23 test.script

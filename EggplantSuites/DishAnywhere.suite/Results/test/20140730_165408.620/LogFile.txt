@@ -1,0 +1,6 @@
+﻿2014-07-30 16:54:08.645 -0600	START		Running test.script
+2014-07-30 16:54:08.722 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-30 16:54:10.360 -0600	connect		192.168.1.6:5901	2	on_test	test.script
+2014-07-30 16:54:38.765 -0600	Exception	KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/AuthorizedDevicesButton	Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/AuthorizedDevicesButton" within 2.00 seconds	3	on_test	test.script
+2014-07-30 16:54:38.791 -0600	EndTestCase		(Duration:"30.141", Errors:"1", Exceptions:"1", StartTime:"2014-07-30 16:54:08 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-30 16:54:39.548 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/AuthorizedDevicesButton" within 2.00 seconds\nExecution Time 0:00:30 test.script

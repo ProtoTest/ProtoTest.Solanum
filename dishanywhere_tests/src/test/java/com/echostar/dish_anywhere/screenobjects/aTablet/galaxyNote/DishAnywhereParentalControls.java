@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.SearchRectangle;
 
 /**
@@ -42,7 +43,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
     public DishAnywhereParentalControls clearTVBlocks(){
         if(tvmaChecked.isPresent())
-            tvmaCheckbox.click();
+            tvmaChecked.click();
         return this;
     }
 
@@ -55,7 +56,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
     public DishAnywhereParentalControls clearMovieBlocks(){
         if(nraoChecked.isPresent())
-            nraoCheckbox.click();
+            nraoChecked.click();
         return this;
     }
 
@@ -68,6 +69,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
     public DishAnywhereParentalControls save(){
         saveButton.click();
+        popups.waitForScreenToLoad();
         okButton.waitForPresent().click();
         return this;
     }

@@ -1,0 +1,6 @@
+﻿2014-08-05 18:44:09.410 -0600	START		Running test.script
+2014-08-05 18:44:09.593 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-05 18:44:10.283 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-05 18:44:33.929 -0600	Exception	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked	Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked" within 2.00 seconds	3	on_test	test.script
+2014-08-05 18:44:33.954 -0600	EndTestCase		(Duration:"24.522", Errors:"1", Exceptions:"1", StartTime:"2014-08-05 18:44:09 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-05 18:44:34.070 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked" within 2.00 seconds\nExecution Time 0:00:24 test.script

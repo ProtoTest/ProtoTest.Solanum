@@ -1,0 +1,6 @@
+﻿2014-08-06 09:40:06.396 -0600	START		Running test.script
+2014-08-06 09:40:06.539 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-06 09:40:07.663 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-06 09:40:31.147 -0600	Exception	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField	Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField" within 2.00 seconds	3	on_test	test.script
+2014-08-06 09:40:31.180 -0600	EndTestCase		(Duration:"24.78", Errors:"1", Exceptions:"1", StartTime:"2014-08-06 09:40:06 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-06 09:40:31.512 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField" within 2.00 seconds\nExecution Time 0:00:25 test.script

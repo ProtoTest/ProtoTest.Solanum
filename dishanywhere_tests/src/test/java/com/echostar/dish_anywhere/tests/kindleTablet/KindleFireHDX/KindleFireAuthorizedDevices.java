@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMain;
+import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereOnDemand;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
@@ -13,7 +14,7 @@ import java.util.Map;
 /**
  * Created by Brian on 6/4/2014.
  */
-public class KindleFireAuthorizedDevices extends EggplantTestBase {
+public class KindleFireAuthorizedDevices extends  KindleTestBase{
     @Test()
     public void movieCategory() {
 
@@ -22,14 +23,10 @@ public class KindleFireAuthorizedDevices extends EggplantTestBase {
 
         String movieName = movies.get(0).get("franchiseName");
 
-        DishAnywhereOnDemand dishAnywhereOnDemand = new DeviceMain()
-                .goHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .openSettings()
                 .openAuthorizedDevices()
                 .deAuthorizeThisDevice()
-
                 .openOnDemand()
                 .searchFor(movieName)
                 .openOnDemandResults()
@@ -37,9 +34,7 @@ public class KindleFireAuthorizedDevices extends EggplantTestBase {
                 .watchMovie()
                 .verifyDeauthorizationMessageDisplays()
 
-                .closeMovie();
-        dishAnywhereOnDemand.nav.backButton.click();
-        dishAnywhereOnDemand
+                .goHome()
                 .openSettings()
                 .openAuthorizedDevices()
                 .authorizeThisDevice()

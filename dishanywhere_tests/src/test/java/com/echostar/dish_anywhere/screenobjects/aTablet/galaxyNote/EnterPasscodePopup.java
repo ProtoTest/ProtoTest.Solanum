@@ -67,4 +67,8 @@ public class EnterPasscodePopup {
 
     return new DishAnywhereMovie();
     }
+
+    public boolean isPresent(){
+        return enterPasscodeHeader.isPresent();
+    }
 }

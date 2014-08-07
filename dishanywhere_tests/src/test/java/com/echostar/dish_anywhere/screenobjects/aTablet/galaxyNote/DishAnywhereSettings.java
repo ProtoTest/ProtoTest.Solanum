@@ -11,7 +11,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     private EggplantElement parentalControlsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControlsButton"));
     private EggplantElement authorizedDevicesButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevicesButton"));
     private EggplantElement okButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton"));
-
+    public EggplantElement loggingOutNotice = new EggplantElement(By.Text("Logging out..."));
     public DishAnywhereSettings() {
         super();
     }
@@ -19,14 +19,23 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     public DishAnywhereLogin logout() {
         Logger.info("Logging out...");
         if (! logoutButton.isPresent()) {
-            new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter(),
+            new EggplantElement(By.Text("On Demand", SearchRectangle.Quadrants.BOTTOM_QUARTER,
                         TextOption.hotSpot(new Point(0,-400))))
                 .swipeUp();
         }
         logoutButton.click();
         okButton.click();
-        Logger.info("Logout complete.");
-        return new DishAnywhereLogin();
+
+        try {
+            loggingOutNotice.waitForNotPresent(30);
+        }
+        catch(RuntimeException e) {
+            killApp();
+            goHome();
+            settingsButton.waitForPresent();
+            logOutIfLoggedIn();
+        }
+        return new DishAnywhereLogin().verifyLoggedOut();
     }
 
     public DishAnywhereParentalControls openParentalControls(String passcode){

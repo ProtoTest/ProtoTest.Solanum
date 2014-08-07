@@ -7,6 +7,9 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 //
@@ -23,7 +26,7 @@ public class GalaxyS5TestBase extends EggplantTestBase {
     }
 
     @BeforeTest
-    public void initializeApp() {
+    public void resetLoginAndSettings() {
         handleAppCrash();
         // Runs at startup for any test
         new DeviceMain()
@@ -36,14 +39,12 @@ public class GalaxyS5TestBase extends EggplantTestBase {
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
                 .clearTVBlocks()
+                .save()
                 .openGuide();
     }
-
-    @Override
-    public void uninitializeApp() {
-        handleAppCrash();
-        // Try to prevent the video player from being open before any future tests.
+    
+    @BeforeMethod
+    public void goToDishAnywhereHome(){
         new DeviceMain().goHome();
     }
-
 }

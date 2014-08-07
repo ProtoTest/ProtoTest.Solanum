@@ -1,0 +1,4 @@
+﻿2014-08-05 14:23:08.935 -0600	START		Running test.script
+2014-08-05 14:23:40.376 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton	found at (504, 469)	1	on_test	test.script
+2014-08-05 14:23:40.407 -0600	EndTestCase		(Duration:"31.469", Errors:"0", Exceptions:"0", StartTime:"2014-08-05 14:23:08 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-05 14:23:40.435 -0600	SUCCESS		Execution Time 0:00:32 test.script

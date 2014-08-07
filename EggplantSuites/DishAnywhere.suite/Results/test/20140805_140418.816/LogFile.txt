@@ -1,0 +1,4 @@
+﻿2014-08-05 14:04:18.818 -0600	START		Running test.script
+2014-08-05 14:04:21.847 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked	at (1065, 181)	1	on_test	test.script
+2014-08-05 14:04:21.879 -0600	EndTestCase		(Duration:"3.056", Errors:"0", Exceptions:"0", StartTime:"2014-08-05 14:04:18 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-05 14:04:21.908 -0600	SUCCESS		Execution Time 0:00:03 test.script

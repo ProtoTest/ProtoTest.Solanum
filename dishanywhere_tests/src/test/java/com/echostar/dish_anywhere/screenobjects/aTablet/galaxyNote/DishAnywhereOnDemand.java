@@ -6,17 +6,17 @@ import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement featuredButton
-            = new EggplantElement(By.Text("Featured", SearchRectangle.topQuarter()));
+            = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/FeaturedButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement moviesButton
-            = new EggplantElement(By.Text("Movies", SearchRectangle.topQuarter()));
+            = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement showsButton
-            = new EggplantElement(By.Text("TV Shows", SearchRectangle.topQuarter()));
+            = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/TVShowsButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement familyButton
-            = new EggplantElement(By.Text("Family", SearchRectangle.topQuarter()));
+            = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/FamilyButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement latinoButton
-            = new EggplantElement(By.Text("Latino", SearchRectangle.topQuarter()));
+            = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/LatinoButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement networksButton
-            = new EggplantElement(By.Text("Networks", SearchRectangle.topQuarter()));
+            = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/NetworksButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement searchInput
             = new EggplantElement("Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton"));
     private EggplantElement searchInputClearButton
@@ -52,12 +52,16 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
         return new DishAnywhereScrollView();
     }
 
+    public DishAnywhereOnDemand clearSearch(){
+        searchInputClearButton.click();
+        return new DishAnywhereOnDemand();
+    }
 
 
     public DishAnywhereSearchResult searchFor(String movie) {
 
         searchInputClearButton.click();
-        searchInput.type(movie);
+        searchInput.setText(movie);
         submitSearchButton.click();
 
         return new DishAnywhereSearchResult();
@@ -66,9 +70,9 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
         String searchTerm = movie.substring(0, movie.length()-1);
         searchInputClearButton.click();
-        searchInput.type(searchTerm);
+        searchInput.setText(searchTerm);
 
-        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.topHalf().trimLeft(50)));
+        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.Quadrants.TOP_HALF));
         movieResultElement.verifyPresent();
 
         movieResultElement.click();

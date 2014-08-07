@@ -18,8 +18,6 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
         new DeviceMain()
-                .goToHomeScreen()
-                .killApp()
                 .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -36,6 +34,7 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
         String movie = radishScraper.findMovieWithDrm("nagra");
 
         new DishAnywhereHome()
+                .goHome()
                 .openOnDemand()
                 .verifyPredictiveSearch(movie)
                 .openMovie(movie)

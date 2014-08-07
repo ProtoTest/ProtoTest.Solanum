@@ -3,9 +3,9 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 import com.prototest.solanum.*;
 
 public class DishAnywhereHome extends DishAnywhereMain {
-    private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomHalf().trimTop(75)));
+    private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.Quadrants.BOTTOM_QUARTER));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
-    public EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.bottomHalf()));
+    public EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.Quadrants.BOTTOM_HALF));
     private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/DishAnywhereAppIcon"));
 
     public DishAnywhereHome() {
@@ -60,8 +60,8 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public DeviceMain goBackToDeviceScreen() {
         Logger.info("Pressing back button until device is on home.");
         DeviceMain main = new DeviceMain();
-        while (!dishAnywhereApp.isPresent()) {
-            nav.backButton.click();
+        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
+            EggplantTestBase.driver.PressBackButton();
         }
         return new DeviceMain();
     }

@@ -1,0 +1,6 @@
+﻿2014-07-30 17:25:34.073 -0600	START		Running test.script
+2014-07-30 17:25:34.102 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-30 17:25:34.105 -0600	connect		192.168.1.6:5901	2	on_test	test.script
+2014-07-30 17:25:46.248 -0600	Exception	KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/LogoutButton	Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/LogoutButton" within 2.00 seconds	3	on_test	test.script
+2014-07-30 17:25:46.274 -0600	EndTestCase		(Duration:"12.197", Errors:"1", Exceptions:"1", StartTime:"2014-07-30 17:25:34 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-07-30 17:25:46.519 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/LogoutButton" within 2.00 seconds\nExecution Time 0:00:12 test.script

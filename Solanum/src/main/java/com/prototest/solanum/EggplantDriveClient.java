@@ -77,7 +77,18 @@ class EggplantDriveClient {
             EggplantResponse response = new EggplantResponse((HashMap<String,String>)result);
             return response;
         } catch (XmlRpcException e) {
-            throw new RuntimeException(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
+            Logger.warning(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
+//
+//            try {
+//                EggplantTestBase.driver.disconnect();
+//                EggplantTestBase.driver.connect();
+//                Object result = null;
+//                result = client.execute("execute",params);
+//                EggplantResponse response = new EggplantResponse((HashMap<String,String>)result);
+//                return response;
+//            } catch (XmlRpcException e1) {
+//                throw new RuntimeException(String.format("ERROR Executing '%s' : %s\"", command, e.getMessage()));
+//            }
         }catch (Exception f) {
             Logger.error(String.format("ERROR Executing '%s' : %s", command, f.getMessage()));
         }
@@ -86,6 +97,10 @@ class EggplantDriveClient {
 
     /** Ends the current session (suite) */
     void endSession() {
+        if (Config.logDriveCommands) {
+            Logger.debug(":: Ending the Suite");
+            writer.println("EndSession");
+        }
         Object[] params = new Object[]{};
         try {
             Object result = client.execute("EndSession",params);
@@ -97,6 +112,10 @@ class EggplantDriveClient {
 
     /** Starts a new session (eggplant suite).  Pass in the location of the .suite file on the local hard drive. */
     void startSession(String suite){
+        if (Config.logDriveCommands) {
+            Logger.debug(":: Starting the Suite: " + suite);
+            writer.println("StartSession" + suite);
+        }
         File suiteFile = new File(suite);
         if (! suiteFile.isAbsolute()) {
             suite = new File(System.getProperty("user.dir"), suite).toString();

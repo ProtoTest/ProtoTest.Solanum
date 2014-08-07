@@ -53,11 +53,9 @@ import java.util.List;
  */
 public class EggplantElement {
     private By by;
-    private By originalBy;
     private String name;
     private EggplantDriver driver = EggplantTestBase.driver;
     private int waitSec;
-    private Point location;
 
     /**
      * @param name The name of this element used in logs.
@@ -65,7 +63,6 @@ public class EggplantElement {
      */
     public EggplantElement(String name, By by) {
         this.by = by;
-        this.originalBy = by;
         this.name = name;
         this.waitSec = Config.elementWaitTimeSec;
     }
@@ -77,7 +74,6 @@ public class EggplantElement {
      */
     public EggplantElement(String name, By by, int waitSec) {
         this.by = by;
-        this.originalBy = by;
         this.name = name;
         this.waitSec = waitSec;
     }
@@ -87,7 +83,6 @@ public class EggplantElement {
      */
     public EggplantElement(By by) {
         this.by = by;
-        this.originalBy = by;
         this.name = by.getLocator();
         this.waitSec = Config.elementWaitTimeSec;
     }
@@ -98,7 +93,6 @@ public class EggplantElement {
      */
     public EggplantElement(By by, int waitSec) {
         this.by = by;
-        this.originalBy = by;
         this.name = by.getLocator();
         this.waitSec = waitSec;
     }
@@ -110,21 +104,8 @@ public class EggplantElement {
         }
     }
 
-    private void findLocation() {
-        location = driver.findLocation(originalBy);
-    }
-
-
-
-    /**
-     * Clear the cached location of this element.
-     *
-     * @return This {@link EggplantElement}.
-     */
-    public EggplantElement resetLocation() {
-        location = null;
-        this.by = originalBy;
-        return this;
+    private Point getLocation() {
+        return driver.findLocation(by);
     }
 
     /**
@@ -133,13 +114,8 @@ public class EggplantElement {
      * @return True if the element is present, otherwise false.
      */
     public boolean isPresent() {
-        //if (originalBy.type.equals(By.ByType.point)) return true;
-        findLocation();
-        if (location == null) {
-            return false;
-        }
-        this.by = By.Point(location);
-        return true;
+        if (by.type.equals(By.ByType.point)) return true;
+        return driver.isPresent(by.getLocator());
     }
 
     /**
@@ -149,18 +125,8 @@ public class EggplantElement {
      * @return True if the element is present, otherwise false.
      */
     public boolean isPresent(int secs) {
-        LocalTime now = new LocalTime();
-        LocalTime endTime = now.plusSeconds(secs);
-        while (now.isBefore(endTime) && !Thread.interrupted()) {
-            if (isPresent()) {
-                return true;
-            } else {
-                sleep(500);
-                now = new LocalTime();
-            }
-        }
-        Logger.info("Element (" + name + ") not present after " + secs + " seconds.");
-        return false;
+        if (by.type.equals(By.ByType.point)) return true;
+        return driver.isPresent(by.getLocator(),secs);
     }
 
     /**
@@ -172,7 +138,13 @@ public class EggplantElement {
 
         waitForPresent();
         Logger.debug(String.format("Reading text on %s %s.", name, by.getLocator()));
-        return driver.readText(by.getLocator());
+        if(by.type== By.ByType.point){
+            return driver.readText(by.getLocator());
+        }
+        else{
+            return driver.readText("FoundImageLocation()");
+        }
+
     }
 
     /**
@@ -183,7 +155,12 @@ public class EggplantElement {
     public EggplantElement click() {
         waitForPresent();
         Logger.debug(String.format("Clicking on %s %s.", name, by.getLocator()));
-        driver.click(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.click(by.getLocator());
+        }
+        else{
+            driver.click("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -195,7 +172,13 @@ public class EggplantElement {
     public EggplantElement doubleClick() {
         waitForPresent();
         Logger.debug(String.format("Double-clicking on %s %s.", name, by.getLocator()));
-        driver.doubleTap(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.doubleTap(by.getLocator());
+        }
+        else{
+            driver.doubleTap("FoundImageLocation()");
+        }
+
         return this;
     }
 
@@ -207,7 +190,12 @@ public class EggplantElement {
     public EggplantElement press() {
         waitForPresent();
         Logger.debug(String.format("Performing click+hold on %s %s.", name, by.getLocator()));
-        driver.press(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.press(by.getLocator());
+        }
+        else{
+            driver.press("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -220,7 +208,12 @@ public class EggplantElement {
     public EggplantElement release() {
         waitForPresent();
         Logger.debug(String.format("Performing release on %s %s.", name, by.getLocator()));
-        driver.release(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.release(by.getLocator());
+        }
+        else{
+            driver.release("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -232,7 +225,12 @@ public class EggplantElement {
     public EggplantElement tap() {
         waitForPresent();
         Logger.debug(String.format("Tap on %s %s.", name, by.getLocator()));
-        driver.tap(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.tap(by.getLocator());
+        }
+        else{
+            driver.tap("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -244,7 +242,12 @@ public class EggplantElement {
     public EggplantElement doubleTap() {
         waitForPresent();
         Logger.debug(String.format("DoubleTap on %s %s.", name, by.getLocator()));
-        driver.doubleTap(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.doubleTap(by.getLocator());
+        }
+        else{
+            driver.doubleTap("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -268,11 +271,41 @@ public class EggplantElement {
      *
      * @return This {@link EggplantElement}.
      */
+    public EggplantElement setText(String text) {
+        click();
+        clearText();
+        type(text);
+        return this;
+    }
+
+    /**
+     * Tap the screen at the location of this element.
+     *
+     * @return This {@link EggplantElement}.
+     */
+    public EggplantElement clearText(){
+        press();
+        sendKeys(EggplantKeys.backspace);
+        return this;
+    }
+
+    /**
+     * Tap the screen at the location of this element.
+     *
+     * @return This {@link EggplantElement}.
+     */
     public EggplantElement dragTo(EggplantElement element) {
         waitForPresent();
         Logger.debug(String.format("Dragging %s to %s.", name, by.getLocator()));
-        driver.drag(by.getLocator());
-        driver.drop(element.getBy().getLocator());
+        if(by.type== By.ByType.point){
+            driver.drag(this.by.getLocator());
+            driver.drop(element.getBy().getLocator());
+        }
+        else{
+            driver.drag("FoundImageLocation()");
+            driver.drop(element.getBy().getLocator());
+        }
+
         return this;
     }
 
@@ -284,7 +317,12 @@ public class EggplantElement {
     public EggplantElement swipeUp() {
         waitForPresent();
         Logger.debug(String.format("SwipingUp %s %s.", name, by.getLocator()));
-        driver.swipeUp(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.swipeUp(this.by.getLocator());
+        }
+        else{
+            driver.swipeUp("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -296,7 +334,12 @@ public class EggplantElement {
     public EggplantElement swipeDown() {
         waitForPresent();
         Logger.debug(String.format("SwipingDown %s %s.", name, by.getLocator()));
-        driver.swipeDown(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.swipeDown(this.by.getLocator());
+        }
+        else{
+            driver.swipeDown("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -308,7 +351,12 @@ public class EggplantElement {
     public EggplantElement swipeLeft() {
         waitForPresent();
         Logger.debug(String.format("SwipingLeft %s %s.", name, by.getLocator()));
-        driver.swipeLeft(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.swipeLeft(this.by.getLocator());
+        }
+        else{
+            driver.swipeLeft("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -320,7 +368,12 @@ public class EggplantElement {
     public EggplantElement swipeRight() {
         waitForPresent();
         Logger.debug(String.format("SwipingRight %s %s.", name, by.getLocator()));
-        driver.swipeRight(by.getLocator());
+        if(by.type== By.ByType.point){
+            driver.swipeRight(this.by.getLocator());
+        }
+        else{
+            driver.swipeRight("FoundImageLocation()");
+        }
         return this;
     }
 
@@ -345,28 +398,24 @@ public class EggplantElement {
      * @throws RuntimeException if the element is not present after the wait time.
      */
     public EggplantElement waitForPresent(Integer secs) {
-        if (by.type.equals(By.ByType.point)) return this;
-        Logger.debug(String.format("Waiting for %s to be present within %d seconds.", originalBy.getLocator(), secs));
+        Logger.debug(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
         LocalTime now = new LocalTime();
         LocalTime endTime = now.plusSeconds(secs);
         while (now.isBefore(endTime) && !Thread.interrupted()) {
             if (isPresent()) {
                 return this;
             } else {
-                //driver.refreshScreen();
+                driver.refreshScreen();
                 now = new LocalTime();
             }
         }
 
-
-
-
         if(Config.diagnoseFailedImages){
             Logger.warning(String.format("%s not found.  Opening EggPlant GUI to diagnose failure", name));
 
-            EggplantGUIHook hook = new EggplantGUIHook(this.originalBy);
+            EggplantGUIHook hook = new EggplantGUIHook(this.by);
             hook.runBatch();
-            Logger.warning(String.format("Eggplant GUI has been launched", name));
+            Logger.warning(String.format("Eggplant GUI has been closed.  Finishing Test", name));
 
             now = new LocalTime();
             endTime = now.plusSeconds(secs);
@@ -374,20 +423,20 @@ public class EggplantElement {
                 if (isPresent()) {
                     return this;
                 } else {
-                    //driver.refreshScreen();
+                    driver.refreshScreen();
                     now = new LocalTime();
                 }
             }
         }
 
-        Logger.error(String.format("%s not found: %s.", name, originalBy.getLocator()));
+        Logger.error(String.format("%s not found: %s.", name, by.getLocator()));
 
         LogElementDiagnosticInfo();
         if (Config.screenshotOnError && !Config.debugElementLocators) {
-            if (originalBy.getSearchRectangle() == null) {
+            if (by.getSearchRectangle() == null) {
                 Logger.screenshot();
             } else {
-                Logger.screenshot(originalBy.getSearchRectangle().searchRectangle);
+                Logger.screenshot(by.getSearchRectangle().searchRectangle);
             }
         }
             throw new RuntimeException(String.format("%s was not present after %d seconds", name, secs));
@@ -414,13 +463,12 @@ public class EggplantElement {
      * @throws RuntimeException if the element is present after the wait time.
      */
     public EggplantElement waitForNotPresent(Integer secs) {
-        if (by.type.equals(By.ByType.point)) return this;
-        Logger.debug(String.format("Waiting for %s %s to not be present for %s seconds.", name, originalBy.getLocator(), secs));
+        Logger.debug(String.format("Waiting for %s %s to not be present for %s seconds.", name, by.getLocator(), secs));
         if (Config.debugElementLocators) {
-            if (originalBy.getSearchRectangle() == null) {
+            if (by.getSearchRectangle() == null) {
                 Logger.screenshot(getSafeName());
             } else {
-                Logger.screenshot(getSafeName(), originalBy.getSearchRectangle().searchRectangle);
+                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
             }
         }
         driver.setOption("ImageSearchCount", "1");
@@ -438,13 +486,13 @@ public class EggplantElement {
             }
         }
         driver.setOption("ImageSearchCount", Config.imageSearchCount);
-        Logger.error(String.format("%s is still present", name, originalBy));
+        Logger.error(String.format("%s is still present", name, by));
         LogElementDiagnosticInfo();
         if (Config.screenshotOnError && !Config.debugElementLocators) {
-            if (originalBy.getSearchRectangle() == null) {
+            if (by.getSearchRectangle() == null) {
                 Logger.screenshot(getSafeName());
             } else {
-                Logger.screenshot(getSafeName(), originalBy.getSearchRectangle().searchRectangle);
+                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
             }
         }
         throw new RuntimeException(String.format("WaitForNotPresent Failed : %s was still present after %d seconds", name, secs));
@@ -457,8 +505,8 @@ public class EggplantElement {
      */
     // Soft verification failures - Test will keep progressing
     public EggplantElement verifyPresent() {
-        Logger.debug(String.format("Verifying %s %s should be present.", name, originalBy.getLocator()));
-        Verifications.addVerification(String.format("%s %s should be present.", name, originalBy.getLocator()), driver.isPresent(originalBy.getLocator()));
+        Logger.debug(String.format("Verifying %s %s should be present.", name, by.getLocator()));
+        Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), driver.isPresent(by.getLocator()));
         return this;
     }
 
@@ -468,8 +516,8 @@ public class EggplantElement {
      * @return This {@link EggplantElement}.
      */
     public EggplantElement verifyNotPresent() {
-        Logger.debug(String.format("Verifying %s %s is not be present.", name, originalBy));
-        Verifications.addVerification(String.format("%s %s should be present.", name, originalBy.getLocator()), !driver.isPresent(originalBy.getLocator()));
+        Logger.debug(String.format("Verifying %s %s is not be present.", name, by));
+        Verifications.addVerification(String.format("%s %s should be present.", name, by.getLocator()), !driver.isPresent(by.getLocator()));
         return this;
     }
 
@@ -480,8 +528,8 @@ public class EggplantElement {
      */
     public EggplantElement verifyText(String value) {
         waitForPresent();
-        Logger.debug(String.format("Verifying %s %s text is %s.", name, originalBy.getLocator(), value));
-        Verifications.addVerification(String.format("%s %s should have text %s", name, originalBy.getLocator(), value), getText().equals(value));
+        Logger.debug(String.format("Verifying %s %s text is %s.", name, by.getLocator(), value));
+        Verifications.addVerification(String.format("%s %s should have text %s", name, by.getLocator(), value), getText().equals(value));
         return this;
     }
 
@@ -520,7 +568,7 @@ public class EggplantElement {
      */
     public List<EggplantElement> allInstances() {
         waitForPresent();
-        return driver.everyImageLocation(originalBy.getLocator());
+        return driver.everyImageLocation(by.getLocator());
     }
 
     /**
@@ -538,7 +586,7 @@ public class EggplantElement {
     }
 
     private void LogElementDiagnosticInfo() {
-        if (originalBy.type == By.ByType.image) {
+        if (by.type == By.ByType.image) {
             File image = getBy().getImageFile();
             if (image.isDirectory()) {
                 File[] files = image.listFiles();
@@ -547,7 +595,7 @@ public class EggplantElement {
                 Logger.image(image);
             }
 
-        } else if (originalBy.type == By.ByType.text) {
+        } else if (by.type == By.ByType.text) {
             Logger.warning(driver.getAllText());
         }
     }

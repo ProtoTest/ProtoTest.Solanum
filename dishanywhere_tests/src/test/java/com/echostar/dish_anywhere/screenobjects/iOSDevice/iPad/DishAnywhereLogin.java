@@ -14,15 +14,15 @@ public class DishAnywhereLogin extends DeviceMain {
     private EggplantElement onlineIdEnd = new EggplantElement(By.Image("iosTablet/iPadAir/Apps/DishAnywhere/Login/OnlineIDFieldEnd"));
     private EggplantElement passwordFieldEnd = new EggplantElement(By.Image("iosTablet/iPadAir/Apps/DishAnywhere/Login/PasswordFieldEnd"));
     private EggplantElement loginButton = new EggplantElement("Login Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/Login/LoginButton"));
-    private EggplantElement errorField = new EggplantElement("Error Field", By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
+    private EggplantElement errorField = new EggplantElement("Error Field", By.Text("The Online ID / Password combination", SearchRectangle.Quadrants.TOP_HALF));
 
     public final DishAnywherePopups popups = new DishAnywherePopups();
 
     public DishAnywhereHome login(String onlineId, String password) {
         Logger.info("Logging in with credentials: (" + onlineId + ", " + password + ").");
         popups.waitForScreenToLoad();
-        this.onlineId.type(onlineId);
-        this.passwordField.type(password);
+        this.onlineId.setText(onlineId);
+        this.passwordField.setText(password);
         if (closeKeyboardButton.isPresent()){
             closeKeyboardButton.click();
         }

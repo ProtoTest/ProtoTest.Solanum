@@ -20,9 +20,9 @@ public class GalaxyNoteAuthorizedDevices extends GalaxyNoteTestBase {
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
 
-        String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);
+        String movieName = RadishScraper.getShortName(movies.get(1).get("franchiseName"),25);
 
-        new DishAnywhereHome().goHome()
+        new DishAnywhereHome()
                 .openSettings()
                 .openAuthorizedDevices()
                 .deAuthorizeThisDevice()

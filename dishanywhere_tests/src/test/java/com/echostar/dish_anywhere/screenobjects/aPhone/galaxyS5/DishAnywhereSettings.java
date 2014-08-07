@@ -8,7 +8,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     private EggplantElement logout = new EggplantElement(By.Text("Logout"));
     private EggplantElement parentalControlsButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControlsButton"));
     private EggplantElement authorizedDevicesButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevicesButton"));
-    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton", SearchRectangle.middleHalf().trimTop(25)));
+    private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton", SearchRectangle.Quadrants.MIDDLE_HALF));
 
     public DishAnywhereSettings() {
         super();
@@ -20,7 +20,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
             if (okButton.isPresent()) {
                 okButton.click();
             }
-            nav.backButton.click();
+            EggplantTestBase.driver.PressBackButton();
         }
         return this;
     }
@@ -28,7 +28,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     public DishAnywhereLogin logout() {
         Logger.info("Logging out...");
         if (! logout.isPresent()) {
-            new EggplantElement(By.Text("On Demand", SearchRectangle.bottomQuarter(),
+            new EggplantElement(By.Text("On Demand", SearchRectangle.Quadrants.BOTTOM_QUARTER,
                         TextOption.hotSpot(new Point(0,-400))))
                 .swipeUp();
         }

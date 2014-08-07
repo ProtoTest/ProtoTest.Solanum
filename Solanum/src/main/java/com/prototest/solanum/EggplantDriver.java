@@ -323,6 +323,13 @@ public class EggplantDriver {
         return execute(String.format("put ImageFound %s", locator)).Output.contains("True");
     }
 
+
+    /**
+     * Returns whether an element is present on the screen, using a string locator
+     */
+    public boolean isPresent(String locator, Integer timeoutSec) {
+        return execute(String.format("put ImageFound (%s,%s)", timeoutSec, locator)).Output.contains("True");
+    }
     /**
      * Types the given text.  Will type into whatever element has focus.  So should be preceded by a click command to type into a specific field
      */
@@ -564,4 +571,22 @@ public class EggplantDriver {
 
         return output.split(",");
     }
+
+    /**
+     * Presses the home button on a mobile device
+     */
+    public void PressHomeButton(){
+
+        Logger.debug("Pressing Mobile Home Button");
+        execute("PressHomeButton");
+    }
+
+    /**
+     * Presses the back button on a mobile device
+     */
+    public void PressBackButton(){
+        Logger.debug("Pressing Mobile Back Button");
+        execute("PressBackButton");
+    }
+
 }

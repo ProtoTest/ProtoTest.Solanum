@@ -1,0 +1,4 @@
+﻿2014-07-30 16:39:35.989 -0600	START		Running ElementTextAKindle.script
+2014-07-30 16:39:36.027 -0600	Exception		Remote Connection Unavailable	3	on_elementtextakindle	ElementTextAKindle.script
+2014-07-30 16:39:36.043 -0600	EndTestCase		(Duration:"0.047", Errors:"1", Exceptions:"1", StartTime:"2014-07-30 16:39:35 -0600", Successes:"0", TestCase:"ElementTextAKindle.script", Warnings:"0")
+2014-07-30 16:39:36.058 -0600	FAILURE		No Remote Connection waitfor Error - Remote Connection Unavailable\nExecution Time 0:00:01 ElementTextAKindle.script

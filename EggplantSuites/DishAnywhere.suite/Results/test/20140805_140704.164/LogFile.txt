@@ -1,0 +1,4 @@
+﻿2014-08-05 14:07:04.167 -0600	START		Running test.script
+2014-08-05 14:07:04.407 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked	at (1066, 385)	1	on_test	test.script
+2014-08-05 14:07:04.440 -0600	EndTestCase		(Duration:"0.269", Errors:"0", Exceptions:"0", StartTime:"2014-08-05 14:07:04 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-05 14:07:04.470 -0600	SUCCESS		Execution Time 0:00:00 test.script

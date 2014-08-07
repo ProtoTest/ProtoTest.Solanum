@@ -1,0 +1,6 @@
+﻿2014-08-05 14:58:23.575 -0600	START		Running test.script
+2014-08-05 14:58:23.753 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-05 14:58:25.525 -0600	connect		10.10.1.54:5901	2	on_test	test.script
+2014-08-05 15:57:18.958 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder	found at (93, 170)	3	on_test	test.script
+2014-08-05 15:57:18.996 -0600	EndTestCase		(Duration:"3535.416", Errors:"0", Exceptions:"0", StartTime:"2014-08-05 14:58:23 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-05 15:57:19.032 -0600	SUCCESS		Execution Time 0:58:55 test.script

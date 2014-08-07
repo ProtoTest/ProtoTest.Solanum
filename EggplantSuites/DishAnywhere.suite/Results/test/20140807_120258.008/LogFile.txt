@@ -1,0 +1,6 @@
+﻿2014-08-07 12:02:58.011 -0600	START		Running test.script
+2014-08-07 12:02:58.154 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-07 12:02:58.922 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-07 12:03:22.968 -0600	Exception	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton	Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton" within 2.00 seconds	3	on_test	test.script
+2014-08-07 12:03:23.001 -0600	EndTestCase		(Duration:"24.986", Errors:"1", Exceptions:"1", StartTime:"2014-08-07 12:02:58 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-07 12:03:23.115 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton" within 2.00 seconds\nExecution Time 0:00:24 test.script

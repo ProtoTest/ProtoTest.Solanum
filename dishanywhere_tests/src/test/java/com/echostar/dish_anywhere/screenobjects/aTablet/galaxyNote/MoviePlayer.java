@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.SearchRectangle;
 
 import java.awt.*;
@@ -15,7 +16,7 @@ public class MoviePlayer extends DishAnywhereMain {
 
 
     public MoviePlayer openControls() {
-        while (! skipBackButton.isPresent()) {
+        for (int i=0;i<10&&! skipBackButton.isPresent();i++) {
             screenElement.tap();
         }
 
@@ -45,11 +46,10 @@ public class MoviePlayer extends DishAnywhereMain {
     }
 
     public DishAnywhereHome goBackHome(){
-        DishAnywhereHome home = new DishAnywhereHome();
-        while(!home.guideButton.isPresent()){
-            nav.backButton.click();
+         for(int i=1;i<3;i++){
+            EggplantTestBase.driver.PressBackButton();
         }
-        return home;
+        return new DishAnywhereHome();
     }
 
 

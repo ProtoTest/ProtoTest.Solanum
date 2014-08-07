@@ -6,6 +6,7 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 /**
@@ -25,8 +26,6 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
 
         handleAppCrash();
         DishAnywhereHome home = new DeviceMain()
-                .goToHomeScreen()
-                .killApp()
                 .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -36,16 +35,12 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
                 .clearTVBlocks()
-                .save()
-                .openGuide();
-        home.verifyLoggedIn();
+                .save();
 
     }
 
-    @Override
-    public void uninitializeApp() {
-        handleAppCrash();
-        new DeviceMain()
-                .nav.backButton.click().click();
+    @BeforeMethod
+    public void goToDishAnywhereHome(){
+        new DeviceMain().goHome();
     }
 }

@@ -21,7 +21,6 @@ public class GalaxyS5AuthorizedDevices extends GalaxyS5TestBase {
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
         String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);
         new DishAnywhereHome()
-                .goHome()
                 .openSettings()
                 .openSettingsRoot()
                 .openAuthorizedDevices()

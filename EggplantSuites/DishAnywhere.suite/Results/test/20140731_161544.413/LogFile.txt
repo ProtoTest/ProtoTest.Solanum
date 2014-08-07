@@ -1,0 +1,6 @@
+﻿2014-07-31 16:15:44.437 -0600	START		Running test.script
+2014-07-31 16:15:44.478 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-31 16:16:54.139 -0600	connect		10.10.1.128:5901	2	on_test	test.script
+2014-07-31 16:17:08.443 -0600	waitfor	(CaseSensitive:"No", Contrast:"Off", ImageLocation:(470,116), ImageRectangle:(430,100,511,133), Language:"English", SearchRectangle:(0,0,1920,624), text:"Apps", TextPlatform:"Generic OCR")	found at (470, 116)	3	on_test	test.script
+2014-07-31 16:17:08.469 -0600	EndTestCase		(Duration:"84.025", Errors:"0", Exceptions:"0", StartTime:"2014-07-31 16:15:44 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-07-31 16:17:08.497 -0600	SUCCESS		Execution Time 0:01:24 test.script

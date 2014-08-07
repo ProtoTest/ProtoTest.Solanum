@@ -71,7 +71,6 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
             movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
-                .goHome()
                 .openBlockbuster()
                 .openKidsMovies()
                 .openFilter()

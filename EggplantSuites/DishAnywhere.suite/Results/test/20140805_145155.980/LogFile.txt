@@ -1,0 +1,6 @@
+﻿2014-08-05 14:51:56.007 -0600	START		Running test.script
+2014-08-05 14:51:56.101 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-05 14:51:57.382 -0600	connect		10.10.1.54:5901	2	on_test	test.script
+2014-08-05 14:51:57.536 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies	found at (682, 66)	3	on_test	test.script
+2014-08-05 14:51:57.578 -0600	EndTestCase		(Duration:"1.565", Errors:"0", Exceptions:"0", StartTime:"2014-08-05 14:51:56 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-05 14:51:57.606 -0600	SUCCESS		Execution Time 0:00:02 test.script

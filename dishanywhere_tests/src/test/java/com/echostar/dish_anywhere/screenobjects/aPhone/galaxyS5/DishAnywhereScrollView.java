@@ -1,7 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.*;
 
 import java.util.List;
 
@@ -35,9 +34,11 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 
     public DishAnywhereScrollView verifyTitlesPresent(List<String> titles){
         popups.waitForScreenToLoad();
+        String text = EggplantTestBase.driver.getAllText();
+        Logger.debug(text);
         for(String title : titles){
-            EggplantElement movie = new EggplantElement(By.Text(title));
-            movie.verifyPresent();
+            boolean passed = text.contains(title);
+            Verifications.addVerification("Page does not contain title : " + title,passed);
         }
         return this;
     }

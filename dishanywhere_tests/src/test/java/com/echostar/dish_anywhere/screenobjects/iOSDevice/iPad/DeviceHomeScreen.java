@@ -9,7 +9,7 @@ public class DeviceHomeScreen extends DeviceMain {
         super();
     }
 
-    public <C> C openApp(String name, Class<C> screenType, SearchRectangle rect, TextOption... options) {
+    public <C> C openApp(String name, Class<C> screenType, SearchRectangle.Quadrants rect, TextOption... options) {
         Logger.info(String.format("Opening app: (%s).", name));
         EggplantElement element = new EggplantElement(By.Text(name, rect, options));
         element.click();
@@ -21,7 +21,7 @@ public class DeviceHomeScreen extends DeviceMain {
 
     }
 
-    public DeviceMain openApp(String name, SearchRectangle rect, TextOption... options) {
+    public DeviceMain openApp(String name, SearchRectangle.Quadrants rect, TextOption... options) {
         Logger.info(String.format("Opening app: (%s).", name));
         return openApp(name, DeviceMain.class, rect, options);
     }

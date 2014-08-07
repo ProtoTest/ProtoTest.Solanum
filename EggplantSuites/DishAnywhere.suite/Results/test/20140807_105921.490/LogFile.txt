@@ -1,0 +1,6 @@
+﻿2014-08-07 10:59:21.517 -0600	START		Running test.script
+2014-08-07 10:59:21.693 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-07 10:59:22.395 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-07 11:01:07.658 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/SaveButton	found at (855, 546)	3	on_test	test.script
+2014-08-07 11:01:07.689 -0600	EndTestCase		(Duration:"106.167", Errors:"0", Exceptions:"0", StartTime:"2014-08-07 10:59:21 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-08-07 11:01:07.721 -0600	SUCCESS		Execution Time 0:01:46 test.script

@@ -1,0 +1,4 @@
+﻿2014-08-05 14:22:58.404 -0600	START		Running test.script
+2014-08-05 14:22:58.462 -0600	Exception		Remote Connection Unavailable	1	on_test	test.script
+2014-08-05 14:22:58.493 -0600	EndTestCase		(Duration:"0.083", Errors:"1", Exceptions:"1", StartTime:"2014-08-05 14:22:58 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-05 14:22:58.520 -0600	FAILURE		No Remote Connection waitfor Error - Remote Connection Unavailable\nExecution Time 0:00:00 test.script

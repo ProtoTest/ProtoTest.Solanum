@@ -1,0 +1,6 @@
+﻿2014-07-31 10:56:49.016 -0600	START		Running test.script
+2014-07-31 10:56:49.110 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-07-31 10:56:50.024 -0600	connect		10.10.1.128:5901	2	on_test	test.script
+2014-07-31 10:56:52.277 -0600	waitfor	KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/LogoutButton	found at (112, 832)	3	on_test	test.script
+2014-07-31 10:56:52.302 -0600	EndTestCase		(Duration:"3.281", Errors:"0", Exceptions:"0", StartTime:"2014-07-31 10:56:49 -0600", Successes:"1", TestCase:"test.script", Warnings:"0")
+2014-07-31 10:56:52.328 -0600	SUCCESS		Execution Time 0:00:04 test.script

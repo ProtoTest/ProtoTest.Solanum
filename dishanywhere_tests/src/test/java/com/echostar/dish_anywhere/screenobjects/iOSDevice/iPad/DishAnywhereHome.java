@@ -6,13 +6,13 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereHome extends DishAnywhereMain {
-    private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.bottomQuarter()));
-    private EggplantElement guideButton = new EggplantElement("Guide", By.Text("Guide", SearchRectangle.bottomQuarter()));
+    private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.Quadrants.BOTTOM_QUARTER));
+    private EggplantElement guideButton = new EggplantElement("Guide", By.Text("Guide", SearchRectangle.Quadrants.BOTTOM_QUARTER));
 
-    private EggplantElement onDemandButton = new EggplantElement("On Demand", By.Text("On Demand", SearchRectangle.bottomQuarter()));
+    private EggplantElement onDemandButton = new EggplantElement("On Demand", By.Text("On Demand", SearchRectangle.Quadrants.BOTTOM_QUARTER));
 
-    private EggplantElement blockbusterButton = new EggplantElement("Blockbuster", By.Text("BlockBuster", SearchRectangle.bottomQuarter()));
-    private EggplantElement viewAllButton = new EggplantElement("View All Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.bottomHalf()));
+    private EggplantElement blockbusterButton = new EggplantElement("Blockbuster", By.Text("BlockBuster", SearchRectangle.Quadrants.BOTTOM_QUARTER));
+    private EggplantElement viewAllButton = new EggplantElement("View All Button", By.Image("iosTablet/iPadAir/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.Quadrants.BOTTOM_HALF));
 
 
     public DishAnywhereHome() {

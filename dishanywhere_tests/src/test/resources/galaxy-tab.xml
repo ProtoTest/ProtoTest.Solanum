@@ -2,7 +2,7 @@
 
 <suite name="GalaxyTablet" verbose="1">
         <test name="Galaxy">
-        <parameter name="hostName" value="4790f0babab6b031"/>
+        <parameter name="hostName" value="7706e2a1"/>
         <parameter name="hostPort" value="5901"/>
         <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteAuthorizedDevices"/>

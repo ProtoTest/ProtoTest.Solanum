@@ -1,0 +1,6 @@
+﻿2014-08-07 11:43:38.142 -0600	START		Running test.script
+2014-08-07 11:43:38.177 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-07 11:43:38.876 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-07 11:44:01.565 -0600	Exception	AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1	Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1" within 2.00 seconds	3	on_test	test.script
+2014-08-07 11:44:01.590 -0600	EndTestCase		(Duration:"23.443", Errors:"1", Exceptions:"1", StartTime:"2014-08-07 11:43:38 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-07 11:44:01.702 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1" within 2.00 seconds\nExecution Time 0:00:23 test.script

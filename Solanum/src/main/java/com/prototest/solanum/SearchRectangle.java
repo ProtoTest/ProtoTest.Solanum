@@ -9,8 +9,8 @@ import java.awt.*;
  * Also contains static methods that can be used to dynamically get quadrants of the screen without needing to know the resolution or x,y coordinates.
  */
 public class SearchRectangle {
+    public enum Quadrants{WHOLE_SCREEN,TOP_QUARTER,TOP_HALF, BOTTOM_QUARTER, BOTTOM_HALF,LEFT_QUARTER,LEFT_HALF,RIGHT_QUARTER,RIGHT_HALF,MIDDLE_HALF}
     public Rectangle searchRectangle;
-    // TODO: duplicated data; which set of fields is actually used?
     public Point upperLeft;
     public Point lowerRight;
     public int width;
@@ -37,6 +37,41 @@ public class SearchRectangle {
         this.height = Math.abs(upperLeft.y - lowerRight.y);
         this.searchRectangle = new Rectangle(upperLeft.x, upperLeft.y, this.width, this.height);
 
+    }
+
+    private void calculateSearchRectangle(){
+        this.upperLeft = upperLeft;
+        this.lowerRight = lowerRight;
+        this.width = Math.abs(upperLeft.x - lowerRight.x);
+        this.height = Math.abs(upperLeft.y - lowerRight.y);
+        this.searchRectangle = new Rectangle(upperLeft.x, upperLeft.y, this.width, this.height);
+    }
+
+    public static SearchRectangle getRectangleFromQuadrant(SearchRectangle.Quadrants quadrant){
+        if(quadrant==null) return null;
+        switch (quadrant){
+            case WHOLE_SCREEN:
+                return wholeScreen();
+            case TOP_HALF :
+                return topHalf();
+            case BOTTOM_HALF:
+                return bottomHalf();
+            case TOP_QUARTER:
+                return topQuarter();
+            case BOTTOM_QUARTER:
+                return bottomQuarter();
+            case MIDDLE_HALF:
+                return middleHalf();
+            case RIGHT_HALF:
+                return rightHalf();
+            case RIGHT_QUARTER:
+                return rightQuarter();
+            case LEFT_HALF:
+                return leftHalf();
+            case LEFT_QUARTER:
+                return leftQuarter();
+            default: return null;
+        }
     }
 
     /**

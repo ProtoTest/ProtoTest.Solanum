@@ -16,18 +16,16 @@ public class DishAnywhereLogin extends DishAnywhereMain {
     public DishAnywhereHome login(String onlineId, String password) {
         Logger.info("Logging in...");
         popups.waitForScreenToLoad();
-        this.onlineId.type(onlineId);
-        this.passwordField.type(password);
+        this.onlineId.setText(onlineId);
+        passwordField.setText(password);
         loginButton.click();
-        EggplantTestBase.sleep(5000);
-
-        EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.topHalf()));
-
-        if (errorField.isPresent()) {
-            Assert.fail("Could not login.");
+        DishAnywhereHome home = new DishAnywhereHome();
+        if(!home.onDemandButton.isPresent(5000))
+        {
+            Assert.fail("Login not successful.");
         }
         Logger.info("Logged in.");
-        return new DishAnywhereHome();
+        return home;
     }
 
     public DishAnywhereLogin loginIfLoggedOut() {

@@ -35,8 +35,7 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
 
     //Not a standalone test - method used by above tests
     private void watchMovie(String movie) {
-        new DeviceMain()
-                .goHome()
+        new DishAnywhereHome()
                 .openOnDemand()
                 .clickSearchButton()
                 .searchFor(movie)
@@ -44,9 +43,7 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
                 .openMovie()
                 .watchMovie()
                 .openControls()
-                .verifyMoviePlays()
-                .goHome();
-        Verifications.addVerification("Opened OnDemand movie.", true);
+                .verifyMoviePlays();
         Logger.screenshot("OnDemandMovie");
     }
 }

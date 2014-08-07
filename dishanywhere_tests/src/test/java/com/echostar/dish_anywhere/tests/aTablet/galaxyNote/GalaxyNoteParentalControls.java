@@ -22,6 +22,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
 
         String movieName = movies.get(1).get("franchiseName");
         new DishAnywhereHome()
+                .goHome()
                 .openSettings()
                 .openParentalControls("1111")
                 .clearMovieBlocks()
@@ -47,11 +48,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
 
         String movieName = movies.get(1).get("franchiseName");
         new DeviceMain()
-                .goToHomeScreen()
-                .killApp()
                 .goHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()
                 .openParentalControls("1111")
                 .setMovieGBlocked()

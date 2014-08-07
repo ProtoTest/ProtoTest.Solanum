@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
@@ -43,8 +44,7 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
                 .openMovie(movie)
                 .watchMovie()
                 .openControls()
-                .verifyMoviePlays()
-                .nav.homeButton.click();
+                .verifyMoviePlays();
         Logger.screenshot("OnDemandMovie");
 
     }

@@ -1,0 +1,6 @@
+﻿2014-08-06 10:11:55.866 -0600	START		Running test.script
+2014-08-06 10:11:56.009 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-06 10:11:56.648 -0600	connect		192.168.1.16:5901	2	on_test	test.script
+2014-08-06 10:12:00.917 -0600	Exception	(CaseSensitive:"No", Contrast:"Off", ImageLocation:"", ImageRectangle:"", Language:"English", SearchRectangle:(0,0,320,848), text:"...And God Spoke", TextPlatform:"Generic OCR")	Unable To Find Any Image On Screen "(TEXT:"...And God Spoke")" within 2.00 seconds	3	on_test	test.script
+2014-08-06 10:12:00.950 -0600	EndTestCase		(Duration:"5.079", Errors:"1", Exceptions:"1", StartTime:"2014-08-06 10:11:55 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-06 10:12:01.059 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "(TEXT:"...And God Spoke")" within 2.00 seconds  Restricted Search Rectangle ((0,0),(320,848))\n\nExecution Time 0:00:05 test.script

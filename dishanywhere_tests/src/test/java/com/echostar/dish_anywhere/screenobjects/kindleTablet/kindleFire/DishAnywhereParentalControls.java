@@ -15,7 +15,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement tvpgCheckbox = new EggplantElement("tvpgCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVGOption"));
     public EggplantElement tv14Checkbox = new EggplantElement("tv14Checkbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TV14Option"));
     public EggplantElement tvmaCheckbox = new EggplantElement("tvmaCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAOption"));
-    public EggplantElement unratedTvCheckbox = new EggplantElement("unratedTvCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/UnratedOption",SearchRectangle.leftHalf()));
+    public EggplantElement unratedTvCheckbox = new EggplantElement("unratedTvCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/UnratedOption",SearchRectangle.Quadrants.LEFT_QUARTER));
     public EggplantElement tvyChecked = new EggplantElement("tvyChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYChecked"));
     public EggplantElement tvmaChecked = new EggplantElement("tvmaChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAChecked"));
     public EggplantElement tv14checked = new EggplantElement("tvmaChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TV14Checked"));
@@ -27,7 +27,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement rCheckbox = new EggplantElement("rCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/ROption"));
     public EggplantElement nc17Checkbox = new EggplantElement("nc17Checkbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NC17Option"));
     public EggplantElement nraoCheckbox = new EggplantElement("nraoCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOOption"));
-    public EggplantElement unratedMovieCheckbox = new EggplantElement("unratedMovieCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.rightHalf()));
+    public EggplantElement unratedMovieCheckbox = new EggplantElement("unratedMovieCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.Quadrants.RIGHT_HALF));
 
 
     public EggplantElement gChecked = new EggplantElement("gChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked"));
@@ -45,8 +45,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearTVBlocks() {
-        if (!tvmaCheckbox.isPresent()) {
-            tvyCheckbox.swipeUp();
+        for (int i = 0 ;i<3&&!tvmaCheckbox.isPresent();i++) {
+            tvgCheckbox.swipeUp();
         }
         if (tvmaChecked.isPresent())
             tv14Checkbox.click();
@@ -55,7 +55,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
 
     public DishAnywhereParentalControls setTVYBlocked() {
-        if (!tvyCheckbox.isPresent()) {
+        for (int i=0;i<3&&!tvyCheckbox.isPresent();i++) {
             pgCheckbox.swipeDown();
         }
         if (!tvyChecked.isPresent())
@@ -64,21 +64,21 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearMovieBlocks() {
-        if (!nraoCheckbox.isPresent()) {
+        for (int i=0 ;i<3&&!nraoCheckbox.isPresent();i++) {
             rCheckbox.swipeUp();
         }
         if (nraoChecked.isPresent())
-            nraoCheckbox.click();
+            nraoChecked.click();
         return this;
     }
 
 
     public DishAnywhereParentalControls setMovieGBlocked() {
-        if (!gCheckbox.isPresent()) {
+        for (int i=0;i<3&&!gCheckbox.isPresent();i++) {
             rCheckbox.swipeDown();
         }
         if (!gChecked.isPresent())
-            gCheckbox.click();
+            gChecked.click();
         return this;
     }
 
