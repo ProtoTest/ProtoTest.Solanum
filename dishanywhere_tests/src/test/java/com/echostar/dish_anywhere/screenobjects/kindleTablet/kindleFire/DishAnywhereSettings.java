@@ -17,27 +17,31 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         super();
     }
 
+    public boolean isOnSettings() {
+        return parentalControlsButton.isPresent();
+    }
+
     public DishAnywhereLogin logout() {
         Logger.info("Logging out...");
-        if (! logoutButton.isPresent()) {
-            authorizedDevicesButton.swipeUp();
-            // Wait for the swipe animation to complete.
-            EggplantTestBase.sleep(2000);
-        }
+        // Log out button appears below the screen view; scroll through the list of options to find it.
+        authorizedDevicesButton.swipeUp();
+        // Wait for the swipe animation to complete.
+        EggplantTestBase.sleep(4000);
+
         logoutButton.click();
         okButton.click();
         Logger.info("Logout complete.");
         return new DishAnywhereLogin();
     }
 
-    public DishAnywhereParentalControls openParentalControls(String passcode){
+    public DishAnywhereParentalControls openParentalControls(String passcode) {
         parentalControlsButton.click();
         EnterPasscodePopup popup = new EnterPasscodePopup();
         popup.enterPasscode(passcode);
         return new DishAnywhereParentalControls();
     }
 
-    public DishAnywhereAuthorizedDevices openAuthorizedDevices(){
+    public DishAnywhereAuthorizedDevices openAuthorizedDevices() {
         authorizedDevicesButton.click();
         return new DishAnywhereAuthorizedDevices();
     }

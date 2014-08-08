@@ -22,11 +22,12 @@ public class KindleTestBase extends EggplantTestBase {
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
                 .clearTVBlocks()
+                .save()
                 .openGuide();
     }
 
     @AfterMethod
     public void uninitializeApp() {
-        new DeviceMain().goHome().goHome();
+        //new DeviceMain().goHome().goHome();
     }
 }

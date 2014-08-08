@@ -1,1 +1,1 @@
-"C:\Program Files (x86)\eggPlant\runscript.bat" -RestoreConnection no -QuitAfterRun no -RunOnLaunch "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\EggplantSuites\DishAnywhere.suite\scripts\test.script"
+"C:\Program Files (x86)\eggPlant\runscript.bat" -RestoreConnection no -QuitAfterRun no -RunOnLaunch "C:\Users\andar\Documents\GitHub\ProtoTest.Solanum\EggplantSuites\DishAnywhere.suite\scripts\test.script"

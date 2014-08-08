@@ -5,7 +5,7 @@ import org.testng.Assert;
 
 // Screen object for DishAnywhere app - Login screen
 
-public class DishAnywhereLogin extends DeviceMain {
+public class DishAnywhereLogin extends DishAnywhereHome {
     private EggplantElement onlineId = new EggplantElement("onlineId", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/OnlineIDField"));
     private EggplantElement passwordField = new EggplantElement("passwordField", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/PasswordField"));
     private EggplantElement onlineIdEnd = new EggplantElement("onlineIdEnd", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/OnlineIDFieldEnd"));
@@ -30,7 +30,8 @@ public class DishAnywhereLogin extends DeviceMain {
             closeKeyboardButton.click();
         }
         loginButton.resetLocation().click();
-        popups.waitForScreenToLoad();
+        //popups.waitForScreenToLoad();
+        waitForScreenToLoad();
         //EggplantTestBase.sleep(10000);
         if (errorField.isPresent()) {
             Assert.fail("Could not login.");

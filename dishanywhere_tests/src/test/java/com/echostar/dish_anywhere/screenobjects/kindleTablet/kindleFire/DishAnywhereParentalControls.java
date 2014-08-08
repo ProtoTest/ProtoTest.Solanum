@@ -45,8 +45,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearTVBlocks() {
-        if (!tvmaCheckbox.isPresent()) {
-            tvyCheckbox.swipeUp();
+        for (int attempt = 0; attempt < 5 && !tvmaCheckbox.isPresent(5); attempt++) {
+            tvgCheckbox.swipeUp();
         }
         if (tvmaChecked.isPresent())
             tvmaCheckbox.click();
@@ -55,8 +55,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
 
     public DishAnywhereParentalControls setTVYBlocked() {
-        if (!tvyCheckbox.isPresent()) {
-            tvmaCheckbox.swipeDown();
+        for (int attempt = 0; attempt < 5 && !tvyCheckbox.isPresent(); attempt++) {
+            tvpgCheckbox.swipeDown();
         }
         if (!tvyChecked.isPresent())
             tvyCheckbox.click();
@@ -64,7 +64,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearMovieBlocks() {
-        if (!nraoCheckbox.isPresent()) {
+        for (int attempt = 0; attempt < 5 && !nraoCheckbox.isPresent(); attempt++) {
             rCheckbox.swipeUp();
         }
         if (nraoChecked.isPresent())
@@ -74,7 +74,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
 
     public DishAnywhereParentalControls setMovieGBlocked() {
-        if (!gCheckbox.isPresent()) {
+        for (int attempt = 0; attempt < 5 && !gCheckbox.isPresent(); attempt++) {
             rCheckbox.swipeDown();
         }
         if (!gChecked.isPresent())

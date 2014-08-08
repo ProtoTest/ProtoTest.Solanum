@@ -27,6 +27,6 @@ public class KindleTestBase extends EggplantTestBase {
 
     @AfterMethod
     public void uninitializeApp() {
-        new DeviceMain().goHome().goHome();
+        // DeviceMain().goHome().goHome();
     }
 }

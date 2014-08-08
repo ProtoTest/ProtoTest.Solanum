@@ -8,13 +8,14 @@ import java.util.List;
 
 /**
  */
-public class DishAnywhereSearchResult {
+public class DishAnywhereSearchResult extends DeviceMain {
     DeviceNavigation nav = new DeviceNavigation();
     EggplantElement onDemandButton = new EggplantElement("On Demand Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/OnDemandButton"));
     private EggplantElement submitSearchButton
             = new EggplantElement("Search Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
     EggplantElement leftMovieBorder = new EggplantElement("leftMovieBorder", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder"));
 
+    KindleMovieFinder movieFinder = new KindleMovieFinder();
     public DishAnywhereSearchResult openOnDemandResults() {
         onDemandButton.click();
         return this;
@@ -22,13 +23,14 @@ public class DishAnywhereSearchResult {
 
     public DishAnywhereMovie openMovie(String movieName) {
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
-        if (submitSearchButton.isPresent()) {
-            nav.backButton.click();
-        }
-        EggplantElement movie = new EggplantElement("Movie " + movieName, By.Text(movieName));
-        movie.waitForPresent();
-        movie.click();
-        return new DishAnywhereMovie();
+//        if (submitSearchButton.isPresent()) {
+//            closeKeyboardButton.click();
+//        }
+        return movieFinder.findMovie(movieName);
+//        EggplantElement movie = new EggplantElement("Movie " + movieName, By.Text(movieName));
+//        movie.waitForPresent();
+//        movie.click();
+//        return new DishAnywhereMovie();
 //        List<EggplantElement> movies = leftMovieBorder.allInstances();
 //        for (EggplantElement movie : movies) {
 //            movie.click();
@@ -39,7 +41,7 @@ public class DishAnywhereSearchResult {
 //                dishAnywhereMovie.closeMovie();
 //            }
 //        }
-        //throw new RuntimeException("Movie " + movieName + " was not found in search results!");
+       // throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
     public EnterPasscodePopup openProtectedMovie(String movieName){
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.

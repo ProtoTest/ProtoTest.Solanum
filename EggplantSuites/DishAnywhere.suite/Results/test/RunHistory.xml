@@ -291,4 +291,52 @@ Syntax Error at line 2: Syntax Error - can't understand "image" at or near chara
   <ReturnValue></ReturnValue>
   <ErrorMessage></ErrorMessage>
  </run>
+ <run>
+  <RunDate>2014-08-07 17:12:30.742 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.463000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140807_171230.742/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-08-07 17:17:40.493 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.200000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140807_171740.493/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-08-07 17:43:33.931 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.186000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140807_174333.931/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+ <run>
+  <RunDate>2014-08-07 18:36:52.248 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.180000</Duration>
+  <Errors>1</Errors>
+  <Warnings>0</Warnings>
+  <Exceptions>1</Exceptions>
+  <Successes>0</Successes>
+  <LogFile>20140807_183652.248/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
 </runHistory>

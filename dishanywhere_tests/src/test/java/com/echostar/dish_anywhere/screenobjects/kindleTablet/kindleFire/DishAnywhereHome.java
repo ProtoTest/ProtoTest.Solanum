@@ -21,16 +21,22 @@ public class DishAnywhereHome extends DishAnywhereMain {
         }
         return new DishAnywhereLogin();
     }
+    public void waitForScreenToLoad() {
+        settingsButton.waitForPresent(30);
+    }
 
     private boolean loggedIn() {
         if (settingsButton.isPresent())
             return true;
-        return settingsButton.isPresent(30);
+        return settingsButton.isPresent(10);
     }
 
     public DishAnywhereSettings openSettings() {
         Logger.info("Opening Settings panel.");
         settingsButton.click();
+        for (int attempt = 0; attempt < 5 && ! new DishAnywhereSettings().isOnSettings(); attempt++) {
+            settingsButton.resetLocation().click();
+        }
         return new DishAnywhereSettings();
     }
 

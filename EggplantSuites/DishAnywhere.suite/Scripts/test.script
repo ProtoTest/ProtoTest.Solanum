@@ -1,3 +1,8 @@
-﻿OpenSuite "DishAnywhere"
-Connect (ServerID:"10.10.1.129", portNum: "5901")
-WaitFor 10, (image: "KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton") 
+﻿Put ImageLocation(Text:"The Hunger", WaitFor:8)
+Put ImageLocation(Text:"The Hunger Games:", WaitFor:8, CaseSensitive:"Yes")
+OpenSuite "EggplantSuites/DishAnywhere.suite"
+Connect (ServerID:"10.10.1.128", portNum: "5901")
+WaitFor 3, (text: "Force Stop", SearchRectangle: (0,624,1920,1248)) 
+Put everyImageLocation( "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder")
+
+Click "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot1"

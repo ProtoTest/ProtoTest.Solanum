@@ -23,3 +23,7 @@
 2014-07-25 16:00:55.047 -0600,"Failure",0:00:45,1,0,1,"20140725_160055.047/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"" within 10.00 seconds",0
 2014-07-25 16:02:08.847 -0600,"Failure",0:05:09,1,0,1,"20140725_160208.847/LogFile.txt","","Image Not Found -- waitfor Error - Unable To Find Any Image On Screen ""KindleTablet/KindleFireHDX/Apps/DishAnywhere/Login/LoginButton"" within 10.00 seconds",0
 2014-07-25 16:07:27.323 -0600,"Success",0:00:03,0,0,0,"20140725_160727.323/LogFile.txt","","",1
+2014-08-07 17:12:30.742 -0600,"Failure",0:00:00,1,0,1,"20140807_171230.742/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
+2014-08-07 17:17:40.493 -0600,"Failure",0:00:00,1,0,1,"20140807_171740.493/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
+2014-08-07 17:43:33.931 -0600,"Failure",0:00:00,1,0,1,"20140807_174333.931/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
+2014-08-07 18:36:52.248 -0600,"Failure",0:00:00,1,0,1,"20140807_183652.248/LogFile.txt","","Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite",0
