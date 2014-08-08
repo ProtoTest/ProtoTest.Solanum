@@ -41,7 +41,7 @@ public class RestClient {
     public String Get(String resource) {
         client = Client.create();
 
-        webResource = client.resource(domain += resource);
+        webResource = client.resource(domain + resource);
         response = webResource.accept("application/json")
                 .get(ClientResponse.class);
 

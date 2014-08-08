@@ -1,3 +1,3 @@
 OpenSuite "DishAnywhere"
-Connect (ServerID:"192.168.1.16", portNum: "5901")
-WaitFor 2, (text: "Movies", SearchRectangle: (0,0,1280,212)) 
+Connect (ServerID:"192.168.1.4", portNum: "5901")
+WaitFor 2, (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848)) 

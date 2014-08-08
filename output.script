@@ -1,0 +1,1009 @@
+StartSessionEggplantSuites/DishAnywhere.suite
+put getOptions()
+set the ImageSearchDelay to 0.1
+set the ImageSearchCount to 4
+set the StandardImageTolerance to 70
+Connect (ServerID:"192.168.1.4", portNum: "5901")
+put ConnectionInfo()
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Unfortunately,")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Logging out...")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+TypeText "guest1full"
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+TypeText "guest4321"
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/closeKeyboardButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/closeKeyboardButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (60,(image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide"))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevicesButton")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevicesButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControlsButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAChecked")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/SaveButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+PressHomeButton
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevicesButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Click FoundImageLocation()
+TypeText "...At First Sight"
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton")
+Click FoundImageLocation()
+put ImageFound (text: "On Demand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton")
+put ImageFound (text: "...At First Sight", SearchRectangle: (0,0,1280,424))
+Click FoundImageLocation()
+put ImageFound (text: "...At First Sight")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/UnauthorizedMessage")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+PressBackButton
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevicesButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton")
+Click FoundImageLocation()
+TypeText "...At First Sight"
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton")
+Click FoundImageLocation()
+put ImageFound (text: "On Demand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton")
+put ImageFound (text: "...At First Sight", SearchRectangle: (0,0,1280,424))
+Click FoundImageLocation()
+put ImageFound (text: "...At First Sight")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+Tap (200.0,200.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/CurrentCursor")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/PauseButton")
+PressBackButton
+PressBackButton
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "Adam Sandler's Eight Craz")
+PressBackButton
+Click (271.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014111034.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014111306.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "...And God Spoke")
+PressBackButton
+Click (271.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "...At First Sight")
+PressBackButton
+Click (449.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "10 Years")
+PressBackButton
+Click (627.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "100 Girls")
+PressBackButton
+Click (805.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "100 Women")
+PressBackButton
+Click (983.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014111635.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014111905.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/FamilyButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/FamilyButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014112151.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/FeaturedButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/FeaturedButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014112403.png")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014112406.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "...And God Spoke")
+PressBackButton
+Click (271.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "...At First Sight")
+PressBackButton
+Click (449.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "10 Years")
+PressBackButton
+Click (627.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "100 Girls")
+PressBackButton
+Click (805.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "100 Women")
+PressBackButton
+Click (983.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014112731.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/NetworksButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/NetworksButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "BabyFirstTV")
+PressBackButton
+Click (271.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "Cinemax")
+PressBackButton
+Click (449.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "Content Media")
+PressBackButton
+Click (627.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "Cookie Jar")
+PressBackButton
+Click (805.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "Echo Bridge")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014113124.png")
+PressBackButton
+Click (983.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "Encore")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014113149.png")
+PressBackButton
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014113154.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/TVShowsButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/TVShowsButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014113325.png")
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (text: "Comedy")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Put everyImageLocation (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/LeftMovieBorder")
+Click (93.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "...And God Spoke")
+PressBackButton
+Click (271.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "...At First Sight")
+PressBackButton
+Click (449.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "10 Years")
+PressBackButton
+Click (627.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "100 Girls")
+PressBackButton
+Click (805.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+put ImageFound (text: "100 Women")
+PressBackButton
+Click (983.0,170.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader")
+CaptureScreen (Name: "C:\Users\Brian\Documents\GitHub\ProtoTest.Solanum\Screenshots\_08072014113726.png")
+PressHomeButton
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/TaskManagerButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/TaskIcon", SearchRectangle: (0,0,320,848))
+SwipeRight FoundImageLocation()
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Logging out...")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+TypeText "guest1full"
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+TypeText "guest4321"
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/closeKeyboardButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/closeKeyboardButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (60,(image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide"))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControlsButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAChecked")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/SaveButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+put ImageFound (text: "...At First Sight")
+put ImageFound (text: "...At First Sight")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+Tap (200.0,200.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/CurrentCursor")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/PauseButton")
+PressBackButton
+PressBackButton
+PressHomeButton
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/TaskManagerButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/TaskIcon", SearchRectangle: (0,0,320,848))
+SwipeRight FoundImageLocation()
+PressHomeButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+PressBackButton
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Logging out...")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField")
+Click FoundImageLocation()
+TypeText "guest1full"
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Press FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+TypeText backspace
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField")
+Click FoundImageLocation()
+TypeText "guest4321"
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/closeKeyboardButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/System/Device/closeKeyboardButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (60,(image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide"))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControlsButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYChecked")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/SaveButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848))
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MoviesButton", SearchRectangle: (0,0,1280,212))
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton")
+Click FoundImageLocation()
+put ImageFound (text: "...At First Sight")
+put ImageFound (text: "...At First Sight")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1")
+Click FoundImageLocation()
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton")
+Click FoundImageLocation()
+set the ImageSearchCount to 1
+put ImageFound (text: "Loading")
+RefreshScreen
+put RemoteScreenRectangle()
+put RemoteScreenSize()
+put ImageFound (text: "Loading")
+set the ImageSearchCount to 4
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+Tap (200.0,200.0)
+put ImageFound (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/MoviePlayer/SkipBackButton")
+put ImageFound (image: "AndroidTablet/

@@ -22,20 +22,21 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
     }
 
     @BeforeTest
-    public void initializeApp() {
+    public void resetSettings() {
 
         handleAppCrash();
-        DishAnywhereHome home = new DeviceMain()
+         new DeviceMain()
                 .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+                 .openGuide()
                 .openSettings()
                 .openAuthorizedDevices()
                 .authorizeThisDevice()
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
                 .clearTVBlocks()
-                .save();
+                .save().goToHomeScreen();
 
     }
 

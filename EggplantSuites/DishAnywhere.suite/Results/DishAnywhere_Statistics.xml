@@ -10,27 +10,19 @@
  </script>
  <script name="test">
   <LastStatus>Failure</LastStatus>
-  <NumberOfRuns>109</NumberOfRuns>
-  <NumberOfFails>78</NumberOfFails>
+  <NumberOfRuns>116</NumberOfRuns>
+  <NumberOfFails>85</NumberOfFails>
   <FirstRun>2014-07-25 14:32:25 -0600</FirstRun>
-  <LastRun>2014-08-07 12:35:42 -0600</LastRun>
+  <LastRun>2014-08-07 18:14:17 -0600</LastRun>
   <TotalTimeOnSuccess>4368.836000</TotalTimeOnSuccess>
  </script>
- <script name="ElementTextAPhone">
+ <script name="ElementTextAKindle">
   <LastStatus>Failure</LastStatus>
-  <NumberOfRuns>2</NumberOfRuns>
+  <NumberOfRuns>1</NumberOfRuns>
   <NumberOfFails>1</NumberOfFails>
-  <FirstRun>2014-05-19 12:35:06 -0600</FirstRun>
-  <LastRun>2014-06-10 16:22:07 -0600</LastRun>
-  <TotalTimeOnSuccess>7.575000</TotalTimeOnSuccess>
- </script>
- <script name="temp">
-  <LastStatus>Success</LastStatus>
-  <NumberOfRuns>7</NumberOfRuns>
-  <NumberOfFails>0</NumberOfFails>
-  <FirstRun>2014-07-25 13:32:59 -0600</FirstRun>
-  <LastRun>2014-07-25 13:55:51 -0600</LastRun>
-  <TotalTimeOnSuccess>8.083000</TotalTimeOnSuccess>
+  <FirstRun>2014-07-30 16:39:35 -0600</FirstRun>
+  <LastRun>2014-07-30 16:39:35 -0600</LastRun>
+  <TotalTimeOnSuccess>0.000000</TotalTimeOnSuccess>
  </script>
  <script name="Untitled">
   <LastStatus>Success</LastStatus>
@@ -40,12 +32,20 @@
   <LastRun>2014-07-30 14:21:40 -0600</LastRun>
   <TotalTimeOnSuccess>0.069000</TotalTimeOnSuccess>
  </script>
- <script name="ElementTextAKindle">
+ <script name="temp">
+  <LastStatus>Success</LastStatus>
+  <NumberOfRuns>7</NumberOfRuns>
+  <NumberOfFails>0</NumberOfFails>
+  <FirstRun>2014-07-25 13:32:59 -0600</FirstRun>
+  <LastRun>2014-07-25 13:55:51 -0600</LastRun>
+  <TotalTimeOnSuccess>8.083000</TotalTimeOnSuccess>
+ </script>
+ <script name="ElementTextAPhone">
   <LastStatus>Failure</LastStatus>
-  <NumberOfRuns>1</NumberOfRuns>
+  <NumberOfRuns>2</NumberOfRuns>
   <NumberOfFails>1</NumberOfFails>
-  <FirstRun>2014-07-30 16:39:35 -0600</FirstRun>
-  <LastRun>2014-07-30 16:39:35 -0600</LastRun>
-  <TotalTimeOnSuccess>0.000000</TotalTimeOnSuccess>
+  <FirstRun>2014-05-19 12:35:06 -0600</FirstRun>
+  <LastRun>2014-06-10 16:22:07 -0600</LastRun>
+  <TotalTimeOnSuccess>7.575000</TotalTimeOnSuccess>
  </script>
 </statistics>

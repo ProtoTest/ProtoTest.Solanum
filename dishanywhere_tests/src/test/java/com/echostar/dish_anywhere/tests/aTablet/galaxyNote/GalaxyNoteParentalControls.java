@@ -4,6 +4,7 @@ import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
 import com.prototest.solanum.Config;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ import java.util.Map;
 /**
  * Created by Brian on 6/4/2014.
  */
-public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
+public class GalaxyNoteParentalControls extends EggplantTestBase {
     @Test
     public void clearAllBlockedContentAndPlayMovie(){
 
@@ -22,7 +23,11 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
 
         String movieName = movies.get(1).get("franchiseName");
         new DishAnywhereHome()
+                .goToHomeScreen()
+                .killApp()
                 .goHome()
+                .logOutIfLoggedIn()
+                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()
                 .openParentalControls("1111")
                 .clearMovieBlocks()
@@ -35,8 +40,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
                 .done()
                 .openMovie(movieName)
                 .watchMovie()
-                .verifyMoviePlays();
-        Verifications.assertVerifications();
+                .verifyMoviePlays().goBackHome();
 
     }
 
@@ -48,7 +52,12 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
 
         String movieName = movies.get(1).get("franchiseName");
         new DeviceMain()
+                .goToHomeScreen()
+                .killApp()
                 .goHome()
+                .logOutIfLoggedIn()
+                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+                .openGuide()
                 .openSettings()
                 .openParentalControls("1111")
                 .setMovieGBlocked()
@@ -62,8 +71,7 @@ public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
                 .openProtectedMovie(movieName)
                 .enterPasscode("1111")
                 .watchMovie()
-                .verifyMoviePlays();
-        Verifications.assertVerifications();
+                .verifyMoviePlays().goBackHome();
 
     }
 }

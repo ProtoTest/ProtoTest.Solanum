@@ -17,10 +17,7 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
-        watchMovie(movie);
-
-        Verifications.addVerification("Watched onDemand nagra movie.", true);
-        Verifications.assertVerifications();
+        watchMovie(RadishScraper.getShortName(movie,25));
 
     }
 
@@ -29,10 +26,7 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("widevine");
-        watchMovie(movie);
-
-        Verifications.addVerification("Watched onDemand widevine movie.", true);
-        Verifications.assertVerifications();
+        watchMovie(RadishScraper.getShortName(movie,25));
 
     }
 

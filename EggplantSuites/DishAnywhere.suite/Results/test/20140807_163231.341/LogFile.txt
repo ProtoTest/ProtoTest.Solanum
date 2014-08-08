@@ -1,0 +1,6 @@
+﻿2014-08-07 16:32:31.368 -0600	START		Running test.script
+2014-08-07 16:32:31.460 -0600	opensuite		C:/Users/Brian/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite	1	on_test	test.script
+2014-08-07 16:32:32.523 -0600	connect		192.168.1.4:5901	2	on_test	test.script
+2014-08-07 16:32:56.186 -0600	Exception	AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton	Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton" within 2.00 seconds	3	on_test	test.script
+2014-08-07 16:32:56.212 -0600	EndTestCase		(Duration:"24.838", Errors:"1", Exceptions:"1", StartTime:"2014-08-07 16:32:31 -0600", Successes:"0", TestCase:"test.script", Warnings:"0")
+2014-08-07 16:32:56.559 -0600	FAILURE	Screen_Error.png	Image Not Found waitfor Error - Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton" within 2.00 seconds  Restricted Search Rectangle ((0,424),(1280,848))\n\nExecution Time 0:00:25 test.script

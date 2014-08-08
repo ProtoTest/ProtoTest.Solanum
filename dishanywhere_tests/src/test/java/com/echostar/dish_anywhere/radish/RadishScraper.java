@@ -28,7 +28,7 @@ public class RadishScraper {
     }
 
     public List<String> getMovies() {
-        client = new RestClient(radishDomain);
+        client = new RestClient("http://www.dishanywhere.com");
         String json = client.Get("/radish/v20/dol/movies/carousels/most_popular.json?totalItems=100");
         return client.parseAll("$.[*].name");
     }
