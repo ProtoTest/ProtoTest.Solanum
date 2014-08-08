@@ -16,9 +16,6 @@ public class KindleSettings extends DeviceMain {
     EggplantElement allApplicationsDropDown = new EggplantElement("All applications drop down", By.Image("KindleTablet/KindleFireHDX/System/Menus/AllApplications"));
     EggplantElement thirdPartyApplications = new EggplantElement("Third party only option", By.Text("Third-Party Applications"));
 
-//    public KindleSettings stopApplication(String name) {
-//        EggplantElement app = new EggplantElement("app", By.Text(name, SearchRectangle.Quadrants.LEFT_QUARTER, TextOption.contrast(true)));
-//    }
 
     public KindleSettings stopApplication(String name) {
         EggplantElement app = new EggplantElement("app", By.Text(name, SearchRectangle.Quadrants.LEFT_HALF, TextOption.contrast(true)));

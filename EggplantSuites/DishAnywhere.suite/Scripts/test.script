@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-OpenSuite "DishAnywhere"
-Connect (ServerID:"192.168.1.4", portNum: "5901")
-WaitFor 2, (image: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle: (0,424,1280,848)) 
-=======
-﻿Put ImageLocation(Text:"The Hunger", WaitFor:8)
+﻿﻿Put ImageLocation(Text:"The Hunger", WaitFor:8)
 Put ImageLocation(Text:"The Hunger Games:", WaitFor:8, CaseSensitive:"Yes")
 OpenSuite "EggplantSuites/DishAnywhere.suite"
 Connect (ServerID:"10.10.1.128", portNum: "5901")
@@ -11,4 +6,3 @@ WaitFor 3, (text: "Force Stop", SearchRectangle: (0,624,1920,1248))
 Put everyImageLocation( "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder")
 
 Click "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot1"
->>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b

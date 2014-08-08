@@ -1,8 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.Logger;
+import com.prototest.solanum.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,22 +9,42 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 
     EggplantElement leftMovieBorder = new EggplantElement("leftMovieBorder", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder"));
     EggplantElement sortFilterButton = new EggplantElement("sortFilterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterOptions/SortFilterButton"));
-    public FilterPopup openFilter(){
+    KindleMovieFinder movieFinder = new KindleMovieFinder();
+
+    public FilterPopup openFilter() {
         sortFilterButton.click();
         return new FilterPopup();
     }
-    public DishAnywhereMovie openMovie(String name){
-        EggplantElement movie  = new EggplantElement("movie", By.Text(truncateTitle(name,15)));
-        movie.waitForPresent(30).click();
-        return new DishAnywhereMovie();
-    }
-    public EnterPasscodePopup openProtectedMovie(String name){
-        EggplantElement movie  = new EggplantElement("movie", By.Text(truncateTitle(name,15)));
-        movie.waitForPresent().click();
-        return new EnterPasscodePopup();
+
+    public DishAnywhereMovie openMovie(String movieName) {
+        List<EggplantElement> movies = leftMovieBorder.allInstances();
+        for (EggplantElement movie : movies) {
+            movie.click();
+            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
+            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+                return dishAnywhereMovie;
+            } else {
+                dishAnywhereMovie.closeMovie();
+            }
+        }
+        throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
 
-    public DishAnywhereScrollView verifyTitlesPresent(List<String> titles){
+    public EnterPasscodePopup openProtectedMovie(String movieName) {
+        List<EggplantElement> movies = leftMovieBorder.allInstances();
+        for (EggplantElement movie : movies) {
+            movie.click();
+            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
+            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+                return new EnterPasscodePopup();
+            } else {
+                dishAnywhereMovie.closeMovie();
+            }
+        }
+        throw new RuntimeException("Movie " + movieName + " was not found in search results!");
+    }
+
+    public DishAnywhereScrollView verifyTitlesPresent(List<String> titles) {
         String logMessage = "Verifying movies from radish are present: " + titles.get(0);
         for (String title : titles) {
             logMessage += ", " + title;
@@ -35,12 +53,12 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         popups.waitForScreenToLoad();
 
 
-        List<EggplantElement> movieElements = leftMovieBorder.allInstances();
-
-        for (String title : titles) {
-            EggplantElement movie  = new EggplantElement("movie", By.Text(truncateTitle(title,15)));
-            movie.verifyPresent();
-            return this;
+        for (int i = 0; i < titles.size(); i++) {
+            DishAnywhereMovie movie = movieFinder.openMovie(i);
+            String searchingFor = titles.get(0);
+            Verifications.addVerification(String.format("Movie %s is present.", searchingFor),
+                    new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor, SearchRectangle.middleHalf())).isPresent());
+            movie.closeMovie();
         }
         return this;
     }
