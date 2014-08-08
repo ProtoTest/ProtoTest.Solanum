@@ -65,4 +65,13 @@ public class DishAnywhereHome extends DishAnywhereMain {
         }
         return new DeviceMain();
     }
+
+    public DishAnywhereHome exitPlayerIfOpen() {
+        Logger.info("Exiting player, if open...");
+        for (int i = 0; i < 10 && ! settingsButton.isPresent(); i++) {
+            nav.backButton.click();
+        }
+        return this;
+    }
+
 }

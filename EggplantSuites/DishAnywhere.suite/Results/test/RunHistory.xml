@@ -292,42 +292,73 @@ Syntax Error at line 2: Syntax Error - can't understand "image" at or near chara
   <ErrorMessage></ErrorMessage>
  </run>
  <run>
+<<<<<<< HEAD
   <RunDate>2014-07-28 16:10:57.054 -0600</RunDate>
   <Status>Failure</Status>
   <Duration>0.165000</Duration>
+=======
+  <RunDate>2014-08-07 17:12:30.742 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.463000</Duration>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
   <Errors>1</Errors>
   <Warnings>0</Warnings>
   <Exceptions>1</Exceptions>
   <Successes>0</Successes>
+<<<<<<< HEAD
   <LogFile>20140728_161057.054/LogFile.txt</LogFile>
+=======
+  <LogFile>20140807_171230.742/LogFile.txt</LogFile>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
   <ReturnValue></ReturnValue>
   <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
  </run>
  <run>
+<<<<<<< HEAD
   <RunDate>2014-07-28 16:11:40.343 -0600</RunDate>
   <Status>Failure</Status>
   <Duration>0.040000</Duration>
+=======
+  <RunDate>2014-08-07 17:17:40.493 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.200000</Duration>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
   <Errors>1</Errors>
   <Warnings>0</Warnings>
   <Exceptions>1</Exceptions>
   <Successes>0</Successes>
+<<<<<<< HEAD
   <LogFile>20140728_161140.343/LogFile.txt</LogFile>
+=======
+  <LogFile>20140807_171740.493/LogFile.txt</LogFile>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
   <ReturnValue></ReturnValue>
   <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
  </run>
  <run>
+<<<<<<< HEAD
   <RunDate>2014-07-30 11:43:58.871 -0600</RunDate>
   <Status>Failure</Status>
   <Duration>0.175000</Duration>
+=======
+  <RunDate>2014-08-07 17:43:33.931 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.186000</Duration>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
   <Errors>1</Errors>
   <Warnings>0</Warnings>
   <Exceptions>1</Exceptions>
   <Successes>0</Successes>
+<<<<<<< HEAD
   <LogFile>20140730_114358.871/LogFile.txt</LogFile>
+=======
+  <LogFile>20140807_174333.931/LogFile.txt</LogFile>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
   <ReturnValue></ReturnValue>
   <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
  </run>
  <run>
+<<<<<<< HEAD
   <RunDate>2014-07-30 11:47:17.427 -0600</RunDate>
   <Status>Failure</Status>
   <Duration>16.222000</Duration>
@@ -393,10 +424,16 @@ Syntax Error at line 2: Syntax Error - can't understand "image" at or near chara
   <RunDate>2014-07-30 13:09:34.544 -0600</RunDate>
   <Status>Failure</Status>
   <Duration>0.169000</Duration>
+=======
+  <RunDate>2014-08-07 18:36:52.248 -0600</RunDate>
+  <Status>Failure</Status>
+  <Duration>0.180000</Duration>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
   <Errors>1</Errors>
   <Warnings>0</Warnings>
   <Exceptions>1</Exceptions>
   <Successes>0</Successes>
+<<<<<<< HEAD
   <LogFile>20140730_130934.544/LogFile.txt</LogFile>
   <ReturnValue></ReturnValue>
   <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
@@ -1415,4 +1452,10 @@ Syntax Error at line 2: Syntax Error - can't understand "image" at or near chara
   <ErrorMessage>Image Not Found -- waitfor Error - Unable To Find Any Image On Screen "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton" within 2.00 seconds  Restricted Search Rectangle ((0,424),(1280,848))
 </ErrorMessage>
  </run>
+=======
+  <LogFile>20140807_183652.248/LogFile.txt</LogFile>
+  <ReturnValue></ReturnValue>
+  <ErrorMessage>Error Running Script Command -- opensuite Error - Unable To Open Suite ~/Documents/EggplantSuites/DishAnywhere.suite</ErrorMessage>
+ </run>
+>>>>>>> 61e8991849fc4f07b8d3c212fef8a44be0b5514b
 </runHistory>

@@ -20,51 +20,63 @@ public class EnterPasscodePopup {
     private EggplantElement button8 = new EggplantElement("button8", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButton8"));
     private EggplantElement button9 = new EggplantElement("button9", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButton9"));
     private EggplantElement button0 = new EggplantElement("button0", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButton0"));
+    private EggplantElement backspaceButton = new EggplantElement("Passcode backspace", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButtonBack"));
 
-    public DishAnywhereMovie enterPasscodeIfPresent(String passcode){
-        if(enterPasscodeHeader.isPresent()){
+    public DishAnywhereMovie enterPasscodeIfPresent(String passcode) {
+        if (enterPasscodeHeader.isPresent()) {
             return enterPasscode(passcode);
         }
         return new DishAnywhereMovie();
     }
 
     public DishAnywhereMovie enterPasscode(String passcode) {
-        for (char c : passcode.toCharArray()) {
-            switch (c) {
-                case '1':
-                    button1.waitForPresent().click();
-                    break;
-                case '2':
-                    button2.click();
-                    break;
-                case '3':
-                    button3.click();
-                    break;
-                case '4':
-                    button4.click();
-                    break;
-                case '5':
-                    button5.click();
-                    break;
-                case '6':
-                    button6.click();
-                    break;
-                case '7':
-                    button7.click();
-                    break;
-                case '8':
-                    button8.click();
-                    break;
-                case '9':
-                    button9.click();
-                    break;
-                case '0':
-                    button0.click();
-                    break;
+        for (int attempt = 0; attempt < 5 && button1.isPresent(); attempt++) {
+            for (char c : passcode.toCharArray()) {
+                switch (c) {
+                    case '1':
+                        button1.waitForPresent().click();
+                        break;
+                    case '2':
+                        button2.click();
+                        break;
+                    case '3':
+                        button3.click();
+                        break;
+                    case '4':
+                        button4.click();
+                        break;
+                    case '5':
+                        button5.click();
+                        break;
+                    case '6':
+                        button6.click();
+                        break;
+                    case '7':
+                        button7.click();
+                        break;
+                    case '8':
+                        button8.click();
+                        break;
+                    case '9':
+                        button9.click();
+                        break;
+                    case '0':
+                        button0.click();
+                        break;
+                }
+            }
+            // Sometimes eggplant fails to enter all four digits. If so, back the code out and try again.
+            if (button1.isPresent()) {
+                backspaceButton.click();
+                backspaceButton.click();
+                backspaceButton.click();
+                backspaceButton.click();
+            } else {
+                break;
             }
 
         }
 
-    return new DishAnywhereMovie();
+        return new DishAnywhereMovie();
     }
 }

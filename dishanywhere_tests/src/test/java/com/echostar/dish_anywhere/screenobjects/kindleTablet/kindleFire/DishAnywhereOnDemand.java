@@ -4,6 +4,9 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.SearchRectangle;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class DishAnywhereOnDemand extends DishAnywhereHome {
     private EggplantElement featuredButton
             = new EggplantElement("featuredButton", By.Text("Featured", SearchRectangle.Quadrants.TOP_QUARTER));
@@ -23,7 +26,8 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
             = new EggplantElement("Search Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput"));
     private EggplantElement submitSearchButton
             = new EggplantElement("Search Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
-
+    private EggplantElement firstSearchResult =
+            new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/FirstResult"));
     public DishAnywhereScrollView openMovies() {
         moviesButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
@@ -41,11 +45,13 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
+
     public DishAnywhereScrollView openFamily() {
         familyButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
+
     public DishAnywhereScrollView openNetworks() {
         networksButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
@@ -62,16 +68,24 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
     }
 
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
-        String searchTerm = movie.substring(0, movie.length()-1);
+        String searchTerm = movie.substring(0, movie.length() - 1);
         searchInputClearButton.click();
         searchInput.setText(searchTerm);
-
-        EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.Quadrants.TOP_HALF));
-        movieResultElement.verifyPresent();
-
-        movieResultElement.click();
-
+        firstSearchResult.click();
         return new DishAnywhereSearchResult();
 
+    }
+
+    private String truncateTitle(String title, int maxChars) {
+        List<String> words = Arrays.asList(title.split(" "));
+        StringBuilder newTitle = new StringBuilder(words.get(0));
+        for (String word : words.subList(1, words.size())) {
+            if (newTitle.length() + 1 + word.length() < maxChars) {
+                newTitle.append(" " + word);
+            } else {
+                break;
+            }
+        }
+        return newTitle.toString();
     }
 }

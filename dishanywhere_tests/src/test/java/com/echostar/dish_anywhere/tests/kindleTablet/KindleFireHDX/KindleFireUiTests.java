@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
+import com.prototest.solanum.Config;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
@@ -17,7 +18,9 @@ public class KindleFireUiTests extends KindleTestBase {
         new DishAnywhereHome()
                 .verifyLoggedIn()
                 .logOutIfLoggedIn()
-                .verifyLoggedOut();
+                .verifyLoggedOut()
+                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+                .verifyLoggedIn();
         Verifications.assertVerifications();
 
     }

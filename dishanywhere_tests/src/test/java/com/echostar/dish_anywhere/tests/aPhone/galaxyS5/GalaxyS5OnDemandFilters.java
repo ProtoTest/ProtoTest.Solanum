@@ -21,7 +21,7 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
     public void onDemandFilters() {
         Logger.info("Beginning Test: On Demand Filters.");
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getComedyMovies(RadishScraper.Device.android_phone, 19);
+        List<Map<String, String>> movies = radishScraper.getFilteredMovies("comedy", RadishScraper.Device.android_phone, 19);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -33,7 +33,7 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
                 .openBlockbuster()
                 .openMovies()
                 .openFilters()
-                .selectFilter("Comedy")
+                .selectFilter("comedy")
                 .done()
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();

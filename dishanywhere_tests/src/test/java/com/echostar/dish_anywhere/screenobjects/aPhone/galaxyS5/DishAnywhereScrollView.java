@@ -34,11 +34,12 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 
     public DishAnywhereScrollView verifyTitlesPresent(List<String> titles){
         popups.waitForScreenToLoad();
-        String text = EggplantTestBase.driver.getAllText();
-        Logger.debug(text);
-        for(String title : titles){
-            boolean passed = text.contains(title);
-            Verifications.addVerification("Page does not contain title : " + title,passed);
+        List<EggplantElement> movieArrows = movieArrow.allInstances();
+        for (int i = 0; i < movieArrows.size(); i++) {
+            movieArrows.get(i).click();
+            EggplantElement movie = new EggplantElement(By.Text(titles.get(i)));
+            movie.verifyPresent();
+            nav.backButton.click();
         }
         return this;
     }

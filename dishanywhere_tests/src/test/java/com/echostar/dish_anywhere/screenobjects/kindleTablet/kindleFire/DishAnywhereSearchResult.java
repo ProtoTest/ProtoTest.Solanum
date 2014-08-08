@@ -9,13 +9,14 @@ import java.util.List;
 
 /**
  */
-public class DishAnywhereSearchResult {
+public class DishAnywhereSearchResult extends DeviceMain {
     DeviceNavigation nav = new DeviceNavigation();
     EggplantElement onDemandButton = new EggplantElement("On Demand Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/OnDemandButton"));
     private EggplantElement submitSearchButton
             = new EggplantElement("Search Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
     EggplantElement leftMovieBorder = new EggplantElement("leftMovieBorder", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder"));
 
+    KindleMovieFinder movieFinder = new KindleMovieFinder();
     public DishAnywhereSearchResult openOnDemandResults() {
         onDemandButton.click();
         return this;
