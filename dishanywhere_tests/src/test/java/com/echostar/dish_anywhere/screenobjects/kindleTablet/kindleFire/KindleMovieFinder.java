@@ -1,8 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 import java.util.List;
 
@@ -14,8 +12,9 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class KindleMovieFinder {
-    private final String movieLocationTemplate = "C:/Users/andar/Documents/GitHub/ProtoTest.Solanum/EggplantSuites/DishAnywhere.suite/Images/KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot%d";
+    private final String movieLocationTemplate = "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot%d";
 
+    private final EnterPasscodePopup popups = new EnterPasscodePopup();
     private String getMovieLocator(int i) {
         return String.format(movieLocationTemplate, i);
     }
@@ -25,7 +24,7 @@ public class KindleMovieFinder {
         for (int i = 0; i < 10; i++ ) {
 
             DishAnywhereMovie dishAnywhereMovie = openMovie(i);
-            if (new EggplantElement(movieTitle, By.Text(movieTitle, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) {
+            if (new EggplantElement(movieTitle, By.Text(movieTitle)).isPresent()) {
                 return dishAnywhereMovie;
             } else {
                 dishAnywhereMovie.closeMovie();
@@ -35,10 +34,26 @@ public class KindleMovieFinder {
     }
 
     public DishAnywhereMovie openMovie(int position) {
-        EggplantElement movie = new EggplantElement("Movie location " + position+1, By.Image(getMovieLocator(position+1)));
+        return openMovie(position, null);
+    }
+    public DishAnywhereMovie openMovie(int position, String passcode) {
+        EggplantElement movie = new EggplantElement("Movie location " + (position+1), By.Image(getMovieLocator(position+1)));
         movie.click();
         DishAnywhereMovie DANYmovie = new DishAnywhereMovie();
-        DANYmovie.closeButton.waitForPresent();
+        boolean passcodePopupIsPresent = popups.isPresent();
+        if (passcode != null) {
+            Verifications.addVerification("Passcode prompt should appear", passcodePopupIsPresent);
+            if (passcodePopupIsPresent) {
+                popups.enterPasscode(passcode);
+            }
+        } else {
+            Verifications.addVerification("Passcode prompt should not appear", !passcodePopupIsPresent);
+            if (passcodePopupIsPresent) {
+                Logger.warning("Passcode prompt should not be on screen, but it is. Guessing passcode from config values: " + Config.getTestProp("dishAnywherePassCode"));
+                popups.enterPasscode(Config.getTestProp("dishAnywherePassCode"));
+            }
+        }
+
         return DANYmovie;
     }
 

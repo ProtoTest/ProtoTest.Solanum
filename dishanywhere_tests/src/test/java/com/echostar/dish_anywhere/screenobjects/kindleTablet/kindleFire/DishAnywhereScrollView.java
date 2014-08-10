@@ -21,7 +21,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         for (EggplantElement movie : movies) {
             movie.click();
             DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+            if (new EggplantElement(movieName, By.Text(movieName)).isPresent()) {
                 return dishAnywhereMovie;
             } else {
                 dishAnywhereMovie.closeMovie();
@@ -35,7 +35,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         for (EggplantElement movie : movies) {
             movie.click();
             DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+            if (new EggplantElement(movieName, By.Text(movieName)).isPresent()) {
                 return new EnterPasscodePopup();
             } else {
                 dishAnywhereMovie.closeMovie();
@@ -46,18 +46,22 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 
     public DishAnywhereScrollView verifyTitlesPresent(List<String> titles) {
         String logMessage = "Verifying movies from radish are present: " + titles.get(0);
-        for (String title : titles) {
+        for (String title : titles.subList(1, titles.size()-1)) {
             logMessage += ", " + title;
         }
         Logger.info(logMessage);
         popups.waitForScreenToLoad();
 
-
+        // If a movie is missing, move on to the next title but retry the last movie position in the app.
+        int movie_pos = 0;
         for (int i = 0; i < titles.size(); i++) {
-            DishAnywhereMovie movie = movieFinder.openMovie(i);
-            String searchingFor = titles.get(0);
-            Verifications.addVerification(String.format("Movie %s is present.", searchingFor),
-                    new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor, SearchRectangle.middleHalf())).isPresent());
+            DishAnywhereMovie movie = movieFinder.openMovie(movie_pos);
+            String searchingFor = titles.get(i);
+            boolean passes = new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor/*, SearchRectangle.middleHalf()*/)).isPresent();
+            Verifications.addVerification(String.format("Movie %s should be present.", searchingFor), passes);
+            if (passes) {
+                movie_pos++;
+            }
             movie.closeMovie();
         }
         return this;

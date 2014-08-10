@@ -48,7 +48,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+        for (int i = 0; i < movies.size() && i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
@@ -69,7 +69,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+        for (int i = 0; i < movies.size() && i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()
@@ -90,7 +90,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
+        for (int i = 0; i < movies.size() && i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
         new DishAnywhereHome()

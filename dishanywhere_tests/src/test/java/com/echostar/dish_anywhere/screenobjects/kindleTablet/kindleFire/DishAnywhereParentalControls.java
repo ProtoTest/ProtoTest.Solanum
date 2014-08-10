@@ -27,7 +27,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement rCheckbox = new EggplantElement("rCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/ROption"));
     public EggplantElement nc17Checkbox = new EggplantElement("nc17Checkbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NC17Option"));
     public EggplantElement nraoCheckbox = new EggplantElement("nraoCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOOption"));
-    public EggplantElement unratedMovieCheckbox = new EggplantElement("unratedMovieCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.Quadrants.RIGHT_HALF));
+    //public EggplantElement unratedMovieCheckbox = new EggplantElement("unratedMovieCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.rightHalf()));
 
 
     public EggplantElement gChecked = new EggplantElement("gChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked"));
