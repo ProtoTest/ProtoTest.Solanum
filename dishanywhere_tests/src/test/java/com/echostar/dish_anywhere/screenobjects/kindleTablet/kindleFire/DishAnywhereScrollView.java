@@ -53,7 +53,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         Logger.info(logMessage);
         popups.waitForScreenToLoad();
 
-        List<String> foundTitles = new ArrayList<String>(titles.size());
+        List<String> notFound = new ArrayList<String>(titles);
         for (int i = 0; i < titles.size(); i++) {
             DishAnywhereMovie movie = movieFinder.openMovie(i);
             String searchingFor = titles.get(i);
@@ -63,6 +63,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
             if (new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor/*, SearchRectangle.middleHalf()*/)).isPresent()) {
                 Logger.info("Found movie title " + searchingFor + " on screen");
                 passes = true;
+                notFound.remove(searchingFor);
             } else {
                 // If a direct search fails, get the text in the title position and see if it matches anything in the titles list.
                 String foundTitle = movie.getTitle();
@@ -71,6 +72,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
                     if (titles.get(j).toLowerCase().contains(foundTitle.toLowerCase())) {
                         Logger.info("Matched movie " + titles.get(j) + " to found partial title " + foundTitle);
                         passes = true;
+                        notFound.remove(titles.get(j));
                         break;
                     }
                 }
@@ -86,9 +88,9 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 //        for (String foundTitle : foundTitles) {
 //            Verifications.addVerification(String.format("Movie %s should be present.", foundTitle), true);
 //        }
-//        for (String notFoundTitle : titles) {
-//            Verifications.addVerification(String.format("Movie %s should be present.", notFoundTitle), false);
-//        }
+        for (String notFoundTitle : notFound) {
+            Verifications.addVerification(String.format("Movie %s should be present.", notFoundTitle), false);
+        }
         return this;
     }
 
