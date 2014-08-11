@@ -22,6 +22,23 @@ public class DeviceMain {
 
     public DishAnywhereHome goHome() {
         nav.homeButton.click();
+        appsTab.click();
+        dishAnywhereApp.click();
+//        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
+//            if (!nav.backButton.isPresent()) {
+//                EggplantTestBase.driver.disconnect();
+//                EggplantTestBase.driver.connect();
+//            } else {
+//                nav.backButton.click();
+//
+//            }
+//        }
+//        dishAnywhereApp.click();
+        return new DishAnywhereHome();
+    }
+
+    public DishAnywhereHome resetApp() {
+        nav.homeButton.click();
         killApp();
 //        EggplantTestBase.driver.swipeDown(new Point(10, 1));
 //        settingsButton.click();
@@ -73,8 +90,11 @@ public class DeviceMain {
 
     public DeviceMain killApp() {
         nav.homeButton.click();
-        for (int attempt = 0; attempt < 5 && !nav.settingsButton.isPresent(); attempt++) {
+        for (int attempt = 0; attempt < 5; attempt++) {
             EggplantTestBase.driver.swipeDown(new Point(EggplantTestBase.driver.getScreenSize().x / 2, 0));
+            if (settingsButton.isPresent()) {
+                break;
+            }
         }
         nav.settingsButton.click();
         new KindleSettings().stopApplication("Anywhere");
