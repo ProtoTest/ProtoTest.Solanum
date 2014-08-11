@@ -114,8 +114,14 @@ public class EggplantElement {
      * @return True if the element is present, otherwise false.
      */
     public boolean isPresent() {
-        if (by.type.equals(By.ByType.point)) return true;
-        return driver.isPresent(by.getLocator());
+
+        if (by.type.equals(By.ByType.point)) {
+            Logger.debug(String.format("Element named \"%s\" is present", name));
+            return true;
+        } else {
+            Logger.debug(String.format("Element named \"%s\" is not present", name));
+            return driver.isPresent(by.getLocator());
+        }
     }
 
     /**
@@ -125,8 +131,13 @@ public class EggplantElement {
      * @return True if the element is present, otherwise false.
      */
     public boolean isPresent(int secs) {
-        if (by.type.equals(By.ByType.point)) return true;
-        return driver.isPresent(by.getLocator(),secs);
+        if (by.type.equals(By.ByType.point)) {
+            Logger.debug(String.format("Element named \"%s\" is present", name));
+            return true;
+        } else {
+            Logger.debug(String.format("Element named \"%s\" is not present", name));
+            return driver.isPresent(by.getLocator(),secs);
+        }
     }
 
     /**
