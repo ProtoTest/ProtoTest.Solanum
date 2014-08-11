@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 
 /**
  * Created by Brian on 6/4/2014.
@@ -14,16 +15,24 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
 
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice(){
-        if(authorizeDeviceButton.isPresent()){
+        Logger.info("Authorizing device");
+        if(deAuthorizeDeviceButton.isPresent()){
+            Logger.info("Already authorized");
+        } else {
+            Logger.info("Authorizing");
             authorizeDeviceButton.click();
         }
         return this;
     }
 
     public DishAnywhereAuthorizedDevices deAuthorizeThisDevice(){
+        Logger.info("De-authorizing device");
         if(deAuthorizeDeviceButton.isPresent()){
+            Logger.info("De-authorized button found; de-authorizing.");
             deAuthorizeDeviceButton.waitForPresent().click();
             okButton.click();
+        } else {
+            Logger.info("De-authorized button not found, not de-authorizing.");
         }
         return this;
     }
