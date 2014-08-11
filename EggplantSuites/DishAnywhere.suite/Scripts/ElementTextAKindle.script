@@ -1,4 +1,4 @@
-﻿
+﻿Put ReadText (Image: "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/MovieTitleHotspot/MovieTitleHotspot")
 //Find MenuBar Options
 WaitFor 8.0, (Text:"Showcase", SearchRectangle:((300,1050),(1500,1200)))
 WaitFor 8.0, (Text:"Guide", SearchRectangle:((300,1050),(1500,1200)))
