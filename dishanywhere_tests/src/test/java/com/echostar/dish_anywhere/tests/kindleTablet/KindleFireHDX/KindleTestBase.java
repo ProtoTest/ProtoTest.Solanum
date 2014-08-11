@@ -5,6 +5,7 @@ import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 /**
@@ -16,7 +17,7 @@ public class KindleTestBase extends EggplantTestBase {
 
     static boolean alreadyInitialized = false;
 
-    @BeforeTest
+    @BeforeMethod
     public void clearAppState() {
         // If the app ever crashes, the app should be initialized even if alreadyInitialized is true.
         if (!alreadyInitialized /* || isCrashed() */) {
@@ -41,12 +42,19 @@ public class KindleTestBase extends EggplantTestBase {
         } else {
             Logger.info("KindleTestBase already initialized; not re-running setup");
             new DeviceMain()
-                    .goHome();
+                    .goHome()
+                    .openSettings()
+                    .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
+                    .clearMovieBlocks()
+                    .clearTVBlocks()
+                    .save();
         }
     }
 
     @AfterMethod
     public void uninitializeApp() {
+        // Clear out the screen stack
+        new DeviceMain().resetApp();
         //new DeviceMain().goHome().goHome();
     }
 }
