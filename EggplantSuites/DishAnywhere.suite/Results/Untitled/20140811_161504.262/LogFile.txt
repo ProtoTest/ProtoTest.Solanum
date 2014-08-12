@@ -1,0 +1,108 @@
+﻿2014-08-11 16:15:04.264 -0600	START		Running Untitled.script
+2014-08-11 16:15:04.303 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:15:04.632 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:15:05.387 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:15:18.679 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:15:18.685 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:15:21.868 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:15:23.884 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:15:34.086 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:15:35.097 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:15:37.651 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:15:38.354 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:15:40.734 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:15:43.932 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:15:55.383 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:15:55.389 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:15:56.983 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:15:58.901 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:16:09.530 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:16:10.237 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:16:13.212 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:16:13.913 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:16:15.703 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:16:16.082 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:16:27.569 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:16:27.579 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:16:29.404 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:16:29.930 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:16:40.884 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:16:41.184 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:16:43.405 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:16:47.507 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:16:49.389 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:16:50.207 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:16:59.812 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:16:59.822 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:17:01.437 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:17:03.047 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:17:13.399 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:17:14.156 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:17:16.217 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:17:16.919 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:17:32.994 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:17:35.108 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:17:46.066 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:17:46.076 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:17:50.398 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:17:52.215 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:18:03.446 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:18:04.915 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:18:06.072 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:18:06.774 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:18:09.163 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:18:12.353 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:18:23.924 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:18:23.941 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:18:25.466 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:18:25.996 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:18:36.307 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:18:37.319 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:18:39.570 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:18:43.459 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:18:45.187 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:18:47.222 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:18:59.188 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:18:59.204 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:19:01.127 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:19:01.848 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:19:12.958 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:19:13.816 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:19:15.078 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:19:15.782 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:19:17.722 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:19:18.114 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:19:29.846 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:19:29.850 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:19:31.303 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:19:31.858 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:19:42.198 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:19:42.854 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:19:43.759 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:19:44.463 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:19:46.942 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:19:49.718 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:20:03.558 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:20:03.562 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:20:05.198 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:20:07.619 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:20:18.646 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:20:19.754 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:20:22.060 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:20:22.763 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:20:24.734 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:20:25.102 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:20:37.258 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	Unable to Find Image AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	7	on_untitled	Untitled.script
+2014-08-11 16:20:37.262 -0600	pressbackbutton			8	on_untitled	Untitled.script
+2014-08-11 16:20:38.986 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	9	on_untitled	Untitled.script
+2014-08-11 16:20:39.743 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	10	on_untitled	Untitled.script
+2014-08-11 16:20:50.380 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	found at (639, 717)	11	on_untitled	Untitled.script
+2014-08-11 16:20:51.592 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand	at (639, 717)	12	on_untitled	Untitled.script
+2014-08-11 16:20:54.561 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings	at (973, 719)	13	on_untitled	Untitled.script
+2014-08-11 16:20:55.264 -0600	presshomebutton			4	on_untitled	Untitled.script
+2014-08-11 16:20:59.066 -0600	waitfor	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	5	on_untitled	Untitled.script
+2014-08-11 16:21:01.787 -0600	click	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	at (830, 379)	6	on_untitled	Untitled.script
+2014-08-11 16:21:02.737 -0600	imagefound	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	found at (830, 379)	7	on_untitled	Untitled.script
+2014-08-11 16:21:37.688 -0600	Exception	AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon	No Image Found On Screen: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"	10	on_untitled	Untitled.script
+2014-08-11 16:21:37.727 -0600	EndTestCase		(Duration:"393.459", Errors:"1", Exceptions:"1", StartTime:"2014-08-11 16:15:04 -0600", Successes:"0", TestCase:"Untitled.script", Warnings:"0")
+2014-08-11 16:21:37.830 -0600	FAILURE	Screen_Error.png	Image Not Found click Error - No Image Found On Screen: "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"\nExecution Time 0:06:33 Untitled.script

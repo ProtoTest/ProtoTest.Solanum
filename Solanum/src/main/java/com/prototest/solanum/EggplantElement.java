@@ -142,7 +142,7 @@ public class EggplantElement {
             return driver.readText(by.getLocator());
         }
         else{
-            return driver.readText("FoundImageLocation()");
+            return driver.readText(by.getLocator());
         }
 
     }
@@ -159,7 +159,7 @@ public class EggplantElement {
             driver.click(by.getLocator());
         }
         else{
-            driver.click("FoundImageLocation()");
+            driver.click(by.getLocator());
         }
         return this;
     }
@@ -176,7 +176,7 @@ public class EggplantElement {
             driver.doubleTap(by.getLocator());
         }
         else{
-            driver.doubleTap("FoundImageLocation()");
+            driver.doubleTap(by.getLocator());
         }
 
         return this;
@@ -194,7 +194,7 @@ public class EggplantElement {
             driver.press(by.getLocator());
         }
         else{
-            driver.press("FoundImageLocation()");
+            driver.press(by.getLocator());
         }
         return this;
     }
@@ -212,7 +212,7 @@ public class EggplantElement {
             driver.release(by.getLocator());
         }
         else{
-            driver.release("FoundImageLocation()");
+            driver.release(by.getLocator());
         }
         return this;
     }
@@ -229,7 +229,7 @@ public class EggplantElement {
             driver.tap(by.getLocator());
         }
         else{
-            driver.tap("FoundImageLocation()");
+            driver.tap(by.getLocator());
         }
         return this;
     }
@@ -246,7 +246,7 @@ public class EggplantElement {
             driver.doubleTap(by.getLocator());
         }
         else{
-            driver.doubleTap("FoundImageLocation()");
+            driver.doubleTap(by.getLocator());
         }
         return this;
     }
@@ -302,7 +302,7 @@ public class EggplantElement {
             driver.drop(element.getBy().getLocator());
         }
         else{
-            driver.drag("FoundImageLocation()");
+            driver.drag(by.getLocator());
             driver.drop(element.getBy().getLocator());
         }
 
@@ -321,7 +321,7 @@ public class EggplantElement {
             driver.swipeUp(this.by.getLocator());
         }
         else{
-            driver.swipeUp("FoundImageLocation()");
+            driver.swipeUp(by.getLocator());
         }
         return this;
     }
@@ -338,7 +338,7 @@ public class EggplantElement {
             driver.swipeDown(this.by.getLocator());
         }
         else{
-            driver.swipeDown("FoundImageLocation()");
+            driver.swipeDown(by.getLocator());
         }
         return this;
     }
@@ -355,7 +355,7 @@ public class EggplantElement {
             driver.swipeLeft(this.by.getLocator());
         }
         else{
-            driver.swipeLeft("FoundImageLocation()");
+            driver.swipeLeft(by.getLocator());
         }
         return this;
     }
@@ -372,7 +372,7 @@ public class EggplantElement {
             driver.swipeRight(this.by.getLocator());
         }
         else{
-            driver.swipeRight("FoundImageLocation()");
+            driver.swipeRight(by.getLocator());
         }
         return this;
     }

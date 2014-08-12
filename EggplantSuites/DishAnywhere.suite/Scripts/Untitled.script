@@ -1,0 +1,14 @@
+﻿
+repeat 100 times
+	PressHomeButton
+	WaitFor 30, "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"
+	Click "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"
+	wait 2
+	repeat while not ImageFound("AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon")
+		PressBackButton
+	end repeat
+	Click "AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"
+	WaitFor 30, "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand"
+	Click "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand"
+	Click "AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings"
+end repeat

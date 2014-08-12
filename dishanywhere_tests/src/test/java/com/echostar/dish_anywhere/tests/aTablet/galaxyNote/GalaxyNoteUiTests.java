@@ -12,19 +12,15 @@ import org.testng.annotations.Test;
 // DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
 
 @Test()
-public class GalaxyNoteUiTests extends EggplantTestBase {
+public class GalaxyNoteUiTests extends GalaxyNoteTestBase {
 
     @Test
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
-        new DeviceMain()
-                .goHome()
-                .logOutIfLoggedIn()
-                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
+        new DishAnywhereHome()
                 .verifyLoggedIn()
                 .logOutIfLoggedIn()
                 .verifyLoggedOut();
-        Verifications.assertVerifications();
 
     }
     @Test
@@ -34,7 +30,6 @@ public class GalaxyNoteUiTests extends EggplantTestBase {
         String movie = radishScraper.findMovieWithDrm("nagra");
 
         new DishAnywhereHome()
-                .goHome()
                 .openOnDemand()
                 .verifyPredictiveSearch(movie)
                 .openMovie(movie)

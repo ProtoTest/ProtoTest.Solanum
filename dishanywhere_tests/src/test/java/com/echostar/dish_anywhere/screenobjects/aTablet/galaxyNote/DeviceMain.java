@@ -37,12 +37,12 @@ public class DeviceMain {
     public DishAnywhereHome goHome() {
         EggplantTestBase.driver.PressHomeButton();
         dishAnywhereApp.click();
-        for (int i=0;i<10&&!dishAnywhereApp.isPresent();i++) {
-            EggplantTestBase.driver.PressBackButton();
-        }
-        for (int i=0;i<5&&dishAnywhereApp.isPresent();i++) {
-            dishAnywhereApp.click();
-        }
+//        for (int i=0;i<10&&!dishAnywhereApp.isPresent();i++) {
+//            EggplantTestBase.driver.PressBackButton();
+//        }
+//        for (int i=0;i<5&&dishAnywhereApp.isPresent();i++) {
+//            dishAnywhereApp.click();
+//        }
         return new DishAnywhereHome();
     }
     public DeviceMain clearField(){

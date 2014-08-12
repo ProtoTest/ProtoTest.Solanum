@@ -1,0 +1,4 @@
+﻿2014-08-11 16:39:57.566 -0600	START		Running Untitled.script
+2014-08-11 16:39:57.631 -0600	Exception		Remote Connection Unavailable	3	on_untitled	Untitled.script
+2014-08-11 16:39:57.664 -0600	EndTestCase		(Duration:"0.094", Errors:"1", Exceptions:"1", StartTime:"2014-08-11 16:39:57 -0600", Successes:"0", TestCase:"Untitled.script", Warnings:"0")
+2014-08-11 16:39:57.687 -0600	FAILURE		No Remote Connection presshomebutton Error - Remote Connection Unavailable\nExecution Time 0:00:00 Untitled.script

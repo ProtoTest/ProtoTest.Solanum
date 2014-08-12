@@ -77,18 +77,7 @@ class EggplantDriveClient {
             EggplantResponse response = new EggplantResponse((HashMap<String,String>)result);
             return response;
         } catch (XmlRpcException e) {
-            Logger.warning(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
-//
-//            try {
-//                EggplantTestBase.driver.disconnect();
-//                EggplantTestBase.driver.connect();
-//                Object result = null;
-//                result = client.execute("execute",params);
-//                EggplantResponse response = new EggplantResponse((HashMap<String,String>)result);
-//                return response;
-//            } catch (XmlRpcException e1) {
-//                throw new RuntimeException(String.format("ERROR Executing '%s' : %s\"", command, e.getMessage()));
-//            }
+            throw new RuntimeException(String.format("ERROR Executing '%s' : %s", command, e.getMessage()));
         }catch (Exception f) {
             Logger.error(String.format("ERROR Executing '%s' : %s", command, f.getMessage()));
         }

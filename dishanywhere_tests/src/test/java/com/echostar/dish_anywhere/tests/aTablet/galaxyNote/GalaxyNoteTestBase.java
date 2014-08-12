@@ -26,6 +26,7 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
 
         handleAppCrash();
          new DeviceMain()
+                 .killApp()
                 .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -42,6 +43,6 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
 
     @BeforeMethod
     public void goToDishAnywhereHome(){
-        new DeviceMain().goHome();
+        new DeviceMain().killApp().goHome();
     }
 }

@@ -17,7 +17,7 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
-        watchMovie(RadishScraper.getShortName(movie,25));
+        watchMovie(movie);
 
     }
 
@@ -26,7 +26,7 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("widevine");
-        watchMovie(RadishScraper.getShortName(movie,25));
+        watchMovie(movie);
 
     }
 
@@ -35,11 +35,9 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
                 .openOnDemand()
                 .searchFor(movie)
                 .openOnDemandResults()
-                .openMovie(movie)
+                .openMovie(RadishScraper.getShortName(movie,25))
                 .watchMovie()
                 .openControls()
-                .verifyMoviePlays();
-        Logger.screenshot("OnDemandMovie");
-
+                .verifyMoviePlays().goBackHome();
     }
 }

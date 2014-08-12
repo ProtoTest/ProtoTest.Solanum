@@ -42,7 +42,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
 //    }
     public DishAnywhereHome verifyLoggedIn() {
         Logger.info("Verifying 'logged in' status...");
-        settingsButton.waitForPresent(20);
+        settingsButton.waitForPresent();
         return this;
     }
 

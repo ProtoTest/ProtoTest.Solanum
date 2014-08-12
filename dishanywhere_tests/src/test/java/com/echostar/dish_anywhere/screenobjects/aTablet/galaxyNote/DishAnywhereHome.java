@@ -42,7 +42,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
     public DishAnywhereOnDemand openOnDemand(){
         onDemandButton.click();
-        viewAllButton.waitForPresent(20);
+        viewAllButton.waitForPresent();
         viewAllButton.click();
         return new DishAnywhereOnDemand();
     }
@@ -51,7 +51,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return new Blockbuster();
     }
     public DishAnywhereHome verifyLoggedIn() {
-        settingsButton.waitForPresent(20);
+        settingsButton.waitForPresent();
         return this;
     }
 

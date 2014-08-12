@@ -25,11 +25,11 @@
   <TotalTimeOnSuccess>0.000000</TotalTimeOnSuccess>
  </script>
  <script name="Untitled">
-  <LastStatus>Success</LastStatus>
-  <NumberOfRuns>1</NumberOfRuns>
-  <NumberOfFails>0</NumberOfFails>
+  <LastStatus>Failure</LastStatus>
+  <NumberOfRuns>6</NumberOfRuns>
+  <NumberOfFails>5</NumberOfFails>
   <FirstRun>2014-07-30 14:21:40 -0600</FirstRun>
-  <LastRun>2014-07-30 14:21:40 -0600</LastRun>
+  <LastRun>2014-08-11 16:39:57 -0600</LastRun>
   <TotalTimeOnSuccess>0.069000</TotalTimeOnSuccess>
  </script>
  <script name="temp">
