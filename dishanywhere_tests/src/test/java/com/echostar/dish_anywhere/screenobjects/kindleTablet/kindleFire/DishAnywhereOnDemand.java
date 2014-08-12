@@ -72,6 +72,10 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
         searchInputClearButton.click();
         searchInput.setText(searchTerm);
         firstSearchResult.click();
+        searchInput.type(searchTerm);
+
+        firstSearchResult.click();
+
         return new DishAnywhereSearchResult();
 
     }

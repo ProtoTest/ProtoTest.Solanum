@@ -27,7 +27,7 @@ public class DishAnywhereLogin extends DishAnywhereHome {
             closeKeyboardButton.click();
         }
         loginButton.click();
-        popups.waitForScreenToLoad();
+        waitForScreenToLoad();
         DishAnywhereHome home = new DishAnywhereHome();
         if(!home.guideButton.isPresent(10)){
             Assert.fail("Could not log in successfully");

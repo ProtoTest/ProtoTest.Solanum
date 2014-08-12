@@ -37,7 +37,9 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
 
     }
 
-    @Test
+    // Disable this test because there is no option to sort the movies present by title.
+    // Need to rework.
+    @Test(enabled = false)
     public void featuredCategory(){
 
 

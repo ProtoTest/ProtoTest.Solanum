@@ -3,8 +3,6 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 import com.prototest.solanum.*;
 
 import java.awt.*;
-import java.util.*;
-import java.util.List;
 
 // Screen Object for Device's MainScreen ViewGroup
 
@@ -23,25 +21,82 @@ public class DeviceMain {
     public final DeviceNavigation nav = new DeviceNavigation();
 
     public DishAnywhereHome goHome() {
-        EggplantTestBase.driver.PressHomeButton();
-        if(dishAnywhereApp.isPresent()){
-            dishAnywhereApp.click();
-        }
-        else{
-            appsTab.click();
-            dishAnywhereApp.click();
-        }
-        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            EggplantTestBase.driver.PressBackButton();
-        }
+        nav.homeButton.click();
+        appsTab.click();
         dishAnywhereApp.click();
+//        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
+//            if (!nav.backButton.isPresent()) {
+//                EggplantTestBase.driver.disconnect();
+//                EggplantTestBase.driver.connect();
+//            } else {
+//                nav.backButton.click();
+//
+//            }
+//        }
+//        dishAnywhereApp.click();
         return new DishAnywhereHome();
     }
 
-    public DeviceMain killApp(){
-        EggplantTestBase.driver.PressHomeButton();
-        EggplantTestBase.driver.swipeDown(new Point(EggplantTestBase.driver.getScreenSize().x/2,0));
-        nav.settingsButton.waitForPresent(30).click();
+    public DishAnywhereHome resetApp() {
+        nav.homeButton.click();
+        killApp();
+//        EggplantTestBase.driver.swipeDown(new Point(10, 1));
+//        settingsButton.click();
+//        applicationsButton.click();
+//        manageAllApplicationsButton.click();
+//        Point swipePoint = new Point(20, (int) (EggplantTestBase.driver.getScreenSize().y * 0.8));
+//        Point swipeEndPoint = new Point(20, (int) (EggplantTestBase.driver.getScreenSize().y * 0.72));
+//
+//        for (int attempt = 0; attempt < 10 && !dishThumbnail.isPresent(); attempt++) {
+//            List<EggplantElement> handles = applicationsSwipeLocation.allInstances();
+//            EggplantElement firstHandle = handles.get(0);
+//            EggplantElement lastHandle = handles.get(handles.size() - 1);
+//            Logger.info("Dragging from " + lastHandle.getBy().getLocator() + " to " +
+//                    firstHandle.getBy().getLocator());
+//
+//            lastHandle.dragTo(firstHandle);
+//        }
+//        dishThumbnail.click();
+//
+//
+//       forceStopButton.waitForPresent();
+//            forceStopButton.click();
+
+        nav.homeButton.click();
+//        for (int i=0;i<5&&!appsTab.isPresent();i++) {
+//            if (!nav.backButton.isPresent()) {
+//                EggplantTestBase.driver.disconnect();
+//                EggplantTestBase.driver.connect();
+//            }
+//            else {
+//                nav.backButton.click();
+//
+//            }
+//        }
+        appsTab.click();
+        dishAnywhereApp.click();
+//        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
+//            if (!nav.backButton.isPresent()) {
+//                EggplantTestBase.driver.disconnect();
+//                EggplantTestBase.driver.connect();
+//            } else {
+//                nav.backButton.click();
+//
+//            }
+//        }
+//        dishAnywhereApp.click();
+        return new DishAnywhereHome();
+    }
+
+    public DeviceMain killApp() {
+        nav.homeButton.click();
+        for (int attempt = 0; attempt < 5; attempt++) {
+            EggplantTestBase.driver.swipeDown(new Point(EggplantTestBase.driver.getScreenSize().x / 2, 0));
+            if (settingsButton.isPresent()) {
+                break;
+            }
+        }
+        nav.settingsButton.click();
         new KindleSettings().stopApplication("Anywhere");
         EggplantTestBase.driver.PressHomeButton();
         return new DeviceMain();

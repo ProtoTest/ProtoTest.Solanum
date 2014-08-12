@@ -459,7 +459,7 @@ public class EggplantDriver {
      * Reads the text on the device for a specific element locator.
      */
     public String readText(String locator) {
-        EggplantResponse result = execute(String.format("put ReadText %s", locator));
+        EggplantResponse result = execute(String.format("put ReadText ((%s))", locator));
         List<String> resultLines = Arrays.asList(result.Output.split("\n"));
         return Joiner.on("\n").join(resultLines.subList(1, resultLines.size()));
     }

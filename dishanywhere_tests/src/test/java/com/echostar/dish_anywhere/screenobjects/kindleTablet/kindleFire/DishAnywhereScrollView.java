@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         for (EggplantElement movie : movies) {
             movie.click();
             DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) {
+            if (new EggplantElement(movieName, By.Text(movieName)).isPresent()) {
                 return dishAnywhereMovie;
             } else {
                 dishAnywhereMovie.closeMovie();
@@ -35,7 +36,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         for (EggplantElement movie : movies) {
             movie.click();
             DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) {
+            if (new EggplantElement(movieName, By.Text(movieName)).isPresent()) {
                 return new EnterPasscodePopup();
             } else {
                 dishAnywhereMovie.closeMovie();
@@ -46,19 +47,49 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
 
     public DishAnywhereScrollView verifyTitlesPresent(List<String> titles) {
         String logMessage = "Verifying movies from radish are present: " + titles.get(0);
-        for (String title : titles) {
+        for (String title : titles.subList(1, titles.size() - 1)) {
             logMessage += ", " + title;
         }
         Logger.info(logMessage);
         popups.waitForScreenToLoad();
 
-
+        List<String> notFound = new ArrayList<String>(titles);
         for (int i = 0; i < titles.size(); i++) {
             DishAnywhereMovie movie = movieFinder.openMovie(i);
-            String searchingFor = titles.get(0);
-            Verifications.addVerification(String.format("Movie %s is present.", searchingFor),
-                    new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent());
+            String searchingFor = titles.get(i);
+//            for (int j = 0; j < titles.size(); j++) {
+            boolean passes = false;
+            // Search directly for the title we seek.
+            if (new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor/*, SearchRectangle.middleHalf()*/)).isPresent()) {
+                Logger.info("Found movie title " + searchingFor + " on screen");
+                passes = true;
+                notFound.remove(searchingFor);
+            } else {
+                // If a direct search fails, get the text in the title position and see if it matches anything in the titles list.
+                String foundTitle = movie.getTitle();
+                Logger.info("Read movie title " + foundTitle + " from movie details dialog");
+                for (int j = 0; j < titles.size(); j++) {
+                    if (titles.get(j).toLowerCase().contains(foundTitle.toLowerCase())) {
+                        Logger.info("Matched movie " + titles.get(j) + " to found partial title " + foundTitle);
+                        passes = true;
+                        notFound.remove(titles.get(j));
+                        break;
+                    }
+                }
+
+            }
+
+            Verifications.addVerification(String.format("Movie %s should be present.", searchingFor), passes);
+
+            //boolean passes = new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor/*, SearchRectangle.middleHalf()*/)).isPresent();
+            //Verifications.addVerification(String.format("Movie %s should be present.", searchingFor), passes);
             movie.closeMovie();
+        }
+//        for (String foundTitle : foundTitles) {
+//            Verifications.addVerification(String.format("Movie %s should be present.", foundTitle), true);
+//        }
+        for (String notFoundTitle : notFound) {
+            Verifications.addVerification(String.format("Movie %s should be present.", notFoundTitle), false);
         }
         return this;
     }

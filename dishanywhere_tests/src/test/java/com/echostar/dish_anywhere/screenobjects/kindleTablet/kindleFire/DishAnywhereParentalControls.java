@@ -27,7 +27,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement rCheckbox = new EggplantElement("rCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/ROption"));
     public EggplantElement nc17Checkbox = new EggplantElement("nc17Checkbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NC17Option"));
     public EggplantElement nraoCheckbox = new EggplantElement("nraoCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOOption"));
-    public EggplantElement unratedMovieCheckbox = new EggplantElement("unratedMovieCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.Quadrants.RIGHT_HALF));
+    //public EggplantElement unratedMovieCheckbox = new EggplantElement("unratedMovieCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.rightHalf()));
 
 
     public EggplantElement gChecked = new EggplantElement("gChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked"));
@@ -45,7 +45,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearTVBlocks() {
-        for (int i = 0 ;i<3&&!tvmaCheckbox.isPresent();i++) {
+        for (int attempt = 0; attempt < 5 && !tvmaCheckbox.isPresent(5); attempt++) {
             tvgCheckbox.swipeUp();
         }
         if (tvmaChecked.isPresent())
@@ -55,8 +55,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
 
     public DishAnywhereParentalControls setTVYBlocked() {
-        for (int i=0;i<3&&!tvyCheckbox.isPresent();i++) {
-            pgCheckbox.swipeDown();
+        for (int attempt = 0; attempt < 5 && !tvyCheckbox.isPresent(); attempt++) {
+            tvpgCheckbox.swipeDown();
         }
         if (!tvyChecked.isPresent())
             tvyCheckbox.click();
@@ -64,7 +64,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearMovieBlocks() {
-        for (int i=0 ;i<3&&!nraoCheckbox.isPresent();i++) {
+        for (int attempt = 0; attempt < 5 && !nraoCheckbox.isPresent(); attempt++) {
             rCheckbox.swipeUp();
         }
         if (nraoChecked.isPresent())
@@ -74,7 +74,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
 
     public DishAnywhereParentalControls setMovieGBlocked() {
-        for (int i=0;i<3&&!gCheckbox.isPresent();i++) {
+        for (int attempt = 0; attempt < 5 && !gCheckbox.isPresent(); attempt++) {
             rCheckbox.swipeDown();
         }
         if (!gChecked.isPresent())

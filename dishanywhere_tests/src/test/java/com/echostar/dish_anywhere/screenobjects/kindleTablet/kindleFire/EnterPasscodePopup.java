@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 
 /**
  * Created by Brian on 6/3/2014.
@@ -22,8 +23,11 @@ public class EnterPasscodePopup {
     private EggplantElement button0 = new EggplantElement("button0", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButton0"));
     private EggplantElement backspaceButton = new EggplantElement("Passcode backspace", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButtonBack"));
 
+    public boolean isPresent() {
+        return backspaceButton.isPresent();
+    }
     public DishAnywhereMovie enterPasscodeIfPresent(String passcode) {
-        if (enterPasscodeHeader.isPresent()) {
+        if (isPresent()) {
             return enterPasscode(passcode);
         }
         return new DishAnywhereMovie();
@@ -66,6 +70,7 @@ public class EnterPasscodePopup {
                 }
             }
             // Sometimes eggplant fails to enter all four digits. If so, back the code out and try again.
+            EggplantTestBase.sleep(1500);
             if (button1.isPresent()) {
                 backspaceButton.click();
                 backspaceButton.click();

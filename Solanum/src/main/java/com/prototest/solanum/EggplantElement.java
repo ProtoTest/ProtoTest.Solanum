@@ -30,7 +30,7 @@ import java.util.List;
  *
  * <p>EggplantElement caches the point location of the found on-screen element the first time it is interacted with.
  * This allows faster interaction with the element. Verification methods such as {@link #isPresent()} will always refer
- * to the original {@link By}. Call {@link #resetLocation()} to clear the cached point location.</p>
+ * to the original {@link By}.</p>
  *
  * <p>EggplantElement provides a set of verification methods.</p>
  *

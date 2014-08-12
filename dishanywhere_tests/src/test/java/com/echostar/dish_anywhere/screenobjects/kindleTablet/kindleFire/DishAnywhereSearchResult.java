@@ -24,20 +24,25 @@ public class DishAnywhereSearchResult extends DeviceMain {
 
     public DishAnywhereMovie openMovie(String movieName) {
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
-        if (submitSearchButton.isPresent()) {
-            EggplantTestBase.driver.PressBackButton();
-        }
-        List<EggplantElement> movies = leftMovieBorder.allInstances();
-        for (EggplantElement movie : movies) {
-            movie.click();
-            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
-            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) {
-                return dishAnywhereMovie;
-            } else {
-                dishAnywhereMovie.closeMovie();
-            }
-        }
-        throw new RuntimeException("Movie " + movieName + " was not found in search results!");
+//        if (submitSearchButton.isPresent()) {
+//            closeKeyboardButton.click();
+//        }
+        return movieFinder.findMovie(movieName);
+//        EggplantElement movie = new EggplantElement("Movie " + movieName, By.Text(movieName));
+//        movie.waitForPresent();
+//        movie.click();
+//        return new DishAnywhereMovie();
+//        List<EggplantElement> movies = leftMovieBorder.allInstances();
+//        for (EggplantElement movie : movies) {
+//            movie.click();
+//            DishAnywhereMovie dishAnywhereMovie = new DishAnywhereMovie();
+//            if (new EggplantElement(movieName, By.Text(movieName, SearchRectangle.middleHalf())).isPresent()) {
+//                return dishAnywhereMovie;
+//            } else {
+//                dishAnywhereMovie.closeMovie();
+//            }
+//        }
+       // throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
     public EnterPasscodePopup openProtectedMovie(String movieName){
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.

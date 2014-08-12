@@ -1,7 +1,11 @@
-﻿Script,Last Status,Runs,Fails,First Run,Last Run,Avg Time(Success)
+﻿﻿Script,Last Status,Runs,Fails,First Run,Last Run,Avg Time(Success)
 ElementTextATablet,Success,7,1,2014-07-24 15:35:04 -0600,2014-07-24 15:44:37 -0600,0:00:02
+<<<<<<< HEAD
 test,Failure,116,85,2014-07-25 14:32:25 -0600,2014-08-07 18:14:17 -0600,0:02:20
 ElementTextAKindle,Failure,1,1,2014-07-30 16:39:35 -0600,2014-07-30 16:39:35 -0600,0:00:00
 Untitled,Failure,6,5,2014-07-30 14:21:40 -0600,2014-08-11 16:39:57 -0600,0:00:00
+=======
+test,Failure,28,19,2014-07-25 14:32:25 -0600,2014-08-07 18:36:52 -0600,0:00:03
+>>>>>>> origin/master
 temp,Success,7,0,2014-07-25 13:32:59 -0600,2014-07-25 13:55:51 -0600,0:00:01
 ElementTextAPhone,Failure,2,1,2014-05-19 12:35:06 -0600,2014-06-10 16:22:07 -0600,0:00:07
