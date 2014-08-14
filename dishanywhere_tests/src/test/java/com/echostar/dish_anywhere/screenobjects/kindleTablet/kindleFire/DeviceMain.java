@@ -38,7 +38,9 @@ public class DeviceMain {
     }
 
     public DishAnywhereHome resetApp() {
+        Logger.debug("Going home");
         nav.homeButton.click();
+        Logger.debug("Killing app");
         killApp();
 //        EggplantTestBase.driver.swipeDown(new Point(10, 1));
 //        settingsButton.click();
@@ -73,6 +75,7 @@ public class DeviceMain {
 //
 //            }
 //        }
+        Logger.debug("Opening app");
         appsTab.click();
         dishAnywhereApp.click();
 //        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
@@ -90,13 +93,10 @@ public class DeviceMain {
 
     public DeviceMain killApp() {
         nav.homeButton.click();
-        for (int attempt = 0; attempt < 5; attempt++) {
-            EggplantTestBase.driver.swipeDown(new Point(EggplantTestBase.driver.getScreenSize().x / 2, 0));
-            if (settingsButton.isPresent()) {
-                break;
-            }
-        }
-        nav.settingsButton.click();
+        EggplantElement settingsOverlaySwipePoint = new EggplantElement(By.Point(new Point(EggplantTestBase.driver.getScreenSize().x / 2, 1)));
+
+        settingsOverlaySwipePoint.swipeDown(ActionCondition.isPresent(settingsButton));
+        settingsButton.click();
         new KindleSettings().stopApplication("Anywhere");
         EggplantTestBase.driver.PressHomeButton();
         return new DeviceMain();
