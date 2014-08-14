@@ -30,7 +30,7 @@ public class EggplantTestBase {
     @BeforeMethod
     public void testSetup(Method method) {
         Config.currentTestName = method.getName();
-        Logger.debug("Starting test " + Config.currentTestName);
+        Logger.info("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
     }
 
@@ -118,7 +118,12 @@ public class EggplantTestBase {
             hostName = Config.hostName;
             hostPort = Config.hostPort;
         }
-        //driver.disconnect(hostName);
+        try{
+            driver.disconnect(hostName);
+        }
+        catch(Exception e){
+           Logger.warning("Could not disconnect correctly.  This is a known bug with eggplant : " + e.getMessage());
+        }
         driver.endSuite();
         stopEggplant();
     }
@@ -127,7 +132,7 @@ public class EggplantTestBase {
      * Default eggplant drive settings.  Configurable by the config file.
      */
     public void setEggplantDefaultSettings() {
-        Logger.debug("Eggplant drive started with options : " + driver.getOptions());
+        //Logger.debug("Eggplant drive started with options : " + driver.getOptions());
         //driver.setOption("ImageSearchDelay", String.valueOf(Config.imageSearchDelay));
        // driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
        // driver.setOption("PreciseImageTolerance", String.valueOf(Config.preciseImageTolerance));
