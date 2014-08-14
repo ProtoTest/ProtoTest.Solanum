@@ -22,8 +22,8 @@ import java.util.regex.Pattern;
 public class EggplantDriver {
 
     private EggplantDriveClient client;
-    private Rectangle screenRectangle;
-    private Point screenSize;
+    //private Rectangle screenRectangle;
+    //private Point screenSize;
     PrintWriter writer;
 
 
@@ -61,7 +61,6 @@ public class EggplantDriver {
     public void connect(String host) {
         execute(String.format("Connect (ServerID:\"%s\")", host));
         Logger.debug("Connected to device : " + getConnectionInfo());
-        initProperties();
     }
 
     /**
@@ -70,27 +69,18 @@ public class EggplantDriver {
     public void connect(String host, int portNum) {
         execute(String.format("Connect (ServerID:\"%s\", portNum: \"%s\")", host, portNum));
         Logger.debug("Connected to device : " + getConnectionInfo());
-        initProperties();
     }
 
-    private void initProperties() {
-      //  if(this.screenRectangle == null){
-            String screenRectString = execute("put RemoteScreenRectangle()").Output;
-            String[] rect = parseCoordinates(screenRectString);
-            this.screenRectangle = new Rectangle(Integer.parseInt(rect[0]),
-                    Integer.parseInt(rect[1]),
-                    Integer.parseInt(rect[2]),
-                    Integer.parseInt(rect[3]));
-
-    //    }
-    //    if(this.screenSize==null){
-            String screenSizeString = execute("put RemoteScreenSize()").Output;
-            screenSizeString = screenSizeString.substring(1, screenSizeString.length() - 1);
-            String[] screenSizeRect = screenSizeString.split(",");
-            screenSize = new Point(Integer.parseInt(screenSizeRect[0]), Integer.parseInt(screenSizeRect[1]));
-        }
-
-   // }
+    public Rectangle getScreenRectangle() {
+        //  if(this.screenRectangle == null){
+        String screenRectString = execute("put RemoteScreenRectangle()").Output;
+        String[] rect = parseCoordinates(screenRectString);
+        Rectangle screenRectangle = new Rectangle(Integer.parseInt(rect[0]),
+                Integer.parseInt(rect[1]),
+                Integer.parseInt(rect[2]),
+                Integer.parseInt(rect[3]));
+        return screenRectangle;
+    }
 
     /**
      * Disconnect from the current host (device under test).
@@ -271,7 +261,6 @@ public class EggplantDriver {
      */
     public void refreshScreen() {
         execute("RefreshScreen");
-        initProperties();
     }
 
     /**
@@ -479,6 +468,10 @@ public class EggplantDriver {
      * Gets the screen size of the current device as a x,y point representing the bottom right corner
      */
     public Point getScreenSize() {
+        String screenSizeString = execute("put RemoteScreenSize()").Output;
+        screenSizeString = screenSizeString.substring(1, screenSizeString.length() - 1);
+        String[] screenSizeRect = screenSizeString.split(",");
+        Point screenSize = new Point(Integer.parseInt(screenSizeRect[0]), Integer.parseInt(screenSizeRect[1]));
         return screenSize;
     }
 
@@ -535,14 +528,7 @@ public class EggplantDriver {
 
     }
 
-    /**
-     * Gets the full size screen rectangle of the current deivce.
-     */
-    public Rectangle getScreenRectangle() {
-        return screenRectangle;
-    }
-
-    /**
+     /**
      * Gets list of every location of the specified element locator string
      */
     public List<EggplantElement> everyImageLocation(String locator) {
