@@ -30,6 +30,10 @@ public class EnterPasscodePopup {
         return new com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie();
     }
 
+    public boolean isPasscodePresent(){
+        return enterPasscodeHeader.isPresent();
+    }
+
     public com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie enterPasscode(String passcode) {
         Logger.info("Entering passcode:(" + passcode + ").");
         for (char c : passcode.toCharArray()) {

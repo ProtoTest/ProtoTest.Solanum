@@ -41,7 +41,8 @@ public class GalaxyS5AuthorizedDevices extends GalaxyS5TestBase {
                 .openMovies()
                 .openMovie(movieName)
                 .watchMovie()
-                .verifyMoviePlays();
+                .verifyMoviePlays()
+                .goBackToDeviceScreen();
     }
 
 }

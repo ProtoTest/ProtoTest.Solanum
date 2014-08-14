@@ -20,7 +20,7 @@ public class By {
     public enum ByType {
         point,image,text
     }
-    private String locator;
+    public String locator;
     private SearchRectangle.Quadrants searchRectangle;
     private File image;
     protected ArrayList<Option> options = new ArrayList<Option>();

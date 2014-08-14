@@ -26,27 +26,9 @@ public class DeviceMain {
 
     public DishAnywhereHome goHome() {
         EggplantTestBase.driver.PressHomeButton();
-        for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            if (!nav.backButton.isPresent()) {
-                EggplantTestBase.driver.disconnect();
-                EggplantTestBase.driver.connect();
-            }
-            else {
-                EggplantTestBase.driver.PressBackButton();
-
-
-            }
-        }
         dishAnywhereApp.click();
         for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            if (!nav.backButton.isPresent()) {
-                EggplantTestBase.driver.disconnect();
-                EggplantTestBase.driver.connect();
-            }
-            else {
-                EggplantTestBase.driver.PressBackButton();
-
-            }
+            EggplantTestBase.driver.PressBackButton();
         }
         dishAnywhereApp.click();
         return new DishAnywhereHome();
