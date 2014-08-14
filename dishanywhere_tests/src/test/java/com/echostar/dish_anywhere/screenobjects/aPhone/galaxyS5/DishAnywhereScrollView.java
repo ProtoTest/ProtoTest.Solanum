@@ -40,7 +40,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
             EggplantElement movie = new EggplantElement(By.Text(titles.get(i)));
             EnterPasscodePopup passcode = new EnterPasscodePopup();
             if(passcode.isPasscodePresent()){
-                Logger.error("Passcode present for movie : " + titles.get(i) + " when it should not be");
+                Logger.error("Passcode present for movie : " + titles.get(i).toString() + " when it should not be");
                 passcode.enterPasscode("1111");
             }
             movie.verifyPresent();

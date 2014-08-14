@@ -20,7 +20,7 @@ public class GalaxyS5TestBase extends EggplantTestBase {
     private void handleAppCrash() {
         EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,"));
         EggplantElement okButton = new EggplantElement(By.Text("OK"));
-        if (crashText.isPresent()) {
+        if (crashText.isPresent(1)) {
             okButton.click();
         }
     }
