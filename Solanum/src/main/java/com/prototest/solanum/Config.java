@@ -61,15 +61,15 @@ public class Config {
      */
     public static int logLevel = getLogLevel(getPropertyValue("logLevel", "debug"));
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
-    public static int commandDelayMs = getPropertyValue("commandDelayMs", 1000);
+    public static int commandDelayMs = getPropertyValue("commandDelayMs", 200);
     public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 60);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
-    public static String imageSearchCount = getPropertyValue("imageSearchCount","4");
-    public static String imageSearchDelay = getPropertyValue("imageSearchDelay","0.1");
+    public static String imageSearchCount = getPropertyValue("imageSearchCount","7");
+    public static String imageSearchDelay = getPropertyValue("imageSearchDelay","0.3");
     public static String preciseImageTolerance = getPropertyValue("preciseImageTolerance","1");
     public static String standardImageTolerance = getPropertyValue("standardImageTolerance","70");
-    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".5");
+    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".02");
     public static String remoteWorkInterval = getPropertyValue("remoteWorkInterval","0.1");
     public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
     public static String currentTestName = "Test";
