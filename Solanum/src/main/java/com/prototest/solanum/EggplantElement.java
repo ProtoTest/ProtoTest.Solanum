@@ -84,7 +84,7 @@ public class EggplantElement {
      */
     public EggplantElement(By by) {
         this.by = by;
-        this.name = by.getLocator();
+        this.name = by.locator;
         this.waitSec = Config.elementWaitTimeSec;
     }
 
@@ -94,7 +94,7 @@ public class EggplantElement {
      */
     public EggplantElement(By by, int waitSec) {
         this.by = by;
-        this.name = by.getLocator();
+        this.name = by.locator;
         this.waitSec = waitSec;
     }
 
@@ -416,16 +416,11 @@ public class EggplantElement {
      */
     public EggplantElement waitForPresent(Integer secs) {
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
-        LocalTime now = new LocalTime();
-        LocalTime endTime = now.plusSeconds(secs);
-        while (now.isBefore(endTime) && !Thread.interrupted()) {
-            if (isPresent()) {
+            if (isPresent(secs)) {
                 return this;
             } else {
                 driver.refreshScreen();
-                now = new LocalTime();
             }
-        }
 
         if (Config.diagnoseFailedImages) {
             Logger.warning(String.format("%s not found.  Opening EggPlant GUI to diagnose failure", name));
@@ -434,17 +429,13 @@ public class EggplantElement {
             hook.runBatch();
             Logger.warning(String.format("Eggplant GUI has been closed.  Finishing Test", name));
 
-            now = new LocalTime();
-            endTime = now.plusSeconds(secs);
-            while (now.isBefore(endTime) && !Thread.interrupted()) {
-                if (isPresent()) {
+            if (isPresent(secs)) {
                     return this;
                 } else {
                     driver.refreshScreen();
                     now = new LocalTime();
                 }
             }
-        }
 
         Logger.error(String.format("%s not found: %s.", name, by.getLocator()));
 
