@@ -44,14 +44,7 @@ public class DishAnywhereSearchResult extends DeviceMain {
 //        }
        // throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
-    public EnterPasscodePopup openProtectedMovie(String movieName){
-        // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
-        if (submitSearchButton.isPresent()) {
-            EggplantTestBase.driver.PressBackButton();
-        }
-        List<EggplantElement> movies = leftMovieBorder.allInstances();
-
-        movies.get(0).click();
-        return new EnterPasscodePopup();
+    public DishAnywhereMovie openProtectedMovie(String movieName, String passcode){
+        return movieFinder.findMovie(movieName, passcode);
     }
 }
