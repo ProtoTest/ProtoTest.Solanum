@@ -39,7 +39,6 @@ public class GalaxyS5TestBase extends EggplantTestBase {
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
                 .clearTVBlocks()
-                .save()
                 .openGuide();
     }
     

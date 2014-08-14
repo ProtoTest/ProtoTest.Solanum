@@ -18,7 +18,6 @@ public class MoviePlayer extends DishAnywhereHome {
         Logger.info("Opening controls...");
         for (int i=0;i<10&&! skipBackButton.isPresent();i++) {
             screenElement.doubleClick();
-            screenElement.click();
             EggplantTestBase.sleep(500);
         }
         popups.waitForScreenToLoad();

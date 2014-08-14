@@ -65,7 +65,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         Logger.info("Clearing Movie Blocks...");
         movieRatingsButton.click();
         if(nraoChecked.isPresent())
-            nraoCheckbox.click();
+            nraoChecked.click();
         EggplantTestBase.driver.PressBackButton();
         if (okButton.isPresent())
             okButton.click();
