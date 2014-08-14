@@ -27,14 +27,14 @@ public class DishAnywhereHome extends DishAnywhereMain {
         Logger.info("Checking if logged in");
         // Make sure there's no transition animations still running by waiting a second...
         EggplantTestBase.sleep(1000);
-        for (int attempt = 0; attempt < 3; attempt++) {
-            Logger.debug("Attempt " + (attempt + 1) + " to detect guide button");
+//        for (int attempt = 0; attempt < 3; attempt++) {
+//            Logger.debug("Attempt " + (attempt + 1) + " to detect guide button");
             EggplantTestBase.driver.refreshScreen();
             if (guideButton.isPresent()) {
                 Logger.info("Logged in");
                 return true;
             }
-        }
+//        }
         Logger.info("Logged out");
         return false;
     }
