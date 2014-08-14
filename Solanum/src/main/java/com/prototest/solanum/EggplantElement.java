@@ -204,6 +204,8 @@ public class EggplantElement {
         } else {
             driver.press("FoundImageLocation()");
         }
+        sleep(2000);
+        release();
         return this;
     }
 
@@ -214,7 +216,6 @@ public class EggplantElement {
      * @return This {@link EggplantElement}.
      */
     public EggplantElement release() {
-        waitForPresent();
         Logger.debug(String.format("Performing release on %s %s.", name, by.getLocator()));
         if (by.type == By.ByType.point) {
             driver.release(by.getLocator());
@@ -276,12 +277,10 @@ public class EggplantElement {
      *
      * @return This {@link EggplantElement}.
      */
-    public EggplantElement setText(String text) {
-        click();
-        clearText();
-        type(text);
-        return this;
-    }
+//    public EggplantElement setText(String text) {
+//        type(text);
+//        return this;
+//    }
 
     /**
      * Tap the screen at the location of this element.
@@ -289,8 +288,9 @@ public class EggplantElement {
      * @return This {@link EggplantElement}.
      */
     public EggplantElement clearText() {
+        click();
         press();
-        sendKeys(EggplantKeys.backspace);
+        driver.sendKeys(EggplantKeys.backspace.keyword);
         return this;
     }
 
@@ -578,7 +578,7 @@ public class EggplantElement {
      * Click on the element then type text.
      */
     public void sendKeys(EggplantKeys... keys) {
-        click();
+//        click();
         String keysPart = "";
         for (EggplantKeys key : keys) {
             keysPart += key.keyword + ",";

@@ -70,10 +70,7 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
         String searchTerm = movie.substring(0, movie.length() - 1);
         searchInputClearButton.click();
-        searchInput.setText(searchTerm);
-        firstSearchResult.click();
         searchInput.type(searchTerm);
-
         firstSearchResult.click();
 
         return new DishAnywhereSearchResult();
