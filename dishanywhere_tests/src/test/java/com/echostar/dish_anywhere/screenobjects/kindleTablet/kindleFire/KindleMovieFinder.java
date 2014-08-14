@@ -5,11 +5,7 @@ import com.prototest.solanum.*;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: andar
- * Date: 8/7/14
- * Time: 10:23 PM
- * To change this template use File | Settings | File Templates.
+ *
  */
 public class KindleMovieFinder {
     private final String movieLocationTemplate = "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot%d";
@@ -20,10 +16,13 @@ public class KindleMovieFinder {
     }
 
     public DishAnywhereMovie findMovie(String movieTitle) {
+        return findMovie(movieTitle, null);
+    }
 
+    public DishAnywhereMovie findMovie(String movieTitle, String passcode) {
         for (int i = 0; i < 10; i++ ) {
 
-            DishAnywhereMovie dishAnywhereMovie = openMovie(i);
+            DishAnywhereMovie dishAnywhereMovie = openMovie(i, passcode);
             if (new EggplantElement(movieTitle, By.Text(movieTitle)).isPresent()) {
                 return dishAnywhereMovie;
             } else {
@@ -31,6 +30,7 @@ public class KindleMovieFinder {
             }
         }
         throw new RuntimeException("Movie " + movieTitle + " was not found in search results!");
+
     }
 
     public DishAnywhereMovie openMovie(int position) {
