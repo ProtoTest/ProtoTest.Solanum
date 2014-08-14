@@ -7,7 +7,6 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
-// DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
 
 @Test()
 public class KindleFireUiTests extends KindleTestBase {

@@ -1,8 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 /**
  * Created by Brian on 6/4/2014.
@@ -45,9 +43,9 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearTVBlocks() {
-        for (int attempt = 0; attempt < 5 && !tvmaCheckbox.isPresent(5); attempt++) {
-            tvgCheckbox.swipeUp();
-        }
+        Logger.info("Clearing tv blocks");
+
+        tvgCheckbox.swipeUp(ActionCondition.isPresent(tvmaCheckbox));
         if (tvmaChecked.isPresent())
             tvmaCheckbox.click();
         return this;
@@ -55,18 +53,18 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
 
     public DishAnywhereParentalControls setTVYBlocked() {
-        for (int attempt = 0; attempt < 5 && !tvyCheckbox.isPresent(); attempt++) {
-            tvpgCheckbox.swipeDown();
-        }
+        Logger.info("setting tv blocks");
+
+        tvpgCheckbox.swipeDown(ActionCondition.isPresent(tvyCheckbox));
+
         if (!tvyChecked.isPresent())
             tvyCheckbox.click();
         return this;
     }
 
     public DishAnywhereParentalControls clearMovieBlocks() {
-        for (int attempt = 0; attempt < 5 && !nraoCheckbox.isPresent(); attempt++) {
-            rCheckbox.swipeUp();
-        }
+        Logger.info("Clearing movie blocks");
+        rCheckbox.swipeUp(ActionCondition.isPresent(nraoCheckbox));
         if (nraoChecked.isPresent())
             nraoChecked.click();
         return this;
@@ -74,15 +72,15 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
 
 
     public DishAnywhereParentalControls setMovieGBlocked() {
-        for (int attempt = 0; attempt < 5 && !gCheckbox.isPresent(); attempt++) {
-            rCheckbox.swipeDown();
-        }
+        Logger.info("Setting movie blocks");
+        rCheckbox.swipeDown(ActionCondition.isPresent(gCheckbox));
         if (!gChecked.isPresent())
             gChecked.click();
         return this;
     }
 
     public DishAnywhereParentalControls save(){
+        Logger.info("Saving parental controls");
         saveButton.click();
         okButton.click();
         return this;

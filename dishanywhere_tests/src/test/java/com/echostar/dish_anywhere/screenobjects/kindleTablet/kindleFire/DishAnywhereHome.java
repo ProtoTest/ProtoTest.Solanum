@@ -1,9 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
-import com.prototest.solanum.By;
-import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.Logger;
-import com.prototest.solanum.SearchRectangle;
+import com.prototest.solanum.*;
 
 public class DishAnywhereHome extends DishAnywhereMain {
     public EggplantElement settingsButton = new EggplantElement("settingsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/AppNav/SettingsOption", SearchRectangle.Quadrants.BOTTOM_QUARTER));
@@ -17,6 +14,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public DishAnywhereLogin logOutIfLoggedIn() {
         Logger.info("Logging out if logged in.");
         if (loggedIn()) {
+            Logger.info("Logging out");
             return openSettings().logout();
         }
         return new DishAnywhereLogin();
@@ -26,23 +24,30 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     private boolean loggedIn() {
-        if (settingsButton.isPresent())
-            return true;
-        return settingsButton.isPresent(10);
+        Logger.info("Checking if logged in");
+        // Make sure there's no transition animations still running by waiting a second...
+        EggplantTestBase.sleep(1000);
+        for (int attempt = 0; attempt < 3; attempt++) {
+            Logger.debug("Attempt " + (attempt + 1) + " to detect guide button");
+            EggplantTestBase.driver.refreshScreen();
+            if (guideButton.isPresent()) {
+                Logger.info("Logged in");
+                return true;
+            }
+        }
+        Logger.info("Logged out");
+        return false;
     }
 
     public DishAnywhereSettings openSettings() {
         Logger.info("Opening Settings panel.");
-        settingsButton.click();
         DishAnywhereSettings settings = new DishAnywhereSettings();
-        if(!settings.authorizedDevicesButton.isPresent(5)){
-            Logger.info("Clicking settings again");
-            new EggplantElement(By.Text("Settings", SearchRectangle.Quadrants.BOTTOM_QUARTER)).click();
-        }
+        settingsButton.click(ActionCondition.isPresent(settings.authorizedDevicesButton));
         return settings ;
     }
 
     public DishAnywhereHome openGuide() {
+        Logger.info("Opening guide");
         guideButton.click();
         return this;
     }
@@ -50,6 +55,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public DishAnywhereOnDemand openOnDemand() {
         Logger.info("Opening on demand.");
         onDemandButton.click();
+        Logger.debug("Opening all movies");
         viewAllButton.click();
         return new DishAnywhereOnDemand();
     }

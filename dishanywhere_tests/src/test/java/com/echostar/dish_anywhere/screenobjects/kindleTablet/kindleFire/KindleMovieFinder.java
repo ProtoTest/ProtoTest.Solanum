@@ -2,14 +2,11 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.*;
 
+import java.awt.*;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: andar
- * Date: 8/7/14
- * Time: 10:23 PM
- * To change this template use File | Settings | File Templates.
+ *
  */
 public class KindleMovieFinder {
     private final String movieLocationTemplate = "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot%d";
@@ -20,17 +17,21 @@ public class KindleMovieFinder {
     }
 
     public DishAnywhereMovie findMovie(String movieTitle) {
+        return findMovie(movieTitle, null);
+    }
 
+    public DishAnywhereMovie findMovie(String movieTitle, String passcode) {
         for (int i = 0; i < 10; i++ ) {
 
-            DishAnywhereMovie dishAnywhereMovie = openMovie(i);
-            if (new EggplantElement(movieTitle, By.Text(movieTitle)).isPresent()) {
+            DishAnywhereMovie dishAnywhereMovie = openMovie(i, passcode);
+            if (new EggplantElement(movieTitle, By.Text(movieTitle, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) { /*new SearchRectangle(new Point(0, (int) (EggplantTestBase.driver.getScreenSize().y*0.2)), new Point(EggplantTestBase.driver.getScreenSize().x, EggplantTestBase.driver.getScreenSize().y*.5)*//*))).isPresent()) {*/
                 return dishAnywhereMovie;
             } else {
                 dishAnywhereMovie.closeMovie();
             }
         }
         throw new RuntimeException("Movie " + movieTitle + " was not found in search results!");
+
     }
 
     public DishAnywhereMovie openMovie(int position) {

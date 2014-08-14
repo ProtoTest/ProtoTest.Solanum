@@ -35,6 +35,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     }
 
     public DishAnywhereParentalControls openParentalControls(String passcode) {
+        Logger.info("Opening parental controls");
         parentalControlsButton.click();
         EnterPasscodePopup popup = new EnterPasscodePopup();
         popup.enterPasscode(passcode);
@@ -42,6 +43,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     }
 
     public DishAnywhereAuthorizedDevices openAuthorizedDevices() {
+        Logger.info("Opening authorized devices");
         authorizedDevicesButton.click();
         return new DishAnywhereAuthorizedDevices();
     }

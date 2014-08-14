@@ -34,7 +34,7 @@ public class KindleFireAuthorizedDevices extends  KindleTestBase{
                 .watchMovie()
                 .verifyDeauthorizationMessageDisplays()
 
-                .goHome()
+                .resetApp()
                 .openSettings()
                 .openAuthorizedDevices()
                 .authorizeThisDevice()

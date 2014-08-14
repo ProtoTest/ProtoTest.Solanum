@@ -79,6 +79,7 @@ public class Config {
     public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
     public static int retryCount = getPropertyValue("retryCount", 1);
     public static boolean diagnoseFailedImages = getPropertyValue("diagnoseFailedImages",false);
+    public static int maxActionRetries = getPropertyValue("maxActionRetries", 10);
 
     //get the test properties.
     public static String getTestProp(String key) {
