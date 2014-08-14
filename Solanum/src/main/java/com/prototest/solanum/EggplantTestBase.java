@@ -118,7 +118,7 @@ public class EggplantTestBase {
             hostName = Config.hostName;
             hostPort = Config.hostPort;
         }
-        driver.disconnect(hostName, hostPort);
+        //driver.disconnect(hostName);
         driver.endSuite();
         stopEggplant();
     }
