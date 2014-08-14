@@ -13,7 +13,7 @@ public class EggplantResponse {
             this.Duration = (Double) value.get("Duration");
             this.ReturnValue = ((String) value.get("ReturnValue")).trim();
         } catch (Exception e) {
-            Logger.debug(e.getMessage());
+            //Logger.warning("An exception was caught : " + e.getMessage());
         }
     }
     public String Output;
