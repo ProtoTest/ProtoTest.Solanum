@@ -61,7 +61,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereSearchResult searchFor(String movie) {
 
         searchInputClearButton.click();
-        searchInput.setText(movie);
+        searchInput.type(movie);
         submitSearchButton.click();
 
         return new DishAnywhereSearchResult();
@@ -70,7 +70,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
         String searchTerm = movie.substring(0, movie.length()-1);
         searchInputClearButton.click();
-        searchInput.setText(searchTerm);
+        searchInput.type(searchTerm);
 
         EggplantElement movieResultElement = new EggplantElement(By.Text(movie, SearchRectangle.Quadrants.TOP_HALF));
         movieResultElement.verifyPresent();

@@ -21,8 +21,8 @@ public class DishAnywhereLogin extends DeviceMain {
     public DishAnywhereHome login(String onlineId, String password) {
         Logger.info("Logging in with credentials: (" + onlineId + ", " + password + ").");
         popups.waitForScreenToLoad();
-        this.onlineId.setText(onlineId);
-        this.passwordField.setText(password);
+        this.onlineId.type(onlineId);
+        this.passwordField.type(password);
         if (closeKeyboardButton.isPresent()){
             closeKeyboardButton.click();
         }

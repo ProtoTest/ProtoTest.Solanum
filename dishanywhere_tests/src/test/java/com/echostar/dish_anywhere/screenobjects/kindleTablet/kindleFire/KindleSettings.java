@@ -20,7 +20,7 @@ public class KindleSettings extends DeviceMain {
     public KindleSettings stopApplication(String name) {
         EggplantElement app = new EggplantElement("app", By.Text(name, SearchRectangle.Quadrants.LEFT_HALF, TextOption.contrast(true)));
 
-        applications.waitForPresent().click();
+        applications.waitForPresent().click(ActionCondition.isPresent(manageAllApplications));
         manageAllApplications.waitForPresent().click();
         allApplicationsDropDown.click();
         // Wait for the drop down animation to complete.

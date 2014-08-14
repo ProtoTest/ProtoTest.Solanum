@@ -16,8 +16,10 @@ public class DishAnywhereLogin extends DishAnywhereMain {
     public DishAnywhereHome login(String onlineId, String password) {
         Logger.info("Logging in...");
         popups.waitForScreenToLoad();
-        this.onlineId.setText(onlineId);
-        passwordField.setText(password);
+        this.onlineId.clearText();
+        this.onlineId.type(onlineId);
+        passwordField.clearText();
+        passwordField.type(password);
         loginButton.click();
         DishAnywhereHome home = new DishAnywhereHome();
         if(!home.onDemandButton.isPresent(5000))

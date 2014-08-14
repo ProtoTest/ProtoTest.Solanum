@@ -21,8 +21,11 @@ public class DishAnywhereLogin extends DishAnywhereHome {
         if(!onlineId.isPresent()){
             loginButton.click();
         }
-        onlineId.setText(username);
-        passwordField.setText(password);
+
+        onlineId.clearText();
+        onlineId.type(username);
+        passwordField.clearText();
+        passwordField.type(password);
         if (closeKeyboardButton.isPresent()){
             closeKeyboardButton.click();
         }
