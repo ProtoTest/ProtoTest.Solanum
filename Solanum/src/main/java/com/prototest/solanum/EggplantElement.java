@@ -433,7 +433,6 @@ public class EggplantElement {
                     return this;
                 } else {
                     driver.refreshScreen();
-                    now = new LocalTime();
                 }
             }
 
