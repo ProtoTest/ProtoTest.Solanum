@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.*;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -23,7 +24,7 @@ public class KindleMovieFinder {
         for (int i = 0; i < 10; i++ ) {
 
             DishAnywhereMovie dishAnywhereMovie = openMovie(i, passcode);
-            if (new EggplantElement(movieTitle, By.Text(movieTitle)).isPresent()) {
+            if (new EggplantElement(movieTitle, By.Text(movieTitle, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) { /*new SearchRectangle(new Point(0, (int) (EggplantTestBase.driver.getScreenSize().y*0.2)), new Point(EggplantTestBase.driver.getScreenSize().x, EggplantTestBase.driver.getScreenSize().y*.5)*//*))).isPresent()) {*/
                 return dishAnywhereMovie;
             } else {
                 dishAnywhereMovie.closeMovie();
