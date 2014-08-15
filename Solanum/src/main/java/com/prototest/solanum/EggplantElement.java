@@ -269,8 +269,8 @@ public class EggplantElement {
         Logger.info(String.format("Typing text: (%s).", text));
         driver.typeText(text);
         // Eggplant returns immediately from the TypeText command instead of waiting for the text to type.
-        // Compensate by sleeping about 1 second per 3 keys typed.
-        EggplantTestBase.sleep(text.length() / 3 * 1000);
+        // Compensate by sleeping about 1 second per 2 keys typed.
+        EggplantTestBase.sleep(text.length() / 2 * 1000);
         return this;
     }
 

@@ -3,9 +3,6 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
-/**
- * Created by Brian on 6/3/2014.
- */
 public class EnterPasscodePopup {
     private EggplantElement LoadingMessage = new EggplantElement(By.Text("Loading"));
 

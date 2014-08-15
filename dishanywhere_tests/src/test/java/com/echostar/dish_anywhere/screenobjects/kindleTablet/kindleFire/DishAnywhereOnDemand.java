@@ -28,6 +28,7 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
             = new EggplantElement("Search Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
     private EggplantElement firstSearchResult =
             new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/FirstResult"));
+
     public DishAnywhereScrollView openMovies() {
         moviesButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
@@ -74,7 +75,6 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
         firstSearchResult.click();
 
         return new DishAnywhereSearchResult();
-
     }
 
     private String truncateTitle(String title, int maxChars) {
