@@ -1,21 +1,25 @@
 package com.prototest.solanum;
 
+import org.testng.IAnnotationTransformer;
 import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.util.RetryAnalyzerCount;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 /**
  * Hook up the ReportNG listeners, so that the HTML and XML reports will always be generated, even without a pom.
  */
+
 @Listeners({TimestampedHTMLReporter.class,
         TimestamppedXMLReporter.class,
         org.uncommons.reportng.JUnitXMLReporter.class,
-        VerificationsListener.class})
-
+        VerificationsListener.class,
+        RetryAnalyzerTransformer.class})
 /** EggplantTestBase is extended by all tests, and contains hooks to automatically start/stop/configure framework features */
 public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
@@ -166,3 +170,4 @@ public class EggplantTestBase {
         }
     }
 }
+
