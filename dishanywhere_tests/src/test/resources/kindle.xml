@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="KindleTablet" verbose="1" configfailurepolicy="continue">
+    <parameter name="hostName" value="D0FDA0A0352502L2"/>
+    <parameter name="hostPort" value="5901"/>
     <test name="Kindle1">
-        <parameter name="hostName" value="10.10.1.128"/>
-        <parameter name="hostPort" value="5901"/>
         <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireAuthorizedDevices"/>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireBlockbuster"/>
@@ -16,4 +16,5 @@
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireVideoDrm"/>
         </classes>
     </test>
+
 </suite>
