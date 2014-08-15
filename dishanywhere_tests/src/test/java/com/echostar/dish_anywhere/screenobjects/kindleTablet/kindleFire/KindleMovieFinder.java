@@ -48,9 +48,8 @@ public class KindleMovieFinder {
                 popups.enterPasscode(passcode);
             }
         } else {
-            Verifications.addVerification("Passcode prompt should not appear", !passcodePopupIsPresent);
             if (passcodePopupIsPresent) {
-                Logger.warning("Passcode prompt should not be on screen, but it is. Guessing passcode from config values: " + Config.getTestProp("dishAnywherePassCode"));
+                Logger.error("Passcode prompt should not be on screen, but it is. Guessing passcode from config values: " + Config.getTestProp("dishAnywherePassCode"));
                 popups.enterPasscode(Config.getTestProp("dishAnywherePassCode"));
             }
         }

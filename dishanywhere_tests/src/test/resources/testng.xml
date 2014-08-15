@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="DishAnywhere" verbose="1">
+<suite name="DishAnywhere" verbose="1" configfailurepolicy="continue">
     <suite-files>
         <suite-file path="galaxy-s5.xml"/>
         <suite-file path="kindle.xml"/>

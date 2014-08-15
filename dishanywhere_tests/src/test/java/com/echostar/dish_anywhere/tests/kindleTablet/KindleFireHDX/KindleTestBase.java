@@ -1,9 +1,7 @@
 package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMain;
-import com.prototest.solanum.Config;
-import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Logger;
+import com.prototest.solanum.*;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -17,6 +15,13 @@ public class KindleTestBase extends EggplantTestBase {
     // This isn't thread safe, but the expected use case is single threaded execution on one Kindle device.
 
 //    static boolean alreadyInitialized = false;
+private void handleAppCrash() {
+    EggplantElement crashText = new EggplantElement(By.Text("Anywhere has stopped."));
+    EggplantElement okButton = new EggplantElement(By.Text("OK"));
+    if (crashText.isPresent()) {
+        okButton.click();
+    }
+}
 
     @BeforeMethod
     public void clearAppState() {
@@ -28,6 +33,7 @@ public class KindleTestBase extends EggplantTestBase {
                 clearCrash();
             }
              */
+        handleAppCrash();
             Logger.info("Setting up app state");
             new DeviceMain()
                     .resetApp()

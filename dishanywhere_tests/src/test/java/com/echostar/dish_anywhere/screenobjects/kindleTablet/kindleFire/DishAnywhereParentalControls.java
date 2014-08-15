@@ -55,7 +55,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public DishAnywhereParentalControls setTVYBlocked() {
         Logger.info("setting tv blocks");
 
-        tvpgCheckbox.swipeDown(ActionCondition.isPresent(tvyCheckbox));
+        tvgCheckbox.swipeDown(ActionCondition.isPresent(tvyCheckbox));
 
         if (!tvyChecked.isPresent())
             tvyCheckbox.click();
@@ -75,7 +75,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         Logger.info("Setting movie blocks");
         rCheckbox.swipeDown(ActionCondition.isPresent(gCheckbox));
         if (!gChecked.isPresent())
-            gChecked.click();
+            gCheckbox.click();
         return this;
     }
 

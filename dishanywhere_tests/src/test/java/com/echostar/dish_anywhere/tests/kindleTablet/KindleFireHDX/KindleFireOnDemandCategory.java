@@ -113,9 +113,6 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
         new DishAnywhereHome()
                 .openOnDemand()
                 .openNetworks()
-                .openFilter()
-                .sortByTitle()
-                .done()
                 .verifyTitlesPresent(movieTitles);
 
     }
