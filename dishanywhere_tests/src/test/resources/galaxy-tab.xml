@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="GalaxyTablet" verbose="1">
+<suite name="GalaxyTablet" verbose="1" configfailurepolicy="continue">
         <test name="Galaxy">
         <parameter name="hostName" value="7706e2a1"/>
         <parameter name="hostPort" value="5901"/>
