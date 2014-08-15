@@ -58,8 +58,4 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return this;
     }
 
-    public DeviceMain returnToDeviceMain(){
-        goToHomeScreen();
-        return this;
-    }
 }

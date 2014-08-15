@@ -1,9 +1,7 @@
 package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
-import com.prototest.solanum.Config;
-import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Logger;
+import com.prototest.solanum.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 
@@ -11,10 +9,10 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
 
     @BeforeMethod
     public void initializeApp() {
+        handleAppCrash();
         Logger.info("Test Setup: Initializing the app...");
         new DeviceMain()
-                .goHome()
-                .goToHomeScreen()
+                .killApp()
                 .goHome()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
@@ -24,6 +22,7 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
                 .clearMovieBlocks()
                 .clearTVBlocks()
+                .save()
                 .openGuide();
         Logger.info("Test Setup: App Initialized.");
     }
@@ -35,30 +34,12 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
         new DeviceMain().goToHomeScreen().confirmHomeScreen();
     }
 
-//    private void handleAppCrash() {
-//        EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,"));
-//        EggplantElement okButton = new EggplantElement(By.Text("OK"));
-//        if (crashText.isPresent()) {
-//            okButton.click();
-//        }
-//    }
-//
-//    @BeforeMethod
-//    public void resetSettings() {
-//        handleAppCrash();
-//         new DeviceMain()
-//                 .killApp()
-//                .goHome()
-//                .logOutIfLoggedIn()
-//                .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
-//                 .openGuide()
-//                .openSettings()
-//                .openAuthorizedDevices()
-//                .authorizeThisDevice()
-//                .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
-//                .clearMovieBlocks()
-//                .clearTVBlocks()
-//                .save().goToHomeScreen();
-//
-//    }
+    private void handleAppCrash() {
+        EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,"));
+        EggplantElement okButton = new EggplantElement(By.Text("OK"));
+        if (crashText.isPresent()) {
+            okButton.click();
+        }
+    }
+
 }
