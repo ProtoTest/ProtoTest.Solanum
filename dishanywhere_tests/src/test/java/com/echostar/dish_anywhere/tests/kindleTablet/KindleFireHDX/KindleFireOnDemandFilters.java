@@ -30,6 +30,7 @@ public class KindleFireOnDemandFilters extends KindleTestBase {
         new DishAnywhereHome()
                 .openBlockbuster()
                 .openFilters()
+                .sortByTitle()
                 .selectFilter("comedy")
                 .done()
                 .verifyTitlesPresent(movieTitles);
