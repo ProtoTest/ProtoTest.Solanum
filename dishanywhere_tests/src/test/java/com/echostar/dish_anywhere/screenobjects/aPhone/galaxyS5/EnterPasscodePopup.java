@@ -1,8 +1,7 @@
 package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
-
-import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereMovie;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
 /**
@@ -36,6 +35,7 @@ public class EnterPasscodePopup {
 
     public DishAnywhereMovie enterPasscode(String passcode) {
         Logger.info("Entering passcode:(" + passcode + ").");
+        EggplantTestBase.sleep(2000);
         for (char c : passcode.toCharArray()) {
             switch (c) {
                 case '1':
