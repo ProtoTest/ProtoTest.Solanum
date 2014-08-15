@@ -25,6 +25,7 @@ public class GalaxyNoteUiTests extends GalaxyNoteTestBase {
     }
     @Test
     public void testPredictiveSearch() {
+        Logger.info("Beginning Test: Predictive Search.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");

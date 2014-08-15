@@ -7,8 +7,6 @@ import com.prototest.solanum.SearchRectangle;
 
 import java.util.List;
 
-/**
- */
 public class DishAnywhereSearchResult extends DeviceMain {
     DeviceNavigation nav = new DeviceNavigation();
     EggplantElement onDemandButton = new EggplantElement("On Demand Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/OnDemandButton"));
@@ -17,6 +15,7 @@ public class DishAnywhereSearchResult extends DeviceMain {
     EggplantElement leftMovieBorder = new EggplantElement("leftMovieBorder", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder"));
 
     KindleMovieFinder movieFinder = new KindleMovieFinder();
+
     public DishAnywhereSearchResult openOnDemandResults() {
         onDemandButton.click();
         return this;

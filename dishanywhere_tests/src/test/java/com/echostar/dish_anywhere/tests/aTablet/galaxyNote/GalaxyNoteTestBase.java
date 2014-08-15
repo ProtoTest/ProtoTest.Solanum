@@ -21,9 +21,8 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
         }
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void resetSettings() {
-
         handleAppCrash();
          new DeviceMain()
                  .killApp()
@@ -39,10 +38,5 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
                 .clearTVBlocks()
                 .save().goToHomeScreen();
 
-    }
-
-    @BeforeMethod
-    public void goToDishAnywhereHome(){
-        new DeviceMain().killApp().goHome();
     }
 }

@@ -1,15 +1,12 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
-import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.*;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.EggplantTestBase;
 
-/**
- */
 public class DishAnywhereMovie extends DishAnywhereMain {
     EggplantElement watchButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton"));
     EggplantElement closeButton = new EggplantElement("closeButton", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/CloseButton"));
+    EggplantElement titleField = new EggplantElement("Title field", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/MovieTitleHotspot"));
 
     public MoviePlayer watchMovie() {
         watchButton.click();
@@ -18,9 +15,11 @@ public class DishAnywhereMovie extends DishAnywhereMain {
     }
 
     public DishAnywhereOnDemand closeMovie(){
-        EggplantTestBase.driver.PressBackButton();
+        closeButton.waitForPresent().click();
         return new DishAnywhereOnDemand();
     }
 
-
+    public String getTitle() {
+        return titleField.getText();
+    }
 }

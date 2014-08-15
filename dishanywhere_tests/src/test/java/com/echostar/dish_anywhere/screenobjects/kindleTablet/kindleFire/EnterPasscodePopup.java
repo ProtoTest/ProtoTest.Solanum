@@ -4,9 +4,6 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
 
-/**
- * Created by Brian on 6/3/2014.
- */
 public class EnterPasscodePopup {
     private EggplantElement LoadingMessage = new EggplantElement("LoadingMessage", By.Text("Loading"));
 
