@@ -158,7 +158,7 @@ public class EggplantTestBase {
      */
     public static void sleep(int millis) {
         double secs = millis / 1000.0;
-        Logger.info("Waiting for (" + secs + ") seconds.");
+        Logger.debug("Waiting for (" + secs + ") seconds.");
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {

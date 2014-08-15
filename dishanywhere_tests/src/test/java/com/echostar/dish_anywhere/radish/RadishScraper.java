@@ -99,7 +99,7 @@ public class RadishScraper {
         for (int i = 0; i < types.size(); i++) {
             if (types.get(i).equals(type)) {
                 String name =client.parse("$.[" + i + "].name");
-                if(!name.contains("Frozen"))
+                //if(!name.contains("Frozen"))
                     return name;
             }
         }

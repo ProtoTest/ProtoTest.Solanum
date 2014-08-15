@@ -2,15 +2,11 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
-import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Logger;
-import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
-// DishAnywhere API Tests - GalaxyS5 (Android Phone)
+// DishAnywhere API Tests - Galaxy Note (Android Tablet)
 
 public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
-
 
     @Test
     public void watchNagraMovie() {
@@ -18,7 +14,6 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
         watchMovie(movie);
-
     }
 
     @Test
@@ -27,7 +22,6 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("widevine");
         watchMovie(movie);
-
     }
 
     private void watchMovie(String movie) {
