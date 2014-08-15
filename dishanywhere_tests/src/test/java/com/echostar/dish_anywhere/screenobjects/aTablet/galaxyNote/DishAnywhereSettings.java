@@ -1,11 +1,8 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.*;
-
 import java.awt.*;
 
-/**
- */
 public class DishAnywhereSettings extends DishAnywhereHome {
     private EggplantElement logoutButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton"));
     private EggplantElement parentalControlsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControlsButton"));

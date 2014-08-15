@@ -1,7 +1,6 @@
 package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.*;
-import org.testng.Assert;
 
 // Screen object for DishAnywhere app - Login screen
 
@@ -35,8 +34,8 @@ public class DishAnywhereLogin extends DeviceMain {
         return home;
     }
 
-
     public DishAnywhereLogin verifyLoggedOut() {
+        Logger.info("Verifying user is logged out...");
         loginButton.waitForPresent(10);
         return this;
     }

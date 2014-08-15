@@ -5,15 +5,10 @@ import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
-
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class GalaxyNoteParentalControls extends EggplantTestBase {
     @Test
     public void clearAllBlockedContentAndPlayMovie(){

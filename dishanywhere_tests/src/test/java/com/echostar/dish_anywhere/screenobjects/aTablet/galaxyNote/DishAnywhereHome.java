@@ -13,13 +13,15 @@ public class DishAnywhereHome extends DishAnywhereMain {
 
 
     public DishAnywhereHome() {
-
     }
 
     public DishAnywhereLogin logOutIfLoggedIn(){
+        Logger.info("Determining user 'logged in' state...");
         if(loggedIn()){
-           return openSettings().logout();
+            Logger.info("User is already logged in.  Logging out...");
+            return openSettings().logout();
         }
+        Logger.info("User is already logged out.");
          return new DishAnywhereLogin();
     }
 
@@ -30,7 +32,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     public DishAnywhereSettings openSettings() {
-        Logger.info("Opening Settings panel.");
+        Logger.info("Opening Settings panel...");
         settingsButton.click();
         return new DishAnywhereSettings();
     }
@@ -51,6 +53,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return new Blockbuster();
     }
     public DishAnywhereHome verifyLoggedIn() {
+        Logger.info("Verifying user is logged in...");
         settingsButton.waitForPresent();
         return this;
     }

@@ -24,9 +24,9 @@ public class DishAnywhereLogin extends DishAnywhereMain {
         DishAnywhereHome home = new DishAnywhereHome();
         if(!home.onDemandButton.isPresent(5000))
         {
-            Assert.fail("Login not successful.");
+            Assert.fail("Login was not successful.");
         }
-        Logger.info("Logged in.");
+        Logger.info("User is now logged in.");
         return home;
     }
 
