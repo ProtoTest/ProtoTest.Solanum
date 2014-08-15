@@ -3,13 +3,7 @@ package com.prototest.solanum;
 import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -49,7 +43,7 @@ public class EggplantTestBase {
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
-        uninitializeApp();
+
 
     }
 
@@ -57,7 +51,7 @@ public class EggplantTestBase {
      * This method will run once before the entire suite of tests.  It should configure everything needed by eggplant
      * Drive, launch eggplant drive, and connect to the default host
      */
-    @BeforeTest
+    @BeforeSuite
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName,
                              @Optional Integer hostPort,
@@ -109,7 +103,7 @@ public class EggplantTestBase {
     /**
      * AFter all tests are run, should clean up all test data and stop eggplant drive
      */
-    @AfterTest(alwaysRun = true)
+    @AfterSuite(alwaysRun = true)
     @Parameters({"hostName", "hostPort"})
     public void fixtureTearDown(@Optional() String hostName,
                                 @Optional() Integer hostPort) {
@@ -176,11 +170,5 @@ public class EggplantTestBase {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public void initializeApp() {
-    }
-
-    public void uninitializeApp() {
     }
 }

@@ -61,7 +61,7 @@ public class Config {
      */
     public static int logLevel = getLogLevel(getPropertyValue("logLevel", "debug"));
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
-    public static int commandDelayMs = getPropertyValue("commandDelayMs", 200);
+    public static int commandDelayMs = getPropertyValue("commandDelayMs", 0);
     public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 60);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
