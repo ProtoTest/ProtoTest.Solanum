@@ -43,7 +43,7 @@ public class EggplantTestBase {
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
-        uninitializeApp();
+
 
     }
 
@@ -164,11 +164,5 @@ public class EggplantTestBase {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public void initializeApp() {
-    }
-
-    public void uninitializeApp() {
     }
 }

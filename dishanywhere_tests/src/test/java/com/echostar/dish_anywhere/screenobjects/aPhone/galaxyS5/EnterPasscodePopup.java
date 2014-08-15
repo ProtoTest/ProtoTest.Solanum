@@ -23,18 +23,18 @@ public class EnterPasscodePopup {
     private EggplantElement button9 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton9"));
     private EggplantElement button0 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton0"));
 
-    public com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie enterPasscodeIfPresent(String passcode){
+    public DishAnywhereMovie enterPasscodeIfPresent(String passcode){
         if(enterPasscodeHeader.isPresent()){
             return enterPasscode(passcode);
         }
-        return new com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie();
+        return new DishAnywhereMovie();
     }
 
     public boolean isPasscodePresent(){
         return enterPasscodeHeader.isPresent();
     }
 
-    public com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie enterPasscode(String passcode) {
+    public DishAnywhereMovie enterPasscode(String passcode) {
         Logger.info("Entering passcode:(" + passcode + ").");
         for (char c : passcode.toCharArray()) {
             switch (c) {
@@ -72,6 +72,6 @@ public class EnterPasscodePopup {
 
         }
 
-    return new com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereMovie();
+    return new DishAnywhereMovie();
     }
 }
