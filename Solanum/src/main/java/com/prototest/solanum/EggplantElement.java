@@ -165,6 +165,8 @@ public class EggplantElement {
             }
             if (conditionPasses(conditions)) {
                 return this;
+            } else {
+                Logger.error("Failed action click on " + name + " because of failed ActionConditon.");
             }
         }
         Logger.error("Conditions specified for click success, and failed.");
@@ -330,6 +332,8 @@ public class EggplantElement {
             }
             if (conditionPasses(conditions)) {
                 return this;
+            } else {
+                Logger.error("Failed action swipe up on " + name + " because of failed ActionConditon.");
             }
         }
         Logger.screenshot();
@@ -354,6 +358,8 @@ public class EggplantElement {
             }
             if (conditionPasses(conditions)) {
                 return this;
+            } else {
+                Logger.error("Failed action swipe down on " + name + " because of failed ActionConditon.");
             }
         }
         Logger.screenshot();
