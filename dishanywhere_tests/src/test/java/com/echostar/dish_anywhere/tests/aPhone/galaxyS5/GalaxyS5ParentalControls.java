@@ -50,8 +50,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
                 .openProtectedMovie(movieName)
                 .enterPasscode(Config.getTestProp("dishAnywherePassCode"))
                 .watchMovie()
-                .verifyMoviePlays();
-        Verifications.assertVerifications();
+                .verifyMoviePlays().goBackToDeviceScreen();
     }
 
 }

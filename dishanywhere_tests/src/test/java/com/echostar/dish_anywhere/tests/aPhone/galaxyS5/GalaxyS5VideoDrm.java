@@ -19,7 +19,6 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
         radishScraper.getMovies();
         String movie = RadishScraper.getShortName(radishScraper.findMovieWithDrm("nagra"),25);
         watchMovie(movie);
-        Verifications.addVerification("Watched onDemand nagra movie.", true);
     }
 
     @Test
