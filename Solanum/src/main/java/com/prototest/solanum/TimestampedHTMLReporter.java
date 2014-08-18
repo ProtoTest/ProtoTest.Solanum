@@ -9,7 +9,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import static java.nio.file.StandardCopyOption.*;
 /**
  */
 public class TimestampedHTMLReporter extends HTMLReporter {
