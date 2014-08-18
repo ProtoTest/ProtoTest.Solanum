@@ -19,9 +19,9 @@ public class EggplantGUIHook {
     private void createTempScriptFile() {
         try {
             writer = new FileWriter(scriptPath);
-            writer.write (String.format("OpenSuite \"%s\"%s", Config.suitePath.replace(".suite","").split("/")[1],System.lineSeparator()));
-            writer.write (String.format("Connect (ServerID:\"%s\", portNum: \"%s\")%s", Config.hostName, Config.hostPort,System.lineSeparator()));
-            writer.write(String.format("WaitFor 2, %s %s",this.by.getLocator(),System.lineSeparator()));
+            writer.write (String.format("OpenSuite \"%s\"%s", Config.suitePath.replace(".suite","").split("/")[1],System.getProperty("line.separator","\r\n")));
+            writer.write (String.format("Connect (ServerID:\"%s\", portNum: \"%s\")%s", Config.hostName, Config.hostPort,System.getProperty("line.separator","\r\n")));
+            writer.write(String.format("WaitFor 2, %s %s",this.by.getLocator(),System.getProperty("line.separator","\r\n")));
         } catch (IOException ex) {
             // report
         } finally {
