@@ -26,9 +26,13 @@ public class EggplantDriver {
     //private Point screenSize;
     PrintWriter writer;
 
+    public EggplantDriver(){
+        this.client = new EggplantDriveClient(Config.driveUrl);
+        createLogFile();
+    }
 
-    public EggplantDriver() {
-        this.client = new EggplantDriveClient();
+    public EggplantDriver(String driveUrl) {
+        this.client = new EggplantDriveClient(driveUrl);
         createLogFile();
     }
 

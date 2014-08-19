@@ -25,10 +25,10 @@ public class DeviceMain {
 
 
     public DishAnywhereHome goHome() {
-        EggplantTestBase.driver.PressHomeButton();
+        EggplantTestBase.getDriver().PressHomeButton();
         dishAnywhereApp.click();
         for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            EggplantTestBase.driver.PressBackButton();
+            EggplantTestBase.getDriver().PressBackButton();
         }
         dishAnywhereApp.click();
         return new DishAnywhereHome();

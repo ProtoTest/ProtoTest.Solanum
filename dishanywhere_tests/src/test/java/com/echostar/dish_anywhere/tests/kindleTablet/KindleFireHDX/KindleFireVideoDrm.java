@@ -38,7 +38,7 @@ public class KindleFireVideoDrm extends KindleTestBase {
                 .watchMovie()
                 .openControls()
                 .verifyMoviePlays();
-                EggplantTestBase.driver.PressHomeButton();
+                EggplantTestBase.getDriver().PressHomeButton();
         Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");
 

@@ -29,29 +29,29 @@ public class TestBaseTests extends EggplantTestBase {
        // driver.connect(hostName, hostPort);
     }
 
-    @Test
+    @Test(threadPoolSize = 3, invocationCount = 10,  timeOut = 10000)
     public void TestDriveLaunches() {
-        Assert.assertEquals(driver.isDriveRunning(), true);
+        Assert.assertEquals(getDriver().isDriveRunning(), true);
     }
 
     @Test
     public void TestDefaultSearchDelay() {
 
-        Assert.assertEquals(driver.getOption("ImageSearchDelay").trim(), Config.imageSearchDelay);
+        Assert.assertEquals(getDriver().getOption("ImageSearchDelay").trim(), Config.imageSearchDelay);
     }
 
     @Test
     public void TestDefaultSearchCount() {
-        Assert.assertEquals(driver.getOption("ImageSearchCount").trim(), Config.imageSearchCount);
+        Assert.assertEquals(getDriver().getOption("ImageSearchCount").trim(), Config.imageSearchCount);
     }
 
     @Test
     public void TestSetOption() {
-        driver.setOption("ImageSearchCount", "23");
-        Assert.assertEquals(driver.getOption("ImageSearchCount").trim(), "23");
-        driver.setOption("ImageSearchTime", "17");
-        Assert.assertEquals(driver.getOption("ImageSearchTime").trim(), "17");
-        driver.setOption("ImageSearchCount", "23");
-        Assert.assertEquals(driver.getOption("ImageSearchCount").trim(), "23");
+        getDriver().setOption("ImageSearchCount", "23");
+        Assert.assertEquals(getDriver().getOption("ImageSearchCount").trim(), "23");
+        getDriver().setOption("ImageSearchTime", "17");
+        Assert.assertEquals(getDriver().getOption("ImageSearchTime").trim(), "17");
+        getDriver().setOption("ImageSearchCount", "23");
+        Assert.assertEquals(getDriver().getOption("ImageSearchCount").trim(), "23");
     }
 }

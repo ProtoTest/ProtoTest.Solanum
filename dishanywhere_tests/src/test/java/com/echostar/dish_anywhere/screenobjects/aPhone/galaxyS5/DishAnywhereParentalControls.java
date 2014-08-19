@@ -45,7 +45,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         tvRatingsButton.click();
         if(tvmaChecked.isPresent())
             tvmaCheckbox.click();
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         closePopups();
         return this;
     }
@@ -55,7 +55,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         tvRatingsButton.click();
         if(!tvyChecked.isPresent())
             tvyCheckbox.click();
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         if (okButton.isPresent())
             okButton.click();
         return this;
@@ -66,7 +66,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         movieRatingsButton.click();
         if(nraoChecked.isPresent())
             nraoChecked.click();
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         if (okButton.isPresent())
             okButton.click();
         return this;
@@ -77,7 +77,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         movieRatingsButton.click();
         if(!gChecked.isPresent())
             gCheckbox.click();
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         if (okButton.isPresent())
             okButton.click();
         return this;

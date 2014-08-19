@@ -11,6 +11,6 @@ public class DeviceNavigation {
 //    public final EggplantElement settingsButton = new EggplantElement("SettingsButton",By.Image("iosTablet/iPadAir/System/Device/SettingsButton"));
 //    public final EggplantElement taskManagerButton = new EggplantElement("TaskManagerButton",By.Image("iosTablet/iPadAir/System/Device/TaskManagerButton"));
     public void homeButton() {
-        EggplantTestBase.driver.sendKeys(EggplantKeys.HomeButton.keyword);
+        EggplantTestBase.getDriver().sendKeys(EggplantKeys.HomeButton.keyword);
     }
 }

@@ -47,7 +47,7 @@ public class MoviePlayer extends DishAnywhereMain {
 
     public DishAnywhereHome goBackHome(){
          for(int i=1;i<3;i++){
-            EggplantTestBase.driver.PressBackButton();
+            EggplantTestBase.getDriver().PressBackButton();
         }
         return new DishAnywhereHome();
     }

@@ -55,7 +55,7 @@ import java.util.List;
 public class EggplantElement {
     private By by;
     private String name;
-    private EggplantDriver driver = EggplantTestBase.driver;
+    private EggplantDriver driver = EggplantTestBase.getDriver();
     private int waitSec;
 
     /**

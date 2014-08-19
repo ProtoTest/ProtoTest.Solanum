@@ -30,7 +30,7 @@ public class DeviceMain {
         //nav.homeButton.waitForPresent(20).click();
         nav.homeButton();
 
-        EggplantTestBase.driver.refreshScreen();
+        EggplantTestBase.getDriver().refreshScreen();
         return new DeviceMain();
     }
 
@@ -43,7 +43,7 @@ public class DeviceMain {
     public DishAnywhereHome goHome() {
         goHomeScreen();
         dishAnywhereApp.waitForPresent(30).click();
-        EggplantTestBase.driver.refreshScreen();
+        EggplantTestBase.getDriver().refreshScreen();
 
         return new DishAnywhereHome();
     }

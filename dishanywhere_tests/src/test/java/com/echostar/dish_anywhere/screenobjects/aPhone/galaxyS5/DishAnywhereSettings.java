@@ -20,7 +20,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
             if (okButton.isPresent()) {
                 okButton.click();
             }
-            EggplantTestBase.driver.PressBackButton();
+            EggplantTestBase.getDriver().PressBackButton();
         }
         return this;
     }

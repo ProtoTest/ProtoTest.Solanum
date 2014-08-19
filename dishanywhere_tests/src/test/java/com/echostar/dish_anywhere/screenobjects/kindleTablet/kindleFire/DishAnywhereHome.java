@@ -29,7 +29,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
         EggplantTestBase.sleep(1000);
 //        for (int attempt = 0; attempt < 3; attempt++) {
 //            Logger.debug("Attempt " + (attempt + 1) + " to detect guide button");
-            EggplantTestBase.driver.refreshScreen();
+            EggplantTestBase.getDriver().refreshScreen();
             if (guideButton.isPresent()) {
                 Logger.info("Logged in");
                 return true;

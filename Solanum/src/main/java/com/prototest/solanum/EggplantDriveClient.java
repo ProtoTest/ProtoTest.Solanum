@@ -21,22 +21,22 @@ import java.util.HashMap;
 class EggplantDriveClient {
     private XmlRpcClientConfigImpl config;
     private XmlRpcClient client;
-    PrintWriter writer;
+   // PrintWriter writer;
 
     private void createLogFile(){
-        try {
-            this.writer = new PrintWriter("output.script", "UTF-8");
-        } catch (FileNotFoundException e) {
-            File file = new File("output.script");
-            try {
-                file.createNewFile();
-                createLogFile();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//           // this.writer = new PrintWriter("output.script", "UTF-8");
+//        } catch (FileNotFoundException e) {
+//            File file = new File("output.script");
+//            try {
+//                file.createNewFile();
+//                createLogFile();
+//            } catch (IOException e1) {
+//                e1.printStackTrace();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
     /** Instantiates a new client to communicate with the xmlrpc service at the location specified in the config file.   */
     EggplantDriveClient(){
@@ -69,7 +69,7 @@ class EggplantDriveClient {
     EggplantResponse execute(String command) {
         if (Config.logDriveCommands) {
             Logger.debug(String.format(":: Execute : '%s'", command));
-            writer.println(command);
+//            writer.println(command);
         }
         Object[] params = new Object[]{command};
         try {
@@ -88,7 +88,7 @@ class EggplantDriveClient {
     void endSession() {
         if (Config.logDriveCommands) {
             Logger.debug(":: Ending the Suite");
-            writer.println("EndSession");
+            //writer.println("EndSession");
         }
         Object[] params = new Object[]{};
         try {
@@ -103,7 +103,7 @@ class EggplantDriveClient {
     void startSession(String suite){
         if (Config.logDriveCommands) {
             Logger.debug(":: Starting the Suite: " + suite);
-            writer.println("StartSession" + suite);
+//            writer.println("StartSession" + suite);
         }
         File suiteFile = new File(suite);
         if (! suiteFile.isAbsolute()) {

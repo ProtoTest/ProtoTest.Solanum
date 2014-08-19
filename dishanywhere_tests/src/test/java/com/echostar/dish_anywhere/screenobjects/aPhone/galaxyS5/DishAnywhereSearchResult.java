@@ -21,7 +21,7 @@ public class DishAnywhereSearchResult {
     public DishAnywhereMovie openMovie() {
         // Sometimes the keyboard is still open after doing a search. Make sure it's closed.
         if (submitSearchButton.isPresent()) {
-            EggplantTestBase.driver.PressBackButton();
+            EggplantTestBase.getDriver().PressBackButton();
         }
         movieArrow.click();
         return new DishAnywhereMovie();

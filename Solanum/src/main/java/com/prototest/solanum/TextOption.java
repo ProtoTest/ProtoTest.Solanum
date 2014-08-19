@@ -115,7 +115,7 @@ public class TextOption extends Option {
      * Specify a hotSpot using percentages, which get the current screen size and adjust dynamically.
      */
     public static TextOption hotSpot(int percentX, int percentY){
-        Point maxSize = EggplantTestBase.driver.getScreenSize();
+        Point maxSize = EggplantTestBase.getDriver().getScreenSize();
 
         int pixelsX = (int)(maxSize.x*(percentX/100.0f));
         int pixelsY = (int)(maxSize.y*(percentY/100.0f));

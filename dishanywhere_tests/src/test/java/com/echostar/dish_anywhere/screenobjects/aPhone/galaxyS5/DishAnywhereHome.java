@@ -61,7 +61,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
         Logger.info("Pressing back button until device is on home.");
         DeviceMain main = new DeviceMain();
         for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
-            EggplantTestBase.driver.PressBackButton();
+            EggplantTestBase.getDriver().PressBackButton();
         }
         return new DeviceMain();
     }

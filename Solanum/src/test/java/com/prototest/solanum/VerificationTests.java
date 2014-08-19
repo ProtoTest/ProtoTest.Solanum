@@ -15,7 +15,7 @@ public class VerificationTests extends EggplantTestBase {
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort,
                              ITestContext testContext) {
-        EggplantTestBase.driver = new MockDriver(null);
+        EggplantTestBase.setDriver(new MockDriver(null));
         createReportDirectory();
         startEggplant();
         setEggplantDefaultSettings();

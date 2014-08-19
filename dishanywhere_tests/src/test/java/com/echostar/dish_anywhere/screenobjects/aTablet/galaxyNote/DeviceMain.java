@@ -24,13 +24,13 @@ public class DeviceMain {
 
     public DeviceMain goToHomeScreen() {
         Logger.info("Returning to device home screen...");
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         EggplantTestBase.sleep(1000);
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         EggplantTestBase.sleep(1000);
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         EggplantTestBase.sleep(1000);
-        EggplantTestBase.driver.PressHomeButton();
+        EggplantTestBase.getDriver().PressHomeButton();
         return this;
     }
 
@@ -40,7 +40,7 @@ public class DeviceMain {
     }
 
     public DeviceMain killApp() {
-        EggplantTestBase.driver.PressHomeButton();
+        EggplantTestBase.getDriver().PressHomeButton();
         nav.taskManagerButton.click();
         dishAnywhereTaskIcon.swipeRight();
        return this;
@@ -48,7 +48,7 @@ public class DeviceMain {
 
     public DishAnywhereHome goHome() {
         Logger.info("Returning to device home screen and launching app...");
-        EggplantTestBase.driver.PressHomeButton();
+        EggplantTestBase.getDriver().PressHomeButton();
         dishAnywhereApp.click();
 //        for (int i=0;i<10&&!dishAnywhereApp.isPresent();i++) {
 //            EggplantTestBase.driver.PressBackButton();

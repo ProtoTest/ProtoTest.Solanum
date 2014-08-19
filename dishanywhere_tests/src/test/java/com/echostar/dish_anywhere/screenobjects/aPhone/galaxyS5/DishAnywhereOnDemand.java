@@ -34,7 +34,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
 
     public DishAnywhereOnDemand goToOnDemandRoot() {
         for (int i = 0; i < 10 && !searchButton.isPresent(); i++) {
-            EggplantTestBase.driver.PressBackButton();
+            EggplantTestBase.getDriver().PressBackButton();
         }
         searchButton.verifyPresent();
         return this;

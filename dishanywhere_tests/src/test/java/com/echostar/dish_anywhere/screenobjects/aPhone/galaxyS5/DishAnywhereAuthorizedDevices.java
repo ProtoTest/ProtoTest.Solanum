@@ -20,7 +20,7 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
             }
         }
         Logger.info("Device authorized.");
-        EggplantTestBase.driver.PressBackButton();
+        EggplantTestBase.getDriver().PressBackButton();
         return this;
     }
 

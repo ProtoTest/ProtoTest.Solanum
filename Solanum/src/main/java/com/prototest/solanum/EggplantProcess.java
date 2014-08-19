@@ -1,6 +1,7 @@
 package com.prototest.solanum;
 
 import com.google.common.base.Joiner;
+import com.sun.org.apache.xalan.internal.xsltc.util.IntegerArray;
 import junit.framework.Assert;
 
 import java.io.BufferedReader;
@@ -16,16 +17,33 @@ class EggplantProcess {
     private Process eggplantDrive;
     private ProcessBuilder command;
     private Thread processLogger;
+    private Integer drivePort;
+    private Integer driveLoggingLevel;
 
-    EggplantProcess() {
+    public EggplantProcess(){
         String runScriptPath = null;
-
+        this.drivePort = drivePort;
+        this.driveLoggingLevel = driveLoggingLevel;
         if (System.getProperty("os.name").toLowerCase().contains("windows")) {
             runScriptPath = "\"" + Config.windowsScriptPath + "\"";
         } else {
             runScriptPath = Config.unixScriptPath;
         }
         this.command = new ProcessBuilder(runScriptPath, "-driveport", Config.drivePort, "-drivelogging", Config.driveLoggingLevel);
+        this.command.redirectErrorStream(true);
+
+    }
+
+    public EggplantProcess(Integer drivePort) {
+        String runScriptPath = null;
+        this.drivePort = drivePort;
+        this.driveLoggingLevel = driveLoggingLevel;
+        if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+            runScriptPath = "\"" + Config.windowsScriptPath + "\"";
+        } else {
+            runScriptPath = Config.unixScriptPath;
+        }
+        this.command = new ProcessBuilder(runScriptPath, "-driveport", drivePort.toString(), "-drivelogging", Config.driveLoggingLevel);
         this.command.redirectErrorStream(true);
 
     }
@@ -89,7 +107,7 @@ class EggplantProcess {
                     Assert.fail("No valid eggplant license was found.  Please launch the eggplant GUI, add a license, and try again.");
                 }
                 if (line.contains("Starting eggPlant Drive")) {
-                    Logger.debug("eggPlant Drive started on port " + Config.drivePort);
+                    Logger.debug("eggPlant Drive started on port " + drivePort);
                     processLogger = new ProcessLogger(input);
                     processLogger.start();
                     return;

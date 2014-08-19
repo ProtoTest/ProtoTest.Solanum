@@ -10,6 +10,7 @@ import org.testng.util.RetryAnalyzerCount;
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Hook up the ReportNG listeners, so that the HTML and XML reports will always be generated, even without a pom.
@@ -22,10 +23,43 @@ import java.lang.reflect.Method;
         RetryAnalyzerTransformer.class})
 /** EggplantTestBase is extended by all tests, and contains hooks to automatically start/stop/configure framework features */
 public class EggplantTestBase {
-    public static EggplantDriver driver = new EggplantDriver();
-    static EggplantProcess eggplantProcess = new EggplantProcess();
+    // Atomic integer containing the next thread ID to be assigned
+    private static final AtomicInteger nextId = new AtomicInteger(Integer.parseInt(Config.drivePort));
 
-    @BeforeMethod
+    private static final ThreadLocal<Integer> port =
+            new ThreadLocal<Integer>() {
+                @Override protected Integer initialValue() {
+                    return nextId.getAndIncrement();
+                }
+            };
+
+//    public static ThreadLocal<EggplantDriver> threadDriver = new ThreadLocal<EggplantDriver>(){
+//        @Override
+//        public EggplantDriver initialValue(){
+//            return new EggplantDriver("http://localhost:" + port.get());
+//        }
+//    };
+
+    public static EggplantDriver getDriver(){
+        return new EggplantDriver("http://localhost:" + port.get());
+    }
+
+    public static EggplantDriver setDriver(EggplantDriver driver){
+        driver = driver;
+        return driver;
+    }
+//    public static ThreadLocal<EggplantProcess> eggplantThreadProcess = new ThreadLocal<EggplantProcess>(){
+//        @Override
+//        public EggplantProcess initialValue(){
+//            return new EggplantProcess(port.get());
+//        }
+//    };
+
+
+    public static EggplantProcess getEggplantProcess() {
+        return new EggplantProcess(port.get());
+    }
+
     public void testSetup(Method method) {
         Config.currentTestName = method.getName();
         Logger.info("Starting test " + Config.currentTestName);
@@ -55,7 +89,7 @@ public class EggplantTestBase {
      * This method will run once before the entire suite of tests.  It should configure everything needed by eggplant
      * Drive, launch eggplant drive, and connect to the default host
      */
-    @BeforeSuite
+    @BeforeTest
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName,
                              @Optional Integer hostPort,
@@ -71,14 +105,14 @@ public class EggplantTestBase {
         createReportDirectory();
         startEggplant();
         setEggplantDefaultSettings();
-        driver.connect(hostName, hostPort);
+        getDriver().connect(hostName, hostPort);
     }
 
     /**
      * Creates the directory used by ReportNG to store the report.  This is needed to fix a bug when running under
      * windows from intelliJ.
      */
-    void createReportDirectory() {
+    static void createReportDirectory() {
         //java.util.Date date = new java.util.Date();
         //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh.mm");
         //String timestamp = sdf.format(date);
@@ -107,7 +141,7 @@ public class EggplantTestBase {
     /**
      * AFter all tests are run, should clean up all test data and stop eggplant drive
      */
-    @AfterSuite(alwaysRun = true)
+    @AfterTest(alwaysRun = true)
     @Parameters({"hostName", "hostPort"})
     public void fixtureTearDown(@Optional() String hostName,
                                 @Optional() Integer hostPort) {
@@ -116,15 +150,15 @@ public class EggplantTestBase {
             hostName = Config.hostName;
             hostPort = Config.hostPort;
         }
-        driver.endSuite();
+        getDriver().endSuite();
         stopEggplant();
     }
 
     /**
      * Default eggplant drive settings.  Configurable by the config file.
      */
-    public void setEggplantDefaultSettings() {
-        //Logger.debug("Eggplant drive started with options : " + driver.getOptions());
+    public static void setEggplantDefaultSettings() {
+        Logger.debug("Eggplant drive started with options : " + getDriver().getOptions());
         //driver.setOption("ImageSearchDelay", String.valueOf(Config.imageSearchDelay));
        // driver.setOption("ImageSearchCount", String.valueOf(Config.imageSearchCount));
        // driver.setOption("PreciseImageTolerance", String.valueOf(Config.preciseImageTolerance));
@@ -137,23 +171,23 @@ public class EggplantTestBase {
     /**
      * Start the eggplant drive process
      */
-    protected void startEggplant() {
+    protected static void startEggplant() {
         if (Config.manageEggdriveProcess) {
             Logger.info("Launching Eggplant Drive");
-            eggplantProcess.kill();
-            eggplantProcess.start();
+            //eggplantProcess.kill();
+            getEggplantProcess().start();
         }
-        driver.startSuite(Config.suitePath);
+        getDriver().startSuite(Config.suitePath);
         Logger.info("Eggplant Drive started.");
         }
 
     /**
      * Stop eggplant drive process.
      */
-    protected void stopEggplant() {
+    protected static void stopEggplant() {
         if (Config.manageEggdriveProcess) {
-            eggplantProcess.stop();
-            eggplantProcess.kill();
+            getEggplantProcess().stop();
+            //getEggplantProcess().kill();
         }
     }
 

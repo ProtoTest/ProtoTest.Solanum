@@ -93,12 +93,12 @@ public class DeviceMain {
 
     public DeviceMain killApp() {
         nav.homeButton.click();
-        EggplantElement settingsOverlaySwipePoint = new EggplantElement(By.Point(new Point(EggplantTestBase.driver.getScreenSize().x / 2, 1)));
+        EggplantElement settingsOverlaySwipePoint = new EggplantElement(By.Point(new Point(EggplantTestBase.getDriver().getScreenSize().x / 2, 1)));
 
         settingsOverlaySwipePoint.swipeDown(ActionCondition.isPresent(settingsButton));
         settingsButton.click();
         new KindleSettings().stopApplication("Anywhere");
-        EggplantTestBase.driver.PressHomeButton();
+        EggplantTestBase.getDriver().PressHomeButton();
         return new DeviceMain();
     }
 

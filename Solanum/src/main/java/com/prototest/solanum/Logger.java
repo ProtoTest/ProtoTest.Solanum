@@ -101,7 +101,7 @@ public class Logger {
      */
     public static void screenshot(String name, Rectangle drawRectangle) {
         Logger.info("Capturing device screenshot...");
-        String newScreenshot = EggplantTestBase.driver.getScreenshot(name);
+        String newScreenshot = EggplantTestBase.getDriver().getScreenshot(name);
 
         BufferedImage image = JAI.create("fileload", newScreenshot).getAsBufferedImage();
 

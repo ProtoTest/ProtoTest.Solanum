@@ -43,7 +43,7 @@ public class MockTestBase extends EggplantTestBase {
     @Parameters({"hostName", "hostPort"})
     public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort,
                              ITestContext testContext) {
-        EggplantTestBase.driver = new MockDriver(testImagePath);
+        EggplantTestBase.setDriver(new MockDriver(testImagePath));
 
         startEggplant();
         setEggplantDefaultSettings();
@@ -63,8 +63,8 @@ public class MockTestBase extends EggplantTestBase {
         super.testSetup(method);
 
 
-        driver = new MockDriver(testImagePath);
-        EggplantTestBase.driver = new MockDriver(testImagePath);
+        setDriver(new MockDriver(testImagePath));
+        EggplantTestBase.setDriver(new MockDriver(testImagePath));
     }
 
     @AfterMethod
