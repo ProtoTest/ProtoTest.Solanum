@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="GalaxyS5" verbose="1" configfailurepolicy="continue">
-    <parameter name="hostName" value="SM-G900H (4d00a6404fd62197)"/>
+    <parameter name="hostName" value="4d00a6404fd62197"/>
     <parameter name="hostPort" value="5901"/>
     <test name="GalaxyS5AuthorizedDevices">
         <classes>
