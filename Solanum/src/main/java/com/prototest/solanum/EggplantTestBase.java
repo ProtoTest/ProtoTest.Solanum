@@ -30,6 +30,18 @@ public class EggplantTestBase {
         Config.currentTestName = method.getName();
         Logger.info("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
+        for (int attempt = 0; attempt < 5; attempt++) {
+            try {
+                initializeApp();
+            } catch (Exception e) {
+                continue;
+            }
+            break;
+        }
+    }
+
+    protected void initializeApp() {
+        //To change body of created methods use File | Settings | File Templates.
     }
 
     /**

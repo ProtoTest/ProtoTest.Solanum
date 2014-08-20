@@ -25,8 +25,9 @@ public class GalaxyS5TestBase extends EggplantTestBase {
         }
     }
 
-    @BeforeTest
-    public void resetLoginAndSettings() {
+
+    @Override
+    public void initializeApp() {
         handleAppCrash();
         // Runs at startup for any test
         new DeviceMain()
@@ -42,8 +43,8 @@ public class GalaxyS5TestBase extends EggplantTestBase {
                 .openGuide();
     }
     
-    @BeforeMethod
-    public void goToDishAnywhereHome(){
-        new DeviceMain().goHome();
-    }
+//    @BeforeMethod
+//    public void goToDishAnywhereHome(){
+//        new DeviceMain().goHome();
+//    }
 }

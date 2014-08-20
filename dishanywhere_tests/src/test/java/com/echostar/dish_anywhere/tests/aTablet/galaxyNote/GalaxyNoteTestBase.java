@@ -7,7 +7,8 @@ import org.testng.annotations.AfterMethod;
 
 public class GalaxyNoteTestBase extends EggplantTestBase {
 
-    @BeforeMethod
+
+    @Override
     public void initializeApp() {
         handleAppCrash();
         Logger.info("Test Setup: Initializing the app...");

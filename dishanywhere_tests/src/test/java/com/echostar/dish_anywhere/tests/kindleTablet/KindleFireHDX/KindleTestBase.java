@@ -23,8 +23,8 @@ private void handleAppCrash() {
     }
 }
 
-    @BeforeMethod
-    public void clearAppState() {
+    @Override
+    public void initializeApp() {
         // If the app ever crashes, the app should be initialized even if alreadyInitialized is true.
 //        Reporter.setCurrentTestResult(null);
 //        if (!alreadyInitialized /* || isCrashed() */) {
