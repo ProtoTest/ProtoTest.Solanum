@@ -40,22 +40,19 @@ public class DeviceMain {
     }
 
     public DeviceMain killApp() {
+        Logger.info("Killing the Dish Anywhere app...");
         EggplantTestBase.driver.PressHomeButton();
         nav.taskManagerButton.click();
-        dishAnywhereTaskIcon.swipeRight();
+        if (dishAnywhereTaskIcon.isPresent()) {
+            dishAnywhereTaskIcon.swipeRight();
+        }
        return this;
     }
 
-    public DishAnywhereHome goHome() {
+    public DishAnywhereHome goToDeviceHomeAndEnterApp() {
         Logger.info("Returning to device home screen and launching app...");
         EggplantTestBase.driver.PressHomeButton();
         dishAnywhereApp.click();
-//        for (int i=0;i<10&&!dishAnywhereApp.isPresent();i++) {
-//            EggplantTestBase.driver.PressBackButton();
-//        }
-//        for (int i=0;i<5&&dishAnywhereApp.isPresent();i++) {
-//            dishAnywhereApp.click();
-//        }
         return new DishAnywhereHome();
     }
     public DeviceMain clearField(){

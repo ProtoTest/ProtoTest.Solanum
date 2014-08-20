@@ -21,7 +21,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
             movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
-                .goHome()
+                .goToDeviceHomeAndEnterApp()
                 .openBlockbuster()
                 .openMovies()
                 .openFilter()
@@ -39,7 +39,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
             movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
-                .goHome()
+                .goToDeviceHomeAndEnterApp()
                 .openBlockbuster()
                 .openTVShows()
                 .openFilter()
@@ -76,7 +76,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
             movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
         }
         new DishAnywhereHome()
-                .goHome()
+                .goToDeviceHomeAndEnterApp()
                 .openBlockbuster()
                 .openKidsTVShows()
                 .openFilter()

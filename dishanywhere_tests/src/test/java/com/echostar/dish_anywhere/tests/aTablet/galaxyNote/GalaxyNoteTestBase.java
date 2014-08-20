@@ -14,7 +14,7 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
         Logger.info("Test Setup: Initializing the app...");
         new DeviceMain()
                 .killApp()
-                .goHome()
+                .goToDeviceHomeAndEnterApp()
                 .logOutIfLoggedIn()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .openSettings()
@@ -36,6 +36,7 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
     }
 
     private void handleAppCrash() {
+        Logger.info("Attempting to handle any app crashes...");
         EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,"));
         EggplantElement okButton = new EggplantElement(By.Text("OK"));
         if (crashText.isPresent()) {

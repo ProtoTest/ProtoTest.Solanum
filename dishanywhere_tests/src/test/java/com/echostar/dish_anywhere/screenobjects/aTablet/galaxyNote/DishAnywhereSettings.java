@@ -28,7 +28,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         }
         catch(RuntimeException e) {
             killApp();
-            goHome();
+            goToDeviceHomeAndEnterApp();
             settingsButton.waitForPresent();
             logOutIfLoggedIn();
         }
@@ -36,13 +36,16 @@ public class DishAnywhereSettings extends DishAnywhereHome {
     }
 
     public DishAnywhereParentalControls openParentalControls(String passcode){
+        Logger.info("Opening parental controls menu...");
         parentalControlsButton.click();
         EnterPasscodePopup popup = new EnterPasscodePopup();
+        Logger.info("Entering passcode (" + passcode + ").");
         popup.enterPasscode(passcode);
         return new DishAnywhereParentalControls();
     }
 
     public DishAnywhereAuthorizedDevices openAuthorizedDevices(){
+        Logger.info("Opening authorized devices list...");
         authorizedDevicesButton.click();
         return new DishAnywhereAuthorizedDevices();
     }

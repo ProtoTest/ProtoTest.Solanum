@@ -5,14 +5,19 @@ import com.prototest.solanum.*;
 public class DishAnywhereHome extends DishAnywhereMain {
     public EggplantElement settingsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings"));
     public EggplantElement guideButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide"));
-
     public EggplantElement onDemandButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand"));
-
     public EggplantElement blockbusterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/BlockBuster"));
     public EggplantElement viewAllButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.Quadrants.BOTTOM_HALF));
 
+    public EggplantElement loadedStateIconArray = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/LoadedState"));
 
     public DishAnywhereHome() {
+    }
+
+    public DishAnywhereHome confirmAppIsLoaded(){
+        Logger.info("Confirming app has loaded...");
+        loadedStateIconArray.waitForPresent();
+        return this;
     }
 
     public DishAnywhereLogin logOutIfLoggedIn(){
@@ -26,9 +31,8 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     private boolean loggedIn() {
-        if(settingsButton.isPresent())
-            return true;
-        return settingsButton.isPresent(15);
+        // Returns true if settings button is present (false if not)
+        return settingsButton.isPresent();
     }
 
     public DishAnywhereSettings openSettings() {
@@ -38,6 +42,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     public DishAnywhereHome openGuide() {
+        Logger.info("Opening the guide...");
         guideButton.click();
         return this;
     }
