@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
         VerificationsListener.class})
 /** EggplantTestBase is extended by all tests, and contains hooks to automatically start/stop/configure framework features */
 public class EggplantTestBase {
-    public static EggplantDriver driver = new EggplantDriver();
+    public static EggplantDriver driver;
     static EggplantProcess eggplantProcess = new EggplantProcess();
 
     @BeforeMethod
@@ -91,6 +91,7 @@ public class EggplantTestBase {
             Logger.info("Using drivePort from TestNG params: " + drivePort);
             Config.drivePort = drivePort;
         }
+        driver = new EggplantDriver();
         createReportDirectory();
         startEggplant();
         setEggplantDefaultSettings();
