@@ -1,0 +1,46 @@
+    <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="GalaxyS5" verbose="1" configfailurepolicy="continue">
+    <parameter name="hostName" value="4d00a6404fd62197"/>
+    <parameter name="hostPort" value="5901"/>
+    <parameter name="drivePort" value="5401"/>
+    <test name="GalaxyS5AuthorizedDevices">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5AuthorizedDevices"/>
+            </classes></test>
+    <test name="GalaxyS5Blockbuster">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5Blockbuster"/>
+        </classes>
+    </test>
+    <test name="GalaxyS5OnDemandCategory">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5OnDemandCategory"/>
+        </classes>
+    </test>
+    <test name="GalaxyS5OnDemandFilters">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5OnDemandFilters"/>
+        </classes>
+    </test>
+    <test name="GalaxyS5ParentalControls">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5ParentalControls"/>
+        </classes>
+    </test>
+    <test name="GalaxyS5Passcode">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5Passcode"/>
+        </classes>
+    </test>
+    <test name="GalaxyS5UITests">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5UiTests"/>
+        </classes>
+    </test>
+    <test name="GalaxyS5VideoDRM">
+        <classes>
+            <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5VideoDrm"/>
+        </classes>
+    </test>
+</suite>

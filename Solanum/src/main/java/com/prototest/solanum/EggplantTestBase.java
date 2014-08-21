@@ -18,8 +18,7 @@ import java.lang.reflect.Method;
 @Listeners({TimestampedHTMLReporter.class,
         TimestamppedXMLReporter.class,
         org.uncommons.reportng.JUnitXMLReporter.class,
-        VerificationsListener.class,
-        RetryAnalyzerTransformer.class})
+        VerificationsListener.class})
 /** EggplantTestBase is extended by all tests, and contains hooks to automatically start/stop/configure framework features */
 public class EggplantTestBase {
     public static EggplantDriver driver = new EggplantDriver();
@@ -30,18 +29,22 @@ public class EggplantTestBase {
         Config.currentTestName = method.getName();
         Logger.info("Starting test " + Config.currentTestName);
         Verifications.clearVerifications();
-        for (int attempt = 0; attempt < 5; attempt++) {
+        for (int attempt = 0; attempt < Config.retryCount; attempt++) {
             try {
+                Logger.info(String.format("Beginning app setup attempt %d of %d.", attempt+1, 5));
                 initializeApp();
             } catch (Exception e) {
+                Logger.warning(String.format("App setup attempt %d of %d failed.", attempt+1, 5));
                 continue;
             }
             break;
         }
     }
 
+    /**
+     * Invoked by the test base up to {@link Config#retryCount} times.
+     */
     protected void initializeApp() {
-        //To change body of created methods use File | Settings | File Templates.
     }
 
     /**
@@ -68,17 +71,25 @@ public class EggplantTestBase {
      * Drive, launch eggplant drive, and connect to the default host
      */
     @BeforeSuite
-    @Parameters({"hostName", "hostPort"})
+    @Parameters({"hostName", "hostPort", "driveUrl", "drivePort"})
     public void fixtureSetUp(@Optional String hostName,
                              @Optional Integer hostPort,
+                             @Optional String driveUrl,
+                             @Optional String drivePort,
                              ITestContext testContext) {
-        for (ITestNGMethod method : testContext.getAllTestMethods()) {
-            method.setInvocationCount(Config.retryCount);
-        }
+
         if (hostName == null || hostPort == null) {
             Logger.info("Host name not configured by testng.xml; falling back to Solanum config.");
             hostName = Config.hostName;
             hostPort = Config.hostPort;
+        }
+        if (driveUrl != null) {
+            Logger.info("Using driveUrl from TestNG params: " + driveUrl);
+            Config.driveUrl = driveUrl;
+        }
+        if (drivePort != null) {
+            Logger.info("Using drivePort from TestNG params: " + drivePort);
+            Config.drivePort = drivePort;
         }
         createReportDirectory();
         startEggplant();

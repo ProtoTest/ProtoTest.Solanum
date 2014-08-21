@@ -40,8 +40,8 @@ public class MockTestBase extends EggplantTestBase {
 
     @Override
     @BeforeTest
-    @Parameters({"hostName", "hostPort"})
-    public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort,
+    @Parameters({"hostName", "hostPort", "driveUrl", "drivePort"})
+    public void fixtureSetUp(@Optional String hostName, @Optional Integer hostPort, @Optional String driveUrl, @Optional String drivePort,
                              ITestContext testContext) {
         EggplantTestBase.driver = new MockDriver(testImagePath);
 

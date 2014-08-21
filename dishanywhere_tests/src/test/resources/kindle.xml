@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="KindleTablet" verbose="1" configfailurepolicy="continue">
-    <parameter name="hostName" value="D0FDA0A0352502L2"/>
+    <parameter name="hostName" value="D0FBA0A0407401HS"/>
     <parameter name="hostPort" value="5901"/>
     <test name="Kindle1">
         <classes>
