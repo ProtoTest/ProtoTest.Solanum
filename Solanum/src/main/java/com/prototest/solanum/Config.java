@@ -77,7 +77,7 @@ public class Config {
     private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
     public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
     public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
-    public static int retryCount = getPropertyValue("retryCount", 1);
+    public static int retryCount = getPropertyValue("retryCount", 5);
     public static boolean diagnoseFailedImages = getPropertyValue("diagnoseFailedImages",false);
     public static int maxActionRetries = getPropertyValue("maxActionRetries", 10);
 
