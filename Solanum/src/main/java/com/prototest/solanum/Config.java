@@ -71,7 +71,7 @@ public class Config {
     public static String standardImageTolerance = getPropertyValue("standardImageTolerance","70");
     public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".02");
     public static String remoteWorkInterval = getPropertyValue("remoteWorkInterval","0.1");
-    public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1:5400");
+    public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1");
     public static String currentTestName = "Test";
     public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
     private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));

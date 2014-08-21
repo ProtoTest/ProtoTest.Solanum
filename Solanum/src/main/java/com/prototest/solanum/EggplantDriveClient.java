@@ -43,7 +43,7 @@ class EggplantDriveClient {
         createLogFile();
         config = new XmlRpcClientConfigImpl();
         try {
-            config.setServerURL(new URL(Config.driveUrl));
+            config.setServerURL(new URL(Config.driveUrl+":"+Config.drivePort));
             config.setConnectionTimeout(10000);
             config.setReplyTimeout(30000);
         } catch (MalformedURLException e) {
