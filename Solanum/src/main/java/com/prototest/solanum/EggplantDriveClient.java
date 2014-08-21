@@ -40,6 +40,7 @@ class EggplantDriveClient {
     }
     /** Instantiates a new client to communicate with the xmlrpc service at the location specified in the config file.   */
     EggplantDriveClient(){
+        Logger.info(String.format("Starting connection on %s:%s",Config.driveUrl, Config.drivePort));
         createLogFile();
         config = new XmlRpcClientConfigImpl();
         try {
