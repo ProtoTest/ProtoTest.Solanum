@@ -2,10 +2,8 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
     private EggplantElement authorizeDeviceButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton"));
     private EggplantElement deAuthorizeDeviceButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton"));
@@ -14,7 +12,11 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice(){
         if(!deAuthorizeDeviceButton.isPresent()){
+            Logger.info("Authorizing this device...");
             authorizeDeviceButton.click();
+        }
+        else{
+            Logger.info("Device is already authorized...");
         }
         return this;
     }
