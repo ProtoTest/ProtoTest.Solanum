@@ -126,9 +126,11 @@ public class Logger {
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(newScreenshot);
+            String[] fileSplitPath = newScreenshot.split("\\\\/?");
+            String relativePath = "../Screenshots/" + fileSplitPath[fileSplitPath.length-1];
             ImageIO.write(resizedImage, "png", fos);
             System.setProperty("org.uncommons.reportng.escape-output", "false");
-            Reporter.log(String.format("<img src=\"%s\"/>", newScreenshot));
+            Reporter.log(String.format("<img src=\"%s\"/>", relativePath));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

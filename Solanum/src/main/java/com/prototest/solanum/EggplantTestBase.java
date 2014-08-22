@@ -106,6 +106,14 @@ public class EggplantTestBase {
         //java.util.Date date = new java.util.Date();
         //SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy hh.mm");
         //String timestamp = sdf.format(date);
+
+        File screenshotsDir = new File("Screenshots");
+        if (screenshotsDir.exists()) {
+            for (File subFile : screenshotsDir.listFiles()) {
+                subFile.delete();
+            }
+        }
+        screenshotsDir.delete();
         String testDir = "test-output"; //Results " + timestamp;
         File report = new File(testDir);
         //deleteDir(report);
