@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
+import com.prototest.solanum.Logger;
 import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
@@ -15,13 +16,11 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
     private final int MOVIES_TO_TEST = 6;
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
-    public void movieCategory(){
-
+    public void onDemandMovieCategory(){
+        Logger.info("Beginning Test: On Demand Movie Category.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
-
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
@@ -33,22 +32,17 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
-    public void featuredCategory(){
-
-
+    public void onDemandFeaturedCategory(){
+        Logger.info("Beginning Test: On Demand Featured Category.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getOnDemandFeatured(RadishScraper.Device.android_tablet, 30);
-
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
-
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()
@@ -57,22 +51,17 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
-    public void familyCategory(){
-
-
+    public void onDemandFamilyCategory(){
+        Logger.info("Beginning Test: On Demand Family Category.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFamilyCategory(RadishScraper.Device.android_tablet, 30);
-
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
-
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()
@@ -81,22 +70,17 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
-    public void tvShowsCategory(){
-
-
+    public void onDemandTvShowsCategory(){
+        Logger.info("Beginning Test: On Demand TV Shows Category.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getShowsCategory(RadishScraper.Device.android_tablet, 30);
-
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
         for (int i = 0; i < MOVIES_TO_TEST; i++) {
             movieTitles.add(movies.get(i).get("franchiseName"));
         }
-
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()
@@ -105,20 +89,17 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
-    public void networksCategory(){
-
+    public void onDemandNetworksCategory(){
+        Logger.info("Beginning Test: On Demand Movie Category.");
         List<String> movieTitles = Arrays.asList("BabyFirstTV", "Cinemax", "Content Media", "Cookie Jar", "Echo Bridge", "Encore");
-
-
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()
                 .openNetworks()
                 .verifyTitlesPresent(movieTitles);
-
     }
+
 }

@@ -15,16 +15,20 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
             Logger.info("Authorizing this device...");
             authorizeDeviceButton.click();
         }
-        else{
-            Logger.info("Device is already authorized...");
+        else {
+            Logger.info("Device is already authorized.");
         }
         return this;
     }
 
     public DishAnywhereAuthorizedDevices deAuthorizeThisDevice(){
         if(deAuthorizeDeviceButton.isPresent()){
+            Logger.info("Deauthorizing this device...");
             deAuthorizeDeviceButton.waitForPresent().click();
             okButton.click();
+        }
+        else {
+            Logger.info("Device is already deauthorized.");
         }
         return this;
     }

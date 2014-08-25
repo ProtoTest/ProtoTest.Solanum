@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
+import com.prototest.solanum.Logger;
 import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
@@ -11,7 +12,8 @@ import java.util.Map;
 public class GalaxyNoteAuthorizedDevices extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
-    public void movieCategory(){
+    public void testAuthorizedDeviceFunctionality(){
+        Logger.info("Beginning Test: Authorized Device Functionality.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
         String movieName = RadishScraper.getShortName(movies.get(1).get("franchiseName"),25);
