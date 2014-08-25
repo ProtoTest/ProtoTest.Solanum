@@ -16,18 +16,16 @@ import java.text.SimpleDateFormat;
  */
 public class Logger {
 
-
-
     /**
      * Log Info, this is the highest level of logging. Should be used for logging test intent, and actions.
      */
     public static void info(String text) {
         if (Config.logLevel > 1) return;
         java.util.Date date = new java.util.Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
         String timestamp = sdf.format(date);
-        text = String.format("INFO : [%s] %s: %s", timestamp, CurrentContext.getCurrentContext(),text);
-        System.out.println(text.toUpperCase());
+        text = String.format("INFO : [%s] (%s)  %s", timestamp, CurrentContext.getCurrentContext(), text);
+        System.out.println(text);
         Reporter.log(String.format("<div style=\"color:Blue\">%s</div>", text));
     }
 
@@ -37,9 +35,9 @@ public class Logger {
     public static void debug(String text) {
         if (Config.logLevel > 0) return;
         java.util.Date date = new java.util.Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
         String timestamp = sdf.format(date);
-        text = String.format("DEBUG : [%s] %s: %s", timestamp, CurrentContext.getCurrentContext(),text);
+        text = String.format("DEBUG : [%s] (%s)  %s", timestamp, CurrentContext.getCurrentContext(), text);
         System.out.println(text);
         Reporter.log(String.format("<div>%s</div>", text));
     }
@@ -50,9 +48,9 @@ public class Logger {
     public static void warning(String text) {
         if (Config.logLevel > 2) return;
         java.util.Date date = new java.util.Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
         String timestamp = sdf.format(date);
-        text = String.format("WARNING : [%s] %s: %s", timestamp, CurrentContext.getCurrentContext(),text);
+        text = String.format("WARNING : [%s] (%s)  %s", timestamp, CurrentContext.getCurrentContext(), text);
         System.out.println(text);
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:yellow\">%s</div>", text));
@@ -63,9 +61,9 @@ public class Logger {
     public static void error(String text) {
         if (Config.logLevel > 3) return;
         java.util.Date date = new java.util.Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
         String timestamp = sdf.format(date);
-        text = String.format("ERROR : [%s] %s: %s", timestamp, CurrentContext.getCurrentContext(),text);
+        text = String.format("ERROR : [%s] (%s)  %s", timestamp, CurrentContext.getCurrentContext(), text);
         System.out.println(text);
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         Reporter.log(String.format("<div style=\"background-color:red; color:white\">%s</div>", text));
