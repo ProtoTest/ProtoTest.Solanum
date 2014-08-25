@@ -1,14 +1,14 @@
 package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 /**
- * Created by Brian on 6/4/2014.
  */
 public class KindleFirePasscode extends KindleTestBase {
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
 
         new DishAnywhereHome()

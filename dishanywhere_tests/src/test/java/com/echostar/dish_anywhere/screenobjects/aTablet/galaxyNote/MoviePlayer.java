@@ -3,7 +3,6 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.SearchRectangle;
 
 import java.awt.*;
 public class MoviePlayer extends DishAnywhereMain {

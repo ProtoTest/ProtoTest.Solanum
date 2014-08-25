@@ -2,7 +2,9 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,7 +14,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
     private final int MOVIES_TO_TEST = 6;
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
@@ -34,7 +36,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void featuredCategory(){
 
 
@@ -58,7 +60,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void familyCategory(){
 
 
@@ -82,7 +84,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
 
 
@@ -106,7 +108,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void networksCategory(){
 
         List<String> movieTitles = Arrays.asList("BabyFirstTV", "Cinemax", "Content Media", "Cookie Jar", "Echo Bridge", "Encore");

@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 //
@@ -11,7 +12,7 @@ import org.testng.annotations.Test;
 
 public class GalaxyS5Passcode extends GalaxyS5TestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void changePasscode(){
         Logger.info("Beginning Test: Change Passcode.");
 

@@ -4,8 +4,9 @@ import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.Logger;
-import com.prototest.solanum.Verifications;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +16,7 @@ import java.util.Map;
 
 public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void clearAllBlockedContentAndPlayMovie(){
         Logger.info("Beginning Test: Clear All Parental Controls Blocks and Play Movie.");
         RadishScraper radishScraper = new RadishScraper();
@@ -34,7 +35,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
                 .verifyMoviePlays();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void setAllContentBlockedAndPlayMovie(){
         Logger.info("Beginning Test: Set All Parental Controls Blocks and Play Movie");
         RadishScraper radishScraper = new RadishScraper();

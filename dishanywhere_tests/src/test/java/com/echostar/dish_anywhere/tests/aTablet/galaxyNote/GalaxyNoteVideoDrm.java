@@ -2,13 +2,14 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 // DishAnywhere API Tests - Galaxy Note (Android Tablet)
 
 public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void watchNagraMovie() {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
@@ -16,7 +17,7 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         watchMovie(movie);
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void watchWidevineMovie() {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();

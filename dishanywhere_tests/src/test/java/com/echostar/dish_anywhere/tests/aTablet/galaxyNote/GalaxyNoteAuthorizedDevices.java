@@ -2,13 +2,15 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
+
 import java.util.List;
 import java.util.Map;
 
 public class GalaxyNoteAuthorizedDevices extends GalaxyNoteTestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);

@@ -16,7 +16,7 @@
 //
 //    private final int MOVIES_TO_TEST = 6;
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void movieCategory(){
 //
 //        RadishScraper radishScraper = new RadishScraper();
@@ -37,7 +37,7 @@
 //
 //    }
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void featuredCategory(){
 //
 //
@@ -60,7 +60,7 @@
 //
 //    }
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void familyCategory(){
 //
 //
@@ -83,7 +83,7 @@
 //
 //    }
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void tvShowsCategory(){
 //
 //
@@ -106,7 +106,7 @@
 //
 //    }
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void networksCategory(){
 //
 //        List<String> movieTitles = Arrays.asList("BabyFirstTV", "Cinemax", "Content Media", "Cookie Jar", "Echo Bridge", "Encore");

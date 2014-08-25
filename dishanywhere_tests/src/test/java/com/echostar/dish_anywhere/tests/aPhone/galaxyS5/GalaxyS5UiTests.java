@@ -1,12 +1,11 @@
 package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
-import com.prototest.solanum.*;
+import com.prototest.solanum.Config;
+import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 //
 //Tests for proper functionality of basic app functionality
@@ -14,7 +13,7 @@ import java.util.List;
 
 public class GalaxyS5UiTests extends GalaxyS5TestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
         new DishAnywhereHome()
@@ -25,7 +24,7 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
                 .returnToDeviceMain();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testPredictiveSearch() {
         Logger.info("Beginning Test: Predictive Search.");
         RadishScraper radishScraper = new RadishScraper();

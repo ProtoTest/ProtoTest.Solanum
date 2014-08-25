@@ -11,7 +11,7 @@
 //public class iPadVideoDrm extends iPadTestBase {
 //
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void watchNagraMovie() {
 //        RadishScraper radishScraper = new RadishScraper();
 //        radishScraper.getMovies();
@@ -23,7 +23,7 @@
 //
 //    }
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void watchWidevineMovie() {
 //        RadishScraper radishScraper = new RadishScraper();
 //        radishScraper.getMovies();

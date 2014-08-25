@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.KindleFireHDX_updatedversion;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
@@ -11,13 +12,12 @@ import java.util.Map;
 
 // DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
 
-@Test()
 public class KindleFireOnDemandFilters extends KindleTestBase {
 
 
     private static final int MOVIES_TO_TEST = 10;
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void onDemandTest() {
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFilteredMovies("comedy", RadishScraper.Device.android_tablet, 30);

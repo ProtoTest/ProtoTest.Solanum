@@ -2,7 +2,6 @@ package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.prototest.solanum.*;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 
 public class GalaxyNoteTestBase extends EggplantTestBase {

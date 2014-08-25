@@ -4,14 +4,14 @@ import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMa
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 // DishAnywhere UI Tests - Kindle Fire HDX (Kindle Tablet)
 
-@Test()
 public class KindleFireHdxUiTests extends EggplantTestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
         new DeviceMain()

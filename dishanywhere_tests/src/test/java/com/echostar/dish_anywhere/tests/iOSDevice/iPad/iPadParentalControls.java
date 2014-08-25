@@ -14,7 +14,7 @@
 // * Created by Brian on 6/4/2014.
 // */
 //public class iPadParentalControls extends iPadTestBase {
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void clearAllBlockedContentAndPlayMovie(){
 //
 //        RadishScraper radishScraper = new RadishScraper();
@@ -38,7 +38,7 @@
 //
 //    }
 //
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void setAllContentBlockedAndPlayMovie(){
 //
 //        RadishScraper radishScraper = new RadishScraper();

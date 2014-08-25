@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
@@ -11,13 +12,12 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Brian on 6/4/2014.
  */
 public class KindleFireBlockbuster extends KindleTestBase {
 
     private final int MOVIES_TO_TEST = 10;
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
@@ -40,7 +40,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
                 .verifyTitlesPresent(movieTitles);
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
@@ -61,7 +61,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
         Verifications.assertVerifications();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void kidsMovieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
@@ -82,7 +82,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
         Verifications.assertVerifications();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void kidsTvShowsCategory(){
 
         RadishScraper radishScraper = new RadishScraper();

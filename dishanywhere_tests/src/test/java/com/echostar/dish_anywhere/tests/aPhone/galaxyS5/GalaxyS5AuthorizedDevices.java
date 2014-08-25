@@ -2,8 +2,8 @@ package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
-import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Map;
 //
 
 public class GalaxyS5AuthorizedDevices extends GalaxyS5TestBase {
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void deauthAndReauth(){
         Logger.info("Beginning Test: Deauthorize and Reauthorize This Device.");
         RadishScraper radishScraper = new RadishScraper();

@@ -5,12 +5,14 @@ import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DeviceMain;
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
+
 import java.util.List;
 import java.util.Map;
 
 public class GalaxyNoteParentalControls extends EggplantTestBase {
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void clearAllBlockedContentAndPlayMovie(){
 
         RadishScraper radishScraper = new RadishScraper();
@@ -39,7 +41,7 @@ public class GalaxyNoteParentalControls extends EggplantTestBase {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void setAllContentBlockedAndPlayMovie(){
 
         RadishScraper radishScraper = new RadishScraper();

@@ -4,6 +4,7 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.Verifications;
+
 import java.util.ArrayList;
 import java.util.List;
 

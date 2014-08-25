@@ -2,9 +2,6 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.*;
 
-import java.awt.*;
-import java.util.List;
-
 /**
  *
  */

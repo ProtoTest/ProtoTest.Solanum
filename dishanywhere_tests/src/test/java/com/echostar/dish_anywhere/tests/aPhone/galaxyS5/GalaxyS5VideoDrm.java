@@ -1,8 +1,9 @@
 package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
-import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.*;
+import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 
 public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void watchNagraMovie() {
         Logger.info("Beginning Test: Watch Nagra Movie.");
         RadishScraper radishScraper = new RadishScraper();
@@ -21,7 +22,7 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
         watchMovie(movie);
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void watchWidevineMovie() {
         Logger.info("Beginning Test: Watch Widevine Movie.");
         RadishScraper radishScraper = new RadishScraper();

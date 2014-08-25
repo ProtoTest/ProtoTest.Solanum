@@ -2,10 +2,6 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
-import com.prototest.solanum.EggplantTestBase;
-import com.prototest.solanum.SearchRectangle;
-
-import java.util.List;
 
 public class DishAnywhereSearchResult extends DeviceMain {
     DeviceNavigation nav = new DeviceNavigation();

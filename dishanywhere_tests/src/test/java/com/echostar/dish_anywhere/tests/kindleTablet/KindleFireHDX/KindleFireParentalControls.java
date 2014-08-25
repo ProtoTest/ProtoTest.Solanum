@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
 import com.prototest.solanum.Config;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.Map;
  * Created by Brian on 6/4/2014.
  */
 public class KindleFireParentalControls extends KindleTestBase{
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void clearAllBlockedContentAndPlayMovie(){
 
         RadishScraper radishScraper = new RadishScraper();
@@ -33,7 +34,7 @@ public class KindleFireParentalControls extends KindleTestBase{
                 .verifyMoviePlays();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void setAllContentBlockedAndPlayMovie(){
 
         RadishScraper radishScraper = new RadishScraper();

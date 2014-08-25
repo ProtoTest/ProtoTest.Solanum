@@ -4,6 +4,7 @@ import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.iOSDevice.iPad.DeviceMain;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -12,12 +13,12 @@ import java.util.Map;
 
 // DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
 
-@Test()
+@Test
 public class iPadOnDemandFilters extends EggplantTestBase {
 
     private final int MOVIES_TO_TEST = 6;
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void onDemandTest() {
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFilteredMovies("comedy", RadishScraper.Device.android_tablet, 30);

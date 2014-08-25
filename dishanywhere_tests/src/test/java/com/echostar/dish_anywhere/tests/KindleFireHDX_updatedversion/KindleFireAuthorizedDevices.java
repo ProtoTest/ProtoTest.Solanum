@@ -5,6 +5,7 @@ import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DeviceMa
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereOnDemand;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.EggplantTestBase;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.Map;
  * Created by Brian on 6/4/2014.
  */
 public class KindleFireAuthorizedDevices extends EggplantTestBase {
-    @Test()
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory() {
 
         RadishScraper radishScraper = new RadishScraper();

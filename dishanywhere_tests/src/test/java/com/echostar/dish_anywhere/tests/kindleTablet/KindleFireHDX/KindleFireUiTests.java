@@ -4,14 +4,14 @@ import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
 
-@Test()
 public class KindleFireUiTests extends KindleTestBase {
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testLogoutAndLogin() {
         Logger.info("Beginning Test: Logout and Login.");
         new DishAnywhereHome()
@@ -23,7 +23,7 @@ public class KindleFireUiTests extends KindleTestBase {
         Verifications.assertVerifications();
 
     }
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testPredictiveSearch() {
         Logger.info("Beginning Test: Predictive Search.");
         RadishScraper radishScraper = new RadishScraper();

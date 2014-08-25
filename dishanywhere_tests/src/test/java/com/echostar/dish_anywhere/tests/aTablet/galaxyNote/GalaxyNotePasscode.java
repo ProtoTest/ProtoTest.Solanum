@@ -1,11 +1,12 @@
 package com.echostar.dish_anywhere.tests.aTablet.galaxyNote;
 
 import com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote.DishAnywhereHome;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 public class GalaxyNotePasscode extends GalaxyNoteTestBase{
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void changePasscode(){
         new DishAnywhereHome()
                 .openSettings()

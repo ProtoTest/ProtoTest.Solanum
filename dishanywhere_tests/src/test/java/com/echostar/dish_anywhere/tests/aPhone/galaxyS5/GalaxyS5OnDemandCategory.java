@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
@@ -19,7 +20,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
 
     private final int MOVIES_TO_TEST = 6;
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void moviesCategory(){
         Logger.info("Beginning Test: On Demand Movies Category.");
         RadishScraper radishScraper = new RadishScraper();
@@ -36,7 +37,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         Verifications.assertVerifications();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void featuredCategory(){
         Logger.info("Beginning Test: On Demand Featured Category.");
         RadishScraper radishScraper = new RadishScraper();
@@ -53,7 +54,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         Verifications.assertVerifications();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void familyCategory(){
         Logger.info("Beginning Test: On Demand Family Category.");
         RadishScraper radishScraper = new RadishScraper();
@@ -70,7 +71,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         Verifications.assertVerifications();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
         Logger.info("On Demand TV Shows Category.");
         RadishScraper radishScraper = new RadishScraper();
@@ -87,7 +88,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
         Verifications.assertVerifications();
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void networksCategory(){
         Logger.info("Beginning Test: On Demand Networks Category.");
         List<String> movieTitles = Arrays.asList("MGM", "Starz", "Hallmark Channel", "Encore", "HBO");

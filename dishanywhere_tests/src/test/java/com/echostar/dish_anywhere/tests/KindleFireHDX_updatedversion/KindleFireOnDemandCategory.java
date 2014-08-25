@@ -1,8 +1,9 @@
-package com.echostar.dish_anywhere.tests.KindleFireHDX;
+package com.echostar.dish_anywhere.tests.KindleFireHDX_updatedversion;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
 import com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleTestBase;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
 
     private final int MOVIES_TO_TEST = 10;
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
 
         RadishScraper radishScraper = new RadishScraper();
@@ -39,7 +40,7 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
     }
 
     // Can't sort by title in featured category in new version so there's no way to ensure the order of the movies we get.
-//    @Test
+//    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
 //    public void featuredCategory(){
 //
 //
@@ -61,7 +62,7 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
 //
 //    }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void familyCategory(){
 
 
@@ -83,7 +84,7 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
 
 
@@ -105,7 +106,7 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
 
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void networksCategory(){
 
         List<String> movieTitles = Arrays.asList("BabyFirstTV", "Cinemax", "Content Media", "Cookie Jar", "Echo Bridge", "Encore");

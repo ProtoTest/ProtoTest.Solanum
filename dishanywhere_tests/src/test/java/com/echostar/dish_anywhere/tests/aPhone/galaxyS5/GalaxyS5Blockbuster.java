@@ -3,7 +3,9 @@ package com.echostar.dish_anywhere.tests.aPhone.galaxyS5;
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome;
 import com.prototest.solanum.Logger;
+import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +19,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
     private final int MOVIES_TO_TEST = 6;
     private final int MAX_NAME_LENGTH = 25;
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
         Logger.info("Beginning Test: Blockbuster Movie Category.");
         RadishScraper radishScraper = new RadishScraper();
@@ -35,7 +37,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
                 .verifyTitlesPresent(movieTitles);
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
         Logger.info("Beginning Test: Blockbuster TV Shows Category.");
         RadishScraper radishScraper = new RadishScraper();
@@ -53,7 +55,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
                 .verifyTitlesPresent(movieTitles);
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void kidsMovieCategory(){
         Logger.info("Beginning Test: Kids Movie Category.");
         RadishScraper radishScraper = new RadishScraper();
@@ -71,7 +73,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
                 .verifyTitlesPresent(movieTitles);
     }
 
-    @Test
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void kidsTvShowsCategory(){
         Logger.info("Beginning Test: Kids TV Shows Category.");
         RadishScraper radishScraper = new RadishScraper();
