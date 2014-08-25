@@ -7,10 +7,11 @@ import org.testng.annotations.AfterMethod;
 /**
  */
 public class KindleTestBase extends EggplantTestBase {
-    EggplantElement crashText = new EggplantElement(By.Text("Anywhere has stopped.", TextOption.waitFor(10)));
-    EggplantElement okButton = new EggplantElement(By.Text("OK"));
 
     private void handleAppCrash() {
+        EggplantElement crashText = new EggplantElement(By.Text("Anywhere has stopped.", TextOption.waitFor(10)));
+        EggplantElement okButton = new EggplantElement(By.Text("OK"));
+
         if (crashText.isPresent()) {
             okButton.click();
         }

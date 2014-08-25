@@ -34,6 +34,7 @@ public class EggplantTestBase {
                 Logger.info(String.format("Beginning app setup attempt %d of %d.", attempt+1, 5));
                 initializeApp();
             } catch (Exception e) {
+                e.printStackTrace();
                 Logger.warning(String.format("App setup attempt %d of %d failed.", attempt+1, 5));
                 continue;
             }
