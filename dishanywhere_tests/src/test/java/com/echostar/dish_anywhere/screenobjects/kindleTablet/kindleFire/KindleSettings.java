@@ -12,7 +12,7 @@ public class KindleSettings extends DeviceMain {
     EggplantElement manageAllApplications = new EggplantElement("manageAllApplications", By.Text("Manage All Applications", SearchRectangle.Quadrants.LEFT_HALF, TextOption.contrast(true), TextOption.contrastColor("Black")));
     EggplantElement middleOfScreen = new EggplantElement("middleOfScreen", By.Point(new Point(EggplantTestBase.driver.getScreenSize().x / 2, EggplantTestBase.driver.getScreenSize().y / 2)));
     EggplantElement forceStopButton = new EggplantElement("forceStopButton", By.Image("KindleTablet/KindleFireHDX/System/Menus/Forcestop"));
-    EggplantElement forceStopPopupButton = new EggplantElement("forceStopPopupButton", By.Text("Force Stop", SearchRectangle.Quadrants.BOTTOM_HALF));
+    EggplantElement forceStopPopupButton = new EggplantElement("forceStopPopupButton", By.Image("KindleTablet/KindleFireHDX/System/Menus/ForceStopButton", SearchRectangle.Quadrants.BOTTOM_HALF));
     EggplantElement allApplicationsDropDown = new EggplantElement("All applications drop down", By.Image("KindleTablet/KindleFireHDX/System/Menus/AllApplications"));
     EggplantElement thirdPartyApplications = new EggplantElement("Third party only option", By.Text("Third-Party Applications"));
 
