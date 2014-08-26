@@ -4,12 +4,13 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
 
-/**
- */
 public class DishAnywhereSearchResult {
+
     DeviceNavigation nav = new DeviceNavigation();
     EggplantElement onDemandButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/OnDemandButton"));
     EggplantElement movieArrow  = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/MovieArrow"));
+
+
     private EggplantElement submitSearchButton
             = new EggplantElement("Search Button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
 
@@ -26,4 +27,5 @@ public class DishAnywhereSearchResult {
         movieArrow.click();
         return new DishAnywhereMovie();
     }
+
 }

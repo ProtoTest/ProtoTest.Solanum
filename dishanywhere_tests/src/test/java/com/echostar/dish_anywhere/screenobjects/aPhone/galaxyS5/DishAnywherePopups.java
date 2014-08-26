@@ -8,6 +8,7 @@ import com.prototest.solanum.Logger;
 // Screen object for DishAnywhere app - Popups
 
 public class DishAnywherePopups extends DeviceMain {
+
     private EggplantElement LoadingMessage = new EggplantElement(By.Text("Loading"));
 
     private EggplantElement enterPasscodeHeader = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader"));

@@ -3,25 +3,29 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 import com.prototest.solanum.*;
 
 public class DishAnywhereHome extends DishAnywhereMain {
+
     private EggplantElement settingsButton = new EggplantElement("Settings", By.Text("Settings", SearchRectangle.Quadrants.BOTTOM_QUARTER));
     private EggplantElement guideButton = new EggplantElement("Guide", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/Guide"));
     public EggplantElement onDemandButton = new EggplantElement("OnDemand", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/AppNav/OnDemand", SearchRectangle.Quadrants.BOTTOM_HALF));
     private EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/DishAnywhereAppIcon"));
 
+
     public DishAnywhereHome() {
     }
 
     public DishAnywhereLogin logOutIfLoggedIn(){
+        Logger.info("Determining user 'logged in' state...");
         if(loggedIn()){
+            Logger.info("User is already logged in.  Logging out...");
             return openSettings().openSettingsRoot().logout();
         }
+        Logger.info("User is already logged out.");
         return new DishAnywhereLogin();
     }
 
     private boolean loggedIn() {
-        if(settingsButton.isPresent())
-            return true;
-        return settingsButton.isPresent(10);
+        // Returns true if settings button is present (false if not)
+        return settingsButton.isPresent();
     }
 
     public DishAnywhereSettings openSettings() {
@@ -36,10 +40,6 @@ public class DishAnywhereHome extends DishAnywhereMain {
         return this;
     }
 
-//    public Blockbuster openBlockbuster(){
-//        blockbusterButton.click();
-//        return new Blockbuster();
-//    }
     public DishAnywhereHome verifyLoggedIn() {
         Logger.info("Verifying 'logged in' status...");
         settingsButton.waitForPresent();

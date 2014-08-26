@@ -4,10 +4,8 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
-/**
- * Created by Brian on 6/3/2014.
- */
 public class EnterPasscodePopup {
+
     private EggplantElement LoadingMessage = new EggplantElement(By.Text("Loading"));
 
     private EggplantElement enterPasscodeHeader = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader"));
@@ -21,6 +19,7 @@ public class EnterPasscodePopup {
     private EggplantElement button8 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton8"));
     private EggplantElement button9 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton9"));
     private EggplantElement button0 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton0"));
+
 
     public DishAnywhereMovie enterPasscodeIfPresent(String passcode){
         if(enterPasscodeHeader.isPresent()){
@@ -74,4 +73,5 @@ public class EnterPasscodePopup {
 
     return new DishAnywhereMovie();
     }
+
 }

@@ -6,6 +6,7 @@ import com.prototest.solanum.Logger;
 import org.testng.Assert;
 
 public class FilterPopup extends DeviceMain {
+
     private EggplantElement okButton = new EggplantElement(By.Text("OK"));
     public EggplantElement dateOption = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
     public EggplantElement titleOption = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption"));
@@ -13,6 +14,7 @@ public class FilterPopup extends DeviceMain {
     public EggplantElement allOption = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement actionAdventureOption = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement filterByGenreLabel = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
+
 
     public FilterPopup selectFilter(String value){
         Logger.info("Selecting filter: (" + value + ") ...");
@@ -39,4 +41,5 @@ public class FilterPopup extends DeviceMain {
         filterByGenreLabel.dragTo(dateOption);
         return this;
     }
+
 }

@@ -5,6 +5,7 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
 public class DeviceLockScreen extends DeviceMain {
+
     EggplantElement lockIcon = new EggplantElement("LockIcon", By.Image("/AndroidTablet/Kindle/System/Device/LockButton"));
 
 
@@ -19,4 +20,5 @@ public class DeviceLockScreen extends DeviceMain {
 
     return new DeviceHomeScreen();
     }
+
 }

@@ -8,11 +8,13 @@ import com.prototest.solanum.Logger;
 import java.awt.*;
 
 public class MoviePlayer extends DishAnywhereHome {
+
     EggplantElement screenElement = new EggplantElement(By.Point(new Point(200, 200)));
     private EggplantElement skipBackButton = new EggplantElement("Player skip back button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/SkipBackButton"));
     EggplantElement pauseButton = new EggplantElement("Player pause button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/PauseButton"));
     EggplantElement deauthorizationMessage = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/UnauthorizedMessage"));
     EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
+
 
     public MoviePlayer openControls() {
         Logger.info("Opening controls...");
@@ -43,6 +45,5 @@ public class MoviePlayer extends DishAnywhereHome {
         okButton.click();
         return this;
     }
-
 
 }

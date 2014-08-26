@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 import com.prototest.solanum.*;
 
 public class DishAnywhereMovie extends DishAnywhereMain {
+
     EggplantElement watchButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton", ImageOption.tolerance("45")));
 
     public MoviePlayer watchMovie() {
@@ -12,4 +13,5 @@ public class DishAnywhereMovie extends DishAnywhereMain {
         popups.waitForScreenToLoad();
         return new MoviePlayer();
     }
+
 }

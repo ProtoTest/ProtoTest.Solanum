@@ -32,7 +32,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
             return openSettings().logout();
         }
         Logger.info("User is already logged out.");
-         return new DishAnywhereLogin();
+        return new DishAnywhereLogin();
     }
 
     private boolean loggedIn() {

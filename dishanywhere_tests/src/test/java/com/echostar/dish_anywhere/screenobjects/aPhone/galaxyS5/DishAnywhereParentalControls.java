@@ -6,6 +6,7 @@ import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
 public class DishAnywhereParentalControls extends DishAnywhereSettings {
+
     public EggplantElement tvyCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYOption"));
     public EggplantElement tvy7Checkbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVY7FVOption"));
     public EggplantElement tvy7fvCheckbox = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVGOption"));
@@ -36,6 +37,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement chooseSecurityQuestionButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControls/ChooseSecurityQuestionButton"));
 
     EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));
+
 
     public DishAnywhereParentalControls clickRating(String value){
         EggplantElement rating = new EggplantElement(By.Text(value));
@@ -102,6 +104,5 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         okButton.click();
         return this;
     }
-
 
 }

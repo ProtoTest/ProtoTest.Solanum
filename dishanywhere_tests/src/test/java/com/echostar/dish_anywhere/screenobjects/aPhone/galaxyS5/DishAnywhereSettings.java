@@ -5,10 +5,12 @@ import com.prototest.solanum.*;
 import java.awt.*;
 
 public class DishAnywhereSettings extends DishAnywhereHome {
+
     private EggplantElement logout = new EggplantElement(By.Text("Logout"));
     private EggplantElement parentalControlsButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/ParentalControlsButton"));
     private EggplantElement authorizedDevicesButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevicesButton"));
     private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton", SearchRectangle.Quadrants.MIDDLE_HALF));
+
 
     public DishAnywhereSettings() {
         super();
@@ -37,6 +39,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         Logger.info("Logout complete.");
         return new DishAnywhereLogin();
     }
+
     public DishAnywhereParentalControls openParentalControls(String passcode){
         Logger.info("Opening Parental Controls with passcode:(" + passcode + ").");
         parentalControlsButton.click();

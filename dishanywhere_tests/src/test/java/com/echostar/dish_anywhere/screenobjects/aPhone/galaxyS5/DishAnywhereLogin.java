@@ -8,10 +8,9 @@ import java.awt.*;
 public class DishAnywhereLogin extends DishAnywhereMain {
 
     private EggplantElement onlineId = new EggplantElement(By.Text("Online ID", TextOption.hotSpot(new Point(75,109))));
-
-
     private EggplantElement passwordField = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/PasswordField"));
     private EggplantElement loginButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Login/LoginButton", ImageOption.tolerance("45")));
+
 
     public DishAnywhereHome login(String onlineId, String password) {
         Logger.info("Logging in...");

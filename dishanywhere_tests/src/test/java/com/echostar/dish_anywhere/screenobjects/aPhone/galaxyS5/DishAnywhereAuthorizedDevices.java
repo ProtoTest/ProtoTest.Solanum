@@ -6,6 +6,7 @@ import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
 public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
+
     private EggplantElement authorizeDeviceButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton"));
     private EggplantElement deAuthorizeDeviceButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton"));
     private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton"));

@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5;
 import com.prototest.solanum.*;
 
 public class DeviceHomeScreen extends DeviceMain {
+
     public DeviceHomeScreen() {
         super();
     }
@@ -28,4 +29,5 @@ public class DeviceHomeScreen extends DeviceMain {
         Logger.info(String.format("Opening app: (%s).", name));
         return openApp(name, DeviceMain.class, null, options);
     }
+
 }

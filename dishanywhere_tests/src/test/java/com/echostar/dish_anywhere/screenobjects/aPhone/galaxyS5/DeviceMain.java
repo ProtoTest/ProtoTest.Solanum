@@ -10,6 +10,7 @@ public class DeviceMain {
     public final DeviceNavigation nav = new DeviceNavigation();
     private EggplantElement okButton = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Settings/OkButton", SearchRectangle.Quadrants.BOTTOM_HALF));
 
+
     public boolean isOnHome() {
         return dishAnywhereApp.isPresent();
     }
@@ -20,8 +21,6 @@ public class DeviceMain {
         usbConnectedIcon.waitForPresent();
         return this;
     }
-
-
 
     public DishAnywhereHome goHome() {
         EggplantTestBase.driver.PressHomeButton();
@@ -41,4 +40,5 @@ public class DeviceMain {
         }
         return this;
     }
+
 }

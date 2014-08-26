@@ -7,12 +7,13 @@ import com.prototest.solanum.TextOption;
 
 import java.util.List;
 
-/**
- */
 public class DishAnywhereScrollView extends DishAnywhereMain {
+
     EggplantElement movieArrow  = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/OnDemand/MovieArrow"));
     EggplantElement contentLock = new EggplantElement(By.Text("Enter Passcode"));
     EggplantElement filterButton = new EggplantElement(By.Text("Filter"));
+
+
     public void scroll() {
         List<EggplantElement> arrows = movieArrow.allInstances();
         arrows.get(arrows.size()-1).dragTo(arrows.get(0));
@@ -55,9 +56,9 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         return this;
     }
 
-
     public FilterPopup openFilters() {
         filterButton.click();
         return new FilterPopup();
     }
+
 }
