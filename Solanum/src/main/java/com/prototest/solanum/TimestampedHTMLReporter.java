@@ -8,7 +8,6 @@ import org.uncommons.reportng.HTMLReporter;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
