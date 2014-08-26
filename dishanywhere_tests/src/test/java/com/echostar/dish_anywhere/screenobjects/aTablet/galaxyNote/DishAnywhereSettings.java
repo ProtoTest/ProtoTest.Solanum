@@ -33,7 +33,7 @@ public class DishAnywhereSettings extends DishAnywhereHome {
             settingsButton.waitForPresent();
             logOutIfLoggedIn();
         }
-        return new DishAnywhereLogin().verifyLoggedOut();
+        return new DishAnywhereLogin();
     }
 
     public DishAnywhereParentalControls openParentalControls(String passcode){

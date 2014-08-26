@@ -12,20 +12,18 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Map;
 
-public class GalaxyNoteParentalControls extends EggplantTestBase {
+public class GalaxyNoteParentalControls extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void clearAllBlockedContentAndPlayMovie(){
-        Logger.info("Beginning Test: Parental Controls - Clear All Blocked Content And Play Movie.");
+        Logger.info("BEGINNING TEST: PARENTAL CONTROLS - CLEAR ALL BLOCKED CONTENT AND PLAY MOVIE.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
         String movieName = movies.get(1).get("franchiseName");
         new DishAnywhereHome()
                 .openOnDemand()
-                .openMovies()
-                .openFilter()
-                .sortByTitle()
-                .done()
+                .searchFor(movieName)
+                .openOnDemandResults()
                 .openMovie(movieName)
                 .watchMovie()
                 .verifyMoviePlays()
@@ -34,20 +32,23 @@ public class GalaxyNoteParentalControls extends EggplantTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void setAllContentBlockedAndPlayMovie(){
-        Logger.info("Beginning Test: Parental Controls - Set All Content to Blocked And Play Movie.");
+        Logger.info("BEGINNING TEST: PARENTAL CONTROLS - SET ALL CONTENT TO BLOCKED AND PLAY MOVIE.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
         String movieName = movies.get(1).get("franchiseName");
         new DishAnywhereHome()
+                .openSettings()
+                .openParentalControls(Config.getTestProp("dishAnywherePassCode"))
+                .setMovieGBlocked()
+                .setTVYBlocked()
+                .save()
                 .openOnDemand()
-                .openMovies()
-                .openFilter()
-                .sortByTitle()
-                .done()
-                .openProtectedMovie(movieName)
-                .enterPasscode("1111")
+                .searchFor(movieName)
+                .openOnDemandResults()
+                .openProtectedMovie(movieName, Config.getTestProp("dishAnywherePassCode"))
                 .watchMovie()
-                .verifyMoviePlays().goBackHome();
+                .verifyMoviePlays()
+                .goBackHome();
     }
 
 }

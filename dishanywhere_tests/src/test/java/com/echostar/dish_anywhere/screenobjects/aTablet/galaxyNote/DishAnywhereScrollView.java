@@ -16,18 +16,21 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
     NoteMovieFinder movieFinder = new NoteMovieFinder();
 
     public FilterPopup openFilter(){
+        Logger.info("Opening filters...");
         sortFilterButton.click();
         return new FilterPopup();
     }
+
     public DishAnywhereMovie openMovie(String name){
+        Logger.info("Opening movie: (" + name + ")...");
         EggplantElement movie  = new EggplantElement(By.Text(name));
         movie.waitForPresent(30).click();
         return new DishAnywhereMovie();
     }
-    public EnterPasscodePopup openProtectedMovie(String name){
-        EggplantElement movie  = new EggplantElement(By.Text(name));
-        movie.waitForPresent(30).click();
-        return new EnterPasscodePopup();
+
+    public DishAnywhereMovie openProtectedMovie(String movieName, String passcode){
+        Logger.info("Opening protected movie: (" + movieName + ")...");
+        return movieFinder.findMovie(movieName, passcode);
     }
 
     public DishAnywhereScrollView verifyTitlesPresent(List<String> titles){
@@ -83,8 +86,5 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         }
         return this;
     }
-
-
-
 
 }

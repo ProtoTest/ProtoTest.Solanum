@@ -2,10 +2,8 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class FilterPopup extends DeviceMain{
     public EggplantElement doneButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement dateOption = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
@@ -16,23 +14,26 @@ public class FilterPopup extends DeviceMain{
     public EggplantElement filterByGenreLabel = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
 
     public FilterPopup sortByTitle() {
+        Logger.info("Sorting by title...");
         titleOption.click();
         return this;
     }
 
-    public FilterPopup selectFilter(String value){
+    public FilterPopup selectFilter(String value) {
+        Logger.info("Selecting filter: (" + value + ")...");
         EggplantElement element = new EggplantElement(By.Text(value));
         element.click();
         return this;
     }
 
-    public DishAnywhereScrollView done(){
+    public DishAnywhereScrollView done() {
+        Logger.info("Clicking 'done' button...");
         doneButton.click();
         return new DishAnywhereScrollView();
 
     }
 
-    public FilterPopup scrollDown(){
+    public FilterPopup scrollDown() {
         filterByGenreLabel.swipeUp();
         return this;
     }

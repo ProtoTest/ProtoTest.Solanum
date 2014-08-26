@@ -13,7 +13,7 @@ public class GalaxyNoteAuthorizedDevices extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testAuthorizedDeviceFunctionality(){
-        Logger.info("Beginning Test: Authorized Device Functionality.");
+        Logger.info("BEGINNING TEST: AUTHORIZED DEVICE FUNCTIONALITY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
         String movieName = RadishScraper.getShortName(movies.get(1).get("franchiseName"),25);
@@ -39,4 +39,5 @@ public class GalaxyNoteAuthorizedDevices extends GalaxyNoteTestBase {
                 .verifyMoviePlays()
                 .goBackHome();
     }
+
 }

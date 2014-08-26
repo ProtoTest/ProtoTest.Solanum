@@ -20,9 +20,8 @@ public class KindleFireUiTests extends KindleTestBase {
                 .verifyLoggedOut()
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .verifyLoggedIn();
-        Verifications.assertVerifications();
-
     }
+
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testPredictiveSearch() {
         Logger.info("Beginning Test: Predictive Search.");

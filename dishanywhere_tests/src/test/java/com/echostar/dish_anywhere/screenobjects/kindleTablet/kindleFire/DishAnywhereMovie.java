@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 
 public class DishAnywhereMovie extends DishAnywhereMain {
     EggplantElement watchButton = new EggplantElement("watchButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton"));
@@ -20,6 +21,9 @@ public class DishAnywhereMovie extends DishAnywhereMain {
     }
 
     public String getTitle() {
-        return titleField.getText();
+        Logger.info("Extracting movie title...");
+        String foundTitle = titleField.getText();
+        Logger.info(String.format("Found movie title: (%s)", foundTitle));
+        return foundTitle;
     }
 }

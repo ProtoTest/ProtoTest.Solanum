@@ -8,11 +8,11 @@ import com.prototest.solanum.SearchRectangle;
 // Screen object for DishAnywhere app - Login screen
 
 public class DishAnywhereLogin extends DeviceMain {
-    public EggplantElement onlineId = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField"));
-    public EggplantElement passwordField = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField"));
+    public EggplantElement onlineId = new EggplantElement("Online ID field", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDField"));
+    public EggplantElement passwordField = new EggplantElement("Password field", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordField"));
     public EggplantElement onlineIdEnd = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/OnlineIDFieldEnd"));
     public EggplantElement passwordFieldEnd = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/PasswordFieldEnd"));
-    public EggplantElement loginButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton"));
+    public EggplantElement loginButton = new EggplantElement("Login button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Login/LoginButton"));
     public EggplantElement errorField = new EggplantElement(By.Text("The Online ID / Password combination", SearchRectangle.Quadrants.TOP_HALF));
 
     public final DishAnywherePopups popups = new DishAnywherePopups();

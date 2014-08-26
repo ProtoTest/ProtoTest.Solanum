@@ -175,7 +175,6 @@ public class EggplantElement {
     }
 
 
-
     /**
      * Double click the screen at the location of the element.
      *
@@ -266,7 +265,7 @@ public class EggplantElement {
      */
     public EggplantElement type(String text) {
         click();
-        Logger.info(String.format("Typing text: (%s).", text));
+        Logger.info(String.format("Typing text: (%s) into element: (%s).", text, name));
         driver.typeText(text);
         // Eggplant returns immediately from the TypeText command instead of waiting for the text to type.
         // Compensate by sleeping about 1 second per 2 keys typed.
@@ -376,8 +375,7 @@ public class EggplantElement {
         Logger.debug(String.format("SwipingLeft %s %s.", name, by.getLocator()));
         if (by.type == By.ByType.point) {
             driver.swipeLeft(this.by.getLocator());
-        }
-        else{
+        } else {
             driver.swipeLeft("FoundImageLocation()");
         }
         return this;
@@ -393,8 +391,7 @@ public class EggplantElement {
         Logger.debug(String.format("SwipingRight %s %s.", name, by.getLocator()));
         if (by.type == By.ByType.point) {
             driver.swipeRight(this.by.getLocator());
-        }
-        else{
+        } else {
             driver.swipeRight("FoundImageLocation()");
         }
         return this;
@@ -422,11 +419,18 @@ public class EggplantElement {
      */
     public EggplantElement waitForPresent(Integer secs) {
         Logger.debug(String.format("Waiting for %s to be present within %d seconds.", by.getLocator(), secs));
-            if (isPresent(secs)) {
-                return this;
+        if (Config.debugElementLocators) {
+            if (by.getSearchRectangle() == null) {
+                Logger.screenshot(getSafeName());
             } else {
-                driver.refreshScreen();
+                Logger.screenshot(getSafeName(), by.getSearchRectangle().searchRectangle);
             }
+        }
+        if (isPresent(secs)) {
+            return this;
+        } else {
+            driver.refreshScreen();
+        }
 
         if (Config.diagnoseFailedImages) {
             Logger.warning(String.format("%s not found.  Opening EggPlant GUI to diagnose failure", name));
@@ -436,11 +440,11 @@ public class EggplantElement {
             Logger.warning(String.format("Eggplant GUI has been closed.  Finishing Test", name));
 
             if (isPresent(secs)) {
-                    return this;
-                } else {
-                    driver.refreshScreen();
-                }
+                return this;
+            } else {
+                driver.refreshScreen();
             }
+        }
 
         Logger.error(String.format("%s not found: %s.", name, by.getLocator()));
 

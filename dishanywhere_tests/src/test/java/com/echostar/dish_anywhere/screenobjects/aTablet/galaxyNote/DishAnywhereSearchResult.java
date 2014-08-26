@@ -16,14 +16,18 @@ public class DishAnywhereSearchResult {
 
     public DishAnywhereSearchResult openOnDemandResults() {
         Logger.info("Opening On Demand results...");
-        onDemandButton.click();
+        onDemandButton.waitForPresent().click();
+        EggplantTestBase.sleep(1000);
         return this;
     }
 
     public DishAnywhereMovie openMovie(String movieName) {
-        Logger.info("Opening Movie...");
         return movieFinder.findMovie(movieName);
     }
 
+    public DishAnywhereMovie openProtectedMovie(String movieName, String passcode){
+        Logger.info("Opening protected movie: (" + movieName + ")...");
+        return movieFinder.findMovie(movieName, passcode);
+    }
 
 }
