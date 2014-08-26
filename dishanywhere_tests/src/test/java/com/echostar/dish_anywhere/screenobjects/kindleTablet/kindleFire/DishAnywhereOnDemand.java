@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DishAnywhereOnDemand extends DishAnywhereHome {
+
     private EggplantElement featuredButton
             = new EggplantElement("featuredButton", By.Text("Featured", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement moviesButton
@@ -31,57 +32,54 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
             new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/FirstResult"));
 
     public DishAnywhereScrollView openMovies() {
-        Logger.info("Opening movies category");
+        Logger.info("Opening movies category...");
         moviesButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openFeatured() {
-        Logger.info("Opening featured category");
+        Logger.info("Opening featured category...");
         featuredButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openTVShows() {
-        Logger.info("Opening tv shows category");
+        Logger.info("Opening tv shows category...");
         showsButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openFamily() {
-        Logger.info("Opening family category");
+        Logger.info("Opening family category...");
         familyButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openNetworks() {
-        Logger.info("Opening networks category");
+        Logger.info("Opening networks category...");
         networksButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereSearchResult searchFor(String movie) {
-
-        Logger.info("Searching for movie title " + movie);
+        Logger.info("Searching for movie title: (" + movie + ").");
         searchInputClearButton.click();
         searchInput.type(movie);
         submitSearchButton.click();
-
         return new DishAnywhereSearchResult();
     }
 
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
-        Logger.info("Doing predictive search for movie " + movie);
+        Logger.info("Doing predictive search for movie: (" + movie + ").");
         String searchTerm = movie.substring(0, movie.length() - 1);
         searchInputClearButton.click();
         searchInput.type(searchTerm);
         firstSearchResult.click();
-
         return new DishAnywhereSearchResult();
     }
 
@@ -97,4 +95,5 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
         }
         return newTitle.toString();
     }
+
 }

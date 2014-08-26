@@ -3,10 +3,8 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class FilterPopup extends DishAnywhereHome {
+
     public EggplantElement doneButton = new EggplantElement("doneButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement dateOption = new EggplantElement("dateOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
     public EggplantElement titleOption = new EggplantElement("titleOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption"));
@@ -16,6 +14,7 @@ public class FilterPopup extends DishAnywhereHome {
     public EggplantElement filterByGenreLabel = new EggplantElement("filterByGenreLabel", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
     public EggplantElement documentaryGenre = new EggplantElement(By.Text("Documentary"));
     public EggplantElement comedyGenre = new EggplantElement(By.Text("Comedy"));
+
 
     public FilterPopup sortByTitle() {
         titleOption.click();
@@ -39,7 +38,6 @@ public class FilterPopup extends DishAnywhereHome {
 
     }
 
-
     public DishAnywhereScrollView doneNewSkin(){
         onDemandButton.click();
         return new DishAnywhereScrollView();
@@ -51,9 +49,9 @@ public class FilterPopup extends DishAnywhereHome {
         return this;
     }
 
-
     public FilterPopup scrollUp(){
         filterByGenreLabel.swipeDown();
         return this;
     }
+
 }

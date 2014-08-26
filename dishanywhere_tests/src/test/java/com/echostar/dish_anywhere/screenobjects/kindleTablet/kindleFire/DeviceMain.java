@@ -7,6 +7,7 @@ import java.awt.*;
 // Screen Object for Device's MainScreen ViewGroup
 
 public class DeviceMain {
+
     protected EggplantElement closeKeyboardButton = new EggplantElement("closeKeyboardButton", By.Image("KindleTablet/KindleFireHDX/System/Device/closeKeyboardButton"));
     protected EggplantElement keyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("KindleTablet/KindleFireHDX/System/Keyboard/DeleteKey"));
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/DishAnywhereAppIcon"));
@@ -20,6 +21,7 @@ public class DeviceMain {
 
     public final DeviceNavigation nav = new DeviceNavigation();
 
+
     public DishAnywhereHome goHome() {
         nav.homeButton.click();
         appsTab.click();
@@ -28,22 +30,20 @@ public class DeviceMain {
     }
 
     public DishAnywhereHome resetApp() {
-        Logger.debug("Going home");
+        Logger.debug("Going to device home.");
         nav.homeButton.click();
-        Logger.debug("Killing app");
         killApp();
         nav.homeButton.click();
-        Logger.debug("Opening app");
+        Logger.debug("Opening app.");
         appsTab.click();
         dishAnywhereApp.click();
         return new DishAnywhereHome();
     }
 
     public DeviceMain killApp() {
-        Logger.info("Killing Dish Anywhere app");
+        Logger.info("Killing Dish Anywhere app.");
         nav.homeButton.click();
         EggplantElement settingsOverlaySwipePoint = new EggplantElement(By.Point(new Point(EggplantTestBase.driver.getScreenSize().x / 2, 1)));
-
         settingsOverlaySwipePoint.swipeDown(ActionCondition.isPresent(settingsButton));
         settingsButton.click();
         new KindleSettings().stopApplication("Anywhere");
@@ -58,4 +58,5 @@ public class DeviceMain {
         keyboardDeleteKey.release();
         return new DeviceMain();
     }
+
 }

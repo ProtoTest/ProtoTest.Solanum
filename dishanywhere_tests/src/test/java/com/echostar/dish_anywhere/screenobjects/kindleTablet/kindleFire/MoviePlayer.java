@@ -7,6 +7,7 @@ import com.prototest.solanum.EggplantTestBase;
 import java.awt.*;
 
 public class MoviePlayer extends DishAnywhereHome {
+
     EggplantElement screenElement = new EggplantElement("screenElement", By.Point(new Point(200, 200)));
     private EggplantElement skipBackButton = new EggplantElement("Player skip back button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/MoviePlayer/SkipBackButton"));
     EggplantElement pauseButton = new EggplantElement("Player pause button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/MoviePlayer/PauseButton"));
@@ -45,6 +46,5 @@ public class MoviePlayer extends DishAnywhereHome {
         okButton.click();
         return new DishAnywhereMovie();
     }
-
 
 }

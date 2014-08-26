@@ -5,8 +5,8 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
 
 public class EnterPasscodePopup {
-    private EggplantElement LoadingMessage = new EggplantElement("LoadingMessage", By.Text("Loading"));
 
+    private EggplantElement LoadingMessage = new EggplantElement("LoadingMessage", By.Text("Loading"));
     private EggplantElement enterPasscodeHeader = new EggplantElement("enterPasscodeHeader", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader"));
     private EggplantElement button1 = new EggplantElement("button1", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1"));
     private EggplantElement button2 = new EggplantElement("button2", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButton2"));
@@ -20,9 +20,11 @@ public class EnterPasscodePopup {
     private EggplantElement button0 = new EggplantElement("button0", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButton0"));
     private EggplantElement backspaceButton = new EggplantElement("Passcode backspace", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Popups/Passcode/PasscodeButtonBack"));
 
+
     public boolean isPresent() {
         return backspaceButton.isPresent();
     }
+
     public DishAnywhereMovie enterPasscodeIfPresent(String passcode) {
         if (isPresent()) {
             return enterPasscode(passcode);
@@ -80,4 +82,5 @@ public class EnterPasscodePopup {
         }
         return new DishAnywhereMovie();
     }
+
 }

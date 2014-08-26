@@ -5,11 +5,13 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
 public class Blockbuster extends DishAnywhereHome {
+
     EggplantElement sortFilterButton = new EggplantElement("sortFilterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/SortFilterButton"));
     EggplantElement moviesButton = new EggplantElement("moviesButton_des", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/Movies"));
     EggplantElement tvShowsButton = new EggplantElement("tvShowsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/TVShows"));
     EggplantElement kidsMoviesButton = new EggplantElement("kidsMoviesButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsMovies"));
     EggplantElement kidsTvShowsButton = new EggplantElement("kidsTvShowsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/BlockBusterPage/KidsTVShows"));
+
 
     public FilterPopup openFilters() {
         Logger.info("Opening filters dropdown");
@@ -44,6 +46,5 @@ public class Blockbuster extends DishAnywhereHome {
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
-
 
 }

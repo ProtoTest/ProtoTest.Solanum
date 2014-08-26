@@ -4,10 +4,8 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
+
     private EggplantElement authorizeDeviceButton = new EggplantElement("authorizeDeviceButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton"));
     private EggplantElement deAuthorizeDeviceButton = new EggplantElement("deAuthorizeDeviceButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton"));
     private EggplantElement okButton = new EggplantElement("okButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/OkButton"));
@@ -15,18 +13,18 @@ public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
 
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice(){
-        Logger.info("Authorizing device");
+        Logger.info("Authorizing device...");
         if(deAuthorizeDeviceButton.isPresent()){
-            Logger.info("Already authorized");
+            Logger.info("Device is already authorized.");
         } else {
-            Logger.info("Authorizing");
+            Logger.info("Device is not authorized. Authorizing now...");
             authorizeDeviceButton.click();
         }
         return this;
     }
 
     public DishAnywhereAuthorizedDevices deAuthorizeThisDevice(){
-        Logger.info("De-authorizing device");
+        Logger.info("De-authorizing device...");
         if(deAuthorizeDeviceButton.isPresent()){
             Logger.info("De-authorized button found; de-authorizing.");
             deAuthorizeDeviceButton.waitForPresent().click();

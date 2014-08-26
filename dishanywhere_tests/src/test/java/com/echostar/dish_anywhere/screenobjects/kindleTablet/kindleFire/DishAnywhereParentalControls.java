@@ -2,10 +2,8 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.*;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class DishAnywhereParentalControls extends DishAnywhereSettings {
+
     public EggplantElement tvyCheckbox = new EggplantElement("tvyCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYOption"));
     public EggplantElement tvy7Checkbox = new EggplantElement("tvy7Checkbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVY7FVOption"));
     public EggplantElement tvy7fvCheckbox = new EggplantElement("tvy7fvCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVGOption"));
@@ -18,7 +16,6 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement tvmaChecked = new EggplantElement("tvmaChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVMAChecked"));
     public EggplantElement tv14checked = new EggplantElement("tvmaChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TV14Checked"));
 
-
     public EggplantElement gCheckbox = new EggplantElement("gCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GOption"));
     public EggplantElement pgCheckbox = new EggplantElement("pgCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/PGOption"));
     public EggplantElement pg13Checkbox = new EggplantElement("pg13Checkbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/PG13Option"));
@@ -26,7 +23,6 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement nc17Checkbox = new EggplantElement("nc17Checkbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NC17Option"));
     public EggplantElement nraoCheckbox = new EggplantElement("nraoCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOOption"));
     //public EggplantElement unratedMovieCheckbox = new EggplantElement("unratedMovieCheckbox", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/Unrated", SearchRectangle.rightHalf()));
-
 
     public EggplantElement gChecked = new EggplantElement("gChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/GChecked"));
     public EggplantElement nraoChecked = new EggplantElement("nraoChecked", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/MovieRatingsOptions/NRAOChecked"));
@@ -36,6 +32,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement chooseSecurityQuestionButton = new EggplantElement("chooseSecurityQuestionButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControls/ChooseSecurityQuestionButton"));
 
     public EggplantElement okButton = new EggplantElement("okButton", By.Text("OK"));
+
+
     public DishAnywhereParentalControls clickRating(String value){
         EggplantElement rating = new EggplantElement("rating", By.Text(value));
         rating.click();
@@ -43,36 +41,31 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls clearTVBlocks() {
-        Logger.info("Clearing tv blocks");
-
+        Logger.info("Clearing tv blocks...");
         tvgCheckbox.swipeUp(ActionCondition.isPresent(tvmaCheckbox));
         if (tvmaChecked.isPresent())
             tvmaCheckbox.click();
         return this;
     }
 
-
     public DishAnywhereParentalControls setTVYBlocked() {
-        Logger.info("setting tv blocks");
-
+        Logger.info("Setting TV blocks...");
         tvgCheckbox.swipeDown(ActionCondition.isPresent(tvyCheckbox));
-
         if (!tvyChecked.isPresent())
             tvyCheckbox.click();
         return this;
     }
 
     public DishAnywhereParentalControls clearMovieBlocks() {
-        Logger.info("Clearing movie blocks");
+        Logger.info("Clearing movie blocks...");
         rCheckbox.swipeUp(ActionCondition.isPresent(nraoCheckbox));
         if (nraoChecked.isPresent())
             nraoChecked.click();
         return this;
     }
 
-
     public DishAnywhereParentalControls setMovieGBlocked() {
-        Logger.info("Setting movie blocks");
+        Logger.info("Setting movie blocks...");
         rCheckbox.swipeDown(ActionCondition.isPresent(gCheckbox));
         if (!gChecked.isPresent())
             gCheckbox.click();
@@ -80,7 +73,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls save(){
-        Logger.info("Saving parental controls");
+        Logger.info("Saving parental controls...");
         saveButton.click();
         okButton.click();
         return this;
@@ -95,6 +88,5 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         okButton.click();
         return this;
     }
-
 
 }

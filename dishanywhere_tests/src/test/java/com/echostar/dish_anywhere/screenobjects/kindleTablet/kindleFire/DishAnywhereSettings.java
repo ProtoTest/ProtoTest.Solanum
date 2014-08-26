@@ -5,13 +5,13 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.EggplantTestBase;
 import com.prototest.solanum.Logger;
 
-/**
- */
 public class DishAnywhereSettings extends DishAnywhereHome {
+
     public EggplantElement logoutButton = new EggplantElement("logoutButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/LogoutButton"));
     public EggplantElement parentalControlsButton = new EggplantElement("parentalControlsButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/ParentalControlsButton"));
     public EggplantElement authorizedDevicesButton = new EggplantElement("authorizedDevicesButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/AuthorizedDevicesButton"));
     public EggplantElement okButton = new EggplantElement("okButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/Settings/OkButton"));
+
 
     public DishAnywhereSettings() {
         super();
@@ -27,7 +27,6 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         authorizedDevicesButton.swipeUp();
         // Wait for the swipe animation to complete.
         EggplantTestBase.sleep(4000);
-
         logoutButton.click();
         okButton.click();
         Logger.info("Logout complete.");
@@ -47,4 +46,5 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         authorizedDevicesButton.click();
         return new DishAnywhereAuthorizedDevices();
     }
+
 }

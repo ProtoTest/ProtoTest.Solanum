@@ -2,13 +2,12 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.*;
 
-/**
- *
- */
 public class KindleMovieFinder {
-    private final String movieLocationTemplate = "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot%d";
 
+    private final String movieLocationTemplate = "KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot%d";
     private final EnterPasscodePopup popups = new EnterPasscodePopup();
+
+
     private String getMovieLocator(int i) {
         return String.format(movieLocationTemplate, i);
     }

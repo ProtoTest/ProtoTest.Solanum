@@ -5,6 +5,7 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
 public class DishAnywhereSearchResult extends DeviceMain {
+
     DeviceNavigation nav = new DeviceNavigation();
     EggplantElement onDemandButton = new EggplantElement("On Demand Button", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/OnDemandButton"));
     private EggplantElement submitSearchButton
@@ -12,6 +13,7 @@ public class DishAnywhereSearchResult extends DeviceMain {
     EggplantElement leftMovieBorder = new EggplantElement("leftMovieBorder", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieLeftBorder"));
 
     KindleMovieFinder movieFinder = new KindleMovieFinder();
+
 
     public DishAnywhereSearchResult openOnDemandResults() {
         onDemandButton.click();

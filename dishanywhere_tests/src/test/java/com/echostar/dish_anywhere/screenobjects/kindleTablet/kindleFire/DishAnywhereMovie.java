@@ -5,19 +5,21 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
 public class DishAnywhereMovie extends DishAnywhereMain {
+
     EggplantElement watchButton = new EggplantElement("watchButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton"));
     EggplantElement closeButton = new EggplantElement("closeButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/CloseButton"));
     EggplantElement titleField = new EggplantElement("Title field", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/MovieTitleHotspot"));
 
+
     public MoviePlayer watchMovie() {
-        Logger.info("Watching currently open movie");
+        Logger.info("Watching currently open movie...");
         watchButton.click();
         popups.waitForScreenToLoad();
         return new MoviePlayer();
     }
 
     public DishAnywhereOnDemand closeMovie(){
-        Logger.info("Closing currently open movie");
+        Logger.info("Closing currently open movie...");
         closeButton.waitForPresent().click();
         return new DishAnywhereOnDemand();
     }
@@ -28,4 +30,5 @@ public class DishAnywhereMovie extends DishAnywhereMain {
         Logger.info(String.format("Found movie title: (%s)", foundTitle));
         return foundTitle;
     }
+
 }

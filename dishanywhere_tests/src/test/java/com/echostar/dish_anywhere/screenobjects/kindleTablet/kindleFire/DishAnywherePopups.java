@@ -7,6 +7,7 @@ import com.prototest.solanum.Logger;
 // Screen object for DishAnywhere app - Popups
 
 public class DishAnywherePopups extends DeviceMain {
+
     private EggplantElement LoadingMessage = new EggplantElement("LoadingMessage", By.Text("Loading"));
 
     public DishAnywherePopups() {
@@ -18,4 +19,5 @@ public class DishAnywherePopups extends DeviceMain {
         LoadingMessage.waitForNotPresent(20);
         return null;
     }
+
 }

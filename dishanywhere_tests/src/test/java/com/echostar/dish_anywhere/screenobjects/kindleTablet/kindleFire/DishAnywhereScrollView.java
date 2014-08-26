@@ -12,6 +12,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
     EggplantElement sortFilterButton = new EggplantElement("sortFilterButton", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterOptions/SortFilterButton"));
     KindleMovieFinder movieFinder = new KindleMovieFinder();
 
+
     public FilterPopup openFilter() {
         Logger.info("Opening filter popup");
         sortFilterButton.click();
@@ -52,12 +53,12 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
             String searchingFor = titles.get(i);
             boolean passes = false;
             // Search directly for the title we seek.
-            if (new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor, SearchRectangle.Quadrants.TOP_HALF)).isPresent()) {
-                Logger.info("Found movie title " + searchingFor + " on screen");
+            if (new EggplantElement("Movie title" + searchingFor, By.Text(searchingFor, SearchRectangle.Quadrants.TOP_HALF)).isPresent()) {
+                Logger.info("Found movie title: (" + searchingFor + ") on screen");
                 passes = true;
                 notFound.remove(searchingFor);
             } else {
-                Logger.error(String.format("Expected movie %s to appear in position %d", searchingFor, i));
+                Logger.error(String.format("Expected movie (%s) to appear in position (%d)", searchingFor, i));
                 Verifications.addVerification(String.format("Movie %s should appear in position %d", searchingFor, i), false, false);
                 // If a direct search fails, get the text in the title position and see if it matches anything in the titles list.
                 String foundTitle = movie.getTitle();
@@ -96,6 +97,5 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         }
         return newTitle.toString();
     }
-
 
 }
