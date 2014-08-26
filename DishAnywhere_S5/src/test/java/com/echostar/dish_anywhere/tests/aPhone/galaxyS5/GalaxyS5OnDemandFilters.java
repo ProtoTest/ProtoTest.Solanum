@@ -21,7 +21,6 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
 
     private final int MOVIES_TO_TEST = 6;
 
-
     @DataProvider(name = "filter")
     public Object[][] filter() {
         String[] rawfilters = Config.getTestProp("dishFiltersToTest").trim().split("\\s*,\\s*");
@@ -51,7 +50,6 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
                 .selectFilter(filter)
                 .done()
                 .verifyTitlesPresent(movieTitles);
-        Verifications.assertVerifications();
     }
 
 }

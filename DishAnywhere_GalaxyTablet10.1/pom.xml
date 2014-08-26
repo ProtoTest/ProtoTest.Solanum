@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>DishAnywhere_GalaxyTablet2</artifactId>
+    <artifactId>DishAnywhere_GalaxyTablet10.1</artifactId>
     <properties>
         <testname>galaxy-tab</testname>
     </properties>
