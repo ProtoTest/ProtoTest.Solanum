@@ -90,10 +90,13 @@ public class EggplantTestBase {
             Logger.info("Using drivePort from TestNG params: " + drivePort);
             Config.drivePort = drivePort;
         }
+
         driver = new EggplantDriver();
+        Logger.info("Creating report directory.");
         createReportDirectory();
         startEggplant();
         setEggplantDefaultSettings();
+        Logger.info(String.format("Connecting to eggdrive: %s:%s", Config.driveUrl, Config.drivePort));
         driver.connect(hostName, hostPort);
     }
 
@@ -157,7 +160,11 @@ public class EggplantTestBase {
             Logger.info("Launching Eggplant Drive.");
             eggplantProcess.kill();
             eggplantProcess.start();
+        } else {
+            Logger.info("Not managing Eggplant drive");
+
         }
+        Logger.info("Starting squite " + Config.suitePath);
         driver.startSuite(Config.suitePath);
         Logger.info("Eggplant Drive started.");
         }
