@@ -44,6 +44,7 @@ public class DishAnywhereLogin extends DishAnywhereHome {
 
 
     public DishAnywhereLogin verifyLoggedOut() {
+        Logger.info("Verifying app is logged out");
         loginButton.waitForPresent(10);
         return this;
     }

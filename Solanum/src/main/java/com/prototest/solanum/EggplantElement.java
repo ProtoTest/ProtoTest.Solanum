@@ -105,7 +105,7 @@ public class EggplantElement {
         }
     }
 
-    private Point getLocation() {
+    public Point getLocation() {
         return driver.findLocation(by);
     }
 

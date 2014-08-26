@@ -14,6 +14,8 @@ public class FilterPopup extends DishAnywhereHome {
     public EggplantElement allOption = new EggplantElement("allOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement actionAdventureOption = new EggplantElement("actionAdventureOption", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement filterByGenreLabel = new EggplantElement("filterByGenreLabel", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/BlockBuster/SortFilterOptions/FilterByGenre"));
+    public EggplantElement documentaryGenre = new EggplantElement(By.Text("Documentary"));
+    public EggplantElement comedyGenre = new EggplantElement(By.Text("Comedy"));
 
     public FilterPopup sortByTitle() {
         titleOption.click();
@@ -22,6 +24,11 @@ public class FilterPopup extends DishAnywhereHome {
 
     public FilterPopup selectFilter(String value){
         EggplantElement element = new EggplantElement("element", By.Text(value));
+        EggplantElement scrollFrom = new EggplantElement("Filter scroll from point" , By.Point(comedyGenre.getLocation()));
+        EggplantElement scrollTo = new EggplantElement("Filter scroll from point" , By.Point(documentaryGenre.getLocation()));
+        for (int attempt = 0; attempt < 5 && !element.isPresent(20); attempt++) {
+            scrollFrom.dragTo(scrollTo);
+        }
         element.click();
         return this;
     }

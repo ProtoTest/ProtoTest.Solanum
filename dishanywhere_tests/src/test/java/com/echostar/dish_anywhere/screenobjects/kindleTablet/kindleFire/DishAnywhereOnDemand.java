@@ -2,6 +2,7 @@ package com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire;
 
 import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
+import com.prototest.solanum.Logger;
 import com.prototest.solanum.SearchRectangle;
 
 import java.util.Arrays;
@@ -30,43 +31,52 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
             new EggplantElement(By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/Search/FirstResult"));
 
     public DishAnywhereScrollView openMovies() {
+        Logger.info("Opening movies category");
         moviesButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openFeatured() {
+        Logger.info("Opening featured category");
         featuredButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openTVShows() {
+        Logger.info("Opening tv shows category");
         showsButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openFamily() {
+        Logger.info("Opening family category");
         familyButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereScrollView openNetworks() {
+        Logger.info("Opening networks category");
         networksButton.waitForPresent(30).click();
         popups.waitForScreenToLoad();
         return new DishAnywhereScrollView();
     }
 
     public DishAnywhereSearchResult searchFor(String movie) {
+
+        Logger.info("Searching for movie title " + movie);
         searchInputClearButton.click();
         searchInput.type(movie);
         submitSearchButton.click();
+
         return new DishAnywhereSearchResult();
     }
 
     public DishAnywhereSearchResult verifyPredictiveSearch(String movie) {
+        Logger.info("Doing predictive search for movie " + movie);
         String searchTerm = movie.substring(0, movie.length() - 1);
         searchInputClearButton.click();
         searchInput.type(searchTerm);

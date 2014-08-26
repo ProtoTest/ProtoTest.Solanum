@@ -24,16 +24,6 @@ public class DeviceMain {
         nav.homeButton.click();
         appsTab.click();
         dishAnywhereApp.click();
-//        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
-//            if (!nav.backButton.isPresent()) {
-//                EggplantTestBase.driver.disconnect();
-//                EggplantTestBase.driver.connect();
-//            } else {
-//                nav.backButton.click();
-//
-//            }
-//        }
-//        dishAnywhereApp.click();
         return new DishAnywhereHome();
     }
 
@@ -42,56 +32,15 @@ public class DeviceMain {
         nav.homeButton.click();
         Logger.debug("Killing app");
         killApp();
-//        EggplantTestBase.driver.swipeDown(new Point(10, 1));
-//        settingsButton.click();
-//        applicationsButton.click();
-//        manageAllApplicationsButton.click();
-//        Point swipePoint = new Point(20, (int) (EggplantTestBase.driver.getScreenSize().y * 0.8));
-//        Point swipeEndPoint = new Point(20, (int) (EggplantTestBase.driver.getScreenSize().y * 0.72));
-//
-//        for (int attempt = 0; attempt < 10 && !dishThumbnail.isPresent(); attempt++) {
-//            List<EggplantElement> handles = applicationsSwipeLocation.allInstances();
-//            EggplantElement firstHandle = handles.get(0);
-//            EggplantElement lastHandle = handles.get(handles.size() - 1);
-//            Logger.info("Dragging from " + lastHandle.getBy().getLocator() + " to " +
-//                    firstHandle.getBy().getLocator());
-//
-//            lastHandle.dragTo(firstHandle);
-//        }
-//        dishThumbnail.click();
-//
-//
-//       forceStopButton.waitForPresent();
-//            forceStopButton.click();
-
         nav.homeButton.click();
-//        for (int i=0;i<5&&!appsTab.isPresent();i++) {
-//            if (!nav.backButton.isPresent()) {
-//                EggplantTestBase.driver.disconnect();
-//                EggplantTestBase.driver.connect();
-//            }
-//            else {
-//                nav.backButton.click();
-//
-//            }
-//        }
         Logger.debug("Opening app");
         appsTab.click();
         dishAnywhereApp.click();
-//        for (int i = 0; i < 5 && !dishAnywhereApp.isPresent(); i++) {
-//            if (!nav.backButton.isPresent()) {
-//                EggplantTestBase.driver.disconnect();
-//                EggplantTestBase.driver.connect();
-//            } else {
-//                nav.backButton.click();
-//
-//            }
-//        }
-//        dishAnywhereApp.click();
         return new DishAnywhereHome();
     }
 
     public DeviceMain killApp() {
+        Logger.info("Killing Dish Anywhere app");
         nav.homeButton.click();
         EggplantElement settingsOverlaySwipePoint = new EggplantElement(By.Point(new Point(EggplantTestBase.driver.getScreenSize().x / 2, 1)));
 

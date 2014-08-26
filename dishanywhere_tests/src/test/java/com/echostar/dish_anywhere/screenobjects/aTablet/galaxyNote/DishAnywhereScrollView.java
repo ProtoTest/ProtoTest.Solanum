@@ -45,7 +45,6 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
         for (int i = 0; i < titles.size(); i++) {
             DishAnywhereMovie movie = movieFinder.openMovie(i);
             String searchingFor = titles.get(i);
-//            for (int j = 0; j < titles.size(); j++) {
             boolean passes = false;
             // Search directly for the title we seek.
             if (new EggplantElement("Movie title: " + searchingFor, By.Text(searchingFor/*, SearchRectangle.middleHalf()*/)).isPresent()) {
@@ -60,7 +59,6 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
                 Logger.info("Read movie title " + foundTitle + " from movie details dialog");
                 if (foundTitle.length() > 5) {
                     for (int j = 0; j < titles.size(); j++) {
-                        // If the
                         if (titles.get(j).toLowerCase().contains(foundTitle.toLowerCase())) {
                             Logger.info("Matched movie " + titles.get(j) + " to found partial title " + foundTitle);
                             passes = true;

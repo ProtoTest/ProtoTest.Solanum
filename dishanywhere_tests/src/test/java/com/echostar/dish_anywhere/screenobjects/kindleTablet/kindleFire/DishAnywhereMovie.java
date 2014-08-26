@@ -10,12 +10,14 @@ public class DishAnywhereMovie extends DishAnywhereMain {
     EggplantElement titleField = new EggplantElement("Title field", By.Image("KindleTablet/KindleFireHDX/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/MovieTitleHotspot"));
 
     public MoviePlayer watchMovie() {
+        Logger.info("Watching currently open movie");
         watchButton.click();
         popups.waitForScreenToLoad();
         return new MoviePlayer();
     }
 
     public DishAnywhereOnDemand closeMovie(){
+        Logger.info("Closing currently open movie");
         closeButton.waitForPresent().click();
         return new DishAnywhereOnDemand();
     }

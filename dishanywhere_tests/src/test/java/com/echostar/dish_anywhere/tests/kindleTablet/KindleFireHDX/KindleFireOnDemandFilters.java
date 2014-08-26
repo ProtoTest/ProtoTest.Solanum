@@ -2,10 +2,7 @@ package com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX;
 
 import com.echostar.dish_anywhere.radish.RadishScraper;
 import com.echostar.dish_anywhere.screenobjects.kindleTablet.kindleFire.DishAnywhereHome;
-import com.prototest.solanum.Config;
-import com.prototest.solanum.Logger;
-import com.prototest.solanum.SolanumRetryAnalyzer;
-import com.prototest.solanum.Verifications;
+import com.prototest.solanum.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -15,7 +12,7 @@ import java.util.Map;
 
 // DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
 
-public class KindleFireOnDemandFilters extends KindleTestBase {
+public class KindleFireOnDemandFilters extends EggplantTestBase {
 
 
     private static final int MOVIES_TO_TEST = 2;
