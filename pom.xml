@@ -10,6 +10,9 @@
     <modules>
         <module>solanum</module>
         <module>dishanywhere_tests</module>
+        <module>DishAnywhere_S5</module>
+        <module>DishAnywhere_GalaxyTablet10.1</module>
+        <module>DishAnywhere_KindleHdx7</module>
     </modules>
     <packaging>pom</packaging>
 
