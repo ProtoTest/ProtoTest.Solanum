@@ -302,15 +302,15 @@ public class EggplantElement {
      */
     public EggplantElement dragTo(EggplantElement element) {
         waitForPresent();
+        String originalMouseDragSpeed = driver.getOption("mouseDragSpeed");
+        driver.setOption("mouseDragSpeed", "1");
         Logger.debug(String.format("Dragging %s to %s.", name, by.getLocator()));
         if (by.type == By.ByType.point) {
-            driver.drag(this.by.getLocator());
-            driver.drop(element.getBy().getLocator());
+            driver.dragAndDrop(this.by.getLocator(),element.getBy().getLocator());
         } else {
-            driver.drag("FoundImageLocation()");
-            driver.drop(element.getBy().getLocator());
+            driver.dragAndDrop("FoundImageLocation()",element.getBy().getLocator());
         }
-
+        driver.setOption("mouseDragSpeed", originalMouseDragSpeed);
         return this;
     }
 
