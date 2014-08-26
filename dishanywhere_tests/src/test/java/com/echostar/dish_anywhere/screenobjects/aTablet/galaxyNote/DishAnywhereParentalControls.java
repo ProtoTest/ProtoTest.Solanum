@@ -4,9 +4,6 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement tvyCheckbox = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVYOption"));
     public EggplantElement tvy7Checkbox = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ShowRatingsOptions/TVY7FVOption"));
@@ -34,6 +31,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     public EggplantElement chooseSecurityQuestionButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControls/ChooseSecurityQuestionButton"));
 
     private EggplantElement okButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton"));
+
     public DishAnywhereParentalControls clickRating(String value){
         EggplantElement rating = new EggplantElement(By.Text(value));
         rating.click();
@@ -47,8 +45,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         return this;
     }
 
-
     public DishAnywhereParentalControls setTVYBlocked(){
+        Logger.info("Blocking TV 'TV-Y' rating...");
         if(!tvyChecked.isPresent())
             tvyCheckbox.click();
         return this;
@@ -61,8 +59,8 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
         return this;
     }
 
-
     public DishAnywhereParentalControls setMovieGBlocked(){
+        Logger.info("Blocking movie 'G' rating...");
         if(!gChecked.isPresent())
             gCheckbox.click();
         return this;
@@ -77,6 +75,7 @@ public class DishAnywhereParentalControls extends DishAnywhereSettings {
     }
 
     public DishAnywhereParentalControls changePasscode(String passcode){
+        Logger.info("Changing passcode to: (" + passcode + ").");
         changePasscodeButton.click();
         EnterPasscodePopup popup = new EnterPasscodePopup();
         popup.enterPasscode(passcode);

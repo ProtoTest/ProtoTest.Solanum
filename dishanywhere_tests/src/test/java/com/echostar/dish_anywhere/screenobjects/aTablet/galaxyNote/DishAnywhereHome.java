@@ -51,12 +51,14 @@ public class DishAnywhereHome extends DishAnywhereMain {
     }
 
     public DishAnywhereOnDemand openOnDemand(){
+        Logger.info("Opening On Demand...");
         onDemandButton.click();
         viewAllButton.waitForPresent();
         viewAllButton.click();
         return new DishAnywhereOnDemand();
     }
     public Blockbuster openBlockbuster(){
+        Logger.info("Opening On Demand...");
         blockbusterButton.click();
         return new Blockbuster();
     }
