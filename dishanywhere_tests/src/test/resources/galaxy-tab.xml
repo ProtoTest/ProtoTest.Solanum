@@ -3,15 +3,44 @@
 <suite name="GalaxyTablet" verbose="1" configfailurepolicy="continue">
     <parameter name="hostName" value="7706e2a1"/>
     <parameter name="hostPort" value="5901"/>
-    <test name="Galaxy">
+    <parameter name="drivePort" value="5400"/>
+    <test name="GalaxyNoteAuthorizedDevices">
         <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteAuthorizedDevices"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteBlockbuster">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteBlockbuster"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteOnDemandCategory">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteOnDemandCategory"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteOnDemandFilters">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteOnDemandFilters"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteParentalControls">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteParentalControls"/>
+        </classes>
+    </test>
+    <test name="GalaxyNotePasscode">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNotePasscode"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteUiTests">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteUiTests"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteVideoDrm">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.aTablet.galaxyNote.GalaxyNoteVideoDrm"/>
         </classes>
     </test>

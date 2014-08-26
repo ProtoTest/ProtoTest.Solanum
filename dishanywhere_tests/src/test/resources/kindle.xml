@@ -3,18 +3,46 @@
 <suite name="KindleTablet" verbose="1" configfailurepolicy="continue">
     <parameter name="hostName" value="D0FBA0A0407401HS"/>
     <parameter name="hostPort" value="5901"/>
-    <test name="Kindle1">
+    <parameter name="drivePort" value="5401"/>
+
+    <test name="GalaxyNoteAuthorizedDevices">
         <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireAuthorizedDevices"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteBlockbuster">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireBlockbuster"/>
-            <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireHdxUiTests"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteOnDemandCategory">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireOnDemandCategory"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteOnDemandFilters">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireOnDemandFilters"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteParentalControls">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireParentalControls"/>
+        </classes>
+    </test>
+    <test name="GalaxyNotePasscode">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFirePasscode"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteUiTests">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireUiTests"/>
+        </classes>
+    </test>
+    <test name="GalaxyNoteVideoDrm">
+        <classes>
             <class name="com.echostar.dish_anywhere.tests.kindleTablet.KindleFireHDX.KindleFireVideoDrm"/>
         </classes>
     </test>
-
 </suite>
