@@ -3,6 +3,7 @@ package com.echostar.dish_anywhere.screenobjects.aTablet.galaxyNote;
 import com.prototest.solanum.*;
 
 public class DishAnywhereOnDemand extends DishAnywhereMain {
+
     private EggplantElement featuredButton
             = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/FeaturedButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement moviesButton
@@ -23,6 +24,7 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
             = new EggplantElement("Submit Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
     private EggplantElement firstSearchResult =
             new EggplantElement("First Search Result", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/FirstResult"));
+
 
     public DishAnywhereScrollView openMovies() {
         Logger.info("Opening Movies category...");
@@ -80,6 +82,6 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
         firstSearchResult.click();
         EggplantTestBase.sleep(5000);
         return new DishAnywhereSearchResult();
-
     }
+
 }

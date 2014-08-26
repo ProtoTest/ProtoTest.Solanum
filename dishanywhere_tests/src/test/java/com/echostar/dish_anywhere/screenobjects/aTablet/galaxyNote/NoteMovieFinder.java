@@ -5,6 +5,7 @@ import com.prototest.solanum.*;
 import java.awt.*;
 
 public class NoteMovieFinder {
+
     private final String movieLocationTemplate = "AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/MovieHotspot%d";
     private final EnterPasscodePopup popups = new EnterPasscodePopup();
     private final SearchRectangle titleSearchAreaRect = new SearchRectangle(new Point(250,50), new Point(1030,290));

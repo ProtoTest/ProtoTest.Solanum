@@ -9,7 +9,7 @@ public class GalaxyNotePasscode extends GalaxyNoteTestBase{
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void changePasscode(){
-        Logger.info("Beginning Test: Change Passcode.");
+        Logger.info("BEGINNING TEST: CHANGE PASSCODE.");
         new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls("1111")
@@ -18,4 +18,5 @@ public class GalaxyNotePasscode extends GalaxyNoteTestBase{
                 .openParentalControls("0000")
                 .changePasscode("1111");
     }
+
 }

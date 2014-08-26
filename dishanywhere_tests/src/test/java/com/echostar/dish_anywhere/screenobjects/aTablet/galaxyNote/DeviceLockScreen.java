@@ -7,6 +7,7 @@ import com.prototest.solanum.Logger;
 // Screen Object for Device's locked state screen
 
 public class DeviceLockScreen {
+
     EggplantElement lockIcon = new EggplantElement("LockIcon", By.Image("AndroidTablet/GalaxyNote/System/Device/LockButton"));
 
 
@@ -21,4 +22,5 @@ public class DeviceLockScreen {
 
     return new DeviceHomeScreen();
     }
+
 }

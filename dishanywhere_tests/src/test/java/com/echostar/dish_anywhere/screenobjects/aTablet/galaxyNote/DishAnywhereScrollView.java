@@ -15,6 +15,7 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
     EggplantElement sortFilterButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/OnDemandPage/SortFilterButton"));
     NoteMovieFinder movieFinder = new NoteMovieFinder();
 
+
     public FilterPopup openFilter(){
         Logger.info("Opening filters...");
         sortFilterButton.click();

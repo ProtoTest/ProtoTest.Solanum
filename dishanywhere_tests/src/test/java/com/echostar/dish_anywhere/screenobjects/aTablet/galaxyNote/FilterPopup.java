@@ -5,6 +5,7 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
 public class FilterPopup extends DeviceMain{
+
     public EggplantElement doneButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DoneButton"));
     public EggplantElement dateOption = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/DateOption"));
     public EggplantElement titleOption = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/BlockBuster/SortFilterOptions/TitleOption"));
@@ -38,9 +39,9 @@ public class FilterPopup extends DeviceMain{
         return this;
     }
 
-
     public FilterPopup scrollUp(){
         filterByGenreLabel.swipeDown();
         return this;
     }
+
 }

@@ -7,8 +7,6 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
-// DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
-
 public class GalaxyNoteUiTests extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)

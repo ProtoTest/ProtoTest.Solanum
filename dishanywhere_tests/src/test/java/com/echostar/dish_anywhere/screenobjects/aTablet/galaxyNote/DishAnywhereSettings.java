@@ -5,6 +5,7 @@ import com.prototest.solanum.*;
 import java.awt.*;
 
 public class DishAnywhereSettings extends DishAnywhereHome {
+
     private EggplantElement logoutButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/LogoutButton"));
     private EggplantElement parentalControlsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/ParentalControlsButton"));
     private EggplantElement authorizedDevicesButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevicesButton"));
@@ -50,4 +51,5 @@ public class DishAnywhereSettings extends DishAnywhereHome {
         authorizedDevicesButton.click();
         return new DishAnywhereAuthorizedDevices();
     }
+
 }

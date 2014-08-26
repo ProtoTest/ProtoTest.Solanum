@@ -5,10 +5,12 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
 public class DishAnywhereAuthorizedDevices extends DishAnywhereSettings {
+
     private EggplantElement authorizeDeviceButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/AuthorizeThisDeviceButton"));
     private EggplantElement deAuthorizeDeviceButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/AuthorizedDevices/DeAuthorizeThisDeviceButton"));
     private EggplantElement okButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/OkButton"));
     private EggplantElement cancelButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Settings/CancelButton"));
+
 
     public DishAnywhereAuthorizedDevices authorizeThisDevice(){
         if(!deAuthorizeDeviceButton.isPresent()){

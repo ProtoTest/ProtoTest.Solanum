@@ -6,6 +6,7 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.SearchRectangle;
 
 public class DishAnywhereHome extends DishAnywhereMain {
+
     public EggplantElement settingsButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Settings"));
     public EggplantElement guideButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/Guide"));
     public EggplantElement onDemandButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/AppNav/OnDemand"));
@@ -13,6 +14,7 @@ public class DishAnywhereHome extends DishAnywhereMain {
     public EggplantElement viewAllButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/ViewAllButton", SearchRectangle.Quadrants.BOTTOM_HALF));
 
     public EggplantElement loadedStateIconArray = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/LoadedState"));
+
 
     public DishAnywhereHome() {
     }

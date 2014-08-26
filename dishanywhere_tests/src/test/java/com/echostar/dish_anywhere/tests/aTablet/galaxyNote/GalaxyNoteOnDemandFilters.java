@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-// DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
-
 public class GalaxyNoteOnDemandFilters extends GalaxyNoteTestBase {
 
     private final int MOVIES_TO_TEST = 6;
@@ -31,7 +29,7 @@ public class GalaxyNoteOnDemandFilters extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class, dataProvider = "filter")
     public void onDemandFilters(String filter, String urlParam) {
-        Logger.info("Beginning Test: On Demand Filters Category.");
+        Logger.info("BEGINNING TEST: ON DEMAND FILTERS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFilteredMovies(urlParam, RadishScraper.Device.android_tablet, 30);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);

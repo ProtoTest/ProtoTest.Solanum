@@ -5,6 +5,7 @@ import com.prototest.solanum.*;
 // Screen Object for Device's primary View object (Home) on the MainScreen ViewGroup
 
 public class DeviceHomeScreen extends DeviceMain {
+
     public DeviceHomeScreen() {
         super();
     }
@@ -30,4 +31,5 @@ public class DeviceHomeScreen extends DeviceMain {
         Logger.info(String.format("Opening app: (%s).", name));
         return openApp(name, DeviceMain.class, null, options);
     }
+
 }

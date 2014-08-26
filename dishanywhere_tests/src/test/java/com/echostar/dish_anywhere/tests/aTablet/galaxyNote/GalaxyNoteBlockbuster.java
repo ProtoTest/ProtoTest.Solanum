@@ -17,7 +17,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void blockbusterMovieCategory(){
-        Logger.info("Beginning Test: Blockbuster Movie Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER MOVIE CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_tablet, 30);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -36,7 +36,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void blockbusterTvShowsCategory(){
-        Logger.info("Beginning Test: Blockbuster TV Shows Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER TV SHOWS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_tablet, 30);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -56,7 +56,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void blockbusterKidsMovieCategory(){
-        Logger.info("Beginning Test: Blockbuster Kids Movie Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER KIDS MOVIE CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_tablet, 30);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -75,7 +75,7 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void blockbusterKidsTvShowsCategory(){
-        Logger.info("Beginning Test: Blockbuster Kids TV Show Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER KIDS TV SHOW CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_tablet, 30);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -92,4 +92,5 @@ public class GalaxyNoteBlockbuster extends GalaxyNoteTestBase {
                 .verifyTitlesPresent(movieTitles);
         Verifications.assertVerifications();
     }
+
 }

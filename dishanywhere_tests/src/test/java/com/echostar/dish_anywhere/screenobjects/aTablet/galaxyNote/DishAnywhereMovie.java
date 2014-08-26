@@ -5,9 +5,11 @@ import com.prototest.solanum.EggplantElement;
 import com.prototest.solanum.Logger;
 
 public class DishAnywhereMovie extends DishAnywhereMain {
+
     EggplantElement watchButton = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/WatchonMobileButton"));
     EggplantElement closeButton = new EggplantElement("closeButton", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/CloseButton"));
     EggplantElement titleField = new EggplantElement("Title field", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/MovieDetailsDialog/MovieTitleHotspot"));
+
 
     public MoviePlayer watchMovie() {
         Logger.info("Watching movie...");

@@ -4,6 +4,7 @@ import com.prototest.solanum.By;
 import com.prototest.solanum.EggplantElement;
 
 public class EnterPasscodePopup {
+
     private EggplantElement LoadingMessage = new EggplantElement(By.Text("Loading"));
 
     private EggplantElement enterPasscodeHeader = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader"));
@@ -68,4 +69,5 @@ public class EnterPasscodePopup {
     public boolean isPresent(){
         return enterPasscodeHeader.isPresent();
     }
+
 }

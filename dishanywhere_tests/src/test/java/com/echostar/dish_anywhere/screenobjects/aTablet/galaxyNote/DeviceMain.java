@@ -5,6 +5,7 @@ import com.prototest.solanum.*;
 // Screen Object for Device's MainScreen ViewGroup
 
 public class DeviceMain {
+
     protected EggplantElement homeScreenIcon = new EggplantElement("homeScreenIcon", By.Image("AndroidTablet/GalaxyNote/System/Screens/homeScreenIcon"));
     protected EggplantElement closeKeyboardButton = new EggplantElement("closeKeyboardButton", By.Image("AndroidTablet/GalaxyNote/System/Device/closeKeyboardButton"));
     protected EggplantElement keyboardDeleteKey = new EggplantElement("keyboardDeleteKey", By.Image("AndroidTablet/GalaxyNote/System/Keyboard/DeleteKey"));
@@ -12,6 +13,7 @@ public class DeviceMain {
     protected EggplantElement dishAnywhereApp = new EggplantElement("Anywhere App", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/DishAnywhereAppIcon"));
     protected EggplantElement dishAnywhereTaskIcon = new EggplantElement("Anywhere Task Icon", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/TaskIcon",SearchRectangle.Quadrants.LEFT_QUARTER));
     protected EggplantElement removeFromListButton = new EggplantElement("Remove from list button", By.Image("AndroidTablet/GalaxyNote/System/Device/RemoveFromList", SearchRectangle.Quadrants.LEFT_QUARTER));
+
 
     public final DeviceNavigation nav = new DeviceNavigation();
 
