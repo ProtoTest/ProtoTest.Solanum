@@ -69,7 +69,7 @@ public class By {
      * @param options Optional parameters to control search and discovery of the element.
      * @return The constructed {@link By}.
      */
-    public static By Image(String path, ImageOption... options) {
+    public static By Image(String path, Option... options) {
         return Image(path, null, options);
     }
 
@@ -80,7 +80,7 @@ public class By {
      * @param options Optional parameters to control search and discovery of the element.
      * @return The constructed {@link By}.
      */
-    public static By Image(String path, SearchRectangle.Quadrants searchRectangle, ImageOption... options) {
+    public static By Image(String path, SearchRectangle.Quadrants searchRectangle, Option... options) {
         String locatorString = String.format("(image: \"%s\"", path);
 
 //        if (searchRectangle != null) {
@@ -110,7 +110,7 @@ public class By {
      * @param options Optional parameters to control search and discovery of the element.
      * @return The constructed {@link By}.
      */
-    public static By Text(String text, TextOption... options) {
+    public static By Text(String text, Option... options) {
         return Text(text, null, options);
     }
     /**
@@ -120,7 +120,7 @@ public class By {
      * @param options Optional parameters to control search and discovery of the element.
      * @return The constructed {@link By}.
      */
-    public static By Text(String text, SearchRectangle.Quadrants searchRectangle, TextOption... options) {
+    public static By Text(String text, SearchRectangle.Quadrants searchRectangle, Option... options) {
         String locatorString = String.format("(text: \"%s\"", text);
 //        if (searchRectangle != null) {
 //            locatorString += ", " + Option.searchRectangle(searchRectangle).getText();
