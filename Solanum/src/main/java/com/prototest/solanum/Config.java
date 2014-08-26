@@ -1,11 +1,6 @@
 package com.prototest.solanum;
 
-import org.testng.internal.Constants;
-
 import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -38,50 +33,86 @@ import java.util.Properties;
  * <li>boolean debugElementLocators : Take a screenshot before each step to aid in debugging.</li>
  * </ul>
  */
+
+//  EGGPLANT REFERENCE AND DOCUMENTATION LINKS
+//  http://docs.testplant.com/?q=content/eggplant-commands-and-functions
+//  http://docs.testplant.com/?q=content/run-options-preferences
+
 public class Config {
-    /**
-     * Turning off escape-output means that we can write HTML to the report.
-     */
-    static {
-        System.setProperty("org.uncommons.reportng.escape-output", "false");
-    }
-    private static Properties properties;
-    private static OutputStream output = null;
-    public static boolean screenshotOnError = getPropertyValue("screenshotOnError", true);
-   // public static boolean startDrive = getPropertyValue("startDrive", true);
-   // public static String eggplantPath = getPropertyValue("eggplantPath", "");
+
+    //  FRAMEWORK PATHS
+
     public static String windowsScriptPath = getPropertyValue("windowsScriptPath", "C:\\Program Files (x86)\\eggPlant\\runscript.bat");
     public static String unixScriptPath = getPropertyValue("unixScriptPath", "/Applications/Eggplant.app/runscript");
     public static String currentPath = System.getProperty("user.dir");
     public static String suitePath = getPropertyValue("suitePath", "");
     public static String drivePort = getPropertyValue("drivePort", "5400");
-    public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "0");
-    /**
-     * logLevel can be debug, info, warning, or error.
-     */
+
+
+    //  LOGGING
+
+    // Logging Level - can be debug, info, warning, or error.
     public static int logLevel = getLogLevel(getPropertyValue("logLevel", "debug"));
+    // Screenshot on error - captures device screenshot at moment of error
+    public static boolean screenshotOnError = getPropertyValue("screenshotOnError", true);
+    // Logs the actual Eggplant commands being sent to the org.apache.xmlrpc.client (which is then sent to the device)
     public static boolean logDriveCommands = getPropertyValue("logDriveCommands", false);
+    // Internal EggplantDrive logs that are normally sent to the console
+    public static String driveLoggingLevel = getPropertyValue("driveLoggingLevel", "0");
+    // Turning off escape-output means that we can write HTML to the report.
+    static {
+        System.setProperty("org.uncommons.reportng.escape-output", "false");
+    }
+    private static Properties properties;
+    private static OutputStream output = null;
+    // Timestamp the HTML log
+    public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
+
+
+    //  TEST EXECUTION OPTIONS
+
+    // Eggplant Drive URL and Test Name defaults
+    public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1");
+    public static String currentTestName = "Test";
+    // Manage Eggdrive Process - Determines if eggplant processes will be killed before tests
+    public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
+    // Command Delay - Delay between commands being executed (milli-seconds)
     public static int commandDelayMs = getPropertyValue("commandDelayMs", 0);
+    // Wait until the element is present for the given # of seconds
     public static int elementWaitTimeSec = getPropertyValue("elementWaitTimeSec", 60);
     public static String hostName = getPropertyValue("hostName", "localhost");
     public static int hostPort = getPropertyValue("hostPort", 5900);
-    public static String imageSearchCount = getPropertyValue("imageSearchCount","7");
-    public static String imageSearchDelay = getPropertyValue("imageSearchDelay","0.3");
-    public static String preciseImageTolerance = getPropertyValue("preciseImageTolerance","1");
-    public static String standardImageTolerance = getPropertyValue("standardImageTolerance","70");
-    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".02");
-    public static String remoteWorkInterval = getPropertyValue("remoteWorkInterval","0.1");
-    public static String driveUrl = getPropertyValue("driveUrl","http://127.0.0.1");
-    public static String currentTestName = "Test";
-    public static boolean manageEggdriveProcess = getPropertyValue("manageEggdriveProcess", true);
-    private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
-    public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
-    public static boolean timestampHtmlLog = getPropertyValue("timestampHtmlLog", true);
+    // Test Retry Count + Number of times to retry an action until action is true or has exhausted the given attempts
     public static int retryCount = getPropertyValue("retryCount", 5);
-    public static boolean diagnoseFailedImages = getPropertyValue("diagnoseFailedImages",false);
     public static int maxActionRetries = getPropertyValue("maxActionRetries", 10);
 
-    //get the test properties.
+
+    //  DIAGNOSIS EXECUTION OPTIONS
+
+    public static boolean debugElementLocators = getPropertyValue("debugElementLocators", false);
+    public static boolean diagnoseFailedImages = getPropertyValue("diagnoseFailedImages",false);
+
+
+    //  EGGPLANT GLOBAL OPTIONS
+    //  http://docs.testplant.com/?q=content/run-options-preferences
+
+    // Number of times that image-based elements are searched for + time delay between searches
+    public static String imageSearchCount = getPropertyValue("imageSearchCount","7");
+    public static String imageSearchDelay = getPropertyValue("imageSearchDelay","0.3");
+    // Default tolerances for image-based elements (can also be found in image-viewer within Eggplant GUI)
+    public static String preciseImageTolerance = getPropertyValue("preciseImageTolerance","1");
+    public static String standardImageTolerance = getPropertyValue("standardImageTolerance","70");
+    // Motion options
+    public static String swipeSpeed = getPropertyValue("SwipeSpeed","40");
+    // More options
+    public static String mouseClickDelay = getPropertyValue("mouseClickDelay",".02");
+    public static String remoteWorkInterval = getPropertyValue("remoteWorkInterval","0.1");
+
+
+    //  TEST PROPERTIES
+
+    private static Map<String, String> testProperties = getTestProperties(getPropertyValue("modulePrefix", ""));
+    /** Get the test properties. */
     public static String getTestProp(String key) {
         return testProperties.get(key);
     }
@@ -179,4 +210,5 @@ public class Config {
             return Integer.parseInt(propertyValue);
         }
     }
+
 }
