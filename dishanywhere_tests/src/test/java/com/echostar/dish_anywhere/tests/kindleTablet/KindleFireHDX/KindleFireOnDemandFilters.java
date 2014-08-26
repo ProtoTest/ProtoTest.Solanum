@@ -12,7 +12,7 @@ import java.util.Map;
 
 // DishAnywhere UI Tests - Galaxy Note 10.1 (Android Tablet)
 
-public class KindleFireOnDemandFilters extends EggplantTestBase {
+public class KindleFireOnDemandFilters extends KindleTestBase {
 
 
     private static final int MOVIES_TO_TEST = 2;
