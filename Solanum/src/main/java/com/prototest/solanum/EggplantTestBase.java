@@ -31,11 +31,11 @@ public class EggplantTestBase {
         Verifications.clearVerifications();
         for (int attempt = 0; attempt < Config.retryCount; attempt++) {
             try {
-                Logger.info(String.format("Beginning app setup attempt %d of %d.", attempt+1, 5));
+                Logger.info(String.format("BEGINNING APP SETUP ATTEMPT %d OF %d.", attempt+1, 5));
                 initializeApp();
             } catch (Exception e) {
                 e.printStackTrace();
-                Logger.warning(String.format("App setup attempt %d of %d failed.", attempt+1, 5));
+                Logger.error(String.format("APP SETUP ATTEMPT %d OF %d FAILED.", attempt+1, 5));
                 continue;
             }
             break;
@@ -58,13 +58,11 @@ public class EggplantTestBase {
         //Verifications.assertVerifications();
         //result = Reporter.getCurrentTestResult();
         if (!result.isSuccess()) {
-            Logger.info("TEST INCOMPLETE (FAILED).");
+            Logger.warning("TEST INCOMPLETE (FAILED).");
             Logger.screenshot();
         } else if (result.isSuccess()) {
             Logger.info("TEST COMPLETE (PASSED).");
         }
-
-
     }
 
     /**
@@ -113,28 +111,12 @@ public class EggplantTestBase {
             for (File subFile : screenshotsDir.listFiles()) {
                 subFile.delete();
             }
+        } else {
+            screenshotsDir.mkdir();
         }
-        screenshotsDir.delete();
         String testDir = "test-output"; //Results " + timestamp;
         File report = new File(testDir);
-        //deleteDir(report);
         report.mkdir();
-    }
-
-    /**
-     * Recursively delete a directory and all subdirecotries and files.
-     */
-    public static boolean deleteDir(File dir) {
-        if (dir.isDirectory()) {
-            String[] children = dir.list();
-            for (int i = 0; i < children.length; i++) {
-                boolean success = deleteDir(new File(dir, children[i]));
-                if (!success) {
-                    return false;
-                }
-            }
-        }
-        return dir.delete();
     }
 
     /**
@@ -172,7 +154,7 @@ public class EggplantTestBase {
      */
     protected void startEggplant() {
         if (Config.manageEggdriveProcess) {
-            Logger.info("Launching Eggplant Drive");
+            Logger.info("Launching Eggplant Drive.");
             eggplantProcess.kill();
             eggplantProcess.start();
         }
@@ -184,6 +166,7 @@ public class EggplantTestBase {
      * Stop eggplant drive process.
      */
     protected void stopEggplant() {
+        Logger.info("Eggplant Drive stopped.");
         if (Config.manageEggdriveProcess) {
             eggplantProcess.stop();
             eggplantProcess.kill();

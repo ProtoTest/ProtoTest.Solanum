@@ -39,7 +39,9 @@ public class DishAnywhereSearchResult extends DeviceMain {
 //        }
        // throw new RuntimeException("Movie " + movieName + " was not found in search results!");
     }
+
     public DishAnywhereMovie openProtectedMovie(String movieName, String passcode){
         return movieFinder.findMovie(movieName, passcode);
     }
+
 }

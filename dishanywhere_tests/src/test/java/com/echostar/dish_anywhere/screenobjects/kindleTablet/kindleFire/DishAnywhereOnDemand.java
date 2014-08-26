@@ -60,11 +60,9 @@ public class DishAnywhereOnDemand extends DishAnywhereHome {
     }
 
     public DishAnywhereSearchResult searchFor(String movie) {
-
         searchInputClearButton.click();
         searchInput.type(movie);
         submitSearchButton.click();
-
         return new DishAnywhereSearchResult();
     }
 

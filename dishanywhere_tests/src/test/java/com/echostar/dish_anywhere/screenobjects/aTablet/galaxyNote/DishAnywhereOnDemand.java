@@ -16,13 +16,13 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
     private EggplantElement networksButton
             = new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/NetworksButton", SearchRectangle.Quadrants.TOP_QUARTER));
     private EggplantElement searchInput
-            = new EggplantElement("Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton"));
+            = new EggplantElement("Search Input Field", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SearchButton"));
     private EggplantElement searchInputClearButton
-            = new EggplantElement("Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput"));
+            = new EggplantElement("Search Input Clear Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/ClearSearchInput"));
     private EggplantElement submitSearchButton
-            = new EggplantElement("Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
+            = new EggplantElement("Submit Search Button", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/SubmitSearchButton"));
     private EggplantElement firstSearchResult =
-            new EggplantElement(By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/FirstResult"));
+            new EggplantElement("First Search Result", By.Image("AndroidTablet/GalaxyNote/Apps/DishAnywhere/OnDemand/Search/FirstResult"));
 
     public DishAnywhereScrollView openMovies() {
         Logger.info("Opening Movies category...");
@@ -76,8 +76,9 @@ public class DishAnywhereOnDemand extends DishAnywhereMain {
         String searchTerm = movie.substring(0, movie.length()-1);
         searchInputClearButton.click();
         searchInput.type(searchTerm);
+        EggplantTestBase.sleep(5000);
         firstSearchResult.click();
-        EggplantTestBase.sleep(3000);
+        EggplantTestBase.sleep(5000);
         return new DishAnywhereSearchResult();
 
     }

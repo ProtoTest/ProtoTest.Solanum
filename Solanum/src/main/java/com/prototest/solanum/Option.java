@@ -3,7 +3,7 @@ package com.prototest.solanum;
 /**
  * Base Search option class used by TextOption and ImageOption
  */
-class Option {
+public class Option {
     protected String text;
 
     Option(String text) {

@@ -23,6 +23,8 @@ public class KindleMovieFinder {
             DishAnywhereMovie dishAnywhereMovie = openMovie(i, passcode);
             if (new EggplantElement(movieTitle, By.Text(movieTitle, SearchRectangle.Quadrants.MIDDLE_HALF)).isPresent()) { /*new SearchRectangle(new Point(0, (int) (EggplantTestBase.driver.getScreenSize().y*0.2)), new Point(EggplantTestBase.driver.getScreenSize().x, EggplantTestBase.driver.getScreenSize().y*.5)*//*))).isPresent()) {*/
                 return dishAnywhereMovie;
+            } else if (dishAnywhereMovie.getTitle().equals(movieTitle)) {
+                return dishAnywhereMovie;
             } else {
                 dishAnywhereMovie.closeMovie();
             }
@@ -34,6 +36,7 @@ public class KindleMovieFinder {
     public DishAnywhereMovie openMovie(int position) {
         return openMovie(position, null);
     }
+
     public DishAnywhereMovie openMovie(int position, String passcode) {
         EggplantElement movie = new EggplantElement("Movie location " + (position+1), By.Image(getMovieLocator(position+1)));
         movie.click();

@@ -6,7 +6,6 @@ import org.testng.annotations.AfterMethod;
 
 public class GalaxyNoteTestBase extends EggplantTestBase {
 
-
     @Override
     public void initializeApp() {
         handleAppCrash();
@@ -36,7 +35,7 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
 
     private void handleAppCrash() {
         Logger.info("Attempting to handle any app crashes...");
-        EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,"));
+        EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,",TextOption.waitFor(10)));
         EggplantElement okButton = new EggplantElement(By.Text("OK"));
         if (crashText.isPresent()) {
             okButton.click();
