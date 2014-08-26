@@ -21,7 +21,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
-        Logger.info("Beginning Test: Blockbuster Movie Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER MOVIE CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -39,7 +39,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
-        Logger.info("Beginning Test: Blockbuster TV Shows Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER TV SHOWS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -57,7 +57,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void kidsMovieCategory(){
-        Logger.info("Beginning Test: Kids Movie Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER KIDS MOVIE CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -75,7 +75,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void kidsTvShowsCategory(){
-        Logger.info("Beginning Test: Kids TV Shows Category.");
+        Logger.info("BEGINNING TEST: BLOCKBUSTER KIDS TV SHOWS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);

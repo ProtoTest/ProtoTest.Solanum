@@ -11,6 +11,7 @@ import com.prototest.solanum.EggplantTestBase;
 //
 
 public class GalaxyS5TestBase extends EggplantTestBase {
+
     private void handleAppCrash() {
         EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,"));
         EggplantElement okButton = new EggplantElement(By.Text("OK"));
@@ -18,7 +19,6 @@ public class GalaxyS5TestBase extends EggplantTestBase {
             okButton.click();
         }
     }
-
 
     @Override
     public void initializeApp() {
@@ -36,9 +36,5 @@ public class GalaxyS5TestBase extends EggplantTestBase {
                 .clearTVBlocks()
                 .openGuide();
     }
-    
-//    @BeforeMethod
-//    public void goToDishAnywhereHome(){
-//        new DeviceMain().goHome();
-//    }
+
 }

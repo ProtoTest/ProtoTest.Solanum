@@ -15,7 +15,7 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testLogoutAndLogin() {
-        Logger.info("Beginning Test: Logout and Login.");
+        Logger.info("BEGINNING TEST: LOGOUT AND LOGIN.");
         new DishAnywhereHome()
                 .openSettings()
                 .logout()
@@ -26,7 +26,7 @@ public class GalaxyS5UiTests extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void testPredictiveSearch() {
-        Logger.info("Beginning Test: Predictive Search.");
+        Logger.info("BEGINNING TEST: PREDICTIVE SEARCH.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");

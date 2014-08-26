@@ -26,6 +26,7 @@ public class GalaxyNoteVideoDrm extends GalaxyNoteTestBase {
         watchMovie(movie);
     }
 
+    //Not a standalone test - method used by above tests
     private void watchMovie(String movie) {
         Logger.info("User will now watch movie: (" + movie + ").");
         new DishAnywhereHome()

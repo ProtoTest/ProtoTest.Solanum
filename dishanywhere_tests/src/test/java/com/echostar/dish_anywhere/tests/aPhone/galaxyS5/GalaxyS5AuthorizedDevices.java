@@ -14,9 +14,10 @@ import java.util.Map;
 //
 
 public class GalaxyS5AuthorizedDevices extends GalaxyS5TestBase {
+
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void deauthAndReauth(){
-        Logger.info("Beginning Test: Deauthorize and Reauthorize This Device.");
+        Logger.info("BEGINNING TEST: DEAUTHORIZE AND REAUTHORIZE THIS DEVICE.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
         String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);

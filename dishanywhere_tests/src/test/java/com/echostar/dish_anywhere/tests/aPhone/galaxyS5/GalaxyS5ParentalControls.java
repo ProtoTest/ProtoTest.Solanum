@@ -18,7 +18,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void clearAllBlockedContentAndPlayMovie(){
-        Logger.info("Beginning Test: Clear All Parental Controls Blocks and Play Movie.");
+        Logger.info("BEGINNING TEST: CLEAR ALL PARENTAL CONTROLS BLOCKS AND PLAY MOVIE.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
         String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);
@@ -37,7 +37,7 @@ public class GalaxyS5ParentalControls extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void setAllContentBlockedAndPlayMovie(){
-        Logger.info("Beginning Test: Set All Parental Controls Blocks and Play Movie");
+        Logger.info("BEGINNING TEST: SET ALL PARENTAL CONTROLS BLOCKS AND PLAY MOVIE.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
         String movieName = RadishScraper.getShortName(movies.get(0).get("franchiseName"),25);

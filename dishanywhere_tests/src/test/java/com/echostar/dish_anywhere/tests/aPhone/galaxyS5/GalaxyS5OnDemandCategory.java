@@ -22,7 +22,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void moviesCategory(){
-        Logger.info("Beginning Test: On Demand Movies Category.");
+        Logger.info("BEGINNING TEST: ON DEMAND MOVIES CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -39,7 +39,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void featuredCategory(){
-        Logger.info("Beginning Test: On Demand Featured Category.");
+        Logger.info("BEGINNING TEST: ON DEMAND FEATURED CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getOnDemandFeatured(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -56,7 +56,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void familyCategory(){
-        Logger.info("Beginning Test: On Demand Family Category.");
+        Logger.info("BEGINNING TEST: ON DEMAND FAMILY CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFamilyCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -73,7 +73,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
-        Logger.info("On Demand TV Shows Category.");
+        Logger.info("ON DEMAND TV SHOWS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getShowsCategory(RadishScraper.Device.android_phone, 19);
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
@@ -90,7 +90,7 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void networksCategory(){
-        Logger.info("Beginning Test: On Demand Networks Category.");
+        Logger.info("BEGINNING TEST: ON DEMAND NETWORKS CATEGORY.");
         List<String> movieTitles = Arrays.asList("MGM", "Starz", "Hallmark Channel", "Encore", "HBO");
 
         new DishAnywhereHome()

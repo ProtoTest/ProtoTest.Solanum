@@ -14,8 +14,7 @@ public class GalaxyS5Passcode extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void changePasscode(){
-        Logger.info("Beginning Test: Change Passcode.");
-
+        Logger.info("BEGINNING TEST: CHANGE PASSCODE.");
         new DishAnywhereHome()
                 .openSettings()
                 .openParentalControls(Config.getTestProp("dishAnywherePassCode"))

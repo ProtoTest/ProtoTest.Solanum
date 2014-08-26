@@ -34,7 +34,7 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class, dataProvider = "filter")
     public void onDemandFilters(String filter) {
-        Logger.info("Beginning Test: On Demand Filters.");
+        Logger.info("BEGINNING TEST: ON DEMAND FILTERS.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFilteredMovies(filter, RadishScraper.Device.android_phone, 19);
 
