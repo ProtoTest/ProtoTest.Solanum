@@ -90,13 +90,12 @@ public class EggplantTestBase {
             Logger.info("Using drivePort from TestNG params: " + drivePort);
             Config.drivePort = drivePort;
         }
-
+        driver = new EggplantDriver();
         Logger.info("Creating report directory.");
         createReportDirectory();
         startEggplant();
         setEggplantDefaultSettings();
         Logger.info(String.format("Connecting to eggdrive: %s:%s", Config.driveUrl, Config.drivePort));
-        driver = new EggplantDriver();
         driver.connect(hostName, hostPort);
     }
 
