@@ -47,9 +47,6 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
                 .openOnDemand()
                 .clearSearch()
                 .openFeatured()
-                .openFilter()
-                .sortByTitle()
-                .done()
                 .verifyTitlesPresent(movieTitles);
     }
 

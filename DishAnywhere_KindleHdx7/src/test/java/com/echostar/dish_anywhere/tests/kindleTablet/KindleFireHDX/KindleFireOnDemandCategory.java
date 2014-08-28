@@ -38,9 +38,7 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
 
     }
 
-    // Disable this test because there is no option to sort the movies present by title.
-    // Need to rework.
-    @Test(retryAnalyzer = SolanumRetryAnalyzer.class, enabled = false)
+    @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void featuredCategory(){
 
 
@@ -55,9 +53,6 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
         new DishAnywhereHome()
                 .openOnDemand()
                 .openFeatured()
-                .openFilter()
-                .sortByTitle()
-                .done()
                 .verifyTitlesPresent(movieTitles);
 
     }
