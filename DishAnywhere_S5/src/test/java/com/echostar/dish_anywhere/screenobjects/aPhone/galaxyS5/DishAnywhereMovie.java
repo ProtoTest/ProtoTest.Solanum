@@ -11,6 +11,8 @@ public class DishAnywhereMovie extends DishAnywhereMain {
         EggplantTestBase.sleep(2000);
         watchButton.click();
         popups.waitForScreenToLoad();
+        popups.closeLteMessageIfPresent();
+        popups.waitForScreenToLoad();
         return new MoviePlayer();
     }
 

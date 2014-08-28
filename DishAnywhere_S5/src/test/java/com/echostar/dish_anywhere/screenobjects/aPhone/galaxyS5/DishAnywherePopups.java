@@ -11,6 +11,10 @@ public class DishAnywherePopups extends DeviceMain {
 
     private EggplantElement LoadingMessage = new EggplantElement(By.Text("Loading"));
 
+    private EggplantElement LteWarningMessage = new EggplantElement("LTE warning message", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/LTEWarning"));
+    private EggplantElement LteOkButton = new EggplantElement("LTE warning ok button", By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/MoviePlayer/LTEOkButton"));
+
+
     private EggplantElement enterPasscodeHeader = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/EnterPasscodeHeader"));
     private EggplantElement button1 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton1"));
     private EggplantElement button2 = new EggplantElement(By.Image("AndroidPhone/GalaxyS5/Apps/DishAnywhere/Popups/Passcode/PasscodeButton2"));
@@ -31,6 +35,15 @@ public class DishAnywherePopups extends DeviceMain {
     public DishAnywherePopups waitForScreenToLoad() {
         Logger.info("Waiting for screen to load...");
         LoadingMessage.waitForNotPresent();
+        return this;
+    }
+
+    public DishAnywherePopups closeLteMessageIfPresent() {
+        Logger.info("Checking for LTE streaming warning.");
+        if (LteWarningMessage.isPresent()) {
+            Logger.info("LTE streaming warning is present... closing.");
+            LteOkButton.click();
+        }
         return this;
     }
 
