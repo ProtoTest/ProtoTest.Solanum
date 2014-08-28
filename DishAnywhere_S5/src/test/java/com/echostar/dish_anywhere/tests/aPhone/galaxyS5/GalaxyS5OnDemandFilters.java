@@ -5,17 +5,11 @@ import com.echostar.dish_anywhere.screenobjects.aPhone.galaxyS5.DishAnywhereHome
 import com.prototest.solanum.Config;
 import com.prototest.solanum.Logger;
 import com.prototest.solanum.SolanumRetryAnalyzer;
-import com.prototest.solanum.Verifications;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-//
-//Tests for proper functionality of "On Demand" content, "Filters" sub-section
-//
 
 public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
 
@@ -37,12 +31,7 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
         Logger.info("BEGINNING TEST: ON DEMAND FILTERS.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFilteredMovies(urlParam, RadishScraper.Device.android_phone, 19);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(RadishScraper.getShortName(movies.get(i).get("franchiseName"),25));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openMovies()
@@ -51,4 +40,5 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
                 .done()
                 .verifyTitlesPresent(movieTitles);
     }
+
 }

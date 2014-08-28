@@ -12,8 +12,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-/**
- */
 public class KindleFireBlockbuster extends KindleTestBase {
 
     private final int MOVIES_TO_TEST = 10;
@@ -24,15 +22,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
 
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_tablet, 30);
-
-        String[] movieTitlesArray = new String[movies.size()];
-
-        for (int i = 0; i < movies.size(); i++) {
-            movieTitlesArray[i] = movies.get(i).get("franchiseName");
-        }
-        //Arrays.sort(movieTitlesArray);
-        List<String> movieTitles = Arrays.asList(movieTitlesArray).subList(0, MOVIES_TO_TEST);
-
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openBlockbuster()
                 .openMovies()
@@ -45,15 +35,9 @@ public class KindleFireBlockbuster extends KindleTestBase {
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
         Logger.info("Starting TV Shows category test");
-
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_tablet, 30);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < movies.size() && i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openBlockbuster()
                 .openTVShows()
@@ -61,7 +45,6 @@ public class KindleFireBlockbuster extends KindleTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-        Verifications.assertVerifications();
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
@@ -69,12 +52,7 @@ public class KindleFireBlockbuster extends KindleTestBase {
         Logger.info("Starting Kids Movies category test");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_tablet, 30);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < movies.size() && i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openBlockbuster()
                 .openKidsMovies()
@@ -82,21 +60,14 @@ public class KindleFireBlockbuster extends KindleTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-        Verifications.assertVerifications();
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void kidsTvShowsCategory(){
         Logger.info("Starting Kids TV Shows category test");
-
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_tablet, 30);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < movies.size() && i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openBlockbuster()
                 .openKidsTVShows()
@@ -104,6 +75,6 @@ public class KindleFireBlockbuster extends KindleTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-        Verifications.assertVerifications();
     }
+
 }

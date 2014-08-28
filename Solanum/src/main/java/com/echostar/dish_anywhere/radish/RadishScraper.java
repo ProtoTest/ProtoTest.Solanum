@@ -1,15 +1,17 @@
 package com.echostar.dish_anywhere.radish;
 
-
 import com.jayway.jsonpath.JsonPath;
 import com.prototest.solanum.Config;
 import com.prototest.solanum.RestClient;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 /** The RadishScraper contains methods to easily get data out of the radish api */
 public class RadishScraper {
+
     private RestClient client;
     private static String radishUuid = Config.getPropertyValue("radishUuid","CE4B6EB3F8DF5D75E044D8D385F6C006");
     private static String radishSid = Config.getPropertyValue("radishSid","--e9ad919d527732c4bbf385ee3f5092f79d79a3cc");
@@ -17,14 +19,30 @@ public class RadishScraper {
     private static String radishDeviceId = Config.getPropertyValue("radishDeviceId","prm.Android.465a282c01567d79b2c9b7f9a854ebc9ff92236a1b21926152c2778a9d5c0c4f");
     private static String radishDomain= Config.getPropertyValue("radishDomain","http://radish.dishanywhere.com");
 
+
     public enum Device {
         android_phone,android_tablet
     }
 
-    public static String getShortName(String name, int max){
-        if(name.length()>max)
-            name = name.substring(0,max);
-        return name;
+    public static List<String> extractShortTitles(List<Map<String, String>> movieJsons, int numberToExtract, int maxTitleLength) {
+        List<String> movieTitles = new ArrayList<String>(numberToExtract);
+        for (int i = 0; i < numberToExtract; i++) {
+            movieTitles.add(getShortName(movieJsons.get(i).get("franchiseName"), maxTitleLength));
+        }
+        return movieTitles;
+    }
+
+    public static String getShortName(String name, int maxChars){
+        List<String> words = Arrays.asList(name.split(" "));
+        StringBuilder newTitle = new StringBuilder(words.get(0));
+        for (String word : words.subList(1, words.size())) {
+            if (newTitle.length() + 1 + word.length() < maxChars) {
+                newTitle.append(" " + word);
+            } else {
+                break;
+            }
+        }
+        return newTitle.toString();
     }
 
     public List<String> getMovies() {
@@ -46,12 +64,14 @@ public class RadishScraper {
         List<Map<String, String>> movies = JsonPath.read(json, "$.onlinenow.content[*]");
         return movies;
     }
+
     public List<Map<String, String>> getFamilyCategory(Device device, int nMovies) {
         client = new RestClient(radishDomain);
         String json = client.Get("/v20/family.json?&totalItems="+nMovies+"&device="+device.name()+"&itemStart=1&sort=name&uid=" + radishUid + "&sid=" + radishSid + "&player_types=widevine,nagra");
         List<Map<String, String>> movies = JsonPath.read(json, "$.onlinenow.content[*]");
         return movies;
     }
+
     public List<Map<String, String>> getShowsCategory(Device device, int nMovies) {
         client = new RestClient(radishDomain);
         String json = client.Get("/v20/shows.json?&totalItems="+nMovies+"&device="+device.name()+"&itemStart=1&sort=name&uid=" + radishUid + "&sid=" + radishSid + "&player_types=widevine,nagra");

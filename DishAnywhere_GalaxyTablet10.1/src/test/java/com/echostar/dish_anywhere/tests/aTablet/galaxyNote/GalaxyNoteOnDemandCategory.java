@@ -6,7 +6,6 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -20,10 +19,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
         Logger.info("BEGINNING TEST: ON DEMAND MOVIE CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()
@@ -39,10 +35,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
         Logger.info("BEGINNING TEST: ON DEMAND FEATURED CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getOnDemandFeatured(RadishScraper.Device.android_tablet, 30);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()
@@ -55,10 +48,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
         Logger.info("BEGINNING TEST: ON DEMAND FAMILY CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFamilyCategory(RadishScraper.Device.android_tablet, 30);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()
@@ -74,10 +64,7 @@ public class GalaxyNoteOnDemandCategory extends GalaxyNoteTestBase {
         Logger.info("BEGINNING TEST: ON DEMAND TV SHOWS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getShowsCategory(RadishScraper.Device.android_tablet, 30);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .clearSearch()

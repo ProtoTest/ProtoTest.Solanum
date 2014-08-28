@@ -27,7 +27,7 @@ public class DishAnywhereMovie extends DishAnywhereMain {
     public String getTitle() {
         Logger.info("Extracting movie title...");
         String foundTitle = titleField.getText();
-        Logger.info(String.format("Found movie title: (%s)", foundTitle));
+        Logger.info(String.format("Found movie title: (%s).", foundTitle));
         return foundTitle;
     }
 }

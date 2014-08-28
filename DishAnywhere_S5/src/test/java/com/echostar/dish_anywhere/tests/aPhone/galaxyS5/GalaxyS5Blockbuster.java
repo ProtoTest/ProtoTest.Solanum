@@ -10,10 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-//
-//Tests for proper functionality of "Blockbuster" content section
-//
-
 public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
 
     private final int MOVIES_TO_TEST = 6;
@@ -24,12 +20,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         Logger.info("BEGINNING TEST: BLOCKBUSTER MOVIE CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterMoviesCategory(RadishScraper.Device.android_phone, 19);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            String name =movies.get(i).get("franchiseName");
-            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
-        }
-
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
@@ -42,12 +33,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         Logger.info("BEGINNING TEST: BLOCKBUSTER TV SHOWS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterShowsCategory(RadishScraper.Device.android_phone, 19);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            String name =movies.get(i).get("franchiseName");
-            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
-        }
-
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
@@ -60,12 +46,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         Logger.info("BEGINNING TEST: BLOCKBUSTER KIDS MOVIE CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsMoviesCategory(RadishScraper.Device.android_phone, 19);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            String name =movies.get(i).get("franchiseName");
-            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
-        }
-
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()
@@ -78,12 +59,7 @@ public class GalaxyS5Blockbuster extends GalaxyS5TestBase {
         Logger.info("BEGINNING TEST: BLOCKBUSTER KIDS TV SHOWS CATEGORY.");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getBlockbusterKidsShowsCategory(RadishScraper.Device.android_phone, 19);
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            String name =movies.get(i).get("franchiseName");
-            movieTitles.add(RadishScraper.getShortName(name,MAX_NAME_LENGTH));
-        }
-
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openBlockbuster()

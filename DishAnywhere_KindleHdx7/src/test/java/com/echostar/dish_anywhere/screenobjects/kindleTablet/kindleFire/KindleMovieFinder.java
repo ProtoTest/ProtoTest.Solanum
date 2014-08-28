@@ -28,7 +28,7 @@ public class KindleMovieFinder {
                 dishAnywhereMovie.closeMovie();
             }
         }
-        throw new RuntimeException("Movie " + movieTitle + " was not found in search results!");
+        throw new RuntimeException("Movie " + movieTitle + " was not found in search results.");
 
     }
 
@@ -48,7 +48,7 @@ public class KindleMovieFinder {
             }
         } else {
             if (passcodePopupIsPresent) {
-                Logger.error("Passcode prompt should not be on screen, but it is. Guessing passcode from config values: " + Config.getTestProp("dishAnywherePassCode"));
+                Logger.error("Passcode prompt should not be on screen, but it is. Guessing passcode from config values: (" + Config.getTestProp("dishAnywherePassCode") + ").");
                 popups.enterPasscode(Config.getTestProp("dishAnywherePassCode"));
             }
         }

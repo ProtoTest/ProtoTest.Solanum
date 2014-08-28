@@ -5,9 +5,8 @@ import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
-/**
- */
 public class KindleFirePasscode extends KindleTestBase {
+
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
 
@@ -18,10 +17,6 @@ public class KindleFirePasscode extends KindleTestBase {
                 .openAuthorizedDevices()
                 .openParentalControls("0000")
                 .changePasscode("1111");
-
-
-        Verifications.assertVerifications();
-
-
     }
+
 }

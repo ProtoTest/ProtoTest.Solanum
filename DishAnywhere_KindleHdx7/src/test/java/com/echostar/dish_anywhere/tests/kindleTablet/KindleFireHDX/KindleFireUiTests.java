@@ -27,7 +27,6 @@ public class KindleFireUiTests extends KindleTestBase {
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
         String movie = radishScraper.findMovieWithDrm("nagra");
-
         new DishAnywhereHome()
                 .openOnDemand()
                 .verifyPredictiveSearch(movie)

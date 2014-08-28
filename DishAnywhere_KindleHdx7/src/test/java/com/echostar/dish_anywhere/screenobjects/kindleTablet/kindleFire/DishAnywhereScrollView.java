@@ -35,14 +35,14 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
     }
 
     public DishAnywhereMovie openProtectedMovie(String movieName, String passcode){
-        Logger.info("Opening movie title with expected passcode popup: " + movieName);
+        Logger.info("Opening movie title with expected passcode popup: (" + movieName + ").");
         return movieFinder.findMovie(movieName, passcode);
     }
 
     public DishAnywhereScrollView verifyTitlesPresent(List<String> titles) {
-        String logMessage = "Verifying movies from radish are present: " + titles.get(0);
+        String logMessage = "Verifying movies from radish are present: [" + titles.get(0) + "].";
         for (String title : titles.subList(1, titles.size() - 1)) {
-            logMessage += ", " + title;
+            logMessage += ", (" + title + ")";
         }
         Logger.info(logMessage);
         popups.waitForScreenToLoad();
@@ -54,20 +54,20 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
             boolean passes = false;
             // Search directly for the title we seek.
             if (new EggplantElement("Movie title" + searchingFor, By.Text(searchingFor, SearchRectangle.Quadrants.TOP_HALF)).isPresent()) {
-                Logger.info("Found movie title: (" + searchingFor + ") on screen");
+                Logger.info("Found movie title: (" + searchingFor + ") on screen.");
                 passes = true;
                 notFound.remove(searchingFor);
             } else {
                 Logger.error(String.format("Expected movie (%s) to appear in position (%d)", searchingFor, i));
-                Verifications.addVerification(String.format("Movie %s should appear in position %d", searchingFor, i), false, false);
+                Verifications.addVerification(String.format("Movie (%s) should appear in position (%d).", searchingFor, i), false, false);
                 // If a direct search fails, get the text in the title position and see if it matches anything in the titles list.
                 String foundTitle = movie.getTitle();
-                Logger.info("Read movie title " + foundTitle + " from movie details dialog");
+                Logger.info("Read movie title " + foundTitle + " from movie details dialog.");
                 if (foundTitle.length() > 5) {
                     for (int j = 0; j < titles.size(); j++) {
                         // If the
                         if (titles.get(j).toLowerCase().contains(foundTitle.toLowerCase())) {
-                            Logger.info("Matched movie " + titles.get(j) + " to found partial title " + foundTitle);
+                            Logger.info("Matched movie (" + titles.get(j) + ") to found partial title (" + foundTitle + ").");
                             passes = true;
                             notFound.remove(titles.get(j));
                             break;
@@ -76,11 +76,11 @@ public class DishAnywhereScrollView extends DishAnywhereMain {
                 }
             }
 
-            Verifications.addVerification(String.format("Movie %s should be present.", searchingFor), passes, false);
+            Verifications.addVerification(String.format("Movie (%s) should be present.", searchingFor), passes, false);
             movie.closeMovie();
         }
         for (String notFoundTitle : notFound) {
-            Verifications.addVerification(String.format("Movie %s should be present.", notFoundTitle), false, false);
+            Verifications.addVerification(String.format("Movie (%s) should be present.", notFoundTitle), false, false);
         }
         return this;
     }

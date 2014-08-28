@@ -114,8 +114,9 @@ public class Logger {
             g.dispose();
         }
 
-        int resizedWidth = image.getWidth() / 2;
-        int resizedHeight = image.getHeight() / 2;
+        //Change the size of the output screenshots
+        int resizedWidth = (int) (image.getWidth() * 1);
+        int resizedHeight = (int) (image.getHeight() * 1);
         BufferedImage resizedImage = new BufferedImage(resizedWidth, resizedHeight, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2 = resizedImage.createGraphics();
         g2.drawImage(image, 0, 0, resizedWidth, resizedHeight, null);

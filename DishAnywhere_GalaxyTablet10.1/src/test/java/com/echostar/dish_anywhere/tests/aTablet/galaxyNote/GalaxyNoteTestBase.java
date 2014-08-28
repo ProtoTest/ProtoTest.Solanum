@@ -7,7 +7,7 @@ import org.testng.annotations.AfterMethod;
 public class GalaxyNoteTestBase extends EggplantTestBase {
 
     private void handleAppCrash() {
-        Logger.info("Attempting to handle any app crashes...");
+        Logger.info("ATTEMPTING TO HANDLE ANY APP CRASHES...");
         EggplantElement crashText = new EggplantElement(By.Text("Unfortunately,",TextOption.waitFor(10)));
         EggplantElement okButton = new EggplantElement(By.Text("OK"));
         if (crashText.isPresent()) {
@@ -18,7 +18,7 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
     @Override
     public void initializeApp() {
         handleAppCrash();
-        Logger.info("Test Setup: Initializing the app...");
+        Logger.info("TEST SETUP: INITIALIZING THE APP...");
         new DeviceMain()
                 .killApp()
                 .goToDeviceHomeAndEnterApp()
@@ -32,7 +32,13 @@ public class GalaxyNoteTestBase extends EggplantTestBase {
                 .clearTVBlocks()
                 .save()
                 .openGuide();
-        Logger.info("Test Setup: App Initialized.");
+        Logger.info("TEST SETUP: APP INITIALIZED.");
+    }
+
+    @AfterMethod
+    public void uninitializeApp() {
+        Logger.info("TEST TEARDOWN: RESETTING APP STATE...");
+        new DeviceMain().goToHomeScreen();
     }
 
 }

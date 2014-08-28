@@ -8,8 +8,6 @@ import com.prototest.solanum.SolanumRetryAnalyzer;
 import com.prototest.solanum.Verifications;
 import org.testng.annotations.Test;
 
-// DishAnywhere API Tests - GalaxyS5 (Android Phone)
-
 public class KindleFireVideoDrm extends KindleTestBase {
 
 
@@ -42,6 +40,6 @@ public class KindleFireVideoDrm extends KindleTestBase {
                 EggplantTestBase.driver.PressHomeButton();
         Verifications.addVerification("Opened OnDemand movie.", true);
         Logger.screenshot("OnDemandMovie");
-
     }
+
 }

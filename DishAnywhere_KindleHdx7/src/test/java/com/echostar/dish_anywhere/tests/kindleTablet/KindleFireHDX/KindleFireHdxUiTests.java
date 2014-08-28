@@ -7,8 +7,6 @@ import com.prototest.solanum.Logger;
 import com.prototest.solanum.SolanumRetryAnalyzer;
 import org.testng.annotations.Test;
 
-// DishAnywhere UI Tests - Kindle Fire HDX (Kindle Tablet)
-
 public class KindleFireHdxUiTests extends EggplantTestBase {
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
@@ -21,4 +19,5 @@ public class KindleFireHdxUiTests extends EggplantTestBase {
                 .login(Config.getTestProp("dishAnywhereLoginName"), Config.getTestProp("dishAnywhereLoginPass"))
                 .verifyLoggedIn();
     }
+
 }

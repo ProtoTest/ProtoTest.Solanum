@@ -9,17 +9,13 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Map;
 
-/**
- */
 public class KindleFireAuthorizedDevices extends  KindleTestBase {
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory() {
         Logger.info("Starting Kindle Authorized Device test");
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_phone, 19);
-
         String movieName = movies.get(0).get("franchiseName");
-
         new DishAnywhereHome()
                 .openSettings()
                 .openAuthorizedDevices()
@@ -30,7 +26,6 @@ public class KindleFireAuthorizedDevices extends  KindleTestBase {
                 .openMovie(movieName)
                 .watchMovie()
                 .verifyDeauthorizationMessageDisplays()
-
                 .resetApp()
                 .openSettings()
                 .openAuthorizedDevices()
@@ -42,7 +37,6 @@ public class KindleFireAuthorizedDevices extends  KindleTestBase {
                 .watchMovie()
                 .verifyMoviePlays()
                 .goHome();
-
-
     }
+
 }

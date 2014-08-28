@@ -10,24 +10,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Brian on 6/4/2014.
- */
 public class KindleFireOnDemandCategory extends KindleTestBase {
 
     private final int MOVIES_TO_TEST = 10;
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void movieCategory(){
-
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getMoviesCategory(RadishScraper.Device.android_tablet, 30);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openMovies()
@@ -35,40 +26,24 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void featuredCategory(){
-
-
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getOnDemandFeatured(RadishScraper.Device.android_tablet, 30);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openFeatured()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void familyCategory(){
-
-
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getFamilyCategory(RadishScraper.Device.android_tablet, 30);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openFamily()
@@ -76,21 +51,13 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void tvShowsCategory(){
-
-
         RadishScraper radishScraper = new RadishScraper();
         List<Map<String, String>> movies = radishScraper.getShowsCategory(RadishScraper.Device.android_tablet, 30);
-
-        List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
-
-        for (int i = 0; i < MOVIES_TO_TEST; i++) {
-            movieTitles.add(movies.get(i).get("franchiseName"));
-        }
+        List<String> movieTitles = radishScraper.extractShortTitles(movies, MOVIES_TO_TEST, 40);
         new DishAnywhereHome()
                 .openOnDemand()
                 .openTVShows()
@@ -98,18 +65,15 @@ public class KindleFireOnDemandCategory extends KindleTestBase {
                 .sortByTitle()
                 .done()
                 .verifyTitlesPresent(movieTitles);
-
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
     public void networksCategory(){
-
         List<String> movieTitles = Arrays.asList("BabyFirstTV", "Cinemax", "Content Media", "Cookie Jar", "Echo Bridge", "Encore");
-
         new DishAnywhereHome()
                 .openOnDemand()
                 .openNetworks()
                 .verifyTitlesPresent(movieTitles);
-
     }
+
 }

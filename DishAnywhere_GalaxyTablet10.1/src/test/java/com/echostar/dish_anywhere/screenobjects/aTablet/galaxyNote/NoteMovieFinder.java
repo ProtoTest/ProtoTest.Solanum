@@ -52,7 +52,7 @@ public class NoteMovieFinder {
             }
         } else {
             if (passcodePopupIsPresent) {
-                Logger.error("Passcode prompt should not be on screen, but it is. Guessing passcode from config values: " + Config.getTestProp("dishAnywherePassCode"));
+                Logger.error("Passcode prompt should not be on screen, but it is. Guessing passcode from config values: (" + Config.getTestProp("dishAnywherePassCode") + ").");
                 popups.enterPasscode(Config.getTestProp("dishAnywherePassCode"));
             }
         }
