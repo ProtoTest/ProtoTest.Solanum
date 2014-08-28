@@ -3,7 +3,7 @@
 <suite name="GalaxyS5" verbose="1" configfailurepolicy="continue">
     <parameter name="hostName" value="4d00a6404fd62197"/>
     <parameter name="hostPort" value="5901"/>
-    <parameter name="drivePort" value="5401"/>
+    <parameter name="drivePort" value="5403"/>
     <test name="GalaxyS5AuthorizedDevices">
         <classes>
             <class name="com.echostar.dish_anywhere.tests.aPhone.galaxyS5.GalaxyS5AuthorizedDevices"/>
