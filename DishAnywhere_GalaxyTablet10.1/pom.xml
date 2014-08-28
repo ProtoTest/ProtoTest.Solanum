@@ -6,6 +6,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>DishAnywhere_GalaxyTablet10.1</artifactId>
+    <groupId>com.prototest.app</groupId>
+    <name>Echostar Dish Anywhere Test Suite</name>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <properties>
         <testname>galaxy-tab</testname>
     </properties>
