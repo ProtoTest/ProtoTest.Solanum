@@ -37,6 +37,10 @@ import java.util.Properties;
 //  EGGPLANT REFERENCE AND DOCUMENTATION LINKS
 //  http://docs.testplant.com/?q=content/eggplant-commands-and-functions
 //  http://docs.testplant.com/?q=content/run-options-preferences
+//  http://docs.testplant.com/?q=content/finding-text                     << Also includes "Search Rectangle" options
+//  http://docs.testplant.com/?q=content/finding-images                   << Also includes "Search Rectangle" options
+//  http://docs.testplant.com/?q=content/working-ocr
+
 
 public class Config {
 
