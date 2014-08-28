@@ -18,8 +18,8 @@ public class GalaxyS5VideoDrm extends GalaxyS5TestBase {
         Logger.info("BEGINNING TEST: WATCH NAGRA MOVIE.");
         RadishScraper radishScraper = new RadishScraper();
         radishScraper.getMovies();
-        String movie = RadishScraper.getShortName(radishScraper.findMovieWithDrm("nagra"),25);
-        watchMovie(movie);
+        String movie = radishScraper.findMovieWithDrm("nagra");
+        watchMovie(RadishScraper.getShortName(movie, 25));
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
