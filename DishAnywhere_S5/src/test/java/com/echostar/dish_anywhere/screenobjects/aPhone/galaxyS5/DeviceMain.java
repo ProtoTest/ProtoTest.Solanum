@@ -24,13 +24,23 @@ public class DeviceMain {
 
     public DishAnywhereHome goHome() {
         EggplantTestBase.driver.PressHomeButton();
+        if (!dishAnywhereApp.isPresent(30)) {
+            EggplantTestBase.driver.disconnect();
+            EggplantTestBase.driver.connect();
+        }
         dishAnywhereApp.click();
         for (int i=0;i<5&&!dishAnywhereApp.isPresent();i++) {
             EggplantTestBase.driver.PressBackButton();
         }
+//        EggplantTestBase.
+//        if
         dishAnywhereApp.click();
         return new DishAnywhereHome();
     }
+
+//    public DishAnywhereHome resetApp() {
+//
+//    }
 
     public DeviceMain closePopups() {
         Logger.info("Closing popups...");
