@@ -24,18 +24,19 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
     @DataProvider(name = "filter")
     public Object[][] filter() {
         String[] rawfilters = Config.getTestProp("dishFiltersToTest").trim().split("\\s*,\\s*");
-        Object[][] filters = new Object[rawfilters.length][1];
+        Object[][] filters = new Object[rawfilters.length][];
         for (int i = 0; i < rawfilters.length; i++) {
-            filters[i][0] = rawfilters[i];
+            String[] filterTuple = rawfilters[i].split(";");
+            filters[i] = filterTuple;
         }
         return filters;
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class, dataProvider = "filter")
-    public void onDemandFilters(String filter) {
+    public void onDemandFilters(String filter, String urlParam) {
         Logger.info("BEGINNING TEST: ON DEMAND FILTERS.");
         RadishScraper radishScraper = new RadishScraper();
-        List<Map<String, String>> movies = radishScraper.getFilteredMovies(filter, RadishScraper.Device.android_phone, 19);
+        List<Map<String, String>> movies = radishScraper.getFilteredMovies(urlParam, RadishScraper.Device.android_phone, 19);
 
         List<String> movieTitles = new ArrayList<String>(MOVIES_TO_TEST);
 
@@ -44,12 +45,10 @@ public class GalaxyS5OnDemandFilters extends GalaxyS5TestBase {
         }
         new DishAnywhereHome()
                 .openOnDemand()
-                .openBlockbuster()
                 .openMovies()
                 .openFilters()
                 .selectFilter(filter)
                 .done()
                 .verifyTitlesPresent(movieTitles);
     }
-
 }

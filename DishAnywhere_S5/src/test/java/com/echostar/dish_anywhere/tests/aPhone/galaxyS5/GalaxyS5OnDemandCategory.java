@@ -51,7 +51,6 @@ public class GalaxyS5OnDemandCategory extends GalaxyS5TestBase {
                 .openOnDemand()
                 .openFeatured()
                 .verifyTitlesPresent(movieTitles);
-        Verifications.assertVerifications();
     }
 
     @Test(retryAnalyzer = SolanumRetryAnalyzer.class)
