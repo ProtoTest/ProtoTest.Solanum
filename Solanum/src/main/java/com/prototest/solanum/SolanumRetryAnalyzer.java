@@ -34,7 +34,7 @@ public class SolanumRetryAnalyzer implements IRetryAnalyzer {
         // Check verifications; if all validations are because of non-retryable reasons, don't retry
         if (Verifications.failedOnValidations()) {
             for (Verifications.Verification verification : Verifications.getVerifications()) {
-                if (verification.shouldRetry) {
+                if (!verification.passed && verification.shouldRetry) {
                     return true;
                 }
             }
