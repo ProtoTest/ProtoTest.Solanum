@@ -35,7 +35,7 @@ public class RadishScraper {
 
     public List<Map<String, String>> getOnDemandFeatured(Device device, int nMovies) {
         client = new RestClient(radishDomain);
-        String json = client.Get("/v20/main.json?&totalItems="+nMovies+"&device="+device.name()+"&itemStart=1&sort=name&uid=" + radishUid + "&sid=" + radishSid + "&player_types=widevine,nagra");
+        String json = client.Get("/v20/main.json?&totalItems="+nMovies+"&device="+device.name()+"&itemStart=1&uid=" + radishUid + "&sid=" + radishSid + "&player_types=widevine,nagra");
         List<Map<String, String>> movies = JsonPath.read(json, "$.onlinenow.content[*]");
         return movies;
     }
@@ -95,16 +95,20 @@ public class RadishScraper {
     }
 
     public String findMovieWithDrm(String type) {
-        List<String> types = client.parseAll("$.[*].player_type");
-        for (int i = 0; i < types.size(); i++) {
-            if (types.get(i).equals(type)) {
-                String name =client.parse("$.[" + i + "].name");
-                //if(!name.contains("Frozen"))
-                    return name;
-            }
-        }
-
-        return null;
+        client = new RestClient(radishDomain);
+        String json = client.Get("/v20/blockbuster/shows.json?&genre=kids_and_family&totalItems=200&itemStart=1&sort=name&uid=" + radishUid + "&sid=" + radishSid + "&player_types=" + type);
+        List<Map<String, String>> movies = JsonPath.read(json, "$.onlinenow.content[*]");
+        return movies.get(0).get("franchiseName");
+//        List<String> types = client.parseAll("$.[*].player_type");
+//        for (int i = 0; i < types.size(); i++) {
+//            if (types.get(i).equals(type)) {
+//                String name =client.parse("$.[" + i + "].name");
+//                //if(!name.contains("Frozen"))
+//                    return name;
+//            }
+//        }
+//
+//        return null;
     }
 
 }
